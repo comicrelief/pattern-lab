@@ -1,0 +1,34 @@
+{
+  "name": "pattern-lab",
+  "version": "1.0.0",
+  "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
+  "scripts": {
+    "watch": "grunt watch:dev",
+    "build": "grunt build"
+  },  
+  "dependencies": {
+    "grunt-cli": "^1.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "susy": "^2.2.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comicrelief/pattern-lab.git"
+  },
+  "keywords": [
+    "patternlab",
+    "styleguide",
+    "comicrelief",
+    "rednoseday",
+    "sportrelief"
+  ],
+  "author": "Comic Relief",
+  "bugs": {
+    "url": "https://github.com/comicrelief/pattern-lab/issues"
+  },
+  "homepage": "https://github.com/comicrelief/pattern-lab#readme"
+}
