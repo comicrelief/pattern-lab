@@ -1,19 +1,20 @@
 {
-  "name": "pattern-lab",
+  "name": "@comicrelief/pattern-lab",
   "version": "1.0.0",
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
     "watch": "grunt watch:dev",
     "build": "grunt build"
-  },  
+  },
   "dependencies": {
-    "grunt-cli": "^1.2.0"
+    "susy": "^2.2.12",
+    "grunt-kss": "^5.0.1"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^2.0.0",
-    "susy": "^2.2.12"
+    "grunt-sass": "^2.0.0"
   },
   "repository": {
     "type": "git",

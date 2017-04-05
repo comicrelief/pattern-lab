@@ -1,13 +1,18 @@
-### Install dev dependencies
-`npm install`
+## Comic Relief Pattern Lab
+> it's an node-based experimental project to supply sass component as well as styleguide generator
 
-### Watch
-`npm run watch`
+## The idea
+To have a centralised hub supply common styling across CR products. 
 
-Live reload server runs on the default port 35729. To turn it off, change Gruntfile.js line 32
+## Import styling to your project
+* simply run `npm install @comicrelief/pattern-lab --save`
+* on scss file, add `@import '~pattern-lab';` 
+* or copy compiled css file straight to your project 
 
-`livereload: false`
+## Contribute to pattern-lab
+* download git repo, run `npm install`
+* to watch, run `npm run watch`
+* to generate styleguide, run `npm run build`
 
-### Build
-`npm run build`
-
+## Access styleguide
+* under `/styleguide/base` and `/styleguide/[product_name]`

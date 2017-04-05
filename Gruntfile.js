@@ -40,13 +40,26 @@ module.exports = function (grunt) {
       }
     },
 
+    kss: {
+      options: {
+        verbose: true,
+        title: 'Comic Relief PatternLab',
+        css: '../css/base/styles.css',
+      },
+      dist: {
+        src: ['sass/base/core'],
+        dest: 'styleguide'
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-kss');
 
   grunt.registerTask('build', [
-    'sass'
+    'sass',
+    'kss'
   ]);
 
   grunt.registerTask('watch:dev', [

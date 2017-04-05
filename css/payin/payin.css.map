@@ -3,7 +3,7 @@
 	"file": "payin.css",
 	"sources": [
 		"../../sass/payin/payin.scss",
-		"../../sass/base/core.scss",
+		"../../sass/base/_core.scss",
 		"../../sass/base/core/_base-reset.scss",
 		"../../sass/base/core/_base-variables.scss",
 		"../../sass/base/core/_base-fonts.scss",

@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "core.css",
+	"file": "styles.css",
 	"sources": [
-		"../../sass/base/core.scss",
+		"../../sass/base/styles.scss",
 		"../../sass/base/core/_base-reset.scss",
 		"../../sass/base/core/_base-variables.scss",
 		"../../sass/base/core/_base-fonts.scss",
