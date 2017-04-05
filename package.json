@@ -1,6 +1,6 @@
 {
   "name": "@comicrelief/pattern-lab",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
     "watch": "grunt watch:dev",
