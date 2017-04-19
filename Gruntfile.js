@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         files: [{
             expand: true,
             cwd: 'sass',
-            src: ['*/*.scss'],
+            src: ['{,**/}*.scss'],
             dest: 'css',
             ext: '.css'
         }]
@@ -43,12 +43,62 @@ module.exports = function (grunt) {
     kss: {
       options: {
         verbose: true,
-        title: 'Comic Relief PatternLab',
-        css: '../css/base/styles.css',
+        css: '../css/base/all.css',
+        builder: 'node_modules/kss/builder/twig'
       },
-      dist: {
-        src: ['sass/base/core'],
+      all: {
+        options: {
+          verbose: true,
+          title: 'Comic Relief PatternLab',
+          css: '../css/base/all.css'
+        },
+        src: ['sass/themes/all'],
         dest: 'styleguide'
+      },
+      cr17: {
+        options: {
+          verbose: true,
+          title: 'Comic Relief PatternLab',
+          css: '../css/themes/cr/2017/cr17.css'
+        },
+        src: ['sass/base', 'sass/themes/cr/2017'],
+        dest: 'styleguide/cr'
+      },
+      rnd17: {
+        options: {
+          verbose: true,
+          title: 'Red Nose Day PatternLab',
+          css: '../css/themes/rnd17.css',
+        },
+        src: ['sass/base/core', 'sass/themes/rnd/2017'],
+        dest: 'styleguide/rnd'
+      },
+      sr18: {
+        options: {
+          verbose: true,
+          title: 'Sport Relief PatternLab',
+          css: '../css/themes/sr/2018/sr18.css',
+        },
+        src: ['sass/base/core', 'sass/themes/sr/2018'],
+        dest: 'styleguide/sr'
+      },
+      payin: {
+        options: {
+          verbose: true,
+          title: 'Payin Online PatternLab',
+          css: '../css/themes/payin/payin.css',
+        },
+        src: ['sass/base/core', 'sass/themes/payin'],
+        dest: 'styleguide/payin'
+      },
+      frost: {
+        options: {
+          verbose: true,
+          title: 'Frost PatternLab',
+          css: '../css/themes/frost/frost.css',
+        },
+        src: ['sass/base/core', 'sass/themes/frost'],
+        dest: 'styleguide/frost'
       }
     }
   });
