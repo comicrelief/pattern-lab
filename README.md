@@ -15,4 +15,4 @@ To have a centralised hub supply common styling across CR products.
 * to generate styleguide, run `npm run build`
 
 ## Access styleguide
-* under `/styleguide/base` and `/styleguide/[product_name]`
+* homepage `/styleguide/index.html` and `/styleguide/[product_name]/index.html`
