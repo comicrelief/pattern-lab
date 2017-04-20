@@ -1,7 +1,7 @@
 {
   "name": "@comicrelief/pattern-lab",
   "version": "0.0.4",
-  "license" : "GPL-3.0",
+  "license": "GPL-3.0",
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
     "watch": "grunt watch:dev",
@@ -37,5 +37,8 @@
     "url": "https://github.com/comicrelief/pattern-lab/issues"
   },
   "homepage": "https://github.com/comicrelief/pattern-lab#readme",
-  "license" : "GPL-3.0"
+  "engines": {
+    "node": "4.4.7",
+    "npm": "3.8.6"
+  }
 }
