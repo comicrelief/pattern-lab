@@ -1,0 +1,10 @@
+---
+buildpack: https://github.com/cloudfoundry/nodejs-buildpack#v1.5.17
+instances: 1
+memory: 500M
+domain: apps.comicrelief.com
+applications:
+  - name: pattern-lab
+    command: npm run build
+    hosts:
+      - pattern-lab-systest
