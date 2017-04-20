@@ -6,9 +6,5 @@ node_modules/
 npm-debug.log
 .idea/
 
-#styleguide
-frost
-payin
-rnd
-sr
-cr
+#distribution
+dist

@@ -14,7 +14,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: 'sass',
             src: ['{,**/}*.scss'],
-            dest: 'css',
+            dest: 'dist/css',
             ext: '.css'
         }]
       }
@@ -33,10 +33,10 @@ module.exports = function (grunt) {
         }
       },
       images: {
-        files: ['images/**']
+        files: ['dist/images/**']
       },
       css: {
-        files: ['css/{,**/}*.css']
+        files: ['dist/css/{,**/}*.css']
       }
     },
 
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
           css: '/css/themes/all/all.css'
         },
         src: ['sass/themes/all'],
-        dest: ''
+        dest: 'dist'
       },
       cr17: {
         options: {
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
           css: '/css/themes/cr/2017/cr17.css'
         },
         src: ['sass/base', 'sass/themes/cr/2017'],
-        dest: 'cr'
+        dest: 'dist/cr'
       },
       rnd17: {
         options: {
@@ -71,7 +71,7 @@ module.exports = function (grunt) {
           css: '/css/themes/rnd/2017/rnd17.css',
         },
         src: ['sass/base/core', 'sass/themes/rnd/2017'],
-        dest: 'rnd'
+        dest: 'dist/rnd'
       },
       sr18: {
         options: {
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
           css: '/css/themes/sr/2018/sr18.css',
         },
         src: ['sass/base/core', 'sass/themes/sr/2018'],
-        dest: 'sr'
+        dest: 'dist/sr'
       },
       payin: {
         options: {
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
           css: '/css/themes/payin/payin.css',
         },
         src: ['sass/base/core', 'sass/themes/payin'],
-        dest: 'payin'
+        dest: 'dist/payin'
       },
       frost: {
         options: {
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
           css: '/css/themes/frost/frost.css',
         },
         src: ['sass/base/core', 'sass/themes/frost'],
-        dest: 'frost'
+        dest: 'dist/frost'
       }
     }
   });

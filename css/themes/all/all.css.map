@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "all.css",
-	"sources": [
-		"../../../sass/themes/all/all.scss"
-	],
-	"names": [],
-	"mappings": ""
-}
