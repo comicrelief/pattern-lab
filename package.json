@@ -4,7 +4,10 @@
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
     "watch": "grunt watch:dev",
-    "build": "grunt build"
+    "build": "grunt build",
+    "version": "",
+    "postversion": "git push && git push --tags && npm publish",
+    "deploy": "npm version minor -m \"version %s\""
   },
   "dependencies": {
     "susy": "^2.2.12",
