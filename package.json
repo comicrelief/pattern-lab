@@ -10,8 +10,9 @@
     "deploy": "npm version minor -m \"version %s\""
   },
   "dependencies": {
-    "susy": "^2.2.12",
-    "grunt-kss": "^5.0.1"
+    "grunt-kss": "^5.0.1",
+    "npm-link-local": "^1.1.0",
+    "susy": "^2.2.12"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
