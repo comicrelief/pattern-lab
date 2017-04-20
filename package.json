@@ -36,5 +36,6 @@
   "bugs": {
     "url": "https://github.com/comicrelief/pattern-lab/issues"
   },
-  "homepage": "https://github.com/comicrelief/pattern-lab#readme"
+  "homepage": "https://github.com/comicrelief/pattern-lab#readme",
+  "license" : "GPL-3.0"
 }
