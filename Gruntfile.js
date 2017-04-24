@@ -4,19 +4,19 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
 
-    sass: {
+    compass: {
       dist: {
         options: {
-            outputStyle: 'compressed',
-            sourceMap: true
-        },
-        files: [{
-            expand: true,
-            cwd: 'sass',
-            src: ['{,**/}*.scss'],
-            dest: 'dist/css',
-            ext: '.css'
-        }]
+          sassDir: 'sass',
+          cssDir: 'dist/css',
+          environment: 'production'
+        }
+      },
+      dev: {
+        options: {
+          sassDir: 'sass',
+          cssDir: 'dist/css'
+        }
       }
     },
 
@@ -28,6 +28,18 @@ module.exports = function (grunt) {
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
+      }
+    },
+
+    sass_globbing: {
+      your_target: {
+        files: {
+          'sass/base/_components.scss': 'sass/base/components/**/*.scss'
+        },
+        options: {
+          useSingleQuotes: false,
+          signature: '/* generated with grunt-sass-globbing */\n\n'
+        }
       }
     },
 
@@ -114,13 +126,16 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-sass-globbing');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-kss');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.registerTask('build', [
-    'sass',
+    'sass_globbing',
+    'compass',
     'imagemin',
     'kss'
   ]);
