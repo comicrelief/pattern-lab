@@ -77,7 +77,10 @@
   bottom: 0;
   width: 100%;
   padding: 40px 10px 30px;
-  @include background-image(linear-gradient(rgba(0, 0, 0, 0), $colour-dark-blue));
+  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,#061d38));
+  background-image: -moz-linear-gradient(rgba(0,0,0,0),#061d38);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0),#061d38);
+  background-image: linear-gradient(rgba(0,0,0,0),#061d38);
   h2, h3, h4, h5 {
     color: $colour-white;
   }

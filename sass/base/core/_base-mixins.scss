@@ -192,3 +192,106 @@
     margin: auto;
   }
 }
+
+@mixin border-radius( $radius: $default-border-radius, $vertical-radius: false ) {
+  @if $vertical-radius {
+     -webkit-border-radius: $radius $vertical-radius;
+    -moz-border-radius: $radius / $vertical-radius;
+    border-radius: $radius / $vertical-radius;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  } @else {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+}
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  clear:both;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin translateY($trans-y: $default-translate-y, $perspective: false, $only3d: false) {
+  $trans: translateY($trans-y);
+  @if $perspective {
+    $trans: perspective($perspective) $trans;
+  }
+  @include transform($trans);
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+@mixin display-flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin justify-content($pos) {
+  -webkit-justify-content: $pos;
+  justify-content: $pos;
+}
+
+@mixin opacity( $arg ) {
+  filter: alpha(opacity=($arg * 100));
+  -moz-opacity: $arg;
+  -khtml-opacity: $arg;
+  -webkit-opacity: $arg;
+  opacity: $arg;
+}
+
+@mixin scale($arg) { // fix for two args
+  -moz-transform: scale($arg,$arg);
+  -ms-transform: scale($arg,$arg);
+  -webkit-transform: scale($arg,$arg);
+  transform: scale($arg,$arg);
+}
+
+@mixin box-shadow( $arg ) {
+  -webkit-box-shadow: $arg;
+  -moz-box-shadow: $arg;
+  box-shadow: $arg;
+}
+
+
