@@ -67,7 +67,7 @@
   width: 100%;
   padding: 40px 10px 20px;
   @include background-image(linear-gradient(rgba(0, 0, 0, 0), $colour-dark-blue));
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     padding: 40px 40px 20px;
   }
   p, h4 {

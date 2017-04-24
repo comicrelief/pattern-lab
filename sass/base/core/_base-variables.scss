@@ -51,51 +51,29 @@
  * Colours
  */
 
+// Colours
 
+// Brand colors
 
-// Default settings
+$colour-red: #dc2a2a;
+$colour-blue: #45bfd4;
+$colour-yellow: yellow;
+$colour-green: #27bf90;
+$colour-teal: teal;
+$colour-royal-blue: #0565d1;
+$colour-purple: #b4549e;
+$colour-dark-purple: #7023b7;
+$colour-pink: #fc9eb9;
 
-$image-path: '../../../../public/assets/images/';
-
-$red: #f04257;
-$blue: #22d2dc;
-$yellow: #fbef51;
-$green: #b2e55e;
-$teal: #00beca;
-$royal-blue: #0565d1;
-$purple: #7d2ca9;
-$dark-purple: #7023b7;
-$pink: #fc9eb9;
-
-$black: #030e1a;
-$dark-blue: #061d38;
-$jasper-grey: #666;
-$gainsboro-grey: #c7c7c7;
-$light-grey: #dddddd;
-$smoke-grey: #fafafa;
-$white: #fff;
-$item-grey: #ddd;
-$dark-grey: #282828;
-
-// Array of colours for use in SASS maps
-$colorList: (
-  ("red" $red),
-  ("blue" $blue), 
-  ("yellow" $yellow),
-  ("green" $green), 
-  ("teal" $teal), 
-  ("royal-blue" $royal-blue), 
-  ("purple" $purple),
-  ("dark-purple" $dark-purple),
-  ("pink" $pink),
-  ("black" $black),
-  ("dark-blue" $dark-blue),
-  ("white" $white),
-  ("jasper-grey" $jasper-grey),
-  ("gainsboro-grey" $gainsboro-grey),
-  ("light-grey" $light-grey),
-  ("smoke-grey" $smoke-grey)
-);
+$colour-black: #000;
+$colour-dark-blue: #061d38;
+// $colour-dark-grey: #333;
+$colour-jasper-grey: #606060;
+// $colour-greyboy-grey: #999;
+$colour-gainsboro-grey: #ccc;
+$colour-light-grey: #f3f3f5;
+$colour-smoke-grey: #f0f0f2;
+$colour-white: #fff;
 
 /**
  * Parameters
@@ -104,181 +82,185 @@ $colorList: (
  * $inlinelink[3] = border-color for hover & focus
  */
 $linkList: (
-  ("red" $red $purple),
-  ("blue" $blue $yellow), 
-  ("yellow" $yellow $blue),
-  ("green" $green $teal), 
-  ("teal" $teal $pink), 
-  ("royal-blue" $royal-blue $red), 
-  ("purple" $purple $royal-blue),
-  ("pink" $pink $green),
-  ("white" $white $black),
-  ("jasper-grey" $jasper-grey $red),
-  ("gainsboro-grey" $gainsboro-grey $red),
-  ("light-grey" $light-grey $red),
-  ("smoke-grey" $smoke-grey $red)
+  ("red" $colour-red $colour-purple),
+  ("blue" $colour-blue $colour-yellow), 
+  ("yellow" $colour-yellow $colour-blue),
+  ("green" $colour-green $colour-teal), 
+  ("teal" $colour-teal $colour-pink), 
+  ("royal-blue" $colour-royal-blue $colour-red), 
+  ("purple" $colour-purple $colour-royal-blue),
+  ("pink" $colour-pink $colour-green),
+  ("white" $colour-white $colour-black),
+  ("jasper-grey" $colour-jasper-grey $colour-red),
+  ("gainsboro-grey" $colour-gainsboro-grey $colour-red),
+  ("light-grey" $colour-light-grey $colour-red),
+  ("smoke-grey" $colour-smoke-grey $colour-red)
 );
 
-/* 
- * Font
+/**
+ * Parameters
+ * $color[1] = name
+ * $color[2] = background colour/font colour
  */
-/* don't remove, this is being used as default font size for SR16 */
-$font-size: 16px;
-$body-font: 'GT-Walsheim-Regular', 'open-sans', Helvetica, Arial, Sans-serif;
+$colorList: (
+  ("red" $colour-red),
+  ("blue" $colour-blue), 
+  ("yellow" $colour-yellow),
+  ("green" $colour-green), 
+  ("teal" $colour-teal), 
+  ("royal-blue" $colour-royal-blue), 
+  ("purple" $colour-purple),
+  ("dark-purple" $colour-dark-purple),
+  ("pink" $colour-pink),
+  ("black" $colour-black),
+  ("dark-blue" $colour-dark-blue),
+  ("white" $colour-white),
+  ("jasper-grey" $colour-jasper-grey),
+  ("gainsboro-grey" $colour-gainsboro-grey),
+  ("light-grey" $colour-light-grey),
+  ("smoke-grey" $colour-smoke-grey)
+);
 
-/* 
- * Size
- */
-$type-xxl: 30px;
-$type-xl: 25px;
-$type-lg: 20px;
-$type-md: 18px;
-$type-sm: 14px;
-$type-xs: 12px; //not being used, value can be updated
-
-/* 
- * Spacing
- */
-
-/* 
- * Rounded corners
- */
-$corner-radius: 35px;
-$round-radius: 50%;
-
- /*
- * Button
- *
+/**
  * Parameters
  * $button[1] = name
  * $button[2] = background-color
  * $button[3] = background-color for hover & focus
  * $button[4] = text color
- * $button[5] = ghost border color
- * $button[6] = ghost text color for hover and focus
  */
 $buttonList: (
-  ("black-ghost" transparent $dark-blue $dark-blue),
-  ("white-ghost" transparent $white $white),
-  ("red" $red $purple $white),
-  ("blue" $blue $yellow $black), 
-  ("yellow" $yellow $blue $black),
-  ("green" $green $teal $black), 
-  ("teal" $teal $pink $black), 
-  ("royal-blue" $royal-blue $red $white), 
-  ("purple" $purple $royal-blue $white),
-  ("pink" $pink $green $black),
-  ("white" $white $black $black)
+  ("black-ghost" transparent $colour-dark-blue $colour-dark-blue),
+  ("white-ghost" transparent $colour-white $colour-white),
+  ("red" $colour-red $colour-purple $colour-white),
+  ("blue" $colour-blue $colour-yellow $colour-black), 
+  ("yellow" $colour-yellow $colour-blue $colour-black),
+  ("green" $colour-green $colour-teal $colour-black), 
+  ("teal" $colour-teal $colour-pink $colour-black), 
+  ("royal-blue" $colour-royal-blue $colour-red $colour-white), 
+  ("purple" $colour-purple $colour-royal-blue $colour-white),
+  ("pink" $colour-pink $colour-green $colour-black),
+  ("white" $colour-white $colour-black $colour-black)
 );
 
- /*
- * Text-link
- *
- * Parameters
- * $textLink[1] = name
- * $textLink[2] = text-link-color
- * $textLink[3] = text-link-color for hover
- */
-$textLinkList: (
-("red" $red $purple),
-  ("blue" $blue $yellow), 
-  ("yellow" $yellow $blue),
-  ("green" $green $teal), 
-  ("teal" $teal $pink), 
-  ("royal-blue" $royal-blue $red), 
-  ("purple" $purple $royal-blue),
-  ("pink" $pink $green),
-  ("white" $white $black),
-  ("jasper-grey" $jasper-grey $red),
-  ("gainsboro-grey" $gainsboro-grey $red),
-  ("light-grey" $light-grey $red),
-  ("smoke-grey" $smoke-grey $red)
+/* Single message row background colour, used in June site, to be renamed and updated */
+$cream-grey: #F5F2ED;
+
+/* REMIX! */
+/* Small breakpoint */
+$screen-sm: 0px;
+$screen-sm-min: $screen-sm;
+$screen-sm-max: 739px;
+
+/* Medium breakpoint */
+$screen-md: 740px;
+$screen-md-min: $screen-md;
+$screen-md-max: 1023px;
+
+$screen-md-only: $screen-md $screen-md-max;
+
+/* Large breakpoint */
+$screen-lg: 1024px;
+$screen-lg-min: $screen-lg;
+
+/* Tweaked breakpoints to allow 'mobile' style nav on iPad landscape */
+
+$desktop-nav-breakpoint: 1150px;
+$desktop-max-nav-breakpoint: max-width 1150px;
+$desktop-nav-breakpoint-min: $desktop-nav-breakpoint;
+
+/* Grid values */
+$max-width: 1200px;
+
+$gutter: 30px;
+$column: 70px;
+
+$columns: 12;
+
+// Fonts
+
+$font-stack: helvetica, arial, sans-serif;
+
+$font-black-oblique: "GT-Walsheim-Black-Oblique", $font-stack;
+$font-black: "GT-Walsheim-Black", $font-stack;
+$font-bold-oblique: "GT-Walsheim-Black-Bold-Oblique", $font-stack;
+$font-bold: "GT-Walsheim-Bold", $font-stack;
+$font-medium-oblique: "GT-Walsheim-Medium-Oblique", $font-stack;
+$font-medium: "GT-Walsheim-Medium", $font-stack;
+$font-regular-oblique: "GT-Walsheim-Regular-Oblique", $font-stack;
+$font-regular: "GT-Walsheim-Regular", $font-stack;
+$font-light-oblique: "GT-Walsheim-Light-Oblique", $font-stack;
+$font-light: "GT-Walsheim-Light", $font-stack;
+$body-font: "GT-Walsheim-Regular", $font-stack;
+
+// breakpoint: (font-size, line-height)
+$h1-xlarge-font-size: (
+  null: (36px, 38px),
+  $screen-md: (64px, 64px),
+  $screen-lg: (90px, 90px)
 );
 
-/* 
- * Icon Font
- */
-$font-date: 20150814;
-
-$iconlist: (
-  ("facebook-filled" "\e600"),
-  ("twitter-filled" "\e601"),
-  ("google-plus-filled", "\e602"),
-  ("youtube-filled" "\e603"),
-  ("instagram-filled" "\e604"),
-  ("tumblr-filled" "\e605"),
-  ("zoom-filled" "\e606"),
-  ("zoomin-filled" "\e607"),
-  ("circle-filled" "\e608"),
-  ("search-filled" "\e609"),
-  ("user-filled" "\e60a"),
-  ("basket-filled" "\e60b"),
-  ("sound-off-filled" "\e60c"),
-  ("sound-on-filled" "\e60d"),
-  ("pause-large-filled" "\e60e"),
-  ("play-large-filled" "\e60f"),
-  ("stop-large-filled" "\e610"),
-  ("pause-filled" "\e611"),
-  ("play-filled" "\e612"),
-  ("stop-filled" "\e613"),
-  ("facebook" "\e614"), 
-  ("twitter" "\e615"), 
-  ("google-plus" "\e616"),
-  ("youtube" "\e617"),
-  ("instagram" "\e618"),
-  ("tumblr" "\e619"),
-  ("arrow-left" "\e61a"),
-  ("arrow-right" "\e61b"),
-  ("arrow-up" "\e61c"),
-  ("arrow-down" "\e61d"),
-  ("minus" "\e61e"),
-  ("plus" "\e61f"),
-  ("cross" "\e620"),
-  ("tick" "\e621"),
-  ("zoom" "\e622"),
-  ("zoomin" "\e623"),
-  ("pen" "\e624"),
-  ("return" "\e625"),
-  ("circle-selected" "\e626"),
-  ("help" "\e627"),
-  ("circle" "\e628"),
-  ("edit" "\e629"),
-  ("more" "\e62a"),
-  ("less" "\e62b"),
-  ("scroll-down" "\e62c"),
-  ("scroll-up" "\e62d"),
-  ("search" "\e62e"),
-  ("user" "\e62f"),
-  ("email" "\e630"),
-  ("mobile-nav" "\e631"),
-  ("basket" "\e632"),
-  ("sound-off" "\e633"),
-  ("sound-on" "\e634"),
-  ("fullscreen" "\e635"),
-  ("fit-to-screen" "\e636"),
-  ("pause-large" "\e637"),
-  ("play-large" "\e638"),
-  ("stop-large" "\e639"),
-  ("pause" "\e63a"),
-  ("play" "\e63b"),
-  ("stop" "\e63c"),
+$h1-blackshadow-font-size: (
+  null: (40px, 40px),
+  $screen-md: (64px, 64px),
+  $screen-lg: (70px, 70px)
 );
 
+$h1-black-font-size: (
+  null: (40px, 36px),
+  $screen-md: (64px, 54px),
+  $screen-lg: (70px, 60px)
+);
 
-/*
- * Generic padding/spacing settings
- */
+$h1-font-size: (
+  null: (40px, 40px),
+  $screen-md: (64px, 64px),
+  $screen-lg: (70px, 70px)
+);
 
-$gutters: 0 15px;
-$big-gutters: 0 40px;
-$grid-gutter: 2.54%;
+$h2-font-size: (
+  null: (32px, 34px),
+  $screen-md: (34px, 38px),
+  $screen-lg: (40px, 44px)
+);
 
-/*
- * Generic background colours
- */
+$h3-font-size: (
+  null: (28px, 30px),
+  $screen-md: (30px, 34px),
+  $screen-lg: (34px, 38px)
+);
 
-$border-colour-grey: #d5d5d5;
+$h4-font-size: (
+  null: (24px, 26px),
+  $screen-md: (26px, 28px),
+  $screen-lg: (30px, 32px)
+);
 
-/* Spacing around single message rows */
-$row-padding--sm: 30px;
-$row-padding--md: 60px;
+$p-xlarge-font-size: (
+  null: (18px, 24px),
+  $screen-md: (22px, 28px),
+  $screen-lg: (24px, 30px)
+);
+
+$p-large-font-size: (
+  null: (18px, 24px),
+  $screen-md: (20px, 26px),
+  $screen-lg: (20px, 26px)
+);
+
+$p-font-size: (
+  null: (16px, 22px),
+  $screen-md: (18px, 24px),
+  $screen-lg: (18px, 24px)
+);
+
+$p-small-font-size: (
+  null: (14px, 18px),
+  $screen-md: (16px, 20px),
+  $screen-lg: (16px, 20px)
+);
+
+$p-xsmall-font-size: (
+  null: (12px, 16px),
+  $screen-md: (14px, 18px),
+  $screen-lg: (14px, 18px)
+);

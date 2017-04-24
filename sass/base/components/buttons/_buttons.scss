@@ -45,7 +45,7 @@
   &.btn--full-width {
     display: block;
     width: 100%;
-    @include breakpoint($screen-md, $no-query: true) {
+    @include breakpoint($screen-md) {
       display: inline-block;
       width: auto;
     }

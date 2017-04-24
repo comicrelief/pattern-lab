@@ -59,7 +59,7 @@
         margin-left: 0;
       }
     }
-    @include breakpoint($desktop-nav-breakpoint, $no-query: true) {
+    @include breakpoint($desktop-nav-breakpoint) {
       right: 0;
       padding: 25px 0;
     }

@@ -18,7 +18,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
   @include container;
-  @include breakpoint($screen-lg, $no-query: true) {
+  @include breakpoint($screen-lg) {
     margin-top: 70px;
     margin-bottom: 70px;
   }
@@ -41,7 +41,7 @@
     margin-top: 55px;
     padding: 50px 0;
     background: #f5f2ed;
-    @include breakpoint($screen-lg, $no-query: true) {
+    @include breakpoint($screen-lg) {
       margin-top: 75px;
       padding: 70px 0;
     }
@@ -93,7 +93,7 @@
   }
 }
 
-@include breakpoint($screen-lg, $no-query: true) {
+@include breakpoint($screen-lg) {
   /* General styles */
   .paragraph--cr-single-message-row {
     .paragraph--cr-single-message-row__image,

@@ -89,7 +89,7 @@
   display: none;
 }
 .view-mode-cw_l .media-block__content {
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     padding: 80px 10px 60px;
   }
 }

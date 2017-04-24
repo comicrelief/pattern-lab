@@ -110,7 +110,7 @@ nav.menu--main {
     width: 85px;
     height: 78px;
     outline: 0;
-    @include breakpoint($desktop-nav-breakpoint, $no-query: true) {
+    @include breakpoint($desktop-nav-breakpoint) {
       height: 100%;
     }
     .path-search &,

@@ -5,7 +5,7 @@
 // Style guide: 200
 
 .node--type-page.search-result {
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     padding-bottom: 0;
   }
 }
@@ -73,14 +73,14 @@
   width: calc(100% - 30px);
   margin: auto;
   @include translateY(-50%);
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     width: calc(100% - 40px);
   }
   h3 {
     font-size: 18px;
     line-height: 18px;
     margin-bottom: 0;
-    @include breakpoint($screen-md, $no-query: true) {
+    @include breakpoint($screen-md) {
       font-size: 30px;
       line-height: 34px;
       margin-bottom: 15px;
@@ -90,7 +90,7 @@
 .search-result__body {
   display: none;
   color: $colour-black;
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     display: block;
   }
 }
@@ -100,14 +100,14 @@
   color: $colour-red;
   line-height: 18px;
   display: none;
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     display: inline-block;
   }
 }
 .search-result__published-date {
   display: inline-block;
   line-height: 18px;
-  @include breakpoint($screen-md, $no-query: true) {
+  @include breakpoint($screen-md) {
     padding-left: 12px;
     border-left: 2px solid $colour-black;
   }
@@ -124,7 +124,7 @@
       width: 100%;
       margin-bottom: 0;
       text-align: left;
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         width: auto;
       }
     }
@@ -132,14 +132,14 @@
   .search__total {
     margin-bottom: 5px;
     .path-search & {
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         display: inline-block;
       }
     }
   }
   .search__start-end {
     .path-search & {
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         float: right;
       }
     }
