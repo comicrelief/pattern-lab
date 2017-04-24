@@ -1,0 +1,23 @@
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - scss
+
+Backtrace:
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:481:in `read'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:481:in `update_stylesheet'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:293:in `watch'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/plugin.rb:108:in `method_missing'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:370:in `watch_or_update'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:50:in `process_result'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/exec/base.rb:52:in `parse'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/lib/sass/exec/base.rb:19:in `parse!'
+/Users/gustavo/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.5/bin/sass:13:in `<top (required)>'
+/Users/gustavo/.rbenv/versions/2.3.0/bin/sass:23:in `load'
+/Users/gustavo/.rbenv/versions/2.3.0/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - scss"; }

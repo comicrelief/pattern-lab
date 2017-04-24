@@ -9,14 +9,14 @@ header[role=banner] {
   padding-bottom: 10px;
   overflow: visible!important;
   padding-bottom: 0!important;
-  background-color: $white;
+  background-color: $colour-white;
   
-  @include bp($screen-md) {
+  @include breakpoint($screen-md) {
     height: 75px;
   }
 }
 .header__top-wrapper {
-  background: $black;
+  background: $colour-black;
   height: 49px;
 }
 .header__inner-wrapper {
@@ -32,7 +32,7 @@ header[role=banner] {
   margin-top: 15px;
   margin-left: 13px;
 
-  @include bp(md) {
+  @include breakpoint(md) {
     position: relative;
     z-index: 101;
     width: 124px;
@@ -47,7 +47,7 @@ header[role=banner] {
   padding-top: 22px;
   cursor: pointer;
 
-  @include bp(md) {
+  @include breakpoint(md) {
     padding-right: 20px;  
   }
 }
@@ -56,7 +56,7 @@ header[role=banner] {
   clear: both;
   overflow: hidden;
 
-  @include bp($screen-md-max) {
+  @include breakpoint($screen-md-max) {
     min-height: 600px;
   }
   &.promo-header--no-image {
@@ -64,7 +64,7 @@ header[role=banner] {
     min-height: initial;
   }
   &.promo-header--small {
-    @include bp($screen-md-max) {
+    @include breakpoint($screen-md-max) {
       min-height: 300px;
     }
   }
@@ -91,7 +91,7 @@ header[role=banner] {
       width: 100%;
       margin-top: -30%;
       
-      @include bp($screen-md) {
+      @include breakpoint($screen-md) {
         margin-top: 0px;
       }
     }
@@ -106,7 +106,7 @@ header[role=banner] {
     top: 0;
     left: 0;
     opacity: 0.7;
-    @include bp($screen-md-max) {
+    @include breakpoint($screen-md-max) {
       height: 600px;
     }
   }
@@ -126,7 +126,7 @@ header[role=banner] {
   } 
 }
 .promo-header__bg-image {
-  @include bp($screen-md-max) {
+  @include breakpoint($screen-md-max) {
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -143,7 +143,7 @@ header[role=banner] {
     float: none;
   }
   img {
-    @include bp($screen-md-max) {
+    @include breakpoint($screen-md-max) {
       display: block;
       width: 100%;
       height: 100%;
@@ -151,7 +151,7 @@ header[role=banner] {
   }
 }
 .promo-header__content {
-  @include bp($screen-md-max) {
+  @include breakpoint($screen-md-max) {
     @include translateY(-50%);
     position: absolute;
     top: 50%;
@@ -169,7 +169,7 @@ header[role=banner] {
     top: 0;
     margin: -50px auto 0;
     padding: 1px 0;
-    background: $white;
+    background: $colour-white;
     @include breakpoint-gutters;
   }
   .promo-header--no-image & {
@@ -183,12 +183,12 @@ header[role=banner] {
     text-align: center;
     width: 100%;
     padding: 15px;
-    @include bp($screen-md) {
+    @include breakpoint($screen-md) {
       width: span(10);
       margin: 0px auto 40px;
       padding: 50px 0px 0px 0px;
     }
-    @include bp($screen-md-max) {
+    @include breakpoint($screen-md-max) {
       text-align: left;
       width: 50%;
       .promo-header--feature & {
@@ -199,7 +199,7 @@ header[role=banner] {
       }
     }
     &--centre {
-      @include bp($screen-md-max) {
+      @include breakpoint($screen-md-max) {
         margin-right: auto;
         margin-left: auto;
         text-align: center;
@@ -215,24 +215,24 @@ header[role=banner] {
       }
     }
     &--left {
-      @include bp($screen-md-max) {
+      @include breakpoint($screen-md-max) {
         margin-left: gutter();
       }
     }
     &--right {
-      @include bp($screen-md-max) {
+      @include breakpoint($screen-md-max) {
         margin-right: gutter();
       }
     }
     .promo-header--feature & {
-      @include bp($screen-md-max) {
+      @include breakpoint($screen-md-max) {
         max-width: span(8);
       }
     }
   }
   p {
     .promo-header--feature & {
-      color: $black;
+      color: $colour-black;
     }
   }
   img {
@@ -246,7 +246,7 @@ header[role=banner] {
     width: 100%;
     .promo-header--feature & {
       path {
-        fill: $black;
+        fill: $colour-black;
       }
     }
   }

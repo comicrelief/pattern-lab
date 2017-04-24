@@ -2,7 +2,7 @@
 // 
 // Markup: meta-icons.twig
 //
-//Style guide: 22.3
+//Style guide: 140.3
 
 .block-cr-meta-icons {
 	float: right;
@@ -10,7 +10,7 @@
 
 .meta-icons {
   float: left;
-  @include breakpoint($desktop-nav-breakpoint, $no-query: true) {
+  @include breakpoint($desktop-nav-breakpoint) {
     position: relative;
     z-index: 10;
     float: left;
@@ -36,7 +36,7 @@
     @include breakpoint($screen-md) {
       width: 46px;
     }
-    @include breakpoint($desktop-nav-breakpoint, $no-query: true) {
+    @include breakpoint($desktop-nav-breakpoint) {
       height: 103px;
     }
     &.active {
@@ -58,7 +58,7 @@
         width: 35px;
         height: 35px;
       }
-      @include breakpoint($desktop-nav-breakpoint, $no-query: true) {
+      @include breakpoint($desktop-nav-breakpoint) {
         width: 20px;
         height: 21px;
         margin: 40px 12px;

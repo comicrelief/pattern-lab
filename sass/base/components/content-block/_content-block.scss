@@ -9,7 +9,7 @@
 // .block-content--view-mode-cw-mp -  Medium Plus
 // .block-content--view-mode-cw-l  -  Large 
 //
-// Style guide: 4
+// Style guide: 40
 
 .content-block {
   position: relative;
@@ -66,8 +66,11 @@
   bottom: 0;
   width: 100%;
   padding: 40px 10px 20px;
-  @include background-image(linear-gradient(rgba(0, 0, 0, 0), $colour-dark-blue));
-  @include breakpoint($screen-md, $no-query: true) {
+  background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,#061d38));
+  background-image: -moz-linear-gradient(rgba(0,0,0,0),#061d38);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0),#061d38);
+  background-image: linear-gradient(rgba(0,0,0,0),#061d38);
+  @include breakpoint($screen-md) {
     padding: 40px 40px 20px;
   }
   p, h4 {

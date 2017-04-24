@@ -20,6 +20,29 @@ module.exports = function (grunt) {
       }
     },
 
+    imagemin: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
+      }
+    },
+
+    sass_globbing: {
+      your_target: {
+        files: {
+          'sass/base/_components.scss': 'sass/base/components/**/*.scss'
+        },
+        options: {
+          useSingleQuotes: false,
+          signature: '/* generated with grunt-sass-globbing */\n\n'
+        }
+      }
+    },
+
     watch: {
       options: {
         livereload: true
@@ -49,15 +72,17 @@ module.exports = function (grunt) {
       all: {
         options: {
           verbose: true,
-          title: 'Comic Relief PatternLab',
+          builder: 'kss',
+          title: 'PatternLab',
           css: '/css/themes/all/all.css'
         },
-        src: ['sass/themes/all'],
+        src: ['sass/base', 'sass/components', 'sass/themes/all'],
         dest: 'dist'
       },
       cr17: {
         options: {
           verbose: true,
+          builder: 'kss',
           title: 'Comic Relief PatternLab',
           css: '/css/themes/cr/2017/cr17.css'
         },
@@ -104,11 +129,15 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-sass-globbing');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-kss');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.registerTask('build', [
+    'sass_globbing',
     'sass',
+    'imagemin',
     'kss'
   ]);
 

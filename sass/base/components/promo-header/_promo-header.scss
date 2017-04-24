@@ -5,11 +5,11 @@
 // .promo-header--feature   - Body copy overlap bg image
 // .promo-header--no-image   - Body copy overlap bg image
 //
-// Style guide: 12
+// Style guide: 95
 
 .promo-header {
   position: relative;
-  @include breakpoint($screen-md-max, $no-query: true) {
+  @include breakpoint($screen-md-max) {
     min-height: 600px;
   }
   &.promo-header--no-image {
@@ -17,7 +17,7 @@
     min-height: initial;
   }
   &.promo-header--small {
-    @include breakpoint($screen-md-max, $no-query: true) {
+    @include breakpoint($screen-md-max) {
       min-height: 400px;
     }
   }
@@ -79,7 +79,7 @@
   width: 100%;
   margin-top: -30%;
   margin-bottom: -5px;
-  @include breakpoint($screen-md-max, $no-query: true) {
+  @include breakpoint($screen-md-max) {
     position: absolute;
     width: 100%;
     height: 100%;

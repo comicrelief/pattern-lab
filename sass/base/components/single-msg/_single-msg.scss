@@ -14,7 +14,7 @@
 // .single-msg--no-bottom-padding - Remove bottom padding
 // .single-msg--no-padding - Remove top and bottom padding
 //
-// Style guide: 6
+// Style guide: 70
 
 
 /* Global styles for all variants, provides all styles for Copy Right variant */
@@ -54,7 +54,7 @@
       height: auto;
     }
 
-    @include breakpoint($screen-md, $no-query: true) { 
+    @include breakpoint($screen-md) { 
       width: span(6);
       margin-left: calc( 2 * ( #{gutter()}) );
       margin-right: 0;
@@ -69,7 +69,7 @@
     height: 100%;
     @include span(12);
 
-    @include breakpoint($screen-md, $no-query: true) {
+    @include breakpoint($screen-md) {
       position: absolute;
       top: 0;
       right: 0;
@@ -89,7 +89,7 @@
       padding: 30px;
       width: 100%;
 
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         height: 100%;
       }
     }
@@ -206,7 +206,7 @@
 
   /* Copy Left variation */
   &.single-msg--copy-left {
-    @include breakpoint($screen-md, $no-query: true) {
+    @include breakpoint($screen-md) {
       .single-msg__image {
         float:right;
         margin-left: 0;
@@ -239,7 +239,7 @@
       width: 100%;
       margin: 0;
 
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         @include span(12);     
       }
 
@@ -254,7 +254,7 @@
       margin-top: calc(-4 *#{gutter()});
       width: calc(100% - (8 * #{gutter()}) );
 
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         position: relative;
       }  
       
@@ -319,7 +319,7 @@
         } 
       }
 
-      @include breakpoint($screen-md, $no-query: true) {
+      @include breakpoint($screen-md) {
         @include span(10);
         @include push(1);
         position: relative;

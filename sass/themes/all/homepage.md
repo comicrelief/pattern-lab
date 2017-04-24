@@ -1,16 +1,10 @@
 
 ##### Homepage
-======================================================
 
 This web site is built using Sass and component-based styles. This front-end style guide documents the design components and the Sass variables, functions and mixins used to build the site.
 
-[CR Styleguide](cr/index.html)
-
-[Frost Styleguide](frost/index.html)
-
-[Payin Styleguide](payin/index.html)
-
-[RND Styleguide](rnd/index.html)
-
-[SR Styleguide](sr/index.html)
-
+<p><a href="cr/index.html" class="link link--red">CR Styleguide</a></p>
+<p><a href="frost/index.html" class="link link--red">Frost Styleguide</a></p>
+<p><a href="payin/index.html" class="link link--red">Payin Styleguide</a></p>
+<p><a href="rnd/index.html" class="link link--red">RND Styleguide</a></p>
+<p><a href="sr/index.html" class="link link--red">SR Styleguide</a></p>

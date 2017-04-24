@@ -14,16 +14,12 @@
 @import "../../../node_modules/susy/sass/_susy";
 
 /* Changing Susy default global settings */
-$susy: (
-  /* Tells Susy to use 12 columns */
-  columns: 12,
-  /* Tells Susy that the container has a max-width of 1120px */
-  container: 1200px,
-  /* Tells Susy to use border-box */
-  global-box-sizing: border-box, 
-  
-  gutters: .25,
-  
-  gutter-position: inside
-  
- );
+$susy: (  
+  columns: $columns,
+  container: $max-width,
+  gutters: $gutter/$column,
+  global-box-sizing: border-box,
+  gutter-position: split,
+  output: float,
+  last-flow: to
+);

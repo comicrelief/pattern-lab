@@ -1,63 +1,86 @@
+// Elements
+//
+// Style guide: 10
 
-// Headings
+//Typography
 //
-// These are the Headings
+// The Comic Relief font is Proxima Nova. This used for headings and body copy in a number of weights (Bold, Semibold and Regular).
 //
-// Markup:
-// <h1>Heading 1</h1>
-// <h2>Heading 2</h2>
+// Markup: typography.twig
 //
-// Style guide: Typography.Headings
+// .font--red - Red colour
+// .font--blue - Blue colour
+// .font--yellow - Yellow colour
+// .font--green - Green colour
+// .font--teal - Teal colour
+// .font--royal-blue - Royal blue colour
+// .font--purple - Purple colour
+// .font--pink - Pink colour
+// .font--white - White colour
+// .font--jasper-grey - Jasper grey colour
+// .font--gainsboro-grey - Gainsbro grey colour
+// .font--light-grey - Light grey colour
+// .font--smoke-grey - Smoke grey colour
+// .font--xlarge - Font X Large
+// .font--large - Font Large
+// .font--small - Font Small
+// .font--xsmall - Font X Small
+//
+// Style guide: 10.1
 
 h1 {
   margin: 0 0 20px;
-  color: $black;
-  @include GT-Walsheim-Bold;
-
+  color: $colour-black;
+  font-family: $font-bold;
   @include font-size($h1-font-size);
-  &.font--font-black{
-    font-family: $black;
+  &.font--font-black {
+    font-family: $font-black;
     @include font-size($h1-black-font-size);
   }
   &.font--xlarge {
     @include font-size($h1-xlarge-font-size);
   }
   &.font--black-shadow {
-    font-family: $black;
+    text-shadow: -3px 3px 0 rgba(0, 0, 0, 0.25);
+    font-family: $font-black;
     @include font-size($h1-blackshadow-font-size);
-    text-shadow: -3px 3px 0px rgba(0, 0, 0, 0.25);
-    @include bp($screen-md) {
-      text-shadow: -5px 5px 0px rgba(0, 0, 0, 0.25);
+    @include breakpoint($screen-md) {
+      text-shadow: -5px 5px 0 rgba(0, 0, 0, 0.25);
     }
-    @include bp($screen-lg) {
-      text-shadow: -7px 7px 0px rgba(0, 0, 0, 0.25);
+    @include breakpoint($screen-lg) {
+      text-shadow: -7px 7px 0 rgba(0, 0, 0, 0.25);
     }
   }
 }
-h2, h3, h4, h5, p, .link {
-  color: $black;
+h2,
+h3,
+h4,
+h5,
+p,
+.link {
+  color: $colour-black;
 }
 p,
 h2,
 h3,
 h4 {
-  margin: 0 0 15px;
   clear: both;
+  margin: 0 0 15px;
 }
 p:last-child,
-p:first-child:last-child { 
+p:first-child:last-child {
   margin-bottom: 5px;
 }
 h2 {
-  @include GT-Walsheim-Medium;
+  font-family: $font-medium;
   @include font-size($h2-font-size);
 }
 h3 {
-  @include GT-Walsheim-Regular;
+  font-family: $font-regular;
   @include font-size($h3-font-size);
 }
 h4 {
-  @include GT-Walsheim-Regular;
+  font-family: $font-regular;
   @include font-size($h4-font-size);
 }
 
@@ -66,8 +89,8 @@ p {
   font-family: $body-font;
   @include font-size($p-font-size);
   &.font--xlarge {
-    @include font-size($p-xlarge-font-size);
     margin-bottom: 20px;
+    @include font-size($p-xlarge-font-size);
   }
   &.font--large {
     @include font-size($p-large-font-size);
@@ -79,132 +102,75 @@ p {
     @include font-size($p-xsmall-font-size);
   }
 }
-span.font--font-black{
-  font-family: $black;
+span.font--font-black {
+  font-family: $font-black;
 }
 
 strong {
-  @include GT-Walsheim-Bold;
+  font-family: $font-bold;
 }
 
-.font--black {
-  @include GT-Walsheim-Black;
+@for $color from 1 to (length($colorList)+1) {
+  @include font-variation(nth($colorList, $color));
 }
 
-img,
-a img {
-  border: none;
-}
-
-a {
-  color: $black;
-  text-decoration: underline;
-
-  &:hover {
-    color: $red;
-    text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  @for $color from 1 to (length($colorList)+1) {
+    @include font-variation-inline(nth($colorList, $color));
   }
-}
-
-// Paragraphs
-//
-// These are the Paragraphs
-//
-// Markup:
-// <p>Paragraphs</p>
-//
-// Style guide: Typography.Paragraphs
-
-p {
-  padding: 0;
-  font-size: 16px;
-}
-
-// Lists
-//
-// These are the list items
-//
-// Markup:
-// <ul><li>List 1</li></ul>
-//
-// Style guide: Typography.Lists
-
-ul {
-  list-style: none; 
-}
-
-ol {
-  list-style: none; 
-}
-
-ol, ul {
-  padding-left: 0;
-  margin-top: 0; 
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
-}
-
-// HR
-//
-// These are the HR items
-//
-// Markup:
-// <hr>
-//
-// Style guide: Typography.HR
-
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid $item-grey; 
 }
 
 // Links
 //
 // Standard links
-//
-// Markup: 
-// <p>
-//   <a class="link {{modifier_class}}" href="#">
-//     Link
-//   </a>
-// </p>
 // 
-// .link--red - Red standalone link
-// .link--inline-red - Red inline link
-// .link--black - Black standalone link
-// .link--inline-black - Black inline link
-// .link--grey - Grey standalone link
-// .link--inline-grey - Grey inline link
-// .link--white - White standalone link
-// .link--inline-white - White inline link
+// .link--red - Red standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--blue - Blue standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--yellow - Yellow standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--green - Green standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--teal - Teal standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--royal-blue - Royal Blue standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--purple - Purple standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--pink - Pink standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--white - White standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--jasper-grey - Jasper grey standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--gainsboro-grey - Gainsboro grey standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--light-grey - Light grey standalone link add <em style="font-weight: bold;">.inline</em> for inline links
+// .link--smoke-grey - Smoke grey standalone link add <em style="font-weight: bold;">.inline</em> for inline links
 // :hover - Link hover state 
 // :active - Link active state
 // :focus - Link focus state
 //
-// Style guide: Typography.Links
+// Markup: links.twig
+//
+// Style guide: 10.2
+
+/*  
+ * Link styles,
+ * Copied from SR16 theme
+ */
 
 .link {
   text-decoration: none;
-  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   color: inherit;
-  border-bottom: 4px solid $red;
-  @include GT-Walsheim-Bold;
+  border-bottom: 4px solid $colour-red;
+  font-family: $font-bold;
   font-size: 18px;
   line-height: 30px;
-  cursor: pointer;
-  outline: 0;
-  
+  transform: all 180ms;
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 4px solid $black;
+    border-bottom: 4px solid $colour-black;
   }
   &.inline {
     display: inline-block;
@@ -222,53 +188,6 @@ hr {
   }
 }
 
-// External Link
-//
-// This is External Link
-//
-// Markup:
-// <a href="#" class="external-link">External Link</a>
-//
-// Style guide: Typography.External-Link
-
-.external-link {
-  &:after {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    margin: 5px 5px -3px 10px;
-    content: " ";
-    background-size: 25px 25px;
-  }
-}
-
-/*
- * Text link color
- */
-@include link-variation($linkList);
-@include bg-color-variations($colorList);
-@include type-color-variations($colorList);
-
-// ==========================================================================
-// Styleguide
-// ==========================================================================
-
-#kssref-colours .kss-modifier__example {
-  div {
-    height: 60px; 
-    width: 60px;
-    display: block;
-  }
-}
-
-.styleguide-link {
-    float: right;
-    clear: both;
-    margin-right: 5%;
-    text-decoration: none;
-    color: $white;
-}
-
-.page-title {
-  padding-top: 20px;
+@for $link from 1 to (length($linkList)+1) {
+  @include link-variation(nth($linkList, $link));
 }

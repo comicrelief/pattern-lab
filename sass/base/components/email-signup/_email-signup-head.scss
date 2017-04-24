@@ -1,13 +1,13 @@
 //Email sign up 
 //
-// Style guide: 21
+// Style guide: 120
 
 
 // Email sign up header
 //
 // Markup: email-signup-header.twig
 //
-// Style guide: 21.1
+// Style guide: 120.1
 
 
 //hide esu form initially
@@ -59,7 +59,7 @@
         margin-left: 0;
       }
     }
-    @include breakpoint($desktop-nav-breakpoint, $no-query: true) {
+    @include breakpoint($desktop-nav-breakpoint) {
       right: 0;
       padding: 25px 0;
     }
