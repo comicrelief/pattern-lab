@@ -48,5 +48,9 @@
   },
   "publishConfig": {
     "access": "restricted"
+  },
+  "release": {
+    "branch": "GP-91-ci-config",
+    "debug": false
   }
 }
