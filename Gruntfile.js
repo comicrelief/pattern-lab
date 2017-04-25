@@ -55,7 +55,8 @@ module.exports = function (grunt) {
     sass_globbing: {
       your_target: {
         files: {
-          'sass/base/_components.scss': 'sass/base/components/**/*.scss'
+          'sass/base/_components.scss': 'sass/base/components/**/*.scss',
+          'sass/base/_core.scss': 'sass/base/core/*.scss'
         },
         options: {
           useSingleQuotes: false,

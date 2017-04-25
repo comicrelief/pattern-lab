@@ -1,104 +1,179 @@
 // Buttons
 //
 // Standard link buttons
+// 
+// .btn--black-ghost - Black ghost button
+// .btn--white-ghost - White ghost button
+// .btn--red - Red button
+// .btn--blue - Blue button
+// .btn--yellow - Yellow button
+// .btn--green - Green button
+// .btn--teal - Teal button
+// .btn--royal-blue - Royal blue button
+// .btn--purple - Purple button
+// .btn--pink - Pink button
+// .btn--white - White button
+// :hover - Button hover state 
+// :active - Button active state
+// :focus - Button focus state
+// .btn--fixed-width - Min width button, expands to width of container but min width of 290px
+// .btn--lg - Large buttons
+// .btn--full-width - Full-width button on SM breakpoint only
 //
-// Markup: 
-// <a class="button button--red {{modifier_class}}" href="#">
-//   Red Button
-// </a>
-// 
-// .button--ghost - Ghost button
-// .button--large - Large button
-// .button--fixwidth - Fixed width button
-// .button--fitwidth - Fit full width
-// 
-// Style guide: Buttons
+// Markup: buttons.twig
+//
+// Style guide: 10.3
 
-.button {
-  @include box-sizing(border-box);
-  @include appearance( none );
-  @include border-radius( $corner-radius );
-  @include transition( 0.3s ease-in-out background-color);
-
-  background-color: $red;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: $type-md;
-  font-weight: 600;
-  line-height: 50px;
-  padding: 0 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 20px 0 0;
-  width: 100%;
+.btn {
   display: inline-block;
-  height: 50px;
-  @include GT-Walsheim-Bold;
-  
-  &:hover {
-    background-color: $purple; 
-    @include transition( 0.6s ease-in-out background-color);
+  width: auto;
+  margin: 0 auto;
+  padding: 21px 40px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: $font-bold;
+  font-size: 18px;
+  line-height: 18px;
+  @include border-radius(30px);
+  span {
+    font-size: inherit;
+    font-weight: inherit;
   }
-
-  &.button--ghost {
-    @include transition( 0s liner background-color);
-    background-color: transparent;
-    border: 2px solid $black;
-    color: $black;
-
-      &:hover {       
-        background-color: $black;
-        color: $white;
-        border: 0;
-        padding: 2px 37px;
-      }
-      &:active {
-        @include opacity(0.7);
-      }
-  }
-
-  &.button--ghost-black {
-    @include transition( 0s liner background-color);
-    background-color: transparent;
-    border: 2px solid $white;
-    color: $white;
-
-      &:hover {       
-        background-color: $white;
-        color: $black;
-        border: 0;
-        padding: 2px 37px;
-      }
-      &:active {
-        @include opacity(0.7);
-      }
-  }
-  @include bp(md) { 
-    width: 290px;
+  // Full width on SM breakpoint only
+  &.btn--full-width {
+    display: block;
+    width: 100%;
+    @include breakpoint($screen-md) {
+      display: inline-block;
+      width: auto;
+    }
   }
 }
-.button + .button { 
-  @include bp(md) {
-    margin-left: 20px;
-  } 
+
+/* Process $buttonList colour variations through our btn-variation mixin. */
+@each $button in $buttonList {
+  @include btn-variation( $button );
 }
-.button--lg {
+
+/* Force white colour on black bg hover and focus state */
+.btn.btn--white {
+  &:hover,
+  &:focus {
+    color: $colour-white;
+  }
+}
+
+/**
+ * Buttons display as stack block for xs
+ */
+.btn + .btn {
+  margin-top: 30px;
+}
+
+/**
+ * Buttons display as inline block for md and large breakpoints.
+ */
+.btn {
+  &.btn--fixed-width {
+    width: 100%;
+  }
+}
+@include breakpoint($screen-md) {
+  .btn {
+    display: inline-block;
+    width: auto;
+    font-size: 18px;
+    &.btn--fixed-width {
+      width: 100%;
+      min-width: 290px;
+    }
+  }
+  .btn + .btn {
+    margin-top: 0;
+    margin-left: 25px;
+  }
+}
+
+/*
+ * Add icon to btn
+ */
+.btn {
+  .icon {
+    height: 20px;
+    font-weight: normal;
+    line-height: 20px;
+    &:before {
+      position: relative;
+      top: 9px;
+      line-height: 0;
+    }
+  }
+  .icon + span,
+  span + .icon {
+    margin-left: 5px;
+  }
+}
+
+/**
+ * Adds large buttons.
+ */
+.btn--lg {
+  padding-top: 19px;
+  padding-bottom: 19px;
   font-size: 18px;
   line-height: 22px;
-  
-  @include bp(md) {
+}
+
+/**
+ * Large button styles for >= md breakpoint.
+ */
+@include breakpoint($screen-md) {
+  .btn--lg {
     height: 70px;
     padding: 24px 70px;
-    font-size: 21px;
     @include border-radius(35px);
   }
 }
 
-/* 
- * Process $buttonList colour variations through our button-variation mixin.
- */
-@each $button in $buttonList {
-  @include button--variation($button);
+/* for a large group of buttons */
+@include breakpoint($screen-md) {
+  .btn:first-child:not(:only-child) {
+    margin-bottom: 20px;
+  }
+  .btn + .btn {
+    margin-bottom: 20px;
+  }
+}
+
+/* Ghost button 
+less padding because ghost buttons have borders */
+.btn--white-ghost,
+.btn--black-ghost {
+  padding: 19px 38px;
+}
+.btn--black-ghost {
+  border: 2px solid $colour-dark-blue;
+  &:hover {
+    color: $colour-white;
+  }
+}
+.btn--white-ghost {
+  border: 2px solid $colour-white;
+  &:hover {
+    color: $colour-dark-blue;
+  }
+}
+
+/* small buttons for content wall */
+.content-wall {
+  .btn {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+  .btn--white-ghost,
+  .btn--black-ghost {
+    padding: 14px 30px;
+  }
 }
