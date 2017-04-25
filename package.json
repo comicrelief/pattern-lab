@@ -1,6 +1,6 @@
 {
   "name": "@comicrelief/pattern-lab",
-  "version": "0.0.0-development",
+  "version": "0.2.0",
   "license": "GPL-3.0",
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
