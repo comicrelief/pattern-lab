@@ -11,6 +11,3 @@ dist
 
 # Sass cache
 .sass-cache/
-
-# Auto generated globbing file
-sass/base/_components.scss
