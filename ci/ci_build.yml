@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: comicrelief/frost-node4, tag: "latest"}
+
+inputs:
+- name: pattern-lab
+
+outputs:
+- name: pattern-lab-build
+
+run:
+  path: sh
+  args:
+   - -c
+   - |
+     ./pattern-lab/ci/ci_build.sh
