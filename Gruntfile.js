@@ -20,6 +20,27 @@ module.exports = function (grunt) {
       }
     },
 
+    modernizr: {
+      dist: {
+        "crawl": false,
+        "customTests": [],
+        "dest": "dist/js/modernizr-output.js",
+        "tests": [
+          "svg",
+          "touchevents",
+          "flexbox",
+          "cssmask",
+          "mediaqueries",
+          "objectfit",
+          "details"
+        ],
+        "options": [
+          "setClasses"
+        ],
+        "uglify": true
+      }
+    },
+
     imagemin: {
       dynamic: {
         files: [{
@@ -129,6 +150,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks("grunt-modernizr");
   grunt.loadNpmTasks('grunt-sass-globbing');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-kss');
@@ -137,6 +159,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'sass_globbing',
     'sass',
+    'modernizr',
     'imagemin',
     'kss'
   ]);
