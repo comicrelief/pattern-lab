@@ -152,6 +152,22 @@ module.exports = function (grunt) {
         src: ['sass/base/core', 'sass/themes/frost'],
         dest: 'dist/frost'
       }
+    },
+
+    concurrent: {
+      target: {
+        tasks: ['connect', 'watch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
+    },
+
+    connect: {
+      dev: {
+        port: 1337,
+        base: 'dist'
+      }
     }
   });
 
@@ -166,7 +182,11 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('watch:dev', [
-    'watch'
+    'concurrent:target'
+  ]);
+
+  grunt.registerTask('devserver', [
+    'connect:dev'
   ]);
   
 };

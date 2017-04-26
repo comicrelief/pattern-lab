@@ -35,6 +35,9 @@ To have a centralised hub supply common styling across CR products.
 * CI will excute `npm run deploy` once merged into `master`
 * to bump npm version number and publish the package
 
+#### Dev server
+* run `npm run dev-server` or `npm run watch`
+* go to `http://localhost:1337` to view styleguide
 
 ## Semantic Relase Process
 Git commit messages are used to automatically publish a new version of npm package. To achieve this, **every commit message**
