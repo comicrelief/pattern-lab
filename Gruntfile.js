@@ -8,7 +8,8 @@ module.exports = function (grunt) {
       dist: {
         options: {
             outputStyle: 'compressed',
-            sourceMap: true
+            sourceMap: true,
+            includePaths: ['node_modules']
         },
         files: [{
             expand: true,
@@ -114,8 +115,9 @@ module.exports = function (grunt) {
       rnd17: {
         options: {
           verbose: true,
+          builder: 'kss',
           title: 'Red Nose Day PatternLab',
-          css: '/css/themes/rnd/2017/rnd17.css',
+          css: ['/css/themes/rnd/2017/rnd17.css', '/css/kss/rnd.css'],
         },
         src: ['sass/base/core', 'sass/themes/rnd/2017'],
         dest: 'dist/rnd'
@@ -123,8 +125,9 @@ module.exports = function (grunt) {
       sr18: {
         options: {
           verbose: true,
+          builder: 'kss',
           title: 'Sport Relief PatternLab',
-          css: '/css/themes/sr/2018/sr18.css',
+          css: ['/css/themes/sr/2018/sr18.css', '/css/kss/sr.css']
         },
         src: ['sass/base/core', 'sass/themes/sr/2018'],
         dest: 'dist/sr'
@@ -132,8 +135,9 @@ module.exports = function (grunt) {
       payin: {
         options: {
           verbose: true,
+          builder: 'kss',
           title: 'Payin Online PatternLab',
-          css: '/css/themes/payin/payin.css',
+          css: ['/css/themes/payin/payin.css', '/css/kss/payin.css']
         },
         src: ['sass/base/core', 'sass/themes/payin'],
         dest: 'dist/payin'
@@ -141,8 +145,9 @@ module.exports = function (grunt) {
       frost: {
         options: {
           verbose: true,
+          builder: 'kss',
           title: 'Frost PatternLab',
-          css: '/css/themes/frost/frost.css',
+          css: ['/css/themes/frost/frost.css', '/css/kss/rnd.css']
         },
         src: ['sass/base/core', 'sass/themes/frost'],
         dest: 'dist/frost'
@@ -150,12 +155,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks("grunt-modernizr");
-  grunt.loadNpmTasks('grunt-sass-globbing');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-kss');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.file.expand('node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
 
   grunt.registerTask('build', [
     'sass_globbing',
