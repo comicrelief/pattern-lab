@@ -9,7 +9,8 @@
     "version": "",
     "postversion": "git push && git push --tags && npm publish",
     "deploy": "npm version minor -m \"version %s\"",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
   },
   "dependencies": {
     "grunt-kss": "^5.0.1",
@@ -17,6 +18,8 @@
     "susy": "^2.2.12"
   },
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-imagemin": "^1.0.1",
@@ -52,6 +55,8 @@
   "release": {
     "branch": "GP-91",
     "debug": false
+  },
+  "cz-Config": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
-
