@@ -39,7 +39,7 @@ To have a centralised hub supply common styling across CR products.
 * run `npm run dev-server` or `npm run watch`
 * go to `http://localhost:1337` to view styleguide
 
-## Semantic Relase Process
+## Semantic Release Process
 Git commit messages are used to automatically publish a new version of npm package. To achieve this, **every commit message**
 should have a **type** and a **message** in the format described below.
 
