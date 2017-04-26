@@ -8,9 +8,13 @@
     "build": "grunt build",
     "version": "",
     "postversion": "git push && git push --tags && npm publish",
-    "deploy": "npm version minor -m \"version %s\""
+    "deploy": "npm version minor -m \"version %s\"",
+    "dev-server": "grunt connect:dev"
   },
   "dependencies": {
+    "grunt-concurrent": "^2.3.1",
+    "grunt-connect": "^0.2.0",
+    "grunt-http-server": "^2.0.0",
     "grunt-kss": "^5.0.1",
     "npm-link-local": "^1.1.0",
     "susy": "^2.2.12"
