@@ -53,7 +53,7 @@
     "access": "restricted"
   },
   "release": {
-    "branch": "GP-91",
+    "branch": "master",
     "debug": false
   },
   "czConfig": {
