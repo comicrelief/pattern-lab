@@ -56,7 +56,7 @@
     "branch": "GP-91",
     "debug": false
   },
-  "cz-Config": {
+  "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
   }
 }
