@@ -9,8 +9,8 @@ To have a centralised hub supply common styling across CR products.
 * support twig template
 * multiple entries
 * view on
-  - `/styleguide/index.html`
-  - `/styleguide/[project_name]/index.html`
+  - `/dist/index.html`
+  - `/dist/[project_name]/index.html`
 
 ## Import styling to a project
 * run `npm install @comicrelief/pattern-lab --save`
