@@ -1,0 +1,50 @@
+{
+  "id": "visual",
+  "viewports": [
+    {
+      "name": "mobile",
+      "width": 320,
+      "height": 480
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "desktop",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "Homepage",
+      "url": "dist/index.html",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        ".kss-header",
+        ".kss-nav"
+      ],
+      "readyEvent": null,
+      "delay": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions" : true,
+      "onBeforeScript": "onBefore.js",
+      "onReadyScript": "onReady.js"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "tests/visual/reference",
+    "bitmaps_test": "tests/visual/result",
+    "casper_scripts": "tests/visual/casper_scripts",
+    "html_report": "tests/visual/html_report",
+    "ci_report": "tests/visual/ci_report"
+  },
+  "casperFlags": [],
+  "engine": "phantomjs",
+  "report": ["browser"],
+  "debug": false
+}
