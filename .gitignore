@@ -11,3 +11,7 @@ dist
 
 # Sass cache
 .sass-cache/
+
+# tests
+tests/visual/result/*
+!tests/visual/result/README.md
