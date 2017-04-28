@@ -20,7 +20,7 @@
   "scenarios": [
     {
       "label": "Homepage",
-      "url": "http://localhost:1337/index.html",
+      "url": "dist/index.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,
@@ -30,7 +30,7 @@
       ],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold" : 6,
+      "misMatchThreshold" : 11,
       "requireSameDimensions" : true,
       "onBeforeScript": "onBefore.js",
       "onReadyScript": "onReady.js"
@@ -46,5 +46,5 @@
   "casperFlags": [],
   "engine": "phantomjs",
   "report": ["browser"],
-  "debug": false
+  "debug": true
 }

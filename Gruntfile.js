@@ -89,7 +89,7 @@ module.exports = function (grunt) {
     kss: {
       options: {
         verbose: true,
-        css: '/css/base/core.css',
+        css: 'css/base/core.css',
         builder: 'node_modules/kss/builder/twig'
       },
       all: {
@@ -97,7 +97,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'PatternLab',
-          css: '/css/themes/all/all.css'
+          css: 'css/themes/all/all.css'
         },
         src: ['sass/base', 'sass/components', 'sass/themes/all'],
         dest: 'dist'
@@ -107,7 +107,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Comic Relief PatternLab',
-          css: '/css/themes/cr/2017/cr17.css'
+          css: 'css/themes/cr/2017/cr17.css'
         },
         src: ['sass/base', 'sass/themes/cr/2017'],
         dest: 'dist/cr'
@@ -117,7 +117,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Red Nose Day PatternLab',
-          css: ['/css/themes/rnd/2017/rnd17.css', '/css/kss/rnd.css'],
+          css: ['css/themes/rnd/2017/rnd17.css', 'css/kss/rnd.css'],
         },
         src: ['sass/base/core', 'sass/themes/rnd/2017'],
         dest: 'dist/rnd'
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Sport Relief PatternLab',
-          css: ['/css/themes/sr/2018/sr18.css', '/css/kss/sr.css']
+          css: ['css/themes/sr/2018/sr18.css', 'css/kss/sr.css']
         },
         src: ['sass/base/core', 'sass/themes/sr/2018'],
         dest: 'dist/sr'
@@ -137,7 +137,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Payin Online PatternLab',
-          css: ['/css/themes/payin/payin.css', '/css/kss/payin.css']
+          css: ['css/themes/payin/payin.css', 'css/kss/payin.css']
         },
         src: ['sass/base/core', 'sass/themes/payin'],
         dest: 'dist/payin'
@@ -147,7 +147,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Frost PatternLab',
-          css: ['/css/themes/frost/frost.css', '/css/kss/rnd.css']
+          css: ['css/themes/frost/frost.css', 'css/kss/rnd.css']
         },
         src: ['sass/base/core', 'sass/themes/frost'],
         dest: 'dist/frost'
