@@ -21,6 +21,7 @@
     {
       "label": "Homepage",
       "url": "dist/index.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,
@@ -30,7 +31,7 @@
       ],
       "readyEvent": null,
       "delay": 0,
-      "misMatchThreshold" : 11,
+      "misMatchThreshold" : 1,
       "requireSameDimensions" : true,
       "onBeforeScript": "onBefore.js",
       "onReadyScript": "onReady.js"
