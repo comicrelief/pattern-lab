@@ -9,9 +9,9 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "dev-server": "grunt connect:dev",
-    "test": "backstop test",
-    "approve": "backstop approve",
-    "reference": "backstop reference"
+    "backstop-test": "backstop test",
+    "backstop-approve": "backstop approve",
+    "backstop-reference": "backstop reference"
   },
   "dependencies": {
     "grunt-concurrent": "^2.3.1",
