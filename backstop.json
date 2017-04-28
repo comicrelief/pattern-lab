@@ -26,7 +26,7 @@
       "selectorExpansion": true,
       "selectors": [
         ".kss-header",
-        ".kss-nav"
+        "#kssref-0"
       ],
       "readyEvent": null,
       "delay": 0,
