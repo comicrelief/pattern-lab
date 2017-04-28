@@ -6,6 +6,6 @@ set -e
 [ -d pattern-lab-build ] && cd pattern-lab-build
 
 npm set progress=false
-npm run backstop-test
+npm run watch & npm run backstop-test
 
 true
