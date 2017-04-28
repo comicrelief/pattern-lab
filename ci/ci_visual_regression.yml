@@ -8,6 +8,9 @@ image_resource:
 inputs:
 - name: pattern-lab-build
 
+outputs:
+- name: regression-result
+
 run:
   path: sh
   args:
