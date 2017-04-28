@@ -20,7 +20,7 @@
   "scenarios": [
     {
       "label": "Homepage",
-      "url": "dist/index.html",
+      "url": "http://localhost:1337/index.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,
