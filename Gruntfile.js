@@ -168,6 +168,10 @@ module.exports = function (grunt) {
         port: 1337,
         base: 'dist'
       }
+    },
+
+    clean: {
+      build: ['tests/visual/reference']
     }
   });
 
@@ -189,4 +193,7 @@ module.exports = function (grunt) {
     'connect:dev'
   ]);
   
+  grunt.registerTask('clean:test', [
+    'clean'
+  ]);
 };

@@ -6,12 +6,12 @@
   "scripts": {
     "watch": "grunt watch:dev",
     "build": "grunt build",
+    "dev-server": "grunt connect:dev",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
-    "dev-server": "grunt connect:dev",
     "backstop-test": "backstop test",
-    "backstop-approve": "backstop approve",
-    "backstop-reference": "backstop reference"
+    "backstop-reference": "backstop reference",
+    "backstop-test-local": "grunt build && grunt clean && npm run backstop-reference && npm run backstop-test"
   },
   "dependencies": {
     "grunt-concurrent": "^2.3.1",
@@ -26,6 +26,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-modernizr": "^1.0.2",
