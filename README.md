@@ -24,7 +24,7 @@ To have a centralised hub supply common styling across CR products.
 #### Get it up and running!
 * run `git clone https://github.com/comicrelief/pattern-lab pattern-lab`
 * run `cd /[project-name]` go to project folder you want to include pattern-lab 
-* run `npm install npm-link-local --save` 
+* run `npm install npm-link-local --global` 
 * run `npm-link-local [path-to-pattern-lab]` it creates symlink of `./node_modules/pattern-lab`. It means whatever change on `/pattern-lab`, it will reflect on `[project-name]`
 #### Make code changes
 * it follows same development process: create feature branch -> commit and push changes -> create pull request for code review
