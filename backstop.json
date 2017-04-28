@@ -47,5 +47,5 @@
   "casperFlags": [],
   "engine": "phantomjs",
   "report": ["browser"],
-  "debug": true
+  "debug": false
 }
