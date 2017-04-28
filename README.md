@@ -98,15 +98,15 @@ press `Enter` to skip.
  - Repeat and follow rest of the GitHub workflow
 
  ## Visual Regression
-- we're using [BackstopJS](https://github.com/garris/BackstopJS)
+- We're using [BackstopJS](https://github.com/garris/BackstopJS)
 - CI runs tests on pull request
 - backstop.json contains configration, currently the tests check against production
 ```
 "url": "dist/index.html",
 "referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
 ```
-- run visual regression test locally 
+- Run visual regression test locally 
 ```
 npm run backstop-test-local
 ```
-- view pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
+- View pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
