@@ -102,8 +102,8 @@ press `Enter` to skip.
 - CI runs tests on pull request
 - backstop.json contains configration, currently the tests check against production
 ```
-	"url": "dist/index.html",
-  "referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
+"url": "dist/index.html",
+"referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
 ```
 - run visual regression test locally 
 ```
