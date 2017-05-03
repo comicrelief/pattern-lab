@@ -31,11 +31,14 @@ To have a centralised hub supply common styling across CR products.
 
 ## Contribute styling to pattern-lab
 ### Development workflow 
-#### Get it up and running!
-* run `git clone https://github.com/comicrelief/pattern-lab pattern-lab`
-* run `cd /[project-name]` go to project folder you want to include pattern-lab 
-* run `npm install npm-link-local --global` 
-* run `npm-link-local [path-to-pattern-lab]` it creates symlink of `./node_modules/pattern-lab`. It means whatever change on `/pattern-lab`, it will reflect on `[project-name]`
+#### Get it up and running in another project
+* Clone this repository to a directory at the root level of your CR dev, alongside the other project. e.g. `git clone https://github.com/comicrelief/pattern-lab ~/cr_root/pattern-lab`
+* Go to the npm root level of the project you want to use it in. E.g. for payin: `cd ~/cr_root/payin/web`
+* If that project has a link script, just `npm run link-patternlab`
+* Or if it doesn't, `npm install npm-link-local --global` and then e.g. `npm-link-local ~/cr_root/pattern-lab`
+
+Either of the last 2 steps creates a symlink in the other project's `node_modules`, pointing to your local copy of `pattern-lab`.
+
 #### Make code changes
 * it follows same development process: create feature branch -> commit and push changes -> create pull request for code review
 * run `npm run watch` to liveload file changes
