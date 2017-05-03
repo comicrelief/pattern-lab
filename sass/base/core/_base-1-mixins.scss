@@ -172,6 +172,7 @@
   word-wrap: normal;
 }
 
+.visuallyhidden,
 .visually-hidden {
   @include visuallyhidden;
 }

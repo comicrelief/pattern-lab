@@ -1,3 +1,13 @@
+@import "_frost-variables";
+@import "_frost-components";
+// ==========================================================================
+// Core variables * comment files you want to override
+// ==========================================================================
+
+@import "../../base/variables/_colours.scss";
+@import "../../base/variables/_grid.scss";
+@import "../../base/variables/_lists.scss";
+@import "../../base/variables/_typography.scss";
 
 // ==========================================================================
 // Core components
@@ -9,6 +19,4 @@
 // UI components
 // ==========================================================================
 
-@import "_frost-variables",
-        "_frost-components",
-        "../../base/components/animations/_animations";
+@import "../../base/_components";

@@ -174,7 +174,6 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
 #kss-node {
   margin: 0;
-  padding: 20px;
   background: #fff;
 
   &.kss-fullscreen-mode {
@@ -199,14 +198,13 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   .kss-main {
     width: 100%;
     margin: 0 auto;
+    padding: 0 20px 0 30px;
 
     @media screen and (min-width: 769px) {
       width: 80%;
       margin-left: 20%;
     }
-    section.kss-section {
-      padding: 0 20px 0 30px;
-    }
+
     a {
       color: #333;
     }

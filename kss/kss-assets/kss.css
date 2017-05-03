@@ -130,7 +130,6 @@
 
 #kss-node {
   margin: 0;
-  padding: 20px;
   background: #fff; }
   #kss-node.kss-fullscreen-mode .kss-sidebar,
   #kss-node.kss-fullscreen-mode .kss-section:not(.is-fullscreen),
@@ -146,13 +145,12 @@
         box-sizing: border-box; } }
   #kss-node .kss-main {
     width: 100%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 0 20px 0 30px; }
     @media screen and (min-width: 769px) {
       #kss-node .kss-main {
         width: 80%;
         margin-left: 20%; } }
-    #kss-node .kss-main section.kss-section {
-      padding: 0 20px 0 30px; }
     #kss-node .kss-main a {
       color: #333; }
   #kss-node .kss-title--level-1 {
