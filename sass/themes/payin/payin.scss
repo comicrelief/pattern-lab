@@ -1,3 +1,12 @@
+@import "_payin-variables";
+// ==========================================================================
+// Core variables * comment files you want to override
+// ==========================================================================
+
+@import "../../base/variables/_colours.scss";
+@import "../../base/variables/_grid.scss";
+@import "../../base/variables/_lists.scss";
+@import "../../base/variables/_typography.scss";
 
 // ==========================================================================
 // Core components
@@ -9,4 +18,4 @@
 // UI components
 // ==========================================================================
 
-@import "_payin-variables";
+@import "../../base/_components";
