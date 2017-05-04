@@ -12,6 +12,10 @@ dist
 # Sass cache
 .sass-cache/
 
+# generated with grunt-sass-globbing
+
+sass/base/_*.scss
+
 # tests
 tests/visual/result/*
 tests/visual/reference/*
