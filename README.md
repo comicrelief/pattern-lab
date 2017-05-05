@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/comicrelief/pattern-lab.svg?branch=master)](https://travis-ci.org/comicrelief/pattern-lab)
+
 ## Comic Relief Pattern Lab
 > it's a node-based experimental project to supply sass component as well as styleguide generator
 
