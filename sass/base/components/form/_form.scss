@@ -1,0 +1,587 @@
+
+// Forms
+//
+// Standard Forms
+//
+// Markup: form.twig
+//
+// Style guide: Forms
+
+$image-path: '../../../../images/';
+
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  height: 50px;
+  padding: 13px; 
+  background-color: $colour-white;
+  border: 1px solid $item-grey;
+  width: 100%;
+
+  @include box-shadow(none);
+  @include box-sizing(border-box);
+  @include appearance(none); 
+
+  @include breakpoint($screen-md) {
+    max-width: 290px;
+  }
+}
+
+input[type="text"].input--postcode-lookup {
+  width: 80%;
+}
+
+.addressLookup {
+  border: 1px solid $item-grey; 
+  max-height: 260px;
+  position: absolute; 
+  background-color: $colour-white;
+  margin-top: -35px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include box-shadow(none);
+  @include box-sizing(border-box);
+  @include appearance(none); 
+}
+
+.addressLookup .addresses {
+  position: relative;
+  max-height: 260px;
+  width: 345px;
+  
+  @include breakpoint($screen-md) {
+    width: 100%;
+  }
+  div {
+    border-top: 1px solid $item-grey;
+    min-width: 700px;
+  }
+}
+
+.addressLookup label {
+  margin-bottom: 0;
+  button {
+    padding: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;    
+    min-width: 0px;
+    width: auto;
+    margin: 0;
+    text-align: left;
+    word-wrap: break-word;
+
+    &:focus, &:hover{
+      background-color: $colour-light-grey;
+      cursor: pointer;
+      color: $colour-red;
+      @include transition( 0.3s ease-in-out background-color);
+    };
+  }
+}
+
+// Validation for forms
+.validation__text {
+  margin: 5px 0 0;
+  padding: 0;
+  .fa {
+    margin-right: 5px;
+  }
+}
+.validation__warning {
+  font-family: $font-medium;
+  color: #f98026;
+}
+.validation__error {
+  font-family: $font-medium;
+  color: #f04257;
+}
+.validation__success {
+  font-family: $font-medium;
+  color: #458B00;
+}
+.validation__error > a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #F0544A;
+}
+.validation__error > a:hover {
+  color: #F06B65;
+}
+
+.validation__wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+select, 
+.form__select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ddd;
+  background: $colour-white url( $image-path + "ui/form_sprite.png") 100% -51px no-repeat;
+  height: 50px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+  outline: 0 none;
+  padding: 12px 50px 14px 10px;
+  text-decoration: none;
+  @include breakpoint($screen-md) {
+    max-width: 290px;
+  }
+}
+
+.ie9 .form__select,
+.ie9 select {
+  background: $colour-white;
+}
+
+.form__select-open {
+  background-position: 100% 0;
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; 
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid $item-grey;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+select:focus {
+  outline: 0;
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0; 
+}
+
+.check-tick-label {
+  position: relative;
+  display: inline-block;
+}
+
+.check-tick-label:checked + div.show-when-checked {
+  display: block;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  z-index: 1;
+}
+
+input[type="checkbox"] {
+  + span, + label .check-field {
+    position: absolute;
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 0 30px;
+    vertical-align: middle;
+    background:url($image-path + "ui/rnd17_frost_sprite_non_retina_v2.png");
+    width: 30px;
+    height: 30px;
+    background-position: -5px -325px;
+    cursor: pointer;
+  }
+}
+
+input[type="checkbox"]:checked {
+  + span, + label .check-field {
+    background-position: -45px -325px;
+  }
+}
+
+input[type="radio"] + label .check-field {
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 0 30px;
+  vertical-align: middle;
+  background:url($image-path + "ui/rnd17_frost_sprite_non_retina_v2.png");
+  width: 30px;
+  height: 30px;
+  background-position: -45px -285px;
+  cursor:pointer;
+}
+input[type="radio"]:checked + label .check-field {
+  background-position: -5px -285px;
+}
+
+input[type="checkbox"] + span + p,
+input[type="checkbox"] + label p,
+input[type="radio"] + label p {
+  display: inline-block;
+  padding-left: 40px;
+  padding-top: 5px;
+}
+
+#cb, .original-check-field {
+  &:focus + label .check-field {
+    border: 1px solid #4D90FE;
+  }
+  + label:focus {
+    outline: none;
+  }
+}
+
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; 
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @extend .btn;
+}
+
+
+// Layout
+
+.form__step {
+  @include container;
+}
+
+.form__fieldset,
+.form__fieldset--divider { 
+  @include span(12);
+
+  @include breakpoint($screen-md) {
+    @include span(12); 
+  }
+}
+
+.form__field {
+  @include span(12);
+  margin-bottom: 9%;
+
+  @include breakpoint($screen-md) {
+    @include span(6);
+    margin-bottom: 3%;
+  }
+}
+
+.form__field--desktop-right-mobile-left {
+  float: right;
+}
+
+.form__field--intro,
+.form__field--user-title,
+.form__field--user-terms,
+.form__field--postcode,
+.form__field--password,
+.form__field--full {
+  @include span(12);
+}
+
+.form__field--user-terms,
+.form__field--password,
+.form__field--full {
+  @include breakpoint($screen-md) {
+    @include span(6);
+  }
+}
+
+.form__field--password {
+  @include span(12);
+}
+
+.form__field--intro,
+.form__field--postcode {
+  float: none;
+}
+
+.form__field--gpurl {
+  word-wrap: break-word;
+}
+
+.form__field--userContact {
+  @include breakpoint($screen-md) {
+    @include span(12);
+  }
+}
+
+.form__disabled {
+  @include opacity(0.4);
+
+  input,
+  button {
+    @include notransition;
+    cursor: initial;
+  }
+  button:hover,
+  input:hover {
+    background-color: $colour-red; 
+    @include notransition;
+  }
+
+  #joinTeamQuery:hover {
+    background-color: transparent;
+  }
+}
+
+/* 
+ * Journey Choices 
+ */
+.form__step--journey-options {
+  text-align: center;
+
+  .form__fieldset,
+  .form__fieldset--divider { 
+    @include breakpoint($screen-md) {
+      @include span(12); 
+    }
+  }
+
+  .form__field--user-age {
+    margin-bottom: 30px;
+    
+    @include breakpoint($screen-md) {
+      @include push(3);
+      @include span(6);
+    }
+
+    @include breakpoint($screen-lg) {
+      @include push(3.5);
+      @include span(5);
+    }
+
+    .form__field {      
+      display: inline-block;
+      float: none;
+      margin-bottom: 0;
+      @include breakpoint($screen-lg) {
+        width: 40%;
+      }
+    }
+
+    input {
+      max-width: 290px;
+    }
+  }
+  .form__fieldset--user-choice {
+    .form__field {
+      @include breakpoint($screen-md) {
+        @include span(4);
+      }
+      @include breakpoint($screen-lg) {
+        &.form__field--user-choice-own {
+          padding-left: 0;
+        }        
+      }
+    }
+  }
+}
+
+.form__field--journey-choice {
+  overflow: hidden;
+  background-color: $colour-white;
+  margin: 0;
+
+  @include breakpoint($screen-md) {
+    min-height: 470px;
+  }
+
+  @include breakpoint($screen-lg) {
+    min-height: 525px;
+    img {
+      height: 219px;
+    }
+  }
+}
+
+.form__field--journey-choice h3{
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.form__field--journey-choice p{
+  padding: 10px;
+  @include breakpoint($screen-md) {
+    padding-bottom: 70px;
+  }
+}
+
+.form__field--journey-choice a {
+  @include breakpoint($screen-md) {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.form__step--journey-options-school {
+  h1 {
+    @extend h2;
+  }
+}
+
+.form__fieldset h2 {
+  font-weight: 600;
+}
+
+.form__tooltip {
+  margin-left: 8px;
+  position: relative;
+  text-decoration: none;
+  span {
+    background-color: $colour-smoke-grey;
+    border: 1px solid $item-grey;
+    border-radius: 3px;
+    bottom: 40px;
+    font-size: 16px;
+    left: -138px;
+    line-height: 23px;
+    padding: 10px;
+    position: absolute;
+    visibility: hidden;
+    &:before {
+      background-color: $colour-smoke-grey;
+      border: solid $item-grey;
+      border-width: 0 1px 1px 0;
+      bottom: -1px;
+      content: '';
+      display: none;
+      height: 6px;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, 50%) rotate(45deg);
+      width: 6px;
+      z-index: 2;
+    }
+  }
+  &:hover, 
+  &:active {
+    color: $colour-black;
+    span {
+      color: $colour-black;
+      visibility: visible;
+      width: 300px;
+      &:before {
+        display: block;
+      }
+    }
+  }
+}
+
+.password-checkbox {
+  margin-top: 1em;
+}
+
+.content-wrap {
+  margin-top: -60px;
+  @include container;
+}
+
+.form__nav:nth-child(2) {
+  button, .button {
+    margin-top: 0;
+    @include breakpoint ($screen-md) {
+      margin-top: 20px;
+    }
+  }
+}
+
+#btnNext {
+  &:hover {
+    color: $colour-white;
+  }
+
+  &.form__disabled {
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+}
+
+.affiliates .form__field--user-title {
+  margin-bottom: 0;
+}
+
+#userNameGp, #userNameTeamGp, #userNameGroupGp {
+  max-width: 600px;
+}
+
+.validation-messages {
+  position: relative;
+  .fa-check:before {
+    left: 8px;
+    top: 8px;
+    position: absolute;
+  }
+
+  .fa-check {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background: $colour-yellow;
+  }
+
+  .validation__success .feedback {
+    position: absolute;
+    top: 4px;
+    left: 35px;
+  }
+
+  .validation__warning, .validation__error {    
+    .fa {
+      margin-right: 5px;
+    }
+
+    @include breakpoint($screen-md) {
+      margin-top: 6px;
+    }
+  }
+}
