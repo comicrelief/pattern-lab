@@ -295,4 +295,79 @@
   box-shadow: $arg;
 }
 
+@mixin linear-gradient( $color1, $color2 ) {
+  background-color: $color2; 
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2));
+  background-image: -webkit-linear-gradient(left, $color1, $color2); 
+  background-image:    -moz-linear-gradient(right, $color2, $color1);
+  background-image:     -ms-linear-gradient(left, $color1, $color2);
+  background-image:      -o-linear-gradient(left, $color1, $color2);
+  background-image:         linear-gradient(to left, $color1, $color2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$color1}', EndColorStr='#{$color2}');
+}
 
+@mixin rotate( $arg ) {
+  -ms-transform: rotate($arg); /* IE 9 */
+  -webkit-transform: rotate($arg); /* Chrome, Safari, Opera */
+  transform: rotate($arg);
+}
+
+@mixin box-sizing( $arg ) {
+  -moz-box-sizing: $arg;
+  -webkit-box-sizing: $arg;
+  box-sizing: $arg;
+}
+
+@mixin appearance( $arg ) {
+  -webkit-appearance: $arg;
+  -moz-appearance: $arg;
+  appearance: $arg;
+}
+
+@mixin background-size( $arg ) {
+  -webkit-background-size: $arg;
+  -moz-background-size: $arg;
+  -o-background-size: $arg;
+  background-size: $arg;
+}
+
+@mixin notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+@mixin nowrap() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin break-word() {
+  word-wrap: break-word;
+  -ms-word-wrap: break-word;
+}
+
+@mixin breakword-hyphenated() {
+  -ms-word-break: break-all;
+    word-break: break-all;
+    // Non standard for webkit
+    word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
