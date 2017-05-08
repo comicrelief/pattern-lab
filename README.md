@@ -115,5 +115,3 @@ press `Enter` to skip.
 npm run backstop-test-local
 ```
 - View pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
-
-
