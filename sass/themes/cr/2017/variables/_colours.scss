@@ -1,0 +1,52 @@
+
+// Colours
+//
+// These are the default colours
+//
+// For font class, use .type--{{modifier_class}} 
+//
+// For background class, use .bg--{{modifier_class}}
+// 
+// Markup:
+// <div class="bg--black"></div>
+// <p>$black: #000;</p>
+// <div class="bg--dark-grey"></div>
+// <p>$dark-grey: #333333;</p>
+// <div class="bg--jasper-grey"></div>
+// <p>$jasper-grey: #e8e8e8;</p>
+// <div class="bg--gainsboro-grey"></div>
+// <p>$gainsboro-grey: #ccc;</p>
+// <div class="bg--white"></div>
+// <p>$white: #fff;</p>
+// <div class="bg--red"></div>
+// <p>$red: #df1a40;</p>
+// <div class="bg--purple"></div>
+// <p>$purple: #29022c;</p>
+// <div class="bg--blue"></div>
+// <p>$blue:#df1a40</p>
+//
+// Style guide: Colours
+
+// Colours
+
+// Brand colors
+
+$colour-black: #000;
+$colour-white: #fff;
+$colour-red: #df1a40;
+$colour-dark-purple: #29022c;
+$colour-blue: #df1a40;
+$colour-royal-blue: #4032fe;
+$colour-grey: #e8e8e8;
+$colour-dark-grey: #333333;
+$colour-smoke-grey: #f8f8f8;
+$colour-jasper-grey: #e8e8e8;
+
+$colour-green: #27bf90;
+$colour-purple: #e8e8e8;
+$colour-light-grey: #F8F8F8;
+$colour-yellow: #fbef51;
+$colour-teal: #00beca;
+$colour-pink: #fc9eb9;
+$colour-dark-blue: #061d38;
+$colour-gainsboro-grey: #ccc;
