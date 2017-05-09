@@ -11,7 +11,8 @@
     "commit": "git-cz",
     "backstop-test": "backstop test",
     "backstop-reference": "backstop reference",
-    "backstop-test-local": "grunt build && grunt clean && npm run backstop-reference && npm run backstop-test"
+    "backstop-test-local": "grunt build && grunt clean && npm run backstop-reference && npm run backstop-test",
+    "test": "echo 'No unit tests. Please see readme for backstop instructions if running this manually.'"
   },
   "dependencies": {
     "grunt-concurrent": "^2.3.1",
