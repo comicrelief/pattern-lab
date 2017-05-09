@@ -51,10 +51,9 @@ Either of the last 2 steps creates a symlink in the other project's `node_module
 * go to `http://localhost:1337` to view styleguide
 
 ## Semantic Release Process
-Git commit messages are used to automatically publish a new version of npm package. To achieve this, **every commit message**
-should have a **type** and a **message** in the format described below.
+Git commit messages are used to automatically publish a new version of npm package. To achieve this, **every commit message** should have a **type** and a **message** in the format described below.
 
-CI will run a job automatically after PR is merged and analyze all commit messages since last npm release.
+Travis CI will run a job automatically after PR is merged and analyze all commit messages since last npm release.
 Then semantic-release plugin will calculate new version according to this result
 
 Commit messages are expected to be in this format:

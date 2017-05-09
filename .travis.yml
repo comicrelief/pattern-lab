@@ -8,7 +8,7 @@ node_js:
   - '4'
 before_script:
   - npm prune
-after_success:
+script:
   - npm run semantic-release
 branches:
   only:
