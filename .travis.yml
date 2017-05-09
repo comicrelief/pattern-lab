@@ -8,7 +8,8 @@ node_js:
   - '4'
 before_script:
   - npm prune
-script:
+# `script` is default `npm test` which just prints a no-op message.
+after_success:
   - npm run semantic-release
 branches:
   only:
