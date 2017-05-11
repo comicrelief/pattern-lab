@@ -28,10 +28,15 @@
   font-family: $font-bold;
   font-size: 18px;
   line-height: 18px;
+  background-color: $colour-red;
+  color: $colour-white;
   @include border-radius(30px);
   span {
     font-size: inherit;
     font-weight: inherit;
+  }
+  &:hover {
+    background-color: $colour-purple;
   }
   // Full width on SM breakpoint only
   &.btn--full-width {

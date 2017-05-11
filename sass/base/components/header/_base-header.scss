@@ -10,10 +10,6 @@ header[role=banner] {
   overflow: visible!important;
   padding-bottom: 0!important;
   background-color: $colour-white;
-  
-  @include breakpoint($screen-md) {
-    height: 75px;
-  }
 }
 .header__top-wrapper {
   background: $colour-black;

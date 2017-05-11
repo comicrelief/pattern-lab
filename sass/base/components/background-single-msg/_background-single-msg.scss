@@ -16,7 +16,6 @@
   @include clearfix;
   @extend .bg--black;
   width: 100%;
-  float: left;
   @include breakpoint($screen-md) {
     margin: 0 0 -6px;
   }
