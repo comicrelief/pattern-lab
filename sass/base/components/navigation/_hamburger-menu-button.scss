@@ -18,7 +18,7 @@ $duration: 0.2s;     // The transition duration
   text-align: left;
   text-indent: -9999px;
   border: none;
-  border-radius: none;
+  border-radius: 0;
   background-color: transparent;
   box-shadow: none;
   @include breakpoint($desktop-nav-breakpoint) {
@@ -89,6 +89,11 @@ $duration: 0.2s;     // The transition duration
       }
     }
   }
+}
+.c-hamburger__text {
+  top: 37px;
+  position: absolute;
+  font-family: $body-font;
 }
 .c-hamburger span::before {
   top: -$bar-thickness - $button-bar-space;
