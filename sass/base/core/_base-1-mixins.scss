@@ -246,10 +246,10 @@
     transition-property:         $property;
 }
 @mixin transition-duration($duration...) {
-    -moz-transition-property:    $duration;
-    -o-transition-property:      $duration;
-    -webkit-transition-property: $duration;
-    transition-property:         $duration;
+    -moz-transition-duration:    $duration;
+    -o-transition-duration:      $duration;
+    -webkit-transition-duration: $duration;
+    transition-duration:         $duration;
 }
 @mixin transition-timing-function($timing...) {
     -moz-transition-timing-function:    $timing;
