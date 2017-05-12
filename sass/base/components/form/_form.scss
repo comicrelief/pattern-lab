@@ -7,7 +7,15 @@
 //
 // Style guide: Forms
 
-$image-path: '../../../../images/';
+label,
+legend {
+  display: block;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0; 
+}
 
 input[type="email"],
 input[type="number"],
@@ -33,141 +41,6 @@ textarea {
   }
 }
 
-input[type="text"].input--postcode-lookup {
-  width: 80%;
-}
-
-.addressLookup {
-  border: 1px solid $item-grey; 
-  max-height: 260px;
-  position: absolute; 
-  background-color: $colour-white;
-  margin-top: -35px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-
-  @include box-shadow(none);
-  @include box-sizing(border-box);
-  @include appearance(none); 
-}
-
-.addressLookup .addresses {
-  position: relative;
-  max-height: 260px;
-  width: 345px;
-  
-  @include breakpoint($screen-md) {
-    width: 100%;
-  }
-  div {
-    border-top: 1px solid $item-grey;
-    min-width: 700px;
-  }
-}
-
-.addressLookup label {
-  margin-bottom: 0;
-  button {
-    padding: 8px;
-    font-size: 14px;
-    text-decoration: none;
-    display: block;    
-    min-width: 0px;
-    width: auto;
-    margin: 0;
-    text-align: left;
-    word-wrap: break-word;
-
-    &:focus, &:hover{
-      background-color: $colour-light-grey;
-      cursor: pointer;
-      color: $colour-red;
-      @include transition( 0.3s ease-in-out background-color);
-    };
-  }
-}
-
-// Validation for forms
-.validation__text {
-  margin: 5px 0 0;
-  padding: 0;
-  .fa {
-    margin-right: 5px;
-  }
-}
-.validation__warning {
-  font-family: $font-medium;
-  color: #f98026;
-}
-.validation__error {
-  font-family: $font-medium;
-  color: #f04257;
-}
-.validation__success {
-  font-family: $font-medium;
-  color: #458B00;
-}
-.validation__error > a {
-  cursor: pointer;
-  text-decoration: underline;
-  color: #F0544A;
-}
-.validation__error > a:hover {
-  color: #F06B65;
-}
-
-.validation__wrapper {
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-select, 
-.form__select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #ddd;
-  background: $colour-white url( $image-path + "ui/form_sprite.png") 100% -51px no-repeat;
-  height: 50px;
-  position: relative;
-  width: 100%;
-  margin-bottom: 30px;
-  font-size: 16px;
-  font-weight: 300;
-  cursor: pointer;
-  outline: 0 none;
-  padding: 12px 50px 14px 10px;
-  text-decoration: none;
-  @include breakpoint($screen-md) {
-    max-width: 290px;
-  }
-}
-
-.ie9 .form__select,
-.ie9 select {
-  background: $colour-white;
-}
-
-.form__select-open {
-  background-position: 100% 0;
-}
-
-textarea {
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px; 
-}
-
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
@@ -189,399 +62,58 @@ select:focus {
   outline: 0;
 }
 
-label,
-legend {
-  display: block;
-  margin-bottom: .5rem;
-}
-
-fieldset {
-  padding: 0;
-  border-width: 0; 
-}
-
-.check-tick-label {
-  position: relative;
-  display: inline-block;
-}
-
-.check-tick-label:checked + div.show-when-checked {
-  display: block;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  opacity: 0;
-  z-index: 1;
-}
-
 input[type="checkbox"] {
-  + span, + label .check-field {
-    position: absolute;
-    display: inline-block;
-    margin: 0;
-    padding: 0 0 0 30px;
-    vertical-align: middle;
-    background:url($image-path + "ui/rnd17_frost_sprite_non_retina_v2.png");
-    width: 30px;
-    height: 30px;
-    background-position: -5px -325px;
-    cursor: pointer;
-  }
-}
-
-input[type="checkbox"]:checked {
-  + span, + label .check-field {
-    background-position: -45px -325px;
-  }
-}
-
-input[type="radio"] + label .check-field {
+  @include opacity(0);
   position: absolute;
-  display: inline-block;
-  margin: 0;
-  padding: 0 0 0 30px;
-  vertical-align: middle;
-  background:url($image-path + "ui/rnd17_frost_sprite_non_retina_v2.png");
+}
+
+input[type="checkbox"] + span {
   width: 30px;
   height: 30px;
-  background-position: -45px -285px;
-  cursor:pointer;
-}
-input[type="radio"]:checked + label .check-field {
-  background-position: -5px -285px;
-}
-
-input[type="checkbox"] + span + p,
-input[type="checkbox"] + label p,
-input[type="radio"] + label p {
-  display: inline-block;
-  padding-left: 40px;
-  padding-top: 5px;
+  background-color: $colour-white;
+  border: 1px solid $item-grey;
+  float: left;
+  margin: 5px 10px 10px 0px;
 }
 
-#cb, .original-check-field {
-  &:focus + label .check-field {
-    border: 1px solid #4D90FE;
+input[type="checkbox"]:checked + span {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+) no-repeat center;
+  @include background-size(contain);
+}
+
+select {
+  border: 1px solid $item-grey;
+  background: $colour-white url(data:image/png;base64,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) 100% -51px no-repeat;
+  height: 50px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  outline: 0 none;
+  padding: 12px 50px 14px 10px;
+  text-decoration: none;
+
+  @include appearance(none);
+  @include box-sizing(border-box);
+  @include border-radius(0px);
+
+  @include breakpoint($screen-md) {
+    max-width: 290px;
   }
-  + label:focus {
-    outline: none;
-  }
 }
 
-label > .label-body {
-  display: inline-block;
-  margin-left: .5rem;
-  font-weight: normal; 
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; 
 }
 
-button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   @extend .btn;
 }
 
-
-// Layout
-
-.form__step {
-  @include container;
-}
-
-.form__fieldset,
-.form__fieldset--divider { 
-  @include span(12);
-
-  @include breakpoint($screen-md) {
-    @include span(12); 
-  }
-}
-
-.form__field {
-  @include span(12);
-  margin-bottom: 9%;
-
-  @include breakpoint($screen-md) {
-    @include span(6);
-    margin-bottom: 3%;
-  }
-}
-
-.form__field--desktop-right-mobile-left {
-  float: right;
-}
-
-.form__field--intro,
-.form__field--user-title,
-.form__field--user-terms,
-.form__field--postcode,
-.form__field--password,
-.form__field--full {
-  @include span(12);
-}
-
-.form__field--user-terms,
-.form__field--password,
-.form__field--full {
-  @include breakpoint($screen-md) {
-    @include span(6);
-  }
-}
-
-.form__field--password {
-  @include span(12);
-}
-
-.form__field--intro,
-.form__field--postcode {
-  float: none;
-}
-
-.form__field--gpurl {
-  word-wrap: break-word;
-}
-
-.form__field--userContact {
-  @include breakpoint($screen-md) {
-    @include span(12);
-  }
-}
-
-.form__disabled {
-  @include opacity(0.4);
-
-  input,
-  button {
-    @include notransition;
-    cursor: initial;
-  }
-  button:hover,
-  input:hover {
-    background-color: $colour-red; 
-    @include notransition;
-  }
-
-  #joinTeamQuery:hover {
-    background-color: transparent;
-  }
-}
-
-/* 
- * Journey Choices 
- */
-.form__step--journey-options {
-  text-align: center;
-
-  .form__fieldset,
-  .form__fieldset--divider { 
-    @include breakpoint($screen-md) {
-      @include span(12); 
-    }
-  }
-
-  .form__field--user-age {
-    margin-bottom: 30px;
-    
-    @include breakpoint($screen-md) {
-      @include push(3);
-      @include span(6);
-    }
-
-    @include breakpoint($screen-lg) {
-      @include push(3.5);
-      @include span(5);
-    }
-
-    .form__field {      
-      display: inline-block;
-      float: none;
-      margin-bottom: 0;
-      @include breakpoint($screen-lg) {
-        width: 40%;
-      }
-    }
-
-    input {
-      max-width: 290px;
-    }
-  }
-  .form__fieldset--user-choice {
-    .form__field {
-      @include breakpoint($screen-md) {
-        @include span(4);
-      }
-      @include breakpoint($screen-lg) {
-        &.form__field--user-choice-own {
-          padding-left: 0;
-        }        
-      }
-    }
-  }
-}
-
-.form__field--journey-choice {
-  overflow: hidden;
-  background-color: $colour-white;
-  margin: 0;
-
-  @include breakpoint($screen-md) {
-    min-height: 470px;
-  }
-
-  @include breakpoint($screen-lg) {
-    min-height: 525px;
-    img {
-      height: 219px;
-    }
-  }
-}
-
-.form__field--journey-choice h3{
-  padding: 10px 20px;
-  margin-bottom: 10px;
-}
-
-.form__field--journey-choice p{
-  padding: 10px;
-  @include breakpoint($screen-md) {
-    padding-bottom: 70px;
-  }
-}
-
-.form__field--journey-choice a {
-  @include breakpoint($screen-md) {
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    right: 0;
-  }
-}
-
-.form__step--journey-options-school {
-  h1 {
-    @extend h2;
-  }
-}
-
-.form__fieldset h2 {
-  font-weight: 600;
-}
-
-.form__tooltip {
-  margin-left: 8px;
-  position: relative;
-  text-decoration: none;
-  span {
-    background-color: $colour-smoke-grey;
-    border: 1px solid $item-grey;
-    border-radius: 3px;
-    bottom: 40px;
-    font-size: 16px;
-    left: -138px;
-    line-height: 23px;
-    padding: 10px;
-    position: absolute;
-    visibility: hidden;
-    &:before {
-      background-color: $colour-smoke-grey;
-      border: solid $item-grey;
-      border-width: 0 1px 1px 0;
-      bottom: -1px;
-      content: '';
-      display: none;
-      height: 6px;
-      left: 50%;
-      position: absolute;
-      transform: translate(-50%, 50%) rotate(45deg);
-      width: 6px;
-      z-index: 2;
-    }
-  }
-  &:hover, 
-  &:active {
-    color: $colour-black;
-    span {
-      color: $colour-black;
-      visibility: visible;
-      width: 300px;
-      &:before {
-        display: block;
-      }
-    }
-  }
-}
-
-.password-checkbox {
-  margin-top: 1em;
-}
-
-.content-wrap {
-  margin-top: -60px;
-  @include container;
-}
-
-.form__nav:nth-child(2) {
-  button, .button {
-    margin-top: 0;
-    @include breakpoint ($screen-md) {
-      margin-top: 20px;
-    }
-  }
-}
-
-#btnNext {
-  &:hover {
-    color: $colour-white;
-  }
-
-  &.form__disabled {
-    @media (max-width: 768px) {
-      padding: 0;
-    }
-  }
-}
-
-.affiliates .form__field--user-title {
-  margin-bottom: 0;
-}
-
-#userNameGp, #userNameTeamGp, #userNameGroupGp {
-  max-width: 600px;
-}
-
-.validation-messages {
-  position: relative;
-  .fa-check:before {
-    left: 8px;
-    top: 8px;
-    position: absolute;
-  }
-
-  .fa-check {
-    border-radius: 100%;
-    width: 30px;
-    height: 30px;
-    background: $colour-yellow;
-  }
-
-  .validation__success .feedback {
-    position: absolute;
-    top: 4px;
-    left: 35px;
-  }
-
-  .validation__warning, .validation__error {    
-    .fa {
-      margin-right: 5px;
-    }
-
-    @include breakpoint($screen-md) {
-      margin-top: 6px;
-    }
-  }
+.required:after {
+  content: " *";
 }
