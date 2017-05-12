@@ -22,7 +22,6 @@ input[type="checkbox"] + span {
 }
 
 select {
-	height: 60px;
   @include border-radius(2px);
 }
 
