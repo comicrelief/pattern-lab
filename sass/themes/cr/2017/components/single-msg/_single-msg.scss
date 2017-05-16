@@ -1,18 +1,15 @@
-// CR custom components
-// 
-// Style guide: 1000
-
-// CR Single Message 
+// Single Message 
 //
-// Markup: cr-single-msg.twig
+// Markup: single-msg.twig
 //
 // .single-msg--copy-right - Copy right
 // .single-msg--copy-left - Copy left
 // .single-msg--feature-copy-right - Feature copy right
 // .single-msg--feature-copy-left - Feature copy left
 // .single-msg--copy-only - Copy only
+// .bg--none - No body bg colour
 //
-// Style guide: 1000.10
+// Style guide: 20.70
 
 /* Global styles for all variants, provides all styles for Copy Right variant */
 .single-msg {
@@ -53,6 +50,11 @@
       @include breakpoint($screen-md) {
         height: 100%;
       }
+    }
+  }
+  &.bg--none {
+    .single-msg__copy {
+      padding: 0 30px;
     }
   }
   /* padding options */
