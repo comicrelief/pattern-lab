@@ -113,7 +113,7 @@ module.exports = function (grunt) {
           title: 'Comic Relief PatternLab',
           css: '../css/themes/cr/2017/cr17.css'
         },
-        src: ['sass/base', 'sass/themes/cr/2017'],
+        src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
       },
       rnd17: {
