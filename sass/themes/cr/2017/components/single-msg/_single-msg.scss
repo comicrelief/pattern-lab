@@ -17,11 +17,11 @@
   .single-msg__outer-wrapper {
     @include container;
     position: relative;
-    display: -webkit-flex;
-    display: flex;
     padding: 30px calc(3 * #{gutter()});
 
     @include breakpoint($screen-md) {
+      display: -webkit-flex;
+      display: flex;
       padding: 60px calc(3 * #{gutter()});
     }
   }
