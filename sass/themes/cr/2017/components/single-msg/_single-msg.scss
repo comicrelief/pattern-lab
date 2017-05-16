@@ -56,7 +56,9 @@
   }
   &.bg--none {
     .single-msg__copy {
-      padding: 0 30px;
+      @include breakpoint($screen-md) {
+        padding: 0 30px;
+      }
     }
   }
   /* padding options */
@@ -187,15 +189,12 @@
       width: 100%;
       margin: 0;
 
-      @include breakpoint($screen-lg) {
+      @include breakpoint($screen-md) {
         @include span(6 no-gutters wide);     
       }  
     }
 
     .single-msg__copy_wrapper {
-      float: left;
-      margin: 0 calc(4*#{gutter()}) 0;
-      width: calc(100% - (8 * #{gutter()}) );
 
       @include breakpoint($screen-md) {
         margin: 0;
