@@ -34,13 +34,17 @@
         </a>
         {% if menu_item.isActive and menu_item.children is not empty %}
           <ul class="kss-nav__menu-child">
+          {% set newMenu = [] %}
           {% for menu_child in menu_item.children %}
+            {% if menu_child.referenceURI not in newMenu %}
             <li class="kss-nav__menu-item">
               <a class="kss-nav__menu-link" href="section-{{ menu_item.referenceURI }}.html#kssref-{{ menu_child.referenceURI }}">
                 <span class="kss-nav__ref {% if menu_child.isGrandChild %}kss-nav__ref-child{% endif %}">{{ menu_child.referenceNumber }}</span
                 ><span class="kss-nav__name">{{ menu_child.header }}</span>
               </a>
             </li>
+            {% set newMenu = newMenu|merge([menu_child.referenceURI]) %}
+            {% endif %}
           {% endfor %}
           </ul>
         {% endif %}
@@ -64,7 +68,9 @@
     The "root" element comes first in this loop, and can be detected using the
     "loop.first" variable as seen below.
   #}
+  {% set sectionList = [] %}
   {% for section in sections %}
+    {% if section.referenceURI not in sectionList %}
     {% set sectionElement = loop.first ? 'div' : 'section' %}
     <{{ sectionElement }} id="kssref-{{ section.referenceURI }}" class="kss-section kss-section--depth-{{ section.depth }} {% if template.isItem %}is-fullscreen{% endif %}">
       <div class="kss-style">
@@ -208,6 +214,8 @@
         </div>
       {% endif %}
     </{{ sectionElement }}>
+    {% set sectionList = sectionList|merge([section.referenceURI]) %}
+    {% endif %}
   {% endfor %}
 {% endif %}
 </article>
