@@ -44,6 +44,7 @@
 			width: 100%;
 			float: left;
 			font-size: 18px;
+			font-family: $body-font;
 			@include breakpoint($screen-md) {
 				width: 38%;
 				display: inline-block;
