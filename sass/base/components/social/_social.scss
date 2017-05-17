@@ -34,12 +34,9 @@
   }
 }
 
-/* Social sharing icons */
-.cr-article__social-links {
-  @include clearfix;
-}
 .social-links-label {
   text-align: right;
+  font-family: $body-font;
   @include span(6);
   @include translateY(50%);
 }
