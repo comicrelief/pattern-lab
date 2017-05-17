@@ -33,6 +33,7 @@
     padding: 0;
     border: none;
     background-color: transparent;
+    display: inline-block;
     @include breakpoint($screen-md) {
       width: 46px;
     }
