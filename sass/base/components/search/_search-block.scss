@@ -5,8 +5,8 @@
 // Style guide: 20.195
 
 .search-block {
-  display: none;
   @include clearfix;
+  display: none;
   text-align: center;
   background: $colour-white;
   position: absolute;
