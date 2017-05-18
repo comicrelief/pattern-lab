@@ -2,10 +2,8 @@
 //
 // Markup: single-msg.twig
 //
-// .single-msg--copy-right - Copy right
 // .single-msg--copy-left - Copy left
 // .single-msg--copy-only - Copy only
-// .bg--none - No body bg colour
 //
 // Style guide: 20.70
 
@@ -51,14 +49,15 @@
         height: 100%;
       }
     }
-  }
-  &.bg--none {
-    .single-msg__copy {
-      @include breakpoint($screen-md) {
-        padding: 0 30px;
+    @include breakpoint($screen-md) {
+      &.bg--no-colour {
+        .single-msg__copy {
+          padding: 0 30px;
+        }
       }
     }
   }
+
   /* padding options */
   // negative top 
   &.single-msg--negative-top {
@@ -202,10 +201,23 @@
     .single-msg__copy_wrapper {
       width: 100%;
 
+      @include breakpoint($screen-md) {
+        &.bg--no-colour {
+          .single-msg__copy {
+            padding: 30px;
+            
+            @include breakpoint($screen-lg) {
+              padding: 0 30px;
+            }
+          }
+        }
+      }
+
       @include breakpoint($screen-lg) {
         margin: 0;
+
         @include span(6 no-gutters wide);
-      }  
+      }
     } 
   }
 
