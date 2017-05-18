@@ -172,6 +172,7 @@
     @include breakpoint($screen-md) {
       .single-msg__image {
         float: right;
+        order: 2;
       }
     }
   }
@@ -205,7 +206,7 @@
         &.bg--no-colour {
           .single-msg__copy {
             padding: 30px;
-            
+
             @include breakpoint($screen-lg) {
               padding: 0 30px;
             }
@@ -227,6 +228,7 @@
       @include breakpoint($screen-lg) {
         float: right;
         margin-left: 0;
+        order: 2;
       }
     }
   }
