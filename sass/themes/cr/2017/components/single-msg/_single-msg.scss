@@ -4,8 +4,6 @@
 //
 // .single-msg--copy-right - Copy right
 // .single-msg--copy-left - Copy left
-// .single-msg--feature-copy-right - Feature copy right
-// .single-msg--feature-copy-left - Feature copy left
 // .single-msg--copy-only - Copy only
 // .bg--none - No body bg colour
 //
@@ -184,19 +182,27 @@
   /* Feature Copy Left and Right variation */
   &.single-msg--feature-copy-right,
   &.single-msg--feature-copy-left  {
+
+    .single-msg__outer-wrapper {
+      @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+        display: block;
+      }
+    }
+
     .single-msg__image {
       float: left;
       width: 100%;
       margin: 0;
 
-      @include breakpoint($screen-md) {
+      @include breakpoint($screen-lg) {
         @include span(6 no-gutters wide);     
       }  
     }
 
     .single-msg__copy_wrapper {
+      width: 100%;
 
-      @include breakpoint($screen-md) {
+      @include breakpoint($screen-lg) {
         margin: 0;
         @include span(6 no-gutters wide);
       }  
@@ -206,7 +212,7 @@
   /* Feature Copy Left variation */
   &.single-msg--feature-copy-left {
     .single-msg__image {
-      @include breakpoint($screen-md) {
+      @include breakpoint($screen-lg) {
         float: right;
         margin-left: 0;
       }
