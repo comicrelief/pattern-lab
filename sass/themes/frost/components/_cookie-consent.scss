@@ -1,0 +1,52 @@
+// ==========================================================================
+// Cookie consent
+// ==========================================================================
+
+.cookie-consent {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: $colour-black;
+  @include breakpoint($screen-lg) {
+    display: block;
+    padding: 15px 20px 15px;
+  }
+
+  p,
+  a {
+    color: $colour-white;
+    font-family: $body-font;
+  }
+  p {
+    margin-top: 15px;
+  }
+  .cc_message {
+    display: inline-block;
+    margin-top: 0;
+    width: calc(100% - 50px);
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    @include breakpoint($screen-md) {
+      width: auto;
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  .cc_more_info {
+    display: inline-block;
+    @extend .link;
+    @extend .link--smoke-grey;
+    color: $colour-white;
+  }
+
+  .cc_button {
+    @extend .btn;
+    @extend .btn--white-ghost;
+    width: auto !important;
+  }
+}

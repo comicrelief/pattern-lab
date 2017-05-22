@@ -1,0 +1,35 @@
+// ==========================================================================
+// Button
+// ==========================================================================
+
+.btn {
+  background-color: $colour-blue;
+  border: 2px solid $colour-blue;
+  text-transform: uppercase;
+  width: 100%;
+
+  &:hover {
+    background-color: $colour-dark-blue;
+    border: 2px solid $colour-dark-blue;
+  }
+}
+
+/* Ghost button 
+less padding because ghost buttons have borders */
+.btn--blue-ghost {
+  padding: 19px 38px;
+  border: 2px solid $colour-blue;
+  background-color: $colour-white;
+  color: $colour-blue;
+
+  &:hover {
+    border: 2px solid $colour-dark-blue;
+    color: $colour-dark-blue;
+  }
+}
+.btn--white-ghost {
+  background-color: $colour-black;
+  &:hover {
+    color: $colour-black;
+  }
+}

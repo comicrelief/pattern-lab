@@ -1,0 +1,141 @@
+// ==========================================================================
+// Form
+// ==========================================================================
+
+label {
+  margin-bottom: 2px;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  height: 60px;
+  background-color: $colour-input-grey;
+  border: 1px solid $colour-border-grey;
+  margin-bottom: 15px;
+
+   @include border-radius(2px); 
+   @include breakpoint($screen-md) {
+    max-width: 100%;
+   }
+}
+
+input[type="checkbox"] + span {
+  margin: 5px 20px 10px 0px;
+  background-color: $colour-input-grey;
+	@include border-radius(2px);
+}
+
+select {
+  @include border-radius(2px);
+}
+
+// ==========================================================================
+// Form Layout
+// ==========================================================================
+
+form {
+  width: auto;
+  margin: 30px calc(2*#{gutter()});
+  padding: 30px;
+  background-color: $colour-white;
+  word-wrap: break-word;
+  border: 1px solid #c7c7c7;
+
+  @include breakpoint($screen-md) {
+    width: 100%;
+    max-width: 640px;
+    margin: 60px auto;
+    padding: 40px 100px;
+  }
+}
+
+.form__group {
+
+  @include breakpoint($screen-md) {
+     
+  }
+}
+
+.form__group--grey {  
+  background-color: $smoke-grey;
+}
+
+.form__group--fullwidth {
+  padding: 0px;
+  width: 100%;
+}
+
+.form__fieldset,
+.form__fieldset--divider { 
+  margin: 15px 0px;
+}
+
+.form__field {
+
+}
+
+.form__field--checkbox {
+  .form__field--copy {
+    @include font-size($p-small-font-size);
+  }
+}
+.page-title {
+  text-align: center;
+  border-bottom: 1px solid $item-grey;
+
+  .intro-copy {
+    @include font-size($h2-font-size);
+  }
+  
+  .intro-copy-extra span {
+    @include font-size($p-small-font-size);
+    font-family: $font-bold;
+  }
+}
+
+
+// ==========================================================================
+// Form Validation
+// ==========================================================================
+.validation__wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.validation__text {
+  margin: 5px 0 0;
+  padding: 0;
+  .fa {
+    margin-right: 5px;
+  }
+}
+
+.validation__warning {
+  color: #f98026;
+}
+
+.validation__error {
+  color: #f04257;
+}
+
+.validation__success {
+  color: #458B00;
+}
+
+.validation__error > a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #F0544A;
+}
+
+.validation__error > a:hover {
+  color: #F06B65;
+}
