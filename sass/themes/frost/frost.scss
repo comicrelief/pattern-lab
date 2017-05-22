@@ -1,32 +1,46 @@
 // ==========================================================================
-// Core components
+// Core 
 // ==========================================================================
 
 @import "../../base/_core";
-
-// ==========================================================================
-// Core and sub theme variables
-// ==========================================================================
 
 @import "../../base/variables/_grid.scss";
 
 @import "../../base/variables/_colours.scss";
 
+// Sub theme var overrides
+@import "../../themes/cr/2017/variables/_colours.scss"; // CR
+@import "variables/_colours.scss"; // Frost
+
 @import "../../base/variables/_typography.scss";
+
+// Sub theme var overrides
+@import "variables/_typography.scss"; // Frost
 
 @import "../../base/variables/_lists.scss";
 
-// Sub theme var overrides
 @import "_frost-variables";
 
 // ==========================================================================
-// Core components
+// Components
 // ==========================================================================
 
-@import "../../base/_components";
+@import "../../base/components/buttons/buttons";
+@import "../../base/components/background-colours/background-colours";
+@import "../../base/components/form/form";
+@import "../../base/components/links/links";
+@import "../../base/components/list/list";
+@import "../../base/components/typography/typography";
 
 // ==========================================================================
-// Sub theme components overrides
+// Components sub theme overrides
 // ==========================================================================
+
+@import "components/_layout",
+				"components/_header",
+				"components/_footer",
+				"components/_form",
+				"components/_cookie-consent",
+				"components/_buttons";
 
 @import "_frost-components";

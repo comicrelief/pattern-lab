@@ -1,0 +1,84 @@
+// Fonts
+
+$font-stack: "Sailec", sans-serif;
+
+$font-black-oblique: "Sailec-Black", sans-serif;
+$font-black: "Sailec-Black", sans-serif;
+$font-bold-oblique: "Sailec-Bold", sans-serif;
+$font-bold: "Sailec-Bold", sans-serif;
+$font-medium-oblique: "Sailec", sans-serif; 
+$font-medium: "Sailec", sans-serif;
+$font-regular-oblique: "Sailec", sans-serif; 
+$font-regular: "Sailec", sans-serif;
+$font-light-oblique: "Sailec", sans-serif; 
+$font-light: "Sailec", sans-serif;
+$body-font: "Sailec", sans-serif;
+
+// Typography mixins
+
+// breakpoint: (font-size, line-height)
+$h1-xlarge-font-size: (
+  null: (66px, 58px),
+  $screen-md: (74px, 65px),
+  $screen-lg: (83px, 73px)
+);
+$h1-font-size: (
+  null: (26px, 42px),
+  $screen-md: (41px, 47px),
+  $screen-lg: (41px, 46px)
+);
+$h2-font-size: (
+  null: (26px, 35px),
+  $screen-md: (26px, 35px),
+  $screen-lg: (26px, 35px)
+);
+$h3-font-size: (
+  null: (29px, 28px),
+  $screen-md: (26px, 25px),
+  $screen-lg: (29px, 28px)
+);
+$h4-font-size: (
+  null: (18px, 19px),
+  $screen-md: (20px, 21px),
+  $screen-lg: (23px, 23px)
+);
+$h5-font-size: (
+  null: (16px, 17px),
+  $screen-md: (18px, 19px),
+  $screen-lg: (20px, 21px)
+);
+$p-xxlarge-font-size: (
+  null: (46px, 48px),
+  $screen-md: (52px, 53px),
+  $screen-lg: (58px, 58px)
+);
+$p-xlarge-font-size: (
+  null: (20px, 27px),
+  $screen-md: (20px, 27px),
+  $screen-lg: (23px, 29px)
+);
+$p-large-font-size: (
+  null: (18px, 25px),
+  $screen-md: (18px, 25px),
+  $screen-lg: (20px, 27px)
+);
+$p-font-size: (
+  null: (16px, 23px),
+  $screen-md: (18px, 25px),
+  $screen-lg: (18px, 25px)
+);
+$p-small-font-size: (
+  null: (14px, 22px),
+  $screen-md: (16px, 23px),
+  $screen-lg: (16px, 23px)
+);
+$p-xsmall-font-size: (
+  null: (13px, 20px),
+  $screen-md: (14px, 22px),
+  $screen-lg: (14px, 22px)
+);
+$p-xxsmall-font-size: (
+  null: (11px, 19px),
+  $screen-md: (13px, 20px),
+  $screen-lg: (13px, 20px)
+);
