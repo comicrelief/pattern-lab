@@ -54,7 +54,7 @@
 
       .progress-bar__title {
         @include breakpoint($screen-md) {
-          background: transparent url("images/navbar-sprite.png") right 5px no-repeat;
+          background: transparent url("/images/navbar-sprite.png") right 5px no-repeat;
           margin-left: 25px;
           padding-right: 25px;
         }
@@ -69,7 +69,7 @@
       }
       .progress-bar__title {
         @include breakpoint($screen-md) {
-          background: transparent url("images/navbar-sprite.png") right 5px no-repeat;
+          background: transparent url("/images/navbar-sprite.png") right 5px no-repeat;
           margin-left: 25px;
           padding-right: 25px;
         }
@@ -92,7 +92,7 @@
 }
 
 .progress-bar__back-link {
-  background: transparent url("images/navbar-sprite.png") 0 -77px no-repeat;
+  background: transparent url("/images/navbar-sprite.png") 0 -77px no-repeat;
   position: absolute;
   top: 16px;
   left: 10px;
