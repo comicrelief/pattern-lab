@@ -37,8 +37,7 @@
 .ui-selectmenu-menu {
   z-index: 102;
 }
-/* Using id as a stronger selector */
-#block-emailsignupblockhead {
+.block--cr-email-signup--head.cr-header-email-signup-form {
   &.show {
     display: block;
   }
@@ -130,7 +129,7 @@
     width: 60px;
     margin: 0;
     text-indent: -9999px;
-    background: $colour-jasper-grey url(../images/svgs/arrow-right.svg) -4px center no-repeat;
+    background: $colour-jasper-grey url(/images/arrow-right.svg) -4px center no-repeat;
     @include breakpoint($screen-md) {
       //width: 100%;
     }

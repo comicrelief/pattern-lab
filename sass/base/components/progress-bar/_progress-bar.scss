@@ -6,8 +6,6 @@
 //
 // Style guide: 20.1000
 
-$image-path: '../../../images/';
-
 .progress-bar {
   position: relative;
   border-top: 4px solid $colour-blue;
@@ -56,7 +54,7 @@ $image-path: '../../../images/';
 
       .progress-bar__title {
         @include breakpoint($screen-md) {
-          background: transparent url($image-path + "ui/navbar-sprite.png") right 5px no-repeat;
+          background: transparent url("images/navbar-sprite.png") right 5px no-repeat;
           margin-left: 25px;
           padding-right: 25px;
         }
@@ -71,7 +69,7 @@ $image-path: '../../../images/';
       }
       .progress-bar__title {
         @include breakpoint($screen-md) {
-          background: transparent url($image-path + "ui/navbar-sprite.png") right 5px no-repeat;
+          background: transparent url("images/navbar-sprite.png") right 5px no-repeat;
           margin-left: 25px;
           padding-right: 25px;
         }
@@ -94,7 +92,7 @@ $image-path: '../../../images/';
 }
 
 .progress-bar__back-link {
-  background: transparent url($image-path + "ui/navbar-sprite.png") 0 -77px no-repeat;
+  background: transparent url("images/navbar-sprite.png") 0 -77px no-repeat;
   position: absolute;
   top: 16px;
   left: 10px;
