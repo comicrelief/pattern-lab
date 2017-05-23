@@ -46,13 +46,12 @@ module.exports = function (grunt) {
     },
 
     imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: 'images/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/images'
-        }]
+      files: {
+        expand: true,
+        flatten: true,
+        cwd: 'sass/base/components',
+        src: ['**/*.{png,jpg,gif,svg}'],
+        dest: 'dist/images'
       }
     },
 
