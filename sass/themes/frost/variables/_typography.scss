@@ -23,9 +23,9 @@ $h1-xlarge-font-size: (
   $screen-lg: (83px, 73px)
 );
 $h1-font-size: (
-  null: (26px, 42px),
-  $screen-md: (41px, 47px),
-  $screen-lg: (41px, 46px)
+  null: (26px, 30px),
+  $screen-md: (41px, 50px),
+  $screen-lg: (41px, 50px)
 );
 $h2-font-size: (
   null: (26px, 35px),
@@ -81,4 +81,9 @@ $p-xxsmall-font-size: (
   null: (11px, 19px),
   $screen-md: (13px, 20px),
   $screen-lg: (13px, 20px)
+);
+$p-intro-font-size: (
+  null: (14px, 22px),
+  $screen-md: (23px, 14px),
+  $screen-lg: (23px, 14px)
 );

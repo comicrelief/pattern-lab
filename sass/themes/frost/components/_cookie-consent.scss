@@ -29,11 +29,15 @@
     font-size: 14px;
     line-height: 16px;
     text-align: left;
+    
     @include breakpoint($screen-md) {
       width: auto;
       margin-top: 15px;
       font-size: 18px;
       line-height: 20px;
+    }
+    span {
+      margin: 0px 5px;
     }
   }
 
