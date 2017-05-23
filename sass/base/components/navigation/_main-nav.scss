@@ -1,67 +1,193 @@
+// Navigation
+//
+// Different types of navigation
+// 
+// Style guide: 185
+
 // Main Nav
 //
 // This is the Main Nav
 //
-// Markup: _main-nav.twig
+// Markup: main-nav.twig
 //
-// No Style guide
+// Style guide: 185.1
 
-/* Show menu when js is off */
-html:not(.js) {
-  .header__inner-wrapper nav.navigation {
-    display: block;
-  }
-}
-.header__inner-wrapper nav.navigation {
-  position: absolute;
-  z-index: 100;
-  top: 80px;
-  right: 0;
-  width: 100%;
-  display: none;
+
+/* Main navigation menu styling  */ 
+.main-nav-menu {
+  // width: 100%;
   @include breakpoint($screen-md) {
-    width: auto;
-  }
-  @include breakpoint($desktop-nav-breakpoint) {
-    top: 103px;
-  }
-  &.show {
-    display: block!important; // override inline style fix flash menu
-  }
-  .menu {
-    margin: 0;
-    padding: 10px 0;
-    text-align: right;
-    background: #051d37;
-  }
-  .menu--level-0 {
-    .menu {
-      display: none; // fallback in case there are more levels
+   nav.main-nav {
+      float: none;
+      margin: auto;
+      width: 50%;
     }
   }
+  // @include breakpoint($screen-lg) { 
+  //   nav.main-nav {
+  //     // float:right;
+  //   }
+  //   .main-nav__items {
+  //     float: right;
+  //   }
+  // }
+}
+// Show hamburger toggle button on mobile sizes
+.main-nav__icons{
+  .main-nav-toggle {
+    float: right;
+  }
+  @include breakpoint($screen-lg) {
+    display: none;
+  }
+}
+
+.main-nav__items {
+  display: none;
+
   li {
-    position: relative;
-    /* Main menu text */
+    margin: 0 20px;
+    padding: 24px 0;
+  }
+  a {
+    font-family: $body-font;
+    font-size: 16px;
+    line-height: 16px;
+    color: $colour-black;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  &.menu-item--active-trail a,
+  &.menu-item--active-trail a:hover,
+  a:hover {
+    border-bottom: 3px solid $colour-red;
+    background-color: transparent;
+  }
+
+  /* Show inline menu on desktop size with sub menus on hover */
+  @include breakpoint($screen-lg) {
+    display: block;
+
+    li {
+      height: 73px;
+      display: inline-block;
+      background-color: transparent;
+    
+      // Sub menu, hidden until parent item is hovered
+      > ul {
+        display: none;
+        position: absolute;
+        // z-index: 999;
+        // padding: 0px 10px;
+        top: 73px;
+        // left: -100px;
+        // right: -100px;
+        padding: 0;
+        width: 250px;
+
+        // Sub menu items
+        li {
+          position: relative;
+          margin: 0;
+          float: left;
+          width: 100%;
+
+          a {
+            padding: 0 40px;
+            text-decoration: none;
+            color: $colour-white;
+          }
+
+          // Our 'landing page' duplicate link, top of each sub menu
+          &.menu-item--duplicate  {
+            border-bottom: 2px solid $colour-gainsboro-grey;
+            a {
+              font-size: 18px;
+              line-height: 18px;
+              font-family: $body-font;
+
+              // Triangle pointer
+              &:before {
+                content: '';
+                width: 16px;
+                height: 16px;
+                display: block;
+                position: absolute;
+                left: 20px;
+                top: -20px;
+                border: 10px solid transparent;
+                border-bottom-color: $colour-black;
+              }
+            }
+          }
+        }
+        li:hover {
+          background-color: rgba(100, 100, 100, 0.5);
+          // background-color: $colour-jasper-grey;
+          a {
+            border-bottom: 3px solid transparent;
+            // color: #222;
+          }
+        }
+      }
+      // Show sub menus on hover
+      &:hover {
+        > ul.main-nav__items {
+          max-height: 400px;
+          height: auto;
+          display: block;
+          background-color: $colour-black;
+        }
+      }
+    }
+  }
+
+  /* Menu opened through hamburger toggle button */
+  &.menu-open {
+    display: block;
+    background-color: $colour-black;
+
+    li {
+      margin: 0;
+      display:block;
+    }
     a {
-      display: block;
-      padding: 10px 30px;
+      padding: 20px 40px;
       text-decoration: none;
-      color: #fff;
-      font-size: 16px;
-      line-height: 16px;
-      font-family: $body-font;
-      transition: background-color 180ms;
+      color: $colour-white;
     }
-    /* Reset all our mobile styles */
-    &.menu-item--active-trail a,
-    &.menu-item--active-trail a:hover,
-    a:hover {
-      color: #fff;
-      background-color: #1e354b;
+    li:hover {
+      background-color: rgba(100, 100, 100, 0.5);
+      a {
+        border-bottom: 3px solid transparent;
+        // color: #222;
+      }
     }
-    .font--red:hover,
-    .font--red {
-      color: $colour-red;
+    // Show menu inline again when menu is open and browser is resized
+    @include breakpoint($screen-lg) {
+      display: block;
+      background-color: transparent;
+      li {
+        display: inline-block;
+        margin: 0 20px;
+        padding: 24px 0;
+      }
+      a {
+        padding: 0;
+        color: $colour-black;
+
+      }
+      li:hover {
+        background-color: transparent;
+        a:hover {
+          border-bottom: 3px solid $colour-red;
+        }
+      }
     }
   }
 }
+
+
+  
+

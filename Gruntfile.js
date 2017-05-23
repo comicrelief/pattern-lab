@@ -56,6 +56,15 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      my_target: {
+        files: [{
+          src: ['sass/base/components/{,**/}*.js'],
+          dest: 'dist/js/components.min.js'
+        }]
+      }
+    },
+
     sass_globbing: {
       your_target: {
         files: {
@@ -186,6 +195,7 @@ module.exports = function (grunt) {
     'sass',
     'modernizr',
     'imagemin',
+    'uglify',
     'kss'
   ]);
 

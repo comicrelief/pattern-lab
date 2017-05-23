@@ -1,20 +1,14 @@
-// Navigation
-//
-// Different types of navigation
-// 
-// Style guide: 185
-
 // Feature Nav
 //
 // Markup: feature-nav.twig
 //
-// Style guide: 185.1
+// Style guide: 185.2
 
 // Feature nav menu open
 //
 // Markup: feature-nav-open.twig
 //
-// Style guide: 185.2
+// Style guide: 185.3
 
 .feature-nav {
   float: right;
@@ -85,6 +79,60 @@
     a:hover {
       border-bottom: 3px solid $colour-red;
       background-color: transparent;
+    }
+  }
+}
+
+.header__inner-wrapper nav.feature-main-nav {
+  position: absolute;
+  z-index: 100;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  display: none;
+  @include breakpoint($screen-md) {
+    width: auto;
+  }
+  @include breakpoint($desktop-nav-breakpoint) {
+    top: 103px;
+  }
+  &.show {
+    display: block!important; // override inline style fix flash menu
+  }
+  .menu {
+    margin: 0;
+    padding: 10px 0;
+    text-align: right;
+    background: #051d37;
+  }
+  .menu--level-0 {
+    .menu {
+      display: none; // fallback in case there are more levels
+    }
+  }
+  li {
+    position: relative;
+    /* Main menu text */
+    a {
+      display: block;
+      padding: 10px 30px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      line-height: 16px;
+      font-family: $body-font;
+      transition: background-color 180ms;
+    }
+    /* Reset all our mobile styles */
+    &.menu-item--active-trail a,
+    &.menu-item--active-trail a:hover,
+    a:hover {
+      color: #fff;
+      background-color: #1e354b;
+    }
+    .font--red:hover,
+    .font--red {
+      color: $colour-red;
     }
   }
 }
