@@ -129,7 +129,7 @@
     width: 60px;
     margin: 0;
     text-indent: -9999px;
-    background: $colour-jasper-grey url(/images/arrow-right.svg) -4px center no-repeat;
+    background: $colour-gainsboro-grey url(/images/arrow-right.svg) -4px center no-repeat;
     @include breakpoint($screen-md) {
       //width: 100%;
     }
