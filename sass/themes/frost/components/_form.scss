@@ -20,8 +20,9 @@ textarea {
   border: 1px solid $colour-border-grey;
   margin-bottom: 15px;
 
-   @include border-radius(2px); 
-   @include breakpoint($screen-md) {
+  @include font-size($p-small-font-size);
+  @include border-radius(2px); 
+  @include breakpoint($screen-md) {
     max-width: 100%;
    }
 }
@@ -88,7 +89,6 @@ form {
 }
 .page-title {
   text-align: center;
-  border-bottom: 1px solid $item-grey;
 
   .intro-copy {
     @include font-size($h2-font-size);
@@ -138,4 +138,39 @@ form {
 
 .validation__error > a:hover {
   color: #F06B65;
+}
+
+// ==========================================================================
+// Form step
+// ==========================================================================
+#login-first-credential {
+  .page-title {
+    .intro-copy {
+      @include font-size($p-intro-font-size);
+    }
+  }
+  
+  .form__group--login_first_credential {
+    .input-with-btn-wrap {
+      position: relative;
+    }
+    #btnNext {
+      @extend .btn--rectangle;
+      line-height: 55px;
+      border: 0px;
+      width: 100%;
+
+      @include breakpoint($screen-md) {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: auto;
+      }
+    }
+  }
+}
+#create-account {
+  #btnNext {
+    @extend .btn--full-width;
+  }
 }
