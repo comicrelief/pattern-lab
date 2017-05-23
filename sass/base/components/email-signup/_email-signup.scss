@@ -219,7 +219,7 @@ select,
       margin-top: 60px;
       margin-bottom: 10px;
       text-align: center;
-      background: $colour-black url(/images/error-red-cross.svg) 10px center no-repeat;
+      background: $colour-black url( $image-path + "error-red-cross.svg") 10px center no-repeat;
       color: $colour-white;
       border: none;
       font-size: 18px;
@@ -246,7 +246,7 @@ select,
     }
 
     input[type=submit].button {
-      background: $colour-black url(/images/arrow-right.svg) -4px center no-repeat;
+      background: $colour-black url( $image-path + "arrow-right.svg") -4px center no-repeat;
       @include border-radius(0 30px 30px 0);
       text-indent: -9999px;
       max-width: 60px;
@@ -365,7 +365,7 @@ select,
     }
 
     input[type=submit].button {
-      background: $colour-black url(/images/arrow-right.svg) -4px center no-repeat;
+      background: $colour-black url( $image-path + "arrow-right.svg") -4px center no-repeat;
       @include border-radius(0 30px 30px 0);
       text-indent: -9999px;
       max-width: 60px;
@@ -576,7 +576,7 @@ select,
         &:after {
           position:absolute;
           content: "";
-          background: url(/images/fixedplaceholder-register-interest-bg-sm-1x.png) no-repeat;
+          background: url( $image-path + "fixedplaceholder-register-interest-bg-sm-1x.png") no-repeat;
           width: 127px;
           height: 177px;
           top: 50%;
@@ -717,7 +717,7 @@ select,
         min-height: calc( 354px + 45px );
 
         &:after {
-          background: url(/images/fixedplaceholder-register-interest-bg-1x.png) no-repeat;
+          background: url( $image-path + "fixedplaceholder-register-interest-bg-1x.png") no-repeat;
           width: 254px;
           height: 354px;
           top: 50%;
