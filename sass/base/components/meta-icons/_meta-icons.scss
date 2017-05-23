@@ -69,9 +69,10 @@
     }
     &:hover,
     &:focus,
-    &:active {
+    &.active {
       .icon {
         fill: $colour-black;
+        outline: none;
       }
     }
   }
