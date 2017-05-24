@@ -38,9 +38,6 @@
 		.article-teaser__video {
 			@include span(5);
 			margin: 0px;
-			img {
-				display:block;
-			}
 		}
 		.article-teaser__content-wrapper {
 			@include span(7);
@@ -70,5 +67,13 @@
 				@include translateY(0);
 			}
 		}
+	}
+}
+.article-teaser__image, 
+.article-teaser__video {
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 }
