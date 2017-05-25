@@ -13,26 +13,26 @@
 
 // Brand colors
 
-$colour-red: #dc2a2a;
-$colour-blue: #45bfd4;
-$colour-yellow: yellow;
-$colour-green: #27bf90;
-$colour-teal: teal;
-$colour-royal-blue: #0565d1;
-$colour-purple: #b4549e;
-$colour-dark-purple: #7023b7;
-$colour-pink: #fc9eb9;
+$colour-red: #f04257 !default;
+$colour-blue: #22d2dc !default;
+$colour-yellow: #fbef51 !default;
+$colour-green: #b2e55e !default;
+$colour-teal: #00beca !default;
+$colour-royal-blue: #0565d1 !default;
+$colour-purple: #7d2ca9 !default;
+$colour-dark-purple: #7023b7 !default;
+$colour-pink: #fc9eb9 !default;
 
-$colour-black: #000;
-$colour-dark-blue: #061d38;
-// $colour-dark-grey: #333;
-$colour-jasper-grey: #606060;
-// $colour-greyboy-grey: #999;
-$colour-gainsboro-grey: #ccc;
-$colour-light-grey: #f3f3f5;
-$colour-smoke-grey: #f0f0f2;
-$colour-white: #fff;
+$colour-black: #030e1a !default;
+$colour-dark-blue: #061d38 !default;
+$colour-dark-grey: #333 !default;
+$colour-jasper-grey: #666 !default;
+$colour-greyboy-grey: #999 !default;
+$colour-gainsboro-grey: #c7c7c7 !default;
+$colour-light-grey: #dddddd !default;
+$colour-smoke-grey: #f0f0f0 !default;
+$colour-white: #fff !default;
 
 /* Single message row background colour, used in June site, to be renamed and updated */
-$cream-grey: #F5F2ED;
-$item-grey: #ddd;
+$cream-grey: #F5F2ED !default;
+$item-grey: #ddd !default;

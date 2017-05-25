@@ -1,0 +1,108 @@
+// Background Colours
+//
+// To be used by paragraphs and body copy
+//
+// Markup: background-colours.twig
+//
+// Style guide: 10.6
+
+.bg--red {
+  background-color: $colour-red;
+  .font--yellow {
+    color: $colour-yellow;
+  }
+}
+.bg--royal-blue {
+  background-color: $colour-royal-blue;
+  .font--dark-purple {
+    color: $colour-dark-purple;
+  }
+}
+.bg--purple {
+  background-color: $colour-purple;
+  .font--pink {
+    color: $colour-pink;
+  }
+}
+.bg--dark-purple {
+  background-color: $colour-dark-purple;
+}
+.bg--mint-green {
+  background-color: $colour-mint-green;
+}
+.bg--black {
+  background-color: $colour-black;
+}
+.bg--white {
+  background-color: $colour-white;
+}
+.bg--grey {
+  background-color: $colour-grey;
+}
+.bg--dark-grey {
+  background-color: $colour-dark-grey;
+}
+.bg--light-grey {
+  background-color: $colour-light-grey;
+}
+
+/**
+ * Needed to break-out these bg styles out a bit as the mutiple
+ * nested selectors were breaking the styles and/or getting them overridden? Weird. **/
+@mixin light-backgrounds {
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  .link {
+    color: $colour-white,;
+  }
+  .bg--white,
+  .bg--light-grey,
+  .bg--grey,
+  .bg--mint-green {
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    .link {
+      color: $colour-black;
+    }
+  }
+}
+@mixin dark-backgrounds {
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  .link {
+    color: $colour-black;
+  }
+  .bg--black,
+  .bg--dark-purple,
+  .bg--royal-blue,
+  .bg--red,
+  .bg--purple {
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    .link {
+      color: $colour-white;
+    }
+  }
+}
+.bg--black { @include light-backgrounds };
+.bg--dark-purple { @include light-backgrounds };
+.bg--royal-blue { @include light-backgrounds };
+.bg--red { @include light-backgrounds };
+.bg--purple { @include light-backgrounds };
+
+.bg--white { @include dark-backgrounds };
+.bg--grey { @include dark-backgrounds };
+.bg--light-grey { @include dark-backgrounds };
+.bg--mint-green { @include dark-backgrounds };
