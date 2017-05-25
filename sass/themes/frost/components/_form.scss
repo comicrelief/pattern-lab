@@ -43,6 +43,7 @@ select {
 
 form {
   width: auto;
+  overflow: auto;
   margin: 30px calc(2*#{gutter()});
   padding: 30px;
   background-color: $colour-white;
@@ -58,7 +59,9 @@ form {
 }
 
 .form__group {
-
+  h2 {
+    @include font-size($p-font-size);
+  }
   @include breakpoint($screen-md) {
      
   }
@@ -156,8 +159,6 @@ form {
     }
     #btnNext {
       @extend .btn--rectangle;
-      line-height: 55px;
-      border: 0px;
       width: 100%;
 
       @include breakpoint($screen-md) {
@@ -170,7 +171,37 @@ form {
   }
 }
 #create-account {
-  #btnNext {
-    @extend .btn--full-width;
+
+}
+.form__group--nav_buttons {
+  @include clearfix;
+  @include span(12);
+
+  .form__nav {
+    margin-bottom: 10px;
+
+    @include breakpoint($screen-md) {
+      @include span(6);
+    }
+  }
+  #btnBack {
+    @extend .btn--blue-ghost;
+  }
+  #btnNext,
+  #btnBack {
+    @include span(12);
+  }
+}
+
+.form__group--password_input {
+  p {
+    color: $colour-background-grey;
+  }
+}
+
+.form__field--userTerms {
+  a {
+    @extend .link;
+    @extend .link--blue;
   }
 }
