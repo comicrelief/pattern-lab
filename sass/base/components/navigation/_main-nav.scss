@@ -15,27 +15,28 @@
 
 /* Main navigation menu styling  */ 
 .main-nav-menu {
-  // width: 100%;
+
+  .main-nav {
+    width: 100%;
+  }
   @include breakpoint($screen-md) {
-   nav.main-nav {
-      float: none;
-      margin: auto;
+    .main-nav {
+      float: right;
       width: 50%;
     }
   }
-  // @include breakpoint($screen-lg) { 
-  //   nav.main-nav {
-  //     // float:right;
-  //   }
-  //   .main-nav__items {
-  //     float: right;
-  //   }
-  // }
+  @include breakpoint($screen-lg) { 
+    .main-nav {
+      width: 75%;
+      float:right;
+    }
+  }
 }
 // Show hamburger toggle button on mobile sizes
 .main-nav__icons{
   .main-nav-toggle {
     float: right;
+    background-color: transparent;
   }
   @include breakpoint($screen-lg) {
     display: none;
@@ -51,38 +52,68 @@
   }
   a {
     font-family: $body-font;
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 18px;
+    line-height: 20px;
     color: $colour-black;
     text-decoration: none;
-    border-bottom: 3px solid transparent;
   }
 
-  &.menu-item--active-trail a,
-  &.menu-item--active-trail a:hover,
-  a:hover {
-    border-bottom: 3px solid $colour-red;
-    background-color: transparent;
-  }
-
-  /* Show inline menu on desktop size with sub menus on hover */
-  @include breakpoint($screen-lg) {
+  /* Menu opened through hamburger toggle button */
+  &.menu-open {
     display: block;
+    position: absolute;
+    top: 76px;
+    width: 100%; 
+    background-color: $colour-black;
 
     li {
-      height: 73px;
+      margin: 0;
+      padding: 14px;
+      display:block;
+    }
+    a {
+      text-decoration: none;
+      color: $colour-white;
+    }
+    li:hover {
+      background-color: rgba(100, 100, 100, 0.5);
+    }
+    
+    @include breakpoint($screen-md) {
+     width: 50%;
+    }
+  }
+}
+/* Show inline menu on desktop size with sub menus on hover */
+@include breakpoint($screen-lg) {
+  .main-nav {
+    > ul { 
+      > li {
+        height: 76px;
+      }    
+    }
+  }
+  .main-nav__items,
+  .main-nav__items.menu-open  {
+    display: block;
+    position: relative;
+    top:0;
+    width: 100%;
+    background-color: $colour-white;
+
+    li {
       display: inline-block;
       background-color: transparent;
+
+      a {
+        color: $colour-black;  
+      }
     
       // Sub menu, hidden until parent item is hovered
       > ul {
         display: none;
         position: absolute;
-        // z-index: 999;
-        // padding: 0px 10px;
-        top: 73px;
-        // left: -100px;
-        // right: -100px;
+        top: 76px;
         padding: 0;
         width: 250px;
 
@@ -90,22 +121,25 @@
         li {
           position: relative;
           margin: 0;
+          padding: 14px;
           float: left;
           width: 100%;
 
           a {
-            padding: 0 40px;
+            padding: 0;
+            font-size: 16px;
+            line-height: 18px;
             text-decoration: none;
             color: $colour-white;
+            border:none;
           }
 
           // Our 'landing page' duplicate link, top of each sub menu
           &.menu-item--duplicate  {
-            border-bottom: 2px solid $colour-gainsboro-grey;
+
             a {
               font-size: 18px;
-              line-height: 18px;
-              font-family: $body-font;
+              line-height: 24px;
 
               // Triangle pointer
               &:before {
@@ -119,20 +153,34 @@
                 border: 10px solid transparent;
                 border-bottom-color: $colour-black;
               }
+              &:after {
+                content: "";
+                position: absolute;
+                line-height: 0;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 0;
+                margin: 0 10px;
+                border-bottom: 2px solid #666;
+              }
             }
           }
-        }
-        li:hover {
-          background-color: rgba(100, 100, 100, 0.5);
-          // background-color: $colour-jasper-grey;
-          a {
-            border-bottom: 3px solid transparent;
-            // color: #222;
+          &:hover {
+            background-color: rgba(100, 100, 100, 0.5);
+            > a span.menu-item__text {
+              border-bottom: 3px solid transparent;
+            }
           }
-        }
+        }  
       }
       // Show sub menus on hover
       &:hover {
+        background-color: transparent;
+        > a span.menu-item__text {
+            border-bottom: 3px solid $colour-red;
+            background-color: transparent;
+          }
         > ul.main-nav__items {
           max-height: 400px;
           height: auto;
@@ -141,53 +189,5 @@
         }
       }
     }
-  }
-
-  /* Menu opened through hamburger toggle button */
-  &.menu-open {
-    display: block;
-    background-color: $colour-black;
-
-    li {
-      margin: 0;
-      display:block;
-    }
-    a {
-      padding: 20px 40px;
-      text-decoration: none;
-      color: $colour-white;
-    }
-    li:hover {
-      background-color: rgba(100, 100, 100, 0.5);
-      a {
-        border-bottom: 3px solid transparent;
-        // color: #222;
-      }
-    }
-    // Show menu inline again when menu is open and browser is resized
-    @include breakpoint($screen-lg) {
-      display: block;
-      background-color: transparent;
-      li {
-        display: inline-block;
-        margin: 0 20px;
-        padding: 24px 0;
-      }
-      a {
-        padding: 0;
-        color: $colour-black;
-
-      }
-      li:hover {
-        background-color: transparent;
-        a:hover {
-          border-bottom: 3px solid $colour-red;
-        }
-      }
-    }
-  }
+  }  
 }
-
-
-  
-
