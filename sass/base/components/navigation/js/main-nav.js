@@ -44,6 +44,25 @@
 
       // Change state of menu itself.
       $('#main-menu').toggleClass('menu-open');
+
+      toggleSubMenu();
+
+    });
+  }
+
+
+  function toggleSubMenu() {
+    $('.menu-open > li').on('click', function (e) {
+      $link = $(this).find($('a'));
+      if ($link.hasClass('has-submenu')){
+        //remove 'item-open' classes
+        $links = $('.menu-open > li');
+        $links.each(function() {
+          $(this).removeClass('item-open');
+        });
+        // Add class to clicked item
+        $(this).toggleClass('item-open');
+      }
     });
   }
 })(jQuery);
