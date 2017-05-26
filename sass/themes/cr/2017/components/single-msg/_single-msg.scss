@@ -2,20 +2,10 @@
 //
 // Markup: single-msg.twig
 //
-// .single-msg--copy-right - Copy right
 // .single-msg--copy-left - Copy left
-// .single-msg--feature-copy-right - Feature copy right
-// .single-msg--feature-copy-left - Feature copy left
 // .single-msg--copy-only - Copy only
-// .single-msg--default-padding - Default
-// .single-msg--negative-top - Reduce top padding
-// .single-msg--negative-bottom - Reduce bottom padding
-// .single-msg--no-top-padding - Remove top padding
-// .single-msg--no-bottom-padding - Remove bottom padding
-// .single-msg--no-padding - Remove top and bottom padding
 //
 // Style guide: 20.70
-
 
 /* Global styles for all variants, provides all styles for Copy Right variant */
 .single-msg {
@@ -26,63 +16,29 @@
     padding: 30px calc(3 * #{gutter()});
 
     @include breakpoint($screen-md) {
-      padding: 60px 0;
+      display: -webkit-flex;
+      display: flex;
+      padding: 60px calc(3 * #{gutter()});
     }
   }
-  &.single-msg--feature-copy-right,
-  &.single-msg--feature-copy-left {
-    .single-msg__outer-wrapper {
-      padding: 30px calc(4 * #{gutter()});
-
-      @include breakpoint($screen-md) {
-        padding: 60px gutter();
-      }
-
-      @include breakpoint($screen-lg) {
-        padding: 60px 0;
-      }
-    }
-  }
-  
   .single-msg__image {
-    width: 100%;
-    @include span(12);
-
     img {
       display: block;
       width: 100%;
       height: auto;
     }
 
+    @include span(12 no-gutters wide);
+
     @include breakpoint($screen-md) { 
-      width: span(6);
-      margin-left: calc( 2 * ( #{gutter()}) );
-      margin-right: 0;
+      @include span(4 no-gutters wide);
     }
-
-    @include breakpoint($screen-lg) { 
-      @include span(5);
-    }
-  } 
-
+  }
   .single-msg__copy_wrapper {
-    height: 100%;
-    @include span(12);
+    @include span(12 no-gutters wide);
 
-    @include breakpoint($screen-md) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      // Recalculate height minus the row padding
-      height: calc(100% - (60px * 2));
-      margin-top: 60px;
-      width: span(6);
-      margin-right: calc( 2 * ( #{gutter()}) );
-      margin-left: 0;
-    }
-
-    @include breakpoint($screen-lg) { 
-      @include span(7 wide);
+    @include breakpoint($screen-md) { 
+      @include span(8 no-gutters wide);
     }
 
     .single-msg__copy {
@@ -91,6 +47,13 @@
 
       @include breakpoint($screen-md) {
         height: 100%;
+      }
+    }
+    @include breakpoint($screen-md) {
+      &.bg--no-colour {
+        .single-msg__copy {
+          padding: 0 30px;
+        }
       }
     }
   }
@@ -208,23 +171,8 @@
   &.single-msg--copy-left {
     @include breakpoint($screen-md) {
       .single-msg__image {
-        float:right;
-        margin-left: 0;
-        margin-right: calc(2 * #{gutter()});
-      }
-    
-      .single-msg__copy_wrapper {
-        left: 0;
-        margin-left: calc(2 * #{gutter()});
-      }
-    }
-    @include breakpoint($screen-lg) {
-      .single-msg__image {
-        margin-right: gutter();
-      }
-    
-      .single-msg__copy_wrapper {
-        margin-left: gutter();
+        float: right;
+        order: 2;
       }
     }
   }
@@ -234,43 +182,42 @@
   /* Feature Copy Left and Right variation */
   &.single-msg--feature-copy-right,
   &.single-msg--feature-copy-left  {
+
+    .single-msg__outer-wrapper {
+      @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+        display: block;
+      }
+    }
+
     .single-msg__image {
       float: left;
       width: 100%;
       margin: 0;
 
-      @include breakpoint($screen-md) {
-        @include span(12);     
-      }
-
       @include breakpoint($screen-lg) {
-        @include span(7);     
+        @include span(6 no-gutters wide);     
       }  
     }
 
     .single-msg__copy_wrapper {
-      float: left;
-      margin: 0 calc(4*#{gutter()}) 0;
-      margin-top: calc(-4 *#{gutter()});
-      width: calc(100% - (8 * #{gutter()}) );
+      width: 100%;
 
       @include breakpoint($screen-md) {
-        position: relative;
-      }  
-      
+        &.bg--no-colour {
+          .single-msg__copy {
+            padding: 30px;
+
+            @include breakpoint($screen-lg) {
+              padding: 0 30px;
+            }
+          }
+        }
+      }
+
       @include breakpoint($screen-lg) {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 90px gutter() 0 0;
-        height: calc(100% - (60px * 3));
+        margin: 0;
 
-        // Only overlap by half a column
-        width: calc( #{span(5)} +  ( #{gutter()} * 4) );
-      } 
-
-      .single-msg__copy {
-        height: auto;
+        @include span(6 no-gutters wide);
       }
     } 
   }
@@ -281,23 +228,7 @@
       @include breakpoint($screen-lg) {
         float: right;
         margin-left: 0;
-        margin-right: calc(2 * #{gutter()});;
-      }
-    }
-
-    .single-msg__copy_wrapper {
-      @include breakpoint($screen-lg) {
-        left: 0;
-        margin: 90px 0 0 calc(2 * #{gutter()});
-      }
-    }
-    @include breakpoint($screen-lg) {
-      .single-msg__image {
-        margin-right: gutter();
-      }
-    
-      .single-msg__copy_wrapper {
-        margin-left: gutter();
+        order: 2;
       }
     }
   }

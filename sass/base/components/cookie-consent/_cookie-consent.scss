@@ -43,7 +43,7 @@
     width: 40px;
     height: 44px;
     text-indent: -9999px;
-    background-image: url('../images/svgs/cross-close.svg');
+    background-image: url( $image-path + "cross-close.svg");
     background-repeat: no-repeat;
     background-position: center;
     @extend .btn;

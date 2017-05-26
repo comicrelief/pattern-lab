@@ -34,12 +34,9 @@
   }
 }
 
-/* Social sharing icons */
-.cr-article__social-links {
-  @include clearfix;
-}
 .social-links-label {
   text-align: right;
+  font-family: $body-font;
   @include span(6);
   @include translateY(50%);
 }
@@ -76,19 +73,19 @@ ul.social-links {
   html.no-svg & {
     background: no-repeat center center;
     &.icon__fb {
-      background-image: url("../images/icons/facebook.png");
+      background-image: url($image-path + "facebook.png");
     }
     &.icon__twitter {
-      background-image: url("../images/icons/twitter.png");
+      background-image: url($image-path + "twitter.png");
     }
     &.icon__googleplus {
-      background-image: url("../images/icons/gplus.png");
+      background-image: url($image-path + "gplus.png");
     }
     &.icon__youtube {
-      background-image: url("../images/icons/youtube.png");
+      background-image: url($image-path + "youtube.png");
     }
     &.icon__instagram {
-      background-image: url("../images/icons/instagram.png");
+      background-image: url($image-path + "instagram.png");
     }
   }
 }

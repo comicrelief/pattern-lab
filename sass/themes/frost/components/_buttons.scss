@@ -1,0 +1,51 @@
+// ==========================================================================
+// Button
+// ==========================================================================
+
+.btn {
+  background-color: $colour-blue;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 0px;
+  padding: 9px 33px 0px;
+  line-height: 51px;
+  
+  &:hover {
+    background-color: $colour-dark-blue;
+    
+  }
+}
+.btn--rectangle {
+  @include border-radius(0px);
+
+  &:hover {
+    @include border-radius(0px);
+  }
+}
+.btn--full-width {
+  @include breakpoint($screen-md) {
+    width: 100%;
+  }
+}
+
+/* Ghost button 
+less padding because ghost buttons have borders */
+.btn--blue-ghost {
+  padding: 5px 29px 0px;
+  border: 2px solid $colour-blue;
+  background-color: $colour-white;
+  color: $colour-blue;
+
+  &:hover {
+    border: 0px;
+    padding: 9px 33px 0px;
+    background-color: $colour-dark-blue;
+    color: $colour-white;
+  }
+}
+.btn--white-ghost {
+  background-color: $colour-black;
+  &:hover {
+    color: $colour-black;
+  }
+}

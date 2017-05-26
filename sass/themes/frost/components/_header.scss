@@ -1,0 +1,42 @@
+// ==========================================================================
+// Header
+// ==========================================================================
+
+header[role=banner] {
+  background: $colour-white;
+}
+
+header {
+  overflow: hidden;
+ 
+}
+
+.header {
+  text-align: center;
+  @include container;
+  @include span(12);
+}
+
+.header-logo {
+  img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0px auto;
+  }
+}
+
+.btn-login {
+  /* temporary until design finalised */
+  display: none;
+  float: right;
+  margin-top: 25px;
+  display: block;
+  margin-right: 15px;
+  text-decoration: none;
+  &:active, &:hover {
+    border-bottom: 1px solid $colour-black;
+    color: $colour-black;
+  }
+}
+

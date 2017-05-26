@@ -1,0 +1,123 @@
+
+// ==========================================================================
+// Common
+// ==========================================================================
+
+body {
+  font-family: $body-font; 
+  @include font-size($p-font-size);
+  background: $colour-background-grey;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; 
+  display: table;  
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+* html .clearfix { 
+  zoom: 1; 
+}
+
+*:first-child+html .clearfix { 
+  zoom: 1; 
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*:before, 
+*:after {
+  @include box-sizing(border-box);
+}
+
+div:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+// ==========================================================================
+// Layout
+// ==========================================================================
+
+#main {
+  position: relative;
+}
+
+main {
+  width: 100%;
+  background-color: $colour-background-grey;
+}
+
+.content {
+  @include container;
+  margin: 0px auto;
+}
+
+.content-top {
+
+}
+
+.content-bottom {
+
+}
+
+// ==========================================================================
+// Utilities 
+// ==========================================================================
+
+.left { 
+  float: left; 
+}
+
+.right { 
+  float: right; 
+}
+
+.hide { 
+  display: none; 
+}
+
+.centered {
+  text-align: center;
+}
+
+.hide-text {
+  text-indent: -100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 0;
+  line-height: 0;
+  min-height: 0;
+}
+
+.nowrap { 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.uppercase { 
+  text-transform: uppercase; 
+}
+
+.invisible {
+  visibility: hidden;
+}

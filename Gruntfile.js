@@ -46,13 +46,12 @@ module.exports = function (grunt) {
     },
 
     imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: 'images/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/images'
-        }]
+      files: {
+        expand: true,
+        flatten: true,
+        cwd: 'sass/base/components',
+        src: ['**/*.{png,jpg,gif,svg}'],
+        dest: 'dist/images'
       }
     },
 
@@ -122,7 +121,7 @@ module.exports = function (grunt) {
           title: 'Comic Relief PatternLab',
           css: '../css/themes/cr/2017/cr17.css'
         },
-        src: ['sass/base', 'sass/themes/cr/2017'],
+        src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
       },
       rnd17: {

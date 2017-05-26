@@ -31,7 +31,7 @@ footer[role=contentinfo] {
         height: inherit;
       }
       html.no-svg & {
-        // background-image: url("../images/icons/cr_footer_logo.png");
+        // background-image: url($image-path + "cr_footer_logo.png");
       }
     }
   }
