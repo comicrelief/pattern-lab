@@ -1,0 +1,44 @@
+<section class="paragraph feature-articles-block">
+  <h2>Max 4 items</h2>
+  {% for i in 0..3 %}
+  <div class="feature-articles-block__item">
+    <article class="article-teaser">
+      <div class="article-teaser__image">
+        <picture>
+          <img property="schema:image" class="media__image media__element b-lazy b-responsive b-loaded" src="kss-assets/images/16-9-img.jpg" alt="" typeof="foaf:Image">
+        </picture>
+      </div>
+      <div class="article-teaser__content-wrapper">
+        <div class="article-teaser__content">
+          <span class="article-teaser__date"> 
+          28 October 2016
+          </span>
+          <h2><a href="#" hreflang="en">News article same category title</a></h2>
+        </div>
+        <div></div>
+      </div>
+    </article>
+  </div>
+  {% endfor %}
+  <h2>Teasers always keep same 3 columns width</h2>
+  {% for i in 0..1 %}
+  <div class="feature-articles-block__item">
+    <article class="article-teaser">
+      <div class="article-teaser__image">
+        <picture>
+          <img property="schema:image" class="media__image media__element b-lazy b-responsive b-loaded" src="kss-assets/images/16-9-img.jpg" alt="" typeof="foaf:Image">
+        </picture>
+      </div>
+      <div class="article-teaser__content-wrapper">
+        <div class="article-teaser__content">
+          <span class="article-teaser__date"> 
+          28 October 2016
+          </span>
+          <h2><a href="#" hreflang="en">News article same category title</a></h2>
+        </div>
+        <div></div>
+      </div>
+    </article>
+  </div>
+  {% endfor %}
+</section>
