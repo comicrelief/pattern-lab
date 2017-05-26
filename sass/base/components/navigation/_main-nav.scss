@@ -28,12 +28,11 @@
   @include breakpoint($screen-lg) { 
     .main-nav {
       width: 75%;
-      float:right;
     }
   }
 }
 // Show hamburger toggle button on mobile sizes
-.main-nav__icons{
+.main-nav__icons {
   .main-nav-toggle {
     float: right;
     background-color: transparent;
@@ -44,43 +43,32 @@
 }
 
 .main-nav__items {
-  display: none;
+  position: absolute;
+  top: 76px;
+  overflow: hidden; 
+  width: 100%;
+  max-height: 0;
+  background-color: $colour-black;
+  @include transition-property(max-height);
+  @include transition-duration(850ms);
 
   li {
-    margin: 0 20px;
-    padding: 24px 0;
+    padding: 14px 20px;
   }
   a {
+    color: $colour-white;
     font-family: $body-font;
     font-size: 18px;
     line-height: 20px;
-    color: $colour-black;
     text-decoration: none;
   }
 
   /* Menu opened through hamburger toggle button */
   &.menu-open {
-    display: block;
-    position: absolute;
-    top: 76px;
-    width: 100%; 
-    background-color: $colour-black;
+    max-height: 400px;
 
-    li {
-      margin: 0;
-      padding: 14px;
-      display:block;
-    }
-    a {
-      text-decoration: none;
-      color: $colour-white;
-    }
     li:hover {
       background-color: rgba(100, 100, 100, 0.5);
-    }
-    
-    @include breakpoint($screen-md) {
-     width: 50%;
     }
   }
 }
@@ -94,15 +82,17 @@
     }
   }
   .main-nav__items,
-  .main-nav__items.menu-open  {
-    display: block;
+  .main-nav__items.menu-open {
     position: relative;
-    top:0;
+    top: 25px;
+    overflow: visible;
     width: 100%;
+    max-height: none;
     background-color: $colour-white;
 
     li {
       display: inline-block;
+      padding: 0 16px;
       background-color: transparent;
 
       a {
@@ -113,29 +103,26 @@
       > ul {
         display: none;
         position: absolute;
-        top: 76px;
+        top: 50px; 
         padding: 0;
         width: 250px;
 
         // Sub menu items
         li {
           position: relative;
-          margin: 0;
           padding: 14px;
-          float: left;
           width: 100%;
 
           a {
             padding: 0;
+            color: $colour-white;
             font-size: 16px;
             line-height: 18px;
-            text-decoration: none;
-            color: $colour-white;
-            border:none;
+            text-decoration: none; 
           }
 
           // Our 'landing page' duplicate link, top of each sub menu
-          &.menu-item--duplicate  {
+          &.menu-item--duplicate {
 
             a {
               font-size: 18px;
@@ -143,26 +130,25 @@
 
               // Triangle pointer
               &:before {
-                content: '';
-                width: 16px;
-                height: 16px;
                 display: block;
                 position: absolute;
+                top: -12px;
                 left: 20px;
-                top: -20px;
-                border: 10px solid transparent;
+                width: 12px;
+                height: 12px;
+                border: 6px solid transparent;
                 border-bottom-color: $colour-black;
+                content: '';
               }
               &:after {
-                content: "";
                 position: absolute;
-                line-height: 0;
+                right: 0;
                 bottom: -1px;
                 left: 0;
-                right: 0;
-                height: 0;
                 margin: 0 10px;
+                height: 0;
                 border-bottom: 2px solid #666;
+                content: '';
               }
             }
           }
@@ -182,9 +168,8 @@
             background-color: transparent;
           }
         > ul.main-nav__items {
-          max-height: 400px;
-          height: auto;
           display: block;
+          max-height: 400px;
           background-color: $colour-black;
         }
       }
