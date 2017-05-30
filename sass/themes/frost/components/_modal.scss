@@ -17,18 +17,16 @@
     left: 20%;
     right: 20%;
     bottom: 30%;
-    border: 1px solid #ccc;
-    background: #fff;
+    border: 1px solid $colour-border-grey;
+    background: white;
     overflow: auto;
-    WebkitOverflowScrolling: touch;
-    borderRadius: 4px;
     outline: none;
     padding: 20px;
 }
 .modal__close {
     color: white;
     float: right;
-    font-size: 28px;
+    @include font-size($h3-font-size);
 }
 .modal__close:hover,
 .modal__close:focus {
