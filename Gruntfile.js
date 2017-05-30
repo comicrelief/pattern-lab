@@ -4,6 +4,8 @@ var tilde_importer = require('grunt-sass-tilde-importer');
 
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-postcss');
+
   grunt.initConfig({
 
     sass: {
@@ -75,7 +77,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['sass/{,**/}*.{scss,sass}'],
-        tasks: ['sass'],
+        tasks: ['sass', 'postcss:dist'],
         options: {
           // Start a live reload server on the default port 35729
           livereload: true
@@ -175,6 +177,18 @@ module.exports = function (grunt) {
 
     clean: {
       build: ['tests/visual/reference']
+    },
+
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')
+        ]
+      },
+      dist: {
+        src: ['dist/css/kss/*.css', 'dist/css/themes/**/*.css']
+      }
     }
   });
 
@@ -185,7 +199,8 @@ module.exports = function (grunt) {
     'sass',
     'modernizr',
     'imagemin',
-    'kss'
+    'kss',
+    'postcss:dist'
   ]);
 
   grunt.registerTask('watch:dev', [
