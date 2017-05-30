@@ -45,6 +45,11 @@
       // Change state of menu itself.
       $('#main-menu').toggleClass('menu-open');
 
+      // Disable default event for links with sub menu
+      var link = $('.menu-open').find('.has-submenu');
+      link.click(function (e) {
+        e.preventDefault();
+      });
       toggleSubMenu();
 
     });
@@ -53,15 +58,11 @@
 
   function toggleSubMenu() {
     $('.menu-open > li').on('click', function (e) {
-      $link = $(this).find($('a'));
-      if ($link.hasClass('has-submenu')){
-        //remove 'item-open' classes
-        $links = $('.menu-open > li');
-        $links.each(function() {
-          $(this).removeClass('item-open');
-        });
-        // Add class to clicked item
-        $(this).toggleClass('item-open');
+
+      if ($(this).find('a').hasClass('has-submenu')) {
+        // Remove any item open classes an add class to clicked item
+        $('.menu-open > li.item-open').not(this).removeClass('item-open');
+        $(this).toggleClass('item-open'); 
       }
     });
   }
