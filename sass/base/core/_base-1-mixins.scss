@@ -297,12 +297,6 @@
   appearance: $arg;
 }
 
-@mixin background-size( $arg ) {
-  -webkit-background-size: $arg;
-  -moz-background-size: $arg;
-  -o-background-size: $arg;
-  background-size: $arg;
-}
 
 @mixin notransition {
   -webkit-transition: none !important;
