@@ -6,7 +6,7 @@
 ## The idea
 To have a centralised hub supply common styling across CR products. 
 
-## Quicklink
+## Quicklinks
 
 [Styleguide](#styleguide)
 
