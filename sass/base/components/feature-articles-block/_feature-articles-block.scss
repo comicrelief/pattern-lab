@@ -15,21 +15,21 @@
 	@include breakpoint($screen-md-max) {
 		max-width: calc(1200px - (2 * 1.25%));
 	}
-}
-.feature-articles-block__item {
-	width: 100%;
-	height: 100%;
-	margin: 0 0 calc(4 * #{gutter()});
-	display: inline-block;
-	background-color: $colour-white;
+	.article-teaser {
+		width: 100%;
+		height: 100%;
+		margin: 0 0 calc(4 * #{gutter()});
+		display: inline-block;
+		background-color: $colour-white;
 
-	@include breakpoint($screen-md) {
-		position: relative;
-		height: auto;
-	}
-	@include breakpoint($screen-lg) {
-		@include span(3);
-		height: 390px;
-		margin-bottom: calc(2 * #{gutter()});
+		@include breakpoint($screen-md) {
+			position: relative;
+			height: auto;
+		}
+		@include breakpoint($screen-lg) {
+			@include span(3);
+			height: 390px;
+			margin-bottom: calc(2 * #{gutter()});
+		}
 	}
 }
