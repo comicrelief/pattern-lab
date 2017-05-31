@@ -17,7 +17,7 @@
   }
   .node__links {
     @include opacity(0);
-    @include transition(opacity 0.5s);
+    transition: opacity 0.5s;
     a {
       position: absolute;
       top: 0;

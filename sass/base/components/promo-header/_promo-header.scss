@@ -213,7 +213,7 @@
     font-size: 16px;
     line-height: 22px;
     @include border-radius(30px);
-    @include transition(background-color 300ms);
+    transition: background-color 300ms;
     &:hover {
       background-color: rgba(255,255,255,0.8);
     }

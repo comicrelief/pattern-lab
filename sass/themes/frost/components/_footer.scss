@@ -71,7 +71,7 @@ ul.menu {
 
 .menu--footer ul li a {
   display: block;
-  @include transition(color 180ms);
+  transition: color 180ms;
   color: $colour-white;
   font-weight: 300;
   text-decoration: none;

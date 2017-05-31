@@ -246,7 +246,7 @@ header[role=banner] {
 .promo-header__link {
   a {
     @include border-radius(30px);
-    @include transition(background-color 300ms);
+    transition: background-color 300ms;
     display: inline-block;
     height: 50px;
     padding: 14px 35px;

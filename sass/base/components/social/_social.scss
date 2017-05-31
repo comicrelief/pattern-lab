@@ -63,7 +63,7 @@ ul.social-links {
     margin: 0;
   }
   .icon {
-    @include transition(fill 0.3s ease);
+    transition: fill 0.3s ease;
 
     fill: white;
     &:hover {
