@@ -50,7 +50,7 @@
 				display: inline-block;
 				text-align: right;
 				font-size: 22px;
-				@include translateY(70%);
+				transform: translateY(70%);
 			}
 		}
 		.ui-widget {

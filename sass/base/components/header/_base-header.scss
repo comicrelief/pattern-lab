@@ -144,7 +144,7 @@ header[role=banner] {
 }
 .promo-header__content {
   @include breakpoint($screen-md-max) {
-    @include translateY(-50%);
+    transform: translateY(-50%);
     position: absolute;
     top: 50%;
     right: 0;
@@ -156,7 +156,7 @@ header[role=banner] {
   max-width: 1200px;
   margin: auto;
   .promo-header--feature & {
-    @include translateY(0);
+    transform: translateY(0);
     position: relative;
     top: 0;
     margin: -50px auto 0;
@@ -165,7 +165,7 @@ header[role=banner] {
     @include breakpoint-gutters;
   }
   .promo-header--no-image & {
-    @include translateY(0);
+    transform: translateY(0);
     position: relative;
     top: 0;
   }

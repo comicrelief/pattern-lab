@@ -111,7 +111,7 @@
     right: 0;
     left: 0;
     width: 100%;
-    @include translateY(-50%);
+    transform: translateY(-50%);
   }
   .promo-header--feature & {
     position: relative;
@@ -119,13 +119,13 @@
     margin: -50px auto 0;
     padding: 1px 0;
     background: $colour-white;
-    @include translateY(0);
+    transform: translateY(0);
     @include breakpoint-gutters;
   }
   .promo-header--no-image & {
     position: relative;
     top: 0;
-    @include translateY(0);
+    transform: translateY(0);
   }
   .promo-header__content-inner {
     width: 100%;

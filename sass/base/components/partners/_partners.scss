@@ -123,7 +123,7 @@
                 font-family: "GT-Walsheim-Bold",helvetica,arial,sans-serif;
                 font-size: 18px;
                 line-height: 18px;
-                @include translateY(-50%);
+                transform: translateY(-50%);
               }
             }
           }
