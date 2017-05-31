@@ -169,8 +169,8 @@ select,
     -webkit-appearance: none;
     // iOS fix
     -webkit-tap-highlight-color: transparent;
-    @include transition-property(background-color);
-    @include transition-duration(600ms);
+    transition-property: background-color;
+    transition-duration: 600ms;
     &:hover {
       background-color: #272727;
     }

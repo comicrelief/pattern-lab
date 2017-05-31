@@ -53,8 +53,8 @@
       width: 25px;
       height: 25px;
       margin: 21px 4px;
-      @include transition-property(fill);
-      @include transition-duration(150ms);
+      transition-property: fill;
+      transition-duration: 150ms;
       @include breakpoint($screen-md) {
         width: 35px;
         height: 35px;

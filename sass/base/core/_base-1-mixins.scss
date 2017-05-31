@@ -27,20 +27,20 @@
     // Applies $colour-green etc.
     background-color: nth($button, 2);
     color: nth($button, 4);
-    @include transition-property(background-color);
-    @include transition-duration(300ms);
+    transition-property: background-color;
+    transition-duration: 300ms;
     &:hover,
     &:focus {
       outline: none;
       // Applies $green-v-dark etc.
       background-color: nth($button, 3);
       color: nth($button, 4);
-      @include transition-property(background-color);
-      @include transition-duration(600ms);
+      transition-property: background-color;
+      transition-duration: 600ms;
     }
     &:active {
-      @include transition-property(background-color);
-      @include transition-duration(600ms);
+      transition-property: background-color;
+      transition-duration: 600ms;
     }
   }
 }
@@ -218,27 +218,6 @@
   clear:both;
 }
 
-/* @mixin transform($transforms) {
-  -webkit-transform: $transforms;
-  -moz-transform: $transforms;
-  -ms-transform: $transforms;
-  transform: $transforms;
-} */
-/* 
-@mixin translateY($trans-y: $default-translate-y, $perspective: false, $only3d: false) {
-  $trans: translateY($trans-y);
-  @if $perspective {
-    $trans: perspective($perspective) $trans;
-  }
-  @include transform($trans);
-} */
-
-@mixin transition-property($property...) {
-    -moz-transition-property:    $property;
-    -o-transition-property:      $property;
-    -webkit-transition-property: $property;
-    transition-property:         $property;
-}
 @mixin transition-duration($duration...) {
     -moz-transition-duration:    $duration;
     -o-transition-duration:      $duration;
