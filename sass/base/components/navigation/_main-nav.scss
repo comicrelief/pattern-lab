@@ -16,17 +16,20 @@
 /* Main navigation menu styling  */ 
 .main-nav-menu {
 
-  .main-nav {
+  .main-nav,
+  .menu-open {
     width: 100%;
   }
   @include breakpoint($screen-md) {
-    .main-nav {
+    .main-nav,
+    .menu-open {
       float: right;
       width: 50%;
     }
   }
   @include breakpoint($screen-lg) { 
-    .main-nav {
+    .main-nav,
+    .menu-open {
       width: 75%;
     }
   }
@@ -48,28 +51,85 @@
   overflow: hidden; 
   width: 100%;
   max-height: 0;
-  background-color: $colour-black;
+  background-color: $colour-smoke-grey;
   @include transition-property(max-height);
   @include transition-duration(850ms);
 
+  // menu items
   li {
-    padding: 14px 20px;
-  }
-  a {
-    color: $colour-white;
-    font-family: $body-font;
-    font-size: 18px;
-    line-height: 20px;
-    text-decoration: none;
+    a {
+      display: block;
+      padding: 14px 20px;
+      color: $colour-jasper-grey;
+      font-family: $body-font;
+      font-size: 20px;
+      line-height: 22px;
+      text-decoration: none;
+    }
+    // line below duplicate link in sub menu
+    &.menu-item--duplicate {
+      a {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      a:after {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        left: 0;
+        margin: 0 10px;
+        height: 0;
+        border-bottom: 2px solid #999;
+        content: '';
+      }     
+    }
   }
 
   /* Menu opened through hamburger toggle button */
   &.menu-open {
     max-height: 400px;
+    li {
+      > ul {
+        position: relative;
+        top: 0;
+        width: 100%;
+        max-height: 0;
+        background-color: $colour-black;
+        @include transition-property(max-height);
+        @include transition-duration(850ms);
+        @include transition-timing-function(cubic-bezier(0.2,1,0.5,1));
+        
+        li {
+          a {
+            color: $colour-white;
+            font-size: 16px;
+            line-height: 18px;
+          }
+          &.menu-item--duplicate {
+            a {
+              font-size: 18px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+      &:hover {
+        background-color: $colour-light-grey;
+      }
+      &.item-open {
+        // show sub menu when menu item is clicked
+        > ul {       
+          max-height: 400px;
 
-    li:hover {
-      background-color: rgba(100, 100, 100, 0.5);
-    }
+          li:hover {
+            background-color: $colour-jasper-grey;
+          }
+          a {
+            color: $colour-white;
+          }
+        }
+      }
+    }   
   }
 }
 /* Show inline menu on desktop size with sub menus on hover */
@@ -83,29 +143,35 @@
   }
   .main-nav__items,
   .main-nav__items.menu-open {
+    float: left;
     position: relative;
     top: 25px;
     overflow: visible;
-    width: 100%;
+    width: 75%;
     max-height: none;
     background-color: $colour-white;
 
-    li {
+    li, 
+    li.item-open {
       display: inline-block;
       padding: 0 16px;
       background-color: transparent;
 
       a {
-        color: $colour-black;  
+        padding: 0;
+        color: $colour-black;
+        font-size: 18px;
+        line-height: 24px;
       }
-    
-      // Sub menu, hidden until parent item is hovered
+
+      // Sub menu, hidden until parent item is clicked or hovered
       > ul {
         display: none;
         position: absolute;
         top: 50px; 
         padding: 0;
         width: 250px;
+        background-color: $colour-black;
 
         // Sub menu items
         li {
@@ -121,12 +187,11 @@
             text-decoration: none; 
           }
 
-          // Our 'landing page' duplicate link, top of each sub menu
+          // Duplicate link, top of each sub menu
           &.menu-item--duplicate {
-
             a {
               font-size: 18px;
-              line-height: 24px;
+              line-height: 22px;
 
               // Triangle pointer
               &:before {
@@ -140,34 +205,36 @@
                 border-bottom-color: $colour-black;
                 content: '';
               }
+              // line
               &:after {
-                position: absolute;
-                right: 0;
-                bottom: -1px;
-                left: 0;
-                margin: 0 10px;
-                height: 0;
-                border-bottom: 2px solid #666;
-                content: '';
+                top: 48px;
               }
             }
           }
           &:hover {
-            background-color: rgba(100, 100, 100, 0.5);
-            > a span.menu-item__text {
-              border-bottom: 3px solid transparent;
+            background-color: $colour-jasper-grey;
+            > a {
+              color: $colour-white;
+              span.menu-item__text {
+                border-bottom: 3px solid transparent;
+              }
             }
           }
         }  
       }
+    
       // Show sub menus on hover
       &:hover {
         background-color: transparent;
-        > a span.menu-item__text {
+        > a {
+          color: $colour-black;
+          span.menu-item__text {
             border-bottom: 3px solid $colour-red;
             background-color: transparent;
           }
-        > ul.main-nav__items {
+        }
+          
+        > ul {
           display: block;
           max-height: 400px;
           background-color: $colour-black;
