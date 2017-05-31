@@ -2,59 +2,6 @@
 //
 // General overrides - we need to split those rules to specific files
 
-header[role=banner] {
-  height: 70px;
-  @media (min-width: 1150px) {
-    height: 76px;
-  }
-  .kids-section & {
-    @include breakpoint($desktop-nav-breakpoint) {
-      height: 110px;
-    }
-  }
-  .feature-nav__items,
-  .feature-nav__icons {
-    .kids-section & {
-      @include breakpoint($desktop-nav-breakpoint) {
-        display: none;
-      }
-    }
-  }
-}
-.site-logo {
-  width: 124px;
-  height: 50px;
-  margin-top: 10px;
-  margin-right: 0;
-  img {
-    width: 100%;
-    height: auto;
-  }
-  @media screen and (min-width: 1150px) {
-    width: 124px;
-    height: 50px;
-    margin-top: 12px;
-    margin-left: 15px;
-  }
-}
-.header__inner-wrapper {
-  height: 70px;
-}
-.header__inner-wrapper nav.navigation {
-  top: 70px;
-  ul.menu {
-    top: 66px;
-    li {
-      a {
-        font-size: 20px;
-        line-height: 20px;
-      }
-    }
-  }
-  @media screen and (min-width: 1150px) {
-    top: 76px;
-  }
-}
 // Burger menu
 .c-hamburger {
   width: 60px;
@@ -92,15 +39,7 @@ header[role=banner] {
   font-family: "GT-Walsheim-Regular",helvetica,arial,sans-serif;
   top: 25px;
 }
-// Signup form
-.block--cr-email-signup--head.show .block--cr-email-signup__inner-wrapper {
-  @media (min-width: 740px) {
-    right: 127px;
-  }
-  @media (min-width: 1150px) {
-    right: 0;
-  }
-}
+
 // Meta nav
 .feature-nav__items {
   margin-top: 0;
@@ -178,14 +117,7 @@ header[role=banner] {
     }
   }
 }
-// Kids nav
-.kids-logo {
-  @media (max-width: 1150px) {
-    width: 155px;
-    height: 45px;
-    background-size: 100%;
-  }
-}
+
 // Social icons
 .footer__social-links {
   li {
