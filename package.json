@@ -68,6 +68,6 @@
   },
   "browserslist": [
     "> 1%",
-    "last 5 versions"
+    "last 3 versions"
   ]
 }
