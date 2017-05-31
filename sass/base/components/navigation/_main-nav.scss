@@ -55,7 +55,7 @@
   @include transition-property(max-height);
   @include transition-duration(850ms);
 
-  // menu items
+  // Menu items
   li {
     a {
       display: block;
@@ -66,12 +66,13 @@
       line-height: 22px;
       text-decoration: none;
     }
-    // line below duplicate link in sub menu
+    // Duplicate link, top of each sub menu
     &.menu-item--duplicate {
       a {
         font-size: 18px;
         line-height: 24px;
       }
+      // Line 
       a:after {
         position: absolute;
         top: 50px;
@@ -117,7 +118,7 @@
         background-color: $colour-light-grey;
       }
       &.item-open {
-        // show sub menu when menu item is clicked
+        // Show sub menu when menu item is clicked
         > ul {       
           max-height: 400px;
 
@@ -164,7 +165,7 @@
         line-height: 24px;
       }
 
-      // Sub menu, hidden until parent item is clicked or hovered
+      // Sub menu, hidden until parent item is hovered
       > ul {
         display: none;
         position: absolute;
@@ -205,7 +206,7 @@
                 border-bottom-color: $colour-black;
                 content: '';
               }
-              // line
+              // Line
               &:after {
                 top: 48px;
               }
@@ -233,7 +234,7 @@
             background-color: transparent;
           }
         }
-          
+           
         > ul {
           display: block;
           max-height: 400px;
