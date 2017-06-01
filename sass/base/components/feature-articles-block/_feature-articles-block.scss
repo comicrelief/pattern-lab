@@ -27,7 +27,7 @@
 			height: auto;
 		}
 		@include breakpoint($screen-lg) {
-			@include span(3);
+			@include span(4);
 			height: 390px;
 			margin-bottom: calc(2 * #{gutter()});
 		}
