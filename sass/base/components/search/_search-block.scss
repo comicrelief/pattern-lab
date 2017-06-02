@@ -103,6 +103,10 @@
   @include breakpoint($screen-md) {
     padding: 0 calc((2 * 1.25%));
   }
+  @include breakpoint($screen-lg) {
+    width: span(6);
+    padding: 0 calc((0.5 * 1.25%));
+  }
   form {
     margin: 39px auto 40px;
     width: 100%;
