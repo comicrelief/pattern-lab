@@ -16,10 +16,108 @@
 /* Main navigation menu styling  */ 
 .main-nav-menu {
 
+  // Show hamburger toggle button on mobile sizes
+  .main-nav__icons {
+    .main-nav-toggle {
+      float: right;
+      background-color: transparent;
+    }
+  }
+
   .navigation,
   .menu-open {
     width: 100%;
   }
+  
+  .main-nav__items {
+    position: absolute;
+    top: 76px;
+    overflow: hidden; 
+    width: 100%;
+    max-height: 0;
+    background-color: $colour-smoke-grey;
+    @include transition-property(max-height);
+    @include transition-duration(850ms);
+
+    // Menu items
+    li {
+      a {
+        display: block;
+        padding: 14px 20px;
+        color: $colour-jasper-grey;
+        font-family: $body-font;
+        font-size: 20px;
+        line-height: 22px;
+        text-decoration: none;
+      }
+      // Duplicate link, top of each sub menu
+      &.menu-item--duplicate {
+        a {
+          font-size: 18px;
+          line-height: 24px;
+        }
+        // Line 
+        a:after {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          left: 0;
+          margin: 0 10px;
+          height: 0;
+          border-bottom: 2px solid #999;
+          content: '';
+        }     
+      }
+    }
+
+    /* Menu opened through hamburger toggle button */
+    &.menu-open {
+      max-height: 400px;
+      li {
+        > ul {
+          position: relative;
+          top: 0;
+          width: 100%;
+          max-height: 0;
+          background-color: $colour-black;
+          @include transition-property(max-height);
+          @include transition-duration(850ms);
+          @include transition-timing-function(cubic-bezier(0.2,1,0.5,1));
+          
+          li {
+            a {
+              color: $colour-white;
+              font-size: 16px;
+              line-height: 18px;
+            }
+            &.menu-item--duplicate {
+              a {
+                font-size: 18px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+        &:hover {
+          background-color: $colour-light-grey;
+        }
+        &.item-open {
+          // Show sub menu when menu item is clicked
+          > ul {       
+            max-height: 400px;
+
+            li:hover {
+              background-color: $colour-jasper-grey;
+            }
+            a {
+              color: $colour-white;
+            }
+          }
+        }
+      }   
+    }
+  }
+  
   @include breakpoint($screen-md) {
     .navigation,
     .menu-open {
@@ -27,220 +125,130 @@
       width: 50%;
     }
   }
-  @include breakpoint($screen-lg) { 
-    .navigation,
+
+  /* Show inline menu on desktop size with sub menus on hover */
+  @include breakpoint($screen-lg) {
+    
+    // hide hamburger menu
+    .main-nav__icons {
+      .main-nav-toggle {
+        display: none;
+      }
+    }
+
+    .navigation, 
     .menu-open {
       width: 75%;
     }
-  }
-}
-// Show hamburger toggle button on mobile sizes
-.main-nav__icons {
-  .main-nav-toggle {
-    float: right;
-    background-color: transparent;
-  }
-  @include breakpoint($screen-lg) {
-    display: none;
-  }
-}
-
-.main-nav__items {
-  position: absolute;
-  top: 76px;
-  overflow: hidden; 
-  width: 100%;
-  max-height: 0;
-  background-color: $colour-smoke-grey;
-  @include transition-property(max-height);
-  @include transition-duration(850ms);
-
-  // Menu items
-  li {
-    a {
-      display: block;
-      padding: 14px 20px;
-      color: $colour-jasper-grey;
-      font-family: $body-font;
-      font-size: 20px;
-      line-height: 22px;
-      text-decoration: none;
-    }
-    // Duplicate link, top of each sub menu
-    &.menu-item--duplicate {
-      a {
-        font-size: 18px;
-        line-height: 24px;
-      }
-      // Line 
-      a:after {
-        position: absolute;
-        top: 50px;
-        right: 0;
-        left: 0;
-        margin: 0 10px;
-        height: 0;
-        border-bottom: 2px solid #999;
-        content: '';
-      }     
-    }
-  }
-
-  /* Menu opened through hamburger toggle button */
-  &.menu-open {
-    max-height: 400px;
-    li {
-      > ul {
-        position: relative;
-        top: 0;
-        width: 100%;
-        max-height: 0;
-        background-color: $colour-black;
-        @include transition-property(max-height);
-        @include transition-duration(850ms);
-        @include transition-timing-function(cubic-bezier(0.2,1,0.5,1));
-        
-        li {
-          a {
-            color: $colour-white;
-            font-size: 16px;
-            line-height: 18px;
-          }
-          &.menu-item--duplicate {
-            a {
-              font-size: 18px;
-              line-height: 24px;
-            }
-          }
-        }
-      }
-      &:hover {
-        background-color: $colour-light-grey;
-      }
-      &.item-open {
-        // Show sub menu when menu item is clicked
-        > ul {       
-          max-height: 400px;
-
-          li:hover {
-            background-color: $colour-jasper-grey;
-          }
-          a {
-            color: $colour-white;
-          }
-        }
-      }
-    }   
-  }
-}
-/* Show inline menu on desktop size with sub menus on hover */
-@include breakpoint($screen-lg) {
-  .main-nav {
+    
+    .navigation {
     > ul { 
       > li {
         height: 76px;
       }    
     }
   }
-  .main-nav__items,
-  .main-nav__items.menu-open {
-    float: left;
-    position: relative;
-    top: 25px;
-    overflow: visible;
-    width: 75%;
-    max-height: none;
-    background-color: $colour-white;
 
-    li, 
-    li.item-open {
-      display: inline-block;
-      padding: 0 16px;
-      background-color: transparent;
+    .main-nav__items,
+    .main-nav__items.menu-open {
+      float: left;
+      position: relative;
+      top: 25px;
+      overflow: visible;
+      width: 75%;
+      max-height: none;
+      background-color: $colour-white;
 
-      a {
-        padding: 0;
-        color: $colour-black;
-        font-size: 18px;
-        line-height: 24px;
-      }
-
-      // Sub menu, hidden until parent item is hovered
-      > ul {
-        display: none;
-        position: absolute;
-        top: 50px; 
-        padding: 0;
-        width: 250px;
-        background-color: $colour-black;
-
-        // Sub menu items
-        li {
-          position: relative;
-          padding: 14px;
-          width: 100%;
-
-          a {
-            padding: 0;
-            color: $colour-white;
-            font-size: 16px;
-            line-height: 18px;
-            text-decoration: none; 
-          }
-
-          // Duplicate link, top of each sub menu
-          &.menu-item--duplicate {
-            a {
-              font-size: 18px;
-              line-height: 22px;
-
-              // Triangle pointer
-              &:before {
-                display: block;
-                position: absolute;
-                top: -12px;
-                left: 20px;
-                width: 12px;
-                height: 12px;
-                border: 6px solid transparent;
-                border-bottom-color: $colour-black;
-                content: '';
-              }
-              // Line
-              &:after {
-                top: 48px;
-              }
-            }
-          }
-          &:hover {
-            background-color: $colour-jasper-grey;
-            > a {
-              color: $colour-white;
-              span.menu-item__text {
-                border-bottom: 3px solid transparent;
-              }
-            }
-          }
-        }  
-      }
-    
-      // Show sub menus on hover
-      &:hover {
+      li, 
+      li.item-open {
+        display: inline-block;
+        padding: 0 16px;
         background-color: transparent;
-        > a {
+
+        a {
+          padding: 0;
           color: $colour-black;
-          span.menu-item__text {
-            border-bottom: 3px solid $colour-red;
-            background-color: transparent;
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        // Sub menu, hidden until parent item is hovered
+        > ul {
+          display: none;
+          position: absolute;
+          top: 50px; 
+          padding: 0;
+          width: 250px;
+          background-color: $colour-black;
+
+          // Sub menu items
+          li {
+            position: relative;
+            padding: 14px;
+            width: 100%;
+
+            a {
+              padding: 0;
+              color: $colour-white;
+              font-size: 16px;
+              line-height: 18px;
+              text-decoration: none; 
+            }
+
+            // Duplicate link, top of each sub menu
+            &.menu-item--duplicate {
+              a {
+                font-size: 18px;
+                line-height: 22px;
+
+                // Triangle pointer
+                &:before {
+                  display: block;
+                  position: absolute;
+                  top: -12px;
+                  left: 20px;
+                  width: 12px;
+                  height: 12px;
+                  border: 6px solid transparent;
+                  border-bottom-color: $colour-black;
+                  content: '';
+                }
+                // Line
+                &:after {
+                  top: 48px;
+                }
+              }
+            }
+            &:hover {
+              background-color: $colour-jasper-grey;
+              > a {
+                color: $colour-white;
+                span.menu-item__text {
+                  border-bottom: 3px solid transparent;
+                }
+              }
+            }
+          }  
+        }
+      
+        // Show sub menus on hover
+        &:hover {
+          background-color: transparent;
+          > a {
+            color: $colour-black;
+            span.menu-item__text {
+              border-bottom: 3px solid $colour-red;
+              background-color: transparent;
+            }
+          }
+             
+          > ul {
+            display: block;
+            max-height: 400px;
+            background-color: $colour-black;
           }
         }
-           
-        > ul {
-          display: block;
-          max-height: 400px;
-          background-color: $colour-black;
-        }
       }
-    }
-  }  
+    }  
+  }
 }
