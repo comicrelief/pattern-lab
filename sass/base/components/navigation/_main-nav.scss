@@ -16,19 +16,19 @@
 /* Main navigation menu styling  */ 
 .main-nav-menu {
 
-  .main-nav,
+  .navigation,
   .menu-open {
     width: 100%;
   }
   @include breakpoint($screen-md) {
-    .main-nav,
+    .navigation,
     .menu-open {
       float: right;
       width: 50%;
     }
   }
   @include breakpoint($screen-lg) { 
-    .main-nav,
+    .navigation,
     .menu-open {
       width: 75%;
     }
