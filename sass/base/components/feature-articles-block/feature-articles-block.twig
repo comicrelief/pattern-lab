@@ -1,7 +1,7 @@
-<section class="paragraph feature-articles-block">
-  <h2>Max 4 items</h2>
-  {% for i in 0..3 %}
-  <div class="feature-articles-block__item">
+<section class="paragraph">
+  <div class="feature-articles-block">
+    <h2>Max 3 items</h2>
+    {% for i in 0..2 %}
     <article class="article-teaser">
       <div class="article-teaser__image">
         <picture>
@@ -18,11 +18,11 @@
         <div></div>
       </div>
     </article>
+    {% endfor %}
   </div>
-  {% endfor %}
-  <h2>Teasers always keep same 3 columns width</h2>
-  {% for i in 0..1 %}
-  <div class="feature-articles-block__item">
+  <div class="feature-articles-block">
+    <h2>Teasers always keep same 4 columns width</h2>
+    {% for i in 0..1 %}
     <article class="article-teaser">
       <div class="article-teaser__image">
         <picture>
@@ -39,6 +39,6 @@
         <div></div>
       </div>
     </article>
+    {% endfor %}
   </div>
-  {% endfor %}
 </section>

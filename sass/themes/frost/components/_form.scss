@@ -59,6 +59,7 @@ form {
 }
 
 .form__group {
+  position: relative;
   h2 {
     @include font-size($p-font-size);
   }
