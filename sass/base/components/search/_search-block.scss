@@ -104,7 +104,7 @@
     padding: 0 calc((2 * 1.25%));
   }
   @include breakpoint($screen-lg) {
-    width: span(6);
+    width: span(8);
     padding: 0 calc((0.5 * 1.25%));
   }
   form {
