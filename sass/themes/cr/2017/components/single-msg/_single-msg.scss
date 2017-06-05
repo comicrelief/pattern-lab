@@ -127,7 +127,7 @@
       .single-msg__copy_wrapper {
         margin-top: calc(-4 *#{gutter()});
         @include breakpoint($screen-lg) {
-          margin-top: calc(60px / 2);
+          margin-top: 0;
         }
       }
     }
@@ -139,7 +139,7 @@
       .single-msg__copy_wrapper {
         margin-top: calc(-4 *#{gutter()});
         @include breakpoint($screen-lg) {
-          margin-top: calc(60px / 2);
+          margin-top: 0;
         }
       }
     }
