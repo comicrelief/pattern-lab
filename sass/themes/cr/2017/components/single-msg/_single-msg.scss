@@ -13,7 +13,7 @@
   .single-msg__outer-wrapper {
     @include container;
     position: relative;
-    padding: 30px calc(3 * #{gutter()});
+    padding: 30px calc(4 * #{gutter()});
 
     @include breakpoint($screen-md) {
       display: -webkit-flex;
