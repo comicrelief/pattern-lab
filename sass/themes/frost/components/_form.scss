@@ -110,38 +110,16 @@ form {
 // ==========================================================================
 .validation__wrapper {
   position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.validation__text {
-  margin: 5px 0 0;
-  padding: 0;
-  .fa {
-    margin-right: 5px;
+  
+  input {
+    border: 1px solid $colour-red;
   }
 }
 
-.validation__warning {
-  color: #f98026;
-}
-
-.validation__error {
-  color: #f04257;
-}
-
-.validation__success {
-  color: #458B00;
-}
-
-.validation__error > a {
-  cursor: pointer;
-  text-decoration: underline;
-  color: #F0544A;
-}
-
-.validation__error > a:hover {
-  color: #F06B65;
+.validation__message {
+  margin-top: -15px;
+  color: $colour-red;
+  @include font-size($p-small-font-size);
 }
 
 // ==========================================================================
@@ -171,9 +149,7 @@ form {
     }
   }
 }
-#create-account {
 
-}
 .form__group--nav_buttons {
   @include clearfix;
   @include span(12);
@@ -200,7 +176,8 @@ form {
   }
 }
 
-.form__field--userTerms {
+.form__field--userTerms,
+.form__group--custom_link {
   a {
     @extend .link;
     @extend .link--blue;
@@ -212,4 +189,17 @@ form {
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
   height: 100%;
+}
+
+#create-account {
+  .form__group--nav_buttons {
+    .form__nav {
+      @include breakpoint($screen-md) {
+        @include span(12);
+      }
+    }
+    #btnBack {
+      display: none;
+    }
+  }
 }
