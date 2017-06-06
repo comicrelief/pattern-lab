@@ -4,6 +4,9 @@
 //
 // Style guide: 20.195
 
+.search-block__wrapper {
+  overflow: auto;
+}
 .search-block {
   @include clearfix;
   display: none;
@@ -27,6 +30,7 @@
   input[type=submit] {
     border: none;
     width: 100%;
+    max-width: 100%;
     height: 40px;
     padding: 0;
     text-indent: -9999px;
