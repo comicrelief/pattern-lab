@@ -26,11 +26,13 @@ $indicator-thickness: 2px !default;
     text-overflow: ellipsis;
     color: $colour-black;
     display: block;
-  }
 
-  li:last-child .progress-indicator__circle {
-    &:after {
-      display: none;
+    &:last-child {
+      .progress-indicator__circle {
+        &:after {
+          display: none;
+        }
+      }  
     }
   }
 }
@@ -44,9 +46,7 @@ $indicator-thickness: 2px !default;
   margin: 0 auto 0.5em auto;
   border: $indicator-thickness solid $colour-black;
   text-indent: -999px;
-}
 
-.progress-indicator__circle {
   &:after {
     display: block;
     position: absolute;
@@ -62,33 +62,29 @@ $indicator-thickness: 2px !default;
   }
 }
 
-.progress-indicator--done {
-  .progress-indicator__circle {
-    border: $indicator-thickness solid $colour-blue;
-    background-color: $colour-blue;
+.progress-indicator--done .progress-indicator__circle {
+  border: $indicator-thickness solid $colour-blue;
+  background-color: $colour-blue;
 
-    &:after {
-      border-bottom: $circle-line-thickness solid $colour-blue; 
-    }
+  &:after {
+    border-bottom: $circle-line-thickness solid $colour-blue; 
   }
 } 
 
-.progress-indicator--active {
-  .progress-indicator__circle {
-    border: $indicator-thickness solid $colour-blue;
+.progress-indicator--active .progress-indicator__circle {
+  border: $indicator-thickness solid $colour-blue;
 
-    &:before {
-      @include border-radius(50%);
-      display: block;
-      position: relative;
-      content: '';
-      z-index: 100;
-      width: $circle-size / 3 + $indicator-thickness;
-      height: $circle-size / 3 + $indicator-thickness;
-      top: $indicator-thickness;
-      left: $indicator-thickness;
-      background-color: $colour-blue;
-    }
+  &:before {
+    @include border-radius(50%);
+    display: block;
+    position: relative;
+    content: '';
+    z-index: 100;
+    width: $circle-size / 3 + $indicator-thickness;
+    height: $circle-size / 3 + $indicator-thickness;
+    top: $indicator-thickness;
+    left: $indicator-thickness;
+    background-color: $colour-blue;
   }
 }
 
