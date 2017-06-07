@@ -6,106 +6,92 @@ $circle-size: 15px !default;
 $circle-line-thickness: 3px !default;
 $indicator-thickness: 2px !default;
 
-.flexer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-.flexer-element {
-    -ms-flex: 1;
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    flex: 1;
-}
-
 .progress-indicator {
-    @extend .flexer;
-    margin: 0;
+  @include display-flex;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $colour-border-grey;
+
+  li {
+    @include display-flex-element;
+    list-style: none;
+    text-align: center;
+    width: auto;
     padding: 0;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid $colour-border-grey;
+    margin: 0;
+    position: relative;
+    text-overflow: ellipsis;
+    color: $colour-black;
+    display: block;
+  }
 
-    > li {
-        @extend .flexer-element;
-        list-style: none;
-        text-align: center;
-        width: auto;
-        padding: 0;
-        margin: 0;
-        position: relative;
-        text-overflow: ellipsis;
-        color: $colour-black;
-        display: block;
+  li .progress-indicator__circle {
+    @include border-radius(50%);
+    width: $circle-size;
+    height: $circle-size;
+    background-color: $colour-white;
+    display: block;
+    margin: 0 auto 0.5em auto;
+    border: $indicator-thickness solid $colour-black;
+    text-indent: -999px;
+  }
+
+  li .progress-indicator__circle:after {
+    display: block;
+    position: absolute;
+    top: $circle-size / 2 - $indicator-thickness;
+    width: 100%;
+    height: $circle-line-thickness;
+    content: '';
+    background-color: transparent;
+    border-bottom: 2px dotted $colour-black; 
+  }
+
+  li .progress-indicator__circle:after {
+    left: 50%;
+    margin-left: 7px;
+  }
+
+  li .progress-indicator__circle:after {
+    width: 98%;
+  }
+
+  li:last-child .progress-indicator__circle:after {
+    display: none;
+  }
+
+  li.progress-indicator--done {
+    .progress-indicator__circle {
+      border: $indicator-thickness solid $colour-blue;
+      background-color: $colour-blue;
+
+      &:after {
+        border-bottom: $circle-line-thickness solid $colour-blue; 
+      }
     }
+  } 
 
-    > li .progress-indicator__circle {
+  li.progress-indicator--active {
+    .progress-indicator__circle {
+      border: $indicator-thickness solid $colour-blue;
+
+      &:before {
         @include border-radius(50%);
-        width: $circle-size;
-        height: $circle-size;
-        background-color: $colour-white;
         display: block;
-        margin: 0 auto 0.5em auto;
-        border: $indicator-thickness solid $colour-black;
-        text-indent: -999px;
-    }
-
-    > li .progress-indicator__circle:after {
-        display: block;
-        position: absolute;
-        top: $circle-size / 2 - $indicator-thickness;
-        width: 100%;
-        height: $circle-line-thickness;
+        position: relative;
         content: '';
-        background-color: transparent;
-        border-bottom: 2px dotted $colour-black; 
-    }
-
-    > li .progress-indicator__circle:after {
-        left: 50%;
-        margin-left: 7px;
-    }
-
-    > li .progress-indicator__circle:after {
-        width: 98%;
-    }
-
-    > li:last-child .progress-indicator__circle:after {
-        display: none;
-    }
-
-    > li.progress-indicator--done {
-      .progress-indicator__circle {
-        border: $indicator-thickness solid $colour-blue;
+        z-index: 100;
+        width: $circle-size / 3 + $indicator-thickness;
+        height: $circle-size / 3 + $indicator-thickness;
+        top: $indicator-thickness;
+        left: $indicator-thickness;
         background-color: $colour-blue;
-
-        &:after {
-          border-bottom: $circle-line-thickness solid $colour-blue; 
-        }
-      }
-    } 
-
-    > li.progress-indicator--active {
-      .progress-indicator__circle {
-        border: $indicator-thickness solid $colour-blue;
-
-        &:before {
-          @include border-radius(50%);
-          display: block;
-          position: relative;
-          content: '';
-          z-index: 100;
-          width: $circle-size / 3 + $indicator-thickness;
-          height: $circle-size / 3 + $indicator-thickness;
-          top: $indicator-thickness;
-          left: $indicator-thickness;
-          background-color: $colour-blue;
-        }
       }
     }
+  }
 }
 
 // ==========================================================================
