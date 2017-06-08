@@ -8,13 +8,6 @@ header[role=banner] {
   }   
 }
 
-// Typography and links
-
-h1, h2, h3, h4, h5,
-.link {   
-  text-transform: uppercase;
-}
-
 // Social links
 
 .footer__social-links {
@@ -37,4 +30,5 @@ h1, h2, h3, h4, h5,
 }
 
 @import "components/single-msg/single-msg";
+@import "components/links/links";
 @import "components/background-colours/background-colours";
