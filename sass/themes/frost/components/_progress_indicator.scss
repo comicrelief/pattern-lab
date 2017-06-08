@@ -25,16 +25,13 @@ $indicator-thickness: 2px !default;
     color: $colour-black;
     display: inline-block;
     vertical-align: top;
-    
+
     &:last-child {
       .progress-indicator__circle {
         &:after {
           display: none;
         }
       }  
-    }
-    @at-root {
-      
     }
   }
 }
