@@ -1,17 +1,7 @@
 // Buttons
 //
-// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Bold weight of the Proxima Nova font. All buttons
+// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate (see Links). Buttons text uses the Black weight of the Sailec font.
 // 
-// .btn--black-ghost - Black ghost button
-// .btn--white-ghost - White ghost button
-// .btn--red - Red button
-// .btn--blue - Blue button
-// .btn--purple - Purple button
-// .btn--white - White button
-// :hover - Button hover state 
-// :active - Button active state
-// :focus - Button focus state
-//
 // Markup: buttons.twig
 //
 // Style guide: 10.3
@@ -20,7 +10,7 @@
   display: inline-block;
   width: auto;
   margin: 0 auto;
-  padding: 21px 40px;
+  padding: 15px 40px;
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
@@ -28,15 +18,20 @@
   font-family: $font-bold;
   font-size: 18px;
   line-height: 18px;
-  background-color: $colour-red;
+  letter-spacing: 1.8px;
+  background-color: $colour-black;
   color: $colour-white;
+  border: 4px solid $colour-black;
+  text-transform: uppercase;
+  transition: 0.3s all;
   @include border-radius(30px);
   span {
     font-size: inherit;
     font-weight: inherit;
   }
   &:hover {
-    background-color: $colour-purple;
+    background-color: $colour-white;
+    color: $colour-black;
   }
   // Full width on SM breakpoint only
   &.btn--full-width {
@@ -54,6 +49,44 @@
   @include btn-variation( $button );
 }
 
+/* List of colour not cover by mixin */
+.btn--red {
+  border-color: $colour-red;
+  &:hover {
+    background-color: $colour-white;
+    color: $colour-black;
+  }
+}
+.btn--purple {
+  border-color: $colour-purple;
+  &:hover {
+    background-color: $colour-white;
+    color: $colour-black;
+  }
+}
+.btn--royal-blue {
+  border-color: $colour-royal-blue;
+  &:hover {
+    background-color: $colour-white;
+    color: $colour-black;
+  }
+}
+.btn--red {
+  border-color: $colour-red;
+  &:hover {
+    background-color: $colour-white;
+    color: $colour-black;
+  }
+}
+.btn--mint-green {
+  border-color: $colour-mint-green;
+  background-color: $colour-mint-green;
+  &:hover {
+    background-color: $colour-white;
+    color: $colour-black;
+  }
+}
+
 /* Force white colour on black bg hover and focus state */
 .btn.btn--white {
   &:hover,
@@ -67,6 +100,10 @@
  */
 .btn + .btn {
   margin-top: 30px;
+  @include breakpoint($screen-md) {
+    margin-top: 0;
+    margin-left: 25px;
+  }
 }
 
 /**
@@ -77,25 +114,11 @@
     width: 100%;
   }
 }
-@include breakpoint($screen-md) {
-  .btn {
-    display: inline-block;
-    width: auto;
-    font-size: 18px;
-    &.btn--fixed-width {
-      width: 100%;
-      min-width: 290px;
-    }
-  }
-  .btn + .btn {
-    margin-top: 0;
-    margin-left: 25px;
-  }
-}
 
 /*
  * Add icon to btn
  */
+
 .btn {
   .icon {
     height: 20px;
@@ -113,64 +136,18 @@
   }
 }
 
-/**
- * Adds large buttons.
- */
-.btn--lg {
-  padding-top: 19px;
-  padding-bottom: 19px;
-  font-size: 18px;
-  line-height: 22px;
-}
+/* Ghost button */
 
-/**
- * Large button styles for >= md breakpoint.
- */
-@include breakpoint($screen-md) {
-  .btn--lg {
-    height: 70px;
-    padding: 24px 70px;
-    @include border-radius(35px);
-  }
-}
-
-/* for a large group of buttons */
-@include breakpoint($screen-md) {
-  .btn:first-child:not(:only-child) {
-    margin-bottom: 20px;
-  }
-  .btn + .btn {
-    margin-bottom: 20px;
-  }
-}
-
-/* Ghost button 
-less padding because ghost buttons have borders */
-.btn--white-ghost,
 .btn--black-ghost {
-  padding: 19px 38px;
-}
-.btn--black-ghost {
-  border: 2px solid $colour-dark-blue;
   &:hover {
     color: $colour-white;
   }
 }
 .btn--white-ghost {
-  border: 2px solid $colour-white;
+  background-color: $colour-white;
+  color: $colour-black;
   &:hover {
-    color: $colour-dark-blue;
-  }
-}
-
-/* small buttons for content wall */
-.content-wall {
-  .btn {
-    padding: 16px 32px;
-    font-size: 16px;
-  }
-  .btn--white-ghost,
-  .btn--black-ghost {
-    padding: 14px 30px;
+    background-color: $colour-black;
+    color: $colour-white;
   }
 }
