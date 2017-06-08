@@ -79,7 +79,7 @@ $indicator-thickness: 2px !default;
     display: block;
     position: relative;
     content: '';
-    z-index: 100;
+    z-index: 1;
     width: $circle-size / 3 + $indicator-thickness;
     height: $circle-size / 3 + $indicator-thickness;
     top: $indicator-thickness;
