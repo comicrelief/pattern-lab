@@ -15,26 +15,24 @@
 
 /* Main navigation menu styling  */ 
 .main-nav-menu {
-
-  // Show hamburger toggle button on mobile sizes
-  .main-nav__icons {
-    .main-nav-toggle {
-      float: right;
-      background-color: transparent;
-    }
+ 
+  .main-nav__burger {
+    float: right;
   }
 
   .navigation,
   .menu-open {
     width: 100%;
   }
-  
   .main-nav__items {
     position: absolute;
-    top: 76px;
-    overflow: hidden; 
+    top: 81px;
+    right: 0;
+    overflow: hidden;
+    margin: 0;
     width: 100%;
     max-height: 0;
+    z-index: 100;
     background-color: $colour-smoke-grey;
     @include transition-property(max-height);
     @include transition-duration(850ms);
@@ -68,36 +66,35 @@
           content: '';
         }     
       }
-    }
+      > ul {
+        position: relative;
+        top: 0;
+        width: 100%;
+        max-height: 0;
+        background-color: $colour-black;
+        @include transition-property(max-height);
+        @include transition-duration(850ms);
+        @include transition-timing-function(cubic-bezier(0.2,1,0.5,1));
 
-    /* Menu opened through hamburger toggle button */
-    &.menu-open {
-      max-height: 400px;
-      li {
-        > ul {
-          position: relative;
-          top: 0;
-          width: 100%;
-          max-height: 0;
-          background-color: $colour-black;
-          @include transition-property(max-height);
-          @include transition-duration(850ms);
-          @include transition-timing-function(cubic-bezier(0.2,1,0.5,1));
-          
-          li {
+        li {
+          a {
+            color: $colour-white;
+            font-size: 16px;
+            line-height: 18px;
+          }
+          &.menu-item--duplicate {
             a {
-              color: $colour-white;
-              font-size: 16px;
-              line-height: 18px;
-            }
-            &.menu-item--duplicate {
-              a {
-                font-size: 18px;
-                line-height: 24px;
-              }
+              font-size: 18px;
+              line-height: 24px;
             }
           }
         }
+      }
+    }
+    /* Menu opened through hamburger toggle button */
+    &.menu-open {
+      max-height: 600px;
+      li {
         &:hover {
           background-color: $colour-light-grey;
         }
@@ -117,52 +114,33 @@
       }   
     }
   }
-  
+
   @include breakpoint($screen-md) {
-    .navigation,
-    .menu-open {
-      float: right;
+    .main-nav__items {
       width: 50%;
     }
   }
 
-  /* Show inline menu on desktop size with sub menus on hover */
   @include breakpoint($screen-lg) {
-    
-    // hide hamburger menu
-    .main-nav__icons {
-      .main-nav-toggle {
-        display: none;
-      }
+    .main-nav__burger {
+      display: none;
     }
-
-    .navigation, 
-    .menu-open {
-      width: 75%;
-    }
-    
-    .navigation {
-    > ul { 
-      > li {
-        height: 76px;
-      }    
-    }
-  }
 
     .main-nav__items,
     .main-nav__items.menu-open {
       float: left;
       position: relative;
-      top: 25px;
+      top: 0;
+      right: initial;
       overflow: visible;
-      width: 75%;
+      width: 70%;
       max-height: none;
       background-color: $colour-white;
 
       li, 
       li.item-open {
         display: inline-block;
-        padding: 0 16px;
+        padding: 40px 16px;
         background-color: transparent;
 
         a {
@@ -176,7 +154,7 @@
         > ul {
           display: none;
           position: absolute;
-          top: 50px; 
+          top: 103px; 
           padding: 0;
           width: 250px;
           background-color: $colour-black;
