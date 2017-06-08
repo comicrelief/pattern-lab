@@ -221,7 +221,9 @@ form {
       padding: 23px 40px 19px;
     }
   }
-
+  /**
+   * Buttons display as stack block for xs
+   */
   .btn + .btn {
     margin: 20px 0px 20px 5px;
 
