@@ -7,7 +7,6 @@ $circle-line-thickness: 3px !default;
 $indicator-thickness: 2px !default;
 
 .progress-indicator {
-  @include display-flex;
   margin: 0;
   padding: 0;
   text-transform: capitalize;
@@ -16,7 +15,6 @@ $indicator-thickness: 2px !default;
   border-bottom: 1px solid $colour-border-grey;
 
   li {
-    @include display-flex-element;
     list-style: none;
     text-align: center;
     width: auto;
@@ -25,7 +23,8 @@ $indicator-thickness: 2px !default;
     position: relative;
     text-overflow: ellipsis;
     color: $colour-black;
-    display: block;
+    display: inline-block;
+    vertical-align: top;
 
     &:last-child {
       .progress-indicator__circle {
@@ -35,6 +34,26 @@ $indicator-thickness: 2px !default;
       }  
     }
   }
+}
+
+.progress-indicator__steps-1 li {
+  width: 100%;
+}
+
+.progress-indicator__steps-2 li {
+  width: 50%;
+}
+
+.progress-indicator__steps-3 li {
+  width: 33.3%;
+}
+
+.progress-indicator__steps-4 li {
+  width: 25%;
+}
+
+.progress-indicator__steps-5 li {
+  width: 20%;
 }
 
 .progress-indicator__circle {
@@ -79,7 +98,7 @@ $indicator-thickness: 2px !default;
     display: block;
     position: relative;
     content: '';
-    z-index: 100;
+    z-index: 1;
     width: $circle-size / 3 + $indicator-thickness;
     height: $circle-size / 3 + $indicator-thickness;
     top: $indicator-thickness;
