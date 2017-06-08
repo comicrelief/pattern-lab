@@ -291,20 +291,12 @@
   box-sizing: $arg;
 }
 
-@mixin appearance( $arg ) {
+/* @mixin appearance( $arg ) {
   -webkit-appearance: $arg;
   -moz-appearance: $arg;
   appearance: $arg;
 }
-
-
-@mixin notransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
+ */
 @mixin nowrap() {
   text-overflow: ellipsis;
   white-space: nowrap;

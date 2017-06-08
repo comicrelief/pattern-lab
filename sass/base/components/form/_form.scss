@@ -35,8 +35,8 @@ textarea {
 
   @include box-shadow(none);
   @include box-sizing(border-box);
-  @include appearance(none); 
-
+  appearance: none;
+  
   @include breakpoint($screen-md) {
     max-width: 290px;
   }
@@ -94,7 +94,7 @@ select {
   padding: 12px 50px 14px 10px;
   text-decoration: none;
 
-  @include appearance(none);
+  appearance: none;
   @include box-sizing(border-box);
   @include border-radius(0px);
 
