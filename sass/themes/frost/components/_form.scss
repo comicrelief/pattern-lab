@@ -118,8 +118,12 @@ form {
 
 .validation__message {
   margin-top: -15px;
-  color: $colour-red;
-  @include font-size($p-small-font-size);
+
+  p {
+    color: $colour-red;
+    color: $colour-red;
+    @include font-size($p-small-font-size);
+  }
 }
 
 // ==========================================================================
@@ -171,8 +175,15 @@ form {
 }
 
 .form__group--password_input {
-  p {
+  .form__field--intro p {
     color: $colour-background-grey;
+  }
+
+  .form__field--checkbox {
+    .form__field--copy {
+      margin-top: 10px;
+      display: inline-block;
+    }
   }
 }
 
@@ -189,6 +200,37 @@ form {
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
   height: 100%;
+  z-index: 1;
+}
+
+.form__group--age_selection {
+  .age_selection {
+    width: 100%;
+    border-top: 1px solid $colour-border-grey;
+    padding-top: 20px;
+  }
+
+  .btn {
+    width: 45%;
+    @extend .btn--blue-ghost;
+
+    &.active { 
+      background-color: $colour-blue;
+      color: $colour-white;
+      border: 0px;
+      padding: 23px 40px 19px;
+    }
+  }
+  /**
+   * Buttons display as stack block for xs
+   */
+  .btn + .btn {
+    margin: 20px 0px 20px 5px;
+
+    @include breakpoint($screen-md) {
+      margin-left: 25px;
+    }
+  }
 }
 
 #create-account {

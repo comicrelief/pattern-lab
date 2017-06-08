@@ -6,8 +6,8 @@
   background-color: $colour-blue;
   text-transform: uppercase;
   border: 0px;
-  padding: 4px 33px 0px;
-  line-height: 56px;
+  padding: 23px 40px 19px;
+  letter-spacing: 1px;
   
   &:hover {
     background-color: $colour-dark-blue;
@@ -29,15 +29,16 @@
 
 /* Ghost button 
 less padding because ghost buttons have borders */
+.btn--ghost,
 .btn--blue-ghost {
-  padding: 5px 29px 0px;
+  padding: 21px 38px 17px;
   border: 2px solid $colour-blue;
   background-color: $colour-white;
   color: $colour-blue;
 
   &:hover {
     border: 0px;
-    padding: 9px 33px 0px;
+    padding: 23px 40px 19px;
     background-color: $colour-dark-blue;
     color: $colour-white;
   }

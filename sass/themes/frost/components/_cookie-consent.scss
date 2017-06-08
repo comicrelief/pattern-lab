@@ -9,6 +9,8 @@
   padding: 10px;
   text-align: center;
   background: $colour-black;
+  z-index: 10;
+  
   @include breakpoint($screen-lg) {
     display: block;
     padding: 15px 20px 15px;
