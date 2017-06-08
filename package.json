@@ -20,7 +20,8 @@
     "grunt-kss": "^5.0.1",
     "npm-link-local": "^1.1.0",
     "susy": "^2.2.12",
-    "grunt-sass-tilde-importer": "^1.0.2"
+    "grunt-sass-tilde-importer": "^1.0.2",
+    "smartmenus": "^1.0.1"
   },
   "devDependencies": {
     "backstopjs": "^2.6.11",
