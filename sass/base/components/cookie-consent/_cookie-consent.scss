@@ -46,11 +46,11 @@
     background-image: url( $image-path + "cross-close.svg");
     background-repeat: no-repeat;
     background-position: center;
-    @extend .btn;
-    @extend .btn--white-ghost;
-    border: none;
+    background-color: $colour-white;
+    color: $colour-black;
     &:hover {
       background-color: $colour-black;
+      color: $colour-white;
     }
     
     @include breakpoint($screen-lg) {

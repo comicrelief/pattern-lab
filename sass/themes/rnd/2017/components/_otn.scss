@@ -1,0 +1,9 @@
+.btn.btn--xl {
+  //H4 style font
+  font-size: 24px;
+  line-height: 30px;
+  
+  height: 80px;
+  padding: 24px 50px;
+  @include border-radius(40px);
+}
