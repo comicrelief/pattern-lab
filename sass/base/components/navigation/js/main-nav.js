@@ -6,9 +6,9 @@
   
   function setUpNav() {
     $('#main-menu .menu-item a').wrapInner('<span class="menu-item__text"></span>');
+
     duplicateParentLink();
     toggleMenu();
-
     /* Setup the Smartmenus plugin with our main menu */
     $('#main-menu').smartmenus({
       subIndicatorsText: "",
@@ -25,11 +25,10 @@
   /* Updates empty duplicate link (added by template) with the parent item's text and link, dynamically */
   function duplicateParentLink() {
     /* Update text and link */
-    $('.main-nav > .main-nav__items > .menu-item--expanded').each(function () {
+    $('.navigation > .main-nav__items > .menu-item--expanded').each(function () {
       $this = $(this);
 
-      // Populate duplicate link with parent link info.
-      $(this).children('ul.main-nav__items')
+      $this.children('ul.main-nav__items')
         .find('.menu-item--duplicate > a')
           .attr('href', $this.children('a').attr('href'))
             .find('span').text($this.children('a').text());
@@ -41,29 +40,21 @@
 
       // Change state for visual effect.
       $(this).toggleClass('is-active');
-
       // Change state of menu itself.
       $('#main-menu').toggleClass('menu-open');
-
-      // Disable default event for links with sub menu
-      var link = $('.menu-open').find('.has-submenu');
-      link.click(function (e) {
-        e.preventDefault();
-      });
-      toggleSubMenu();
-
     });
+
+    toggleSubMenu();       
   }
 
-
   function toggleSubMenu() {
-    $('.menu-open > li').on('click', function (e) {
 
-      if ($(this).find('a').hasClass('has-submenu')) {
-        // Remove any item open classes an add class to clicked item
-        $('.menu-open > li.item-open').not(this).removeClass('item-open');
-        $(this).toggleClass('item-open'); 
-      }
-    });
+    $('li.menu-item--expanded > a').on('click', function (e) {
+      e.preventDefault();
+      $listItem = $(this).parent('li.menu-item--expanded');
+      // Remove any item open classes an add class to clicked item
+      $('.menu-open > li.item-open').not($listItem).removeClass('item-open');
+      $($listItem).toggleClass('item-open');
+    });    
   }
 })(jQuery);
