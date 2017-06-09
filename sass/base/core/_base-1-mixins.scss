@@ -193,7 +193,7 @@
     margin: auto;
   }
 }
-
+/* Not all of these options and additional rules are provided by PostCSS Autoprefix, so am leaving this in */
 @mixin border-radius( $radius: $default-border-radius, $vertical-radius: false ) {
   @if $vertical-radius {
      -webkit-border-radius: $radius $vertical-radius;
@@ -244,6 +244,7 @@
   overflow: hidden;
 }
 
+/* Additional rules not supplied by PostCSS, so leaving this in */
 @mixin breakword-hyphenated() {
   -ms-word-break: break-all;
     word-break: break-all;
