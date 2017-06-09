@@ -345,8 +345,6 @@ select,
         }
 
         .form-submit {
-          @extend .btn;
-          @extend .btn--yellow;
           padding: 12px 20px !important;
           margin-top: 30px !important;
           @include span(12);

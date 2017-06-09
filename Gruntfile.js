@@ -48,12 +48,19 @@ module.exports = function (grunt) {
     },
 
     imagemin: {
-      files: {
-        expand: true,
-        flatten: true,
-        cwd: 'sass/base/components',
-        src: ['**/*.{png,jpg,gif,svg}'],
-        dest: 'dist/images'
+      static: { // Use for subthemes
+        files: {
+          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png',
+        }
+      },
+      dynamic: {
+        files: [{
+                  expand: true,
+                  flatten: true,
+                  cwd: 'sass/base/components',
+                  src: ['**/*.{png,jpg,gif,svg}'],
+                  dest: 'dist/images'
+                }]
       }
     },
 

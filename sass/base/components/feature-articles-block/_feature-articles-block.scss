@@ -1,0 +1,35 @@
+// Feature Articles block
+//
+// Feature Articles by category block
+//
+// Markup: feature-articles-block.twig
+//
+// Style guide: 20.48
+
+.feature-articles-block {
+	width: calc(100% - (8 * 1.25%));
+	margin: auto;
+	@include breakpoint($screen-md) {
+		width: calc(100% - (4 * 1.25%));
+	}
+	@include breakpoint($screen-md-max) {
+		max-width: calc(1200px - (2 * 1.25%));
+	}
+	.article-teaser {
+		width: 100%;
+		height: 100%;
+		margin: 0 0 calc(4 * #{gutter()});
+		display: inline-block;
+		background-color: $colour-white;
+
+		@include breakpoint($screen-md) {
+			position: relative;
+			height: auto;
+		}
+		@include breakpoint($screen-lg) {
+			@include span(4);
+			height: 390px;
+			margin-bottom: calc(2 * #{gutter()});
+		}
+	}
+}

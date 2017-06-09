@@ -1,0 +1,43 @@
+// ==========================================================================
+// Modal
+// ==========================================================================
+.modal__overlay {
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding: 0px 10px;
+
+  @include breakpoint($screen-md) {
+    padding: 0px;
+  }
+}
+.modal__content {
+  border: 1px solid $colour-border-grey;
+  background: $colour-white;
+  overflow: auto;
+  outline: none;
+  padding: 55px 50px;
+  max-width: 640px;
+  margin: 80px auto;
+  text-align: center;
+}
+.modal__close {
+  color: $colour-white;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  @include font-size($h3-font-size);
+}
+.modal__close:hover,
+.modal__close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -46,7 +46,7 @@
 .cw-region {
   article {
     width: 100%;
-    @include breakpoint(max-width $screen-sm-max) {
+    @media (max-width: $screen-sm-max) {
       padding: 0 calc(4 * #{gutter()}) calc(4 * #{gutter()});
     }
     @include breakpoint($screen-md) {
