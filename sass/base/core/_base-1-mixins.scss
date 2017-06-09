@@ -1,7 +1,6 @@
 // Mixins
 
 // Breakpoint gutters mixin
-
 @mixin breakpoint-gutters {
   width: calc(100% - (8 * #{gutter()}) );
   @include breakpoint($screen-md) {
@@ -140,7 +139,6 @@
 @mixin square-img-ratio($width, $ratio) {
 
   // Values associated with each 'ratio' key passed in along with the container width
-
   $ratio-map: (
     '16:9' : (height: 0, padding-bottom : $width, offset : -39%, width : 178%),
     '4:3' : (height: 0, padding-bottom  : $width, offset: -16%, width : 134%),
