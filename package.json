@@ -15,12 +15,15 @@
     "test": "echo 'No unit tests. Please see readme for backstop instructions if running this manually.'"
   },
   "dependencies": {
+    "autoprefixer": "^7.1.1",
+    "browserslist": "^2.1.4",
     "grunt-concurrent": "^2.3.1",
     "grunt-connect": "^0.2.0",
     "grunt-kss": "^5.0.1",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass-tilde-importer": "^1.0.2",
     "npm-link-local": "^1.1.0",
-    "susy": "^2.2.12",
-    "grunt-sass-tilde-importer": "^1.0.2"
+    "susy": "^2.2.12"
   },
   "devDependencies": {
     "backstopjs": "^2.6.11",
@@ -62,5 +65,9 @@
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions"
+  ]
 }

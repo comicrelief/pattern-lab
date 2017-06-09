@@ -45,7 +45,7 @@
       .cards__content {
         position: relative;
         top: 0;
-        @include translateY(0);
+        transform: translateY(0);
       }
     }
   }
@@ -82,6 +82,6 @@
     right: 0;
     left: 0;
     margin: auto;
-    @include translateY(-50%);
+    transform: translateY(-50%);
   }
 }

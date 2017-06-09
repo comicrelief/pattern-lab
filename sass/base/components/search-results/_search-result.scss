@@ -61,7 +61,7 @@
     .search-result__content {
       position: relative;
       top: 0;
-      @include translateY(0);
+      transform: translateY(0);
     }
   }
 }
@@ -72,7 +72,7 @@
   left: 0;
   width: calc(100% - 30px);
   margin: auto;
-  @include translateY(-50%);
+  transform: translateY(-50%);
   @include breakpoint($screen-md) {
     width: calc(100% - 40px);
   }
@@ -160,7 +160,7 @@
       top: 50%;
       left: 0;
       height: auto;
-      @include translateY(-50%);
+      transform: translateY(-50%);
     }
   }
 }

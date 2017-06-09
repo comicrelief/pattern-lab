@@ -1,7 +1,6 @@
 // Mixins
 
 // Breakpoint gutters mixin
-
 @mixin breakpoint-gutters {
   width: calc(100% - (8 * #{gutter()}) );
   @include breakpoint($screen-md) {
@@ -27,20 +26,20 @@
     // Applies $colour-green etc.
     background-color: nth($button, 2);
     color: nth($button, 4);
-    @include transition-property(background-color);
-    @include transition-duration(300ms);
+    transition-property: background-color;
+    transition-duration: 300ms;
     &:hover,
     &:focus {
       outline: none;
       // Applies $green-v-dark etc.
       background-color: nth($button, 3);
       color: nth($button, 4);
-      @include transition-property(background-color);
-      @include transition-duration(600ms);
+      transition-property: background-color;
+      transition-duration: 600ms;
     }
     &:active {
-      @include transition-property(background-color);
-      @include transition-duration(600ms);
+      transition-property: background-color;
+      transition-duration: 600ms;
     }
   }
 }
@@ -140,7 +139,6 @@
 @mixin square-img-ratio($width, $ratio) {
 
   // Values associated with each 'ratio' key passed in along with the container width
-
   $ratio-map: (
     '16:9' : (height: 0, padding-bottom : $width, offset : -39%, width : 178%),
     '4:3' : (height: 0, padding-bottom  : $width, offset: -16%, width : 134%),
@@ -193,7 +191,7 @@
     margin: auto;
   }
 }
-
+/* Not all of these options and additional rules are provided by PostCSS Autoprefix, so am leaving this in */
 @mixin border-radius( $radius: $default-border-radius, $vertical-radius: false ) {
   @if $vertical-radius {
      -webkit-border-radius: $radius $vertical-radius;
@@ -218,91 +216,13 @@
   clear:both;
 }
 
-@mixin transform($transforms) {
-  -webkit-transform: $transforms;
-  -moz-transform: $transforms;
-  -ms-transform: $transforms;
-  transform: $transforms;
-}
-
-@mixin translateY($trans-y: $default-translate-y, $perspective: false, $only3d: false) {
-  $trans: translateY($trans-y);
-  @if $perspective {
-    $trans: perspective($perspective) $trans;
-  }
-  @include transform($trans);
-}
-
-@mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
-}
-@mixin transition-property($property...) {
-    -moz-transition-property:    $property;
-    -o-transition-property:      $property;
-    -webkit-transition-property: $property;
-    transition-property:         $property;
-}
-@mixin transition-duration($duration...) {
-    -moz-transition-duration:    $duration;
-    -o-transition-duration:      $duration;
-    -webkit-transition-duration: $duration;
-    transition-duration:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-    -moz-transition-timing-function:    $timing;
-    -o-transition-timing-function:      $timing;
-    -webkit-transition-timing-function: $timing;
-    transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-    -moz-transition-delay:    $delay;
-    -o-transition-delay:      $delay;
-    -webkit-transition-delay: $delay;
-    transition-delay:         $delay;
-}
-
-@mixin display-flex {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-@mixin display-flex-element {
-    -ms-flex: 1;
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    flex: 1;
-}
-
-@mixin justify-content($pos) {
-  -webkit-justify-content: $pos;
-  justify-content: $pos;
-}
-
+/* Opacity prefixes not supported by PostCSS */
 @mixin opacity( $arg ) {
   filter: alpha(opacity=($arg * 100));
   -moz-opacity: $arg;
   -khtml-opacity: $arg;
   -webkit-opacity: $arg;
   opacity: $arg;
-}
-
-@mixin scale($arg) { // fix for two args
-  -moz-transform: scale($arg,$arg);
-  -ms-transform: scale($arg,$arg);
-  -webkit-transform: scale($arg,$arg);
-  transform: scale($arg,$arg);
-}
-
-@mixin box-shadow( $arg ) {
-  -webkit-box-shadow: $arg;
-  -moz-box-shadow: $arg;
-  box-shadow: $arg;
 }
 
 @mixin linear-gradient( $color1, $color2 ) {
@@ -316,49 +236,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$color1}', EndColorStr='#{$color2}');
 }
 
-@mixin rotate( $arg ) {
-  -ms-transform: rotate($arg); /* IE 9 */
-  -webkit-transform: rotate($arg); /* Chrome, Safari, Opera */
-  transform: rotate($arg);
-}
-
-@mixin box-sizing( $arg ) {
-  -moz-box-sizing: $arg;
-  -webkit-box-sizing: $arg;
-  box-sizing: $arg;
-}
-
-@mixin appearance( $arg ) {
-  -webkit-appearance: $arg;
-  -moz-appearance: $arg;
-  appearance: $arg;
-}
-
-@mixin background-size( $arg ) {
-  -webkit-background-size: $arg;
-  -moz-background-size: $arg;
-  -o-background-size: $arg;
-  background-size: $arg;
-}
-
-@mixin notransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
 @mixin nowrap() {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-@mixin break-word() {
-  word-wrap: break-word;
-  -ms-word-wrap: break-word;
-}
-
+/* Additional rules not supplied by PostCSS, so leaving this in */
 @mixin breakword-hyphenated() {
   -ms-word-break: break-all;
     word-break: break-all;

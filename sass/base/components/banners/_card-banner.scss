@@ -47,7 +47,7 @@
     @include push(2);
     position: absolute;
     top: 50%;
-    @include translateY(-50%);
+    transform: translateY(-50%);
 
     .cr-body {
       margin-left: calc( (#{span(2)} + 5.5%) * -1 );
@@ -62,7 +62,7 @@
       position: absolute;
       right: 0;
       top: 50%;
-      @include translateY(-50%);
+      transform: translateY(-50%);
     }
 
     .two-buttons {

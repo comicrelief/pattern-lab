@@ -21,7 +21,7 @@
         border-right: 1px solid $colour-white;
         font-weight: 300;
         font-family: $body-font;
-        @include transition(color 180ms);
+        transition: color 180ms;
         &:hover {
           color: $colour-smoke-grey;
         }

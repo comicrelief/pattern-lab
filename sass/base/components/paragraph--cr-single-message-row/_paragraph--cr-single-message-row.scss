@@ -109,7 +109,7 @@
       position: absolute;
       top: 50%;
       text-align: center;
-      @include translateY(-50%);
+      transform: translateY(-50%);
     }
   }
   .paragraph--cr-single-message-row--title-inside-image-right {
