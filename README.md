@@ -1,7 +1,5 @@
-[![Build Status](https://travis-ci.org/comicrelief/pattern-lab.svg?branch=master)](https://travis-ci.org/comicrelief/pattern-lab)
-
-## Comic Relief Pattern Lab
-A Node-based project to supply Sass components and a styleguide generator.
+# Comic Relief Pattern Lab [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+> A Node-based project to supply Sass components and a styleguide generator.
 
 ## The idea
 To have a centralised hub supply common styling across CR products. 
@@ -114,3 +112,8 @@ press `Enter` to skip.
 npm run backstop-test-local
 ```
 - View pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
+
+[npm-image]: https://badge.fury.io/js/%40comicrelief%2Fpattern-lab.svg
+[npm-url]: https://www.npmjs.com/package/@comicrelief/pattern-lab
+[travis-image]: https://travis-ci.org/comicrelief/pattern-lab.svg?branch=master
+[travis-url]: https://travis-ci.org/comicrelief/pattern-lab
