@@ -255,6 +255,7 @@ select,
     input[type=select],
     input[type=text] {
       @include border-radius(30px 0 0 30px);
+      max-width: 100%;
     }
     .cr-email-signup--messages {
       text-align: center;
@@ -374,6 +375,7 @@ select,
     input[type=select],
     input[type=text] {
       @include border-radius(30px 0 0 30px);
+      max-width: 100%;
     }
 
     .cr-email-signup--messages {
