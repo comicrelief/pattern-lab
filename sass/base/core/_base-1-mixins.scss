@@ -218,54 +218,13 @@
   clear:both;
 }
 
-@mixin transition-duration($duration...) {
-    -moz-transition-duration:    $duration;
-    -o-transition-duration:      $duration;
-    -webkit-transition-duration: $duration;
-    transition-duration:         $duration;
-}
-@mixin transition-timing-function($timing...) {
-    -moz-transition-timing-function:    $timing;
-    -o-transition-timing-function:      $timing;
-    -webkit-transition-timing-function: $timing;
-    transition-timing-function:         $timing;
-}
-@mixin transition-delay($delay...) {
-    -moz-transition-delay:    $delay;
-    -o-transition-delay:      $delay;
-    -webkit-transition-delay: $delay;
-    transition-delay:         $delay;
-}
-
-@mixin display-flex {
-  display: -webkit-flex;
-  display: flex;
-}
-
-@mixin justify-content($pos) {
-  -webkit-justify-content: $pos;
-  justify-content: $pos;
-}
-
+/* Opacity prefixes not supported by PostCSS */
 @mixin opacity( $arg ) {
   filter: alpha(opacity=($arg * 100));
   -moz-opacity: $arg;
   -khtml-opacity: $arg;
   -webkit-opacity: $arg;
   opacity: $arg;
-}
-
-@mixin scale($arg) { // fix for two args
-  -moz-transform: scale($arg,$arg);
-  -ms-transform: scale($arg,$arg);
-  -webkit-transform: scale($arg,$arg);
-  transform: scale($arg,$arg);
-}
-
-@mixin box-shadow( $arg ) {
-  -webkit-box-shadow: $arg;
-  -moz-box-shadow: $arg;
-  box-shadow: $arg;
 }
 
 @mixin linear-gradient( $color1, $color2 ) {
@@ -279,33 +238,10 @@
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$color1}', EndColorStr='#{$color2}');
 }
 
-@mixin rotate( $arg ) {
-  -ms-transform: rotate($arg); /* IE 9 */
-  -webkit-transform: rotate($arg); /* Chrome, Safari, Opera */
-  transform: rotate($arg);
-}
-
-@mixin box-sizing( $arg ) {
-  -moz-box-sizing: $arg;
-  -webkit-box-sizing: $arg;
-  box-sizing: $arg;
-}
-
-/* @mixin appearance( $arg ) {
-  -webkit-appearance: $arg;
-  -moz-appearance: $arg;
-  appearance: $arg;
-}
- */
 @mixin nowrap() {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-@mixin break-word() {
-  word-wrap: break-word;
-  -ms-word-wrap: break-word;
 }
 
 @mixin breakword-hyphenated() {

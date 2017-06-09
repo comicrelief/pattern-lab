@@ -7,7 +7,7 @@
     left: 0;
     margin-bottom: 0;
     padding: 80px 10px 10px;
-    @include box-shadow(inset 10px -140px 81px -97px $colour-black);
+    box-shadow: inset 10px -140px 81px -97px $colour-black;
     a {
       text-decoration: none;
       color: $colour-white;

@@ -29,7 +29,7 @@
       @include opacity(1);
     }
     #play-icon {
-      @include scale(1.2);
+      transform: scale(1.2);
     }
   }
 }

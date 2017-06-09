@@ -33,8 +33,8 @@ textarea {
   border: 1px solid $item-grey;
   width: 100%;
 
-  @include box-shadow(none);
-  @include box-sizing(border-box);
+  box-shadow: none;
+  box-sizing: border-box;
   appearance: none;
   
   @include breakpoint($screen-md) {
@@ -95,7 +95,7 @@ select {
   text-decoration: none;
 
   appearance: none;
-  @include box-sizing(border-box);
+  box-shadow: border-box;
   @include border-radius(0px);
 
   @include breakpoint($screen-md) {
