@@ -95,8 +95,8 @@
     .icon {
       margin: 20px 4px;
       fill: $colour-gainsboro-grey;
-      @include transition-property(fill);
-      @include transition-duration(150ms);
+      transition-property: fill;
+      transition-duration:150ms;
       @media screen and (min-width: 740px) {
         margin: 14px 4px;
         width: 35px;
