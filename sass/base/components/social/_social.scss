@@ -38,7 +38,7 @@
   text-align: right;
   font-family: $body-font;
   @include span(6);
-  transition: translateY(50%);
+  transform: translateY(50%);
 }
 ul.social-links {
   text-align: left;
