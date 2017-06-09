@@ -1,0 +1,32 @@
+// Highlight
+//
+// .highlight--red - Red highlight
+// .highlight--purple - Purple highlight
+// .highlight--royal-blue - Royal-blue highlight
+// .highlight--mint-green - Mint-green highlight
+// 
+// Markup: highlight.twig
+//
+// Style guide: 10.19
+
+.highlight {
+  padding: 4px;
+  border: 4px solid $colour-black;
+  font-weight: bold;
+}
+.highlight--purple {
+    border: 4px solid $colour-purple;
+    color: $colour-purple;
+}
+.highlight--royal-blue {
+    border: 4px solid $colour-royal-blue;
+    color: $colour-royal-blue;
+}
+.highlight--red {
+    border: 4px solid $colour-red;
+    color: $colour-red;
+}
+.highlight--mint-green {
+  border: 4px solid $colour-mint-green;
+  color: $colour-mint-green;
+}

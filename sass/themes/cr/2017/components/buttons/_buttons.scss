@@ -10,7 +10,7 @@
   display: inline-block;
   width: auto;
   margin: 0 auto;
-  padding: 15px 40px;
+  padding: 21px 40px;
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
@@ -19,19 +19,19 @@
   font-size: 18px;
   line-height: 18px;
   letter-spacing: 1.8px;
-  background-color: $colour-black;
+  background-color: $colour-dark-purple;
   color: $colour-white;
-  border: 4px solid $colour-black;
   text-transform: uppercase;
   transition: 0.3s all;
+  border: none;
   @include border-radius(30px);
   span {
     font-size: inherit;
     font-weight: inherit;
   }
   &:hover {
-    background-color: $colour-white;
-    color: $colour-black;
+    background-color: $colour-dark-purple-light;
+    color: $colour-white;
   }
   // Full width on SM breakpoint only
   &.btn--full-width {
@@ -50,39 +50,29 @@
 }
 
 /* List of colour not cover by mixin */
-.btn--red {
-  border-color: $colour-red;
-  &:hover {
-    background-color: $colour-white;
-    color: $colour-black;
-  }
-}
 .btn--purple {
-  border-color: $colour-purple;
   &:hover {
-    background-color: $colour-white;
-    color: $colour-black;
+    background-color: $colour-purple-light;
+    color: $colour-white;
   }
 }
 .btn--royal-blue {
-  border-color: $colour-royal-blue;
   &:hover {
-    background-color: $colour-white;
-    color: $colour-black;
+    background-color: $colour-royal-blue-light;
+    color: $colour-white;
   }
 }
 .btn--red {
-  border-color: $colour-red;
   &:hover {
-    background-color: $colour-white;
-    color: $colour-black;
+    background-color: $colour-red-light;
+    color: $colour-white;
   }
 }
 .btn--mint-green {
-  border-color: $colour-mint-green;
   background-color: $colour-mint-green;
+  color: $colour-black;
   &:hover {
-    background-color: $colour-white;
+    background-color: $colour-mint-green-light;
     color: $colour-black;
   }
 }
@@ -139,11 +129,14 @@
 /* Ghost button */
 
 .btn--black-ghost {
+  padding: 15px 40px;
   &:hover {
     color: $colour-white;
   }
 }
 .btn--white-ghost {
+  padding: 15px 40px;
+  border: 4px solid $colour-black;
   background-color: $colour-white;
   color: $colour-black;
   &:hover {
