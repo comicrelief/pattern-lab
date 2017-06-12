@@ -14,7 +14,6 @@ header {
 .header {
   text-align: center;
   @include container;
-  @include span(12);
 }
 
 .header-logo {
