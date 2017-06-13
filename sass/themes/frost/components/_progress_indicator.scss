@@ -113,8 +113,9 @@ $indicator-thickness: 2px !default;
 
 .form__group--progress_bar_for_ab_test {
   
-  .progress-bar--active {
+  .progress-indicator--active {
     color: $colour-black;
+    width: 100%;
   }
   .progress-bar__step {
     text-transform: initial;

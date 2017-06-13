@@ -60,15 +60,14 @@
     display: block;
     width: 100%;
     content: "";
-    // @include transform-origin(center center);
   }
   &:before {
     border-bottom: 4px solid $colour-white;
-    @include transform(rotate(45deg));
+    transform: rotate(45deg);
   }
   &:after {
     border-top: 4px solid $colour-white;
-    @include transform(rotate(-45deg));
+    transform: rotate(-45deg);
   }
   span {
     width: 40px;
@@ -415,7 +414,7 @@
   color: $colour-red;
   border-radius: 50%;
   // @include background(linear-gradient(to right, $colour-white 10%, rgba(255, 255, 255, 0) 42%));
-  @include transform(translateZ(0));
+  transform: translateZ(0);
 
   -webkit-tap-highlight-color: transparent;
   &:after {

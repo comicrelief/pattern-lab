@@ -32,7 +32,7 @@
     left: 0;
     width: 100%;
     margin: auto;
-    @include translateY(-50%);
+    transform: translateY(-50%);
   }
 }
 .background-single-msg__image {

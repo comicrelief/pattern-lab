@@ -33,10 +33,10 @@ textarea {
   border: 1px solid $item-grey;
   width: 100%;
 
-  @include box-shadow(none);
-  @include box-sizing(border-box);
-  @include appearance(none); 
-
+  box-shadow: none;
+  box-sizing: border-box;
+  appearance: none;
+  
   @include breakpoint($screen-md) {
     max-width: 290px;
   }
@@ -79,7 +79,7 @@ input[type="checkbox"] + span {
 
 input[type="checkbox"]:checked + span {
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+) no-repeat center;
-  @include background-size(contain);
+  background-size: contain;
 }
 
 select {
@@ -94,8 +94,8 @@ select {
   padding: 12px 50px 14px 10px;
   text-decoration: none;
 
-  @include appearance(none);
-  @include box-sizing(border-box);
+  appearance: none;
+  box-shadow: border-box;
   @include border-radius(0px);
 
   @include breakpoint($screen-md) {

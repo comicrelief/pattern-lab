@@ -24,7 +24,7 @@
 		padding: 60px;
 		.related-articles__content { 
 			@include clearfix;
-			@include display-flex;
+			display: flex;
 			margin-top: calc(2 * #{gutter()});
 			.related-articles__item {
 				@include span(4);

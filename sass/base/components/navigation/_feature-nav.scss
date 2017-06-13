@@ -65,7 +65,7 @@
     margin: 0 20px;
     padding: 24px 0;
     a {
-      @include transition(border 0.4s);
+      transition: border 0.4s;
       padding: 2px 8px;
       text-decoration: none;
       color: #333;
