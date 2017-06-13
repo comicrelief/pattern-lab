@@ -37,8 +37,8 @@
     max-height: 0;
     z-index: 100;
     background-color: $colour-smoke-grey;
-    @include transition-property(max-height);
-    @include transition-duration(850ms);
+    transition-property: max-height;
+    transition-duration: 850ms;
 
     // Menu items
     li {
@@ -75,9 +75,9 @@
         width: 100%;
         max-height: 0;
         background-color: $colour-black;
-        @include transition-property(max-height);
-        @include transition-duration(850ms);
-        @include transition-timing-function(cubic-bezier(0.2,1,0.5,1));
+        transition-property: max-height;
+        transition-duration: 850ms;
+        transition-timing-function: cubic-bezier(0.2,1,0.5,1);
 
         li {
           a {
