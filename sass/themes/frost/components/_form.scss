@@ -82,15 +82,12 @@ form {
   margin: 15px 0px;
 }
 
-.form__field {
-
-}
-
 .form__field--checkbox {
   .form__field--copy {
     @include font-size($p-small-font-size);
   }
 }
+
 .page-title {
   text-align: center;
 
@@ -127,30 +124,81 @@ form {
 }
 
 // ==========================================================================
-// Form step
+// Form Modal
 // ==========================================================================
-#login-first-credential {
-  .page-title {
-    .intro-copy {
-      @include font-size($p-intro-font-size);
+.form__overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+// ==========================================================================
+// Form Component
+// ==========================================================================
+.form__group--age_selection {
+  .age_selection {
+    width: 100%;
+    border-top: 1px solid $colour-border-grey;
+    padding-top: 20px;
+  }
+
+  .btn {
+    width: 45%;
+    @extend .btn--blue-ghost;
+
+    &.active { 
+      background-color: $colour-blue;
+      color: $colour-white;
+      border: 0px;
+      padding: 23px 40px 19px;
     }
   }
-  
-  .form__group--login_first_credential {
-    .input-with-btn-wrap {
-      position: relative;
-    }
-    #btnNext {
-      @extend .btn--rectangle;
-      width: 100%;
 
-      @include breakpoint($screen-md) {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        width: auto;
-      }
+  .btn + .btn {
+    margin: 20px 0px 20px 5px;
+
+    @include breakpoint($screen-md) {
+      margin-left: 25px;
     }
+  }
+}
+
+.form__group--password_input {
+  .form__field--intro p {
+    color: $colour-background-grey;
+    font-style: italic;
+  }
+
+  .form__field--checkbox {
+    .form__field--copy {
+      margin-top: 10px;
+      display: inline-block;
+    }
+  }
+}
+
+.form__group--custom_link,
+.form__group--terms_conditions {
+  a {
+    @extend .link;
+    @extend .link--blue;
+    @include font-size($p-small-font-size);
+    @include breakpoint($screen-md) {
+      @include font-size($p-font-size);
+    }
+  }
+}
+
+.form__group--terms_conditions {
+  text-align: center;
+  @include font-size($p-small-font-size);
+
+  @include breakpoint($screen-md) {
+    width: 80%;
+    margin: auto;
+    @include font-size($p-font-size);
   }
 }
 
@@ -174,61 +222,31 @@ form {
   }
 }
 
-.form__group--password_input {
-  .form__field--intro p {
-    color: $colour-background-grey;
-  }
 
-  .form__field--checkbox {
-    .form__field--copy {
-      margin-top: 10px;
-      display: inline-block;
+// ==========================================================================
+// Form step
+// ==========================================================================
+#login-first-credential {
+  .page-title {
+    .intro-copy {
+      @include font-size($p-intro-font-size);
     }
   }
-}
-
-.form__field--userTerms,
-.form__group--custom_link {
-  a {
-    @extend .link;
-    @extend .link--blue;
-  }
-}
-
-.form__overlay {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.7);
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.form__group--age_selection {
-  .age_selection {
-    width: 100%;
-    border-top: 1px solid $colour-border-grey;
-    padding-top: 20px;
-  }
-
-  .btn {
-    width: 45%;
-    @extend .btn--blue-ghost;
-
-    &.active { 
-      background-color: $colour-blue;
-      color: $colour-white;
-      border: 0px;
-      padding: 23px 40px 19px;
+  
+  .form__group--login_first_credential {
+    .input-with-btn-wrap {
+      position: relative;
     }
-  }
-  /**
-   * Buttons display as stack block for xs
-   */
-  .btn + .btn {
-    margin: 20px 0px 20px 5px;
+    #btnNext {
+      @extend .btn--rectangle;
+      width: 100%;
 
-    @include breakpoint($screen-md) {
-      margin-left: 25px;
+      @include breakpoint($screen-md) {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: auto;
+      }
     }
   }
 }
