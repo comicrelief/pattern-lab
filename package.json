@@ -18,9 +18,10 @@
     "grunt-concurrent": "^2.3.1",
     "grunt-connect": "^0.2.0",
     "grunt-kss": "^5.0.1",
+    "grunt-sass-tilde-importer": "^1.0.2",
+    "imagemin-optipng": "^5.1.0",
     "npm-link-local": "^1.1.0",
-    "susy": "^2.2.12",
-    "grunt-sass-tilde-importer": "^1.0.2"
+    "susy": "^2.2.12"
   },
   "devDependencies": {
     "backstopjs": "^2.6.11",
