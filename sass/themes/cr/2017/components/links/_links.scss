@@ -13,13 +13,13 @@
  * Copied from SR16 theme
  */
 
-.link {
+@mixin link($border, $hover) {
   text-decoration: none;
   word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: inherit;
-  border-bottom: 4px solid $colour-black;
+  border-bottom: 4px solid $border;
   font-family: $font-bold;
   font-size: 18px;
   line-height: 28px;
@@ -28,7 +28,7 @@
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 4px solid $colour-red;
+    border-bottom: 4px solid $hover;
   }
   &.inline {
     display: inline-block;
@@ -50,6 +50,28 @@
   }
 }
 
-@for $link from 1 to (length($linkList)+1) {
-  @include link-variation(nth($linkList, $link));
+.link--black {
+  @include link($colour-black, $colour-red);
 }
+.link--purple {
+  @include link($colour-purple, $colour-royal-blue);
+}
+.link--royal-blue {
+  @include link($colour-royal-blue, $colour-purple);
+}
+.link--red {
+  @include link($colour-red, $colour-black);
+}
+.link--mint-green {
+  @include link($colour-mint-green, $colour-royal-blue);
+}
+.link--white {
+  @include link($colour-white, $colour-mint-green);
+}
+.link--grey {
+  @include link($colour-grey, $colour-black);
+}
+.link--light-grey {
+  @include link($colour-light-grey, $colour-black);
+}
+

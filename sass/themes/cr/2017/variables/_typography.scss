@@ -14,9 +14,8 @@ $font-light-oblique: "proxima-nova", sans-serif;
 $font-light: "proxima-nova", sans-serif;
 $body-font: "proxima-nova", sans-serif;
 
-// Typography mixins
+// Typo x breakpoint: (font-size, line-height)
 
-// breakpoint: (font-size, line-height)
 $h1-xlarge-font-size: (
   null: (66px, 58px),
   $screen-md: (74px, 65px),
