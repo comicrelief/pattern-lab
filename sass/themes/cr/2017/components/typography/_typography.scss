@@ -4,29 +4,6 @@
 //
 // Style guide: 10.1
 
-// $colorList: (
-//   ("red" $colour-red),
-//   ("mint-green" $colour-mint-green), 
-//   ("royal-blue" $colour-royal-blue), 
-//   ("purple" $colour-purple),
-//   ("dark-purple" $colour-dark-purple),
-//   ("black" $colour-black),
-//   ("white" $colour-white),
-//   ("light-grey" $colour-light-grey),
-//   ("dark-grey" $colour-dark-grey),
-//   ("grey" $colour-grey)
-// );
-
-// @mixin font-variation($color) {
-//   .font--#{nth($color, 1)} {
-//     color: nth($color, 2);
-//   }
-// }
-
-// @for $color from 1 to (length($colorList)+1) {
-//   @include font-variation(nth($colorList, $color));
-// }
-
 h1,
 h2,
 h3,
