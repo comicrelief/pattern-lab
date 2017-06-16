@@ -233,4 +233,22 @@
       }
     }  
   }
+
+  /* To refactor */
+  .block-cr-meta-icons {
+    @include breakpoint($screen-lg) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 100;
+    }
+  }
+
+  .menu.sm.main-nav__items {
+    @include breakpoint($screen-lg) {
+      margin-left: 135px;
+      padding-right: 150px;
+      width: 70%;
+    }
+  }
 }
