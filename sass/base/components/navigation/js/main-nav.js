@@ -49,7 +49,7 @@
 
   function toggleSubMenu() {
 
-    $('li.menu-item--expanded > a').on('click', function (e) {
+    $('.navigation li.menu-item--expanded > a').on('click', function (e) {
       e.preventDefault();
       $listItem = $(this).parent('li.menu-item--expanded');
       // Remove any item open classes an add class to clicked item
