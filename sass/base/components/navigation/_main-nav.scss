@@ -246,9 +246,20 @@
 
   .menu.sm.main-nav__items {
     @include breakpoint($screen-lg) {
-      margin-left: 135px;
+      margin-left: 139px;
       padding-right: 150px;
       width: 70%;
+
+      li {
+        padding: 26px 16px;
+      }
     }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      li {
+        padding: 40px 16px;
+      }
+    }  
   }
 }
+
