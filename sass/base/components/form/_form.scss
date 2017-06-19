@@ -86,11 +86,6 @@ input[type="checkbox"] + span {
   background-color: $colour-white;
   border: 1px solid $item-grey;
   float: left;
-
-  + span {
-    margin-top: 10px;
-    display: inline-block;
-  }
 }
 
 input[type="checkbox"]:checked + span {
