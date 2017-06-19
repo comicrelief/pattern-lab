@@ -244,10 +244,14 @@
     }
   }
 
-  .main-nav__items {
+  .navigation {
     @include breakpoint($screen-lg) {
       margin-left: 139px;
-      padding-right: 150px;
+    }
+  }
+
+  .main-nav__items {
+    @include breakpoint($screen-lg) {
       width: auto;
 
       li {
