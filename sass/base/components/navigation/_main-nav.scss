@@ -244,11 +244,11 @@
     }
   }
 
-  .menu.sm.main-nav__items {
+  .main-nav__items {
     @include breakpoint($screen-lg) {
       margin-left: 139px;
       padding-right: 150px;
-      width: 70%;
+      width: auto;
 
       li {
         padding: 26px 16px;
@@ -259,7 +259,6 @@
       li {
         padding: 40px 16px;
       }
-    }  
+    }
   }
 }
-
