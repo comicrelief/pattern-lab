@@ -3,88 +3,16 @@
 // ==========================================================================
 
 footer[role=contentinfo] {
-  padding: 50px 5px;
-  background-color: #030e1a;
-
-  @include breakpoint($screen-md) {
-    width: 100%;
-  }
-
   @include breakpoint($screen-lg) {
-    padding-top: 100px;
+    padding: 50px 5px 140px;
   }
-  .footer__copyright p {
-    text-align: center;
-    color: #747373;
-    font-size: 12px;
-    line-height: 15px;
-  }
-  .footer__branding {
-    text-align: center;
-    a {
-      display: inline-block;
-      width: 70px;
-      height: 70px;
-      .icon {
-        width: inherit;
-        height: inherit;
-      }
-    }
-  }
-  .footer__follow {
-    text-align: center;
-    color: $colour-white;
-  }
-}
-
-.footer__copyright p {
-  margin: 0;
-  padding: 10px;
-}
-
-.menu--footer {
-  display: block;
-  margin: 15px 0 15px;
-}
-
-.menu--footer ul {
-  text-align: center;
-  margin-left: 0;
-}
-
-ul.menu {
-  list-style: none outside;
-  margin-left: 1em;
-  padding: 0;
-  text-align: center;
-}
-
-.menu--footer ul li {
-  display: inline-block;
-  margin: 10px 0;
-}
-
-.menu-item {
-  padding-top: 0.2em;
-  margin: 0;
 }
 
 .menu--footer ul li a {
-  display: block;
-  transition: color 180ms;
-  color: $colour-white;
-  font-weight: 300;
-  text-decoration: none;
-  border-right: 1px solid $colour-white;
-  margin: 0 5px 0 0;
-  padding: 0 20px 0 10px;
+  font-weight: normal;
+  @include font-size($p-small-font-size);
 }
 
-.menu--footer ul li:last-child a {
-  margin: 0;
-  border-right: none;
-}
-
-.menu--footer ul li a:hover {
-  color: #ddd;
+.footer__social-links li a {
+  margin: 0px 5px;
 }

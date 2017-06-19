@@ -10,7 +10,13 @@
 label,
 legend {
   display: block;
+  position: relative;
   @include clearfix();
+  @include font-size($p-small-font-size);
+
+  span {
+    font-family: $body-font;
+  }
 }
 
 fieldset {
@@ -66,20 +72,31 @@ select:focus {
 input[type="checkbox"] {
   @include opacity(0);
   position: absolute;
+  left: 0px;
 }
-
+input[type="radio"],
+input[type="checkbox"],
 input[type="checkbox"] + span {
   width: 30px;
   height: 30px;
+  margin: 5px 10px 10px 0px;
+}
+
+input[type="checkbox"] + span {
   background-color: $colour-white;
   border: 1px solid $item-grey;
   float: left;
-  margin: 5px 10px 10px 0px;
 }
 
 input[type="checkbox"]:checked + span {
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIHBvaW50cz0iMTMuNzA3LDMyLjI5MyAxMi4yOTMsMzMuODU0IDI0LjI5Myw0NiAyNS43MDcsNDYgNDkuNzA3LDIxLjg1NCA0OC4yOTMsMjAuMzY2IDI1LDQzLjYyMyAiLz48L2c+PC9zdmc+) no-repeat center;
   background-size: contain;
+}
+
+input[type="radio"] {
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
 
 select {
@@ -93,6 +110,7 @@ select {
   outline: 0 none;
   padding: 12px 50px 14px 10px;
   text-decoration: none;
+  font-size: 16px;
 
   appearance: none;
   box-shadow: border-box;
@@ -105,8 +123,8 @@ select {
 
 textarea {
   min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px; 
+  padding: 12px 50px 14px 10px;
+  @include font-size($p-small-font-size);
 }
 
 input[type="submit"],

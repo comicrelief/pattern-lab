@@ -28,7 +28,6 @@ textarea {
 }
 
 input[type="checkbox"] + span {
-  margin: 5px 20px 10px 0px;
   background-color: $colour-input-grey;
 	@include border-radius(2px);
 }
@@ -205,7 +204,7 @@ form {
 .form__group--nav_buttons {
   @include clearfix;
   @include span(12);
-
+  
   .form__nav {
     margin-bottom: 10px;
 
@@ -219,6 +218,7 @@ form {
   #btnNext,
   #btnBack {
     @include span(12);
+    @include font-size($p-font-size);
   }
 }
 
@@ -251,7 +251,11 @@ form {
   }
 }
 
-#create-account {
+/*
+ * No back button
+ */
+#create-account,
+#giving-page {
   .form__group--nav_buttons {
     .form__nav {
       @include breakpoint($screen-md) {

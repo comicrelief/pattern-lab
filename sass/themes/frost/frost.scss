@@ -6,6 +6,8 @@
 
 @import "../../base/variables/_grid.scss";
 
+@import "../../base/variables/_theme.scss";
+
 @import "../../base/variables/_colours.scss";
 
 // Sub theme var overrides
@@ -27,9 +29,13 @@
 
 @import "../../base/components/buttons/buttons";
 @import "../../base/components/background-colours/background-colours";
+@import "../../base/components/footer/footer";
 @import "../../base/components/form/form";
 @import "../../base/components/links/links";
 @import "../../base/components/list/list";
+@import "../../base/components/navigation/_footer-nav";
+@import "../../base/components/progress-indicator/_progress-indicator";
+@import "../../base/components/social/social";
 @import "../../base/components/typography/typography";
 
 // ==========================================================================
@@ -42,7 +48,26 @@
 				"components/_form",
 				"components/_cookie-consent",
 				"components/_buttons",
-				"components/_modal",
-				"components/_progress_indicator";
+				"components/_modal";
 
 @import "_frost-components";
+
+// Elements
+//
+// Style guide: 10
+
+// Components
+//
+// Style guide: 20
+
+// Navigation
+//
+// Different types of navigation
+// 
+// Style guide: 185
+
+// Footer Nav
+//
+// Markup: footer-nav.twig
+//
+// Style guide: 185.3
