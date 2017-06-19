@@ -4,6 +4,10 @@
 
 label {
   margin-bottom: 2px;
+
+  span + span {
+    display: inline;
+  }
 }
 
 input[type="email"],
@@ -204,7 +208,7 @@ form {
 .form__group--nav_buttons {
   @include clearfix;
   @include span(12);
-
+  
   .form__nav {
     margin-bottom: 10px;
 
@@ -218,6 +222,7 @@ form {
   #btnNext,
   #btnBack {
     @include span(12);
+    @include font-size($p-font-size);
   }
 }
 
@@ -250,7 +255,11 @@ form {
   }
 }
 
-#create-account {
+/*
+ * No back button
+ */
+#create-account,
+#giving-page {
   .form__group--nav_buttons {
     .form__nav {
       @include breakpoint($screen-md) {
