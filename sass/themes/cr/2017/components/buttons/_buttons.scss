@@ -10,7 +10,7 @@
   display: inline-block;
   width: auto;
   margin: 0 auto;
-  padding: 21px 40px;
+  padding: 23px 40px 19px;
   cursor: pointer;
   transition: 0.3s all;
   text-align: center;
@@ -53,10 +53,10 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: lighten($bg-colour, 8%);
+    background-color: lighten($bg-colour, 10%);
   }
   &-ghost {
-    padding: 15px 40px;
+    padding: 19px 40px 15px;
     border: 4px solid $bg-colour;
     color: $bg-colour;
     background-color: transparent;

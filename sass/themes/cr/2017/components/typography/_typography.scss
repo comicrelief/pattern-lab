@@ -44,3 +44,21 @@ span {
     }
   }
 }
+i.font--family-black {
+	font-family: $font-black-oblique;
+}
+.font--family-black {
+	font-family: $font-black;
+}
+i.font--family-bold {
+	font-family: $font-bold-oblique;
+}
+.font--family-bold {
+	font-family: $font-bold;
+}
+i.font--family-regular {
+	font-family: $font-regular-oblique;
+}
+.font--family-regular {
+	font-family: $font-regular;
+}
