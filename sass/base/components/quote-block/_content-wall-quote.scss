@@ -28,7 +28,7 @@
   left: 0;
   width: 100%;
   height: auto;
-  @include translateY(-50%);
+  transform: translateY(-50%);
 }
 .cw-quote__body {
   @include span(10);
@@ -55,7 +55,7 @@
     @include breakpoint($screen-lg) {
       top: 0;
       height: 100%;
-      @include translateY(0);
+      transform: translateY(0);
     }
   }
   .cw-quote__body {
@@ -64,7 +64,7 @@
       position: absolute;
       top: 50%;
       left: span(1);
-      @include translateY(-50%);
+      transform: translateY(-50%);
     }
   }
   .cw-quote__image {
@@ -79,7 +79,7 @@
       // Override the background colour option on this breakpoint
       background-color: transparent;
       @include border-radius(0);
-      @include translateY(0);
+      transform: translateY(0);
       img {
         width: 100%;
         height: auto;

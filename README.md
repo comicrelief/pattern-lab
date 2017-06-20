@@ -1,7 +1,5 @@
-[![Build Status](https://travis-ci.org/comicrelief/pattern-lab.svg?branch=master)](https://travis-ci.org/comicrelief/pattern-lab)
-
-## Comic Relief Pattern Lab
-A Node-based project to supply Sass components and a styleguide generator.
+# Comic Relief Pattern Lab [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+> A Node-based project to supply Sass components and a styleguide generator.
 
 ## The idea
 To have a centralised hub supply common styling across CR products. 
@@ -53,8 +51,9 @@ Either of the last 2 steps creates a symlink in the other project's `node_module
 ## Semantic Release Process
 Git commit messages are used to automatically publish a new version of npm package. To achieve this, **every commit message** should have a **type** and a **message** in the format described below.
 
-Travis CI will run a job automatically after PR is merged and analyze all commit messages since last npm release.
-Then semantic-release plugin will calculate new version according to this result
+Travis CI will run a job automatically after PR is merged and analyze all commit messages since last npm release. Then semantic-release plugin will calculate new version according to this result.
+
+To avoid commit loops, version numbers are not committed back to `package.json`. Versions are listed on [GitHub releases](https://github.com/comicrelief/pattern-lab/releases) and used in the modified package.json [published to npm](https://www.npmjs.com/package/@comicrelief/pattern-lab).
 
 Commit messages are expected to be in this format:
 ```
@@ -114,3 +113,8 @@ press `Enter` to skip.
 npm run backstop-test-local
 ```
 - View pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
+
+[npm-image]: https://badge.fury.io/js/%40comicrelief%2Fpattern-lab.svg
+[npm-url]: https://www.npmjs.com/package/@comicrelief/pattern-lab
+[travis-image]: https://travis-ci.org/comicrelief/pattern-lab.svg?branch=master
+[travis-url]: https://travis-ci.org/comicrelief/pattern-lab

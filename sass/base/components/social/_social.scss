@@ -38,7 +38,7 @@
   text-align: right;
   font-family: $body-font;
   @include span(6);
-  @include translateY(50%);
+  transform: translateY(50%);
 }
 ul.social-links {
   text-align: left;
@@ -63,7 +63,7 @@ ul.social-links {
     margin: 0;
   }
   .icon {
-    @include transition(fill 0.3s ease);
+    transition: fill 0.3s ease;
 
     fill: white;
     &:hover {

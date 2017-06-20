@@ -23,8 +23,8 @@
   font-family: $font-bold;
   font-size: 18px;
   line-height: 28px;
-  @include transition-property(border, color);
-  @include transition-duration(180ms);
+  transition-property: border, color;
+  transition-duration: 180ms;
   &:hover,
   &:active,
   &:focus {

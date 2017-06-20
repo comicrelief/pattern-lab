@@ -169,8 +169,8 @@ select,
     -webkit-appearance: none;
     // iOS fix
     -webkit-tap-highlight-color: transparent;
-    @include transition-property(background-color);
-    @include transition-duration(600ms);
+    transition-property: background-color;
+    transition-duration: 600ms;
     &:hover {
       background-color: #272727;
     }
@@ -255,6 +255,7 @@ select,
     input[type=select],
     input[type=text] {
       @include border-radius(30px 0 0 30px);
+      max-width: 100%;
     }
     .cr-email-signup--messages {
       text-align: center;
@@ -266,7 +267,7 @@ select,
       .esu-first-success-message,
       .esu-second-success-message {
         position: relative;
-        @include translateY(0);
+        transform: translateY(0);
         width: 100%;
         
         p {
@@ -317,7 +318,7 @@ select,
       .esu-first-success-message,
       .esu-second-success-message {
         position: relative;
-        @include translateY(0);
+        transform: translateY(0);
         @include span(12);
         
         p {
@@ -374,6 +375,7 @@ select,
     input[type=select],
     input[type=text] {
       @include border-radius(30px 0 0 30px);
+      max-width: 100%;
     }
 
     .cr-email-signup--messages {
@@ -388,7 +390,7 @@ select,
       .esu-initial-message,
       .esu-first-success-message {
         position: relative;
-        @include translateY(0);
+        transform: translateY(0);
         float: left;
         width: 100%;
 
@@ -435,16 +437,6 @@ select,
     .cr-email-signup--messages {
       @include span(4 wide);
       @include push(2);
-      // > div {
-      //   @include translateY(-50%);
-      //   position: absolute;
-      //   top: 50%;
-      //   margin: 0;
-
-      //   h4 {
-      //     margin: 0;
-      //   }
-      // }
     }
     .form-item-email {
       @include span(4);
@@ -649,7 +641,7 @@ select,
           position: absolute;
           right: 0;
           top: 50%;
-          @include translateY(-50%);
+          transform: translateY(-50%);
           .form-item-email {
             @include span(10);
             margin-right: 0;

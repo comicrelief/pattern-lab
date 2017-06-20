@@ -82,7 +82,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['sass/{,**/}*.{scss,sass}'],
-        tasks: ['sass'],
+        tasks: ['sass', 'postcss:dist'],
         options: {
           // Start a live reload server on the default port 35729
           livereload: true
@@ -157,9 +157,21 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Frost PatternLab',
-          css: ['../css/themes/frost/frost.css', '../css/kss/rnd.css']
+          css: ['../css/themes/frost/frost.css', '../css/kss/frost.css']
         },
-        src: ['sass/base', 'sass/themes/frost'],
+        src: ['sass/base/core', 
+              'sass/base/variables',
+              'sass/base/components/buttons',
+              'sass/base/components/background-colours',
+              'sass/base/components/footer',
+              'sass/base/components/form',
+              'sass/base/components/links',
+              'sass/base/components/list',
+              'sass/base/components/progress-indicator',
+              'sass/base/components/navigation/_footer-nav',
+              'sass/base/components/social',
+              'sass/themes/frost'
+             ],
         dest: 'dist/frost'
       }
     },
@@ -182,6 +194,18 @@ module.exports = function (grunt) {
 
     clean: {
       build: ['tests/visual/reference']
+    },
+
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')
+        ]
+      },
+      dist: {
+        src: ['dist/css/kss/*.css', 'dist/css/themes/**/*.css']
+      }
     }
   });
 
@@ -191,8 +215,9 @@ module.exports = function (grunt) {
     'sass_globbing',
     'sass',
     'modernizr',
-    // 'imagemin',
-    'kss'
+    'imagemin',
+    'kss',
+    'postcss:dist'
   ]);
 
   grunt.registerTask('watch:dev', [

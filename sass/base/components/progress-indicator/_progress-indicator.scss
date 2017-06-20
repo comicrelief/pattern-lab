@@ -1,6 +1,10 @@
-// ==========================================================================
 // Progress indicator
-// ==========================================================================
+//
+// This is Progress indicator
+//
+// Markup: progress-indicator.twig
+//
+// Style guide: 20.1001
 
 $circle-size: 15px !default;
 $circle-line-thickness: 3px !default;
@@ -12,7 +16,6 @@ $indicator-thickness: 2px !default;
   text-transform: capitalize;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid $colour-border-grey;
 
   li {
     list-style: none;
@@ -45,7 +48,7 @@ $indicator-thickness: 2px !default;
 }
 
 .progress-indicator__steps-3 li {
-  width: 33.3%;
+  width: 33%;
 }
 
 .progress-indicator__steps-4 li {
@@ -113,8 +116,9 @@ $indicator-thickness: 2px !default;
 
 .form__group--progress_bar_for_ab_test {
   
-  .progress-bar--active {
+  .progress-indicator--active {
     color: $colour-black;
+    width: 100%;
   }
   .progress-bar__step {
     text-transform: initial;

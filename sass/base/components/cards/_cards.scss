@@ -56,7 +56,7 @@
 .cards__wrapper {
   text-align: center;
   @include breakpoint($screen-md-max) {
-    @include display-flex;
-    @include justify-content(center);
+    display: flex;
+    justify-content:center;
   }
 }

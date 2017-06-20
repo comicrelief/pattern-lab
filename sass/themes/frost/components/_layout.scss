@@ -5,6 +5,7 @@
 
 body {
   font-family: $body-font; 
+  color: $colour-black;
   @include font-size($p-font-size);
   background: $colour-background-grey;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +45,7 @@ body {
 *,
 *:before, 
 *:after {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 div:after {
