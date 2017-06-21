@@ -8,48 +8,6 @@
 //
 // Style guide: 10.2
 
-/*  
- * Link styles,
- * Copied from SR16 theme
- */
-
-@mixin link($border, $hover) {
-  text-decoration: none;
-  word-break: break-word;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: inherit;
-  border-bottom: 4px solid $border;
-  font-family: $font-bold;
-  font-size: 18px;
-  line-height: 28px;
-  transition-property: border, color;
-  transition-duration: 180ms;
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom: 4px solid $hover;
-  }
-  &.inline {
-    display: inline-block;
-    margin: 0;
-    cursor: pointer;
-    color: inherit;
-    border-width: 2px;
-    font-size: inherit;
-    line-height: 22px;
-    &:hover,
-    &:active,
-    &:focus {
-      border-width: 2px;
-    }
-  }
-  &.link--small {
-    font-size: 16px;
-    line-height: 26px;
-  }
-}
-
 .link--black {
   @include link($colour-black, $colour-red);
 }
@@ -74,4 +32,3 @@
 .link--light-grey {
   @include link($colour-light-grey, $colour-black);
 }
-

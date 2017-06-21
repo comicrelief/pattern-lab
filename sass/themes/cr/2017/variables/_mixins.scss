@@ -1,5 +1,6 @@
 /* Not using old button mixin with list array. Let's rethink about it. I find it a abit over engineered */
 
+// CR buttons variations
 @mixin cr_button_types($colour, $bg-colour) {
   color: $colour;
   background-color: $bg-colour;
@@ -18,5 +19,43 @@
       background-color: $bg-colour;
       color: $colour;
     }
+  }
+}
+
+// CR links variation
+@mixin link($border, $hover) {
+  text-decoration: none;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: inherit;
+  border-bottom: 4px solid $border;
+  font-family: $font-bold;
+  font-size: 18px;
+  line-height: 28px;
+  transition-property: border, color;
+  transition-duration: 180ms;
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 4px solid $hover;
+  }
+  &.inline {
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    color: inherit;
+    border-width: 2px;
+    font-size: inherit;
+    line-height: 22px;
+    &:hover,
+    &:active,
+    &:focus {
+      border-width: 2px;
+    }
+  }
+  &.link--small {
+    font-size: 16px;
+    line-height: 26px;
   }
 }
