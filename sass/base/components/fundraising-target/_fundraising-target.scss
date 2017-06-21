@@ -1,0 +1,103 @@
+
+// Fundraising target
+//
+// Markup: fundraising-target.twig
+//
+// Style guide: 20.1002
+
+.userFrTarget {
+  @include clearfix();
+
+  .form__subcopy {
+    @include font-size($p-xsmall-font-size);
+  }
+  .pounds-typography {
+    font-family: $font-bold;
+    font-size: 55px;
+    color: $colour-blue;
+    position: relative;
+    top: 13px;
+  }
+  input {
+    width: 123px;
+    margin-left: 10px;
+  }
+  .amount,
+  .copy {
+    float: left;
+  }
+  .amount {
+    @include breakpoint($screen-md) {
+      width: 48%;
+    }
+  }
+  .copy {
+    position: relative;
+
+    @include breakpoint($screen-md) {
+      width: 52%;
+      margin-top: 45px;
+    }
+  }
+  .digit {
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    padding-top: 45px;
+    border-right: 1px solid $colour-blue;
+    
+    @include breakpoint($screen-md) {
+      padding-top: 35px;
+    }
+  }
+  .digit-copy {
+    padding-left: 40%;
+    p {
+      @include font-size($p-xsmall-font-size);
+    }
+  }
+  .digit span {
+    font-size: 55px;
+    margin: 0px 2px;
+    font-family: $font-bold;
+    color: $colour-white;
+    text-shadow:
+      -1px -1px 0px $colour-blue,
+       0px -1px 0px $colour-blue,
+       1px -1px 0px $colour-blue,
+      -1px  0px 0px $colour-blue,
+       1px  0px 0px $colour-blue,
+      -1px  1px 0px $colour-blue,
+       0px  1px 0px $colour-blue,
+       1px  1px 0px $colour-blue,
+      -2px -2px 0px $colour-blue,
+      -1px -2px 0px $colour-blue,
+       0px -2px 0px $colour-blue,
+       1px -2px 0px $colour-blue,
+       2px -2px 0px $colour-blue,
+       2px -1px 0px $colour-blue,
+       2px  0px 0px $colour-blue,
+       2px  1px 0px $colour-blue,
+       2px  2px 0px $colour-blue,
+       1px  2px 0px $colour-blue,
+       0px  2px 0px $colour-blue,
+      -1px  2px 0px $colour-blue,
+      -2px  2px 0px $colour-blue,
+      -2px  1px 0px $colour-blue,
+      -2px  0px 0px $colour-blue,
+      -2px -1px 0px $colour-blue;
+  }
+  .digit-2 span {
+    font-size: 40px;
+  }
+  .digit-3 span {
+    font-size: 30px;
+  }
+  .digit-4 span {
+    font-size: 25px;
+  }
+  .digit-5 span {
+    font-size: 20px;
+  }
+}
