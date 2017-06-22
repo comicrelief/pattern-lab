@@ -15,6 +15,7 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
+  outline: none;
   height: 60px;
   background-color: $colour-input-grey;
   border: 1px solid $colour-border-grey;
@@ -60,6 +61,7 @@ form {
 .form__group {
   position: relative;
   h2 {
+    font-family: $font-bold;
     @include font-size($p-font-size);
   }
   @include breakpoint($screen-md) {
@@ -246,6 +248,19 @@ form {
         top: 0px;
         right: 0px;
         width: auto;
+      }
+    }
+    .fa-spinner {
+      z-index: 10;
+      color: $colour-blue;
+      position: absolute;
+      top: 20px;
+      left: 90%;
+
+      @include breakpoint($screen-md) {  
+        top: 20px;
+        left: -30px;
+      
       }
     }
   }
