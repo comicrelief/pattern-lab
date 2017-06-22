@@ -71,7 +71,6 @@ header[role=banner] {
       object-position: top;
       @include no-objectfit;
       width: 100%;
-      margin-top: -30%;
       
       @include breakpoint($screen-md) {
         margin-top: 0px;
@@ -116,7 +115,6 @@ header[role=banner] {
     margin-right: auto;
     position: absolute;
   }
-  //margin-top: -30%;
   margin-bottom: -5px;
   width: 100%;
   .promo-header--feature & {
