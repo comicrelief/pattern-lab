@@ -15,6 +15,7 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
+  outline: none;
   height: 60px;
   background-color: $colour-input-grey;
   border: 1px solid $colour-border-grey;
@@ -60,6 +61,7 @@ form {
 .form__group {
   position: relative;
   h2 {
+    font-family: $font-bold;
     @include font-size($p-font-size);
   }
   @include breakpoint($screen-md) {
