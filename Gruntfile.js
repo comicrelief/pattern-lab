@@ -4,8 +4,6 @@ var tilde_importer = require('grunt-sass-tilde-importer');
 
 module.exports = function (grunt) {
 
-  grunt.loadNpmTasks('grunt-postcss');
-
   grunt.initConfig({
 
     sass: {
@@ -174,9 +172,21 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Frost PatternLab',
-          css: ['../css/themes/frost/frost.css', '../css/kss/rnd.css']
+          css: ['../css/themes/frost/frost.css', '../css/kss/frost.css']
         },
-        src: ['sass/base', 'sass/themes/frost'],
+        src: ['sass/base/core', 
+              'sass/base/variables',
+              'sass/base/components/buttons',
+              'sass/base/components/background-colours',
+              'sass/base/components/footer',
+              'sass/base/components/form',
+              'sass/base/components/links',
+              'sass/base/components/list',
+              'sass/base/components/progress-indicator',
+              'sass/base/components/navigation/_footer-nav',
+              'sass/base/components/social',
+              'sass/themes/frost'
+             ],
         dest: 'dist/frost'
       }
     },

@@ -1,30 +1,32 @@
 // ==========================================================================
-// Theme variables
-// ==========================================================================
-
-@import "variables/_colours.scss";
-
-// ==========================================================================
 // Core components
 // ==========================================================================
 
-@import "../../../base/_core";
+@import "../../../base/core/base-1-mixins";
+@import "../../../base/core/base-breakpoints";
+@import "../../../base/core/base-common";
+@import "../../../base/core/base-grid";
+@import "../../../base/core/base-helper";
+@import "../../../base/core/base-layout";
+@import "../../../base/core/base-reset";
 
 // ==========================================================================
-// Core and sub theme variables
+// Core variables
 // ==========================================================================
 
 @import "../../../base/variables/_grid.scss";
-
 @import "../../../base/variables/_colours.scss";
-
 @import "../../../base/variables/_typography.scss";
-// Sub theme var overrides
-@import "variables/_typography.scss";
-
 @import "../../../base/variables/_lists.scss";
-
 @import "../../../base/variables/_theme.scss";
+
+// ==========================================================================
+// Sub Theme variables
+// ==========================================================================
+
+@import "variables/_colours.scss";
+@import "variables/_typography.scss";
+@import "variables/_mixins.scss";
 
 // ==========================================================================
 // Core components

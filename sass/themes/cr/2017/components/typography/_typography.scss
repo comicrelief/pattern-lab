@@ -4,3 +4,61 @@
 //
 // Style guide: 10.1
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  &.font {
+    &--red {
+      color: $colour-red;
+    }
+    &--mint-green {
+      color: $colour-mint-green;
+    }
+    &--royal-blue {
+      color: $colour-royal-blue;
+    }
+    &--purple {
+      color: $colour-purple;
+    }
+    &--dark-purple {
+      color: $colour-dark-purple;
+    }
+    &--black {
+      color: $colour-black;
+    }
+    &--white {
+      color: $colour-white;
+    }
+    &--light-grey {
+      color: $colour-light-grey;
+    }
+    &--dark-grey {
+      color: $colour-dark-grey;
+    }
+    &--grey {
+      color: $colour-grey;
+    }
+  }
+}
+i.font--family-black {
+	font-family: $font-black-oblique;
+}
+.font--family-black {
+	font-family: $font-black;
+}
+i.font--family-bold {
+	font-family: $font-bold-oblique;
+}
+.font--family-bold {
+	font-family: $font-bold;
+}
+i.font--family-regular {
+	font-family: $font-regular-oblique;
+}
+.font--family-regular {
+	font-family: $font-regular;
+}
