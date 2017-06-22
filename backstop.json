@@ -3,7 +3,7 @@
   "viewports": [
     {
       "name": "mobile",
-      "width": 320,
+      "width": 600,
       "height": 480
     },
     {
@@ -20,123 +20,18 @@
   "scenarios": [
     {
       "label": "Homepage",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com",
-      "referenceUrl": "http://www.rednoseday.com/",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": false,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "Fundraise",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/fundraise",
-      "referenceUrl": "http://www.rednoseday.com/fundraise",
+      "url": "dist/cr/section-20.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/cr/section-20.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,
-      "selectors": [],
+      "selectors": [
+        ".kss-main .cards"
+      ],
       "readyEvent": null,
-      "delay": 0,
+      "delay": 1000,
       "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "Difference you make",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/the-difference-you-make",
-      "referenceUrl": "http://www.rednoseday.com/the-difference-you-make",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": true,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "schools",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/schools",
-      "referenceUrl": "http://www.rednoseday.com/schools",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": true,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "nurseries",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/schools/nurseries",
-      "referenceUrl": "http://www.rednoseday.com/schools/nurseries",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": true,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "news",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/news-tv-and-events/news/nose-flash-red-nose-day-danger",
-      "referenceUrl": "http://www.rednoseday.com/schools/news-tv-and-events/news/nose-flash-red-nose-day-danger",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": true,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "search",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/search?text=donate",
-      "referenceUrl": "http://www.rednoseday.com/search?text=donate",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": true,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
-    },
-    {
-      "label": "pay-in",
-      "url": "http://review:hav3al00k@rnd17-staging.sys.comicrelief.com/how-to-pay-in-your-fundraising",
-      "referenceUrl": "http://www.rednoseday.com/how-to-pay-in-your-fundraising",
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "selectorExpansion": true,
-      "selectors": [],
-      "readyEvent": null,
-      "delay": 0,
-      "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
+      "requireSameDimensions" : true
     }
   ],
   "paths": {

@@ -216,7 +216,7 @@ module.exports = function (grunt) {
     'sass_globbing',
     'sass',
     'modernizr',
-    'imagemin',
+    'imagemin:static',
     'kss',
     'postcss:dist'
   ]);
