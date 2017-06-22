@@ -13,6 +13,7 @@
 .feature-nav {
   float: right;
 }
+
 .feature-nav__burger {
   border-right: 2px solid $colour-light-grey;
   border-left: 2px solid $colour-light-grey;
@@ -134,5 +135,21 @@
     .font--red {
       color: $colour-red;
     }
+  }
+}
+
+/* Template reworking stuff */
+.main-nav__wrapper.main-nav--feature__wrapper {
+
+  .feature-nav.menu.main-nav__items {
+  float: right;
+
+    .main-nav__icons.main-nav__burger {
+      display: block;
+    }
+  }
+
+  .c-hamburger__text:before {
+    content: "More";
   }
 }
