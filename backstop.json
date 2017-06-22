@@ -19,9 +19,24 @@
   ],
   "scenarios": [
     {
-      "label": "Homepage",
+      "label": "Cards CR",
       "url": "dist/cr/section-20.html",
       "referenceUrl": "http://cr-pattern-lab.netlify.com/cr/section-20.html",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        ".kss-main .cards"
+      ],
+      "readyEvent": null,
+      "delay": 1000,
+      "misMatchThreshold" : 1,
+      "requireSameDimensions" : true
+    },
+    {
+      "label": "Cards RND",
+      "url": "dist/rnd/section-20.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/rnd/section-20.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,
