@@ -1,7 +1,17 @@
 <div class="main-nav__wrapper main-nav--feature__wrapper">
-  <!-- Main navigation menu -->
-  <nav role="navigation" class="navigation menu--main main-nav">
-    <h2 class="visually-hidden" id="main-nav__title"> Main navigation menu </h2>
+  <!-- Featured items and hamburger button -->
+  <div class="main-nav--feature__inner-wrapper">
+    <ul class="main-nav--feature__featured-items">
+      <li class="menu-item">
+        <a href="/" data-drupal-link-system-path="<front>">Home</a>
+      </li>
+      <li class="menu-item">
+        <a href="/fundraise" data-drupal-link-system-path="node/22" class="is-active">Fundraise (Landing)</a>
+      </li>
+      <li class="menu-item">
+        <a href="/whats-going-on" data-drupal-link-system-path="node/17">What's going on</a>
+      </li>
+    </ul>
     <!-- Mobile: navigation toggle button -->
     <div class="main-nav__icons main-nav__burger">
       <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle">
@@ -11,69 +21,25 @@
         <span></span>
       </a>
     </div>
+  </div>
+  <!-- Main navigation menu -->
+  <nav role="navigation" class="navigation menu--main main-nav">
+    <h2 class="visually-hidden" id="main-nav__title"> Main navigation menu </h2>
     <ul id="main-menu" class="main-nav__items sm menu--level-0 ">
       <li class="menu-item">
         <a href="/">Home</a>
       </li>
       <li class="menu-item menu-item--expanded">
         <a href="/">Fundraise</a>
-        <ul class="main-nav__items menu--level-1">
-          <li class="menu-item menu-item--duplicate">
-            <a href="/">
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 1</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 2</a>
-          </li>
-        </ul>
       </li>
       <li class="menu-item menu-item--expanded">
         <a href="/link">What's going on</a>
-        <ul class="main-nav__items menu--level-1">
-          <li class="menu-item menu-item--duplicate">
-            <a href="/">
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 1</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 2</a>
-          </li>
-        </ul>
       </li>
       <li class="menu-item menu-item--expanded">
         <a href="/">FAQ</a>
-        <ul class="main-nav__items menu--level-1">
-          <li class="menu-item menu-item--duplicate">
-            <a href="/">
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 1</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 2</a>
-          </li>
-        </ul>
       </li>
       <li class="menu-item menu-item--expanded">
         <a href="/">Legal</a>
-        <ul class="main-nav__items menu--level-1">
-          <li class="menu-item menu-item--duplicate">
-            <a href="/">
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 1</a>
-          </li>
-          <li class="menu-item">
-            <a href="/">sub-item 2</a>
-          </li>
-        </ul>
       </li>
     </ul>
   </nav>
