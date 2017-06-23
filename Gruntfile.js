@@ -180,6 +180,7 @@ module.exports = function (grunt) {
               'sass/base/components/background-colours',
               'sass/base/components/footer',
               'sass/base/components/form',
+              'sass/base/components/fundraising-target',
               'sass/base/components/links',
               'sass/base/components/list',
               'sass/base/components/progress-indicator',
