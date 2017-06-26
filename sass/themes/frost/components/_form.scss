@@ -250,6 +250,19 @@ form {
         width: auto;
       }
     }
+    .fa-spinner {
+      z-index: 10;
+      color: $colour-blue;
+      position: absolute;
+      top: 20px;
+      left: 90%;
+
+      @include breakpoint($screen-md) {  
+        top: 20px;
+        left: -30px;
+      
+      }
+    }
   }
 }
 
