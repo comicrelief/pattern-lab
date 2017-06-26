@@ -82,9 +82,7 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  @include breakpoint($screen-md) {
-    padding: 0 120px;
-  }
+  padding: 0 20px;
   .cr-body {
     h2,
     h3,
@@ -100,8 +98,8 @@
 .media-block__caption {
   display: none;
 }
-.view-mode-cw_l .media-block__content {
+.block-content--view-mode-cw-l .media-block__content {
   @include breakpoint($screen-md) {
-    padding: 80px 10px 60px;
+    padding: 0 120px;
   }
 }
