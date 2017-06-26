@@ -106,7 +106,7 @@ When a pull request is created, it triggers a Netlify preview deployment, which 
 ```
 https://deploy-preview-[PULL_REQUEST_ID]--cr-pattern-lab.netlify.com/
 ```
-Pull request commits also trigger CI visual regression test as explained below. Output is available at
+Pull request commits and merge also trigger CI visual regression tests as explained below. Output is available at
 ```
 https://ci.apps.comicrelief.com/teams/main/pipelines/pattern-lab
 ```
