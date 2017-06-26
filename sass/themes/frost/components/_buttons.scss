@@ -6,15 +6,17 @@
   background-color: $colour-blue;
   text-transform: uppercase;
   border: 0px;
-  padding: 23px 40px 19px;
+  padding: 18px 40px 17px;
   letter-spacing: 1px;
-  
+  outline: 0;
+
   &:hover {
     background-color: $colour-dark-blue;
     
   }
 }
 .btn--rectangle {
+  padding: 23px 40px 19px;
   @include border-radius(0px);
 
   &:hover {
@@ -31,7 +33,7 @@
 less padding because ghost buttons have borders */
 .btn--ghost,
 .btn--blue-ghost {
-  padding: 21px 38px 17px;
+  padding: 21px 40px 17px;
   border: 2px solid $colour-blue;
   background-color: $colour-white;
   color: $colour-blue;
