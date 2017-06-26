@@ -100,6 +100,11 @@ press `Enter` to skip.
  
  - Repeat and follow rest of the GitHub workflow
 
+ ## CI Pipelines
+We are using Concourse CI and Travis CI to run tasks, and Netlify and Cloud Foundry to deploy pattern-lab.
+When a pull request is created, it triggers a Netlify preview deployment, which is at https://deploy-preview-[PULL_REQUEST_ID]--cr-pattern-lab.netlify.com/
+Pull request commits also trigger CI visual regression test as explained below. Output is available at https://ci.apps.comicrelief.com/teams/main/pipelines/pattern-lab
+
  ## Visual Regression
 - We're using [BackstopJS](https://github.com/garris/BackstopJS)
 - CI runs tests on pull request
