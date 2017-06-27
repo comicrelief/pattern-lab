@@ -37,8 +37,11 @@
 
   function toggleMenu() {
     $('a.main-nav-toggle').on('click', function (e) {
+      // Change state for visual effect.
+      $(this).toggleClass('is-active');
+
       // Change state of menu itself.
-      $('#main-menu').toggleClass('menu-open');
+      $('#main-menu', $(this).parents('.main-nav__wrapper')).toggleClass('menu-open');
     });
 
     toggleSubMenu();       
