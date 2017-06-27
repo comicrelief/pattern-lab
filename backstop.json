@@ -2,39 +2,43 @@
   "id": "visual",
   "viewports": [
     {
-      "name": "mobile",
-      "width": 320,
-      "height": 480
-    },
-    {
-      "name": "tablet",
-      "width": 768,
-      "height": 1024
-    },
-    {
       "name": "desktop",
-      "width": 1024,
+      "width": 1280,
       "height": 768
     }
   ],
   "scenarios": [
     {
-      "label": "Homepage",
-      "url": "dist/index.html",
-      "referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
+      "label": "Cards CR",
+      "url": "dist/cr/section-20.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/cr/section-20.html",
       "hideSelectors": [],
-      "removeSelectors": [],
+      "removeSelectors": [".kss-sidebar"],
       "selectorExpansion": true,
       "selectors": [
-        ".kss-header",
-        "#kssref-0"
+        ".kss-main .cards",
+        ".kss-main .media-block.block-content--view-mode-cw-l"
       ],
       "readyEvent": null,
-      "delay": 0,
+      "delay": 100,
       "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
+      "requireSameDimensions" : true
+    },
+    {
+      "label": "Cards RND",
+      "url": "dist/rnd/section-20.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/rnd/section-20.html",
+      "hideSelectors": [],
+      "removeSelectors": [".kss-sidebar"],
+      "selectorExpansion": true,
+      "selectors": [
+        ".kss-main .cards",
+        ".kss-main .media-block.block-content--view-mode-cw-l"
+      ],
+      "readyEvent": null,
+      "delay": 100,
+      "misMatchThreshold" : 1,
+      "requireSameDimensions" : true
     }
   ],
   "paths": {
