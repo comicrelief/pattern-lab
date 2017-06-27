@@ -1,0 +1,32 @@
+
+// ==========================================================================
+// KSS styles
+// ==========================================================================
+
+.kss-header {
+	a {
+		img { display: none; }
+		width: 150px;
+		height: 50px;
+		display: block;
+		background: url(/kss-assets/images/pattern_logo_cr.png) left top no-repeat;
+		-webkit-background-size: contain;
+  	-moz-background-size: contain;
+  	-o-background-size: contain;
+  	background-size: contain;
+	}
+}
+
+#kss-node .kss-sidebar,
+#kss-node .kss-title--level-1 {
+  background: #0565d1;
+}
+
+.kss-overview.kss-style a {
+	color: #111;
+	border-bottom: 4px solid #ea0043;
+}
+
+.kss-overview li {
+	list-style-type: disc;
+}

@@ -8,48 +8,27 @@
 //
 // Style guide: 10.2
 
-/*  
- * Link styles,
- * Copied from SR16 theme
- */
-
-.link {
-  text-decoration: none;
-  word-break: break-word;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: inherit;
-  border-bottom: 4px solid $colour-black;
-  font-family: $font-bold;
-  font-size: 18px;
-  line-height: 28px;
-  transition-property: border, color;
-  transition-duration: 180ms;
-  &:hover,
-  &:active,
-  &:focus {
-    border-bottom: 4px solid $colour-red;
-  }
-  &.inline {
-    display: inline-block;
-    margin: 0;
-    cursor: pointer;
-    color: inherit;
-    border-width: 2px;
-    font-size: inherit;
-    line-height: 22px;
-    &:hover,
-    &:active,
-    &:focus {
-      border-width: 2px;
-    }
-  }
-  &.link--small {
-    font-size: 16px;
-    line-height: 26px;
-  }
+.link--black {
+  @include link($colour-black, $colour-red);
 }
-
-@for $link from 1 to (length($linkList)+1) {
-  @include link-variation(nth($linkList, $link));
+.link--purple {
+  @include link($colour-purple, $colour-royal-blue);
+}
+.link--royal-blue {
+  @include link($colour-royal-blue, $colour-purple);
+}
+.link--red {
+  @include link($colour-red, $colour-black);
+}
+.link--mint-green {
+  @include link($colour-mint-green, $colour-royal-blue);
+}
+.link--white {
+  @include link($colour-white, $colour-mint-green);
+}
+.link--grey {
+  @include link($colour-grey, $colour-black);
+}
+.link--light-grey {
+  @include link($colour-light-grey, $colour-black);
 }

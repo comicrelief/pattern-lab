@@ -1,18 +1,24 @@
+
+// Typography
+//
+// Markup: typography.twig
+//
+// Style guide: 10.1
+
 // Fonts
+$font-stack: "Sailec-Regular", sans-serif;
 
-$font-stack: "Sailec", sans-serif;
-
-$font-black-oblique: "Sailec-Black", sans-serif;
+$font-black-oblique: "Sailec-BlackItalic", sans-serif;
 $font-black: "Sailec-Black", sans-serif;
-$font-bold-oblique: "Sailec-Bold", sans-serif;
+$font-bold-oblique: "Sailec-BoldItalic", sans-serif;
 $font-bold: "Sailec-Bold", sans-serif;
-$font-medium-oblique: "Sailec", sans-serif; 
-$font-medium: "Sailec", sans-serif;
-$font-regular-oblique: "Sailec", sans-serif; 
-$font-regular: "Sailec", sans-serif;
-$font-light-oblique: "Sailec", sans-serif; 
-$font-light: "Sailec", sans-serif;
-$body-font: "Sailec", sans-serif;
+$font-medium-oblique: "Sailec-MediumItalic", sans-serif; 
+$font-medium: "Sailec-Medium", sans-serif;
+$font-regular-oblique: "Sailec-RegularItalic", sans-serif; 
+$font-regular: "Sailec-Regular", sans-serif;
+$font-light-oblique: "Sailec-LightItalic", sans-serif; 
+$font-light: "Sailec-Light", sans-serif;
+$body-font: "Sailec-Regular", sans-serif;
 
 // Typography mixins
 

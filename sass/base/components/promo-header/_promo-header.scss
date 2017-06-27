@@ -77,7 +77,6 @@
 }
 .promo-header__bg-image {
   width: 100%;
-  margin-top: -30%;
   margin-bottom: -5px;
   @include breakpoint($screen-md-max) {
     position: absolute;

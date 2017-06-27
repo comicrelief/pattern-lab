@@ -15,6 +15,7 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
+  outline: none;
   height: 60px;
   background-color: $colour-input-grey;
   border: 1px solid $colour-border-grey;
@@ -28,7 +29,6 @@ textarea {
 }
 
 input[type="checkbox"] + span {
-  margin: 5px 20px 10px 0px;
   background-color: $colour-input-grey;
 	@include border-radius(2px);
 }
@@ -61,6 +61,7 @@ form {
 .form__group {
   position: relative;
   h2 {
+    font-family: $font-bold;
     @include font-size($p-font-size);
   }
   @include breakpoint($screen-md) {
@@ -82,15 +83,12 @@ form {
   margin: 15px 0px;
 }
 
-.form__field {
-
-}
-
 .form__field--checkbox {
   .form__field--copy {
     @include font-size($p-small-font-size);
   }
 }
+
 .page-title {
   text-align: center;
 
@@ -127,6 +125,107 @@ form {
 }
 
 // ==========================================================================
+// Form Modal
+// ==========================================================================
+.form__overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+// ==========================================================================
+// Form Component
+// ==========================================================================
+.form__group--age_selection {
+  .age_selection {
+    width: 100%;
+    border-top: 1px solid $colour-border-grey;
+    padding-top: 20px;
+  }
+
+  .btn {
+    width: 45%;
+    @extend .btn--blue-ghost;
+
+    &.active { 
+      background-color: $colour-blue;
+      color: $colour-white;
+      border: 0px;
+      padding: 23px 40px 19px;
+    }
+  }
+
+  .btn + .btn {
+    margin: 20px 0px 20px 5px;
+
+    @include breakpoint($screen-md) {
+      margin-left: 25px;
+    }
+  }
+}
+
+.form__group--password_input {
+  .form__field--intro p {
+    color: $colour-background-grey;
+    font-style: italic;
+  }
+
+  .form__field--checkbox {
+    .form__field--copy {
+      margin-top: 10px;
+      display: inline-block;
+    }
+  }
+}
+
+.form__group--custom_link,
+.form__group--terms_conditions {
+  a {
+    @extend .link;
+    @extend .link--blue;
+    @include font-size($p-small-font-size);
+    @include breakpoint($screen-md) {
+      @include font-size($p-font-size);
+    }
+  }
+}
+
+.form__group--terms_conditions {
+  text-align: center;
+  @include font-size($p-small-font-size);
+
+  @include breakpoint($screen-md) {
+    width: 80%;
+    margin: auto;
+    @include font-size($p-font-size);
+  }
+}
+
+.form__group--nav_buttons {
+  @include clearfix;
+  @include span(12);
+  
+  .form__nav {
+    margin-bottom: 10px;
+
+    @include breakpoint($screen-md) {
+      @include span(6);
+    }
+  }
+  #btnBack {
+    @extend .btn--blue-ghost;
+  }
+  #btnNext,
+  #btnBack {
+    @include span(12);
+    @include font-size($p-font-size);
+  }
+}
+
+
+// ==========================================================================
 // Form step
 // ==========================================================================
 #login-first-credential {
@@ -151,89 +250,27 @@ form {
         width: auto;
       }
     }
-  }
-}
+    .fa-spinner {
+      z-index: 10;
+      color: $colour-blue;
+      position: absolute;
+      top: 20px;
+      left: 90%;
 
-.form__group--nav_buttons {
-  @include clearfix;
-  @include span(12);
-
-  .form__nav {
-    margin-bottom: 10px;
-
-    @include breakpoint($screen-md) {
-      @include span(6);
-    }
-  }
-  #btnBack {
-    @extend .btn--blue-ghost;
-  }
-  #btnNext,
-  #btnBack {
-    @include span(12);
-  }
-}
-
-.form__group--password_input {
-  .form__field--intro p {
-    color: $colour-background-grey;
-  }
-
-  .form__field--checkbox {
-    .form__field--copy {
-      margin-top: 10px;
-      display: inline-block;
+      @include breakpoint($screen-md) {  
+        top: 20px;
+        left: -30px;
+      
+      }
     }
   }
 }
 
-.form__field--userTerms,
-.form__group--custom_link {
-  a {
-    @extend .link;
-    @extend .link--blue;
-  }
-}
-
-.form__overlay {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.7);
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.form__group--age_selection {
-  .age_selection {
-    width: 100%;
-    border-top: 1px solid $colour-border-grey;
-    padding-top: 20px;
-  }
-
-  .btn {
-    width: 45%;
-    @extend .btn--blue-ghost;
-
-    &.active { 
-      background-color: $colour-blue;
-      color: $colour-white;
-      border: 0px;
-      padding: 23px 40px 19px;
-    }
-  }
-  /**
-   * Buttons display as stack block for xs
-   */
-  .btn + .btn {
-    margin: 20px 0px 20px 5px;
-
-    @include breakpoint($screen-md) {
-      margin-left: 25px;
-    }
-  }
-}
-
-#create-account {
+/*
+ * No back button
+ */
+#create-account,
+#giving-page {
   .form__group--nav_buttons {
     .form__nav {
       @include breakpoint($screen-md) {
