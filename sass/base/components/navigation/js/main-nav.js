@@ -37,9 +37,6 @@
 
   function toggleMenu() {
     $('a.main-nav-toggle').on('click', function (e) {
-
-      // Change state for visual effect.
-      $(this).toggleClass('is-active');
       // Change state of menu itself.
       $('#main-menu').toggleClass('menu-open');
     });
@@ -49,7 +46,8 @@
 
   function toggleSubMenu() {
 
-    $('.navigation li.menu-item--expanded > a').on('click', function (e) {
+    $('.main-nav__wrapper:not(.main-nav--feature__wrapper) .navigation li.menu-item--expanded > a').on('click', function (e) {
+
       e.preventDefault();
       $listItem = $(this).parent('li.menu-item--expanded');
       // Remove any item open classes an add class to clicked item

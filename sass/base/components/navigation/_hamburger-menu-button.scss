@@ -10,7 +10,7 @@ $duration: 0.2s;                        // The transition duration
   display: block;
   overflow: hidden;
   width: 65px;
-  height: 81px;
+  height: 76px;
   margin: 0;
   padding: 0 20px;
   cursor: pointer;
@@ -39,12 +39,16 @@ $duration: 0.2s;                        // The transition duration
   }
   span {
     position: absolute;
-    top: 36px;
+    top: 32px;
     right: 15px;
     display: block;
     width: 36px;
     height: 3px;
     background-color: $colour-jasper-grey;
+
+    @include breakpoint($screen-md) {
+      top: 39px;
+    }
 
     @include breakpoint($desktop-nav-breakpoint) {
       top: 50px;

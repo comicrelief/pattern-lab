@@ -23,13 +23,14 @@
     float: right;
   }
 
-  .navigation,
-  .menu-open {
+  .navigation {
+    margin-left: 139px;
     width: 100%;
+
   }
   .main-nav__items {
     position: absolute;
-    top: 81px;
+    top: 80px;
     right: 0;
     overflow: hidden;
     margin: 0;
@@ -114,7 +115,7 @@
             }
           }
         }
-      }   
+      }
     }
   }
 
@@ -137,13 +138,14 @@
       right: initial;
       overflow: visible;
       width: 70%;
+      height: 76px;
       max-height: none;
       background-color: $colour-white;
 
       li, 
       li.item-open {
         display: inline-block;
-        padding: 40px 16px;
+        padding: 26px 16px;
         background-color: transparent;
 
         a {
@@ -157,9 +159,10 @@
         > ul {
           display: none;
           position: absolute;
-          top: 103px; 
+          top: 76px; 
           padding: 0;
           width: 250px;
+          height: auto;
           background-color: $colour-black;
 
           // Sub menu items
@@ -233,35 +236,18 @@
       }
     }  
   }
-
-  /* To refactor */
-  .block-cr-meta-icons {
-    @include breakpoint($screen-lg) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 100;
-    }
-  }
-
-  .navigation {
-    @include breakpoint($screen-lg) {
-      margin-left: 139px;
-    }
-  }
-
-  .main-nav__items {
-    @include breakpoint($screen-lg) {
-      width: auto;
-
-      li {
-        padding: 26px 16px;
-      }
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      li {
+  @include breakpoint($desktop-nav-breakpoint) {
+    .main-nav__items,
+    .main-nav__items.menu-open {
+      height: 103px;
+      
+      li, 
+      li.item-open {
         padding: 40px 16px;
+
+        > ul {
+          top: 103px;
+        }
       }
     }
   }
