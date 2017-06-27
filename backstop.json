@@ -3,7 +3,7 @@
   "viewports": [
     {
       "name": "mobile",
-      "width": 320,
+      "width": 600,
       "height": 480
     },
     {
@@ -13,28 +13,40 @@
     },
     {
       "name": "desktop",
-      "width": 1024,
+      "width": 1280,
       "height": 768
     }
   ],
   "scenarios": [
     {
-      "label": "Homepage",
-      "url": "dist/index.html",
-      "referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
+      "label": "Cards CR",
+      "url": "dist/cr/section-20.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/cr/section-20.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,
       "selectors": [
-        ".kss-header",
-        "#kssref-0"
+        ".kss-main .cards"
       ],
       "readyEvent": null,
-      "delay": 0,
+      "delay": 1000,
       "misMatchThreshold" : 1,
-      "requireSameDimensions" : true,
-      "onBeforeScript": "onBefore.js",
-      "onReadyScript": "onReady.js"
+      "requireSameDimensions" : true
+    },
+    {
+      "label": "Cards RND",
+      "url": "dist/rnd/section-20.html",
+      "referenceUrl": "http://cr-pattern-lab.netlify.com/rnd/section-20.html",
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "selectorExpansion": true,
+      "selectors": [
+        ".kss-main .cards"
+      ],
+      "readyEvent": null,
+      "delay": 1000,
+      "misMatchThreshold" : 1,
+      "requireSameDimensions" : true
     }
   ],
   "paths": {
