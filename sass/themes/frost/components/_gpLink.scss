@@ -1,0 +1,64 @@
+// ==========================================================================
+// Giving page link
+// ==========================================================================
+
+.gpLink {
+  // fontawesome override
+  .fa-exclamation {
+    position:relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 21px 32px 21px;
+    border-color: transparent transparent $colour-greyboy-grey transparent;
+  }
+  .fa-exclamation:before {
+    z-index: 1;
+    position: relative;
+    left: -3px;
+  }
+  .fa-exclamation:after{
+    position:absolute;
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-style: solid;
+    border-width: 0 17px 27px 17px;
+    border-color: transparent transparent white transparent;
+    top: 3px;
+    left: -17px;
+  }
+  .fa-check {
+    color: $colour-green;
+  }
+  .fa-spinner {
+    color: $colour-blue;
+  }
+  .fa {
+    margin-right: 5px;
+    line-height: 40px;
+  }
+  .validation-messages,
+  .validation__error {
+    text-align: center;
+  }
+}
+
+#userUrlGp {
+  @include breakpoint($screen-md) {
+    max-width: 180px;
+  }
+}
+
+.gpLink-url p {
+  @include breakpoint($screen-md) {
+    margin-right: 5px;
+    float: left;
+    padding-top: 20px;
+  }
+}
+
+.gpLink-copy {
+  color: $colour-greyboy-grey;
+  text-align: center;
+}
