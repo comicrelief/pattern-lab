@@ -1,0 +1,32 @@
+
+/* Main navigation styling */ 
+.main-nav__wrapper {
+
+  .main-nav__items {
+   
+    li {
+      a {
+        text-transform: uppercase;
+        font-family: $font-medium;
+        font-size: 16px;
+        line-height: 20px;
+        padding: 5px 7px 2px;
+      }
+
+      &:hover > a {
+        //replace with colour variable
+        background-color: #6ef4ce;
+      }
+    } 
+
+    &.menu-open li,
+    &.menu-open li.item-open,
+    li.item-open, 
+    li {
+
+      &:hover > a span.menu-item__text {
+        border-bottom: none;
+      }
+    }
+  } 
+}
