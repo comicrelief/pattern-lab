@@ -153,11 +153,16 @@
         margin-left: 20%; } }
     #kss-node .kss-main a.link--red {
       color: #333; }
+    #kss-node .kss-main .link.link--red {
+      color: #ea0043; }
+      #kss-node .kss-main .link.link--red:hover {
+        color: #29022c; }
   #kss-node .kss-title--level-1 {
     background-color: #df1a40;
     margin-top: 0;
     padding: 20px 20px 20px 30px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin: 0 -30px; }
     #kss-node .kss-title--level-1 a {
       color: #fff; }
   #kss-node .kss-title--level-2 {
