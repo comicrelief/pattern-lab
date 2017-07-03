@@ -208,6 +208,12 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     a.link--red {
       color: #333;
     }
+    .link.link--red {
+      color: #ea0043;
+      &:hover {
+        color: #29022c;
+      }
+    }
   }
 
   .kss-title--level-1 {
@@ -215,6 +221,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     margin-top: 0;
     padding: 20px 20px 20px 30px;
     text-transform: uppercase;
+    margin: 0 -30px;
     a {
       color: #fff;
     }
