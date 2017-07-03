@@ -28,7 +28,7 @@
   word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  color: inherit;
+  color: $border;
   border-bottom: 4px solid $border;
   font-family: $font-bold;
   font-size: 18px;
@@ -39,19 +39,14 @@
   &:active,
   &:focus {
     border-bottom: 4px solid $hover;
+    color: $hover;
   }
   &.inline {
     display: inline-block;
-    margin: 0;
-    cursor: pointer;
-    color: inherit;
-    border-width: 2px;
-    font-size: inherit;
-    line-height: 22px;
-    &:hover,
-    &:active,
-    &:focus {
-      border-width: 2px;
+    line-height: 14px;
+    border-bottom: 4px solid lighten($border, 30%);
+    &:hover {
+      border-bottom: 4px solid lighten($hover, 30%);
     }
   }
   &.link--small {
