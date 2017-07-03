@@ -1,0 +1,33 @@
+// Media Reference Block 
+//
+// Comes in 4 sizes.
+//
+// Markup: media-block.twig
+//
+// .block-content--view-mode-cw-s -  Small
+// .block-content--view-mode-cw-m  -  Medium
+// .block-content--view-mode-cw-mp -  Medium Plus
+// .block-content--view-mode-cw-l  -  Large 
+//
+// Style guide: 20.50
+
+.media-block {
+  #play-icon {
+    path {
+      fill: $colour-mint-green;
+    }
+  }
+}
+.media-block__content-wrapper {
+  background-image: linear-gradient(rgba(0,0,0,0), $colour-dark-purple);
+}
+.media-block__content {
+  .cr-body {
+    h2, h3, h4, h5, p {
+      color: $colour-white;
+    }
+    .font--mint-green {
+      color: $colour-mint-green;
+    }
+  }
+}

@@ -62,6 +62,21 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      plugins_js: {
+        files: [{
+          src: [ 'node_modules/smartmenus/dist/jquery.smartmenus.min.js'],
+          dest: 'dist/js/plugins.min.js'
+        }]
+      },
+      components_js: {
+        files: [{
+          src: ['sass/base/components/{,**/}*.js'],
+          dest: 'dist/js/components.min.js'
+        }]
+      }     
+    },
+
     sass_globbing: {
       your_target: {
         files: {
@@ -217,8 +232,11 @@ module.exports = function (grunt) {
     'sass',
     'modernizr',
     'imagemin',
+    'uglify:plugins_js',
+    'uglify:components_js',
     'kss',
     'postcss:dist'
+
   ]);
 
   grunt.registerTask('watch:dev', [

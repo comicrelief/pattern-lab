@@ -33,6 +33,7 @@
   }
   .copy {
     position: relative;
+    min-height: 100px;
 
     @include breakpoint($screen-md) {
       width: 52%;
@@ -98,6 +99,7 @@
     font-size: 25px;
   }
   .digit-5 span {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 0px 1px;
   }
 }
