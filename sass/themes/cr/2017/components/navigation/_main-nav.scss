@@ -4,20 +4,81 @@
 
   .main-nav__items {
    
-    li {
+    li,
+    li.item-open {
       a {
-        text-transform: uppercase;
         font-family: $font-medium;
         font-size: 16px;
         line-height: 20px;
-        padding: 5px 7px 2px;
+
+        @media (min-width: 1024px) {
+          padding: 5px 7px 2px;
+        }
+      }
+    }
+
+    &.menu--level-0 {
+
+      > li {
+        > a { text-transform: uppercase; }
+
+        &:hover > a {
+          //replace with colour variable
+          background-color: #6ef4ce;           
+        }
+      } 
+    }
+
+    &.menu--level-1,
+    &.menu--level-2 {
+      &.menu-open li,
+      &.menu-open li.item-open,
+      li.item-open, 
+      li {
+        &:hover {
+          @media (min-width: 1024px) {
+            background-color: #3e1c43;
+          }
+        }
+
+        a {
+          font-family: $font-light;
+        }
       }
 
-      &:hover > a {
-        //replace with colour variable
-        background-color: #6ef4ce;
+      li.menu-item.menu-item--duplicate {
+
+        @media (min-width: 1024px) {
+          padding: 26px 21px;
+        }
+        
+        > a {
+          
+          @media (min-width: 1024px) {
+            color: #6ef4ce;
+          }
+
+          font-family: $font-medium;
+
+          &:after {
+
+            width: 14px;
+            border-bottom: 4px solid #6ef4ce;
+            left: 12px;
+
+            @media (min-width: 1024px) {
+              top: 62px;
+            }
+          }
+        }
       }
-    } 
+
+      li.menu-item {
+        @media (min-width: 1024px) {
+          padding: 15px 21px;
+        }
+      }
+    }
 
     &.menu-open li,
     &.menu-open li.item-open,
