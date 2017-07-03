@@ -208,10 +208,12 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     a.link--red {
       color: #333;
     }
-    .link.link--red {
-      color: #ea0043;
-      &:hover {
-        color: #29022c;
+    .kss-modifier__example {    
+      .link.link--red {
+        color: #ea0043;
+        &:hover {
+          color: #29022c;
+        }
       }
     }
   }

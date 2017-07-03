@@ -153,9 +153,9 @@
         margin-left: 20%; } }
     #kss-node .kss-main a.link--red {
       color: #333; }
-    #kss-node .kss-main .link.link--red {
+    #kss-node .kss-main .kss-modifier__example .link.link--red {
       color: #ea0043; }
-      #kss-node .kss-main .link.link--red:hover {
+      #kss-node .kss-main .kss-modifier__example .link.link--red:hover {
         color: #29022c; }
   #kss-node .kss-title--level-1 {
     background-color: #df1a40;
