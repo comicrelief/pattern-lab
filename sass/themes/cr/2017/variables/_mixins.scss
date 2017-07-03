@@ -44,9 +44,9 @@
   &.inline {
     display: inline-block;
     line-height: 14px;
-    border-bottom: 4px solid lighten($border, 30%);
+    border-bottom: 4px solid rgba($border, 0.5);
     &:hover {
-      border-bottom: 4px solid lighten($hover, 30%);
+      border-bottom: 4px solid rgba($hover, 0.5);
     }
   }
   &.link--small {
