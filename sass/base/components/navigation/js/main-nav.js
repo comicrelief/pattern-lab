@@ -1,8 +1,8 @@
 (function ($) {
 
   $('.main-nav').addClass("crNavigation-processed");
+
   setUpNav();
-  
   
   function setUpNav() {
     $('#main-menu .menu-item a').wrapInner('<span class="menu-item__text"></span>');
@@ -37,11 +37,17 @@
 
   function toggleMenu() {
     $('a.main-nav-toggle').on('click', function (e) {
+
       // Change state for visual effect.
       $(this).toggleClass('is-active');
 
       // Change state of menu itself.
       $('#main-menu', $(this).parents('.main-nav__wrapper')).toggleClass('menu-open');
+
+      // Close all menus if we've closed the nav
+      if (!($(this).hasClass('is-active'))) {
+        $('.main-nav__wrapper:not(.main-nav--feature__wrapper) li.item-open').removeClass('item-open');
+      };
     });
 
     toggleSubMenu();       
@@ -52,9 +58,13 @@
     $('.main-nav__wrapper:not(.main-nav--feature__wrapper) .navigation li.menu-item--expanded > a').on('click', function (e) {
 
       e.preventDefault();
+
       $listItem = $(this).parent('li.menu-item--expanded');
+      $listItemParents = $listItem.parents('li.item-open');
+
       // Remove any item open classes an add class to clicked item
-      $('.menu-open > li.item-open').not($listItem).removeClass('item-open');
+      $('.menu-open > li.item-open').not($listItem).not($listItemParents).removeClass('item-open');
+
       $($listItem).toggleClass('item-open');
     });    
   }
