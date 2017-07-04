@@ -8,27 +8,29 @@
 //
 // Style guide: 10.2
 
-.link--black {
-  @include link($colour-black, $colour-red);
-}
-.link--purple {
-  @include link($colour-purple, $colour-royal-blue);
-}
-.link--royal-blue {
-  @include link($colour-royal-blue, $colour-purple);
-}
-.link--red {
-  @include link($colour-red, $colour-black);
-}
-.link--mint-green {
-  @include link($colour-mint-green, $colour-royal-blue);
-}
-.link--white {
-  @include link($colour-white, $colour-mint-green);
-}
-.link--grey {
-  @include link($colour-grey, $colour-black);
-}
-.link--light-grey {
-  @include link($colour-light-grey, $colour-black);
+.link {
+  &.link--black {
+    @include link($colour-black, $colour-red);
+  }
+  &.link--purple {
+    @include link($colour-purple, $colour-dark-purple);
+  }
+  &.link--royal-blue {
+    @include link($colour-royal-blue, $colour-dark-purple);
+  }
+  &.link--red {
+    @include link($colour-red, $colour-dark-purple);
+  }
+  &.link--mint-green {
+    @include link($colour-mint-green, $colour-white);
+  }
+  &.link--white {
+    @include link($colour-white, $colour-mint-green);
+  }
+  &.link--grey {
+    @include link($colour-grey, $colour-mint-green);
+  }
+  &.link--light-grey {
+    @include link($colour-light-grey, $colour-mint-green);
+  }
 }
