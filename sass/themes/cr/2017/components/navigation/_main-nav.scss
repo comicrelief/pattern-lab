@@ -7,9 +7,9 @@
     li.item-open,
     li {
       a {
-        font-family: $font-medium;
+        font-family: $font-light;
         font-size: 16px;
-        line-height: 20px;
+        line-height: 16px;
 
         @include breakpoint($screen-lg) {
           padding: 5px 7px 2px;
@@ -18,8 +18,15 @@
     }
 
     &.menu--level-0 > li {
+
       > a {
+        font-family: $font-medium;
         text-transform: uppercase;
+        padding: 14px 20px 9px;
+        
+        @include breakpoint($screen-lg) {
+          padding: 5px 7px 2px;
+        }
       }
 
       &:hover > a {
@@ -31,6 +38,13 @@
     &.menu--level-2 {
       li a {
         font-family: $font-light;
+        font-size: 16px;
+        line-height: 16px;
+
+        @include breakpoint($screen-lg) {
+          font-size: 20px;
+          line-height: 20px;
+        }
 
         &:hover {
           background-color: #3e1c43;
@@ -87,7 +101,7 @@
           width: 100%;
 
           a {
-            padding: 10px 21px;
+            padding: 10px 21px 7px;
           }
         }
       }
