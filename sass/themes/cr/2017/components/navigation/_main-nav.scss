@@ -1,6 +1,5 @@
 /* Main navigation styling */ 
 .main-nav__wrapper {
-
   .main-nav__items.menu-open,
   .main-nav__items {
     
@@ -10,14 +9,19 @@
         font-family: $font-light;
         font-size: 16px;
         line-height: 16px;
+        color: $colour-dark-grey;
 
         @include breakpoint($screen-lg) {
-          padding: 5px 7px 2px;
+          padding: 8px 7px 4px;
         }
       }
     }
 
     &.menu--level-0 > li {
+
+      @include breakpoint($screen-lg) {
+        padding: 40px 13px;
+      }
 
       > a {
         font-family: $font-medium;
@@ -26,11 +30,32 @@
         
         @include breakpoint($screen-lg) {
           padding: 5px 7px 2px;
+          font-size: 15px;
+          line-height: 15px;
         }
       }
 
       &:hover > a {
-        background-color: #6ef4ce;           
+        background-color: $colour-mint-green;           
+      }
+
+      // Donate button: can we target this better?
+      &:last-child {
+      
+        @include breakpoint($screen-lg) {
+          > a {
+            // placeholder colours
+            background-color: red;
+            color: $colour-white;           
+            padding: 14px 20px 10px;
+            border-radius: 25px;
+          }
+        }
+
+        &:hover > a {
+          background-color: $colour-mint-green;           
+          color: $colour-black;  
+        }
       }
     }
 
@@ -40,6 +65,7 @@
         font-family: $font-light;
         font-size: 16px;
         line-height: 16px;
+        color: $colour-white;
 
         @include breakpoint($screen-lg) {
           font-size: 20px;
@@ -53,7 +79,7 @@
 
       li.menu-item.menu-item--duplicate {
         > a {
-          color: #6ef4ce;
+          color: $colour-mint-green;
           font-family: $font-medium;
           position: relative;
           font-size: 21px;
@@ -61,7 +87,7 @@
 
           &:after {
             width: 14px;
-            border-bottom: 4px solid #6ef4ce;
+            border-bottom: 4px solid $colour-mint-green;
             left: 12px;
             top: auto;
             bottom: 0;
@@ -77,7 +103,7 @@
               width: 10px;
               height: 10px;
               border: 11px solid transparent;
-              border-bottom-color: #29022c;
+              border-bottom-color: $colour-dark-purple;
               top: -22px;
             }
           }
@@ -112,11 +138,11 @@
 
       // Reset base styles, so we're targetting the anchor and not the li
       > ul li:hover {
-        background-color: #29022c;
+        background-color: $colour-dark-purple;
       }
 
       > ul li a:hover {
-        background-color: #3e1c43;
+        background-color: lighten($colour-dark-purple, 5%);
       }
 
       &:hover > a span.menu-item__text {
@@ -137,12 +163,12 @@
         // Indent tertiary items
         padding-left: 40px;
 
-        // Placeholder colours!
-        background-color: #502456;
+        background-color: lighten($colour-dark-purple, 10%);
 
         &:hover {
           // Placeholder colours!
-          background-color: #642d6c !important;
+          background-color: lighten($colour-dark-purple, 15%) !important;
+
         }
       }
 
@@ -157,3 +183,4 @@
     }
   } 
 }
+
