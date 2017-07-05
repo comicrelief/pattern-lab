@@ -1,4 +1,8 @@
 // Header
+//
+// Markup: base_header.twig
+//
+// Style guide: 20.180
 
 header[role=banner] {
   border-bottom: 4px solid #E6E6E6;
@@ -14,7 +18,12 @@ header[role=banner] {
 .header__inner-wrapper {
   @include container;
   position: relative;
-  cursor: pointer; 
+  cursor: pointer;
+
+  @include breakpoint($screen-lg){
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .site-logo {
   float: left;
