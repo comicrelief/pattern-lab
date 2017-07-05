@@ -1,8 +1,21 @@
 /* Main navigation styling */ 
 .main-nav__wrapper {
+
+  height: auto;
+
+  .navigation {
+    margin-left: 170px;
+  }
+
+
+
   .main-nav__items.menu-open,
   .main-nav__items {
-    
+
+    @include breakpoint($screen-lg) {
+      height: 96px;
+    }
+
     li.item-open,
     li {
       a {
@@ -17,10 +30,17 @@
       }
     }
 
-    &.menu--level-0 > li {
+    &.menu--level-0 {
 
       @include breakpoint($screen-lg) {
-        padding: 40px 13px;
+        width: auto;
+      }
+
+      > li {
+
+      @include breakpoint($screen-lg) {
+        padding: 37px 0px;
+        margin: 0 5px;
       }
 
       > a {
@@ -56,6 +76,13 @@
           background-color: $colour-mint-green;           
           color: $colour-black;  
         }
+      }
+    }
+    } 
+
+    &.menu--level-1 {
+      @include breakpoint($screen-lg) {
+        padding-bottom: 20px;
       }
     }
 
@@ -168,7 +195,6 @@
         &:hover {
           // Placeholder colours!
           background-color: lighten($colour-dark-purple, 15%) !important;
-
         }
       }
 
@@ -183,4 +209,6 @@
     }
   } 
 }
+
+// margin-left: 139px;
 
