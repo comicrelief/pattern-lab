@@ -1,6 +1,5 @@
 .article-teaser {
 	background-color: $colour-white;
-	position: relative;
 	.article-teaser__video {
 		position:relative;
 		img { 
@@ -18,7 +17,8 @@
 	}
 	.article-teaser__content-wrapper {
 		padding: calc(4 * #{gutter()});
-		background-color: $colour-white; 
+		background-color: $colour-white;
+		position: relative; 
 		.article-teaser__date {
 			text-transform: uppercase;
 			font-family: $font-black;
@@ -83,6 +83,7 @@
 	.article-teaser {
 		.article-teaser__content-wrapper {
 			padding: 30px 30px 30px 100px;
+			width: 100%;
 			&:before {
 				background: url($image-path + "press-logos.png") no-repeat 0 0;
 				background-size: 70px;
