@@ -22,7 +22,11 @@ header[role=banner] {
 
   @include breakpoint($screen-lg) {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+
+    .main-nav__wrapper {
+      margin-right: 40px;
+    }
   }
   .block-cr-meta-icons {
     float: right;
