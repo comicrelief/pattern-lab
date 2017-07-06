@@ -6,6 +6,12 @@
 //
 // Style guide: 300.20
 
+// Press releases overview page
+//
+// Markup: news_press-releases.twig
+//
+// Style guide: 300.25
+
 .news-landing__wrapper {
 	padding: 60px 0;
 	background-color: $colour-smoke-grey;
@@ -116,5 +122,9 @@
 		@include span(3);
 		height: 390px;
 		margin-bottom: calc(2 * #{gutter()});
+	}
+	&--press-release {
+		width: 100%;
+		height: auto;
 	}
 }
