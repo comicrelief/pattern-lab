@@ -24,6 +24,9 @@ header[role=banner] {
     display: flex;
     justify-content: space-between;
   }
+  .block-cr-meta-icons {
+    float: right;
+  }
 }
 .site-logo {
   float: left;
@@ -32,6 +35,7 @@ header[role=banner] {
   display: block;    
   margin-top: 15px;
   margin-left: 13px;
+
 
   @include breakpoint(md) {
     position: relative;
