@@ -23,11 +23,6 @@
     float: right;
   }
 
-  .navigation {
-    margin-left: 139px;
-    width: 100%;
-
-  }
   .main-nav__items {
     position: absolute;
     top: 80px;
@@ -137,7 +132,7 @@
       top: 0;
       right: initial;
       overflow: visible;
-      width: 70%;
+      width: 100%;
       height: 76px;
       max-height: none;
       background-color: $colour-white;
