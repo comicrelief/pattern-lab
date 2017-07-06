@@ -292,10 +292,11 @@ form {
 }
 
 /*
- * No back button
+ * Form specific
  */
 #create-account,
 #giving-page {
+  // No back button
   .form__group--nav_buttons {
     .form__nav {
       @include breakpoint($screen-md) {
@@ -306,4 +307,22 @@ form {
       display: none;
     }
   }
+  // border
+  .form__group--page_title {
+    border-top: 1px solid $colour-border-grey;
+    padding-top: 10px;
+  }
+  .form__group--fundraising_on_behalf {
+    border-bottom: 1px solid $colour-border-grey;
+  }
 }
+#giving-page {
+  .form__group--page_title {
+    border-bottom: 1px solid $colour-border-grey;
+    
+    @include breakpoint($screen-md) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
