@@ -20,7 +20,7 @@ header[role=banner] {
   position: relative;
   cursor: pointer;
 
-  @include breakpoint($screen-lg){
+  @include breakpoint($screen-lg) {
     display: flex;
     justify-content: space-between;
   }
