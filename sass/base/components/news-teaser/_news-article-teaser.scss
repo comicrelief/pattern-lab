@@ -95,11 +95,19 @@
 				left: 10px;
 				top: 50%;
 				transform: translateY(-50%);
-				.article-teaser--comicrelief & {
+			}
+		}
+		&--comicrelief {
+			.article-teaser__content-wrapper {
+				&:before {
 					background-position: 0 -77px;
 				}
-				.article-teaser--sportrelief & {
-					background-position: 0 -77px;
+			}
+		}
+		&--sportrelief {
+			.article-teaser__content-wrapper {
+				&:before {
+					background-position: 0 -157px;
 				}
 			}
 		}
