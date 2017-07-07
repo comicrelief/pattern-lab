@@ -13,7 +13,6 @@
     li.item-open,
     li {
       a {
-        font-family: $font-light;
         font-size: 16px;
         line-height: 16px;
         color: $colour-dark-grey;
@@ -30,7 +29,8 @@
         width: auto;
       }
 
-      > li {
+      > li,
+      > li.item-open {
 
       @include breakpoint($screen-lg) {
         padding: 37px 0px;
@@ -75,30 +75,9 @@
     } 
 
     &.menu--level-1 {
-      @include breakpoint($screen-lg) {
-        padding-bottom: 20px;
-      }
-    }
-
-    &.menu--level-1,
-    &.menu--level-2 {
-      li a {
-        font-family: $font-light;
-        font-size: 16px;
-        line-height: 16px;
-        color: $colour-white;
-
-        @include breakpoint($screen-lg) {
-          font-size: 20px;
-          line-height: 20px;
-        }
-
-        &:hover {
-          background-color: #3e1c43;
-        }
-      }
 
       li.menu-item.menu-item--duplicate {
+      
         > a {
           color: $colour-mint-green;
           font-family: $font-medium;
@@ -141,7 +120,33 @@
         }
       }
 
-      li.menu-item {
+      @include breakpoint($screen-lg) {
+        padding-bottom: 20px;
+      }
+    }
+
+
+    &.menu--level-1,
+    &.menu--level-2 {
+      li a,
+      li.item-open a {
+        font-family: $font-light;
+        font-size: 16px;
+        line-height: 16px;
+        color: $colour-white;
+
+        @include breakpoint($screen-lg) {
+          font-size: 20px;
+          line-height: 20px;
+        }
+
+        &:hover {
+          background-color: #3e1c43;
+        }
+      }
+
+      li.menu-item,
+      li.item-open.menu-item {
         @include breakpoint($screen-lg) {
           padding: 0;
           height: 100%;
@@ -180,17 +185,21 @@
     
     &.menu--level-2 {
   
-      li.menu-item a {
-        // Indent tertiary items
-        padding-left: 40px;
+      li.menu-item {
+        padding: 0;
 
-        background-color: lighten($colour-dark-purple, 10%);
+        a {
+          // Indent tertiary items
+          padding-left: 40px;
 
-        &:hover {
-          // Placeholder colours!
-          background-color: lighten($colour-dark-purple, 15%) !important;
+          background-color: lighten($colour-dark-purple, 10%);
+
+          &:hover {
+            // Placeholder colours!
+            background-color: lighten($colour-dark-purple, 15%) !important;
+          }
         }
-      }
+      } 
 
       // Position tertriary menu items
       @include breakpoint($screen-lg) {
