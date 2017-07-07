@@ -3,6 +3,10 @@
 
   height: auto;
 
+  li.menu-item {
+    padding-top: 0;
+  }
+
   .main-nav__items.menu-open,
   .main-nav__items {
 
@@ -29,49 +33,49 @@
         width: auto;
       }
 
-      > li,
-      > li.item-open {
+      > li.item-open,
+      > li {
 
-      @include breakpoint($screen-lg) {
-        padding: 37px 0px;
-        margin: 0 5px;
-      }
-
-      > a {
-        font-family: $font-medium;
-        text-transform: uppercase;
-        padding: 14px 20px 9px;
-        
         @include breakpoint($screen-lg) {
-          padding: 5px 7px 2px;
-          font-size: 15px;
-          line-height: 15px;
+          padding: 37px 0px;
+          margin: 0 5px;
         }
-      }
 
-      &:hover > a {
-        background-color: $colour-mint-green;           
-      }
-
-      // Donate button: can we target this better?
-      &:last-child {
-      
-        @include breakpoint($screen-lg) {
-          > a {
-            // placeholder colours
-            background-color: red;
-            color: $colour-white;           
-            padding: 14px 20px 10px;
-            border-radius: 25px;
+        > a {
+          font-family: $font-medium;
+          text-transform: uppercase;
+          padding: 14px 20px 9px;
+          
+          @include breakpoint($screen-lg) {
+            padding: 5px 7px 2px;
+            font-size: 15px;
+            line-height: 15px;
           }
         }
 
         &:hover > a {
           background-color: $colour-mint-green;           
-          color: $colour-black;  
+        }
+
+        // Donate button: can we target this better?
+        &:last-child {
+        
+          @include breakpoint($screen-lg) {
+            > a {
+              // placeholder colours
+              background-color: red;
+              color: $colour-white;           
+              padding: 14px 20px 10px;
+              border-radius: 25px;
+            }
+          }
+
+          &:hover > a {
+            background-color: $colour-mint-green;           
+            color: $colour-black;  
+          }
         }
       }
-    }
     } 
 
     &.menu--level-1 {
