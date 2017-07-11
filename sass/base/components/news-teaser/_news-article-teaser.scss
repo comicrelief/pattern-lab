@@ -17,7 +17,8 @@
 	}
 	.article-teaser__content-wrapper {
 		padding: calc(4 * #{gutter()});
-		background-color: $colour-white; 
+		background-color: $colour-white;
+		position: relative; 
 		.article-teaser__date {
 			text-transform: uppercase;
 			font-family: $font-black;
@@ -75,5 +76,52 @@
 		display: block;
 		width: 100%;
 		height: auto;
+	}
+}
+// Press release teaser
+.news-landing__item--press-release {
+	.article-teaser {
+		.article-teaser__content-wrapper {
+			padding: 30px 30px 30px 100px;
+			width: 100%;
+			&:before {
+				background: url($image-path + "press-logos.png") no-repeat 0 0;
+				background-size: 70px;
+				content: " ";
+				display: block;
+				width: 70px;
+				height: 70px;
+				position: absolute;
+				left: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		&--comicrelief {
+			.article-teaser__content-wrapper {
+				&:before {
+					background-position: 0 -77px;
+				}
+			}
+		}
+		&--sportrelief {
+			.article-teaser__content-wrapper {
+				&:before {
+					background-position: 0 -157px;
+				}
+			}
+		}
+		.article-teaser__image {
+			display: none;
+		}
+		.article-teaser__content {
+			position: relative;
+			padding: 0;
+			top: 0;
+			transform: translateY(0);
+			h2 {
+				margin: 0;
+			}
+		}
 	}
 }
