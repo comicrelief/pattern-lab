@@ -20,7 +20,7 @@ header[role=banner] {
   position: relative;
   cursor: pointer;
 
-  @include breakpoint($screen-lg) {
+  @include breakpoint($desktop-nav-breakpoint) {
     display: flex;
     justify-content: flex-end;
 
@@ -32,12 +32,15 @@ header[role=banner] {
     float: right;
   }
 }
+.block-system-branding-block {
+  margin-right: auto;
+}
 .site-logo {
   float: left;
-  min-width: 134px;
+  min-width: 104px;
   height: 60px;
   display: block;    
-  margin-top: 15px;
+  margin-top: -38px;
   margin-left: 13px;
 
 
