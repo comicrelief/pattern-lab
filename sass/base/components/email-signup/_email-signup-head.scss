@@ -16,6 +16,10 @@
   position: relative;
   z-index: 101;
 
+  @include breakpoint($screen-lg) {
+    position: absolute;
+  }
+
   &.block--cr-email-signup--error.block--cr-email-signup {
     @include breakpoint($screen-md) {
       .esu-errors.messages.messages--error {
@@ -53,7 +57,7 @@
     margin: 0;
     background-color: $colour-black;
     @include breakpoint($screen-md) {
-      right: 76px;
+      right: 65px;
       width: 350px;
       padding: 25px 0;
       .form-item-school-phase {
@@ -62,12 +66,14 @@
         margin-left: 0;
       }
     }
+    @include breakpoint($screen-lg) {
+      top: 78px;
+      right: 65px;
+    }
     @include breakpoint($desktop-nav-breakpoint) {
+      top: 103px;
       right: 0;
       padding: 25px 0;
-    }
-    @include breakpoint($screen-lg) {
-      //padding: 25px 0;
     }
     .icon {
       position: absolute;
