@@ -67,7 +67,7 @@
             //padding: 28px 0;
             //margin: 0 5px;
             padding: 40px 0px 41px;
-            margin: 0 10px;
+            margin: 0 14px;
           }
 
           > a {
@@ -86,19 +86,28 @@
           &:last-child {
             @include breakpoint($desktop-nav-breakpoint) {
               padding: 32px 0;
+              margin-left: 0;
 
               >a {
-                // placeholder colours
-                background-color: red;
-                color: $colour-white;           
+                // Emulate some button styles here
+                display: inline-block;
+                width: auto;
+                margin: 0 auto;
+                cursor: pointer;
+                transition: 0.3s all;
+                text-align: center;
+                vertical-align: middle;
+                text-decoration: none;
+                border: none;
+                background-color: $colour-red;
+                color: $colour-white;
+                border-radius: 30px;
                 padding: 14px 20px 10px;
-                border-radius: 25px;
               }
             }
 
             &:hover >a {
-              background-color: $colour-mint-green;           
-              color: $colour-black;  
+              background-color: $colour-purple;
             }
           }
         }
@@ -282,6 +291,12 @@ header[role=banner] {
     }
   }
 
+  .block-cr-meta-icons {
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-right: 5px;
+    }
+  }
+
   .site-logo {
     min-width: 0px;
     width: 70px;
@@ -314,21 +329,10 @@ header[role=banner] {
   
   @include breakpoint($screen-lg) {
     top: 78px;
-    right: 0;
   }
   
   @include breakpoint($desktop-nav-breakpoint) {
+    right: 0;
     top: 104px;
   }
-}
-
-
-// PL fixes forthcoming
-.main-nav__wrapper ~ .block--cr-email-signup {
-  @include breakpoint($desktop-nav-breakpoint) {
-    position: absolute;
-  }
-}
-.block-system-branding-block {
-  margin-right: auto;
 }
