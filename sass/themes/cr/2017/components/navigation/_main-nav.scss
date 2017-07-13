@@ -4,7 +4,7 @@
 
   // Position logo to left, menu in center, meta icon block to the right
   height: 100%;
-
+  background-color: $colour-white;
   justify-content: space-between;
 
   // Remove clearfix so flexbox works properly
@@ -176,6 +176,7 @@
       
       @include breakpoint($desktop-nav-breakpoint) {
         top: 105px;
+        text-align: left;
       }
       
       li a,
