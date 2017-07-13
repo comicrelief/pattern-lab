@@ -22,7 +22,7 @@ header[role=banner] {
 
   @include breakpoint($desktop-nav-breakpoint) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     .main-nav__wrapper {
       margin-right: 40px;
