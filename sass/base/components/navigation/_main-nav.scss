@@ -140,6 +140,7 @@
       li, 
       li.item-open {
         display: inline-block;
+        position: relative;
         padding: 40px 16px;
         background-color: transparent;
 
@@ -154,7 +155,8 @@
         > ul {
           display: none;
           position: absolute;
-          top: 103px; 
+          top: 103px;
+          left: 0;
           padding: 0;
           width: 250px;
           height: auto;
