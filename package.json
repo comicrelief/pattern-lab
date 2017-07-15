@@ -19,7 +19,6 @@
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "browserslist": "^2.1.4",
-    "grunt-concurrent": "^2.3.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-kss": "^5.0.1",

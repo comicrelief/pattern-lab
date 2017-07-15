@@ -192,15 +192,6 @@ module.exports = function (grunt) {
       }
     },
 
-    concurrent: {
-      target: {
-        tasks: ['watch', 'connectNoKeepalive'],
-        options: {
-          logConcurrentOutput: true
-        }
-      }
-    },
-
     connect: {
       server: {
         options: {
