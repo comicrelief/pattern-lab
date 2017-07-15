@@ -59,7 +59,7 @@ module.exports = function (grunt) {
           src: ['**/*.{png,jpg,gif,svg}'],
           dest: 'dist/images'
         }]
-      }
+      },
     },
 
     uglify: {
@@ -244,6 +244,7 @@ module.exports = function (grunt) {
     'watch',
   ]);
 
+  // Currently has to be run with --force for imagemin 2.0.1 to pass, as it doesn't seem to like spritesheet.svg.
   grunt.registerTask('build', [
     'sass_globbing',
     'sass',
