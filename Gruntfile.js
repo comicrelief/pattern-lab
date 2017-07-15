@@ -194,7 +194,7 @@ module.exports = function (grunt) {
 
     concurrent: {
       target: {
-        tasks: ['connect', 'watch'],
+        tasks: ['watch', 'connectNoKeepalive'],
         options: {
           logConcurrentOutput: true
         }
@@ -202,9 +202,21 @@ module.exports = function (grunt) {
     },
 
     connect: {
-      dev: {
-        port: 1337,
-        base: 'dist'
+      server: {
+        options: {
+          port: 1337,
+          base: 'dist',
+          open: true,
+          keepalive: true,
+        }
+      },
+      liveReload: {
+        options: {
+          port: 1337,
+          base: 'dist',
+          open: true,
+          livereload: true,
+        }
       }
     },
 
@@ -227,6 +239,11 @@ module.exports = function (grunt) {
 
   grunt.file.expand('node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
 
+  grunt.registerTask('watchAndServe', [
+    'connect:liveReload',
+    'watch',
+  ]);
+
   grunt.registerTask('build', [
     'sass_globbing',
     'sass',
@@ -235,18 +252,9 @@ module.exports = function (grunt) {
     'uglify:plugins_js',
     'uglify:components_js',
     'kss',
-    'postcss:dist'
-
+    'postcss:dist',
   ]);
 
-  grunt.registerTask('watch:dev', [
-    'concurrent:target'
-  ]);
-
-  grunt.registerTask('devserver', [
-    'connect:dev'
-  ]);
-  
   grunt.registerTask('clean:test', [
     'clean'
   ]);
