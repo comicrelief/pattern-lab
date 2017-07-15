@@ -22,7 +22,7 @@ header[role=banner] {
 
   @include breakpoint($desktop-nav-breakpoint) {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     .main-nav__wrapper {
       margin-right: 40px;
@@ -38,11 +38,15 @@ header[role=banner] {
 .site-logo {
   float: left;
   min-width: 104px;
+  width: 104px;
   height: 60px;
   display: block;    
   margin-top: -38px;
   margin-left: 13px;
 
+  img {
+    width: inherit;
+  }
 
   @include breakpoint(md) {
     position: relative;
