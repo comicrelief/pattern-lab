@@ -9,17 +9,17 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         options: {
-            outputStyle: 'compressed',
-            sourceMap: false,
-            includePaths: ['node_modules'],
-            importer: tilde_importer
+          outputStyle: 'compressed',
+          sourceMap: false,
+          includePaths: ['node_modules'],
+          importer: tilde_importer
         },
         files: [{
-            expand: true,
-            cwd: 'sass',
-            src: ['{,**/}*.scss'],
-            dest: 'dist/css',
-            ext: '.css'
+          expand: true,
+          cwd: 'sass',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css',
+          ext: '.css'
         }]
       }
     },
@@ -53,12 +53,12 @@ module.exports = function (grunt) {
       },
       dynamic: {
         files: [{
-                  expand: true,
-                  flatten: true,
-                  cwd: 'sass/base/components',
-                  src: ['**/*.{png,jpg,gif,svg}'],
-                  dest: 'dist/images'
-                }]
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: 'dist/images'
+        }]
       }
     },
 
