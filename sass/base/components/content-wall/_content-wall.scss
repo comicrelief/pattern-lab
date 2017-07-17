@@ -32,25 +32,15 @@
     padding: 0;
   }
 }
-// views layout
-
-.view-content {
-  .views-row {
-    @include span(12);
-    margin-bottom: calc(2 * #{gutter()});
-    @include breakpoint($screen-md) {
-      @include span(4);
-    }
-  }
-}
 .cw-region {
   article {
-    width: 100%;
     @media (max-width: $screen-sm-max) {
-      padding: 0 calc(4 * #{gutter()}) calc(4 * #{gutter()});
+      margin: 0 calc(4 * #{gutter()}) calc(4 * #{gutter()});
+      width: calc(100% - (8 * #{gutter()}));
     }
     @include breakpoint($screen-md) {
       margin-bottom: calc(2 * #{gutter()});
+      width: 100%;
     }
     &.block-content--view-mode-cw-s,
     &.view-mode-cw_s {
@@ -78,4 +68,3 @@
     }
   }
 }
-
