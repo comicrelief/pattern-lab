@@ -79,7 +79,7 @@
           @include breakpoint($desktop-nav-breakpoint) {
             font-size: 15px;
             line-height: 15px;
-            padding: 7px 7px 5px;
+            padding: 7px 5px;
           }
         }
 
@@ -103,7 +103,7 @@
               background-color: $colour-red;
               color: $colour-white;
               border-radius: 30px;
-              padding: 14px 20px 10px;
+              padding: 13px 20px 10px;
             }
 
             &:hover >a {
