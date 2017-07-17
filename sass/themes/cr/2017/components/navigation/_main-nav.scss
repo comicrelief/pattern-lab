@@ -11,14 +11,16 @@
   &:after {
     content: none;
   }
+
+  .main-nav__wrapper {
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-right: 35px;
+    }
+  }
 }
 
 .main-nav__wrapper {
   height: auto;
-
-  @include breakpoint($desktop-nav-breakpoint) {
-    margin-right: 0;
-  }
 
   li.menu-item {
     padding-top: 0;
@@ -66,7 +68,7 @@
 
         @include breakpoint($desktop-nav-breakpoint) {
           padding: 39px 0px;
-          margin: 0 14px;
+          margin: 0 10px;
         }
 
         > a {
