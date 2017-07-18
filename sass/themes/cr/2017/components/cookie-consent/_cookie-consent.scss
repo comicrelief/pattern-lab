@@ -1,0 +1,13 @@
+// Cookie consent
+//
+// Markup: cookie-consent.twig
+//
+// Style guide: 20.115
+
+.cookie-consent.cc_container {
+  @include breakpoint($screen-lg) {
+    .btn {
+      padding: 14px 20px;
+    }
+  }
+}
