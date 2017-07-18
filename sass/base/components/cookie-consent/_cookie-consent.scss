@@ -5,17 +5,18 @@
 // Style guide: 20.115
 
 .cookie-consent.cc_container {
+  display: flex;
   position: relative;
   padding: 10px;
   text-align: center;
   background: $colour-black;
+  justify-content: space-between;
   @include breakpoint($screen-lg) {
-    display: block;
     padding: 15px 20px 15px;
   }
   .btn,
   p,
-  a {
+  a { 
     color: $colour-white;
     font-family: $body-font;
   }
@@ -23,7 +24,6 @@
     margin-top: 15px;
   }
   .cc_message {
-    display: inline-block;
     margin-top: 0;
     width: calc(100% - 50px);
     font-size: 14px;
@@ -36,9 +36,9 @@
       line-height: 20px;
     }
   }
+
   .btn {
-    display: inline;
-    float: right;
+    margin: 0;
     padding: 12px 20px;
     width: 40px;
     height: 44px;
@@ -52,7 +52,6 @@
     }
     
     @include breakpoint($screen-lg) {
-      display: inline-block;
       width: auto;
       text-indent: 0;
       color: $colour-black;
