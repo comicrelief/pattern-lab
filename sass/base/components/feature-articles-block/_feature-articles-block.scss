@@ -11,6 +11,7 @@
 	margin: auto;
 	@include breakpoint($screen-md) {
 		width: calc(100% - (4 * 1.25%));
+		display: flex;
 	}
 	@include breakpoint($screen-md-max) {
 		max-width: calc(1200px - (2 * 1.25%));
@@ -28,7 +29,7 @@
 		}
 		@include breakpoint($screen-lg) {
 			@include span(4);
-			height: 390px;
+			min-height: 390px;
 			margin-bottom: calc(2 * #{gutter()});
 		}
 	}
