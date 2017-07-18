@@ -46,21 +46,22 @@
     background-image: url( $image-path + "cross-close.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-color: $colour-white;
-    color: $colour-black;
+    // no hover because touchscreen and lack of svg mask support, but override default hover colours on buttons 
     &:hover {
-      background-color: $colour-black;
-      color: $colour-white;
+      background-color: transparent;
     }
     
     @include breakpoint($screen-lg) {
       display: inline-block;
       width: auto;
       text-indent: 0;
+      color: $colour-black;
       background-image: none;
+      background-color: $colour-white;
       border: 2px solid $colour-white;
       &:hover {
-        background-color: $colour-white;
+        color: $colour-white;
+        background-color: transparent;
       }
     }
   }
