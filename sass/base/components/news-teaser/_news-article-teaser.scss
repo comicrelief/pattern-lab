@@ -18,7 +18,6 @@
 	.article-teaser__content-wrapper {
 		padding: calc(4 * #{gutter()});
 		background-color: $colour-white;
-		position: relative; 
 		.article-teaser__date {
 			text-transform: uppercase;
 			font-family: $font-black;
