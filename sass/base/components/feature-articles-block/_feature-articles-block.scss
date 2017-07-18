@@ -11,9 +11,9 @@
 	margin: auto;
 	@include breakpoint($screen-md) {
 		width: calc(100% - (4 * 1.25%));
-		display: flex;
 	}
 	@include breakpoint($screen-md-max) {
+		display: flex;
 		max-width: calc(1200px - (2 * 1.25%));
 	}
 	.article-teaser {
