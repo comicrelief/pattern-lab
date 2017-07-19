@@ -34,10 +34,8 @@
 			font-family: $font-regular;
 			@include font-size($p-xlarge-font-size);
 			text-align: left;
-			a {
-				text-decoration: none;
-				color: $colour-black;
-			}
+			text-decoration: none;
+			color: $colour-black;
 		}
 	}
 	@include breakpoint($screen-md) {
