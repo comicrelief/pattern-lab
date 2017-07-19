@@ -13,8 +13,10 @@
 		width: calc(100% - (4 * 1.25%));
 	}
 	@include breakpoint($screen-md-max) {
-		display: flex;
 		max-width: calc(1200px - (2 * 1.25%));
+	}
+	@include breakpoint($screen-lg) {
+		display: flex;
 	}
 	.article-teaser {
 		width: 100%;
