@@ -26,7 +26,8 @@
     "npm-link-local": "^1.1.0",
     "susy": "^2.2.12",
     "grunt-sass-tilde-importer": "^1.0.2",
-    "smartmenus": "^1.0.1"
+    "smartmenus": "^1.0.1",
+    "lightcase": "^2.4.0"
   },
   "devDependencies": {
     "backstopjs": "^2.6.11",
