@@ -22,6 +22,7 @@
 		.article-teaser__date {
 			text-transform: uppercase;
 			font-family: $font-black;
+			color: $colour-black;
 		}
 		h2 {
 			margin-top: calc(4 * #{gutter()});
