@@ -65,7 +65,7 @@ module.exports = function (grunt) {
     uglify: {
       plugins_js: {
         files: [{
-          src: [ 'node_modules/smartmenus/dist/jquery.smartmenus.min.js'],
+          src: [ 'node_modules/smartmenus/dist/jquery.smartmenus.min.js', 'node_modules/lightcase/src/js/lightcase.js'],
           dest: 'dist/js/plugins.min.js'
         }]
       },
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
           src: ['sass/base/components/{,**/}*.js'],
           dest: 'dist/js/components.min.js'
         }]
-      }     
+      }   
     },
 
     sass_globbing: {
