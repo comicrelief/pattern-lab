@@ -20,6 +20,10 @@
   &.show {
     display: block;
   }
+  //IE fix
+  .no-object-fit & {
+    position: relative;
+  }
   .path-search & {
     display: block;
     position: relative;
