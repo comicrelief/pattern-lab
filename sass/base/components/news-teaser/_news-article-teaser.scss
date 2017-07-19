@@ -1,5 +1,10 @@
 .article-teaser {
 	background-color: $colour-white;
+	height: 100%;
+	.article-teaser__link {
+		display: block;
+		height: 100%;
+	}
 	.article-teaser__video {
 		position:relative;
 		img { 
