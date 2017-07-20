@@ -165,7 +165,7 @@
       }
 
       @include breakpoint($desktop-nav-breakpoint) {
-        padding-bottom: 20px;
+        padding-bottom: 20px !important;
       }
     }
 
@@ -175,7 +175,7 @@
       top: 0;
       
       @include breakpoint($desktop-nav-breakpoint) {
-        top: 105px;
+        top: 103px;
         text-align: left;
       }
       
@@ -187,8 +187,9 @@
         color: $colour-white;
 
         @include breakpoint($desktop-nav-breakpoint) {
-          font-size: 20px;
-          line-height: 20px;
+          // The complex inherited styles need a little bullying to override here
+          font-size: 20px !important;
+          line-height: 20px !important;
         }
 
         &:hover {
