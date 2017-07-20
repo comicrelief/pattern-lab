@@ -84,6 +84,7 @@
 		.article-teaser__content-wrapper {
 			padding: 30px 30px 30px 100px;
 			width: 100%;
+			position: relative;
 			&:before {
 				background: url($image-path + "press-logos.png") no-repeat 0 0;
 				background-size: 70px;
