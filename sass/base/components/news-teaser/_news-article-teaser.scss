@@ -27,6 +27,7 @@
 			font-family: $font-regular;
 			@include font-size($p-xlarge-font-size);
 			text-align: left;
+			margin-bottom: 0;
 			a {
 				text-decoration: none;
 				color: $colour-black;
