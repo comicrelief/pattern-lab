@@ -4,6 +4,7 @@
 	.article-teaser__link {
 		display: block;
 		height: 100%;
+		text-decoration: none;
 	}
 	.article-teaser__video {
 		position:relative;
@@ -23,7 +24,6 @@
 	.article-teaser__content-wrapper {
 		padding: calc(4 * #{gutter()});
 		background-color: $colour-white;
-		position: relative; 
 		.article-teaser__date {
 			text-transform: uppercase;
 			font-family: $font-black;
@@ -34,8 +34,8 @@
 			font-family: $font-regular;
 			@include font-size($p-xlarge-font-size);
 			text-align: left;
-			text-decoration: none;
 			color: $colour-black;
+			margin-bottom: 0;
 		}
 	}
 	@include breakpoint($screen-md) {
@@ -88,6 +88,7 @@
 		.article-teaser__content-wrapper {
 			padding: 30px 30px 30px 100px;
 			width: 100%;
+			position: relative;
 			&:before {
 				background: url($image-path + "press-logos.png") no-repeat 0 0;
 				background-size: 70px;
