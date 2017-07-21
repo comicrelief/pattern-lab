@@ -272,7 +272,7 @@ header[role=banner] {
   }
 
    @include breakpoint($desktop-nav-breakpoint) {
-    height: 105px;
+    height: 107px;
   }
 
   .block-cr-meta-icons,
@@ -285,7 +285,7 @@ header[role=banner] {
     height: 67px;
 
     @include breakpoint($screen-md) {
-      height: 77px;
+      height: 76px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
