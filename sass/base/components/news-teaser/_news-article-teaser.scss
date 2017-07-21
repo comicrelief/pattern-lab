@@ -1,5 +1,11 @@
 .article-teaser {
 	background-color: $colour-white;
+	height: 100%;
+	.article-teaser__link {
+		display: block;
+		height: 100%;
+		text-decoration: none;
+	}
 	.article-teaser__video {
 		position:relative;
 		img { 
@@ -21,17 +27,15 @@
 		.article-teaser__date {
 			text-transform: uppercase;
 			font-family: $font-black;
+			color: $colour-black;
 		}
 		h2 {
 			margin-top: calc(4 * #{gutter()});
 			font-family: $font-regular;
 			@include font-size($p-xlarge-font-size);
 			text-align: left;
+			color: $colour-black;
 			margin-bottom: 0;
-			a {
-				text-decoration: none;
-				color: $colour-black;
-			}
 		}
 	}
 	@include breakpoint($screen-md) {
