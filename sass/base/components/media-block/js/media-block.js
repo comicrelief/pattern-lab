@@ -1,13 +1,16 @@
 // Activate lightcase
 // Video lightcase
 $('a[data-rel^=lightcase]').lightcase({
-  overlayOpacity: .95,
+  overlayOpacity: .85,
+  
+  height: 300,
+
   iframe: {
     width: "100%",
     height: "100%",
     frameborder: 0
   },
-  
+    
   onFinish : {
 
     custom: function() {
