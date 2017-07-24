@@ -26,12 +26,21 @@
   function duplicateParentLink() {
     /* Update text and link */
     $('.navigation > .main-nav__items > .menu-item--expanded').each(function () {
+
       $this = $(this);
 
-      $this.children('ul.main-nav__items')
-        .find('.menu-item--duplicate > a')
-          .attr('href', $this.children('a').attr('href'))
-            .find('span').text($this.children('a').text());
+      // Allow our duplicate link to 'inherit' all active classes if present
+      var activeTrailClass = $this.hasClass('menu-item--active-trail') ? 'menu-item--active-trail' : '';
+      var isActiveClass = $this.children('a').hasClass('is-active') ? 'is-active' : '';
+    
+      $thisDuplicate = $this.children('ul.main-nav__items').find('.menu-item--duplicate');
+
+      $thisLink = $this.children('a');
+
+      $thisDuplicate.addClass(activeTrailClass) // Add class to li item
+        .children('a').addClass(isActiveClass)
+          .attr('href', $thisLink.attr('href'))  // Add active class and url
+            children('span').text($thisLink.text()); // Add link copy
     });
   }
 
