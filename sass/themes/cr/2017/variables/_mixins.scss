@@ -42,7 +42,7 @@
     color: $hover;
   }
   &.inline {
-    display: inline-block;
+    font-size: inherit;
     line-height: 14px;
     border-bottom: 4px solid rgba($border, 0.5);
     &:hover {
