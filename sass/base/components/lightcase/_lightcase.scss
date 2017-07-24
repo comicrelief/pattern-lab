@@ -35,6 +35,80 @@
   /* Uncomment for 3D effect */
 }
 
+#lightcase-loading {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+}
+#lightcase-loading {
+  margin: 240px auto 0;
+  font-size: 6px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load5 1.1s infinite ease;
+  animation: load5 1.1s infinite ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@-webkit-keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #cbcbcb, 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.5), -1.8em -1.8em 0 0em rgba(203,203,203, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.7), 1.8em -1.8em 0 0em #cbcbcb, 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.5), 1.8em -1.8em 0 0em rgba(203,203,203, 0.7), 2.5em 0em 0 0em #cbcbcb, 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.5), 2.5em 0em 0 0em rgba(203,203,203, 0.7), 1.75em 1.75em 0 0em #cbcbcb, 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.5), 1.75em 1.75em 0 0em rgba(203,203,203, 0.7), 0em 2.5em 0 0em #cbcbcb, -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.5), 0em 2.5em 0 0em rgba(203,203,203, 0.7), -1.8em 1.8em 0 0em #cbcbcb, -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.5), -1.8em 1.8em 0 0em rgba(203,203,203, 0.7), -2.6em 0em 0 0em #cbcbcb, -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.5), -2.6em 0em 0 0em rgba(203,203,203, 0.7), -1.8em -1.8em 0 0em #cbcbcb;
+  }
+}
+@keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #cbcbcb, 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.5), -1.8em -1.8em 0 0em rgba(203,203,203, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.7), 1.8em -1.8em 0 0em #cbcbcb, 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.5), 1.8em -1.8em 0 0em rgba(203,203,203, 0.7), 2.5em 0em 0 0em #cbcbcb, 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.5), 2.5em 0em 0 0em rgba(203,203,203, 0.7), 1.75em 1.75em 0 0em #cbcbcb, 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.5), 1.75em 1.75em 0 0em rgba(203,203,203, 0.7), 0em 2.5em 0 0em #cbcbcb, -1.8em 1.8em 0 0em rgba(203,203,203, 0.2), -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.5), 0em 2.5em 0 0em rgba(203,203,203, 0.7), -1.8em 1.8em 0 0em #cbcbcb, -2.6em 0em 0 0em rgba(203,203,203, 0.2), -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.5), -1.8em 1.8em 0 0em rgba(203,203,203, 0.7), -2.6em 0em 0 0em #cbcbcb, -1.8em -1.8em 0 0em rgba(203,203,203, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(203,203,203, 0.2), 1.8em -1.8em 0 0em rgba(203,203,203, 0.2), 2.5em 0em 0 0em rgba(203,203,203, 0.2), 1.75em 1.75em 0 0em rgba(203,203,203, 0.2), 0em 2.5em 0 0em rgba(203,203,203, 0.2), -1.8em 1.8em 0 0em rgba(203,203,203, 0.5), -2.6em 0em 0 0em rgba(203,203,203, 0.7), -1.8em -1.8em 0 0em #cbcbcb;
+  }
+}
+
 /* Codes */
 .lightcase-icon-play:before {
   content: "\e800";
@@ -87,105 +161,6 @@
   content: "";
 }
 
-/**
- * Mixin providing icon defaults to be used on top of font-lightcase.
- *
- * Example usage:
- * @include icon(#e9e9e9)
- */
-/**
- * Mixin providing icon defaults including a hover status to be used
- * on top of font-lightcase.
- *
- * Example usage:
- * @include icon-hover(#e9e9e9, #fff)
- */
-/**
- * Provides natural content overflow behavior and scrolling support
- * even so for touch devices.
- *
- * Example usage:
- * @include overflow()
- */
-/**
- * Neutralizes/resets dimensions including width, height, position as well as margins,
- * paddings and styles. Used to enforce a neutral and unstyled look and behavoir!
- *
- * Example usage:
- * @include clear(true)
- *
- * @param boolean $important
- */
-@-webkit-keyframes lightcase-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-       -moz-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-       -moz-transform: rotate(359deg);
-         -o-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
-}
-@-moz-keyframes lightcase-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-       -moz-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-       -moz-transform: rotate(359deg);
-         -o-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
-}
-@-o-keyframes lightcase-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-       -moz-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-       -moz-transform: rotate(359deg);
-         -o-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
-}
-@-ms-keyframes lightcase-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-       -moz-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-       -moz-transform: rotate(359deg);
-         -o-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
-}
-@keyframes lightcase-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-       -moz-transform: rotate(0deg);
-         -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-       -moz-transform: rotate(359deg);
-         -o-transform: rotate(359deg);
-            transform: rotate(359deg);
-  }
-}
 #lightcase-case {
   position: fixed;
   z-index: 2002;
@@ -380,61 +355,6 @@
   #lightcase-case:not([data-lc-type=image]):not([data-lc-type=video]):not([data-lc-type=flash]):not([data-lc-type=error]) #lightcase-info {
     position: static;
   }
-}
-
-#lightcase-loading {
-  position: fixed;
-  position: fixed;
-  z-index: 9999;
-  z-index: 2001;
-  top: 50%;
-  left: 50%;
-  width: 1.123em;
-  height: auto;
-  margin-top: -0.5em;
-  margin-left: -0.5em;
-  -moz-transform-origin: 50% 53%;
-  -webkit-animation: lightcase-spin 0.5s infinite linear;
-     -moz-animation: lightcase-spin 0.5s infinite linear;
-       -o-animation: lightcase-spin 0.5s infinite linear;
-          animation: lightcase-spin 0.5s infinite linear;
-  text-align: center;
-  opacity: 1;
-  font-size: 38px;
-  font-size: 32px;
-  line-height: 1;
-}
-#lightcase-loading,
-#lightcase-loading:focus {
-  -webkit-transition: color, opacity, ease-in-out 0.25s;
-     -moz-transition: color, opacity, ease-in-out 0.25s;
-       -o-transition: color, opacity, ease-in-out 0.25s;
-          transition: color, opacity, ease-in-out 0.25s;
-  text-decoration: none;
-  color: $colour-red;
-  border-radius: 50%;
-  // @include background(linear-gradient(to right, $colour-white 10%, rgba(255, 255, 255, 0) 42%));
-  transform: translateZ(0);
-
-  -webkit-tap-highlight-color: transparent;
-  &:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 75%;
-    height: 75%;
-    margin: auto;
-    content: "";
-    opacity: 0.4;
-    border-radius: 50%;
-    background-color: #444;
-  }
-}
-#lightcase-loading > span {
-  display: inline-block;
-  text-indent: -9999px;
 }
 
 #lightcase-nav a[class*="lightcase-icon-"] {
