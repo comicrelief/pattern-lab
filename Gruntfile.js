@@ -9,17 +9,17 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         options: {
-            outputStyle: 'compressed',
-            sourceMap: false,
-            includePaths: ['node_modules'],
-            importer: tilde_importer
+          outputStyle: 'compressed',
+          sourceMap: false,
+          includePaths: ['node_modules'],
+          importer: tilde_importer
         },
         files: [{
-            expand: true,
-            cwd: 'sass',
-            src: ['{,**/}*.scss'],
-            dest: 'dist/css',
-            ext: '.css'
+          expand: true,
+          cwd: 'sass',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css',
+          ext: '.css'
         }]
       }
     },
@@ -53,13 +53,13 @@ module.exports = function (grunt) {
       },
       dynamic: {
         files: [{
-                  expand: true,
-                  flatten: true,
-                  cwd: 'sass/base/components',
-                  src: ['**/*.{png,jpg,gif,svg}'],
-                  dest: 'dist/images'
-                }]
-      }
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: 'dist/images'
+        }]
+      },
     },
 
     uglify: {
@@ -192,19 +192,22 @@ module.exports = function (grunt) {
       }
     },
 
-    concurrent: {
-      target: {
-        tasks: ['connect', 'watch'],
-        options: {
-          logConcurrentOutput: true
-        }
-      }
-    },
-
     connect: {
-      dev: {
-        port: 1337,
-        base: 'dist'
+      server: {
+        options: {
+          port: 1337,
+          base: 'dist',
+          open: true,
+          keepalive: true,
+        }
+      },
+      liveReload: {
+        options: {
+          port: 1337,
+          base: 'dist',
+          open: true,
+          livereload: true,
+        }
       }
     },
 
@@ -227,6 +230,12 @@ module.exports = function (grunt) {
 
   grunt.file.expand('node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
 
+  grunt.registerTask('watchAndServe', [
+    'connect:liveReload',
+    'watch',
+  ]);
+
+  // Currently has to be run with --force for imagemin 2.0.1 to pass, as it doesn't seem to like spritesheet.svg.
   grunt.registerTask('build', [
     'sass_globbing',
     'sass',
@@ -235,18 +244,9 @@ module.exports = function (grunt) {
     'uglify:plugins_js',
     'uglify:components_js',
     'kss',
-    'postcss:dist'
-
+    'postcss:dist',
   ]);
 
-  grunt.registerTask('watch:dev', [
-    'concurrent:target'
-  ]);
-
-  grunt.registerTask('devserver', [
-    'connect:dev'
-  ]);
-  
   grunt.registerTask('clean:test', [
     'clean'
   ]);

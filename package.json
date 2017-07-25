@@ -1,42 +1,42 @@
 {
   "name": "@comicrelief/pattern-lab",
-  "version": "0.0.1",
+  "version": "0.0.0-see.readme.for.releases",
   "license": "GPL-3.0",
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
-    "watch": "grunt watch:dev",
-    "build": "grunt build",
-    "dev-server": "grunt connect:dev",
+    "watch": "grunt watchAndServe",
+    "build": "grunt build --force",
+    "dev-server": "grunt connect",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "backstop-test": "backstop test",
     "backstop-reference": "backstop reference",
     "backstop-test-local": "grunt build && grunt clean && npm run backstop-reference && npm run backstop-test",
-    "test": "echo 'No unit tests. Please see readme for backstop instructions if running this manually.'"
+    "test": "echo 'No unit tests. Please see readme for backstop instructions if running this manually.'",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "browserslist": "^2.1.4",
-    "grunt-concurrent": "^2.3.1",
-    "grunt-connect": "^0.2.0",
-    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-imagemin": "^2.0.1",
     "grunt-kss": "^5.0.1",
     "grunt-postcss": "^0.8.0",
     "grunt-sass-tilde-importer": "^1.0.2",
     "npm-link-local": "^1.1.0",
     "susy": "^2.2.12",
-    "grunt-sass-tilde-importer": "^1.0.2",
+    "lightcase": "^2.4.0",
     "smartmenus": "^1.0.1",
-    "lightcase": "^2.4.0"
+    "snyk": "^1.36.2"
   },
   "devDependencies": {
-    "backstopjs": "^2.6.11",
+    "backstopjs": "^2.7.5",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-uglify": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-modernizr": "^1.0.2",
@@ -74,5 +74,6 @@
   "browserslist": [
     "> 1%",
     "last 3 versions"
-  ]
+  ],
+  "snyk": true
 }
