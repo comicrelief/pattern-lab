@@ -129,7 +129,7 @@
           position: relative;
           font-size: 21px;
           line-height: 21px;
-          height: 44px;
+          height: 49px;
 
           &:after {
             width: 14px;
@@ -138,8 +138,8 @@
             top: auto;
             bottom: 0;
 
-            @media (min-width: 1024px) {
-              //bottom: 10px;
+            @include breakpoint($desktop-nav-breakpoint) {
+              bottom: 10px;
             }
           }
 
@@ -174,6 +174,7 @@
 
           a {
             padding: 26px 21px;
+            height: 74px;
           }
         }
       }
