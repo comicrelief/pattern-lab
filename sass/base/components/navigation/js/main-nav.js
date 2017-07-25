@@ -68,15 +68,20 @@
 
     $('li.menu-item--expanded > a', $context).on('click', function (e) {
 
-      e.preventDefault();
+      // Basic check to see if the mobile nav is use before making
+      // the parent link function as a 'button' rather than a link
+      if ( $('.main-nav__burger').is(":visible")) {
 
-      $listItem = $(this).parent('li.menu-item--expanded');
-      $listItemParents = $listItem.parents('li.item-open');
+        e.preventDefault();
+        
+        $listItem = $(this).parent('li.menu-item--expanded');
+        $listItemParents = $listItem.parents('li.item-open');
 
-      // Remove any 'item-open' classes and add class to clicked item
-      $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
+        // Remove any 'item-open' classes and add class to clicked item
+        $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
 
-      $($listItem).toggleClass('item-open');
+        $($listItem).toggleClass('item-open');
+      } 
     });    
   }
 })(jQuery);
