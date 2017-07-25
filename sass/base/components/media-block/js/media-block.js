@@ -1,7 +1,7 @@
 // Activate lightcase
 // Video lightcase
 $('a[data-rel^=lightcase]').lightcase({
-  overlayOpacity: .85,
+  overlayOpacity: .95,
   
 
   iframe: {
