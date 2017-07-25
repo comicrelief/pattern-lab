@@ -40,7 +40,7 @@
       $thisDuplicate.addClass(activeTrailClass) // Add activeclass to li item
         .children('a').addClass(isActiveClass) // Add active class to link itself
           .attr('href', $thisLink.attr('href'))  // Add active class and url
-            children('span').text($thisLink.text()); // Add link copy
+            .children('span').text($thisLink.text()); // Add link copy
     });
   }
 
