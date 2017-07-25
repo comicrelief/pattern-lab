@@ -41,18 +41,22 @@
   position: relative;
 }
 #lightcase-loading {
-  margin: 240px auto 0;
   font-size: 6px;
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  position: relative;
+  position: fixed;
   text-indent: -9999em;
   -webkit-animation: load5 1.1s infinite ease;
   animation: load5 1.1s infinite ease;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
+  z-index: 2001;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 @-webkit-keyframes load5 {
   0%,
@@ -471,7 +475,7 @@
   }
 }
 .lightcase-icon-close {
-  position: absolute;
+  position: fixed;
   right: 20px;
   top: 20px;
   z-index: 9999;
