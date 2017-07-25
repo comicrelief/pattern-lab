@@ -42,6 +42,7 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-sass": "^2.0.0",
     "grunt-sass-globbing": "^1.5.1",
+    "grunt-svgmin": "^4.0.0",
     "semantic-release": "^6.3.2"
   },
   "repository": {

@@ -8,6 +8,7 @@ npm-debug.log
 
 #distribution
 dist
+kss/kss-assets/spritesheet.svg
 
 # Sass cache
 .sass-cache/
