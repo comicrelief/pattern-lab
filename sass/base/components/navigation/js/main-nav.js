@@ -73,7 +73,7 @@
       if ( $('.main-nav__burger').is(":visible")) {
 
         e.preventDefault();
-        
+
         $listItem = $(this).parent('li.menu-item--expanded');
         $listItemParents = $listItem.parents('li.item-open');
 
@@ -81,7 +81,7 @@
         $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
 
         $($listItem).toggleClass('item-open');
-      } 
+      }
     });    
   }
 })(jQuery);

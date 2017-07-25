@@ -63,7 +63,7 @@
       > li {
 
          &:hover >a {
-          background-color: $colour-mint-green;           
+          background-color: $colour-mint-green;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
@@ -74,12 +74,18 @@
         > a {
           font-family: $font-medium;
           text-transform: uppercase;
-          padding: 14px 20px 9px;
+          padding: 17px 20px;
+          height: 46px;
         
           @include breakpoint($desktop-nav-breakpoint) {
             font-size: 15px;
             line-height: 15px;
             padding: 7px 5px;
+            height: auto;
+
+            &.is-active span.menu-item__text {
+              border-bottom: 2px solid $colour-black;
+            }
           }
         }
 
@@ -123,6 +129,7 @@
           position: relative;
           font-size: 21px;
           line-height: 21px;
+          height: 44px;
 
           &:after {
             width: 14px;
@@ -132,7 +139,7 @@
             bottom: 0;
 
             @media (min-width: 1024px) {
-              bottom: 10px;
+              //bottom: 10px;
             }
           }
 
@@ -144,6 +151,18 @@
               border: 11px solid transparent;
               border-bottom-color: $colour-dark-purple;
               top: -22px;
+            }
+          }
+
+          &.is-active {
+
+            // Add border to the span (to allow control over the width), rather than the :after psuedo
+            span.menu-item__text {
+              border-bottom: 4px solid $colour-mint-green;
+            }
+
+            &:after {
+              border-bottom: none;
             }
           }
         }
@@ -162,6 +181,10 @@
       li.item-open a,
       li a {
         color: $colour-white;
+
+        &.is-active span.menu-item__text {
+          border-bottom: 2px solid $colour-white;
+        }
       }
 
       @include breakpoint($desktop-nav-breakpoint) {
@@ -185,6 +208,7 @@
         font-size: 16px;
         line-height: 16px;
         color: $colour-white;
+        height: 44px;
 
         @include breakpoint($desktop-nav-breakpoint) {
           // The complex inherited styles need a little bullying to override here
@@ -194,6 +218,10 @@
 
         &:hover {
           background-color: #3e1c43;
+        }
+
+        &.is-active span.menu-item__text {
+          //border-bottom: 2px solid $colour-white;
         }
       }
 
