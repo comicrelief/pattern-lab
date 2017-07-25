@@ -219,10 +219,14 @@
 
         &:hover {
           background-color: #3e1c43;
+
+          &.is-active span.menu-item__text {
+            border-bottom: 2px solid $colour-white;
+          }
         }
 
         &.is-active span.menu-item__text {
-          //border-bottom: 2px solid $colour-white;
+          border-bottom: 2px solid $colour-white;
         }
       }
 
