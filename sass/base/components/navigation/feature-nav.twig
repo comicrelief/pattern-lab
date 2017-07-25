@@ -1,21 +1,46 @@
-<div class="feature-nav">
-  <ul class="feature-nav__items">
-    <li class="menu-item">
-      <a href="/web/" data-drupal-link-system-path="<front>">Home</a>
-    </li>
-    <li class="menu-item menu-item--active-trail">
-      <a href="/web/fundraise" data-drupal-link-system-path="node/22" class="is-active">Fundraise (Landing)</a>
-    </li>
-    <li class="menu-item">
-      <a href="/web/whats-going-on" data-drupal-link-system-path="node/17">What's going on</a>
-    </li>
-  </ul>
-  <div class="feature-nav__icons feature-nav__burger">
-    <a role="button" class="c-hamburger c-hamburger--htx feature-nav-toggle">
-      <div class="c-hamburger__text">
-        <span class="visually-hidden">Open and close nav menu</span>
-      </div>
-      <span></span>
-    </a>
+<div class="main-nav__wrapper main-nav--feature__wrapper">
+  <!-- Featured items and hamburger button -->
+  <div class="main-nav--feature__inner-wrapper">
+    <ul class="main-nav--feature__featured-items">
+      <li class="menu-item">
+        <a href="/" data-drupal-link-system-path="<front>">Home</a>
+      </li>
+      <li class="menu-item">
+        <a href="/fundraise" data-drupal-link-system-path="node/22" class="is-active">Fundraise (Landing)</a>
+      </li>
+      <li class="menu-item">
+        <a href="/whats-going-on" data-drupal-link-system-path="node/17">What's going on</a>
+      </li>
+    </ul>
+    <!-- Mobile: navigation toggle button -->
+    <div class="main-nav__icons main-nav__burger">
+      <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle">
+        <div class="c-hamburger__text">
+          <span class="visually-hidden">Open and close navigation menu</span>
+        </div>
+        <span></span>
+      </a>
+    </div>
   </div>
+  <!-- Main navigation menu -->
+  <nav role="navigation" class="navigation menu--main">
+    <h2 class="visually-hidden" id="main-nav__title"> Main navigation menu </h2>
+    <ul id="main-menu" class="main-nav--feature__items menu sm main-nav__items">
+      <li class="menu-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="menu-item">
+        <a href="/">Fundraise</a>
+      </li>
+      <li class="menu-item">
+        <a href="/link">What's going on</a>
+      </li>
+      <li class="menu-item">
+        <a href="/">FAQ</a>
+      </li>
+      <li class="menu-item">
+        <a href="/">Legal</a>
+      </li>
+    </ul>
+  </nav>
 </div>

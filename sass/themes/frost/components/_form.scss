@@ -35,6 +35,11 @@ input[type="checkbox"] + span {
 
 select {
   @include border-radius(2px);
+  height: 60px;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid $colour-blue;
+  background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAARCAYAAAC8XK78AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTRCRDI2Rjk1OThFMTFFN0FDQzc4NEQ2QkFDQjZGMkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTRCRDI2RkE1OThFMTFFN0FDQzc4NEQ2QkFDQjZGMkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NEJEMjZGNzU5OEUxMUU3QUNDNzg0RDZCQUNCNkYyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NEJEMjZGODU5OEUxMUU3QUNDNzg0RDZCQUNCNkYyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhgcnMIAAADZSURBVHjavNPBCcIwFMbxGNxBF/BQBA8uYMHePao7uIyCO3j2LAqOUKco3UH9HiQQHokmT5PA10NT+P8uHdTz51QpdcTWWKfKnBF2wnYajwO2wG7mokScWjW2J8AGe2BVAYSNV6a5JUCPLQsgeJyavTaXuRHeOF1o56NciGCcA3Ig3HjL4z7APxE83vB4COAiWiEiKv4JYBGNABEd/waQIJLiMYAURHI8FhBCjH+NpwB8iKtBiON0hom/lkVcsBl2N+8nkrgE4EMoaVwKcBFn7IWtJHE6bwEGAIrnW5qBUQU1AAAAAElFTkSuQmCC') 95% center no-repeat;
 }
 
 // ==========================================================================
@@ -274,11 +279,24 @@ form {
   }
 }
 
+// ==========================================================================
+// User affiliation
+// ==========================================================================
+.user-affiliation {
+  border-top: 1px solid $colour-blue;
+  padding-top: 10px;
+
+  @include breakpoint($screen-md) {
+    padding: 20px 30px 0px 30px;
+  }
+}
+
 /*
- * No back button
+ * Form specific
  */
 #create-account,
 #giving-page {
+  // No back button
   .form__group--nav_buttons {
     .form__nav {
       @include breakpoint($screen-md) {
@@ -289,4 +307,22 @@ form {
       display: none;
     }
   }
+  // border
+  .form__group--page_title {
+    border-top: 1px solid $colour-border-grey;
+    padding-top: 10px;
+  }
+  .form__group--fundraising_on_behalf {
+    border-bottom: 1px solid $colour-border-grey;
+  }
 }
+#giving-page {
+  .form__group--page_title {
+    border-bottom: 1px solid $colour-border-grey;
+    
+    @include breakpoint($screen-md) {
+      margin-bottom: 20px;
+    }
+  }
+}
+

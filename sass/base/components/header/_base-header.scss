@@ -1,4 +1,8 @@
 // Header
+//
+// Markup: base_header.twig
+//
+// Style guide: 20.180
 
 header[role=banner] {
   border-bottom: 4px solid #E6E6E6;
@@ -14,15 +18,35 @@ header[role=banner] {
 .header__inner-wrapper {
   @include container;
   position: relative;
-  cursor: pointer; 
+  cursor: pointer;
+
+  @include breakpoint($desktop-nav-breakpoint) {
+    display: flex;
+    justify-content: space-between;
+
+    .main-nav__wrapper {
+      margin-right: 40px;
+    }
+  }
+  .block-cr-meta-icons {
+    float: right;
+  }
+}
+.block-system-branding-block {
+  margin-right: auto;
 }
 .site-logo {
   float: left;
-  min-width: 134px;
+  min-width: 104px;
+  width: 104px;
   height: 60px;
   display: block;    
-  margin-top: 15px;
+  margin-top: -38px;
   margin-left: 13px;
+
+  img {
+    width: inherit;
+  }
 
   @include breakpoint(md) {
     position: relative;

@@ -1,34 +1,80 @@
-<header role="banner">
-  <div class="region-header-inner-wrapper">
-    <div class="region region-header">
-      <a href="/" title="Home" rel="home" class="site-logo">
-        <img src="/profiles/contrib/cr/themes/custom/campaign_base/logo.svg" alt="Home">
-      </a>
-      <div class="main-menu__icons">
-        <button class="c-hamburger c-hamburger--htx main-menu-toggle" title="open here">
-          <span>menu</span>
-        </button>
+<div class="main-nav__wrapper">
+  <!-- Main navigation menu -->
+  <div class="main-nav__icons main-nav__burger">
+    <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle">
+      <div class="c-hamburger__text">
+        <span class="visually-hidden">Open and close navigation menu</span>
       </div>
-      <nav role="navigation" class="navigation">
-        <!-- MAIN NAV -->
-        <ul id="main-menu" class="menu--main">
-          <li class="menu--main__item">
-            <a href="/">Fundraise</a>
+      <span></span>
+    </a>
+  </div>
+  <nav role="navigation" class="navigation menu--main">
+    <h2 class="visually-hidden" id="main-nav__title"> Main navigation menu </h2>
+    <!-- Mobile: navigation toggle button -->
+    <ul id="main-menu" class="main-nav__items sm menu--level-0 ">
+      <li class="menu-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="menu-item menu-item--expanded">
+        <a href="/">Fundraise</a>
+        <ul class="main-nav__items menu--level-1">
+          <li class="menu-item menu-item--duplicate">
+            <a href="/">
+            </a>
           </li>
-          <li class="menu--main__item">
-            <a href="/">Schools</a>
+          <li class="menu-item">
+            <a href="/">sub-item 1</a>
           </li>
-          <li class="menu--main__item">
-            <a href="/">The difference you make</a>
-          </li>
-          <li class="menu--main__item">
-            <a href="/">Shop</a>
-          </li>
-          <li class="menu--main__item">
-            <a href="/">Donate</a>
+          <li class="menu-item">
+            <a href="/">sub-item 2</a>
           </li>
         </ul>
-      </nav>
-    </div>
-  </div>
-</header>
+      </li>
+      <li class="menu-item menu-item--expanded">
+        <a href="/link">What's going on</a>
+        <ul class="main-nav__items menu--level-1">
+          <li class="menu-item menu-item--duplicate">
+            <a href="/">
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/">sub-item 1</a>
+          </li>
+          <li class="menu-item">
+            <a href="/">sub-item 2</a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item menu-item--expanded">
+        <a href="/">FAQ</a>
+        <ul class="main-nav__items menu--level-1">
+          <li class="menu-item menu-item--duplicate">
+            <a href="/">
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/">sub-item 1</a>
+          </li>
+          <li class="menu-item">
+            <a href="/">sub-item 2</a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item menu-item--expanded">
+        <a href="/">Legal</a>
+        <ul class="main-nav__items menu--level-1">
+          <li class="menu-item menu-item--duplicate">
+            <a href="/">
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/">sub-item 1</a>
+          </li>
+          <li class="menu-item">
+            <a href="/">sub-item 2</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>

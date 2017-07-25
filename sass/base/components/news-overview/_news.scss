@@ -6,6 +6,12 @@
 //
 // Style guide: 300.20
 
+// Press releases overview page
+//
+// Markup: news_press-releases.twig
+//
+// Style guide: 300.25
+
 .news-landing__wrapper {
 	padding: 60px 0;
 	background-color: $colour-smoke-grey;
@@ -44,13 +50,14 @@
 			width: 100%;
 			float: left;
 			font-size: 18px;
+			line-height: 26px;
 			font-family: $body-font;
 			@include breakpoint($screen-md) {
 				width: 38%;
 				display: inline-block;
 				text-align: right;
 				font-size: 22px;
-				transform: translateY(70%);
+				margin-top: 10px;
 			}
 		}
 		.ui-widget {
@@ -114,7 +121,11 @@
 	}
 	@include breakpoint($screen-lg) {
 		@include span(3);
-		height: 390px;
+		height: 410px;
 		margin-bottom: calc(2 * #{gutter()});
+	}
+	&--press-release {
+		width: 100%;
+		height: auto;
 	}
 }

@@ -1,44 +1,14 @@
 <section class="paragraph">
+  <h2>Max 3 items</h2>
   <div class="feature-articles-block">
-    <h2>Max 3 items</h2>
     {% for i in 0..2 %}
-    <article class="article-teaser">
-      <div class="article-teaser__image">
-        <picture>
-          <img property="schema:image" class="media__image media__element b-lazy b-responsive b-loaded" src="kss-assets/images/16-9-img.jpg" alt="" typeof="foaf:Image">
-        </picture>
-      </div>
-      <div class="article-teaser__content-wrapper">
-        <div class="article-teaser__content">
-          <span class="article-teaser__date"> 
-          28 October 2016
-          </span>
-          <h2><a href="#" hreflang="en">News article same category title</a></h2>
-        </div>
-        <div></div>
-      </div>
-    </article>
+      {% include directory ~ '../news-teaser/news-teaser.twig' %}
     {% endfor %}
   </div>
+  <h2>Teasers always keep same 4 columns width</h2>
   <div class="feature-articles-block">
-    <h2>Teasers always keep same 4 columns width</h2>
     {% for i in 0..1 %}
-    <article class="article-teaser">
-      <div class="article-teaser__image">
-        <picture>
-          <img property="schema:image" class="media__image media__element b-lazy b-responsive b-loaded" src="kss-assets/images/16-9-img.jpg" alt="" typeof="foaf:Image">
-        </picture>
-      </div>
-      <div class="article-teaser__content-wrapper">
-        <div class="article-teaser__content">
-          <span class="article-teaser__date"> 
-          28 October 2016
-          </span>
-          <h2><a href="#" hreflang="en">News article same category title</a></h2>
-        </div>
-        <div></div>
-      </div>
-    </article>
+      {% include directory ~ '../news-teaser/news-teaser.twig' %}
     {% endfor %}
   </div>
 </section>
