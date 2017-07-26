@@ -76,6 +76,11 @@
           text-transform: uppercase;
           padding: 17px 20px;
           height: 46px;
+          color: $colour-black;
+          
+          &.is-active span.menu-item__text {
+            border-bottom: 2px solid $colour-black;
+          }
         
           @include breakpoint($desktop-nav-breakpoint) {
             font-size: 15px;
