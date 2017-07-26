@@ -73,10 +73,13 @@ module.exports = function (grunt) {
         ]
       },
       dist: {
-        files: {
-          'dist/images/spritesheet.svg': 'sass/base/components/svg/spritesheet.svg',
-          'kss/kss-assets/spritesheet.svg': 'sass/base/components/svg/spritesheet.svg'
-        }
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
       }
     },
 
