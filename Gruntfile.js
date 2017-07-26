@@ -48,7 +48,7 @@ module.exports = function (grunt) {
     imagemin: {
       static: { // Use for subthemes
         files: {
-          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png',
+          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
         }
       },
       dynamic: {
@@ -56,16 +56,41 @@ module.exports = function (grunt) {
           expand: true,
           flatten: true,
           cwd: 'sass/base/components',
-          src: ['**/*.{png,jpg,gif,svg}'],
+          src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
       },
     },
 
+    svgmin: {
+      options: {
+        plugins: [
+          {removeViewBox: false},
+          {removeUselessStrokeAndFill: false},
+          {removeEmptyAttrs: false},
+          {removeHiddenElems: false},
+          {cleanupIDs: false}
+        ]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
+      }
+    },
+
     uglify: {
       plugins_js: {
         files: [{
-          src: [ 'node_modules/smartmenus/dist/jquery.smartmenus.min.js'],
+          src: 
+            [
+              'node_modules/smartmenus/dist/jquery.smartmenus.min.js', 
+              'node_modules/lightcase/src/js/lightcase.js'
+            ],
           dest: 'dist/js/plugins.min.js'
         }]
       },
@@ -74,7 +99,7 @@ module.exports = function (grunt) {
           src: ['sass/base/components/{,**/}*.js'],
           dest: 'dist/js/components.min.js'
         }]
-      }     
+      }   
     },
 
     sass_globbing: {
@@ -235,12 +260,12 @@ module.exports = function (grunt) {
     'watch',
   ]);
 
-  // Currently has to be run with --force for imagemin 2.0.1 to pass, as it doesn't seem to like spritesheet.svg.
   grunt.registerTask('build', [
     'sass_globbing',
     'sass',
     'modernizr',
     'imagemin',
+    'svgmin',
     'uglify:plugins_js',
     'uglify:components_js',
     'kss',
