@@ -5,7 +5,7 @@
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
     "watch": "grunt watchAndServe",
-    "build": "grunt build --force",
+    "build": "grunt build",
     "dev-server": "grunt connect",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
