@@ -47,7 +47,10 @@ less padding because ghost buttons have borders */
 }
 .btn--white-ghost {
   background-color: $colour-black;
+  border: 2px solid $colour-white;
+
   &:hover {
     color: $colour-black;
+    background-color: $colour-white;
   }
 }
