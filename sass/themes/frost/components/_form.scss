@@ -325,4 +325,10 @@ form {
     }
   }
 }
-
+.form__group--login_first_credential,
+.form__field--userUrlGp,
+.form__field--userFrTarget {
+  label {
+    display: none;
+  }
+}

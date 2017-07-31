@@ -17,6 +17,10 @@ footer[role=contentinfo] {
   margin: 0px 5px;
 }
 
+.footer__copyright p {
+	color: $colour-background-grey;
+}
+
 .footer__copyright p span {
 	font-size: 18px;
 	position: relative;
