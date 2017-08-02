@@ -16,14 +16,16 @@ pages.forEach(function(page) {
     "label": page,
     "url": baseUrl + page,
     "referenceUrl": refUrl + page,
-    "removeSelectors": [],
+    "removeSelectors": [
+      ".kss-sidebar"
+    ],
     "selectorExpansion": true,
     "selectors": [
-      ".kss-main .kss-modifier__example"
+      ".kss-main .kss-modifier__example",
     ],
     "readyEvent": null,
-    "delay": 2000,
-    "misMatchThreshold" : 0.1,
+    "delay": 1000,
+    "misMatchThreshold" : 1,
     "requireSameDimensions" : true
   });
 });
@@ -31,11 +33,11 @@ pages.forEach(function(page) {
 module.exports = {
   "id": "visual",
   "viewports": [
-    // {
-    //   "name": "mobile",
-    //   "width": 320,
-    //   "height": 480
-    // },
+    {
+      "name": "mobile",
+      "width": 320,
+      "height": 480
+    },
     // {
     //   "name": "tablet",
     //   "width": 768,
