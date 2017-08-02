@@ -5,7 +5,7 @@
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
     "watch": "grunt watchAndServe",
-    "build": "grunt build --force",
+    "build": "grunt build",
     "dev-server": "grunt connect",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
@@ -26,6 +26,7 @@
     "grunt-sass-tilde-importer": "^1.0.2",
     "npm-link-local": "^1.1.0",
     "susy": "^2.2.12",
+    "lightcase": "^2.4.0",
     "smartmenus": "^1.0.1",
     "snyk": "^1.36.2"
   },
@@ -41,6 +42,7 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-sass": "^2.0.0",
     "grunt-sass-globbing": "^1.5.1",
+    "grunt-svgmin": "^4.0.0",
     "semantic-release": "^6.3.2"
   },
   "repository": {

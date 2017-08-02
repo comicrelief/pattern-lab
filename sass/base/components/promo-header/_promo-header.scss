@@ -9,6 +9,8 @@
 
 .promo-header {
   position: relative;
+  clear: both;
+  overflow: hidden;
   @include breakpoint($screen-md-max) {
     min-height: 600px;
   }
@@ -63,11 +65,6 @@
   }
   &.promo-header--small {
     height: 400px;
-    video {
-      top: 0 !important;
-      left: 0 !important;
-      transform: translate(0) !important;
-    }
   }
 }
 .bg--none {
@@ -77,7 +74,7 @@
 }
 .promo-header__bg-image {
   width: 100%;
-  margin-bottom: -5px;
+  margin-bottom: -7px;
   @include breakpoint($screen-md-max) {
     position: absolute;
     width: 100%;

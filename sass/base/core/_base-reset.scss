@@ -26,3 +26,11 @@ html {
 ol, ul {
 	list-style: none;
 }
+
+body {
+	-webkit-font-smoothing: antialiased;
+}
+
+picture img {
+  width: 100%;
+}

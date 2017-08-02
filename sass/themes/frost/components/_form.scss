@@ -233,14 +233,14 @@ form {
 // ==========================================================================
 // Form step
 // ==========================================================================
-#login-first-credential {
+#login-credential {
   .page-title {
     .intro-copy {
       @include font-size($p-intro-font-size);
     }
   }
   
-  .form__group--login_first_credential {
+  .form__group--login_credential {
     .input-with-btn-wrap {
       position: relative;
     }
@@ -325,4 +325,10 @@ form {
     }
   }
 }
-
+.form__group--login_credential,
+.form__field--userUrlGp,
+.form__field--userFrTarget {
+  label {
+    display: none;
+  }
+}

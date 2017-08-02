@@ -26,12 +26,21 @@
   function duplicateParentLink() {
     /* Update text and link */
     $('.navigation > .main-nav__items > .menu-item--expanded').each(function () {
+
       $this = $(this);
 
-      $this.children('ul.main-nav__items')
-        .find('.menu-item--duplicate > a')
-          .attr('href', $this.children('a').attr('href'))
-            .find('span').text($this.children('a').text());
+      // Allow our duplicate link to 'inherit' all active classes if present
+      var activeTrailClass = $this.hasClass('menu-item--active-trail') ? 'menu-item--active-trail' : '';
+      var isActiveClass = $this.children('a').hasClass('is-active') ? 'is-active' : '';
+    
+      $thisDuplicate = $this.children('ul.main-nav__items').find('.menu-item--duplicate');
+
+      $thisLink = $this.children('a');
+
+      $thisDuplicate.addClass(activeTrailClass) // Add activeclass to li item
+        .children('a').addClass(isActiveClass) // Add active class to link itself
+          .attr('href', $thisLink.attr('href'))  // Add active class and url
+            .children('span').text($thisLink.text()); // Add link copy
     });
   }
 
@@ -59,15 +68,20 @@
 
     $('li.menu-item--expanded > a', $context).on('click', function (e) {
 
-      e.preventDefault();
+      // Basic check to see if the mobile nav is use before making
+      // the parent link function as a 'button' rather than a link
+      if ( $('.main-nav__burger').is(":visible")) {
 
-      $listItem = $(this).parent('li.menu-item--expanded');
-      $listItemParents = $listItem.parents('li.item-open');
+        e.preventDefault();
 
-      // Remove any 'item-open' classes and add class to clicked item
-      $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
+        $listItem = $(this).parent('li.menu-item--expanded');
+        $listItemParents = $listItem.parents('li.item-open');
 
-      $($listItem).toggleClass('item-open');
+        // Remove any 'item-open' classes and add class to clicked item
+        $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
+
+        $($listItem).toggleClass('item-open');
+      }
     });    
   }
 })(jQuery);
