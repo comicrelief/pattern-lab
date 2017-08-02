@@ -111,7 +111,7 @@ Pull request commits and merge also trigger CI visual regression tests as explai
 https://ci.apps.comicrelief.com/teams/main/pipelines/pattern-lab
 ```
 
- ## Visual Regression
+## Visual Regression
 - We're using [BackstopJS](https://github.com/garris/BackstopJS)
 - CI runs tests on pull request
 - backstop.json contains configration, currently the tests check against production
