@@ -7,18 +7,72 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     sass: {
-      dist: {
-        options: {
-          outputStyle: 'compressed',
-          sourceMap: false,
-          includePaths: ['node_modules'],
-          importer: tilde_importer
-        },
+      options: {
+        outputStyle: 'compressed',
+        sourceMap: false,
+        includePaths: ['node_modules'],
+        importer: tilde_importer
+      },
+      all: {
         files: [{
           expand: true,
           cwd: 'sass',
           src: ['{,**/}*.scss'],
           dest: 'dist/css',
+          ext: '.css'
+        }]
+      },
+      base: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/all',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/all',
+          ext: '.css'
+        }]
+      },
+      cr17: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/cr/2017',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/cr/2017',
+          ext: '.css'
+        }]
+      },
+      frost: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/frost',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/frost',
+          ext: '.css'
+        }]
+      },
+      payin: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/payin',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/payin',
+          ext: '.css'
+        }]
+      },
+      rnd17: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/rnd/2017',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/rnd/2017',
+          ext: '.css'
+        }]
+      },
+      sr18: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/sr/2018',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/sr/2018',
           ext: '.css'
         }]
       }
@@ -46,12 +100,12 @@ module.exports = function (grunt) {
     },
 
     imagemin: {
-      static: { // Use for subthemes
+      rnd17: { // Use for subthemes
         files: {
           'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
         }
       },
-      dynamic: {
+      base: {
         files: [{
           expand: true,
           flatten: true,
@@ -72,7 +126,7 @@ module.exports = function (grunt) {
           {cleanupIDs: false}
         ]
       },
-      dist: {
+      base: {
         files: [{
           expand: true,
           flatten: true,
@@ -94,10 +148,10 @@ module.exports = function (grunt) {
           dest: 'dist/js/plugins.min.js'
         }]
       },
-      components_js: {
+      base_components_js: {
         files: [{
           src: ['sass/base/components/{,**/}*.js'],
-          dest: 'dist/js/components.min.js'
+          dest: 'dist/js/base-components.min.js'
         }]
       }   
     },
@@ -142,14 +196,14 @@ module.exports = function (grunt) {
         css: 'css/base/core.css',
         builder: 'node_modules/kss/builder/twig'
       },
-      all: {
+      base: {
         options: {
           verbose: true,
           builder: 'kss',
           title: 'PatternLab',
           css: 'css/themes/all/all.css'
         },
-        src: ['sass/base', 'sass/components', 'sass/themes/all'],
+        src: ['sass/base', 'sass/themes/all'],
         dest: 'dist'
       },
       cr17: {
@@ -247,8 +301,26 @@ module.exports = function (grunt) {
           require('autoprefixer')
         ]
       },
-      dist: {
+      all: {
         src: ['dist/css/kss/*.css', 'dist/css/themes/**/*.css']
+      },
+      base: {
+        src: ['dist/css/themes/all/*.css']
+      },
+      cr17: {
+        src: ['dist/css/themes/cr/**/*.css']
+      },
+      frost: {
+        src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css']
+      },
+      payin: {
+        src: ['dist/css/kss/payin.css', 'dist/css/themes/payin/**/*.css']
+      },
+      rnd17: {
+        src: ['dist/css/kss/rnd.css', 'dist/css/themes/rnd/**/*.css']
+      },
+      sr18: {
+        src: ['dist/css/kss/sr.css', 'dist/css/themes/sr/**/*.css']
       }
     }
   });
@@ -262,14 +334,61 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'sass_globbing',
-    'sass',
+    'sass:all',
     'modernizr',
     'imagemin',
     'svgmin',
-    'uglify:plugins_js',
-    'uglify:components_js',
+    'uglify',
     'kss',
-    'postcss:dist',
+    'postcss:all',
+  ]);
+
+    grunt.registerTask('build:base', [
+    'sass_globbing',
+    'sass:base',
+    'modernizr',
+    'imagemin:base',
+    'svgmin:base',
+    'uglify:plugins_js',
+    'uglify:base_components_js',
+    'kss:base',
+    'postcss:base',
+  ]);
+
+  grunt.registerTask('build:cr17', [
+    'sass:cr17',
+    'modernizr',
+    'kss:cr17',
+    'postcss:cr17',
+  ]);
+
+  grunt.registerTask('build:frost', [
+    'sass:frost',
+    'modernizr',
+    'kss:frost',
+    'postcss:frost',
+  ]);
+
+  grunt.registerTask('build:payin', [
+    'sass:payin',
+    'modernizr',
+    'kss:payin',
+    'postcss:payin',
+  ]);
+
+  grunt.registerTask('build:rnd17', [
+    'sass:rnd17',
+    'modernizr',
+    'imagemin:rnd17',
+    'kss:rnd17',
+    'postcss:rnd17',
+  ]);
+
+  grunt.registerTask('build:sr18', [
+    'sass:sr18',
+    'modernizr',
+    'kss:sr18',
+    'postcss:sr18',
   ]);
 
   grunt.registerTask('clean:test', [
