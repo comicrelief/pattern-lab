@@ -1,0 +1,73 @@
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+@import "../../../base/core/base-1-mixins";
+@import "../../../base/core/base-breakpoints";
+@import "../../../base/core/base-common";
+@import "../../../base/core/base-grid";
+@import "../../../base/core/base-helper";
+@import "../../../base/core/base-layout";
+@import "../../../base/core/base-reset";
+
+// ==========================================================================
+// Core variables
+// ==========================================================================
+
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_typography.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_theme.scss";
+
+// ==========================================================================
+// Sub Theme variables
+// ==========================================================================
+
+
+// For now, pull in CR variables, to be replaced
+@import "../../cr/2017/variables/_colours.scss";
+@import "../../cr/2017/variables/_typography.scss";
+@import "../../cr/2017/variables/_mixins.scss";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+// Ou choose components one by one
+@import "../../../base/components/animations/animations";
+@import "../../../base/components/background-colours/background-colours";
+
+@import "../../../base/components/buttons/buttons";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
+
+@import "../../../base/components/external-link/external-link";
+
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/form/form";
+@import "../../../base/components/grid/grid";
+@import "../../../base/components/header/base-header";
+
+@import "../../../base/components/links/links";
+@import "../../../base/components/list/list";
+
+@import "../../../base/components/media/media";
+@import "../../../base/components/meta-icons/meta-icons";
+@import "../../../base/components/navigation/feature-nav";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/pagination/pagination";
+@import "../../../base/components/progress-bar/progress-bar";
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/social/social";
+@import "../../../base/components/table/table";
+@import "../../../base/components/tooltips/tooltips";
+@import "../../../base/components/typography/typography";
+
+// ==========================================================================
+// Sub theme components overrides
+// ==========================================================================
+
+@import "_shop18-components";

@@ -7,3 +7,4 @@ This web site is built using Sass and component-based styles. This front-end sty
 <p><a href="payin/index.html" class="link link--red">Payin Styleguide</a></p>
 <p><a href="rnd/index.html" class="link link--red">RND Styleguide</a></p>
 <p><a href="sr/index.html" class="link link--red">SR Styleguide</a></p>
+<p><a href="shop/index.html" class="link link--red">Shop Styleguide</a></p>

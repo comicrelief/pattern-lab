@@ -268,7 +268,17 @@ module.exports = function (grunt) {
               'sass/themes/frost'
              ],
         dest: 'dist/frost'
-      }
+      },
+      shop18: {
+        options: {
+          verbose: true,
+          builder: 'kss',
+          title: 'Shop 2018 PatternLab',
+          css: ['../css/themes/shop/2018/shop18.css', '../css/kss/shop.css'],
+        },
+        src: ['sass/base', 'sass/themes/shop/2018'],
+        dest: 'dist/shop'
+      },
     },
 
     connect: {
