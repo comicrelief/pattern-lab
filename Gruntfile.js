@@ -25,9 +25,9 @@ module.exports = function (grunt) {
       base: {
         files: [{
           expand: true,
-          cwd: 'sass/themes/all',
+          cwd: 'sass/themes/base',
           src: ['{,**/}*.scss'],
-          dest: 'dist/css/themes/all',
+          dest: 'dist/css/themes/base',
           ext: '.css'
         }]
       },
@@ -201,9 +201,9 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'PatternLab',
-          css: 'css/themes/all/all.css'
+          css: 'css/themes/base/base.css'
         },
-        src: ['sass/base', 'sass/themes/all'],
+        src: ['sass/base', 'sass/themes/base'],
         dest: 'dist'
       },
       cr17: {
@@ -305,7 +305,7 @@ module.exports = function (grunt) {
         src: ['dist/css/kss/*.css', 'dist/css/themes/**/*.css']
       },
       base: {
-        src: ['dist/css/themes/all/*.css']
+        src: ['dist/css/themes/base/*.css']
       },
       cr17: {
         src: ['dist/css/themes/cr/**/*.css']
