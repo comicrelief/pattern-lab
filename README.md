@@ -42,7 +42,13 @@ Either of the last 2 steps creates a symlink in the other project's `node_module
 #### Make code changes
 * it follows same development process: create feature branch -> commit and push changes -> create pull request for code review
 * run `npm run watch` to liveload file changes
-* run `npm run build` to generate styleguide
+* run `npm run build` to generate all themes in the styleguide
+* run `npm run build-base` to only generate the base theme in the styleguide
+* run `npm run build-cr17` to only generate the cr17 theme in the styleguide
+* run `npm run build-frost` to only generate the frost theme in the styleguide
+* run `npm run build-payin` to only generate the payin theme in the styleguide
+* run `npm run build-rnd17` to only generate the rnd17 theme in the styleguide
+* run `npm run build-sr18` to only generate the sr18 theme in the styleguide
 
 #### Dev server
 * run `npm run dev-server` or `npm run watch`
