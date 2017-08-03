@@ -29,16 +29,12 @@ header[role=banner] {
   }
 }
 
-// Pull in CR
+// Pull in CR component styles we're using until SR18 theme is ready
 @import "../../cr/2017/components/background-colours/background-colours";
 @import "../../cr/2017/components/buttons/buttons";
 @import "../../cr/2017/components/highlight/highlight";
 @import "../../cr/2017/components/links/links";
 @import "../../cr/2017/components/loading/loading";
-/* @import "../../cr/2017/components/media-block/media-block"; */
 @import "../../cr/2017/components/typography/fonts";
 @import "../../cr/2017/components/typography/typography";
-/* @import "../../cr/2017/components/single-msg/single-msg"; */
 @import "../../cr/2017/components/navigation/main-nav";
-/* @import "../../cr/2017/components/navigation/feature-nav";
-@import "../../cr/2017/components/cookie-consent/cookie-consent" */
