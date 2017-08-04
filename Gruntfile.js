@@ -365,6 +365,9 @@ module.exports = function (grunt) {
       },
       sr18: {
         src: ['dist/css/kss/sr.css', 'dist/css/themes/sr/**/*.css']
+      },
+      shop18: {
+        src: ['dist/css/kss/shop18.css', 'dist/css/themes/sr/**/*.css']
       }
     }
   });
