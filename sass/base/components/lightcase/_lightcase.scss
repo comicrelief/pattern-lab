@@ -178,8 +178,6 @@
 }
 @media screen and (max-width: 640px) {
   #lightcase-case:not([data-lc-type=image]):not([data-lc-type=video]):not([data-lc-type=flash]):not([data-lc-type=error]) {
-    position: relative !important;
-    top: auto !important;
     left: auto !important;
     width: auto !important;
     height: auto !important;
