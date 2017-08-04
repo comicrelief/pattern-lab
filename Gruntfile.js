@@ -75,6 +75,15 @@ module.exports = function (grunt) {
           dest: 'dist/css/themes/sr/2018',
           ext: '.css'
         }]
+      },
+      shop18: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/shop/2018',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/shop/2018',
+          ext: '.css'
+        }]
       }
     },
 
@@ -276,7 +285,32 @@ module.exports = function (grunt) {
           title: 'Shop 2018 PatternLab',
           css: ['../css/themes/shop/2018/shop18.css', '../css/kss/shop.css'],
         },
-        src: ['sass/base', 'sass/themes/shop/2018'],
+
+        src: [
+              'sass/base/core',
+              'sass/base/variables',
+              'sass/base/components/animations',
+              'sass/base/components/background-colours',
+              'sass/base/components/buttons',
+              'sass/base/components/card-block',
+              'sass/base/components/cards',
+              'sass/base/components/external-link',
+              'sass/base/components/form',
+              'sass/base/components/grid',
+              'sass/base/components/header',
+              'sass/base/components/links',
+              'sass/base/components/list',
+              'sass/base/components/media',
+              'sass/base/components/meta-icons',
+              'sass/base/components/pagination',
+              'sass/base/components/progress-bar',
+              'sass/base/components/selectbox',
+              'sass/base/components/social',
+              'sass/base/components/table',
+              'sass/base/components/tooltips',
+              'sass/base/components/typography',
+              'sass/themes/shop/2018'
+            ],
         dest: 'dist/shop'
       },
     },
@@ -399,6 +433,13 @@ module.exports = function (grunt) {
     'modernizr',
     'kss:sr18',
     'postcss:sr18',
+  ]);
+
+  grunt.registerTask('build:shop18', [
+    'sass:shop18',
+    'modernizr',
+    'kss:shop18',
+    'postcss:shop18',
   ]);
 
   grunt.registerTask('clean:test', [
