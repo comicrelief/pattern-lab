@@ -309,6 +309,7 @@ module.exports = function (grunt) {
               'sass/base/components/social',
               'sass/base/components/table',
               'sass/base/components/promo-header',
+              'sass/base/components/partners',
               'sass/themes/shop/2018'
             ],
         dest: 'dist/shop'

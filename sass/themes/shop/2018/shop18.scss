@@ -69,6 +69,9 @@
 @import "../../../base/components/table/table";
 @import "../../../base/components/tooltips/tooltips";
 @import "../../../base/components/typography/typography";
+@import "../../../base/components/partners/partners";
+@import "../../../base/components/partners/partners-row";
+
 
 // ==========================================================================
 // Sub theme components overrides
@@ -90,3 +93,10 @@
 // Markup: typography.twig
 //
 // Style guide: 10.1
+
+// Partners Grid
+//
+// Markup: partners-grid.twig
+//
+// Style guide: 20.101
+
