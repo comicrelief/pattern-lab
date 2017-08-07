@@ -303,13 +303,12 @@ module.exports = function (grunt) {
               'sass/base/components/list',
               'sass/base/components/media',
               'sass/base/components/meta-icons',
-              'sass/base/components/pagination',
-              'sass/base/components/progress-bar',
+              'sass/base/components/progress-indicator',
               'sass/base/components/navigation',
               'sass/base/components/selectbox',
               'sass/base/components/social',
               'sass/base/components/table',
-              'sass/base/components/tooltips',
+              'sass/base/components/promo-header',
               'sass/themes/shop/2018'
             ],
         dest: 'dist/shop'
