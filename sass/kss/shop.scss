@@ -25,3 +25,8 @@
   	background-size: contain;
 	}
 }
+
+header[role=banner] .site-logo {
+ 	background: url(/kss-assets/images/logo-mobile.gif) no-repeat 0 0;
+ 	background-size: 100%;
+}
