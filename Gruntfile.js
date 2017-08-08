@@ -298,7 +298,6 @@ module.exports = function (grunt) {
               'sass/base/components/form',
               'sass/base/components/grid',
               'sass/base/components/footer',
-              'sass/base/components/header',
               'sass/base/components/links',
               'sass/base/components/list',
               'sass/base/components/media',
