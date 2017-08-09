@@ -12,16 +12,16 @@
 
 // Sub theme var overrides
 @import "../../themes/cr/2017/variables/_colours.scss"; // CR
-@import "variables/_colours.scss"; // Frost
+@import "core/variables/_colours.scss"; // Frost
 
 @import "../../base/variables/_typography.scss";
 
 // Sub theme var overrides
-@import "variables/_typography.scss"; // Frost
+@import "core/variables/_typography.scss"; // Frost
 
 @import "../../base/variables/_lists.scss";
 
-@import "_frost-variables";
+@import "core/_frost-variables";
 
 // ==========================================================================
 // Components
@@ -43,16 +43,16 @@
 // Components sub theme overrides
 // ==========================================================================
 
-@import "components/_layout",
-				"components/_header",
-				"components/_footer",
-				"components/_form",
-				"components/_cookie-consent",
-				"components/_buttons",
-				"components/_modal",
-				"components/_gpLink";
+@import "core/components/_layout",
+				"core/components/_header",
+				"core/components/_footer",
+				"core/components/_form",
+				"core/components/_cookie-consent",
+				"core/components/_buttons",
+				"core/components/_modal",
+				"core/components/_gpLink";
 
-@import "_frost-components";
+@import "core/_frost-components";
 
 // Elements
 //

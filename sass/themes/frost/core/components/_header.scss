@@ -17,12 +17,11 @@ header {
 }
 
 .header-logo {
-  img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0px auto;
-  }
+	width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0px auto;
+  background-image: cover;
 }
 
 .btn-login {
@@ -38,4 +37,3 @@ header {
     color: $colour-black;
   }
 }
-
