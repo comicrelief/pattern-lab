@@ -217,7 +217,7 @@
         &:hover {
           background-color: transparent;
           > a {
-            color: $colour-black;
+
             span.menu-item__text {
               border-bottom: 3px solid $colour-red;
               background-color: transparent;
@@ -225,6 +225,21 @@
           }
              
           > ul {
+            display: block;
+            max-height: 400px;
+            background-color: $colour-black;
+          }
+        }
+
+        // Focus state provided by JS to add control over subnav focus state
+        &.focused > a {
+
+          span.menu-item__text {
+            border-bottom: 3px solid $colour-red;
+            background-color: transparent;
+          }
+
+          & + ul {
             display: block;
             max-height: 400px;
             background-color: $colour-black;

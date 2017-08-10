@@ -59,7 +59,8 @@
       };
     });
 
-    toggleSubMenu();       
+    toggleSubMenu();
+    focusState();        
   }
 
   function toggleSubMenu() {
@@ -83,5 +84,30 @@
         $($listItem).toggleClass('item-open');
       }
     });    
+  }
+
+  function focusState() {
+
+    // Set our context for non-feature nav
+    $context = $('.main-nav__wrapper:not(.main-nav--feature__wrapper) .navigation');
+
+    // Focus-handler on parent nav items, to allow us to control the focus state in the parent element for styling
+    $('li.menu-item--expanded > a', $context).on('focus', function(e) {
+      $(this).closest('li.menu-item--expanded').addClass("focused");
+    });
+
+
+    // Blur-handler to assess when we're moving away from this dropdown
+    $('li.menu-item--expanded > a ~ ul li a', $context).on('blur', function(e) {
+
+      // Cache parent element
+      $thisLi = $(this).closest('li');
+
+      // If we're removing focus from the last li in the submenu, remove our overall active class
+      if ( $thisLi.is(":last-child") ){
+        $thisLi.closest('li.menu-item--expanded.focused').removeClass("focused");
+      }
+
+    });
   }
 })(jQuery);
