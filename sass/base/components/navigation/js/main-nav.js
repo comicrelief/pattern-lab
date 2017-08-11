@@ -90,24 +90,66 @@
 
     // Set our context for non-feature nav
     $context = $('.main-nav__wrapper:not(.main-nav--feature__wrapper) .navigation');
+    var focusState = false;
+
+    // Cache our selectors for ease of us
+    var $parentAnchor = $('li.menu-item--expanded > a');
+    var $parentLi = $('li.menu-item--expanded');
+
+    var $subAnchor = $('li.menu-item--expanded > a ~ ul li a');
+
+    // To store the currently focused/blurred anchor
+    var $thisAnchor = null;
+
 
     // Focus-handler on parent nav items, to allow us to control the focus state in the parent element for styling
-    $('li.menu-item--expanded > a', $context).on('focus', function(e) {
+    /*    $('li.menu-item--expanded > a', $context).on('focus', function(e) {
       $(this).closest('li.menu-item--expanded').addClass("focused");
-    });
+    });*/
 
 
-    // Blur-handler to assess when we're moving away from this dropdown
-    $('li.menu-item--expanded > a ~ ul li a', $context).on('blur', function(e) {
+    $('html body a').on('focus blur', function(e) {
 
-      // Cache parent element
-      $thisLi = $(this).closest('li');
+      // Cache the anchor being focused/blurred
+      $thisAnchor = $(this);
 
-      // If we're removing focus from the last li in the submenu, remove our overall active class
-      if ( $thisLi.is(":last-child") ){
-        $thisLi.closest('li.menu-item--expanded.focused').removeClass("focused");
+      // Cache where this is a focus or blur event
+      focusState = e.type == "focus" ? true : false;
+
+      if (focusState) {
+
+        // If we're focussing on a nav item anchor, add our focus
+        // to the parent li, so we can effect all subnav styling
+        if ( $thisAnchor.is( $parentAnchor, $context ) ) {
+          $(this).closest( $parentLi ).addClass("focused");
+        }
+
+        // Else, we're focussing on something else, so remove focus class from all nav items
+        else {
+
+          // TODO: make this work properly
+          //$($parentLi, $context).removeClass("focused");
+        }
       }
 
-    });
-  }
+      // If not focus event, then this is a blur event
+      else {
+
+        console.log("BLUR");
+
+          if ( $thisAnchor.is( $( $subAnchor, $context) )) {
+
+            console.log("blurring last child item");
+            // Cache parent element
+            
+            $thisLi = $thisAnchor.closest('li');
+
+            // If we're removing focus from the last li in the submenu, remove our overall active class
+            if ( $thisLi.is(":last-child") ){
+              $thisLi.closest('li.menu-item--expanded.focused').removeClass("focused");
+            }
+          }
+        }
+      });
+    }
 })(jQuery);
