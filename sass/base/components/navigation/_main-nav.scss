@@ -231,8 +231,9 @@
           }
         }
 
-        // Focus state provided by JS to add control over subnav focus state
-        &.focused > a {
+        // 'Focused' class provided by main-nav.js to add control over subnav focus state
+        &.focused > a,
+        > a:focus {
 
           span.menu-item__text {
             border-bottom: 3px solid $colour-red;
