@@ -1,0 +1,63 @@
+// ==========================================================================
+// Base core
+// ==========================================================================
+
+@import "../../../base/_core";
+
+@import "../../../base/variables/_grid.scss";
+
+@import "../../../base/variables/_theme.scss";
+
+@import "../../../base/variables/_colours.scss";
+
+// Sub theme var overrides
+@import "../../../themes/cr/2017/variables/_colours.scss"; // CR
+@import "../core/variables/_colours.scss"; // Frost
+@import "variables/_colours.scss";
+
+@import "../../../base/variables/_typography.scss";
+
+// Sub theme var overrides
+@import "../core/variables/_typography.scss"; // Frost
+
+@import "../../../base/variables/_lists.scss";
+
+@import "../core/_frost-variables";
+
+// ==========================================================================
+// Base components
+// ==========================================================================
+
+@import "../../../base/components/buttons/buttons";
+@import "../../../base/components/background-colours/background-colours";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/form/form";
+@import "../../../base/components/fundraising-target/fundraising-target";
+@import "../../../base/components/links/links";
+@import "../../../base/components/list/list";
+@import "../../../base/components/navigation/_footer-nav";
+@import "../../../base/components/progress-indicator/progress-indicator";
+@import "../../../base/components/social/social";
+@import "../../../base/components/typography/typography";
+
+// ==========================================================================
+// Frost core
+// ==========================================================================
+
+@import "../core/components/_layout",
+				"../core/components/_header",
+				"../core/components/_footer",
+				"../core/components/_form",
+				"../core/components/_cookie-consent",
+				"../core/components/_buttons",
+				"../core/components/_modal",
+				"../core/components/_gpLink";
+
+@import "../core/_frost-components";
+
+// ==========================================================================
+// Frost sub theme
+// ==========================================================================
+
+@import "components/_header.scss";
+
