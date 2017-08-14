@@ -89,7 +89,7 @@
   function focusState() {
 
     // Set our context for non-feature nav
-    $context = $('.main-nav__wrapper:not(.main-nav--feature__wrapper) .navigation');
+    $context = $('.main-nav__wrapper .navigation');
 
     // To store the currently focused/blurred anchor
     var $thisAnchor = null;
@@ -101,39 +101,39 @@
     var $parentLi = $('li.menu-item--expanded', $context);
 
 
-
     $('html body a').on('focus blur', function(e) {
       
       // Cache the anchor being focused/blurred
       $thisAnchor = $(this);
 
+      /* FOCUS event */
       if ( e.type == "focus" ? true : false ) {
 
-        // If we're focussing on a nav item anchor, add our focus
-        // to the parent li, so we can effect all subnav styling
-        if ( $thisAnchor.is( $parentAnchor) ) {
-          $(this).closest( $parentLi ).addClass("focused");
+        // Focussed on a non-nav anchor? Remove active states
+        if (!($thisAnchor.is($('a', $context)))) {
+          $parentLi.removeClass("focused"); 
         }
 
-        // Else, we're focussing on something else, so remove focus class from all nav items
+        // If we're focussing on a nav item anchor, add focus class to the parent li, so we can affect all subnav styling
         else {
-          // TODO: make this work properly
-          //$($parentLi, $context).removeClass("focused");
+          
+          if ($thisAnchor.is($parentAnchor)) {
+            $(this).closest( $parentLi ).addClass("focused"); 
+          }
+
+          // Else, check its not a subitem, then remove focus class from all nav item
+          else if (!($thisAnchor.is($subAnchor))) {
+            $parentLi.removeClass("focused"); 
+          }
         }
       }
 
-      // If not focus event, then this is a blur event
+      /* BLUR event */
       else {
-
+        
+        // If we're blurring away from the last-child subnav item, remove our overall focus class from the menu
         if ($thisAnchor.is($subAnchor)) {
-
-          // Cache parent element  
-          $thisLi = $thisAnchor.closest('li');
-
-          // If we're removing focus from the last li in the submenu, remove our overall active class
-          if ($thisAnchor.closest('li').is(":last-child") ) {
-            $thisLi.closest('li.menu-item--expanded.focused').removeClass("focused");
-          }
+          $thisAnchor.parent('li:last-child').closest('li.focused').removeClass("focused");
         }
       }
     });
