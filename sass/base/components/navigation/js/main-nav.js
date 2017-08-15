@@ -100,7 +100,6 @@
     var $parentAnchor = $('li.menu-item--expanded > a', $context);
     var $parentLi = $('li.menu-item--expanded', $context);
 
-
     $('html body a').on('focus blur', function(e) {
       
       // Cache the anchor being focused/blurred
@@ -130,7 +129,7 @@
 
       /* BLUR event */
       else {
-        
+
         // If we're blurring away from the last-child subnav item, remove our overall focus class from the menu
         if ($thisAnchor.is($subAnchor)) {
           $thisAnchor.parent('li:last-child').closest('li.focused').removeClass("focused");
