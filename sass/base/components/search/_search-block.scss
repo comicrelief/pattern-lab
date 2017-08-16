@@ -88,18 +88,31 @@
   .form-actions {
     @include span(2);
   }
-  .icon {
-    fill: $colour-black;
+
+   a.close-button {
     height: 30px;
     position: absolute;
     right: 20px;
     top: 20px;
     width: 30px;
-    cursor: pointer;
+
+    .icon {
+      fill: $colour-black;
+      height: 30px;
+      position: relative;
+      width: 30px;
+      cursor: pointer;
+    }
+
     &:hover, 
     &:focus {
-      fill: $colour-jasper-grey;
+      .icon {
+        fill: $colour-jasper-grey;
+      }
     }
+  }
+
+  .icon {
     .path-search & {
       display: none;
     }
