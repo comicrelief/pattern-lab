@@ -59,7 +59,8 @@
       };
     });
 
-    toggleSubMenu();       
+    toggleSubMenu();
+    focusState();        
   }
 
   function toggleSubMenu() {
@@ -83,5 +84,57 @@
         $($listItem).toggleClass('item-open');
       }
     });    
+  }
+
+  function focusState() {
+
+    // Set our context for non-feature nav
+    $context = $('.main-nav__wrapper .navigation');
+
+    // To store the currently focused/blurred anchor
+    var $thisAnchor = null;
+    var focusState = false;
+
+    // Cache our selectors
+    var $subAnchor = $('li.menu-item--expanded > a ~ ul li a', $context);
+    var $parentAnchor = $('li.menu-item--expanded > a', $context);
+    var $parentLi = $('li.menu-item--expanded', $context);
+
+    $('html body a').on('focus blur', function(e) {
+      
+      // Cache the anchor being focused/blurred
+      $thisAnchor = $(this);
+
+      /* FOCUS event */
+      if ( e.type == "focus" ? true : false ) {
+
+        // Focussed on a non-nav anchor? Remove active states
+        if (!($thisAnchor.is($('a', $context)))) {
+          $parentLi.removeClass("focused"); 
+        }
+
+        // If we're focussing on a nav item anchor, add focus class to the parent li, so we can affect all subnav styling
+        else {
+          
+          if ($thisAnchor.is($parentAnchor)) {
+            $(this).closest( $parentLi ).addClass("focused"); 
+          }
+
+          // Else, check its not a subitem, then remove focus class from all nav item
+          else if (!($thisAnchor.is($subAnchor))) {
+            $parentLi.removeClass("focused"); 
+          }
+        }
+      }
+
+      /* BLUR event */
+      else {
+
+        // If we're blurring away from the last-child subnav item, remove our overall focus class from the menu
+        if ($thisAnchor.is($subAnchor)) {
+          $thisAnchor.parent('li:last-child').closest('li.focused').removeClass("focused");
+        }
+      }
+    });
   }
 })(jQuery);

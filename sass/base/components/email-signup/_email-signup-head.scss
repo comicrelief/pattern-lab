@@ -81,18 +81,27 @@
       right: 0;
       padding: 25px 0;
     }
-    .icon {
+
+    a.close-button {
       position: absolute;
       top: 10px;
       right: 10px;
       width: 30px;
       height: 30px;
-      cursor: pointer;
 
-      fill: $colour-white;
+      .icon {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        fill: $colour-white;
+      }
+
       &:hover,
       &:focus {
-        fill: $colour-jasper-grey;
+        .icon {
+          fill: $colour-jasper-grey;
+        }
       }
     }
   }
