@@ -2,8 +2,11 @@
 //
 // Markup: cards.twig
 //
-// .cards--feature-layout - Feature Layout
-// .cards--four-grid - Grid of four cards
+// .cards--four-grid.cards--feature-layout - Feature Layout
+// .cards--four-grid - Grid of four cards left aligned
+// .cards--four-grid--centre - Grid of four cards centre align
+// .cards--three-grid - Grid of three cards left aligned
+// .cards--three-grid--centre - Grid of three cards centre align
 //
 // Style guide: 20.61
 
@@ -22,6 +25,26 @@
         }
       }
     }
+    &--centre {
+      .cards__wrapper {
+        justify-content: center;
+      }
+    }
+  }
+  &.cards--three-grid {
+    .cards__wrapper {
+      justify-content: left;
+      .card {
+        @include breakpoint($screen-md-max) {
+          @include span(4);
+        }
+      }
+    }
+    &--centre {
+      .cards__wrapper {
+        justify-content: center;
+      }
+    }
   }
 }
 .cards__wrapper {
@@ -31,9 +54,9 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-  .card {
-    @include breakpoint($screen-md-max) {
-      @include span(4);
-    }
+}
+.card {
+  @include breakpoint($screen-md-max) {
+    @include span(3);
   }
 }
