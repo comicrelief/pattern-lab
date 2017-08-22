@@ -20,6 +20,9 @@
     .cards__wrapper {
       justify-content: left;
       .card {
+        @include breakpoint($screen-md) {
+          @include span(6);
+        }
         @include breakpoint($screen-md-max) {
           @include span(3);
         }
@@ -29,6 +32,9 @@
       .cards__wrapper {
         justify-content: center;
         .card {
+          @include breakpoint($screen-md) {
+            @include span(6);
+          }
           @include breakpoint($screen-md-max) {
             @include span(3);
           }
@@ -40,6 +46,9 @@
     .cards__wrapper {
       justify-content: left;
       .card {
+        @include breakpoint($screen-md) {
+          @include span(6);
+        }
         @include breakpoint($screen-md-max) {
           @include span(4);
         }
@@ -49,7 +58,10 @@
       .cards__wrapper {
         justify-content: center;
         .card {
-        @include breakpoint($screen-md-max) {
+          @include breakpoint($screen-md) {
+            @include span(6);
+          }
+          @include breakpoint($screen-md-max) {
             @include span(4);
           }
         }
@@ -66,6 +78,9 @@
   }
 }
 .card {
+  @include breakpoint($screen-md) {
+    @include span(6);
+  }
   @include breakpoint($screen-md-max) {
     @include span(3);
   }
