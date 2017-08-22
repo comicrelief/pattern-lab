@@ -12,14 +12,14 @@
   overflow: hidden;
   margin-bottom: 20px;
   text-align: left;
-  width: calc(100% - (4 * 1.25%));
-  margin: 1.25% calc(2 * 1.25%);
+  width: calc(100% - (4 * #{gutter()}));
+  margin: #{gutter()} calc(2 * #{gutter()});
 }
 .card__title {
   text-align: center;
-  margin: 0 calc(4 * 1.25%) 30px;
+  margin: 0 calc(4 * #{gutter()}) 30px;
   @include breakpoint($screen-md) {
-    margin: 0 calc(2 * 1.25%) 30px;
+    margin: 0 calc(2 * #{gutter()}) 30px;
   }
   .bg--dark-orchid & {
     color: $colour-white;
