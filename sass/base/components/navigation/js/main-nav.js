@@ -117,7 +117,9 @@
         else {
           
           if ($thisAnchor.is($parentAnchor)) {
-            $(this).closest( $parentLi ).addClass("focused"); 
+            // Unfocus all other focussed parent items
+            $parentLi.removeClass("focused");
+            $(this).closest( $parentLi ).addClass("focused");
           }
 
           // Else, check its not a subitem, then remove focus class from all nav item
