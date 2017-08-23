@@ -161,6 +161,10 @@
     &.step2 {
       margin-top: 25px;
     }
+
+    &:focus {
+      border: 3px solid red;
+    }
   }
   .form-submit.step1,
   .form-submit.step2 {
