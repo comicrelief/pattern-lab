@@ -48,6 +48,10 @@
         line-height: 16px;
         color: $colour-dark-grey;
 
+        span {
+          position: relative;
+        }
+
         @include breakpoint($desktop-nav-breakpoint) {
           padding: 8px 7px 4px;
         }
@@ -65,7 +69,23 @@
       > li {
 
          &:hover >a {
-          background-color: red;
+          //background-color: red;
+
+          span {
+            position: relative;
+            
+            &:after {
+              content: "";
+              width: auto;
+              height: 5px;
+              background-color: #fff000;
+              position: absolute;
+              bottom: -5px;
+              left: 10px;
+              right: 10px;
+              border-radius: 5px;
+            }
+          }
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
@@ -81,7 +101,7 @@
           color: $colour-black;
           
           &.is-active span.menu-item__text {
-            border-bottom: 2px solid $colour-black;
+            border-bottom: 2px solid #fff000;
           }
         
           @include breakpoint($desktop-nav-breakpoint) {
@@ -91,7 +111,19 @@
             height: auto;
 
             &.is-active span.menu-item__text {
-              border-bottom: 2px solid $colour-black;
+              border-bottom: none;
+
+              &:after {
+                content: "";
+                  width: auto;
+                  height: 5px;
+                  background-color: #fff000;
+                  position: absolute;
+                  bottom: -5px;
+                  left: 5px;
+                  right: 5px;
+                  border-radius: 5px;
+              }
             }
           }
         }
