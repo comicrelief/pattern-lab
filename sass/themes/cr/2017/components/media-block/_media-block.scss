@@ -19,9 +19,10 @@
   }
 }
 .media-block__content-wrapper {
-  background-image: linear-gradient(rgba(0,0,0,0), $colour-dark-purple);
+  
 }
 .media-block__content {
+  background-image: linear-gradient(rgba(0,0,0,0), $colour-dark-purple);
   .cr-body {
     h2, h3, h4, h5, p {
       color: $colour-white;
