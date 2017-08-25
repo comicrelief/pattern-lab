@@ -71,36 +71,25 @@
 }
 .media-block__content-wrapper {
   position: relative;
-
 }
-
 .media-block__content {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 40px 10px 20px;
-  // background-image: -webkit-gradient(linear,50% 0%,50% 100%,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,#061d38));
-  // background-image: -moz-linear-gradient(rgba(0,0,0,0),#061d38);
-  // background-image: -webkit-linear-gradient(rgba(0,0,0,0),#061d38);
-  // background-image: linear-gradient(rgba(0,0,0,0),#061d38);
   background-image: linear-gradient(rgba(0,0,0,0), $colour-dark-blue);
   @include breakpoint($screen-md) {
     padding: 40px 40px 20px;
   }
   .cr-body {
-    h2,
-    h3,
-    h4,
-    h5 {
+    h2, h3, h4, h5, p {
       color: $colour-white;
     }
-  }
-  .font--yellow {
-    color: $colour-yellow;
-  }
+    .font--yellow {
+      color: $colour-yellow;
+    }
+  } 
 }
-
 .media-block__caption {
   display: none;
 }
-
