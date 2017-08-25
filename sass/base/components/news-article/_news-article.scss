@@ -9,7 +9,7 @@
 .cr-article {
 	width: 100%;
 	background-color: $colour-smoke-grey;
-	@include breakpoint(800px) {
+	@include breakpoint($screen-lg) {
 		padding: 60px 0;
 	}
 }
