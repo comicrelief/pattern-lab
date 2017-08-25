@@ -8,8 +8,10 @@
 
 .cr-article {
 	width: 100%;
-	padding: 60px 0;
 	background-color: $colour-smoke-grey;
+	@include breakpoint(800px) {
+		padding: 60px 0;
+	}
 }
 .cr-article__content-wrapper {
 	max-width: 800px;
