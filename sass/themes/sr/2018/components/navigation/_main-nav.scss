@@ -1,10 +1,14 @@
-/* Main navigation styling */ 
 
+
+
+
+
+
+/* Main navigation styling */ 
 .header__inner-wrapper {
 
   // Position logo to left, menu in center, meta icon block to the right
   height: 100%;
-  background-color: transparent;
   justify-content: space-between;
 
   // Remove clearfix so flexbox works properly
@@ -12,12 +16,14 @@
     content: none;
   }
 
-  .main-nav__wrapper {
-    @include breakpoint($desktop-nav-breakpoint) {
+  @include breakpoint($desktop-nav-breakpoint) {
+    background-color: transparent;
+    .main-nav__wrapper {
       margin-right: 35px;
     }
   }
 }
+
 
 .main-nav__wrapper {
   height: auto;
@@ -31,13 +37,13 @@
   .main-nav__items {
     
     top: 67px;
-    background-color: transparent;
     
     @include breakpoint($screen-md) {
       top: 76px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
+      background-color: transparent;
       top: 0;
     }
 
@@ -56,6 +62,12 @@
           padding: 8px 7px 4px;
         }
       }
+
+/*       > a:focus {
+        span.menu-item__text {
+          border-bottom: 3px solid #f04257;
+        }
+      } */
     }
 
     // Parent items of the menu
@@ -69,7 +81,6 @@
       > li {
 
          &:hover >a {
-          //background-color: red;
 
           span {
             position: relative;
@@ -100,8 +111,21 @@
           height: 46px;
           color: $colour-black;
           
-          &.is-active span.menu-item__text {
-            border-bottom: 2px solid #fff000;
+          &.is-active,
+          &:focus {
+            span.menu-item__text {
+              &:after {
+                content: "";
+                width: auto;
+                height: 5px;
+                background-color: #fff000;
+                position: absolute;
+                bottom: -5px;
+                left: 10px;
+                right: 10px;
+                border-radius: 5px;
+              }
+            }
           }
         
           @include breakpoint($desktop-nav-breakpoint) {
@@ -127,35 +151,6 @@
             }
           }
         }
-
-        // Donate button: can we target this better?
-        &:last-child {
-          @include breakpoint($desktop-nav-breakpoint) {
-            padding: 32px 0;
-            margin-left: 0;
-
-            >a {
-              // Emulate some button styles here
-              display: inline-block;
-              width: auto;
-              margin: 0 auto;
-              cursor: pointer;
-              transition: 0.3s all;
-              text-align: center;
-              vertical-align: middle;
-              text-decoration: none;
-              border: none;
-              background-color: $colour-red;
-              color: $colour-white;
-              border-radius: 30px;
-              padding: 13px 20px 10px;
-            }
-
-            &:hover >a {
-              background-color: $colour-purple;
-            }
-          }
-        }
       }
     } 
 
@@ -163,7 +158,7 @@
     &.menu--level-1 {
       li.menu-item.menu-item--duplicate {
         > a {
-          color: red;
+          color: white;
           font-family: $font-medium;
           position: relative;
           font-size: 21px;
@@ -172,7 +167,7 @@
 
           &:after {
             width: 14px;
-            border-bottom: 4px solid red;
+            border-bottom: 4px solid white;
             left: 12px;
             top: auto;
             bottom: 0;
@@ -188,7 +183,7 @@
               width: 10px;
               height: 10px;
               border: 11px solid transparent;
-              border-bottom-color: $colour-dark-purple;
+              border-bottom-color: $colour-black;
               top: -22px;
             }
           }
@@ -197,7 +192,7 @@
 
             // Add border to the span (to allow control over the width), rather than the :after psuedo
             span.menu-item__text {
-              border-bottom: 4px solid red;
+              border-bottom: 4px solid white;
             }
 
             &:after {
@@ -336,7 +331,7 @@
 
 // TODO: move this to component files
 header[role=banner] {
-  border-bottom: 2px solid #dad5db;
+  border-bottom: none;
   height: 69px;
 
   @include breakpoint($screen-md) {
@@ -344,7 +339,7 @@ header[role=banner] {
   }
 
    @include breakpoint($desktop-nav-breakpoint) {
-    height: 107px;
+    height: 105px;
   }
 
   .block-cr-meta-icons,
@@ -355,20 +350,37 @@ header[role=banner] {
   .main-nav__icons.main-nav__burger,
   .c-hamburger {
     height: 67px;
-    background-color: transparent;
-
-    &.active {
-      background-color: transparent;
-    }
 
     @include breakpoint($screen-md) {
       height: 76px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
+      background-color: transparent;
       height: 105px;
+
+      .icon {
+        fill: white;
+      } 
     }
   }
+  
+  @include breakpoint($desktop-nav-breakpoint) {
+    .meta-icons > a {
+      
+      &.active,
+      &:hover,
+      &:focus {
+
+        background-color: rgba(0, 0, 0,0.1);
+
+        .icon {
+          fill: white;
+        }
+      }
+    }
+  }
+
 
   .block-cr-meta-icons {
     @include breakpoint($desktop-nav-breakpoint) {
@@ -414,4 +426,12 @@ header[role=banner] {
     right: 0;
     top: 104px;
   }
+}
+
+
+// Just for styleguide purposes:
+
+.kss-modifier__example header[role=banner] {
+  background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
+  background-size: cover;
 }
