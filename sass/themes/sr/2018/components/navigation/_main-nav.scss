@@ -1,9 +1,3 @@
-
-
-
-
-
-
 /* Main navigation styling */ 
 .header__inner-wrapper {
 
@@ -429,10 +423,24 @@ header[role=banner] {
 }
 
 
-// Just for styleguide purposes:
 @include breakpoint($desktop-nav-breakpoint) {
+
+  // Just for styleguide example purposes:
   .kss-modifier__example header[role=banner] {
     background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
     background-size: cover;
+  }
+
+  /* Sticky-scrolly nav */
+  header[role=banner] {
+    position: fixed; // Legacy fallback
+    position: sticky; // Cool modern browsers
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &.scrolling {
+      background: white;
+    }
   }
 }
