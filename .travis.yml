@@ -5,7 +5,7 @@ cache:
 notifications:
   email: false
 node_js:
-  - '4'
+  - '6'
 before_script:
   - npm prune
 # `script` is default `npm test` which just prints a no-op message.
