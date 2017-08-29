@@ -11,13 +11,14 @@
 //
 // Style guide: 20.50
 
+
 .media-block {
   position: relative;
   overflow: hidden;
   height: 450px;
   text-align: center;
   #play-icon {
-    width: 40px;
+    width: 60px;
     margin: 0 auto 10px;
     transition: 0.2s;
     path {
@@ -29,7 +30,7 @@
       @include opacity(1);
     }
     #play-icon {
-      transform: scale(1.2);
+      transform: scale(1.1667);
     }
   }
 }
