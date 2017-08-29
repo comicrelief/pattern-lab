@@ -17,14 +17,10 @@
   overflow: hidden;
   height: 450px;
   text-align: center;
-   #play-icon {
-    position: absolute;
-    margin: 0 auto 10px;
-    top: 50%;
-    left: 50%;
+  #play-icon {
     width: 60px;
-    transition: width 0.2s;
-    transform: translate(-50%, -50%);
+    margin: 0 auto 10px;
+    transition: 0.2s;
     path {
       fill: $colour-yellow;
     }
@@ -34,7 +30,7 @@
       @include opacity(1);
     }
     #play-icon {
-      width: 70px;
+      transform: scale(1.1667);
     }
   }
 }
@@ -75,24 +71,18 @@
   }
 }
 .media-block__content-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
 }
 .media-block__content {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  padding: 40px 10px 20px;
   background-image: linear-gradient(rgba(0,0,0,0), $colour-dark-blue);
+  @include breakpoint($screen-md) {
+    padding: 40px 40px 20px;
+  }
   .cr-body {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    padding: 20px 40px;
     h2, h3, h4, h5, p {
       color: $colour-white;
     }
