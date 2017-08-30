@@ -159,6 +159,6 @@
         // to the sticky nav once it's being scrolled down the page
         $thisHeader.toggleClass('scrolling', $(window).scrollTop() > 0);
       });
-    }
+    });
   }
 })(jQuery);
