@@ -2,7 +2,7 @@ version: '2'
 services:
 
   pattern-lab:
-    image: comicrelief/frost-node:latest
+    image: comicrelief/pattern-lab:latest
     volumes:
       - ./:/usr/src/app
     ports:
