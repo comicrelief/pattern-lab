@@ -4,8 +4,18 @@ cache:
     - node_modules
 notifications:
   email: false
+
 node_js:
-  - '6'
+  - '4'
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
 before_script:
   - npm prune
 # `script` is default `npm test` which just prints a no-op message.
