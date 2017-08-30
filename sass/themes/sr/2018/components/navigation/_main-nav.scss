@@ -431,14 +431,13 @@ header[role=banner] {
 
 /* Sticky-scrolly nav */
 header[role=banner].sticky-nav__header {
-  position: fixed; // Legacy fallback
-  position: sticky; // Cool modern browsers
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
   background: transparent;
-  transition: background-color 500ms linear;
+  transition: background-color 250ms linear;
 
   &.scrolling {
     background: white;
