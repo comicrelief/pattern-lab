@@ -423,24 +423,25 @@ header[role=banner] {
 }
 
 
-@include breakpoint($desktop-nav-breakpoint) {
+// Just for styleguide example purposes:
+.sticky-nav-example {
+  background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
+  background-size: cover;
+}
 
-  // Just for styleguide example purposes:
-  .kss-modifier__example header[role=banner] {
-    background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
-    background-size: cover;
-  }
+/* Sticky-scrolly nav */
+header[role=banner].sticky-nav__header {
+  position: fixed; // Legacy fallback
+  position: sticky; // Cool modern browsers
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: transparent;
+  transition: background-color 500ms linear;
 
-  /* Sticky-scrolly nav */
-  header[role=banner] {
-    position: fixed; // Legacy fallback
-    position: sticky; // Cool modern browsers
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    &.scrolling {
-      background: white;
-    }
+  &.scrolling {
+    background: white;
+    border-bottom: 1px solid black;
   }
 }
