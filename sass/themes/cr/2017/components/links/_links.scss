@@ -9,7 +9,7 @@
 // Style guide: 10.2
 
 .link {
-  &.link--black {
+  &.link--dark-purple{
     @include link($colour-black, $colour-red);
   }
   &.link--purple {
