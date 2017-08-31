@@ -295,7 +295,7 @@ form {
     }
   }
   @include breakpoint($screen-md) {
-    input[type="text"] {
+    .input-with-btn {
       max-width: 64%;
     }
   }
