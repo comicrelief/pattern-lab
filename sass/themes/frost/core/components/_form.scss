@@ -239,7 +239,13 @@ form {
     .form__fieldset {
       margin: 0px;
     }
+    @include breakpoint($screen-md) {
+      .input-with-btn {
+        max-width: 64%;
+      }
+    }
   }
+
   #btnNext {
     @extend .btn--rectangle;
     width: 100%;
@@ -292,11 +298,6 @@ form {
   .page-title {
     .intro-copy {
       @include font-size($p-intro-font-size);
-    }
-  }
-  @include breakpoint($screen-md) {
-    .input-with-btn {
-      max-width: 64%;
     }
   }
 }
