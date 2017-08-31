@@ -143,22 +143,14 @@
   }
 
   function stickyNav() {
+    
+    // Cache the our 'sticky nav' header only
+    $thisHeader = $('.sticky-nav__header');
 
-    console.log("stickNav init");
-
-    // Wrap this in a doc ready function so 'page loading' scrolls don't trigger this early
-    $(document).ready(function() {
-
-      console.log("stickNav doc ready");
-
-      // Cache the our 'sticky nav' header only
-      $thisHeader = $('.navigation.sticky-nav').closest('header').addClass('sticky-nav__header');
-
-      $(window).scroll(function() {
-        // Toggle between our 'scrolling' classes to let us add a background colour
-        // to the sticky nav once it's being scrolled down the page
-        $thisHeader.toggleClass('scrolling', $(window).scrollTop() > 0);
-      });
+    $(window).scroll(function() {
+      // Toggle between our 'scrolling' classes to let us add a background colour
+      // to the sticky nav once it's being scrolled down the page
+      $thisHeader.toggleClass('scrolling', $(window).scrollTop() > 0);
     });
   }
 })(jQuery);
