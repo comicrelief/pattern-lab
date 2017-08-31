@@ -67,7 +67,7 @@ form {
   position: relative;
   h2 {
     font-family: $font-bold;
-    @include font-size($p-font-size);
+    @include font-size($p-xlarge-font-size);
   }
   @include breakpoint($screen-md) {
      
