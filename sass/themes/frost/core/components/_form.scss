@@ -294,6 +294,11 @@ form {
       @include font-size($p-intro-font-size);
     }
   }
+  @include breakpoint($screen-md) {
+    input[type="text"] {
+      max-width: 64%;
+    }
+  }
 }
 #insert-password {
   .page-title {
