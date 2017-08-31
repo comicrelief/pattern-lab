@@ -390,3 +390,12 @@ form {
     display: none;
   }
 }
+#userUrlGp,
+#userFrTarget {
+  border: 1px solid $colour-blue;
+
+  &:focus {
+    border: 1px solid $colour-border-grey;
+  }
+}
+
