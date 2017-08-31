@@ -12,12 +12,13 @@
 
   @include breakpoint($desktop-nav-breakpoint) {
     background-color: transparent;
+    height: 90px;
+
     .main-nav__wrapper {
       margin-right: 35px;
     }
   }
 }
-
 
 .main-nav__wrapper {
   height: auto;
@@ -29,7 +30,7 @@
 
   // UL menu
   .main-nav__items {
-    
+
     top: 67px;
     
     @include breakpoint($screen-md) {
@@ -46,7 +47,9 @@
       a {
         font-size: 16px;
         line-height: 16px;
-        color: $colour-dark-grey;
+
+        // Transparent 'top of screen' state
+        color: white;
 
         span {
           position: relative;
@@ -56,12 +59,6 @@
           padding: 8px 7px 4px;
         }
       }
-
-/*       > a:focus {
-        span.menu-item__text {
-          border-bottom: 3px solid #f04257;
-        }
-      } */
     }
 
     // Parent items of the menu
@@ -83,18 +80,23 @@
               content: "";
               width: auto;
               height: 5px;
-              background-color: #fff000;
+              background-color: yellow;
               position: absolute;
               bottom: -5px;
-              left: 10px;
-              right: 10px;
+              left: 0;
+              right: 0;
               border-radius: 5px;
+
+              @include breakpoint($desktop-nav-breakpoint) {
+                left: 10px;
+                right: 10px;
+              }
             }
           }
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          padding: 39px 0px;
+          padding: 30px 0px 31px;
           margin: 0 10px;
         }
 
@@ -112,12 +114,18 @@
                 content: "";
                 width: auto;
                 height: 5px;
-                background-color: #fff000;
+                background-color: yellow;
                 position: absolute;
                 bottom: -5px;
-                left: 5px;
-                right: 5px;
+                left: 0;
+                right: 0;
                 border-radius: 5px;
+
+
+                @include breakpoint($desktop-nav-breakpoint) {
+                  left: 5px;
+                  right: 5px
+                }
               }
             }
           }
@@ -128,6 +136,13 @@
             padding: 7px 5px;
             height: auto;
 
+            // Transparent nav state
+            color: white;
+
+            header[role=banner].sticky-nav__header.scrolling & {
+              color: black;
+            }
+
             &.is-active span.menu-item__text {
               border-bottom: none;
 
@@ -135,11 +150,11 @@
                 content: "";
                   width: auto;
                   height: 5px;
-                  background-color: #fff000;
+                  background-color: yellow;
                   position: absolute;
                   bottom: -5px;
-                  left: 5px;
-                  right: 5px;
+                  left: 10px;
+                  right: 10px;
                   border-radius: 5px;
               }
             }
@@ -345,27 +360,35 @@ header[role=banner] {
   .c-hamburger {
     height: 67px;
 
+    span {
+      color: white;
+    }
+
+    .icon {
+      fill: white;
+    }
+
     @include breakpoint($screen-md) {
       height: 76px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
       background-color: transparent;
-      height: 105px;
-
-      .icon {
-        fill: white;
-      } 
+      height: 90px;
     }
   }
+
+
   
   @include breakpoint($desktop-nav-breakpoint) {
     .meta-icons > a {
-      
+      .icon {
+        margin: 33px 12px 36px;
+      }
+
       &.active,
       &:hover,
       &:focus {
-
         background-color: rgba(0, 0, 0,0.1);
 
         .icon {
@@ -382,6 +405,7 @@ header[role=banner] {
     }
   }
 
+  // TODO: tidy up with other logo code below
   .site-logo {
     min-width: 0px;
     width: 70px;
@@ -401,11 +425,62 @@ header[role=banner] {
       
       // Keep image hidden, remove this from template?
       img {
-        display: none;
+        //display: none;
+      }
+    }
+  }
+
+  &.sticky-nav__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+    transition: background-color 250ms linear;
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      height: 90px;
+    }
+
+    body.cc-banner--visible & {
+      position: relative;
+    }
+
+    // Tweak the styles when the nav is scrolling so has a solid background
+    &.scrolling {
+      background: white;
+      border-bottom: 1px solid black;
+
+      .meta-icons a .icon {
+        fill: black;
+      }
+    }
+
+    // To move?
+    .site-logo {
+      width: 38px;
+      height: 38px;
+
+      @include breakpoint($screen-md) {
+        width: 47px;
+        height: 47px;
+      }
+      
+      @include breakpoint($desktop-nav-breakpoint) {
+        margin-top: 8px !important;
+        height: 74px;
+        width: 74px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
     }
   }
 } 
+
 
 .block--cr-email-signup--head.cr-header-email-signup-form .block--cr-email-signup__inner-wrapper {
   @include breakpoint($screen-md) {
@@ -427,20 +502,4 @@ header[role=banner] {
 .sticky-nav-example {
   background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
   background-size: cover;
-}
-
-/* Sticky-scrolly nav */
-header[role=banner].sticky-nav__header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: transparent;
-  transition: background-color 250ms linear;
-
-  &.scrolling {
-    background: white;
-    border-bottom: 1px solid black;
-  }
 }
