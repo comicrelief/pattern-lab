@@ -18,12 +18,12 @@
   }
   &.cards--four-grid {
     .cards__wrapper {
-      justify-content: left;
+      justify-content: flex-start;
     }
   }
   &.cards--three-grid {
     .cards__wrapper {
-      justify-content: left;
+      justify-content: flex-start;
       .card {
         @include breakpoint($screen-md-max) {
           @include span(4);

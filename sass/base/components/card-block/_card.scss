@@ -10,10 +10,12 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-  margin-bottom: 20px;
   text-align: left;
   width: calc(100% - (4 * #{gutter()}));
   margin: #{gutter()} calc(2 * #{gutter()});
+  @include breakpoint($screen-md) {
+    margin: 0 gutter() 30px;
+  }
 }
 .card__title {
   text-align: center;
