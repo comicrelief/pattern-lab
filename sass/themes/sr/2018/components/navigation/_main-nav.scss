@@ -1,19 +1,19 @@
-/* Main navigation styling */ 
-.header__inner-wrapper {
+$sm-nav-height: 50px;
+$md-nav-height: 60px;
+$lg-nav-height: 75px;
+$nav-border-bottom: 1px;
 
-  // Position logo to left, menu in center, meta icon block to the right
+/* Main avigation styling */ 
+.header__inner-wrapper {
   height: 100%;
   justify-content: space-between;
 
-  // Remove clearfix so flexbox works properly
   &:after {
     content: none;
   }
 
   @include breakpoint($desktop-nav-breakpoint) {
     background-color: transparent;
-    height: 90px;
-
     .main-nav__wrapper {
       margin-right: 35px;
     }
@@ -30,11 +30,10 @@
 
   // UL menu
   .main-nav__items {
-
-    top: 67px;
+    top: $sm-nav-height + $nav-border-bottom;
     
     @include breakpoint($screen-md) {
-      top: 76px;
+      top: $md-nav-height + $nav-border-bottom;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
@@ -42,8 +41,8 @@
       top: 0;
     }
 
-    li, 
-    li.item-open {
+    li.item-open,
+    li {
       a {
         font-size: 16px;
         line-height: 16px;
@@ -59,6 +58,12 @@
           padding: 8px 7px 4px;
         }
       }
+
+      &:hover > ul {
+        @include breakpoint($desktop-nav-breakpoint) {
+          top: $lg-nav-height;
+        }
+      }
     }
 
     // Parent items of the menu
@@ -66,13 +71,12 @@
       @include breakpoint($desktop-nav-breakpoint) {
         width: auto;
         text-align: center;
+        height: 100%;
       }
 
       > li.item-open,
       > li {
-
          &:hover >a {
-
           span {
             position: relative;
             
@@ -96,7 +100,7 @@
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          padding: 30px 0px 31px;
+          padding: 23px 0px;
           margin: 0 10px;
         }
 
@@ -148,14 +152,14 @@
 
               &:after {
                 content: "";
-                  width: auto;
-                  height: 5px;
-                  background-color: yellow;
-                  position: absolute;
-                  bottom: -5px;
-                  left: 10px;
-                  right: 10px;
-                  border-radius: 5px;
+                width: auto;
+                height: 5px;
+                background-color: yellow;
+                position: absolute;
+                bottom: -5px;
+                left: 10px;
+                right: 10px;
+                border-radius: 5px;
               }
             }
           }
@@ -341,14 +345,14 @@
 // TODO: move this to component files
 header[role=banner] {
   border-bottom: none;
-  height: 69px;
+  height: $sm-nav-height;
 
   @include breakpoint($screen-md) {
-    height: 78px;
+    height: $md-nav-height;
   }
 
    @include breakpoint($desktop-nav-breakpoint) {
-    height: 105px;
+    height: $lg-nav-height;
   }
 
   .block-cr-meta-icons,
@@ -358,75 +362,76 @@ header[role=banner] {
   .meta-icons__esu-toggle,
   .main-nav__icons.main-nav__burger,
   .c-hamburger {
-    height: 67px;
-
-    span {
-      color: white;
-    }
+    height: $sm-nav-height;
 
     .icon {
       fill: white;
+      margin: 12px 4px;
     }
 
     @include breakpoint($screen-md) {
-      height: 76px;
+      height: $md-nav-height;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
       background-color: transparent;
-      height: 90px;
+      height: $lg-nav-height;
     }
   }
 
 
-  
+
+  .c-hamburger {
+
+    span {
+      top: 23px;
+      background-color: white;
+      &:after,
+      &:before {
+        background-color: inherit;
+      }
+      @include breakpoint($screen-md) {
+        top: 27px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &.is-active {
+      background-color: white;
+      span {
+        background-color: black;
+      }
+    } 
+  }
+
+  .meta-icons > a {
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.2);
+      
+      .icon {
+        fill: white;
+      }
+    }
+  }
+
+
   @include breakpoint($desktop-nav-breakpoint) {
     .meta-icons > a {
       .icon {
-        margin: 33px 12px 36px;
-      }
-
-      &.active,
-      &:hover,
-      &:focus {
-        background-color: rgba(0, 0, 0,0.1);
-
-        .icon {
-          fill: white;
-        }
+        margin: 26px 12px 28px;
       }
     }
   }
-
 
   .block-cr-meta-icons {
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 5px;
-    }
-  }
-
-  // TODO: tidy up with other logo code below
-  .site-logo {
-    min-width: 0px;
-    width: 70px;
-    height: 37px;
-
-    @include breakpoint($screen-md) {
-      width: 82px;
-      height: 43px;
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      width: 80px;
-      height: 41px;
-      margin-top: 31px !important;
-      background: url(../logo-mobile.gif) no-repeat 0 0;
-      background-size: 100%;
-      
-      // Keep image hidden, remove this from template?
-      img {
-        //display: none;
-      }
     }
   }
 
@@ -439,8 +444,14 @@ header[role=banner] {
     background: transparent;
     transition: background-color 250ms linear;
 
+    height: $sm-nav-height;
+
+    @include breakpoint($screen-md) {
+      height: $md-nav-height;
+    }
+
     @include breakpoint($desktop-nav-breakpoint) {
-      height: 90px;
+      height: $lg-nav-height;
     }
 
     body.cc-banner--visible & {
@@ -451,26 +462,67 @@ header[role=banner] {
     &.scrolling {
       background: white;
       border-bottom: 1px solid black;
+      height: $sm-nav-height + $nav-border-bottom;
 
-      .meta-icons a .icon {
-        fill: black;
+      @include breakpoint($screen-md) {
+        height: $md-nav-height + $nav-border-bottom;
+      }
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        height: $lg-nav-height + $nav-border-bottom;
+      }
+
+      .meta-icons a {
+        .icon {
+          fill: black;
+        }
+
+        &:focus,
+        &:hover,
+        &.active {
+          .icon {
+            //fill: yellow;
+          }
+        }
+
+      }
+
+      .c-hamburger {
+        span,
+        span:after,
+        span:before {
+          background-color: black;
+        }
+
+        &.is-active {
+          span,
+          span:after,
+          span:before {
+            background-color: black;
+          }
+        }
       }
     }
 
     // To move?
     .site-logo {
+      min-width: 0px;
       width: 38px;
       height: 38px;
+      margin-top: 5px;
 
       @include breakpoint($screen-md) {
         width: 47px;
         height: 47px;
+        margin-top: 6px;
       }
       
       @include breakpoint($desktop-nav-breakpoint) {
-        margin-top: 8px !important;
-        height: 74px;
-        width: 74px;
+        background: url(../logo-mobile.gif) no-repeat 0 0;
+        background-size: 100%;
+        margin-top: 6px !important;
+        height: 65px;
+        width: 65px;
 
         img {
           height: 100%;
@@ -479,21 +531,52 @@ header[role=banner] {
       }
     }
   }
-} 
+}
+
+// Position search dropdown in relation to new heights
+.search-block {
+  top: $sm-nav-height;
+  @include breakpoint($screen-md) {
+    top: $md-nav-height;
+  }
+  
+  @include breakpoint($desktop-nav-breakpoint) {
+    top: $lg-nav-height;
+  }
+}
 
 
+// Position ESU dropdown in relation to new heights
 .block--cr-email-signup--head.cr-header-email-signup-form .block--cr-email-signup__inner-wrapper {
   @include breakpoint($screen-md) {
     right: 65px;
   }
-  
   @include breakpoint($screen-lg) {
     top: 78px;
   }
-  
   @include breakpoint($desktop-nav-breakpoint) {
     right: 0;
     top: 104px;
+  }
+}
+  
+// Hide tooltips when we're scrolling to avoid positioning issues and terrible UX
+header[role=banner].sticky-nav__header.scrolling ~ .ui-tooltip {
+  display: none !important;
+}
+
+
+// TODO: move
+// Offset content to make sure copy doesn't overlap transaprent nav at top of screen
+header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
+  padding-top: 30px;
+
+  @include breakpoint($screen-md) {
+    margin-top: 60px;
+  }
+
+  @include breakpoint($screen-lg) {
+    margin-top: 50px;
   }
 }
 
