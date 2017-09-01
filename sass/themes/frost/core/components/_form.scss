@@ -67,7 +67,7 @@ form {
   position: relative;
   h2 {
     font-family: $font-bold;
-    @include font-size($p-font-size);
+    @include font-size($p-xlarge-font-size);
   }
   @include breakpoint($screen-md) {
      
@@ -239,6 +239,11 @@ form {
     .form__fieldset {
       margin: 0px;
     }
+    @include breakpoint($screen-md) {
+      .input-with-btn {
+        max-width: 64%;
+      }
+    }
   }
   #btnNext {
     @extend .btn--rectangle;
@@ -385,3 +390,12 @@ form {
     display: none;
   }
 }
+#userUrlGp,
+#userFrTarget {
+  border: 1px solid $colour-blue;
+
+  &:focus {
+    border: 1px solid $colour-border-grey;
+  }
+}
+
