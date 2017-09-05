@@ -1,7 +1,18 @@
 $sm-nav-height: 50px;
 $md-nav-height: 60px;
 $lg-nav-height: 75px;
-$nav-border-bottom: 1px;
+
+.nav-underline {
+  content: "";
+  width: auto;
+  height: 5px;
+  background-color: yellow;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
 
 /* Main avigation styling */ 
 .header__inner-wrapper {
@@ -13,7 +24,6 @@ $nav-border-bottom: 1px;
   }
 
   @include breakpoint($desktop-nav-breakpoint) {
-    background-color: transparent;
     .main-nav__wrapper {
       margin-right: 35px;
     }
@@ -30,10 +40,10 @@ $nav-border-bottom: 1px;
 
   // UL menu
   .main-nav__items {
-    top: $sm-nav-height + $nav-border-bottom;
+    top: $sm-nav-height;
     
     @include breakpoint($screen-md) {
-      top: $md-nav-height + $nav-border-bottom;
+      top: $md-nav-height;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
@@ -81,20 +91,24 @@ $nav-border-bottom: 1px;
             position: relative;
             
             &:after {
-              content: "";
-              width: auto;
-              height: 5px;
-              background-color: yellow;
-              position: absolute;
-              bottom: -5px;
-              left: 0;
-              right: 0;
-              border-radius: 5px;
+              @extend .nav-underline;
 
               @include breakpoint($desktop-nav-breakpoint) {
                 left: 10px;
                 right: 10px;
               }
+            }
+          }
+        }
+
+        // Or JS-manipulated focus state
+        &.focused >a {
+
+          span.menu-item__text {
+            border-bottom: none;
+
+            &:after {
+              @extend .nav-underline;
             }
           }
         }
@@ -114,17 +128,13 @@ $nav-border-bottom: 1px;
           &.is-active,
           &:focus {
             span.menu-item__text {
-              &:after {
-                content: "";
-                width: auto;
-                height: 5px;
-                background-color: yellow;
-                position: absolute;
-                bottom: -5px;
-                left: 0;
-                right: 0;
-                border-radius: 5px;
 
+              // Override base theme, apply underline as an 'after' to allow us to style it further
+              border-bottom: none;
+
+              &:after {
+
+                @extend .nav-underline;
 
                 @include breakpoint($desktop-nav-breakpoint) {
                   left: 5px;
@@ -132,6 +142,10 @@ $nav-border-bottom: 1px;
                 }
               }
             }
+          }
+
+          &.is-active span.menu-item__text:after {
+            @extend .nav-underline;
           }
         
           @include breakpoint($desktop-nav-breakpoint) {
@@ -143,7 +157,8 @@ $nav-border-bottom: 1px;
             // Transparent nav state
             color: white;
 
-            header[role=banner].sticky-nav__header.scrolling & {
+            header[role=banner].sticky-nav__header.scrolling &,
+            body.cc-banner--visible header[role=banner].sticky-nav__header & {
               color: black;
             }
 
@@ -151,15 +166,8 @@ $nav-border-bottom: 1px;
               border-bottom: none;
 
               &:after {
-                content: "";
-                width: auto;
-                height: 5px;
-                background-color: yellow;
-                position: absolute;
-                bottom: -5px;
                 left: 10px;
                 right: 10px;
-                border-radius: 5px;
               }
             }
           }
@@ -177,6 +185,12 @@ $nav-border-bottom: 1px;
           font-size: 21px;
           line-height: 21px;
           height: 49px;
+
+          @include breakpoint($desktop-nav-breakpoint) {
+            &:focus {
+              background-color: #3e1c43;
+            }
+          }
 
           &:after {
             width: 14px;
@@ -222,6 +236,12 @@ $nav-border-bottom: 1px;
           a {
             padding: 26px 21px;
             height: 74px;
+
+            &:focus {
+              span.menu-item__text {
+                border-bottom: none;
+              }
+            }
           }
         }
       }
@@ -246,7 +266,7 @@ $nav-border-bottom: 1px;
       top: 0;
       
       @include breakpoint($desktop-nav-breakpoint) {
-        top: 103px;
+        top: 75px;
         text-align: left;
       }
       
@@ -286,6 +306,14 @@ $nav-border-bottom: 1px;
 
           a {
             padding: 14px 21px;
+
+            &:focus {
+              background-color: #3e1c43;
+  
+              span {
+                border-bottom: none;
+              }
+            } 
           }
         }
       }
@@ -296,11 +324,11 @@ $nav-border-bottom: 1px;
 
       // Reset base styles, so we're targetting the anchor and not the li
       > ul li:hover {
-        background-color: $colour-dark-purple;
+        background-color: transparent;
       }
 
       > ul li a:hover {
-        background-color: lighten($colour-dark-purple, 5%);
+        background-color: #3e1c43;
       }
 
       &:hover >a span.menu-item__text {
@@ -323,10 +351,10 @@ $nav-border-bottom: 1px;
         a {
           // Indent tertiary items
           padding-left: 40px;
-          background-color: lighten($colour-dark-purple, 10%);
+          background-color: #3e1c43;
 
           &:hover {
-            background-color: lighten($colour-dark-purple, 15%) !important;
+            background-color: #3e1c43;
           }
         }
       } 
@@ -442,6 +470,10 @@ header[role=banner] {
     width: 100%;
     z-index: 100;
     background: transparent;
+
+    // Gradient bg to make transparent nav more accessible
+    background-image: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
+
     transition: background-color 250ms linear;
 
     height: $sm-nav-height;
@@ -461,30 +493,21 @@ header[role=banner] {
     // Tweak the styles when the nav is scrolling so has a solid background
     &.scrolling {
       background: white;
-      border-bottom: 1px solid black;
-      height: $sm-nav-height + $nav-border-bottom;
+      box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+      height: $sm-nav-height;
 
       @include breakpoint($screen-md) {
-        height: $md-nav-height + $nav-border-bottom;
+        height: $md-nav-height;
       }
 
       @include breakpoint($desktop-nav-breakpoint) {
-        height: $lg-nav-height + $nav-border-bottom;
+        height: $lg-nav-height;
       }
 
       .meta-icons a {
         .icon {
           fill: black;
         }
-
-        &:focus,
-        &:hover,
-        &.active {
-          .icon {
-            //fill: yellow;
-          }
-        }
-
       }
 
       .c-hamburger {
@@ -534,7 +557,8 @@ header[role=banner] {
 }
 
 // Position search dropdown in relation to new heights
-.search-block {
+header.sticky-nav__header ~ main .search-block {
+  position: fixed;
   top: $sm-nav-height;
   @include breakpoint($screen-md) {
     top: $md-nav-height;
@@ -552,11 +576,11 @@ header[role=banner] {
     right: 65px;
   }
   @include breakpoint($screen-lg) {
-    top: 78px;
+    top: 60px;
   }
   @include breakpoint($desktop-nav-breakpoint) {
     right: 0;
-    top: 104px;
+    top: 75px;
   }
 }
   
@@ -585,4 +609,27 @@ header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-head
 .sticky-nav-example {
   background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
   background-size: cover;
+}
+
+// Ensure wrapper height matches the content, so we can display nav fully underneath
+.cc_banner-wrapper {
+  height: auto;
+}
+
+// Make sure our icons are visible over the temporarily white header 
+body.cc-banner--visible header[role=banner].sticky-nav__header {
+  .meta-icons > a {
+
+    .icon {
+      fill: black;
+    }
+    
+    &.active,
+    &:hover,
+    &:focus {
+      .icon {
+        fill: black;
+      }
+    }
+  }
 }
