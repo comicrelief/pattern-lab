@@ -6,26 +6,28 @@
 //
 // Style guide: 20.60
 
-.card {
+.cards__item {
   position: relative;
   display: inline-block;
   overflow: hidden;
   margin-bottom: 20px;
   text-align: left;
-  width: calc(100% - (4 * #{gutter()}));
-  margin: #{gutter()} calc(2 * #{gutter()});
+  @include breakpoint($screen-md-only) {
+    width: calc(100% - (4 * 1.25%)) !important;
+    margin: 1.25% calc(2 * 1.25%) !important;
+  }
 }
-.card__title {
+.cards__title {
   text-align: center;
-  margin: 0 calc(4 * #{gutter()}) 30px;
+  margin: 0 calc(4 * 1.25%) 30px;
   @include breakpoint($screen-md) {
-    margin: 0 calc(2 * #{gutter()}) 30px;
+    margin: 0 calc(2 * 1.25%) 30px;
   }
   .bg--dark-orchid & {
     color: $colour-white;
   }
 }
-.card__content-wrapper {
+.cards__content-wrapper {
   position: relative;
   height: 100%;
   padding: 30px;
@@ -37,10 +39,10 @@
     padding: calc(2*#{gutter()});
     height: 100%;
     margin-right: 0;
-    &.card__content-wrapper--no-image {
+    &.cards__content-wrapper--no-image {
       @include span(12);
       position: relative;
-      .card__content {
+      .cards__content {
         position: relative;
         top: 0;
         transform: translateY(0);
@@ -61,7 +63,7 @@
     }
   }
 }
-.card__image {
+.cards__image {
   @include breakpoint($screen-md-only) {
     @include span(5);
     margin-left: 0;
@@ -72,7 +74,7 @@
     height: 100%;
   }
 }
-.card__content {
+.cards__content {
   @include breakpoint($screen-md-only) {
     position: absolute;
     width: calc(100% - 20px);
