@@ -2,7 +2,7 @@ $sm-nav-height: 50px;
 $md-nav-height: 60px;
 $lg-nav-height: 75px;
 
-// Lil mixin to extend nav styles in mutiple places
+// Lil psuedoclass to extend nav styles in mutiple places
 .nav-underline {
   content: "";
   width: auto;
@@ -598,12 +598,6 @@ header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-head
 }
 
 
-// Just for styleguide example purposes:
-.sticky-nav-example {
-  background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
-  background-size: cover;
-}
-
 // Ensure wrapper height matches the content, so we can display nav fully underneath
 .cc_banner-wrapper {
   height: auto;
@@ -655,4 +649,17 @@ header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-head
       top: 115px;
     }
   }
+}
+
+/* Styleguidey */
+
+// Just for styleguide example purposes:
+.sticky-nav-example {
+  background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
+  background-size: cover;
+}
+
+// Position this normally inside the styleguide
+.kss-modifier__example header[role=banner].sticky-nav__header {
+  position: relative;
 }
