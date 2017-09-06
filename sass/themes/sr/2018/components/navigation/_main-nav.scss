@@ -2,6 +2,7 @@ $sm-nav-height: 50px;
 $md-nav-height: 60px;
 $lg-nav-height: 75px;
 
+// Lil mixin to extend nav styles in mutiple places
 .nav-underline {
   content: "";
   width: auto;
@@ -22,16 +23,19 @@ $lg-nav-height: 75px;
   &:after {
     content: none;
   }
-
-  @include breakpoint($desktop-nav-breakpoint) {
-    .main-nav__wrapper {
-      margin-right: 35px;
-    }
+  .block-system-branding-block {
+    margin-right: 0;
   }
 }
 
 .main-nav__wrapper {
   height: auto;
+  margin-right: 0;
+
+  // Override base theme
+  @include breakpoint($desktop-nav-breakpoint) {
+    margin-right: 0;
+  }
 
   li.menu-item {
     padding-top: 0;
@@ -101,9 +105,8 @@ $lg-nav-height: 75px;
           }
         }
 
-        // Or JS-manipulated focus state
+        // Our JS-manipulated focus state
         &.focused >a {
-
           span.menu-item__text {
             border-bottom: none;
 
@@ -128,12 +131,10 @@ $lg-nav-height: 75px;
           &.is-active,
           &:focus {
             span.menu-item__text {
-
               // Override base theme, apply underline as an 'after' to allow us to style it further
               border-bottom: none;
 
               &:after {
-
                 @extend .nav-underline;
 
                 @include breakpoint($desktop-nav-breakpoint) {
@@ -160,6 +161,7 @@ $lg-nav-height: 75px;
             header[role=banner].sticky-nav__header.scrolling &,
             body.cc-banner--visible header[role=banner].sticky-nav__header & {
               color: black;
+              background-image: none;
             }
 
             &.is-active span.menu-item__text {
@@ -370,7 +372,6 @@ $lg-nav-height: 75px;
   } 
 }
 
-// TODO: move this to component files
 header[role=banner] {
   border-bottom: none;
   height: $sm-nav-height;
@@ -407,10 +408,8 @@ header[role=banner] {
     }
   }
 
-
-
+  // Menu icon
   .c-hamburger {
-
     span {
       top: 23px;
       background-color: white;
@@ -436,6 +435,7 @@ header[role=banner] {
     } 
   }
 
+  // States for ESU, Search and FROST button
   .meta-icons > a {
     &.active,
     &:hover,
@@ -447,7 +447,6 @@ header[role=banner] {
       }
     }
   }
-
 
   @include breakpoint($desktop-nav-breakpoint) {
     .meta-icons > a {
@@ -470,12 +469,8 @@ header[role=banner] {
     width: 100%;
     z-index: 100;
     background: transparent;
-
-    // Gradient bg to make transparent nav more accessible
     background-image: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
-
-    transition: background-color 250ms linear;
-
+    transition: background-color 350ms linear;
     height: $sm-nav-height;
 
     @include breakpoint($screen-md) {
@@ -488,12 +483,13 @@ header[role=banner] {
 
     body.cc-banner--visible & {
       position: relative;
+      background-image: none;
     }
 
     // Tweak the styles when the nav is scrolling so has a solid background
     &.scrolling {
       background: white;
-      box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+      box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
       height: $sm-nav-height;
 
       @include breakpoint($screen-md) {
@@ -527,30 +523,28 @@ header[role=banner] {
       }
     }
 
-    // To move?
     .site-logo {
       min-width: 0px;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       margin-top: 5px;
+      background: none;
+
+      img {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
 
       @include breakpoint($screen-md) {
-        width: 47px;
-        height: 47px;
-        margin-top: 6px;
+        width: 50px;
+        height: 50px;
       }
       
       @include breakpoint($desktop-nav-breakpoint) {
-        background: url(../logo-mobile.gif) no-repeat 0 0;
-        background-size: 100%;
-        margin-top: 6px !important;
-        height: 65px;
-        width: 65px;
-
-        img {
-          height: 100%;
-          width: 100%;
-        }
+        margin-top: 7px;
+        height: 60px;
+        width: 60px;
       }
     }
   }
@@ -589,7 +583,6 @@ header[role=banner].sticky-nav__header.scrolling ~ .ui-tooltip {
   display: none !important;
 }
 
-
 // TODO: move
 // Offset content to make sure copy doesn't overlap transaprent nav at top of screen
 header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
@@ -616,20 +609,50 @@ header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-head
   height: auto;
 }
 
-// Make sure our icons are visible over the temporarily white header 
-body.cc-banner--visible header[role=banner].sticky-nav__header {
-  .meta-icons > a {
+ header[role=banner].sticky-nav__header {
 
-    .icon {
-      fill: black;
-    }
-    
-    &.active,
-    &:hover,
-    &:focus {
+  // Cookie banner-related tweaks to make sure our icons are visible over the temporarily white header 
+  body.cc-banner--visible & {
+    .meta-icons > a {
       .icon {
         fill: black;
       }
+      &.active,
+      &:hover,
+      &:focus {
+        .icon {
+          fill: black;
+        }
+      }
+    }
+  
+    .c-hamburger {
+      span, span:after, span:before {
+        background-color: black;
+      }
+
+      &.is-active {
+        span, span:after, span:before {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  // Reposition the nav when the admin menu is in place
+  body.toolbar-vertical &,
+  body.toolbar-horizontal & {
+    top: 74px;
+
+    &.scrolling {
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: auto;
+      }
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: 115px;
     }
   }
 }
