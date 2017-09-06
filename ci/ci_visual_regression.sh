@@ -5,6 +5,7 @@ set -e
 [ -f ~/.bashrc ] && . ~/.bashrc
 [ -d pattern-lab-build ] && cd pattern-lab-build
 
+npm uninstall fs
 npm set progress=false
 npm run backstop-reference
 npm run backstop-test
