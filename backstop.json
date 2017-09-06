@@ -45,7 +45,7 @@
     "ci_report": "tests/visual/ci_report"
   },
   "casperFlags": [],
-  "engine": "phantomjs",
+  "engine": "chrome",
   "report": ["browser"],
   "debug": false
 }

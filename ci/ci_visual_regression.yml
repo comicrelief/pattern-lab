@@ -3,7 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: comicrelief/pattern-lab, tag: "latest"}
+  source: {repository: comicrelief/lighthouse, tag: "latest"}
 
 inputs:
 - name: pattern-lab-build
