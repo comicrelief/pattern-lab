@@ -1,0 +1,112 @@
+// Fonts
+
+$font-stack: helvetica, arial, sans-serif;
+
+//SR 18 fonts 
+$font-founders-condensed-bold: "Founders-Grotesk-X-Condensed-Bold", $font-stack;
+$font-founders-bold: "Founders-Grotesk-Bold", $font-stack;
+$font-founders-light: "Founders-Grotesk-Light", $font-stack;
+
+// Keep base font variables otherwise all components will need to be overriden with the new variables
+$font-black-oblique: $font-founders-condensed-bold;
+$font-black: $font-founders-condensed-bold;
+$font-bold-oblique: $font-founders-bold;
+$font-bold: $font-founders-bold;
+$font-medium-oblique: $font-founders-bold;
+$font-medium: $font-founders-bold;
+$font-regular-oblique: $font-founders-light;
+$font-regular: $font-founders-light;
+$font-light-oblique: $font-founders-light;
+$font-light: $font-founders-light;
+$body-font: $font-founders-light;
+
+
+
+// breakpoint: (font-size, line-height)
+$h1-xlarge-font-size: (
+  null: (66px, 58px),
+  $screen-md: (74px, 65px),
+  $screen-lg: (83px, 73px)
+);
+$h1-large-font-size: (
+  null: (66px, 68px),
+  $screen-md: (74px, 75px),
+  $screen-lg: (83px, 83px)
+);
+$h1-blackshadow-font-size: (
+  null: (40px, 40px),
+  $screen-md: (64px, 64px),
+  $screen-lg: (70px, 70px)
+);
+
+$h1-black-font-size: (
+  null: (40px, 36px),
+  $screen-md: (64px, 54px),
+  $screen-lg: (70px, 60px)
+);
+$h1-font-size: (
+  null: (41px, 48px),
+  $screen-md: (52px, 57px),
+  $screen-lg: (58px, 62px)
+);
+$h2-font-size: (
+  null: (32px, 41px),
+  $screen-md: (36px, 44px),
+  $screen-lg: (41px, 48px)
+);
+$h3-font-size: (
+  null: (29px, 38px),
+  $screen-md: (26px, 35px),
+  $screen-lg: (26px, 35px)
+);
+$h4-font-size: (
+  null: (23px, 33px),
+  $screen-md: (20px, 31px),
+  $screen-lg: (20px, 31px)
+);
+$h5-font-size: (
+  null: (20px, 31px),
+  $screen-md: (18px, 29px),
+  $screen-lg: (18px, 29px)
+);
+$p-xxlarge-font-size: (
+  null: (58px, 62px),
+  $screen-md: (52px, 57px),
+  $screen-lg: (41px, 48px)
+);
+$p-xlarge-font-size: (
+  null: (23px, 28px),
+  $screen-md: (23px, 28px),
+  $screen-lg: (23px, 33px)
+);
+$p-large-font-size: (
+  null: (20px, 31px),
+  $screen-md: (20px, 31px),
+  $screen-lg: (20px, 31px)
+);
+$p-font-size: (
+  null: (18px, 29px),
+  $screen-md: (18px, 29px),
+  $screen-lg: (18px, 29px)
+);
+$p-small-font-size: (
+  null: (16px, 27px),
+  $screen-md: (16px, 27px),
+  $screen-lg: (16px, 27px)
+);
+$p-xsmall-font-size: (
+  null: (14px, 26px),
+  $screen-md: (14px, 26px),
+  $screen-lg: (14px, 26px)
+);
+$p-xxsmall-font-size: (
+  null: (13px, 24px),
+  $screen-md: (13px, 24px),
+  $screen-lg: (13px, 24px)
+);
+$p-intro-font-size: (
+  null: (16px, 27px),
+  $screen-md: (16px, 27px),
+  $screen-lg: (16px, 27px)
+);
+

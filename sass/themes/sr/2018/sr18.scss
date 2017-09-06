@@ -1,4 +1,3 @@
-@import "_sr18-variables";
 // ==========================================================================
 // Core variables * comment files you want to override
 // ==========================================================================
@@ -7,7 +6,13 @@
 @import "../../../base/variables/_grid.scss";
 @import "../../../base/variables/_lists.scss";
 @import "../../../base/variables/_theme.scss";
-@import "../../../base/variables/_typography.scss";
+// @import "../../../base/variables/_typography.scss";
+
+// ==========================================================================
+// SR variables
+// ==========================================================================
+
+@import "variables/_typography.scss";
 
 // ==========================================================================
 // Core components
@@ -19,6 +24,7 @@
 // UI components
 // ==========================================================================
 
+// Import all components
 @import "../../../base/_components";
 
 // ==========================================================================
@@ -26,3 +32,5 @@
 // ==========================================================================
 
 @import "components/teaser-block/_teaser-block.scss";
+@import "components/typography/_fonts.scss";
+@import "components/typography/_typography.scss";
