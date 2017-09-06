@@ -240,9 +240,9 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Sport Relief PatternLab',
-          css: ['../css/themes/sr/2018/sr18.css', '../css/kss/sr.css']
+          css: ['../css/themes/sr/2018/sr18.css']
         },
-        src: ['sass/base', 'sass/themes/sr/2018'],
+        src: ['sass/themes/sr/2018', 'sass/base'],
         dest: 'dist/sr'
       },
       payin: {
