@@ -33,8 +33,13 @@ $h1-font-size: (
   $screen-md: (41px, 50px),
   $screen-lg: (41px, 50px)
 );
+$h1-small-font-size: (
+  null: (26px, 30px),
+  $screen-md: (34px, 45px),
+  $screen-lg: (34px, 45px)
+);
 $h2-font-size: (
-  null: (26px, 35px),
+  null: (18px, 26px),
   $screen-md: (26px, 35px),
   $screen-lg: (26px, 35px)
 );
@@ -45,8 +50,8 @@ $h3-font-size: (
 );
 $h4-font-size: (
   null: (18px, 19px),
-  $screen-md: (20px, 21px),
-  $screen-lg: (23px, 23px)
+  $screen-md: (20px, 25px),
+  $screen-lg: (20px, 25px)
 );
 $h5-font-size: (
   null: (16px, 17px),
