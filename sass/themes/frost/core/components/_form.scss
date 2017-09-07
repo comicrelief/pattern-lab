@@ -375,6 +375,21 @@ form {
 		letter-spacing: -0.5px;
 	}
 }
+//-> account/reset-password?token=xxxx
+#reset-password-invalid {
+  .form__group--custom_link {
+    a {
+      @extend .btn;
+      color: $colour-white;
+      width: 100%;
+      
+      border-bottom: 0px;
+      &:hover {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
 #create-account,
 #giving-page,
 #reset-password  {  
