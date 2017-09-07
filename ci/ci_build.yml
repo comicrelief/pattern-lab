@@ -11,9 +11,6 @@ inputs:
 outputs:
 - name: pattern-lab-build
 
-caches:
-- path: pattern-lab/node_modules
-
 run:
   path: sh
   args:

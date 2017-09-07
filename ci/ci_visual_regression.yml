@@ -11,9 +11,6 @@ inputs:
 outputs:
 - name: regression-result
 
-caches:
-- path: pattern-lab-build/node_modules
-
 run:
   path: sh
   args:
