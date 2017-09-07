@@ -28,3 +28,13 @@ strong {
   font-family: $font-founders-semibold;
   font-weight: normal;
 }
+
+p {
+  &.font--xxlarge {
+    margin-bottom: 20px;
+    @include font-size($p-xxlarge-font-size);
+  }
+  &.font--xxsmall {
+    @include font-size($p-xxsmall-font-size);
+  }
+}
