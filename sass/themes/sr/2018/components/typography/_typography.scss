@@ -6,6 +6,11 @@
 
 // TO DO: add colours
 
+h5 {
+  font-family: $font-founders-regular;
+  @include font-size($h5-font-size);
+}
+
 i.font--family-black {
   font-family: $font-founders-bold;
 }
