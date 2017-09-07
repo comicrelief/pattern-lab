@@ -1,0 +1,11 @@
+version: '2'
+services:
+
+  pattern-lab:
+    image: comicrelief/pattern-lab:latest
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: npm run watch
+    working_dir: /usr/src/app
