@@ -38,7 +38,7 @@
     "snyk": "^1.36.2"
   },
   "devDependencies": {
-    "backstopjs": "^2.7.5",
+    "backstopjs": "^3.0.18",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "grunt": "^1.0.1",
