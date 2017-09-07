@@ -3,22 +3,22 @@
 $font-stack: helvetica, arial, sans-serif;
 
 //SR 18 fonts 
-$font-founders-condensed-bold: "Founders-Grotesk-X-Condensed-Bold", $font-stack;
-$font-founders-bold: "Founders-Grotesk-Bold", $font-stack;
-$font-founders-light: "Founders-Grotesk-Light", $font-stack;
+$font-founders-bold: "Founders-GroteskX-Condensed-Bold", $font-stack;
+$font-founders-semibold: "Founders-Grotesk-Semibold", $font-stack;
+$font-founders-regular: "Founders-Grotesk-Regular", $font-stack;
 
 // Keep base font variables otherwise all components will need to be overriden with the new variables
-$font-black-oblique: $font-founders-condensed-bold;
-$font-black: $font-founders-condensed-bold;
-$font-bold-oblique: $font-founders-bold;
-$font-bold: $font-founders-bold;
-$font-medium-oblique: $font-founders-bold;
-$font-medium: $font-founders-bold;
-$font-regular-oblique: $font-founders-light;
-$font-regular: $font-founders-light;
-$font-light-oblique: $font-founders-light;
-$font-light: $font-founders-light;
-$body-font: $font-founders-light;
+$font-black-oblique: $font-founders-bold;
+$font-black: $font-founders-bold;
+$font-bold-oblique: $font-founders-semibold;
+$font-bold: $font-founders-semibold;
+$font-medium-oblique: $font-founders-semibold;
+$font-medium: $font-founders-semibold;
+$font-regular-oblique: $font-founders-regular;
+$font-regular: $font-founders-regular;
+$font-light-oblique: $font-founders-regular;
+$font-light: $font-founders-regular;
+$body-font: $font-founders-regular;
 
 
 
