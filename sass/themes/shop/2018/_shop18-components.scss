@@ -7,6 +7,11 @@ header[role=banner] {
     margin-top: 20px;
   }   
 }
+// select box overrides to vertically centre the Sailec font
+select {
+  padding: 14px 50px 14px 10px;
+  font-family: $font-stack;
+}
 
 // Social links
 
@@ -29,6 +34,7 @@ header[role=banner] {
   }
 }
 
+
 // Pull in CR component styles we're using until SR18 theme is ready
 @import "../../cr/2017/components/background-colours/background-colours";
 @import "../../cr/2017/components/buttons/buttons";
@@ -39,3 +45,6 @@ header[role=banner] {
 @import "../../cr/2017/components/typography/typography";
 @import "../../cr/2017/components/navigation/main-nav";
 @import "../../cr/2017/components/navigation/feature-nav";
+
+// Shop overrides
+@import "_typography.scss";
