@@ -123,9 +123,10 @@ $lg-nav-height: 75px;
 
         > a {
           font-family: $font-medium;
-          text-transform: uppercase;
-          padding: 17px 20px;
-          height: 46px;
+          font-size: 21px;
+          line-height: 21px;
+          padding: 12px 20px;
+          height: 53px;
           color: $colour-black;
           
           &.is-active,
@@ -150,8 +151,8 @@ $lg-nav-height: 75px;
           }
         
           @include breakpoint($desktop-nav-breakpoint) {
-            font-size: 15px;
-            line-height: 15px;
+            font-size: 16px;
+            line-height: 16px;
             padding: 7px 5px;
             height: auto;
 
@@ -184,10 +185,10 @@ $lg-nav-height: 75px;
           color: white;
           font-family: $font-medium;
           position: relative;
-          font-size: 21px;
-          line-height: 21px;
-          height: 49px;
-
+          font-size: 16px;
+          line-height: 16px;
+          padding: 16px 20px;
+          height: 53px;
           @include breakpoint($desktop-nav-breakpoint) {
             &:focus {
               background-color: #3e1c43;
