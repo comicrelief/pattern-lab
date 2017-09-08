@@ -15,6 +15,7 @@
   .main-nav__wrapper {
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 35px;
+      background-color: transparent;
     }
   }
 }

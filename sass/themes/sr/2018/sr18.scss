@@ -13,6 +13,7 @@
 // ==========================================================================
 
 @import "variables/_typography.scss";
+@import "variables/_main-nav.scss";
 
 // ==========================================================================
 // Core components
@@ -34,3 +35,11 @@
 @import "components/teaser-block/_teaser-block.scss";
 @import "components/typography/_fonts.scss";
 @import "components/typography/_typography.scss";
+@import "components/navigation/_main-nav.scss";
+
+// Header
+//
+// Markup: base_header.twig
+//
+// Style guide: 20.180
+
