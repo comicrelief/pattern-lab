@@ -1,7 +1,3 @@
-$sm-nav-height: 50px;
-$md-nav-height: 60px;
-$lg-nav-height: 75px;
-
 // Lil psuedoclass to extend nav styles in mutiple places
 .nav-underline {
   content: "";
@@ -9,7 +5,7 @@ $lg-nav-height: 75px;
   height: 5px;
   background-color: yellow;
   position: absolute;
-  bottom: -5px;
+  bottom: -6px;
   left: 0;
   right: 0;
   border-radius: 5px;
@@ -431,7 +427,12 @@ header[role=banner] {
     &.is-active {
       background-color: white;
       span {
-        background-color: black;
+        background-color: transparent;
+
+        &:before,
+        &:after {
+          background-color: black;
+        }
       }
     } 
   }
@@ -515,10 +516,13 @@ header[role=banner] {
         }
 
         &.is-active {
-          span,
-          span:after,
-          span:before {
-            background-color: black;
+          span {
+            background-color: transparent;
+
+            &:after,
+            &:before {
+              background-color: black;
+            }
           }
         }
       }
@@ -627,7 +631,11 @@ header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-head
       }
 
       &.is-active {
-        span, span:after, span:before {
+        span {
+          background-color: transparent;
+        }
+
+        span:after, span:before {
           background-color: black;
         }
       }
