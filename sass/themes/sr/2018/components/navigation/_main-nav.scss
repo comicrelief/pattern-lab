@@ -659,16 +659,3 @@ header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-head
     }
   }
 }
-
-/* Styleguidey */
-
-// Just for styleguide example purposes:
-.sticky-nav-example {
-  background-image: url("https://wallpaperlayer.com/img/2015/12/gradient-background-images-6204-6478-hd-wallpapers.jpg");
-  background-size: cover;
-}
-
-// Position this normally inside the styleguide
-.kss-modifier__example header[role=banner].sticky-nav__header {
-  position: relative;
-}
