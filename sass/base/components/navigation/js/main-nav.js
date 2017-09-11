@@ -9,6 +9,8 @@
 
     duplicateParentLink();
     toggleMenu();
+    stickyNav();
+
     /* Setup the Smartmenus plugin with our main menu */
     $('#main-menu').smartmenus({
       subIndicatorsText: "",
@@ -137,6 +139,18 @@
           $thisAnchor.parent('li:last-child').closest('li.focused').removeClass("focused");
         }
       }
+    });
+  }
+
+  function stickyNav() {
+    
+    // Cache the our 'sticky nav' header only
+    $thisHeader = $('.sticky-nav__header');
+
+    $(window).scroll(function() {
+      // Toggle between our 'scrolling' classes to let us add a background colour
+      // to the sticky nav once it's being scrolled down the page
+      $thisHeader.toggleClass('scrolling', $(window).scrollTop() > 0);
     });
   }
 })(jQuery);

@@ -65,12 +65,18 @@ form {
 
 .form__group {
   position: relative;
-  h2 {
-    font-family: $font-bold;
-    @include font-size($p-xlarge-font-size);
+
+  .form__subtitle {
+  	font-family: $font-bold;
+  	@include font-size($h4-font-size);
   }
-  @include breakpoint($screen-md) {
-     
+	a {
+    @extend .link;
+    @extend .link--blue;
+    @include font-size($p-small-font-size);
+    @include breakpoint($screen-md) {
+      @include font-size($p-font-size);
+    }
   }
 }
 
@@ -83,9 +89,8 @@ form {
   width: 100%;
 }
 
-.form__fieldset,
-.form__fieldset--divider { 
-  margin: 15px 0px;
+.form__fieldset { 
+  margin: 20px 0px 0px 0px;
 }
 
 .form__field--checkbox {
@@ -107,6 +112,21 @@ form {
   }
 }
 
+// ==========================================================================
+// Form divider
+// ==========================================================================
+.form__fieldset--divider,
+.form__group--age_selection,
+.form__group--campaign_selection {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid $colour-border-grey;
+}
+.form__group--progress_bar,
+.form__group--progress_bar_for_ab_tes,
+.form__group--fundraising_on_behalf {
+	border-bottom: 1px solid $colour-border-grey;
+}
 
 // ==========================================================================
 // Form Validation
@@ -143,11 +163,10 @@ form {
 // ==========================================================================
 // Form Component
 // ==========================================================================
-.form__group--age_selection {
-  .age_selection {
-    width: 100%;
-    border-top: 1px solid $colour-border-grey;
-    padding-top: 20px;
+.age_selection {
+
+  .form__subtitle {
+  	margin-bottom: 0px;
   }
 
   .btn {
@@ -185,15 +204,12 @@ form {
   }
 }
 
-.form__group--custom_link,
-.form__group--terms_conditions {
-  a {
-    @extend .link;
-    @extend .link--blue;
-    @include font-size($p-small-font-size);
-    @include breakpoint($screen-md) {
-      @include font-size($p-font-size);
-    }
+.user-affiliation {
+  border-top: 1px solid $colour-blue;
+  padding-top: 10px;
+
+  @include breakpoint($screen-md) {
+    padding: 20px 30px 0px 30px;
   }
 }
 
@@ -229,25 +245,30 @@ form {
   }
 }
 
-// ==========================================================================
-// Form step
-// ==========================================================================
-.form__group--login_credential {
-  .input-with-btn-wrap {
-    position: relative;
+.user-affiliation {
+  border-top: 1px solid $colour-blue;
+  padding-top: 10px;
 
-    .form__fieldset {
-      margin: 0px;
+  @include breakpoint($screen-md) {
+    padding: 20px 30px 0px 30px;
+  }
+}
+
+.input-with-btn-wrap {
+  position: relative;
+
+  .form__fieldset {
+    margin: 0px;
+  }
+  @include breakpoint($screen-md) {
+    .input-with-btn {
+      max-width: 64%;
     }
-    @include breakpoint($screen-md) {
-      .input-with-btn {
-        max-width: 64%;
-      }
-      #btnNext {
-        min-width: 160px;
-      }
+    #btnNext {
+      min-width: 160px;
     }
   }
+  
   #btnNext {
     @extend .btn--rectangle;
     width: 100%;
@@ -277,63 +298,32 @@ form {
     @include breakpoint($screen-md) {  
       top: 20px;
       left: -30px;
-    
     }
   }
 }
-// ==========================================================================
-// User affiliation
-// ==========================================================================
-.user-affiliation {
-  border-top: 1px solid $colour-blue;
-  padding-top: 10px;
 
-  @include breakpoint($screen-md) {
-    padding: 20px 30px 0px 30px;
-  }
-}
+.forgot_password {
+   text-align: center;
 
-/*
- * Form specific
- */
-#login-credential {
-  .page-title {
-    .intro-copy {
-      @include font-size($p-intro-font-size);
-    }
-  }
-}
-#insert-password {
-  .page-title {
-    h1 {
-        letter-spacing: -1px;
-    }
-    .intro-copy {
-      padding: 0px 10px;
-    }
-  }
-  .forgot_password {
-    text-align: center;
-
-    div {
-      margin: 15px 0px;
-    }
-    h5 {
-      font-weight: bold;
-    }
-    button {
-      @extend .link;
-      @extend .link--blue;
-      border-top: 0px;
-      border-right: 0px;
-      border-left: 0px;
-      background-color: transparent;
-      line-height: 25px;
-      padding: 0px;
-      margin: 0px auto;
-      display: block;
-    }
-  }
+   div {
+     margin: 15px 0px;
+   }
+   h5 {
+     font-weight: bold;
+   }
+   button {
+     @extend .link;
+     @extend .link--blue;
+     border-top: 0px;
+     border-right: 0px;
+     border-left: 0px;
+     background-color: transparent;
+     line-height: 25px;
+     padding: 0px;
+     margin: 0px auto;
+     display: block;
+   }
+  
   .forgot_password-link {
     width: 233px;
   }
@@ -355,9 +345,55 @@ form {
     color: $colour-blue;
   }
 }
+
+// ==========================================================================
+// Form specific
+// ==========================================================================
+//-> registration
+#login-credential {
+  .page-title {
+    .intro-copy {
+      @include font-size($p-intro-font-size);
+    }
+  }
+}
+//-> registration/insert-password
+//-> account/reset-password
+#insert-password,
+#reset-password {
+  .page-title h1 {
+    @include font-size($h1-small-font-size);
+  }
+}
+//-> registration/create-account
+//-> registration/create-giving-page
 #create-account,
 #giving-page {
-  // No back button
+	// reduce gap between h1 and h2
+	.page-title h1 {
+		margin-bottom: 0px;
+		letter-spacing: -0.5px;
+	}
+}
+//-> account/reset-password?token=xxxx
+#reset-password-invalid {
+  .form__group--custom_link {
+    a {
+      @extend .btn;
+      color: $colour-white;
+      width: 100%;
+      
+      border-bottom: 0px;
+      &:hover {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+#create-account,
+#giving-page,
+#reset-password  {  
+	// no back button
   .form__group--nav_buttons {
     .form__nav {
       @include breakpoint($screen-md) {
@@ -368,31 +404,8 @@ form {
       display: none;
     }
   }
-  // border
-  .form__group--page_title {
-    border-top: 1px solid $colour-border-grey;
-    padding-top: 10px;
-  }
-  .form__group--fundraising_on_behalf {
-    border-bottom: 1px solid $colour-border-grey;
-  }
 }
-#giving-page {
-  .form__group--page_title {
-    border-bottom: 1px solid $colour-border-grey;
-    
-    @include breakpoint($screen-md) {
-      margin-bottom: 20px;
-    }
-  }
-}
-.form__group--login_credential,
-.form__field--userUrlGp,
-.form__field--userFrTarget {
-  label {
-    display: none;
-  }
-}
+// make input field stand out more
 #userUrlGp,
 #userFrTarget {
   border: 1px solid $colour-blue;
@@ -401,4 +414,11 @@ form {
     border: 1px solid $colour-border-grey;
   }
 }
-
+// hide label
+.form__group--login_credential,
+.form__field--userUrlGp,
+.form__field--userFrTarget {
+  label {
+    display: none;
+  }
+}

@@ -1,0 +1,661 @@
+// Lil psuedoclass to extend nav styles in mutiple places
+.nav-underline {
+  content: "";
+  width: auto;
+  height: 5px;
+  background-color: yellow;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+/* Main avigation styling */ 
+.header__inner-wrapper {
+  height: 100%;
+  justify-content: space-between;
+
+  &:after {
+    content: none;
+  }
+  .block-system-branding-block {
+    margin-right: 0;
+  }
+}
+
+.main-nav__wrapper {
+  height: auto;
+  margin-right: 0;
+
+  // Override base theme
+  @include breakpoint($desktop-nav-breakpoint) {
+    margin-right: 0;
+  }
+
+  li.menu-item {
+    padding-top: 0;
+    position: relative;
+  }
+
+  // UL menu
+  .main-nav__items {
+    top: $sm-nav-height;
+    
+    @include breakpoint($screen-md) {
+      top: $md-nav-height;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      background-color: transparent;
+      top: 0;
+    }
+
+    li.item-open,
+    li {
+      a {
+        font-size: 16px;
+        line-height: 16px;
+
+        // Transparent 'top of screen' state
+        color: white;
+
+        span {
+          position: relative;
+        }
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          padding: 8px 7px 4px;
+        }
+      }
+
+      &:hover > ul {
+        @include breakpoint($desktop-nav-breakpoint) {
+          top: $lg-nav-height;
+        }
+      }
+    }
+
+    // Parent items of the menu
+    &.menu--level-0 {
+      @include breakpoint($desktop-nav-breakpoint) {
+        width: auto;
+        text-align: center;
+        height: 100%;
+      }
+
+      > li.item-open,
+      > li {
+         &:hover >a {
+          span {
+            position: relative;
+            
+            &:after {
+              @extend .nav-underline;
+
+              @include breakpoint($desktop-nav-breakpoint) {
+                left: 10px;
+                right: 10px;
+              }
+            }
+          }
+        }
+
+        // Our JS-manipulated focus state
+        &.focused >a {
+          span.menu-item__text {
+            border-bottom: none;
+
+            &:after {
+              @extend .nav-underline;
+            }
+          }
+        }
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          padding: 23px 0px;
+          margin: 0 10px;
+        }
+
+        > a {
+          font-family: $font-medium;
+          font-size: 21px;
+          line-height: 21px;
+          padding: 12px 20px;
+          height: 53px;
+          color: $colour-black;
+          
+          &.is-active,
+          &:focus {
+            span.menu-item__text {
+              // Override base theme, apply underline as an 'after' to allow us to style it further
+              border-bottom: none;
+
+              &:after {
+                @extend .nav-underline;
+
+                @include breakpoint($desktop-nav-breakpoint) {
+                  left: 5px;
+                  right: 5px
+                }
+              }
+            }
+          }
+
+          &.is-active span.menu-item__text:after {
+            @extend .nav-underline;
+          }
+        
+          @include breakpoint($desktop-nav-breakpoint) {
+            font-size: 16px;
+            line-height: 16px;
+            padding: 7px 5px;
+            height: auto;
+
+            // Transparent nav state
+            color: white;
+
+            header[role=banner].sticky-nav__header.scrolling &,
+            body.cc-banner--visible header[role=banner].sticky-nav__header & {
+              color: black;
+              background-image: none;
+            }
+
+            &.is-active span.menu-item__text {
+              border-bottom: none;
+
+              &:after {
+                left: 10px;
+                right: 10px;
+              }
+            }
+          }
+        }
+      }
+    } 
+
+    // First level of sub items (dropdwn)
+    &.menu--level-1 {
+      li.menu-item.menu-item--duplicate {
+        > a {
+          color: white;
+          font-family: $font-medium;
+          position: relative;
+          font-size: 16px;
+          line-height: 16px;
+          padding: 16px 20px;
+          height: 53px;
+          @include breakpoint($desktop-nav-breakpoint) {
+            &:focus {
+              background-color: #3e1c43;
+            }
+          }
+
+          &:after {
+            width: 14px;
+            border-bottom: 4px solid white;
+            left: 12px;
+            top: auto;
+            bottom: 0;
+
+            @include breakpoint($desktop-nav-breakpoint) {
+              bottom: 10px;
+            }
+          }
+
+          &:before {
+            @include breakpoint($desktop-nav-breakpoint) {
+              left: 34px;
+              width: 10px;
+              height: 10px;
+              border: 11px solid transparent;
+              border-bottom-color: $colour-black;
+              top: -22px;
+            }
+          }
+
+          &.is-active {
+
+            // Add border to the span (to allow control over the width), rather than the :after psuedo
+            span.menu-item__text {
+              border-bottom: 4px solid white;
+            }
+
+            &:after {
+              border-bottom: none;
+            }
+          }
+        }
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          height: 74px;
+          width: 100%;
+          padding: 0;
+
+          a {
+            padding: 26px 21px;
+            height: 74px;
+
+            &:focus {
+              span.menu-item__text {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+      }
+      
+      li.item-open a,
+      li a {
+        color: $colour-white;
+
+        &.is-active span.menu-item__text {
+          border-bottom: 2px solid $colour-white;
+        }
+      }
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        padding-bottom: 20px !important;
+      }
+    }
+
+    // First and second levels of sub items
+    &.menu--level-1,
+    &.menu--level-2 {
+      top: 0;
+      
+      @include breakpoint($desktop-nav-breakpoint) {
+        top: 75px;
+        text-align: left;
+      }
+      
+      li a,
+      li.item-open a {
+        font-family: $font-light;
+        font-size: 16px;
+        line-height: 16px;
+        color: $colour-white;
+        height: 44px;
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          // The complex inherited styles need a little bullying to override here
+          font-size: 20px !important;
+          line-height: 20px !important;
+        }
+
+        &:hover {
+          background-color: #3e1c43;
+
+          &.is-active span.menu-item__text {
+            border-bottom: 2px solid $colour-white;
+          }
+        }
+
+        &.is-active span.menu-item__text {
+          border-bottom: 2px solid $colour-white;
+        }
+      }
+
+      li.menu-item,
+      li.item-open.menu-item {
+        @include breakpoint($desktop-nav-breakpoint) {
+          padding: 0;
+          height: 100%;
+          width: 100%;
+
+          a {
+            padding: 14px 21px;
+
+            &:focus {
+              background-color: #3e1c43;
+  
+              span {
+                border-bottom: none;
+              }
+            } 
+          }
+        }
+      }
+    }
+
+    li.item-open,
+    li {
+
+      // Reset base styles, so we're targetting the anchor and not the li
+      > ul li:hover {
+        background-color: transparent;
+      }
+
+      > ul li a:hover {
+        background-color: #3e1c43;
+      }
+
+      &:hover >a span.menu-item__text {
+        border-bottom: none;
+      }
+    }
+
+    // Secondary nav items that have tertiary menu items
+    &.menu--level-1 li.menu-item.menu-item--expanded {
+      @include breakpoint($desktop-nav-breakpoint) {
+        height: 100%;
+      }
+    }
+    
+    // Second levels of sub items
+    &.menu--level-2 {
+      li.menu-item {
+        padding: 0;
+
+        a {
+          // Indent tertiary items
+          padding-left: 40px;
+          background-color: #3e1c43;
+
+          &:hover {
+            background-color: #3e1c43;
+          }
+        }
+      } 
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        display: block;
+        position: relative;
+        top: 0;
+        height: 100%;
+        max-height: 100%;
+      }
+    }
+  } 
+}
+
+header[role=banner] {
+  border-bottom: none;
+  height: $sm-nav-height;
+
+  @include breakpoint($screen-md) {
+    height: $md-nav-height;
+  }
+
+   @include breakpoint($desktop-nav-breakpoint) {
+    height: $lg-nav-height;
+  }
+
+  .block-cr-meta-icons,
+  .meta-icons,
+  .meta-icons__login,
+  .meta-icons__magnify,
+  .meta-icons__esu-toggle,
+  .main-nav__icons.main-nav__burger,
+  .c-hamburger {
+    height: $sm-nav-height;
+
+    .icon {
+      fill: white;
+      margin: 12px 4px;
+    }
+
+    @include breakpoint($screen-md) {
+      height: $md-nav-height;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      background-color: transparent;
+      height: $lg-nav-height;
+    }
+  }
+
+  // Menu icon
+  .c-hamburger {
+    span {
+      top: 23px;
+      background-color: white;
+      &:after,
+      &:before {
+        background-color: inherit;
+      }
+      @include breakpoint($screen-md) {
+        top: 27px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &.is-active {
+      background-color: white;
+      span {
+        background-color: transparent;
+
+        &:before,
+        &:after {
+          background-color: black;
+        }
+      }
+    } 
+  }
+
+  // States for ESU, Search and FROST button
+  .meta-icons > a {
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.2);
+      
+      .icon {
+        fill: white;
+      }
+    }
+  }
+
+  @include breakpoint($desktop-nav-breakpoint) {
+    .meta-icons > a {
+      .icon {
+        margin: 26px 12px 28px;
+      }
+    }
+  }
+
+  .block-cr-meta-icons {
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-right: 5px;
+    }
+  }
+
+  &.sticky-nav__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    transition: background-color 350ms linear;
+    height: $sm-nav-height;
+
+    @include breakpoint($screen-md) {
+      height: $md-nav-height;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      height: $lg-nav-height;
+    }
+
+    body.cc-banner--visible & {
+      position: relative;
+      background-image: none;
+    }
+
+    // Tweak the styles when the nav is scrolling so has a solid background
+    &.scrolling {
+      background: white;
+      box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+      height: $sm-nav-height;
+
+      @include breakpoint($screen-md) {
+        height: $md-nav-height;
+      }
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        height: $lg-nav-height;
+      }
+
+      .meta-icons a {
+        .icon {
+          fill: black;
+        }
+      }
+
+      .c-hamburger {
+        span,
+        span:after,
+        span:before {
+          background-color: black;
+        }
+
+        &.is-active {
+          span {
+            background-color: transparent;
+
+            &:after,
+            &:before {
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .site-logo {
+      min-width: 0px;
+      width: 40px;
+      height: 40px;
+      margin-top: 5px;
+      background: none;
+
+      img {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      @include breakpoint($screen-md) {
+        width: 50px;
+        height: 50px;
+      }
+      
+      @include breakpoint($desktop-nav-breakpoint) {
+        margin-top: 7px;
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+}
+
+// Position search dropdown in relation to new heights
+header.sticky-nav__header ~ main .search-block {
+  position: fixed;
+  top: $sm-nav-height;
+  @include breakpoint($screen-md) {
+    top: $md-nav-height;
+  }
+  
+  @include breakpoint($desktop-nav-breakpoint) {
+    top: $lg-nav-height;
+  }
+}
+
+
+// Position ESU dropdown in relation to new heights
+.block--cr-email-signup--head.cr-header-email-signup-form .block--cr-email-signup__inner-wrapper {
+  @include breakpoint($screen-md) {
+    right: 65px;
+  }
+  @include breakpoint($screen-lg) {
+    top: 60px;
+  }
+  @include breakpoint($desktop-nav-breakpoint) {
+    right: 0;
+    top: 75px;
+  }
+}
+  
+// Hide tooltips when we're scrolling to avoid positioning issues and terrible UX
+header[role=banner].sticky-nav__header.scrolling ~ .ui-tooltip {
+  display: none !important;
+}
+
+// TODO: move
+// Offset content to make sure copy doesn't overlap transaprent nav at top of screen
+header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
+  padding-top: 30px;
+
+  @include breakpoint($screen-md) {
+    margin-top: 60px;
+  }
+
+  @include breakpoint($screen-lg) {
+    margin-top: 50px;
+  }
+}
+
+
+// Ensure wrapper height matches the content, so we can display nav fully underneath
+.cc_banner-wrapper {
+  height: auto;
+}
+
+ header[role=banner].sticky-nav__header {
+
+  // Cookie banner-related tweaks to make sure our icons are visible over the temporarily white header 
+  body.cc-banner--visible & {
+    .meta-icons > a {
+      .icon {
+        fill: black;
+      }
+      &.active,
+      &:hover,
+      &:focus {
+        .icon {
+          fill: black;
+        }
+      }
+    }
+  
+    .c-hamburger {
+      span, span:after, span:before {
+        background-color: black;
+      }
+
+      &.is-active {
+        span {
+          background-color: transparent;
+        }
+
+        span:after, span:before {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  // Reposition the nav when the admin menu is in place
+  body.toolbar-vertical &,
+  body.toolbar-horizontal & {
+    top: 74px;
+
+    &.scrolling {
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: auto;
+      }
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: 115px;
+    }
+  }
+}
