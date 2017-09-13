@@ -32,7 +32,6 @@
     }
     &-centre {
       .cards__wrapper {
-        justify-content: center;
         .card {
           @include breakpoint($screen-md-max) {
             @include span(4);
@@ -44,11 +43,9 @@
 }
 .cards__wrapper {
   text-align: center;
-  @include breakpoint($screen-md-max) {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .card {
   @include breakpoint($screen-md) {
