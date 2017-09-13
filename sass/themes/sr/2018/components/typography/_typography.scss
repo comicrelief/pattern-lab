@@ -1,0 +1,45 @@
+// Typography
+//
+// Markup: typography.twig
+//
+// Style guide: 10.1
+
+// TO DO: add colours
+
+h5 {
+  font-family: $font-regular--sr18;
+  @include font-size($h5-font-size);
+}
+
+i.font--family-black {
+  font-family: $font-black--sr18;
+}
+.font--family-black {
+  font-family: $font-black--sr18;
+}
+i.font--family-bold {
+  font-family: $font-bold--sr18;
+}
+.font--family-bold {
+  font-family: $font-bold--sr18;
+}
+i.font--family-regular {
+  font-family: $font-regular--sr18;
+}
+.font--family-regular {
+  font-family: $font-regular--sr18;
+}
+strong {
+  font-family: $font-bold--sr18;
+  font-weight: normal;
+}
+
+p {
+  &.font--xxlarge {
+    margin-bottom: 20px;
+    @include font-size($p-xxlarge-font-size);
+  }
+  &.font--xxsmall {
+    @include font-size($p-xxsmall-font-size);
+  }
+}

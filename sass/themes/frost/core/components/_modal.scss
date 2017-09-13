@@ -28,6 +28,10 @@
   max-width: 640px;
   margin: 80px auto;
   text-align: center;
+
+  button {
+    margin-top: 20px;
+  }
 }
 .modal__close {
   color: $colour-white;

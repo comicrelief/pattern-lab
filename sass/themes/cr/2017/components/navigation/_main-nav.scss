@@ -15,6 +15,7 @@
   .main-nav__wrapper {
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 35px;
+      background-color: transparent;
     }
   }
 }
@@ -100,7 +101,7 @@
             padding: 32px 0;
             margin-left: 0;
 
-            >a {
+            > a.donate {
               // Emulate some button styles here
               display: inline-block;
               width: auto;
@@ -120,7 +121,7 @@
               }
             }
 
-            &:hover >a {
+            &:hover > a.donate {
               background-color: $colour-purple;
             }
           }

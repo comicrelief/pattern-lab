@@ -1,0 +1,10 @@
+// Sailec regular font override with correct line height adjustments
+@font-face {font-family: 'Sailec-Regular';
+src: url('https://d1hcgerbie49io.cloudfront.net/webfonts/sailec-regular.eot');
+src: url('https://d1hcgerbie49io.cloudfront.net/webfonts/sailec-regular.eot?#iefix') format('embedded-opentype'),
+url('https://d1hcgerbie49io.cloudfront.net/webfonts/sailec-regular.woff2') format('woff2'),
+url('https://d1hcgerbie49io.cloudfront.net/webfonts/sailec-regular.woff') format('woff'),
+url('https://d1hcgerbie49io.cloudfront.net/webfonts/sailec-regular.ttf') format('truetype');}
+
+$font-stack: 'Sailec-Regular', sans-serif;
+
