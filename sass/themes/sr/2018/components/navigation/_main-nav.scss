@@ -2,13 +2,12 @@
 .nav-underline {
   content: "";
   width: auto;
-  height: 5px;
+  height: 2px;
   background-color: yellow;
   position: absolute;
-  bottom: -6px;
+  bottom: -3px;
   left: 0;
   right: 0;
-  border-radius: 5px;
 }
 
 /* Main avigation styling */ 
@@ -22,16 +21,19 @@
   .block-system-branding-block {
     margin-right: 0;
   }
+
+  .main-nav__wrapper {
+    @include breakpoint($desktop-nav-breakpoint) {
+      // Offset by the logo width, so we can centre the items within the nav
+      padding-left: 75px; 
+      margin-right: 0;
+    }
+  }
 }
 
 .main-nav__wrapper {
   height: auto;
   margin-right: 0;
-
-  // Override base theme
-  @include breakpoint($desktop-nav-breakpoint) {
-    margin-right: 0;
-  }
 
   li.menu-item {
     padding-top: 0;
@@ -92,11 +94,6 @@
             
             &:after {
               @extend .nav-underline;
-
-              @include breakpoint($desktop-nav-breakpoint) {
-                left: 10px;
-                right: 10px;
-              }
             }
           }
         }
@@ -133,11 +130,6 @@
 
               &:after {
                 @extend .nav-underline;
-
-                @include breakpoint($desktop-nav-breakpoint) {
-                  left: 5px;
-                  right: 5px
-                }
               }
             }
           }
@@ -163,11 +155,6 @@
 
             &.is-active span.menu-item__text {
               border-bottom: none;
-
-              &:after {
-                left: 10px;
-                right: 10px;
-              }
             }
           }
         }
