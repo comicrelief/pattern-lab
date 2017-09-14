@@ -24,9 +24,11 @@
 
   .main-nav__wrapper {
     @include breakpoint($desktop-nav-breakpoint) {
-      // Offset by the logo width, so we can centre the items within the nav
-      padding-left: 75px; 
       margin-right: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 75%;
     }
   }
 }
@@ -81,7 +83,7 @@
     // Parent items of the menu
     &.menu--level-0 {
       @include breakpoint($desktop-nav-breakpoint) {
-        width: auto;
+        width: 100%;
         text-align: center;
         height: 100%;
       }
@@ -448,6 +450,8 @@ header[role=banner] {
   .block-cr-meta-icons {
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 5px;
+      position: absolute;
+      right: 0;
     }
   }
 
@@ -539,6 +543,38 @@ header[role=banner] {
         width: 60px;
       }
     }
+
+    // Position ESU dropdown in relation to new heights
+    .block--cr-email-signup--head.cr-header-email-signup-form {
+      position: absolute;
+      top: $sm-nav-height;
+
+      @include breakpoint($screen-md) {
+        right: 65px;
+        top: $md-nav-height;
+      }
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        top: $lg-nav-height;
+        right: 5px;
+      }
+
+      // Reset all of these, as we're positioning the block itself
+      .block--cr-email-signup__inner-wrapper {
+
+        @include breakpoint($screen-md) {
+          top:0;right:0;
+        }
+        @include breakpoint($screen-lg) {
+          top:0;
+          right:0;
+        }
+        @include breakpoint($desktop-nav-breakpoint) {
+          top:0;
+          right:0;
+        }
+      }
+    }
   }
 }
 
@@ -556,19 +592,9 @@ header.sticky-nav__header ~ main .search-block {
 }
 
 
-// Position ESU dropdown in relation to new heights
-.block--cr-email-signup--head.cr-header-email-signup-form .block--cr-email-signup__inner-wrapper {
-  @include breakpoint($screen-md) {
-    right: 65px;
-  }
-  @include breakpoint($screen-lg) {
-    top: 60px;
-  }
-  @include breakpoint($desktop-nav-breakpoint) {
-    right: 0;
-    top: 75px;
-  }
-}
+
+
+
   
 // Hide tooltips when we're scrolling to avoid positioning issues and terrible UX
 header[role=banner].sticky-nav__header.scrolling ~ .ui-tooltip {

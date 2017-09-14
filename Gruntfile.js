@@ -114,6 +114,11 @@ module.exports = function (grunt) {
           'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
         }
       },
+      cr17: { // Use for subthemes
+        files: {
+          'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
+        }
+      },
       base: {
         files: [{
           expand: true,
