@@ -2,7 +2,11 @@
 //
 // Markup: cards.twig
 //
-// .cards--feature-layout - Feature Layout
+// .cards--four-grid.cards--feature-layout - Feature Layout
+// .cards--four-grid - Grid of four cards left aligned (default)
+// .cards--four-grid-centre - Grid of four cards centre align
+// .cards--three-grid - Grid of three cards left aligned
+// .cards--three-grid-centre - Grid of three cards centre align
 //
 // Style guide: 20.61
 
@@ -12,51 +16,42 @@
   @include breakpoint($screen-md) {
     padding: 60px 0;
   }
-  & + .cards {
-    margin-top: -30px;
-    padding-top: 0;
-    @include breakpoint($screen-md) {
-      margin-top: -60px;
+  &.cards--four-grid {
+    .cards__wrapper {
+      justify-content: flex-start;
     }
   }
-  @for $i from 1 through 6 {
-    .cards__item:first-child:nth-last-child(#{$i}),
-    .cards__item:first-child:nth-last-child(#{$i}) ~ .cards__item {
-      width: calc(100% - (8 * #{gutter()}));
-      margin: 0 0 calc(4 * #{gutter()});
-      @include breakpoint($screen-sm-max) {
-        width: calc(100% - (2 * #{gutter()}));
-        margin: 0 gutter() 30px;
-      }
-      @include breakpoint($screen-md-max) {
-        @include span(12/$i);
-        .cards__item:first-child {
-          margin-left: #{gutter()};
-        }
-        .cards__item:last-child {
-          margin-right: #{gutter()};
+  &.cards--three-grid {
+    .cards__wrapper {
+      justify-content: flex-start;
+      .card {
+        @include breakpoint($screen-md-max) {
+          @include span(4);
         }
       }
     }
-  }
-  .cards__item:first-child:nth-last-child(1),
-  .cards__item:first-child:nth-last-child(1) ~ .cards__item {
-    margin-bottom: 0;
-  }
-  .cards__item:first-child:nth-last-child(2),
-  .cards__item:first-child:nth-last-child(2) ~ .cards__item {
-    @include breakpoint($screen-md-max) {
-      @include span(4);
-      display: inline-block;
-      float: none;
-      vertical-align: top;
+    &-centre {
+      .cards__wrapper {
+        .card {
+          @include breakpoint($screen-md-max) {
+            @include span(4);
+          }
+        }
+      }
     }
   }
 }
 .cards__wrapper {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  @include breakpoint($screen-md) {
+    @include span(6);
+  }
   @include breakpoint($screen-md-max) {
-    display: flex;
-    justify-content:center;
+    @include span(3);
   }
 }
