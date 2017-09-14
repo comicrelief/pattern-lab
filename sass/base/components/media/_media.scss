@@ -11,8 +11,8 @@
 		figure,
 		img {
 			@include breakpoint($screen-lg) {
-				width: calc(100% + (6 * 60px));
-				margin-left: -180px;
+				width: calc(100% + (4 * 60px));
+				margin-left: -120px;
 			}
 		}
 	}
