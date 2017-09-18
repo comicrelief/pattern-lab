@@ -17,7 +17,9 @@
   border: 4px solid $colour-black;
   font-weight: bold;
 
-  strong & {
+  // Target Highlights wrapped in *or* containing strong tags
+  strong &,
+  strong {
     padding: 3px 6px 2px;
   }
 }
