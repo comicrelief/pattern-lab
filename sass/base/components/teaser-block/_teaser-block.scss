@@ -4,7 +4,7 @@
 
 // Teaser Block
 //
-// Comes in 4 sizes and in a background image version.
+// Comes in 4 sizes and in a background-image and no-image versions (the latter not displayed here). 
 // Content is editable.
 // 
 // Markup: teaser-block.twig
@@ -166,6 +166,12 @@
   }
   .teaser-block__image {
     width: 100%;
+    height: 100%;
+  }
+}
+
+.teaser-block--no-image {
+  .teaser-block__body {
     height: 100%;
   }
 }
