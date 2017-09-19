@@ -46,6 +46,14 @@
           width: calc( #{span(5)} +  ( #{gutter()} * 4) );
         }
       }
-    } 
+    }
+
+    &.single-msg--feature-copy-left {
+      .single-msg__outer-wrapper { 
+        .single-msg__copy_wrapper {
+          margin: 90px 0 0 gutter();
+        }
+      }
+    }
   }
 }
