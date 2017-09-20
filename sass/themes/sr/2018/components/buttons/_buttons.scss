@@ -23,42 +23,13 @@
   @include border-radius(0);
   text-transform: uppercase;
   padding: 21px 30px;
-  // ? width: 290px;
-
-  // &:hover {
-  //   background-color: $colour-purple;
-  // }
-
-  // Full width on SM breakpoint only
-/*   &.btn--full-width {
-    display: block;
-    width: 100%;
-    @include breakpoint($screen-md) {
-      display: inline-block;
-      width: auto;
-    }
-  } */
+  letter-spacing: 0.1em;
 }
 
 /* Process $buttonList colour variations through our btn-variation mixin. */
 @each $button in $buttonList {
   @include btn-variation( $button );
 }
-
-/* Force white colour on black bg hover and focus state */
-/* .btn.btn--white {
-  &:hover,
-  &:focus {
-    color: $colour-white;
-  }
-} */
-
-/**
- * Buttons display as stack block for xs
- */
-// .btn + .btn {
-//   margin-top: 30px;
-// }
 
 /**
  * Buttons display as inline block for md and large breakpoints.
