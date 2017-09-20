@@ -3,7 +3,7 @@
 $font-stack: helvetica, arial, sans-serif;
 
 //SR 18 fonts 
-$font-black--sr18: "Founders-GroteskX-Condensed-Bold", $font-stack;
+$font-black--sr18: "Founders-GroteskXCondensed-Bold", $font-stack;
 $font-bold--sr18: "Founders-Grotesk-Semibold", $font-stack;
 $font-regular--sr18: "Founders-Grotesk-Regular", $font-stack;
 
@@ -23,11 +23,11 @@ $body-font:$font-regular--sr18;
 
 
 // breakpoint: (font-size, line-height)
-$h1-black-font-size: (
-  null: (40px, 36px),
-  $screen-md: (64px, 54px),
-  $screen-lg: (70px, 60px)
-);
+// $h1-black-font-size: (
+//   null: (40px, 36px),
+//   $screen-md: (64px, 54px),
+//   $screen-lg: (70px, 60px)
+// );
 $h1-large-font-size: (
   null: (132px, 145px),
   $screen-md: (148px, 163px),
@@ -38,40 +38,43 @@ $h1-font-size: (
   $screen-md: (104px, 114px),
   $screen-lg: (117px, 90px)
 );
-$h2-font-size: (
-  null: (36px, 40px),
-  $screen-md: (41px, 45px),
-  $screen-lg: (46px, 50px)
+$h1-small-font-size: (
+  $screen-lg: (82px, 90px)
 );
-$h3-font-size: (
+$h2-font-size: (
   null: (28px, 31px),
-  $screen-md: (32px, 35px),
+  $screen-md: (25px, 28px),
   $screen-lg: (36px, 40px)
 );
-$h4-font-size: (
+$h3-font-size: (
   null: (23px, 25px),
-  $screen-md: (25px, 28px),
+  $screen-md: (32px, 35px),
   $screen-lg: (28px, 31px)
 );
-$h5-font-size: (
-  null: (20px, 22px),
-  $screen-md: (18px, 29px),
+$h4-font-size: (
+  null: (18px, 20px),
+  $screen-md: (20px, 22px),
   $screen-lg: (23px, 25px)
 );
+$h5-font-size: (
+  null: (16px, 17px),
+  $screen-md: (16px, 17px),
+  $screen-lg: (18px, 20px)
+);
 $p-xxlarge-font-size: (
-  null: (58px, 75px),
-  $screen-md: (65px, 84px),
-  $screen-lg: (73px, 95px)
+  null: (32px, 42px),
+  $screen-md: (36px, 47px),
+  $screen-lg: (36px, 47px)
 );
 $p-xlarge-font-size: (
   null: (25px, 33px),
-  $screen-md: (32px, 42px),
-  $screen-lg: (36px, 47px)
+  $screen-md: (28px, 37px),
+  $screen-lg: (28px, 37px)
 );
 $p-large-font-size: (
   null: (23px, 29px),
-  $screen-md: (25px, 33px),
-  $screen-lg: (25px, 33px)
+  $screen-md: (23px, 29px),
+  $screen-lg: (23px, 29px)
 );
 $p-font-size: (
   null: (20px, 26px),
