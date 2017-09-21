@@ -69,8 +69,8 @@
   },
   "homepage": "https://github.com/comicrelief/pattern-lab#readme",
   "engines": {
-    "node": "6",
-    "npm": "4"
+    "node": ">=6",
+    "npm": ">=4"
   },
   "release": {
     "branch": "master",
