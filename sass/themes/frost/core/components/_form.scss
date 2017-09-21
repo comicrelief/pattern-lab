@@ -3,7 +3,11 @@
 // ==========================================================================
 
 label {
-  margin-bottom: 2px;
+  margin: 20px 0px 0px 0px;
+
+  @include breakpoint($screen-md) {
+   margin: 30px 0px 0px 0px;
+  }
 }
 
 input[type="email"],
@@ -19,13 +23,11 @@ textarea {
   height: 60px;
   background-color: $colour-input-grey;
   border: 1px solid $colour-border-grey;
-  margin-bottom: 20px;
 
   @include font-size($p-xsmall-font-size);
   @include border-radius(2px); 
   @include breakpoint($screen-md) {
     max-width: 100%;
-    margin-bottom: 30px;
   }
 }
 
@@ -53,7 +55,6 @@ select {
   @include border-radius(2px);
   height: 60px;
   max-width: 100%;
-  margin-bottom: 20px;
   border: 1px solid $colour-blue;
   background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAARCAYAAAC8XK78AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTRCRDI2Rjk1OThFMTFFN0FDQzc4NEQ2QkFDQjZGMkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTRCRDI2RkE1OThFMTFFN0FDQzc4NEQ2QkFDQjZGMkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NEJEMjZGNzU5OEUxMUU3QUNDNzg0RDZCQUNCNkYyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NEJEMjZGODU5OEUxMUU3QUNDNzg0RDZCQUNCNkYyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhgcnMIAAADZSURBVHjavNPBCcIwFMbxGNxBF/BQBA8uYMHePao7uIyCO3j2LAqOUKco3UH9HiQQHokmT5PA10NT+P8uHdTz51QpdcTWWKfKnBF2wnYajwO2wG7mokScWjW2J8AGe2BVAYSNV6a5JUCPLQsgeJyavTaXuRHeOF1o56NciGCcA3Ig3HjL4z7APxE83vB4COAiWiEiKv4JYBGNABEd/waQIJLiMYAURHI8FhBCjH+NpwB8iKtBiON0hom/lkVcsBl2N+8nkrgE4EMoaVwKcBFn7IWtJHE6bwEGAIrnW5qBUQU1AAAAAElFTkSuQmCC') 95% center no-repeat;
   
@@ -89,28 +90,31 @@ form {
   .form__subtitle {
   	font-family: $font-bold;
   	@include font-size($p-small-font-size);
-    padding-top: 15px;
+  }
+  p {
+    margin-bottom: 20px;
+    @include font-size($p-small-font-size);
   }
   h1 {
     @include breakpoint($screen-md) {
-      margin-bottom: 20px;
+      margin: 30px 0px 25px 0px;
     }
+  }
+  h2, h3, h4 {
+    margin: 30px 0px 20px 0px;
   }
   p:last-child, 
   p:first-child:last-child {
     margin-bottom: 0px;
 
     @include breakpoint($screen-md) {
-      margin-bottom: 5px;
+      margin-bottom: 0px;
     }
   }
 	a {
     @extend .link;
     @extend .link--blue;
     @include font-size($p-small-font-size);
-    @include breakpoint($screen-md) {
-      @include font-size($p-font-size);
-    }
   }
 }
 
@@ -138,6 +142,9 @@ form {
 
   .intro-copy {
     @include font-size($h2-font-size);
+    @include breakpoint($screen-md) {
+      margin-bottom: 35px;
+    }
   }
   
   .intro-copy-extra span {
@@ -146,22 +153,43 @@ form {
   }
 }
 
+.form__group--age_selection,
+#giving-page .form__group--page_title {
+  h2 {
+    margin-top: 0px;
+
+    @include breakpoint($screen-md) {
+      margin-top: 5px;
+    }
+  }
+}
+
+.form__group--campaign_selection,
+.form__group--giving_page_link,
+.form__group--fundraising_target {
+  @include breakpoint($screen-md) {
+    margin-bottom: 50px;
+  }
+}
+
 // ==========================================================================
 // Form divider
 // ==========================================================================
 .form__fieldset--divider,
 .form__group--age_selection,
-.form__group--campaign_selection {
-	margin-top: 20px;
-	padding-top: 20px;
+.form__group--terms_conditions {
+	margin-top: 30px;
+	padding-top: 25px;
 	border-top: 1px solid $colour-divider-grey;
 }
 .form__group--progress_bar,
-.form__group--progress_bar_for_ab_tes,
-.form__group--fundraising_on_behalf {
+.form__group--progress_bar_for_ab_tes {
 	border-bottom: 1px solid $colour-divider-grey;
 }
-
+#giving-page .form__group--page_title {
+  padding-bottom: 35px;
+  border-bottom: 1px solid $colour-divider-grey;
+}
 // ==========================================================================
 // Form Validation
 // ==========================================================================
@@ -175,12 +203,13 @@ form {
 }
 
 .validation__message {
-  margin-top: -25px;
-
   p {
     color: $colour-red;
     color: $colour-red;
-    @include font-size($p-small-font-size);
+    @include font-size($p-intro-font-size);
+    @include breakpoint($screen-md) {
+      @include font-size($p-small-font-size);
+    }
   }
 }
 
@@ -199,11 +228,6 @@ form {
 // Form Component
 // ==========================================================================
 .age_selection {
-
-  .form__subtitle {
-  	margin-bottom: 0px;
-  }
-
   .btn {
     width: 45%;
     @extend .btn--blue-ghost;
@@ -246,10 +270,7 @@ form {
 .form__group--terms_conditions {
   text-align: center;
   @include font-size($p-small-font-size);
-
   @include breakpoint($screen-md) {
-    width: 80%;
-    margin: auto;
     @include font-size($p-font-size);
   }
 }
@@ -285,9 +306,6 @@ form {
 .input-with-btn-wrap {
   position: relative;
 
-  .form__fieldset {
-    margin: 0px;
-  }
   @include breakpoint($screen-md) {
     .input-with-btn {
       max-width: 64%;
@@ -385,12 +403,11 @@ form {
     }
   }
   .form__group--page_title {
-    .form__fieldset {
-      margin-top: 0px;
-    }
     h1 {
+      margin-top: -5px;
+
       @include breakpoint($screen-md) {
-        margin-bottom: 40px;
+        margin: -10px 0px 40px 0px;
       }
     }
     p:last-child, 
@@ -415,6 +432,20 @@ form {
   .form__group--custom_link {
     margin-top: -15px;
   }
+  .form__group--terms_conditions {
+    @include breakpoint($screen-md) {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+  }
+}
+#giving-page {
+  .form__group--terms_conditions {
+    @include breakpoint($screen-md) {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
 }
 #create-account,
 #giving-page {
@@ -429,8 +460,8 @@ form {
       @extend .btn;
       color: $colour-white;
       width: 100%;
-      
       border-bottom: 0px;
+
       &:hover {
         border-bottom: 0px;
       }
@@ -452,11 +483,36 @@ form {
     }
   }
 }
+
+// ==========================================================================
+// Override
+// ==========================================================================
 // hide label
 .form__group--login_credential,
 .form__field--userUrlGp,
 .form__field--userFrTarget {
   label {
     display: none;
+  }
+}
+// layout
+.form__group--terms_conditions,
+.form__group--contact_prefs,
+.form__group--fundraising_on_behalf {
+  label {
+    margin-top: 0px;
+  }
+}
+.form__group--terms_conditions,
+#login-credential .form__group--page_title {
+  .form__fieldset {
+    margin-top: 0px;
+  }
+}
+.input-with-btn-wrap {
+  .form__fieldset {
+    @include breakpoint($screen-md) {
+      margin-top: 0px;
+    }
   }
 }
