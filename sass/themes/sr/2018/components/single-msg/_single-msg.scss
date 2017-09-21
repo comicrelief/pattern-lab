@@ -1,0 +1,59 @@
+.single-msg.paragraph {
+
+  @include breakpoint($screen-md) {
+    .single-msg__outer-wrapper {
+      display: -webkit-flex;
+      display: flex;
+
+      .single-msg__copy_wrapper { 
+        // Reset absolute position to give the copy
+        // height that'll allow overflow
+        position: relative;
+        top: auto;
+        right: auto;
+        height: auto;
+        margin-top: 0;
+      } 
+    }
+
+    // Change flex direction for left-aligned copy version
+    &.single-msg--copy-left {
+      .single-msg__outer-wrapper {
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse; 
+      }
+    }
+
+    // Reset these tweaks for our Feature versions
+    &.single-msg--feature-copy-right,
+    &.single-msg--feature-copy-left {
+      .single-msg__outer-wrapper {
+        display: block;
+      }
+    }
+  }
+
+  @include breakpoint($screen-lg) {
+    &.single-msg--feature-copy-right,
+    &.single-msg--feature-copy-left {
+      .single-msg__outer-wrapper { 
+        .single-msg__copy_wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 90px gutter() 0 0;
+          height: calc(100% - (60px * 3));
+          width: calc( #{span(5)} +  ( #{gutter()} * 4) );
+        }
+      }
+    }
+
+    &.single-msg--feature-copy-left {
+      .single-msg__outer-wrapper { 
+        .single-msg__copy_wrapper {
+          margin: 90px 0 0 gutter();
+        }
+      }
+    }
+  }
+}
