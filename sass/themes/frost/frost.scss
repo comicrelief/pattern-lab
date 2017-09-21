@@ -17,6 +17,7 @@
 @import "../../base/variables/_typography.scss";
 
 // Sub theme var overrides
+@import "../../themes/cr/2017/components/typography/_fonts.scss"; // CR
 @import "core/variables/_typography.scss"; // Frost
 
 @import "../../base/variables/_lists.scss";

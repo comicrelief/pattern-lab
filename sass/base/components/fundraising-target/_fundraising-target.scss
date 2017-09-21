@@ -25,6 +25,7 @@
   .amount,
   .copy {
     float: left;
+    margin-top: 30px;
   }
   .amount {
     @include breakpoint($screen-md) {
