@@ -230,18 +230,29 @@ form {
 .age_selection {
   .btn {
     width: 45%;
-    @extend .btn--blue-ghost;
+    color: $colour-blue;
+    background-color: $colour-white;
+    border: 2px solid $colour-blue;
+    padding: 21px 20px 17px;
+
+    @include breakpoint($screen-md) {
+      padding: 21px 40px 17px;
+    }
 
     &.active { 
       background-color: $colour-blue;
       color: $colour-white;
       border: 0px;
-      padding: 23px 40px 19px;
+      padding: 23px 20px 19px;
+
+      @include breakpoint($screen-md) {
+        padding: 23px 40px 19px;
+      }
     }
   }
 
   .btn + .btn {
-    margin: 0px 0px 0px 25px;
+    margin: 0px 0px 0px 5%;
   }
 }
 
@@ -290,7 +301,13 @@ form {
   #btnNext,
   #btnBack {
     @include span(12);
-    @include font-size($p-font-size);
+    @include font-size($p-small-font-size);
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    @include breakpoint($screen-md) {
+      @include font-size($p-font-size);
+    }
   }
 }
 
@@ -355,7 +372,7 @@ form {
      margin: 15px 0px;
    }
    h5 {
-     font-weight: bold;
+     font-family: $font-bold;
    }
    button {
      @extend .link;
@@ -369,13 +386,27 @@ form {
      margin: 0px auto;
      display: block;
    }
-  
+  .forgot_password-link,
+  .forgot_password-resend,
+  .forgot_password-message {
+    @include font-size($p-small-font-size);
+  }
   .forgot_password-link {
-    width: 233px;
+    width: 185px;
+    
+    @include breakpoint($screen-md) {
+      width: 210px;
+    }
   }
   .forgot_password-resend {
-    width: 154px;
+    cursor: pointer;
+    width: 120px;
+
+    @include breakpoint($screen-md) {
+      width: 135px;
+    }
   }
+
   /* font awesome icon override */
   .fa-check:before {
     content: '';
@@ -396,11 +427,13 @@ form {
 // Form specific
 // ==========================================================================
 //-> registration
-#login-credential {
+//-> registration/insert-password
+//-> account/reset-password
+#login-credential,
+#insert-password,
+#reset-password {
   .page-title {
-    .intro-copy {
-      @include font-size($p-intro-font-size);
-    }
+    margin-top: 0px;
   }
   .form__group--page_title {
     h1 {
@@ -418,8 +451,11 @@ form {
     }
   }
 }
-//-> registration/insert-password
-//-> account/reset-password
+#login-credential {
+  .intro-copy {
+    @include font-size($p-intro-font-size);
+  }
+}
 #insert-password,
 #reset-password {
   .page-title h1 {
@@ -483,6 +519,15 @@ form {
     }
   }
 }
+#reset-password {
+  .form__group--password_input {
+    margin-top: 20px;
+    
+    @include breakpoint($screen-md) {
+      margin-top: 0px;
+    }
+  }
+}
 
 // ==========================================================================
 // Override
@@ -498,7 +543,8 @@ form {
 // layout
 .form__group--terms_conditions,
 .form__group--contact_prefs,
-.form__group--fundraising_on_behalf {
+.form__group--fundraising_on_behalf,
+#reset-password .form__group--password_input .form__field--intro {
   label {
     margin-top: 0px;
   }

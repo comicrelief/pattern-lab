@@ -44,6 +44,7 @@
     @extend .link;
     @extend .link--smoke-grey;
     color: $colour-white;
+    @include font-size($p-small-font-size);
   }
 
   .cc_button {
