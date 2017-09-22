@@ -30,7 +30,7 @@
 .card__content-wrapper {
   position: relative;
   height: 100%;
-  padding: 30px;
+  padding: 15px;
   @include breakpoint($screen-md-only) {
     @include span(7 wider);
     position: absolute;
@@ -48,6 +48,9 @@
         transform: translateY(0);
       }
     }
+  }
+  &[class*="bg--"]{
+    padding: 30px;
   }
   .cards--feature-layout & {
     z-index: 10;
