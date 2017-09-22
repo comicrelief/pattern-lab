@@ -1,0 +1,6 @@
+.promo-header {
+  @include breakpoint($screen-md-max) {
+    min-height: 500px;
+  }
+}
+
