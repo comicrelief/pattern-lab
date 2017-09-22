@@ -6,8 +6,30 @@
 
 // TO DO: add colours
 
+h1 {
+  font-family: $font-black--sr18;
+  text-transform: uppercase;
+  &.font--large{
+     @include font-size($h1-large-font-size);
+  }
+}
+
+h2,
+h3,
+h4,
 h5 {
-  font-family: $font-regular--sr18;
+  font-family: $font-bold--sr18;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+h3.alternate {
+  @extend h2;
+}
+
+h5 {
   @include font-size($h5-font-size);
 }
 
