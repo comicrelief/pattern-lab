@@ -18,6 +18,14 @@
   @include breakpoint($screen-md) {
     padding: 0px;
   }
+  a {
+    border-bottom: 0px;
+    color: $colour-white;
+    @include font-size($h3-font-size);
+  }
+  h1 {
+    margin-top: 0px;
+  }
 }
 .modal__content {
   border: 1px solid $colour-border-grey;
@@ -34,11 +42,9 @@
   }
 }
 .modal__close {
-  color: $colour-white;
   position: fixed;
   top: 10px;
   right: 10px;
-  @include font-size($h3-font-size);
 }
 .modal__close:hover,
 .modal__close:focus {

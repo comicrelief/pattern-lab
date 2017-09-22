@@ -76,6 +76,9 @@
   @include breakpoint($screen-md) {
     width: calc(100% - 40px);
   }
+  span {
+    font-family: $body-font;
+  }
   h3 {
     font-size: 18px;
     line-height: 18px;
