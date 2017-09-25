@@ -2,6 +2,9 @@
 //
 // Standard Card Block
 //
+// When no card background colour is selected the card content will have no left and right padding.
+// When a background colour is selected the card content will have padding all around (see cards grid below).
+//
 // Markup: card.twig
 //
 // Style guide: 20.60
@@ -30,7 +33,7 @@
 .card__content-wrapper {
   position: relative;
   height: 100%;
-  padding: 15px;
+  padding: 30px 0;
   @include breakpoint($screen-md-only) {
     @include span(7 wider);
     position: absolute;
