@@ -52,7 +52,7 @@
       }
     }
   }
-  &[class*="bg--"]{
+  [class*="bg--"] & {
     padding: 30px;
   }
   .cards--feature-layout & {
