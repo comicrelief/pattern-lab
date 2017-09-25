@@ -19,6 +19,11 @@
   @include breakpoint($screen-md) {
     margin: 0 gutter() 30px;
   }
+  &[class*="bg--"] {
+    .card__content-wrapper {
+      padding: 30px;
+    }  
+  }
 }
 .card__title {
   text-align: center;
@@ -52,9 +57,7 @@
       }
     }
   }
-  [class*="bg--"] & {
-    padding: 30px;
-  }
+  
   .cards--feature-layout & {
     z-index: 10;
     margin: calc(4*#{gutter()});
