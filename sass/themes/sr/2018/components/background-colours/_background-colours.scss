@@ -1,7 +1,5 @@
 // Background Colours
 //
-// To be used by row components
-//
 // Markup: background-colours.twig
 //
 // Style guide: 10.6
@@ -20,4 +18,12 @@
 }
 .bg--white-smoke {
   background-color: $colour-white-smoke;
+}
+
+//background gradients
+.bg--gradient-red-purple {
+  background-image: linear-gradient( 158deg, $colour-red 0%, $colour-purple 100%);
+}
+.bg--gradient-purple-red {
+  background-image: linear-gradient( 158deg, $colour-purple 0%, $colour-red 100%);
 }
