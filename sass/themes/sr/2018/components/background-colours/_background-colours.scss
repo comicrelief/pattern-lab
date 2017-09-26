@@ -1,0 +1,23 @@
+// Background Colours
+//
+// To be used by row components
+//
+// Markup: background-colours.twig
+//
+// Style guide: 10.6
+
+.bg--black {
+  background-color: $colour-black;
+}
+.bg--dark-blue {
+  background-color: $colour-dark-blue;
+}
+.bg--dark-blue-lighter {
+  background-color: $colour-dark-blue-lighter;
+}
+.bg--ruby {
+  background-color: $colour-ruby;
+}
+.bg--white-smoke {
+  background-color: $colour-white-smoke;
+}

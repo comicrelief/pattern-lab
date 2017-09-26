@@ -12,6 +12,7 @@
 // SR variables
 // ==========================================================================
 
+@import "variables/_colours.scss";
 @import "variables/_typography.scss";
 @import "variables/_main-nav.scss";
 
@@ -32,6 +33,7 @@
 // SR UI components
 // ==========================================================================
 
+@import "components/background-colours/_background-colours.scss";
 @import "components/teaser-block/_teaser-block.scss";
 @import "components/typography/_fonts.scss";
 @import "components/typography/_typography.scss";
