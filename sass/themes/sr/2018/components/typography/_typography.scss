@@ -19,6 +19,7 @@ h3,
 h4,
 h5 {
   font-family: $font-bold--sr18;
+  color: $colour-dark-blue;
 }
 
 h2 {
@@ -54,9 +55,11 @@ i.font--family-regular {
 strong {
   font-family: $font-bold--sr18;
   font-weight: normal;
+  color: $colour-dark-blue-lighter;
 }
 
 p {
+  color: $colour-dark-blue-lighter;
   &.font--xxlarge {
     margin-bottom: 20px;
     @include font-size($p-xxlarge-font-size);
@@ -65,3 +68,34 @@ p {
     @include font-size($p-xxsmall-font-size);
   }
 }
+
+// colour classes
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  &.font {
+    &--black {
+      color: $colour-black;
+    }
+    &--dark-blue {
+      color: $colour-dark-blue;
+    }
+    &--dark-blue-lighter {
+      color: $colour-dark-blue-lighter;
+    }
+    &--ruby {
+      color: $colour-ruby;
+    }
+    &--white-smoke {
+      color: $colour-white-smoke;
+    }
+    &--white {
+      color: $colour-white;
+    }
+  }
+}
+
