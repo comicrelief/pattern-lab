@@ -122,7 +122,6 @@
           line-height: 21px;
           padding: 12px 20px;
           height: 53px;
-          color: $colour-dark-blue;
           
           &.is-active,
           &:focus {
@@ -235,7 +234,8 @@
       }
       
       li.item-open a,
-      li a {
+      li a,
+      li a span {
         color: $colour-white;
 
         &.is-active span.menu-item__text {
