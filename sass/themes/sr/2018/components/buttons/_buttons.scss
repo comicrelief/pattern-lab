@@ -2,79 +2,70 @@
 //
 // Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Bold weight of the Proxima Nova font. All buttons
 // 
-// .btn--black-ghost - Black ghost button
-// .btn--white-ghost - White ghost button
-// .btn--red - Red button
-// .btn--blue - Blue button
-// .btn--purple - Purple button
-// .btn--white - White button
-// .btn--lg - Large-style button
-// :hover - Button hover state 
-// :active - Button active state
-// :focus - Button focus state
-//
 // Markup: buttons.twig
 //
 // Style guide: 10.3
 
 .btn {
-
-  // new
-  @include border-radius(0);
-  text-transform: uppercase;
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
   padding: 21px 30px;
+  cursor: pointer;
+  transition: 0.3s all;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: $font-bold;
+  font-size: 18px;
+  line-height: 18px;
   letter-spacing: 0.1em;
-}
-
-/* Process $buttonList colour variations through our btn-variation mixin. */
-@each $button in $buttonList {
-  @include btn-variation( $button );
-}
-
-/**
- * Buttons display as inline block for md and large breakpoints.
- */
-.btn {
-  &.btn--fixed-width {
+  text-transform: uppercase;
+  border: none;
+  @include border-radius(0);
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    // color: $colour-white;
+  }
+  &.btn--full-width {
+    display: block;
+    width: 100%;
+    @include breakpoint($screen-md) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+  + .btn {
+    margin-top: 30px;
+    margin-bottom: 0;
+    @include breakpoint($screen-md) {
+      margin-top: 0;
+      margin-left: 25px;
+    }
+  }
+  &--fixed-width {
     width: 100%;
   }
 }
 
-/**
- * Adds large buttons.
- */
-.btn--lg {
-  padding-top: 19px;
-  padding-bottom: 19px;
-  font-size: 18px;
-  line-height: 22px;
-}
 
-/**
- * Large button styles for >= md breakpoint.
- */
-@include breakpoint($screen-md) {
-  .btn--lg {
-    height: 70px;
-    padding: 24px 70px;
-  }
+//button types (font_colour, bg_colour)
+.btn--black {
+  @include sr_button_types($colour-white, $colour-black);
 }
-
-/* Ghost button 
-less padding because ghost buttons have borders */
-.btn--white-ghost,
-.btn--black-ghost {
-  padding: 20px 29px;
+.btn--dark-blue {
+  @include sr_button_types($colour-white, $colour-dark-blue);
 }
-.btn--black-ghost {
-  border: 1px solid $colour-dark-blue;
-  &:hover {
-    color: $colour-white;
-  }
+.btn--dark-blue-lighter {
+  @include sr_button_types($colour-white, $colour-dark-blue-lighter);
 }
-.btn--white-ghost {
-  border: 1px solid $colour-white;
-  &:hover {
-    color: $colour-dark-blue;
-  }
+.btn--ruby {
+  @include sr_button_types($colour-white, $colour-ruby);
+}
+.btn--white-smoke {
+  @include sr_button_types($colour-dark-blue, $colour-white-smoke);
+}
+.btn--white {
+  @include sr_button_types($colour-dark-blue, $colour-white);
 }
