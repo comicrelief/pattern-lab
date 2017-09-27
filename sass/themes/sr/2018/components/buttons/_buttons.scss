@@ -1,6 +1,6 @@
 // Buttons
 //
-// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Bold weight of the Proxima Nova font. All buttons
+// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Founders Grotesk Semibold font.
 // 
 // Markup: buttons.twig
 //
@@ -26,7 +26,6 @@
   span {
     font-size: inherit;
     font-weight: inherit;
-    // color: $colour-white;
   }
   &.btn--full-width {
     display: block;

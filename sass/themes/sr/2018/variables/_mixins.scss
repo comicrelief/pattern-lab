@@ -1,10 +1,44 @@
+//Background - font colour mixins
+@mixin dark-backgrounds() {
+  h2, h3, h4, h5, p, strong, .link {
+    color: $colour-white;
+  }
+  .bg--white-smoke,
+  .bg--white {
+    h2, h3, h4, h5 {
+      color: $colour-dark-blue;
+    }
+    p, strong, .link {
+      color: $colour-dark-blue-lighter;
+    }
+  }
+}
+@mixin light-backgrounds() {
+  h2, h3, h4, h5 {
+    color: $colour-dark-blue;
+  }
+  p, strong, .link {
+    color: $colour-dark-blue-lighter;
+  }
+  .bg--black,
+  .bg--dark-blue,
+  .bg--dark-blue-lighter,
+  .bg--ruby,
+  .bg--gradient-ruby-purple,
+  .bg--gradient-purple-ruby {
+    h2, h3, h4, h5, p, strong, .link {
+      color: $colour-white;
+    }
+  }
+}
+
 @mixin sr_button_types($colour, $bg-colour) {
   color: $colour;
   background-color: $bg-colour;
   &:hover,
   &:focus,
   &:active {
-    background-color: lighten($bg-colour, 10%);
+    background-color: darken($bg-colour, 5%);
   }
   &-ghost {
     padding: 20px 29px;

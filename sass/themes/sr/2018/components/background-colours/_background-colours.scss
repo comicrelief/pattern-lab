@@ -24,65 +24,11 @@
 }
 
 //background gradients
-.bg--gradient-red-purple {
-  background-image: linear-gradient( 158deg, $colour-red 0%, $colour-purple 100%);
+.bg--gradient-ruby-purple {
+  background-image: linear-gradient( 158deg, $colour-ruby 0%, $colour-purple 100%);
 }
-.bg--gradient-purple-red {
-  background-image: linear-gradient( 158deg, $colour-purple 0%, $colour-red 100%);
-}
-
-//Background - font colour mixins
-@mixin dark-backgrounds() {
-  h2,
-  h3,
-  h4,
-  h5,
-  p,
-  .link {
-    color: $colour-white,;
-  }
-  .bg--white-smoke,
-  .bg--white {
-    h2,
-    h3,
-    h4,
-    h5 {
-      color: $colour-dark-blue;
-    }
-    p,
-    strong,
-    .link {
-      color: $colour-dark-blue-lighter;
-    }
-  }
-}
-@mixin light-backgrounds() {
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: $colour-dark-blue;
-  }
-  p,
-  strong,
-  .link {
-    color: $colour-dark-blue-lighter;
-  }
-  .bg--black,
-  .bg--dark-blue,
-  .bg--dark-blue-lighter,
-  .bg--ruby,
-  .bg--gradient-red-purple,
-  .bg--gradient-purple-red {
-    h2,
-    h3,
-    h4,
-    h5,
-    p,
-    .link {
-      color: $colour-white;
-    }
-  }
+.bg--gradient-purple-ruby {
+  background-image: linear-gradient( 158deg, $colour-purple 0%, $colour-ruby 100%);
 }
 
 
@@ -91,8 +37,8 @@
 .bg--dark-blue { @include dark-backgrounds() };
 .bg--dark-blue-lighter { @include dark-backgrounds() };
 .bg--ruby { @include dark-backgrounds() };
-.bg--gradient-red-purple { @include dark-backgrounds() };
-.bg--gradient-purple-red { @include dark-backgrounds() };
+.bg--gradient-ruby-purple { @include dark-backgrounds() };
+.bg--gradient-purple-ruby{ @include dark-backgrounds() };
 
 // change font colour on light background
 .bg--white-smoke { @include light-backgrounds() };
