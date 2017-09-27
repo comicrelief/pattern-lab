@@ -68,6 +68,9 @@ p {
     @include font-size($p-xxsmall-font-size);
   }
 }
+span {
+  color: $colour-dark-blue-lighter;
+}
 
 // colour classes
 h1,
@@ -76,7 +79,9 @@ h3,
 h4,
 h5,
 p,
-span {
+span,
+strong,
+li {
   &.font {
     &--black {
       color: $colour-black;

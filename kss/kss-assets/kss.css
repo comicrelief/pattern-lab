@@ -207,6 +207,9 @@
   position: relative;
   display: inline-block;
   font-size: 18px; }
+#kss-node .kss-nav__menu-link span {
+  color: #fff;
+}
   @media screen and (min-width: 769px) {
     #kss-node .kss-nav__menu-link:before {
       content: ' ';
