@@ -605,38 +605,12 @@ header.sticky-nav__header ~ main .search-block {
   }
 }
 
-
-
-
-
-  
-// Hide tooltips when we're scrolling to avoid positioning issues and terrible UX
-header[role=banner].sticky-nav__header.scrolling ~ .ui-tooltip {
-  display: none !important;
-}
-
-// TODO: move
-// Offset content to make sure copy doesn't overlap transaprent nav at top of screen
-header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
-  padding-top: 30px;
-
-  @include breakpoint($screen-md) {
-    margin-top: 60px;
-  }
-
-  @include breakpoint($screen-lg) {
-    margin-top: 50px;
-  }
-}
-
-
 // Ensure wrapper height matches the content, so we can display nav fully underneath
 .cc_banner-wrapper {
   height: auto;
 }
 
  header[role=banner].sticky-nav__header {
-
   // Cookie banner-related tweaks to make sure our icons are visible over the temporarily white header 
   body.cc-banner--visible & {
     .meta-icons > a {
