@@ -493,7 +493,6 @@ header[role=banner] {
         height: $lg-nav-height;
 
         .site-logo {
-          //background-image: url(SR18_logo_nav_130x130_SR_Logo_2018_DMY_White.svg);
           background: url(../../../../kss-assets/images/SR18_logo_nav_130x130_SR_Logo_DMY.svg) no-repeat 0 0;
           background-size: 133px 60px;
         }
@@ -546,15 +545,15 @@ header[role=banner] {
       @include breakpoint($desktop-nav-breakpoint) {
         margin-top: 8px;
         height: 60px;
-        width: 150px;
+        width: 133px;
+        background: url(../../../../kss-assets/images/SR18_logo_nav_130x130_Generic_SR_Logo_DMY_white.svg) no-repeat 0 0;
+        background-size: 133px 60px;
+
 
         // Hide the simple logo image and replace with bg-img with date
         img {
           display: none;
         }
-
-        background: url(../../../../kss-assets/images/SR18_logo_nav_130x130_Generic_SR_Logo_DMY_white.svg) no-repeat 0 0;
-        background-size: 133px 60px;
       }
     }
 
