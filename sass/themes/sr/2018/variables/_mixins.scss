@@ -38,7 +38,12 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: darken($bg-colour, 5%);
+    @if ($bg-colour == $colour-black) or ($bg-colour == $colour-dark-blue) or ($bg-colour == $colour-dark-blue-lighter) {
+      background-color: lighten($bg-colour, 10%);
+    }
+    @else {
+      background-color: darken($bg-colour, 5%);
+    } 
   }
   &-ghost {
     padding: 20px 29px;
