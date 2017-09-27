@@ -39,3 +39,8 @@
     color: white;
   }
 }
+
+// Hide tooltips when we're scrolling a stickynav to avoid positioning issues and terrible UX
+header[role=banner].sticky-nav__header.scrolling ~ .ui-tooltip {
+  display: none !important;
+}
