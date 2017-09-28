@@ -3,4 +3,11 @@
     min-height: 500px;
   }
 }
+.promo-header__content {
+  p {
+    .promo-header--feature & {
+      color: $colour-dark-blue-lighter;
+    }
+  }
+}
 
