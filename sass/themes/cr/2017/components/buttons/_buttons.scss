@@ -49,7 +49,8 @@
 
 /* button(font_colour, bg_colour) */
 
-.btn--dark-purple, .btn--black {
+.btn--dark-purple, 
+.btn--black {
   @include cr_button_types($colour-white, $colour-dark-purple);
 }
 .btn--purple {
