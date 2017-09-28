@@ -24,7 +24,7 @@ textarea {
   background-color: $colour-input-grey;
   border: 1px solid $colour-border-grey;
 
-  @include font-size($p-xsmall-font-size);
+  @include font-size($p-small-font-size);
   @include border-radius(2px); 
   @include breakpoint($screen-md) {
     max-width: 100%;
@@ -89,7 +89,7 @@ form {
 
   .form__subtitle {
   	font-family: $font-bold;
-  	@include font-size($p-small-font-size);
+  	@include font-size($h5-font-size);
   }
   p {
     margin-bottom: 20px;
@@ -168,7 +168,7 @@ form {
 .form__group--giving_page_link,
 .form__group--fundraising_target {
   @include breakpoint($screen-md) {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 }
 
@@ -218,6 +218,7 @@ form {
 // ==========================================================================
 .form__overlay {
   position: absolute;
+  top: 0px;
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
   height: 100%;
@@ -239,6 +240,10 @@ form {
       padding: 21px 40px 17px;
     }
 
+    &:hover {
+      color: $colour-white;
+      background-color: $colour-blue;
+    }
     &.active { 
       background-color: $colour-blue;
       color: $colour-white;
@@ -260,6 +265,7 @@ form {
   .form__field--intro p {
     color: $colour-background-grey;
     font-style: italic;
+    @include font-size($p-xsmall-font-size);
   }
   .form__field--checkbox {
     .form__field--copy {
@@ -550,6 +556,7 @@ form {
   }
 }
 .form__group--terms_conditions,
+.form__group--fundraising_target,
 #login-credential .form__group--page_title {
   .form__fieldset {
     margin-top: 0px;
