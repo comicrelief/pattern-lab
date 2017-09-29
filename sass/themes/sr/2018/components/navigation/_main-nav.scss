@@ -155,7 +155,7 @@
 
             header[role=banner].sticky-nav__header.scrolling &,
             body.cc-banner--visible header[role=banner].sticky-nav__header & {
-              color: black;
+              color: $colour-dark-blue;
               background-image: none;
             }
 
@@ -202,7 +202,7 @@
               width: 10px;
               height: 10px;
               border: 11px solid transparent;
-              border-bottom-color: $colour-black;
+              border-bottom-color: $colour-dark-blue;
               top: -22px;
             }
           }
@@ -425,7 +425,7 @@ header[role=banner] {
 
         &:before,
         &:after {
-          background-color: black;
+          background-color: $colour-dark-blue;
         }
       }
     } 
@@ -505,7 +505,7 @@ header[role=banner] {
 
       .meta-icons a {
         .icon {
-          fill: black;
+          fill: $colour-dark-blue;
         }
       }
 
@@ -513,7 +513,7 @@ header[role=banner] {
         span,
         span:after,
         span:before {
-          background-color: black;
+          background-color: $colour-dark-blue;
         }
 
         &.is-active {
@@ -522,7 +522,7 @@ header[role=banner] {
 
             &:after,
             &:before {
-              background-color: black;
+              background-color: $colour-dark-blue;
             }
           }
         }
@@ -619,13 +619,13 @@ header.sticky-nav__header ~ main .search-block {
   body.cc-banner--visible & {
     .meta-icons > a {
       .icon {
-        fill: black;
+        fill: $colour-dark-blue;
       }
       &.active,
       &:hover,
       &:focus {
         .icon {
-          fill: black;
+          fill: $colour-dark-blue;
         }
       }
     }
@@ -638,7 +638,7 @@ header.sticky-nav__header ~ main .search-block {
   
     .c-hamburger {
       span, span:after, span:before {
-        background-color: black;
+        background-color: $colour-dark-blue;
       }
 
       &.is-active {
@@ -647,7 +647,7 @@ header.sticky-nav__header ~ main .search-block {
         }
 
         span:after, span:before {
-          background-color: black;
+          background-color: $colour-dark-blue;
         }
       }
     }
