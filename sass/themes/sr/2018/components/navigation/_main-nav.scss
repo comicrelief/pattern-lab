@@ -66,6 +66,7 @@
 
         span {
           position: relative;
+          color: inherit;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
@@ -93,7 +94,8 @@
          &:hover >a {
           span {
             position: relative;
-            
+            color: inherit;
+
             &:after {
               @extend .nav-underline;
             }
