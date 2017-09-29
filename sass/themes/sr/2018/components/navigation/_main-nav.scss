@@ -66,11 +66,14 @@
 
         span {
           position: relative;
-          color: inherit;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
           padding: 8px 7px 4px;
+
+          span {
+            color: inherit;
+          }
         }
       }
 
