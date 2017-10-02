@@ -1,0 +1,10 @@
+.block--cr-email-signup {
+
+  &.block--cr-email-signup--standard,
+  &.block--cr-email-signup--workplace,
+  &.block--cr-email-signup--register-interest {
+    @include gradient-background($colour-ruby, $colour-purple);
+    @include gradient-background($colour-purple, $colour-ruby); 
+
+  }
+}

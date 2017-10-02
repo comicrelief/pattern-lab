@@ -23,11 +23,10 @@
   background-color: $colour-white;
 }
 
-//background gradients
+// Background gradients
 .bg--gradient-ruby-purple {
-  background-image: linear-gradient( 158deg, $colour-ruby 0%, $colour-purple 100%);
+  @include gradient-background($colour-ruby, $colour-purple);
 }
 .bg--gradient-purple-ruby {
-  background-image: linear-gradient( 158deg, $colour-purple 0%, $colour-ruby 100%);
+  @include gradient-background($colour-purple, $colour-ruby); 
 }
-
