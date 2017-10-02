@@ -1,0 +1,44 @@
+// Links
+//
+// yada yada
+//
+// .link--small - Small - The font size is 16px and line height is 26px. Border / underline is 4px.
+//
+// Markup: links.twig
+//
+// Style guide: 10.2
+
+
+
+p a,
+.link  {
+  font-family: $font-bold--sr18;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid; //inherits color
+  &.inline {
+    display: inline-block;
+    font-family: inherit;
+    color: $colour-ruby;
+    border-bottom: 1px solid rgba($colour-dark-blue-lighter, 0.5);
+  }
+}
+
+// .link {
+//   &.link--black{
+//     @include link($colour-black, $colour-red);
+//   }
+// }
+
+/*Sentence case
+Font family/weight: Founders Grotesk Semibold
+Underline/border: 1px
+Colour: Copy and underline match the same colour (colour to be confirmed)
+Inline Links
+
+Sentence case
+Font family/weight: Inherit from paragraph
+Underline/border: 1px
+Colour: Copy uses lead colour (colour to be confirmed), underline is grey/transparent colour?
+*/
