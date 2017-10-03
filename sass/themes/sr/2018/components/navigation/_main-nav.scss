@@ -3,7 +3,7 @@
   content: "";
   width: auto;
   height: 2px;
-  background-color: yellow;
+  background-color: $colour-ruby;
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -94,7 +94,10 @@
 
       > li.item-open,
       > li {
-         &:hover >a {
+         &:hover > a {
+
+          color: $colour-dark-blue;
+
           span {
             position: relative;
             color: inherit;
@@ -386,11 +389,15 @@ header[role=banner] {
 
     .icon {
       fill: white;
-      margin: 12px 4px;
+      margin: 12px 10px;
     }
 
     @include breakpoint($screen-md) {
       height: $md-nav-height;
+
+      .icon {
+        margin: 12px 6px;
+      }
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
@@ -433,6 +440,8 @@ header[role=banner] {
 
   // States for ESU, Search and FROST button
   .meta-icons > a {
+
+    width: 46px;
     &.active,
     &:hover,
     &:focus {
