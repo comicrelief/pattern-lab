@@ -98,6 +98,10 @@
           
           color: $colour-dark-blue;
 
+          @include breakpoint($desktop-nav-breakpoint) {
+            color: white;
+          }
+
           span {
             position: relative;
             color: inherit;
