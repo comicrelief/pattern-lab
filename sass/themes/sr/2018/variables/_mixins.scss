@@ -30,16 +30,8 @@
   background-image: linear-gradient(90deg, $colour1 0%, $colour2 100%);
 
 // Links
-@mixin link($colour) {
-  text-decoration: none;
-  word-break: break-word;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  padding-bottom: 0.18em;
+@mixin link_colour($colour) {
   border-bottom: 1px solid $colour;
-  font-family: $font-bold--sr18;
-  font-size: inherit;
-  line-height: inherit;
   color: $colour;
   transition-property: border;
   transition-duration: 180ms;
@@ -47,11 +39,5 @@
   &:active,
   &:focus {
    border-bottom: 1px solid transparent;
-  }
-  &.inline {
-    display: inline-block;
-    padding-bottom: 0;
-    font-family: inherit;
-    font-size:inherit;
   }
 }
