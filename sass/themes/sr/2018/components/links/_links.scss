@@ -10,35 +10,53 @@ h3,
 h4,
 h5 {
   a, .link {
-    @include link($colour-dark-blue);
+    @extend .link;
+    @include link_colour($colour-dark-blue);
   }
 }
 
 p {
   a, .link {
-    @include link($colour-dark-blue-lighter);
+    @extend .link;
+    @include link_colour($colour-dark-blue-lighter);
   }
 }
 
+a,
 .link {
+  text-decoration: none;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding-bottom: 0.18em;
+  font-family: $font-bold--sr18;
+  font-size: inherit;
+  line-height: inherit;
   @include font-size($p-font-size);
-  @include link($colour-dark-blue-lighter);
+  @include link_colour($colour-dark-blue-lighter);
+  
+  &.inline {
+    display: inline-block;
+    padding-bottom: 0;
+    font-family: inherit;
+    font-size:inherit;
+  }
   &.link--black {
-    @include link($colour-black);
+    @include link_colour($colour-black);
   }
   &.link--dark-blue {
-    @include link($colour-dark-blue);
+    @include link_colour($colour-dark-blue);
   }
   &.link--dark-blue-lighter {
-    @include link($colour-dark-blue-lighter);
+    @include link_colour($colour-dark-blue-lighter);
   }
   &.link--ruby {
-    @include link($colour-ruby);
+    @include link_colour($colour-ruby);
   }
   &.link--white-smoke {
-    @include link($colour-white-smoke);
+    @include link_colour($colour-white-smoke);
   }
   &.link--white {
-    @include link($colour-white);
+    @include link_colour($colour-white);
   }
 }
