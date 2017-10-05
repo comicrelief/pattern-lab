@@ -4,25 +4,7 @@
 //
 // Style guide: 10.2
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  a, .link {
-    @extend .link;
-    @include link_colour($colour-dark-blue);
-  }
-}
 
-p {
-  a, .link {
-    @extend .link;
-    @include link_colour($colour-dark-blue-lighter);
-  }
-}
-
-a,
 .link {
   text-decoration: none;
   word-break: break-word;
@@ -35,6 +17,14 @@ a,
   @include font-size($p-font-size);
   @include link_colour($colour-dark-blue-lighter);
   
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 & {
+    @include link_colour($colour-dark-blue);
+  }
+
   &.inline {
     display: inline-block;
     padding-bottom: 0;
