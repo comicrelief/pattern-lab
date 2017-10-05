@@ -14,6 +14,8 @@
   font-family: $font-bold--sr18;
   font-size: inherit;
   line-height: inherit;
+  transition-property: border;
+  transition-duration: 180ms;
   @include font-size($p-font-size);
   @include link_colour($colour-dark-blue-lighter);
   
@@ -24,7 +26,6 @@
   h5 & {
     @include link_colour($colour-dark-blue);
   }
-
   &.inline {
     display: inline-block;
     padding-bottom: 0;
@@ -48,5 +49,10 @@
   }
   &.link--white {
     @include link_colour($colour-white);
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid transparent;
   }
 }
