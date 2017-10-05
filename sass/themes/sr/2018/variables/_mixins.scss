@@ -33,11 +33,4 @@
 @mixin link_colour($colour) {
   border-bottom: 1px solid $colour;
   color: $colour;
-  transition-property: border;
-  transition-duration: 180ms;
-  &:hover,
-  &:active,
-  &:focus {
-   border-bottom: 1px solid transparent;
-  }
 }
