@@ -1,5 +1,27 @@
 .cr-body ul {
-  li:before {
+  li {
+    &.font--xxlarge {
+      margin-bottom: 20px;
+      @include font-size($p-xxlarge-font-size);
+    }
+    &.font--xlarge {
+      margin-bottom: 20px;
+      @include font-size($p-xlarge-font-size);
+    }
+    &.font--large {
+      @include font-size($p-large-font-size);
+    }
+    &.font--small {
+      @include font-size($p-small-font-size);
+    }
+    &.font--xsmall {
+      @include font-size($p-xsmall-font-size);
+    }
+    &.font--xxsmall {
+      @include font-size($p-xxsmall-font-size);
+    }
+    &:before {
     color: inherit;
-  }
+    }
+  } 
 }
