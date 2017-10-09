@@ -68,7 +68,8 @@ p {
     @include font-size($p-xxsmall-font-size);
   }
 }
-span {
+span,
+li {
   color: $colour-dark-blue-lighter;
 }
 
