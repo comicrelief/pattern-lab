@@ -27,8 +27,8 @@
     @include link_colour($colour-dark-blue);
   }
   &.inline {
-    display: inline-block;
-    padding-bottom: 0;
+    // display: inline-block;
+    padding-bottom: 0.06em;
     font-family: inherit;
     font-size:inherit;
   }
