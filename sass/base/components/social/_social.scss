@@ -58,9 +58,10 @@ ul.social-links {
   @extend %social-icons;
   ul {
     text-align: center;
+    padding: 0px;
   }
   li {
-    margin: 0;
+    margin: 0 gutter();
   }
   .icon {
     transition: fill 0.3s ease;
