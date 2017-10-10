@@ -1,4 +1,27 @@
-.cr-body ul {
+// Lists
+//
+// These are the list items
+//
+// Markup: lists.twig
+//
+// Style guide: 10.8
+
+.cr-body {
+  ul,
+  ol {
+    font-family: $font-regular--sr18;
+    @include font-size($p-font-size);
+    li {
+      font-size: inherit;
+      colour: inherit;
+      &:before {
+      color: inherit;
+      }
+    }
+  }
+  // font size classes 
+  ul,
+  ol,
   li {
     &.font--xxlarge {
       margin-bottom: 20px;
@@ -20,8 +43,7 @@
     &.font--xxsmall {
       @include font-size($p-xxsmall-font-size);
     }
-    &:before {
-    color: inherit;
-    }
-  } 
+  }
 }
+
+
