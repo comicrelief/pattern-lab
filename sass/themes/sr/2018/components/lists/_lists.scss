@@ -13,7 +13,7 @@
     @include font-size($p-font-size);
     li {
       font-size: inherit;
-      colour: inherit;
+      color: inherit;
       &:before {
       color: inherit;
       }
