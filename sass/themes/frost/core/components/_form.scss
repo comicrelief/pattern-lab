@@ -97,7 +97,7 @@ form {
   }
   h1 {
     @include breakpoint($screen-md) {
-      margin: 30px 0px 25px 0px;
+      margin: 30px 0px 15px 0px;
     }
   }
   h2, h3, h4 {
@@ -143,7 +143,7 @@ form {
   .intro-copy {
     @include font-size($h2-font-size);
     @include breakpoint($screen-md) {
-      margin-bottom: 35px;
+      margin-bottom: 20px;
     }
   }
   
@@ -429,6 +429,12 @@ form {
   }
 }
 
+.password-checkbox {
+  label {
+    margin: 20px 0px 0px 0px;
+  }
+}
+
 // ==========================================================================
 // Form specific
 // ==========================================================================
@@ -437,7 +443,8 @@ form {
 //-> account/reset-password
 #login-credential,
 #insert-password,
-#reset-password {
+#reset-password,
+#reset-password-invalid {
   .page-title {
     margin-top: 0px;
   }
@@ -446,7 +453,7 @@ form {
       margin-top: -5px;
 
       @include breakpoint($screen-md) {
-        margin: -10px 0px 40px 0px;
+        margin: -10px 0px 20px 0px;
       }
     }
     p:last-child, 
@@ -461,11 +468,35 @@ form {
   .intro-copy {
     @include font-size($p-intro-font-size);
   }
+  .form__group--page_title {
+    h1 {
+      @include breakpoint($screen-md) {
+        margin-bottom: 30px;
+      }
+    }
+  }
 }
 #insert-password,
-#reset-password {
+#reset-password,
+#reset-password-invalid {
   .page-title h1 {
     @include font-size($h1-small-font-size);
+  }
+}
+#insert-password {
+  .form__group--login_credential .form__fieldset {
+    @include breakpoint($screen-md) {
+      margin-top: 30px;
+
+      .form__fieldset {
+        margin-top: 0px;
+      }
+    }
+  }
+  .form__group--forgot_password {
+    @include breakpoint($screen-md) {
+      margin-top: 10px;
+    }
   }
 }
 //-> registration/create-account
@@ -497,6 +528,9 @@ form {
 }
 //-> account/reset-password?token=xxxx
 #reset-password-invalid {
+  .intro-copy-extra {
+    margin-bottom: 30px;
+  }
   .form__group--custom_link {
     a {
       @extend .btn;
@@ -531,6 +565,10 @@ form {
     
     @include breakpoint($screen-md) {
       margin-top: 0px;
+    }
+    .form__field--intro label {
+      font-family: $font-bold;
+      @include font-size($h5-font-size);
     }
   }
 }

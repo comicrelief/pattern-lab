@@ -1,0 +1,31 @@
+// ==========================================================================
+// Form
+// ==========================================================================
+
+.form__group {
+	a {
+    border-bottom: 4px solid $colour-ruby;
+  }
+}
+
+// ==========================================================================
+// Form Component
+// ==========================================================================
+.age_selection {
+  .btn {
+
+  	&:hover {
+      background-color: $colour-ruby;
+      border: 2px solid $colour-ruby;
+    }
+    &.active { 
+      background-color: $colour-ruby;
+      border: 2px solid $colour-ruby;
+  	}
+  }
+}
+.forgot_password {
+	button {
+		border-bottom: 4px solid $colour-ruby;
+	}
+}
