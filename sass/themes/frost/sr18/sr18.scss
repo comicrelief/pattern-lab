@@ -11,14 +11,15 @@
 @import "../../../base/variables/_colours.scss";
 
 // Sub theme var overrides
-@import "../../../themes/cr/2017/variables/_colours.scss"; // CR
+@import "../../../themes/sr/2018/variables/_colours.scss"; // SR
+@import "../../../themes/sr/2018/variables/_mixins.scss"; // SR
 @import "../core/variables/_colours.scss"; // Frost
 @import "variables/_colours.scss";
 
 @import "../../../base/variables/_typography.scss";
 
 // Sub theme var overrides
-@import "../../../themes/cr/2017/components/typography/_fonts.scss"; // CR
+@import "../../../themes/cr/2017/components/typography/_fonts.scss"; // SR
 @import "../core/variables/_typography.scss"; // Frost
 
 @import "../../../base/variables/_lists.scss";
@@ -61,4 +62,6 @@
 // ==========================================================================
 
 @import "components/_header.scss";
-
+@import "components/_buttons.scss";
+@import "components/_cookie-consent";
+@import "components/_form.scss";
