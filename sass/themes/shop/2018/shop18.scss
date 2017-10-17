@@ -1,15 +1,5 @@
-// ==========================================================================
-// Core components
-// ==========================================================================
-
-@import "../../../base/core/base-1-mixins";
-@import "../../../base/core/base-breakpoints";
-@import "../../../base/core/base-common";
-@import "../../../base/core/base-grid";
-@import "../../../base/core/base-helper";
-@import "../../../base/core/base-layout";
-@import "../../../base/core/base-reset";
-
+$item-grey: #ddd;
+// $colour-red: #e81962;
 // ==========================================================================
 // Core variables
 // ==========================================================================
@@ -24,46 +14,43 @@
 // Sub Theme variables
 // ==========================================================================
 
-
-// For now, pull in CR variables
-@import "../../cr/2017/variables/_colours.scss";
-@import "../../cr/2017/variables/_typography.scss";
-@import "../../cr/2017/variables/_mixins.scss";
+// SR variables
+@import "../../sr/2018/variables/_colours.scss";
+@import "../../sr/2018/variables/_typography.scss";
+@import "../../sr/2018/variables/_mixins.scss";
+@import "../../sr/2018/variables/_main-nav.scss";
 
 // ==========================================================================
 // Core components
 // ==========================================================================
 
-// Ou choose components one by one
-@import "../../../base/components/animations/animations";
-@import "../../../base/components/background-colours/background-colours";
+@import "../../../base/_core";
 
-@import "../../../base/components/buttons/buttons";
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+//Ou choose components one by one
+@import "../../../base/components/animations/animations";
+// @import "../../../base/components/background-colours/background-colours";
+// @import "../../../base/components/buttons/buttons";
 @import "../../../base/components/card-block/card";
 @import "../../../base/components/cards/cards";
-
 @import "../../../base/components/external-link/external-link";
-
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/form/form";
 @import "../../../base/components/grid/grid";
 @import "../../../base/components/header/base-header";
-
-@import "../../../base/components/links/links";
-@import "../../../base/components/list/list";
-
+// @import "../../../base/components/links/links";
+// @import "../../../base/components/list/list";
 @import "../../../base/components/media/media";
 @import "../../../base/components/meta-icons/meta-icons";
-
-@import "../../../base/components/navigation/feature-nav";
+// @import "../../../base/components/navigation/feature-nav";
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/navigation/hamburger-menu-button";
 @import "../../../base/components/navigation/main-nav";
-
 @import "../../../base/components/promo-header/promo-header";
-
 @import "../../../base/components/progress-indicator/progress-indicator";
-
 @import "../../../base/components/social/social";
 @import "../../../base/components/table/table";
 @import "../../../base/components/tooltips/tooltips";
@@ -71,33 +58,11 @@
 @import "../../../base/components/partners/partners";
 @import "../../../base/components/partners/partners-row";
 
-
 // ==========================================================================
 // Sub theme components overrides
 // ==========================================================================
 
 @import "_shop18-components";
-
-
-// Elements
-//
-// Style guide: 10
-
-// Typography
-//
-// Markup: typography.twig
-//
-// Style guide: 10.1
-
-// Components
-//
-// Style guide: 20
-
-// Partners Grid
-//
-// Markup: partners-grid.twig
-//
-// Style guide: 20.101
 
 // Header
 //
