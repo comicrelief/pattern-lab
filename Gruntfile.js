@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'sass/themes/base',
-          src: ['{,**/}*.scss'],
+          src: ['{,**/}*.scss, !{,**/}__*.scss'],
           dest: 'dist/css/themes/base',
           ext: '.css'
         }]
@@ -173,7 +173,7 @@ module.exports = function (grunt) {
     sass_globbing: {
       your_target: {
         files: {
-          'sass/base/_components.scss': 'sass/base/components/**/*.scss',
+          'sass/base/_components.scss': ['sass/base/components/**/*.scss', '!sass/base/components/**/__*.scss'],
           'sass/base/_variables.scss': 'sass/base/variables/*.scss',
           'sass/base/_core.scss': 'sass/base/core/*.scss'
         },
