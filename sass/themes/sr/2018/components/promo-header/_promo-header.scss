@@ -15,11 +15,11 @@
 .promo-header__bg-image.compat-object-fit {
   min-height: 300px;
 
-  @include breakpoint($screen-md){
+  @include breakpoint($screen-md) {
     min-height: 400px;
   }
 
-  @include breakpoint($screen-lg){
+  @include breakpoint($screen-lg) {
     min-height: 500px;
   }
 }
