@@ -11,7 +11,6 @@
   }
 }
 
-
 // As we can't maintain the ratio, at least set a height on browsers that can't display objectfit our promo feature image
 .promo-header__bg-image.compat-object-fit {
   min-height: 300px;
