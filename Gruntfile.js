@@ -369,7 +369,7 @@ module.exports = function (grunt) {
         src: ['dist/css/themes/cr/**/*.css']
       },
       frost: {
-        src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css', 'sass/themes/frost/css/**/*.css',]
+        src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css', 'sass/themes/frost/css/**/*.css']
       },
       payin: {
         src: ['dist/css/kss/payin.css', 'dist/css/themes/payin/**/*.css']
@@ -428,7 +428,7 @@ module.exports = function (grunt) {
     'sass:frost_build',
     'modernizr',
     'kss:frost',
-    'postcss:frost'
+    'postcss:frost',
   ]);
 
   grunt.registerTask('build:payin', [
