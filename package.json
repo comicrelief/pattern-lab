@@ -28,7 +28,6 @@
     "browserslist": "^2.1.4",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-imagemin": "^2.0.1",
-    "grunt-data-uri": "^0.3.0",
     "grunt-kss": "^5.0.1",
     "grunt-postcss": "^0.8.0",
     "grunt-sass-tilde-importer": "^1.0.2",
