@@ -24,6 +24,7 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
+    "susy": "^2.2.12"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -49,8 +50,7 @@
     "npm-link-local": "^1.1.0",
     "semantic-release": "^6.3.2",
     "smartmenus": "^1.0.1",
-    "snyk": "^1.36.2",
-    "susy": "^2.2.12"
+    "snyk": "^1.36.2"
   },
   "repository": {
     "type": "git",
