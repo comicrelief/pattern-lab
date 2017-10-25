@@ -5,6 +5,7 @@
 node_modules/
 npm-debug.log
 .idea/
+package-lock.json
 
 #distribution
 dist
