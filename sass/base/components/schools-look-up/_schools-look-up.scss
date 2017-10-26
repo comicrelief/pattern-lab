@@ -67,7 +67,8 @@
     border: 1px solid $item-grey;
     border-top: 0px;
 
-    &:hover {
+    &:hover,
+    &.default-selection {
       background-color: $item-grey;
     }
 
