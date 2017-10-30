@@ -49,15 +49,6 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
-      frost_build: {
-        files: [{
-          expand: true,
-          cwd: 'sass/themes/frost',
-          src: ['{,**/}*.scss'],
-          dest: 'sass/themes/frost/css',
-          ext: '.css'
-        }]
-      },
       payin: {
         files: [{
           expand: true,
@@ -369,7 +360,7 @@ module.exports = function (grunt) {
         src: ['dist/css/themes/cr/**/*.css']
       },
       frost: {
-        src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css', 'sass/themes/frost/css/**/*.css']
+        src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css']
       },
       payin: {
         src: ['dist/css/kss/payin.css', 'dist/css/themes/payin/**/*.css']
@@ -425,7 +416,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build:frost', [
     'sass:frost',
-    'sass:frost_build',
     'modernizr',
     'kss:frost',
     'postcss:frost',
