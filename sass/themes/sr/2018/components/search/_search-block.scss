@@ -1,0 +1,23 @@
+.search-block {
+  @include gradient-background($colour-purple, $colour-ruby);
+
+  .search-block__form form {
+    border-bottom: $colour-white-smoke 1px solid ;
+  }
+  .form-item {
+    margin-left: 0;
+  }
+  input[type=text] {
+    padding: 13px 0;
+    font-family: $font-bold--sr18;
+    color: $colour-white;
+    background-color: transparent;
+  }
+  input[type=submit] {
+    background-color: $colour-white;
+
+    &:hover {
+      background-color: darken($colour-white, 10%);
+    }
+  }
+}
