@@ -1,21 +1,44 @@
 .search-block {
   @include gradient-background($colour-purple, $colour-ruby);
 
-  .search-block__form form {
-    border-bottom: $colour-white-smoke 1px solid ;
+  .search-block__form {
+    margin: 0 auto;
+    form {
+      margin: 100px auto 50px;
+      border-bottom: $colour-white-smoke 1px solid ;
+      @include breakpoint($screen-md){
+        margin: 150px auto 50px;
+      }
+    }
   }
   .form-item {
     margin-left: 0;
+    margin-bottom: 5px;
   }
   input[type=text] {
-    padding: 13px 0;
+    height: 50px;
+    padding: 0;
     font-family: $font-bold--sr18;
+    @include font-size($p-large-font-size);
     color: $colour-white;
     background-color: transparent;
+    @include breakpoint($screen-md){
+      @include font-size($p-xxlarge-font-size);
+    }
+  }
+  .form-actions {
+    margin: 0;
+    float: right;
   }
   input[type=submit] {
+    height: 50px;
     background-color: $colour-white;
-
+    mask-size: 18px;
+    -webkit-mask-size: 18px;
+    @include breakpoint($screen-md){
+      mask-size: 36px;
+      -webkit-mask-size: 36px;
+    }
     &:hover {
       background-color: darken($colour-white, 10%);
     }
