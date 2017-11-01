@@ -1,0 +1,111 @@
+/* 
+ * Self-contained styles for the Storybook-based Grants Near You component,
+ * primarly to be imported by other applications.
+ *
+ * This component isn't built or shown within the Pattern Lab itself
+ */
+
+@import "../../../base/_core.scss";
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_typography.scss";
+@import "../../../base/components/background-colours/_background-colours.scss";
+@import "../../../base/components/typography/_typography.scss";
+@import "../../../base/components/single-msg/_single-msg.scss";
+@import "../../../base/components/promo-header/_promo-header.scss";
+
+.funded-projects {
+  header {
+    position: relative;
+    overflow: hidden;
+
+    .promo-header__content .promo-header__content-inner {
+      margin: 25px auto 15px;
+
+      @include breakpoint($screen-md) {
+        margin: 40px auto;
+      }
+    }
+  }
+
+  .paging-information {
+    float: right;
+    padding: 1em ;
+  }
+
+  .search-container {
+    padding: 20px 0;
+
+    form {
+      margin: 0 auto;
+      width: 350px;
+    }
+
+
+    input {
+      width: 100%;
+      background: $colour-light-grey;
+      padding: 10px 15px;
+      font-size: 21px;
+      border: 0;
+    }
+
+  }
+
+  .result {
+    &:nth-of-type(even) {
+      background: $colour-light-grey;
+
+    }
+
+    .result__inner {
+      @include container();
+    }
+
+    .paragraph.single-msg .single-msg__copy_wrapper .single-msg__copy {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .single-msg__image {
+      @include span(12);
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
+
+      @include breakpoint($screen-lg) {
+        @include span(3);
+      }
+    }
+
+    .single-msg__copy_wrapper {
+      @include span(12);
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
+
+      @include breakpoint($screen-lg) {
+        @include span(9 wide);
+      }
+    }
+  }
+}
+
+.geo-info {
+  text-align: center;
+
+  p {
+    margin: 20px 0 0;
+  }
+
+  span.geo-info--spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: url(/assets/lg.fidget-spinner.gif);
+    background-size: 50px 50px;
+  }
+}

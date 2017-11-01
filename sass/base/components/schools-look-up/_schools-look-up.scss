@@ -1,0 +1,83 @@
+// Schools Look Up
+
+.SchoolsLookUp {
+  @include span(8);
+  margin: gutter();
+
+  label {
+    @include font-size($p-font-size);
+    margin: 20px 0px 0px 0px;
+
+    @include breakpoint($screen-md) {
+      margin: 30px 0px 0px 0px;
+    }
+  }
+  input {
+    @include font-size($p-small-font-size);
+
+  }
+}
+.SchoolsLookUp-link {
+  @extend .link;
+  @extend .link--blue;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  background-color: transparent;
+  padding: 0px;
+  display: block;
+  margin-top: 10px;
+}
+.SchoolsLookUp-maunal {
+  margin-top: 10px;
+}
+.SchoolsLookUp-title {
+  @include font-size($p-font-size);
+}
+.schoolsLookUpForm {
+  max-width: 100%;
+  @extend input[type="text"];
+
+  .rbt-input {
+    position: absolute;
+    top: 0px;
+  }
+
+  .rbt-menu {
+    top: 36px;
+    position: relative;
+    z-index: 1;
+    background: $colour-white;
+    
+    cursor: pointer;
+    outline: 0 none;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0px -14px;
+  }
+  a {
+    color: $colour-black;
+    text-decoration: none;
+    &.disabled {
+      color: $colour-red;
+    }
+  }
+  li {
+    padding: 12px 50px 14px 10px;
+    border: 1px solid $item-grey;
+    border-top: 0px;
+
+    &:hover,
+    &.default-selection {
+      background-color: $item-grey;
+    }
+
+    &.disabled {
+      border: 0px;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

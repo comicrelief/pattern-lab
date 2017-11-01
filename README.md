@@ -34,24 +34,24 @@ To have a centralised hub supply common styling across CR products.
 #### Get it up and running in another project
 * Clone this repository to a directory at the root level of your CR dev, alongside the other project. e.g. `git clone https://github.com/comicrelief/pattern-lab ~/cr_root/pattern-lab`
 * Go to the npm root level of the project you want to use it in. E.g. for payin: `cd ~/cr_root/payin/web`
-* If that project has a link script, just `npm run link-patternlab`
+* If that project has a link script, just `yarn link-patternlab`
 * Or if it doesn't, `npm install npm-link-local --global` and then e.g. `npm-link-local ~/cr_root/pattern-lab`
 
 Either of the last 2 steps creates a symlink in the other project's `node_modules`, pointing to your local copy of `pattern-lab`.
 
 #### Make code changes
 * it follows same development process: create feature branch -> commit and push changes -> create pull request for code review
-* run `npm run watch` to liveload file changes
-* run `npm run build` to generate all themes in the styleguide
-* run `npm run build-base` to only generate the base theme in the styleguide
-* run `npm run build-cr17` to only generate the cr17 theme in the styleguide
-* run `npm run build-frost` to only generate the frost theme in the styleguide
-* run `npm run build-payin` to only generate the payin theme in the styleguide
-* run `npm run build-rnd17` to only generate the rnd17 theme in the styleguide
-* run `npm run build-sr18` to only generate the sr18 theme in the styleguide
+* run `yarn watch` to liveload file changes
+* run `yarn build` to generate all themes in the styleguide
+* run `yarn build-base` to only generate the base theme in the styleguide
+* run `yarn build-cr17` to only generate the cr17 theme in the styleguide
+* run `yarn build-frost` to only generate the frost theme in the styleguide
+* run `yarn build-payin` to only generate the payin theme in the styleguide
+* run `yarn build-rnd17` to only generate the rnd17 theme in the styleguide
+* run `yarn build-sr18` to only generate the sr18 theme in the styleguide
 
 #### Dev server
-* run `npm run dev-server` or `npm run watch`
+* run `yarn dev-server` or `yarn watch`
 * go to `http://localhost:1337` to view styleguide
 
 ## Semantic Release Process
@@ -99,7 +99,7 @@ answering a few questions and skipping the ones which are not relavent.
 Example workflow:
 - Make code changes in your feature branch
 - Run **`git add .`** to add changed files and get ready to commit
-- Run **`npm run commit`**
+- Run **`yarn commit`**
  
 This will start an interactive process to build commit message. Simply answer all questions or
 press `Enter` to skip.
@@ -127,7 +127,7 @@ https://ci.apps.comicrelief.com/teams/main/pipelines/pattern-lab
 ```
 - Run visual regression test locally 
 ```
-npm run backstop-test-local
+yarn backstop-test-local
 ```
 - View pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
 

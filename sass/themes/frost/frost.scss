@@ -37,6 +37,7 @@
 @import "../../base/components/list/list";
 @import "../../base/components/navigation/_footer-nav";
 @import "../../base/components/progress-indicator/progress-indicator";
+@import "../../base/components/schools-look-up/_schools-look-up";
 @import "../../base/components/social/social";
 @import "../../base/components/typography/typography";
 
@@ -51,7 +52,11 @@
 				"core/components/_cookie-consent",
 				"core/components/_buttons",
 				"core/components/_modal",
-				"core/components/_gpLink";
+				"core/components/_gpLink",
+				"core/components/_background-images",
+				"core/components/_campaign-images",
+				"core/components/_font-awesome",
+				"core/components/_schools-look-up";
 
 @import "core/_frost-components";
 

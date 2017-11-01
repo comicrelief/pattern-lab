@@ -1,0 +1,29 @@
+
+// ==========================================================================
+// Background images
+// ==========================================================================
+
+$bg-image-path: '../images/landing/';
+$bg-image-name: 'construction', 'fabrics', 'football', 'rooftop', 'rubbish-dump-01', 'rubbish-dump-02', 'sack-race';
+$bg-image-position: 'center center', 'center center', 'center bottom', 'center center', 'center center', 'center center', 'center center';  
+$i: 1;
+
+main {
+  display: block;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@for $i from 1 through length($bg-image-name) {
+  .background-image--#{$i} main {
+    background-position: #{nth($bg-image-position, $i)};
+    background-image: url($bg-image-path + nth($bg-image-name, $i) + '_bg.jpg');
+
+    @include breakpoint($screen-md) {
+      background-image: url($bg-image-path + nth($bg-image-name, $i) + '_bg@2x.jpg');
+    }
+  }
+}

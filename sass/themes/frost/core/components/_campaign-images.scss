@@ -1,0 +1,55 @@
+
+// ==========================================================================
+// Campaign images
+// ==========================================================================
+
+$campaign-image-path: '../images/campaigns/';
+$campaign-image-name: '17', '19', '21';
+
+.campaign_selection {
+	clear: both;
+
+	.campaign {
+		width: 50%;
+		text-align: center;
+		float: left;
+	}
+	.campaign-image {
+		display: block;
+		width: 125px;
+		height: 125px;
+		margin: 0px auto 15px auto;
+		outline: none;
+		cursor: pointer;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	}
+	.campaign-name {
+		width: 95%;
+		margin: auto;
+
+		h6, p {
+			color: $colour-blue;
+		}
+		h6 {
+			@include font-size($p-small-font-size);
+		}
+		p {
+			@include font-size($p-xxsmall-font-size);
+		}
+	}
+}
+
+@for $i from 1 through length($campaign-image-name) {
+  .campaign-image--#{nth($campaign-image-name, $i)} {
+    background-image: url($campaign-image-path + nth($campaign-image-name, $i) + '.png');
+
+    &.active,
+    &:hover {
+    	background-image: url($campaign-image-path + nth($campaign-image-name, $i) + '-selected.png');
+    }
+  }
+}
