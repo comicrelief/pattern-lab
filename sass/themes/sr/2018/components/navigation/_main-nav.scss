@@ -610,17 +610,18 @@ header[role=banner] {
 }
 
 // Position search dropdown in relation to new heights
-header.sticky-nav__header ~ main .search-block {
-  position: fixed;
-  top: $sm-nav-height;
-  @include breakpoint($screen-md) {
-    top: $md-nav-height;
-  }
+// header.sticky-nav__header ~ main .search-block {
+//   position: fixed;
+//   padding-top: $sm-nav-height;
+
+//   @include breakpoint($screen-md) {
+//     padding-top: $md-nav-height;
+//   }
   
-  @include breakpoint($desktop-nav-breakpoint) {
-    top: $lg-nav-height;
-  }
-}
+//   @include breakpoint($desktop-nav-breakpoint) {
+//     padding-top: $lg-nav-height;
+//   }
+// }
 
 // Ensure wrapper height matches the content, so we can display nav fully underneath
 .cc_banner-wrapper {
