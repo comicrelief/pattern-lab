@@ -1,0 +1,37 @@
+.path-search {
+  background-color: $colour-white;
+  .search-block__form {
+    margin: 0 auto;
+    form {
+      @include breakpoint($screen-md){
+        margin: 150px auto 50px;
+      }
+    }
+  }
+  .search-result__content {
+    @include font-size($p-font-size);
+    h3 {
+      @include font-size($p-large-font-size);
+      @include breakpoint($screen-md) {
+        @include font-size($p-xxlarge-font-size);
+      }
+    }
+    & .search-result__tag {
+      color: $colour-ruby;
+    }
+    & .search-result__published-date {
+      // decrease line height for smaller border
+      line-height: 16px;
+      color: $colour-ruby;
+      @include breakpoint($screen-md) {
+        border-left: 2px solid $colour-ruby;
+      }
+    }
+    a {
+      color: $colour-dark-blue;
+    }
+    .search-result__body {
+      color: $colour-dark-blue-lighter;
+    }
+  }
+}
