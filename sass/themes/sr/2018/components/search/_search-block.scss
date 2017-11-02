@@ -2,13 +2,10 @@
   @include gradient-background($colour-purple, $colour-ruby);
 
   .search-block__form {
-    margin: 0 auto;
+    //gives height to the block
     form {
       margin: 100px auto 50px;
       border-bottom: $colour-white-smoke 1px solid ;
-      @include breakpoint($screen-md){
-        margin: 150px auto 50px;
-      }
     }
   }
   .form-item {
@@ -34,14 +31,25 @@
   input[type=submit] {
     height: 50px;
     background-color: $colour-white;
-    mask-size: 18px;
-    -webkit-mask-size: 18px;
+    // mask size is the same as font size
+    mask-size: 23px;
+    -webkit-mask-size: 23px;
     @include breakpoint($screen-md){
       mask-size: 36px;
       -webkit-mask-size: 36px;
     }
     &:hover {
       background-color: darken($colour-white, 10%);
+    }    
+  }
+  a.close-button {
+    .icon {
+      fill: $colour-white;
+    }
+    &:hover {
+    .icon {
+      fill: $colour-white-smoke;
+    }
     }
   }
 }
