@@ -1,4 +1,13 @@
 .search-block {
+  // offset from navigation
+  position: fixed;
+  padding-top: $sm-nav-height;
+  @include breakpoint($screen-md) {
+    padding-top: $md-nav-height;
+  }
+  @include breakpoint($desktop-nav-breakpoint) {
+    padding-top: $lg-nav-height;
+  }
   @include gradient-background($colour-purple, $colour-ruby);
 
   .search-block__form {
@@ -43,6 +52,14 @@
     }    
   }
   a.close-button {
+    // offset from navigation
+    padding-top: $sm-nav-height;
+    @include breakpoint($screen-md) {
+      padding-top: $md-nav-height;
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      padding-top: $lg-nav-height;
+    }
     .icon {
       fill: $colour-white;
     }
