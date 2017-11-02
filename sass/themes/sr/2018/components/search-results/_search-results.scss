@@ -1,5 +1,9 @@
 .path-search {
   background-color: $colour-white;
+  .search-block {
+    position: relative;
+    padding-top: 0;
+  }
   .search-block__form {
     margin: 0 auto;
     form {

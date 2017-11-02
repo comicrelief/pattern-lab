@@ -26,3 +26,7 @@
 .kss-modifier__example header[role=banner].sticky-nav__header {
   position: relative;
 }
+// Position search block relative as fixed will mess up styleguide
+.kss-modifier__example .search-block {
+  position: relative;
+}
