@@ -444,12 +444,20 @@ header[role=banner] {
 
   // States for ESU, Search and FROST button
   .meta-icons > a {
-
     width: 46px;
+    transition: 0.2s background-color;
     &.active,
     &:hover,
     &:focus {
-      background-color: rgba(0, 0, 0, 0.2);
+      height: calc(#{$sm-nav-height} + 20px);
+      background-color: $colour-dark-blue;
+
+      @include breakpoint($screen-md) {
+        height: calc(#{$md-nav-height} + 20px);
+      }
+      @include breakpoint($screen-lg) {
+        height: calc(#{$lg-nav-height} + 20px);
+      }
       
       .icon {
         fill: white;
@@ -519,6 +527,14 @@ header[role=banner] {
       .meta-icons a {
         .icon {
           fill: $colour-dark-blue;
+          transition: 0.2s fill;
+        }
+        &.active,
+        &:hover,
+        &:focus {
+          .icon {
+            fill: $colour-white;
+          }
         }
       }
 
