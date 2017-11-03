@@ -1,72 +1,77 @@
+// Search block
+//
+// Markup: search.twig
+//
+// Style guide: 20.195
+
 .search-block {
-  // offset from navigation
   position: fixed;
-  padding-top: $sm-nav-height;
+  // offset from navigation
+  top: calc(#{$sm-nav-height} + 20px);
   @include breakpoint($screen-md) {
-    padding-top: $md-nav-height;
+    top: calc(#{$md-nav-height} + 20px);
   }
   @include breakpoint($desktop-nav-breakpoint) {
-    padding-top: $lg-nav-height;
+    top: calc(#{$lg-nav-height} + 20px);
   }
-  @include gradient-background($colour-purple, $colour-ruby);
+  right: 92px;
+  padding: 20px;
+  width: 380px;
+  background-color: $colour-dark-blue;
+  
+  .search-block__message {
+    margin-bottom: 10px;
+    height: 70px;
+    width: 100%;
+    p {
+      font-family: $font-bold--sr18;
+      color: $colour-white;
+      word-wrap: break-word;
+      @include font-size($h3-font-size);
+    }
+  }
 
   .search-block__form {
-    //gives height to the block
+    margin: 0;
+    padding: 0;
+    width: 100%;
     form {
-      margin: 100px auto 50px;
-      border-bottom: $colour-white-smoke 1px solid ;
+      margin: 0;
+      border: none ;
     }
   }
   .form-item {
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 5px;
+    margin: 0;
+    padding: 0 10px;
+    width: 290px;
+    background-color: $colour-white;
   }
+  
   input[type=text] {
-    height: 50px;
     padding: 0;
+    height: 50px;
     font-family: $font-bold--sr18;
-    @include font-size($p-large-font-size);
-    color: $colour-white;
-    background-color: transparent;
-    @include breakpoint($screen-md){
-      @include font-size($p-xxlarge-font-size);
-    }
+    @include font-size($h3-font-size);
+    color: $colour-dark-blue;
   }
   .form-actions {
     margin: 0;
-    float: right;
+    height: 50px;
+    width: 50px;
+    background-color: $colour-ruby;
   }
   input[type=submit] {
+    width: 25px;
     height: 50px;
     background-color: $colour-white;
-    // mask size is the same as font size
     mask-size: 23px;
     -webkit-mask-size: 23px;
     @include breakpoint($screen-md){
-      mask-size: 36px;
-      -webkit-mask-size: 36px;
+      mask-size: 25px;
+      -webkit-mask-size: 25px;
     }
     &:hover {
       background-color: darken($colour-white, 10%);
     }    
-  }
-  a.close-button {
-    // offset from navigation
-    padding-top: $sm-nav-height;
-    @include breakpoint($screen-md) {
-      padding-top: $md-nav-height;
-    }
-    @include breakpoint($desktop-nav-breakpoint) {
-      padding-top: $lg-nav-height;
-    }
-    .icon {
-      fill: $colour-white;
-    }
-    &:hover {
-    .icon {
-      fill: $colour-white-smoke;
-    }
-    }
   }
 }
