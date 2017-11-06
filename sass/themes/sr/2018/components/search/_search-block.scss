@@ -6,18 +6,21 @@
 
 .search-block {
   position: fixed;
-  // offset from navigation
   top: calc(#{$sm-nav-height} + 20px);
+  right: 70px;
+  left: initial;
+  padding: 20px;
+  width: 380px;
+  background-color: $colour-dark-blue;
   @include breakpoint($screen-md) {
     top: calc(#{$md-nav-height} + 20px);
   }
   @include breakpoint($desktop-nav-breakpoint) {
-    top: calc(#{$lg-nav-height} + 20px);
+    top: calc(#{$lg-nav-height} + 20px);   
   }
-  right: 92px;
-  padding: 20px;
-  width: 380px;
-  background-color: $colour-dark-blue;
+  @include breakpoint($desktop-nav-breakpoint) {
+    right: 92px; 
+  }
   
   .search-block__message {
     margin-bottom: 10px;
