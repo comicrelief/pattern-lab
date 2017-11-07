@@ -7,14 +7,13 @@
 .search-block {
   position: absolute;
   top: calc(#{$sm-nav-height} + 20px);
-  right: calc(70px + 65px);
+  right: calc(92px + 65px);
   left: initial;
   padding: 20px;
   width: 380px;
   background-color: $colour-dark-blue;
   @include breakpoint($screen-md) {
     top: calc(#{$md-nav-height} + 20px);
-    right: calc(92px + 65px);
   }
   @include breakpoint($desktop-nav-breakpoint) {
     top: calc(#{$lg-nav-height} + 20px);   
@@ -24,10 +23,11 @@
   }
   
   .search-block__message {
-    margin-bottom: 10px;
-    height: 70px;
+    margin: 0;
     width: 100%;
     p {
+      margin: 0 auto 20px;
+      width: 60%;
       font-family: $font-bold--sr18;
       color: $colour-white;
       word-wrap: break-word;
@@ -47,8 +47,11 @@
   .form-item {
     margin: 0;
     padding: 0 10px;
-    width: 290px;
+    width: calc(100% - 50px);
     background-color: $colour-white;
+    @include breakpoint($screen-md) {
+      width: 290px;
+    }
   }
   
   input[type=text] {
@@ -70,7 +73,7 @@
     background-color: $colour-white;
     mask-size: 23px;
     -webkit-mask-size: 23px;
-    @include breakpoint($screen-md){
+    @include breakpoint($screen-md) {
       mask-size: 25px;
       -webkit-mask-size: 25px;
     }
