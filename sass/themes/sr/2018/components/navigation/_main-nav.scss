@@ -447,7 +447,7 @@ header[role=banner] {
     display: block;
     float: left;
     width: 46px;
-    transition: 0.2s background-color
+    transition: 0.2s background-color;
     &:hover,
     &:focus {
       height: $sm-nav-height;
@@ -458,6 +458,9 @@ header[role=banner] {
       }
       @include breakpoint($screen-lg) {
         height: $lg-nav-height;
+      }
+      .icon {
+        fill: white;
       }
     }
     &.active {
@@ -470,10 +473,10 @@ header[role=banner] {
       @include breakpoint($screen-lg) {
         height: calc(#{$lg-nav-height} + 20px);
       }
-    }
-    .icon {
-      fill: white;
-    }
+      .icon {
+        fill: white;
+      }
+    } 
   }
 
   @include breakpoint($desktop-nav-breakpoint) {

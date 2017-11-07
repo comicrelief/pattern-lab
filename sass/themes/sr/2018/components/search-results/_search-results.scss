@@ -3,6 +3,7 @@
   .search-block {
     position: relative;
     top: 0;
+    right: 0;
     padding-top: 0;
     width: 100%;
     @include gradient-background($colour-purple, $colour-ruby);
