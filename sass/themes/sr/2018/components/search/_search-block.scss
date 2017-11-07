@@ -5,21 +5,22 @@
 // Style guide: 20.195
 
 .search-block {
-  position: fixed;
+  position: absolute;
   top: calc(#{$sm-nav-height} + 20px);
-  right: 70px;
+  right: calc(70px + 65px);
   left: initial;
   padding: 20px;
   width: 380px;
   background-color: $colour-dark-blue;
   @include breakpoint($screen-md) {
     top: calc(#{$md-nav-height} + 20px);
+    right: calc(92px + 65px);
   }
   @include breakpoint($desktop-nav-breakpoint) {
     top: calc(#{$lg-nav-height} + 20px);   
   }
   @include breakpoint($desktop-nav-breakpoint) {
-    right: 92px; 
+    right: calc(92px + 5px); 
   }
   
   .search-block__message {
