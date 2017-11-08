@@ -42,18 +42,19 @@
     position: absolute;
     top: 0px;
   }
-
   .rbt-menu {
     top: 36px;
     position: relative;
     z-index: 1;
-    background: $colour-white;
-    
+    background: $colour-white; 
     cursor: pointer;
     outline: 0 none;
     text-decoration: none;
     font-size: 16px;
     margin: 0px -14px;
+  }
+  .rbt-input-hint {
+    display: none;
   }
   a {
     color: $colour-black;
