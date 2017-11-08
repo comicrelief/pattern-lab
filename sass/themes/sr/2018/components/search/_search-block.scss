@@ -1,84 +1,72 @@
-// Search block
-//
-// Markup: search.twig
-//
-// Style guide: 20.195
-
 .search-block {
-  position: absolute;
-  top: calc(#{$sm-nav-height} + 20px);
-  right: calc(92px + 65px);
-  left: initial;
-  padding: 20px;
-  width: 380px;
-  background-color: $colour-dark-blue;
+  // offset from navigation
+  position: fixed;
+  padding-top: $sm-nav-height;
   @include breakpoint($screen-md) {
-    top: calc(#{$md-nav-height} + 20px);
+    padding-top: $md-nav-height;
   }
   @include breakpoint($desktop-nav-breakpoint) {
-    top: calc(#{$lg-nav-height} + 20px);   
+    padding-top: $lg-nav-height;
   }
-  @include breakpoint($desktop-nav-breakpoint) {
-    right: calc(92px + 5px); 
-  }
-  
-  .search-block__message {
-    margin: 0;
-    width: 100%;
-    p {
-      margin: 0 auto 20px;
-      width: 60%;
-      font-family: $font-bold--sr18;
-      color: $colour-white;
-      word-wrap: break-word;
-      @include font-size($h3-font-size);
-    }
-  }
+  @include gradient-background($colour-purple, $colour-ruby);
 
   .search-block__form {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    //gives height to the block
     form {
-      margin: 0;
-      border: none ;
+      margin: 100px auto 50px;
+      border-bottom: $colour-white-smoke 1px solid ;
     }
   }
   .form-item {
-    margin: 0;
-    padding: 0 10px;
-    width: calc(100% - 50px);
-    background-color: $colour-white;
-    @include breakpoint($screen-md) {
-      width: 290px;
-    }
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 5px;
   }
-  
   input[type=text] {
-    padding: 0;
     height: 50px;
+    padding: 0;
     font-family: $font-bold--sr18;
-    @include font-size($h3-font-size);
-    color: $colour-dark-blue;
+    @include font-size($p-large-font-size);
+    color: $colour-white;
+    background-color: transparent;
+    @include breakpoint($screen-md){
+      @include font-size($p-xxlarge-font-size);
+    }
   }
   .form-actions {
     margin: 0;
-    height: 50px;
-    width: 50px;
-    background-color: $colour-ruby;
+    float: right;
   }
   input[type=submit] {
-    width: 25px;
     height: 50px;
     background-color: $colour-white;
+    // mask size is the same as font size
     mask-size: 23px;
     -webkit-mask-size: 23px;
-    @include breakpoint($screen-md) {
-      mask-size: 25px;
-      -webkit-mask-size: 25px;
+    @include breakpoint($screen-md){
+      mask-size: 36px;
+      -webkit-mask-size: 36px;
     }
     &:hover {
       background-color: darken($colour-white, 10%);
     }    
+  }
+  a.close-button {
+    // offset from navigation
+    padding-top: $sm-nav-height;
+    @include breakpoint($screen-md) {
+      padding-top: $md-nav-height;
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      padding-top: $lg-nav-height;
+    }
+    .icon {
+      fill: $colour-white;
+    }
+    &:hover {
+      .icon {
+        fill: $colour-white-smoke;
+      }
+    }
   }
 }
