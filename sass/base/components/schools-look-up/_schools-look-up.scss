@@ -41,12 +41,25 @@
   .rbt-input {
     position: absolute;
     top: 0px;
+    left: 0;
+    width: 100%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+
+    input {
+      width: 100%;
+      max-width: 100%; // this iss needed to override base css
+    }
+
+    div {
+      width: 100%;
+    }
   }
   .rbt-menu {
     top: 36px;
     position: relative;
     z-index: 1;
-    background: $colour-white; 
+    background: $colour-white;
     cursor: pointer;
     outline: 0 none;
     text-decoration: none;
