@@ -109,6 +109,15 @@ module.exports = function (grunt) {
     },
 
     imagemin: {
+      base: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
+      },
       rnd17: { // Use for subthemes
         files: {
           'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
@@ -119,15 +128,12 @@ module.exports = function (grunt) {
           'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
         }
       },
-      base: {
-        files: [{
-          expand: true,
-          flatten: true,
-          cwd: 'sass/base/components',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/images'
-        }]
-      },
+      sr18: {
+        files: {
+          'dist/css/themes/sr/2018/images/search_page_icon.png': 'sass/themes/sr/2018/components/search/images/search_page_icon.png',
+          'dist/css/themes/sr/2018/images/search_page_icon_hover.png': 'sass/themes/sr/2018/components/search/images/search_page_icon_hover.png',
+        }
+      }
     },
 
     svgmin: {
@@ -148,7 +154,12 @@ module.exports = function (grunt) {
           src: ['{,**/}*.svg'],
           dest: 'dist/images'
         }]
-      }
+      },
+      sr18: {
+        files: {
+          'dist/css/themes/sr/2018/images/magnify-icon.svg': 'sass/themes/sr/2018/components/search/images/magnify-icon.svg'
+        }
+      },
     },
 
     uglify: {
@@ -410,6 +421,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build:cr17', [
     'sass:cr17',
     'modernizr',
+    'imagemin:cr17',
     'kss:cr17',
     'postcss:cr17',
   ]);
@@ -439,6 +451,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build:sr18', [
     'sass:sr18',
     'modernizr',
+    'imagemin:sr18',
+    'svgmin:sr18',
     'kss:sr18',
     'postcss:sr18',
   ]);
