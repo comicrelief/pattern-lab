@@ -129,10 +129,13 @@ module.exports = function (grunt) {
         }
       },
       sr18: {
-        files: {
-          'dist/css/themes/sr/2018/images/search_page_icon.png': 'sass/themes/sr/2018/components/search/images/search_page_icon.png',
-          'dist/css/themes/sr/2018/images/search_page_icon_hover.png': 'sass/themes/sr/2018/components/search/images/search_page_icon_hover.png',
-        }
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/sr/2018/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/sr/images'
+        }]
       }
     },
 
@@ -156,10 +159,14 @@ module.exports = function (grunt) {
         }]
       },
       sr18: {
-        files: {
-          'dist/css/themes/sr/2018/images/magnify-icon.svg': 'sass/themes/sr/2018/components/search/images/magnify-icon.svg'
-        }
-      },
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/sr/2018/components',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/sr/images'
+        }]
+      }
     },
 
     uglify: {

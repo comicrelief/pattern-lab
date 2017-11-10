@@ -41,9 +41,9 @@
     height: 50px;
     background-color: $colour-white;
     // mask size is the same as font size
-    mask: url("images/magnify-icon.svg") no-repeat right center;
+    mask: url($image-path + "magnify-icon.svg") no-repeat right center;
     mask-size: 23px;
-    -webkit-mask: url("images/magnify-icon.svg") no-repeat right center;
+    -webkit-mask: url($image-path + "magnify-icon.svg") no-repeat right center;
     -webkit-mask-size: 23px;
     @include breakpoint($screen-md){
       mask-size: 36px;
@@ -53,14 +53,14 @@
       background-color: darken($colour-white, 10%);
     }
     .no-cssmask & {
-      background: transparent url("images/search_page_icon.png") center right no-repeat;
+      background: transparent url($image-path + "search_page_icon.png") center right no-repeat;
       background-size: 23px;
       @include breakpoint($screen-md) {
         background-size: 36px;
       }
       &:focus,
       &:hover {
-        background-image: url("images/search_page_icon_hover.png");
+        background-image: url($image-path + "search_page_icon_hover.png");
         background-color: transparent;
       }
     }
