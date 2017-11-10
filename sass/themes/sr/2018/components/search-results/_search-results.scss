@@ -7,7 +7,7 @@
   .search-block__form {
     margin: 0 auto;
     form {
-      @include breakpoint($screen-md){
+      @include breakpoint($screen-md) {
         margin: 150px auto 50px;
       }
     }

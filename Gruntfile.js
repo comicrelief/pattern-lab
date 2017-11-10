@@ -428,7 +428,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build:cr17', [
     'sass:cr17',
     'modernizr',
-    'imagemin:cr17',
     'kss:cr17',
     'postcss:cr17',
   ]);

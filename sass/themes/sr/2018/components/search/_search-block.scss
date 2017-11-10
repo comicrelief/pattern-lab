@@ -29,7 +29,7 @@
     @include font-size($p-large-font-size);
     color: $colour-white;
     background-color: transparent;
-    @include breakpoint($screen-md){
+    @include breakpoint($screen-md) {
       @include font-size($p-xxlarge-font-size);
     }
   }
