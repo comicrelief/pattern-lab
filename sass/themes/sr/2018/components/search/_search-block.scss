@@ -2,13 +2,13 @@
   // offset from navigation
   position: fixed;
   padding-top: $sm-nav-height;
+  @include gradient-background($colour-purple, $colour-ruby);
   @include breakpoint($screen-md) {
     padding-top: $md-nav-height;
   }
   @include breakpoint($desktop-nav-breakpoint) {
     padding-top: $lg-nav-height;
   }
-  @include gradient-background($colour-purple, $colour-ruby);
 
   .search-block__form {
     //gives height to the block
