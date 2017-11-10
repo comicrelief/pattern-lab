@@ -134,7 +134,7 @@ module.exports = function (grunt) {
           flatten: true,
           cwd: 'sass/themes/sr/2018/components',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/sr/images'
+          dest: 'dist/images'
         }]
       }
     },
@@ -164,7 +164,7 @@ module.exports = function (grunt) {
           flatten: true,
           cwd: 'sass/themes/sr/2018/components',
           src: ['{,**/}*.svg'],
-          dest: 'dist/sr/images'
+          dest: 'dist/images'
         }]
       }
     },
