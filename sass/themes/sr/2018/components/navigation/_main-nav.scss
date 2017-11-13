@@ -634,6 +634,9 @@ header[role=banner] {
     .site-logo {
       background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
       background-size: 133px 60px;
+
+      // bugfix?
+      background-image: none;
     }
   
     .c-hamburger {
