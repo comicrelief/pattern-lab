@@ -18,7 +18,10 @@
     top: calc(#{$lg-nav-height} + 20px); 
     // margin-left: 123px; 
   }
-
+  // override base theme's IE fix
+  .no-object-fit & {
+    position: fixed;
+  }
   .search-block__message {
     margin: 0;
     width: 100%;

@@ -60,7 +60,6 @@
     input[type=submit] {
       height: 50px;
       width: 30px;
-      background-color: $colour-white;
       @include breakpoint($screen-md){
         width: 50px;
         mask-size: 36px;
