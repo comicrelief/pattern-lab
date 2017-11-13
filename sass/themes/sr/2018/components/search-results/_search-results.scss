@@ -8,7 +8,16 @@
     margin: 0;
     padding-top: 0;
     width: 100%;
+    max-width: 100%;
     @include gradient-background($colour-purple, $colour-ruby);
+
+    .search-block__wrapper {
+      position: relative;
+      right: 0;
+      padding: 0;
+      width: 100%;
+      background-color: transparent;
+    }
 
     .search-block__message {
       display: none;
