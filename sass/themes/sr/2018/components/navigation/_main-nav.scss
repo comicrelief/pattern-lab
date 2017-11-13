@@ -632,9 +632,7 @@ header[role=banner] {
 
     // Use our 'scrolling' styles here too
     .site-logo {
-      // bugfix?
       background-image: none;
-
       @include breakpoint($desktop-nav-breakpoint) {
         background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
         background-size: 133px 60px;
