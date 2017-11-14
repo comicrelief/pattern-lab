@@ -9,12 +9,13 @@
     padding-top: 0;
     width: 100%;
     max-width: 100%;
+    z-index: 0;
     @include gradient-background($colour-purple, $colour-ruby);
 
     .search-block__wrapper {
       position: relative;
       right: 0;
-      padding: 0;
+      padding: 150px 0 50px;
       width: 100%;
       background-color: transparent;
     }
@@ -34,11 +35,7 @@
         padding: 0 calc((0.5 * 1.25%));
       }
       form {
-        margin: 100px auto 50px;
-        border-bottom: $colour-white-smoke 1px solid ;
-        @include breakpoint($screen-md){
-          margin: 150px auto 50px;
-        }
+        border-bottom: $colour-white 1px solid ;
       }
     }
     .form-item {
