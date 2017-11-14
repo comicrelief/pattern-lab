@@ -2,12 +2,13 @@
   // offset top from navigation and give it the same width as the header inner wrapper
   position: fixed;
   overflow: visible;
-  top: calc(#{$sm-nav-height} + 20px);
+  top: $sm-nav-height;
   right: 0;
   left: 0;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+  z-index: 999;
   
   @include breakpoint($screen-md) {
     top: calc(#{$md-nav-height} + 20px);
@@ -22,6 +23,7 @@
   }
   .search-block__wrapper {
     position: absolute;
+    overflow: visible;
     top: 0;
     right: 0;
     padding: 20px;
@@ -105,7 +107,49 @@
         background-image: url($image-path + "search_page_icon_hover.png");
         background-color: transparent;
       }
-    }
-    
+    } 
   }
+
+  a.close-button {
+    position: absolute;
+    top: calc(0px - #{$sm-nav-height});
+    right: calc(92px + 65px); 
+    width: 46px;
+    height: calc(#{$sm-nav-height} + 20px);
+    background-color: $colour-dark-blue;
+    @include breakpoint($screen-md) {
+      top: calc(0px - #{$md-nav-height} - 20px);
+      height: calc(#{$md-nav-height} + 20px);
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: calc(0px - #{$lg-nav-height} - 20px);
+      right: calc(92px + 5px); 
+      height: calc(#{$lg-nav-height} + 20px);
+    }
+    .icon {
+      margin: 12px 10px;
+      width: 25px;
+      height: 25px;
+      fill: white;
+      @include breakpoint($screen-md) {
+        margin: 12px 6px;
+        width: 35px;
+        height: 35px;
+      }
+      @include breakpoint($desktop-nav-breakpoint) {
+        margin: 26px 12px 28px;
+        width: 20px;
+        height: 21px;
+      }
+    }
+    &:focus,
+    &:hover {
+      .icon {
+        fill: $colour-white;
+      }  
+    }
+    .path-search & {
+      display: none;
+    }
+  }  
 }
