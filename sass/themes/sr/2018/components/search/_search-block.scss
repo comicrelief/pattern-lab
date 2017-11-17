@@ -17,7 +17,7 @@
     top: calc(#{$lg-nav-height} + 20px); 
   }
 
-  body.cc-banner--visible & {
+  .cc-banner--visible & {
     position: relative;
     top: 0;
     @include breakpoint($screen-md) {
