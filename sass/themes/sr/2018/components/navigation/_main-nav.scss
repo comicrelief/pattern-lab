@@ -392,7 +392,7 @@ header[role=banner] {
     height: $sm-nav-height;
 
     .icon {
-      fill: white;
+      fill: $colour-white;
       margin: 12px 10px;
     }
 
@@ -453,7 +453,7 @@ header[role=banner] {
     &:focus {
       background-color: $colour-dark-blue;
       .icon {
-        fill: white;
+        fill: $colour-white;
       }
     }
     &.active {
@@ -463,11 +463,6 @@ header[role=banner] {
         height: $sm-nav-height;
         &.meta-icons__magnify {
           background-color: transparent;
-        }
-        &.cc-banner--visible  {
-          .meta-icons__magnify {
-            background-color: $colour-dark-blue;
-          }
         }
       }
       @include breakpoint($screen-md) {
@@ -483,7 +478,7 @@ header[role=banner] {
         }
       }
       .icon {
-        fill: white;
+        fill: $colour-white;
       }
     }
   }
@@ -555,8 +550,17 @@ header[role=banner] {
         &.active,
         &:hover,
         &:focus {
+          background-color: $colour-dark-blue;
           .icon {
             fill: $colour-white;
+          }
+        }
+        &.active {
+          .path-search.cc-banner--visible & {
+            background-color: transparent;
+            .icon {
+              fill: $colour-dark-blue;
+            }  
           }
         }
       }
