@@ -461,8 +461,13 @@ header[role=banner] {
       background-color: $colour-dark-blue;
       .path-search & {
         height: $sm-nav-height;
-        &.meta-icons__magnify{
+        &.meta-icons__magnify {
           background-color: transparent;
+        }
+        &.cc-banner--visible  {
+          .meta-icons__magnify {
+            background-color: $colour-dark-blue;
+          }
         }
       }
       @include breakpoint($screen-md) {
@@ -659,7 +664,7 @@ header[role=banner] {
       &:hover,
       &:focus {
         .icon {
-          fill: $colour-dark-blue;
+          fill: $colour-white;
         }
       }
     }
