@@ -1,5 +1,7 @@
-.single-msg.paragraph {
-
+.single-msg.paragraph,
+.single-msg.paragraph.bg--no-colour {
+  background-color: $colour-white;
+  
   @include breakpoint($screen-md) {
     .single-msg__outer-wrapper {
       display: -webkit-flex;
