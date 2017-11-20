@@ -651,6 +651,14 @@ header[role=banner] {
     }
   }
 }
+/* Very specific selector for search icon color on search result page
+   when not scrolling and cookie banner is visible
+*/
+body.path-search.cc-banner--visible header[role=banner] {
+  .meta-icons > a.active.meta-icons__magnify .icon {
+    fill: $colour-dark-blue;
+  }
+}
 
 // Ensure wrapper height matches the content, so we can display nav fully underneath
 .cc_banner-wrapper {
