@@ -24,11 +24,6 @@
       top: 20px;
     }
   }
-
-  .no-object-fit & {
-    // override base theme's IE fix
-    position: fixed;
-  }
   .search-block__wrapper {
     position: absolute;
     overflow: visible;
@@ -160,4 +155,17 @@
       display: none;
     }
   }  
+}
+.no-object-fit {
+  .search-block {
+    // override base theme's IE fix
+    position: fixed;
+    .cc-banner--visible & {
+      position: relative;
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: 20px;
+      } 
+    }
+  }
 }
