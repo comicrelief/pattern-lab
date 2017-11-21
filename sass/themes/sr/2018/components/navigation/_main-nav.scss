@@ -444,13 +444,39 @@ header[role=banner] {
 
   // States for ESU, Search and FROST button
   .meta-icons > a {
-
+    display: block;
+    float: left;
     width: 46px;
-    &.active,
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
     &:hover,
     &:focus {
-      background-color: rgba(0, 0, 0, 0.2);
-      
+      background-color: $colour-dark-blue;
+      .icon {
+        fill: white;
+      }
+    }
+    &.active {
+      height: calc(#{$sm-nav-height} + 20px);
+      background-color: $colour-dark-blue;
+      .path-search & {
+        height: $sm-nav-height;
+        &.meta-icons__magnify{
+          background-color: transparent;
+        }
+      }
+      @include breakpoint($screen-md) {
+        height: calc(#{$md-nav-height} + 20px);
+        .path-search & {
+          height: $md-nav-height;
+        }
+      }
+      @include breakpoint($desktop-nav-breakpoint) {
+        height: calc(#{$lg-nav-height} + 20px);
+        .path-search & {
+          height: $lg-nav-height;
+        }
+      }
       .icon {
         fill: white;
       }
@@ -481,6 +507,7 @@ header[role=banner] {
     z-index: 100;
     background: transparent;
     background-image: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    -webkit-transition: background-color 350ms linear;
     transition: background-color 350ms linear;
     height: $sm-nav-height;
 
@@ -519,6 +546,13 @@ header[role=banner] {
       .meta-icons a {
         .icon {
           fill: $colour-dark-blue;
+        }
+        &.active,
+        &:hover,
+        &:focus {
+          .icon {
+            fill: $colour-white;
+          }
         }
       }
 
@@ -609,19 +643,6 @@ header[role=banner] {
   }
 }
 
-// Position search dropdown in relation to new heights
-header.sticky-nav__header ~ main .search-block {
-  position: fixed;
-  top: $sm-nav-height;
-  @include breakpoint($screen-md) {
-    top: $md-nav-height;
-  }
-  
-  @include breakpoint($desktop-nav-breakpoint) {
-    top: $lg-nav-height;
-  }
-}
-
 // Ensure wrapper height matches the content, so we can display nav fully underneath
 .cc_banner-wrapper {
   height: auto;
@@ -645,8 +666,11 @@ header.sticky-nav__header ~ main .search-block {
 
     // Use our 'scrolling' styles here too
     .site-logo {
-      background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
-      background-size: 133px 60px;
+      background-image: none;
+      @include breakpoint($desktop-nav-breakpoint) {
+        background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
+        background-size: 133px 60px;
+      }
     }
   
     .c-hamburger {

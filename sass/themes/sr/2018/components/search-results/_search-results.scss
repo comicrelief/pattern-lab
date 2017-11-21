@@ -1,0 +1,107 @@
+.path-search {
+  background-color: $colour-white;
+  .search-block {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding-top: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 0;
+    @include gradient-background($colour-purple, $colour-ruby);
+
+    .search-block__wrapper {
+      position: relative;
+      right: 0;
+      padding: 150px 0 50px;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    .search-block__message {
+      display: none;
+    }
+    .search-block__form {
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 calc((4 * 1.25%));
+      @include breakpoint($screen-md) {
+        padding: 0 calc((2 * 1.25%));
+      }
+      @include breakpoint($screen-lg) {
+        width: span(8);
+        padding: 0 calc((0.5 * 1.25%));
+      }
+      form {
+        border-bottom: $colour-white 1px solid ;
+      }
+    }
+    .form-item {
+      @include span(11);
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 5px;
+      padding: 0;
+      background-color: transparent;
+    }
+    input[type=text] {
+      height: 50px;
+      padding: 0;
+      font-family: $font-bold--sr18;
+      @include font-size($p-large-font-size);
+      color: $colour-white;
+      background-color: transparent;
+      @include breakpoint($screen-md){
+        @include font-size($p-xxlarge-font-size);
+      }
+    }
+    .form-actions {
+      width: auto;
+      margin: 0;
+      float: right;
+      background-color: transparent;
+    }
+    input[type=submit] {
+      height: 50px;
+      width: 30px;
+      @include breakpoint($screen-md){
+        width: 50px;
+        mask-size: 36px;
+        -webkit-mask-size: 36px;
+      }
+      .no-cssmask & {
+        @include breakpoint($screen-md) {
+          background-size: 36px;
+        }
+      }
+    }
+  }
+  .search-result__content {
+    @include font-size($p-font-size);
+    h3 {
+      @include font-size($p-large-font-size);
+      @include breakpoint($screen-md) {
+        @include font-size($p-xxlarge-font-size);
+      }
+    }
+    & .search-result__tag {
+      color: $colour-ruby;
+    }
+    & .search-result__published-date {
+      // decrease line height for smaller border
+      line-height: 16px;
+      color: $colour-ruby;
+      @include breakpoint($screen-md) {
+        border-left: 2px solid $colour-ruby;
+      }
+    }
+    a {
+      color: $colour-dark-blue;
+    }
+    .search-result__body {
+      color: $colour-dark-blue-lighter;
+    }
+  }
+}

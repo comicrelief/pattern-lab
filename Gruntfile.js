@@ -109,6 +109,15 @@ module.exports = function (grunt) {
     },
 
     imagemin: {
+      base: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
+      },
       rnd17: { // Use for subthemes
         files: {
           'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
@@ -119,15 +128,15 @@ module.exports = function (grunt) {
           'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
         }
       },
-      base: {
+      sr18: {
         files: [{
           expand: true,
           flatten: true,
-          cwd: 'sass/base/components',
+          cwd: 'sass/themes/sr/2018/components',
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
-      },
+      }
     },
 
     svgmin: {
@@ -145,6 +154,15 @@ module.exports = function (grunt) {
           expand: true,
           flatten: true,
           cwd: 'sass/base/components',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
+      },
+      sr18: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/sr/2018/components',
           src: ['{,**/}*.svg'],
           dest: 'dist/images'
         }]
@@ -414,6 +432,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build:sr18', [
     'sass:sr18',
     'modernizr',
+    'imagemin:sr18',
+    'svgmin:sr18',
     'kss:sr18',
     'postcss:sr18',
   ]);
