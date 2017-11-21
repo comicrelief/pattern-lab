@@ -12,14 +12,6 @@
     z-index: 0;
     @include gradient-background($colour-purple, $colour-ruby);
 
-    &.cc-banner--visible {
-      .search-block {
-        top: 0;
-        @include breakpoint($screen-md) {
-          top: 0;
-        }
-      } 
-    }
     .search-block__wrapper {
       position: relative;
       right: 0;
@@ -85,12 +77,12 @@
         }
       }
     }
-    &.cc-banner--visible {
-      .search-block {
+  }
+  &.cc-banner--visible {
+    .search-block {
+      top: 0;
+      @include breakpoint($screen-md) {
         top: 0;
-        @include breakpoint($screen-md) {
-          top: 0;
-        }
       }
     }
   }
