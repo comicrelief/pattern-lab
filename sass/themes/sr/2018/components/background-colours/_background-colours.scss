@@ -4,6 +4,9 @@
 //
 // Style guide: 10.6
 
+.bg--no-colour {
+  background-color: transparent;
+}
 .bg--black {
   background-color: $colour-black;
 }
