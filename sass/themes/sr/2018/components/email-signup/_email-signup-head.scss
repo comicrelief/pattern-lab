@@ -1,17 +1,16 @@
 .block--cr-email-signup--head.cr-header-email-signup-form {
   .block--cr-email-signup__inner-wrapper {
-    top: $sm-nav-height;
+    top: 0;
     background-color: $colour-dark-blue;
 
     @include breakpoint($screen-md) {
-      top: calc(#{$md-nav-height} + 20px);
+      top: 20px;
+      right: 65px;
       width: 380px;
     }
-    @include breakpoint($screen-lg) {
-      top: calc(#{$md-nav-height} + 20px);
-    }
     @include breakpoint($desktop-nav-breakpoint) {
-      top: calc(#{$lg-nav-height} + 20px); 
+      top: calc(#{$lg-nav-height} + 20px);
+      right: 5px;
     }
   
     a.close-button {
@@ -52,6 +51,23 @@
           fill: $colour-white;
         }  
       }
+    }
+    .cr-email-signup--messages {
+      margin: 0;
+      width: 100%;
+      p {
+        margin: 0 auto 20px;
+        width: 70%;
+        font-family: $font-bold--sr18;
+        color: $colour-white;
+        word-wrap: break-word;
+        @include font-size($h3-font-size);
+      }
+    }
+  }
+  &.block--cr-email-signup--error {
+    .esu-errors.error-msg-cr-header-email-signup-form {
+      background-color: $colour-dark-blue;
     }
   }
 }
