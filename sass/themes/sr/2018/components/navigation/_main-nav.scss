@@ -617,38 +617,6 @@ header[role=banner] {
         }
       }
     }
-
-    // Position ESU dropdown in relation to new heights
-    .block--cr-email-signup--head.cr-header-email-signup-form {
-      position: absolute;
-      top: $sm-nav-height;
-
-      @include breakpoint($screen-md) {
-        right: 65px;
-        top: $md-nav-height;
-      }
-
-      @include breakpoint($desktop-nav-breakpoint) {
-        top: $lg-nav-height;
-        right: 5px;
-      }
-
-      // Reset all of these, as we're positioning the block itself
-      .block--cr-email-signup__inner-wrapper {
-
-        @include breakpoint($screen-md) {
-          top:0;right:0;
-        }
-        @include breakpoint($screen-lg) {
-          top:0;
-          right:0;
-        }
-        @include breakpoint($desktop-nav-breakpoint) {
-          top:0;
-          right:0;
-        }
-      }
-    }
   }
 }
 /* Very specific selector for search icon color on search result page
