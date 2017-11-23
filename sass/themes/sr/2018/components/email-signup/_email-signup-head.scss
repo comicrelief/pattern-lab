@@ -1,6 +1,9 @@
 .block--cr-email-signup--head.cr-header-email-signup-form {
+  position: relative;
   .block--cr-email-signup__inner-wrapper {
+    overflow: visible;
     top: 0;
+    padding: 20px;
     background-color: $colour-dark-blue;
 
     @include breakpoint($screen-md) {
@@ -16,17 +19,17 @@
     a.close-button {
       position: absolute;
       top: calc(0px - #{$sm-nav-height});
-      right: calc(92px + 65px); 
+      right: 65px; 
       width: 46px;
       height: calc(#{$sm-nav-height} + 20px);
       background-color: $colour-dark-blue;
       @include breakpoint($screen-md) {
         top: calc(0px - #{$md-nav-height} - 20px);
+        right: 0;
         height: calc(#{$md-nav-height} + 20px);
       }
       @include breakpoint($desktop-nav-breakpoint) {
         top: calc(0px - #{$lg-nav-height} - 20px);
-        right: calc(92px + 5px); 
         height: calc(#{$lg-nav-height} + 20px);
       }
       .icon {
@@ -57,17 +60,82 @@
       width: 100%;
       p {
         margin: 0 auto 20px;
-        width: 70%;
+        width: 80%;
         font-family: $font-bold--sr18;
         color: $colour-white;
         word-wrap: break-word;
         @include font-size($h3-font-size);
       }
     }
+    .esu-first-success-message,
+    .esu-second-success-message {
+      p {
+        margin: 0 auto;
+      }
+    }
+    form {
+      width: 100%;
+    }
+    .form-item {
+      margin: 0;
+      width: calc(100% - 50px);
+      background-color: $colour-white;
+    }
+    input[type=text] {
+      padding: 0 10px;
+      height: 50px;
+      max-width: 100%;
+      border-radius: 0;
+      font-family: $font-bold--sr18;
+
+      @include font-size($h3-font-size);
+      color: $colour-dark-blue;
+    }
+    .form-submit{
+      margin: 0;
+      height: 50px;
+      width: 50px;
+      background-color: $colour-ruby;
+    }
+    input[type=submit].button {
+      width: 50px;
+      margin: 0;
+      border-radius: 0;
+      text-indent: -9999px;
+      background: $colour-ruby url( $image-path + "arrow-right.svg") center no-repeat;
+
+      &:focus {
+        border: 1px solid $colour-black;
+      }
+    }
   }
+
   &.block--cr-email-signup--error {
+    .block--cr-email-signup__inner-wrapper {
+      padding: 20px;
+
+      .cr-email-signup--messages {
+        p {
+          margin: 0 auto; 
+        }
+      }
+
+      input[type=text] {
+        border: 1px solid $colour-ruby;
+      }
+      input[type=submit].button {
+         border: none;
+      }
+    }
+
     .esu-errors.error-msg-cr-header-email-signup-form {
+      margin: 0 auto;
+      width: 80%;
       background-color: $colour-dark-blue;
+      @include breakpoint($screen-md) {
+        margin: 0;
+        width: 100%;
+      }
     }
   }
 }
