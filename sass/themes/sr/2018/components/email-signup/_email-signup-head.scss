@@ -21,7 +21,7 @@
       top: calc(0px - #{$sm-nav-height});
       right: 65px; 
       width: 46px;
-      height: calc(#{$sm-nav-height} + 20px);
+      height: $sm-nav-height;
       background-color: $colour-dark-blue;
       @include breakpoint($screen-md) {
         top: calc(0px - #{$md-nav-height} - 20px);
@@ -129,13 +129,10 @@
     }
 
     .esu-errors.error-msg-cr-header-email-signup-form {
+      float: none;
       margin: 0 auto;
-      width: 80%;
+      width: 100%;
       background-color: $colour-dark-blue;
-      @include breakpoint($screen-md) {
-        margin: 0;
-        width: 100%;
-      }
     }
   }
 }
