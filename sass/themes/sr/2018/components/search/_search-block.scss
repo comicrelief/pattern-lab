@@ -16,10 +16,13 @@
   @include breakpoint($desktop-nav-breakpoint) {
     top: calc(#{$lg-nav-height} + 20px); 
   }
-  
-  .no-object-fit & {
-    // override base theme's IE fix
-    position: fixed;
+
+  .cc-banner--visible & {
+    position: relative;
+    top: 0;
+    @include breakpoint($screen-md) {
+      top: 20px;
+    }
   }
   .search-block__wrapper {
     position: absolute;
@@ -153,3 +156,21 @@
     }
   }  
 }
+//IE
+.no-object-fit {
+  .search-block {
+    // override base theme's IE fix
+    position: fixed;
+  }
+  // positioning for when cookie message is visible
+  .cc-banner--visible {
+    .search-block {
+      position: relative;
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: 20px;
+      } 
+    }
+  }    
+}
+

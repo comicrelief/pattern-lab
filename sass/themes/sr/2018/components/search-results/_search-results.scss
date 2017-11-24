@@ -78,6 +78,14 @@
       }
     }
   }
+  &.cc-banner--visible {
+    .search-block {
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: 0;
+      }
+    }
+  }
   .search-result__content {
     @include font-size($p-font-size);
     h3 {
@@ -102,6 +110,17 @@
     }
     .search-result__body {
       color: $colour-dark-blue-lighter;
+    }
+  }
+}
+// IE 
+.no-object-fit {
+  .path-search.cc-banner--visible {
+    .search-block {
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: 0;
+      }
     }
   }
 }

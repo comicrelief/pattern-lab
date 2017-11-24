@@ -392,7 +392,7 @@ header[role=banner] {
     height: $sm-nav-height;
 
     .icon {
-      fill: white;
+      fill: $colour-white;
       margin: 12px 10px;
     }
 
@@ -453,7 +453,7 @@ header[role=banner] {
     &:focus {
       background-color: $colour-dark-blue;
       .icon {
-        fill: white;
+        fill: $colour-white;
       }
     }
     &.active {
@@ -461,7 +461,7 @@ header[role=banner] {
       background-color: $colour-dark-blue;
       .path-search & {
         height: $sm-nav-height;
-        &.meta-icons__magnify{
+        &.meta-icons__magnify {
           background-color: transparent;
         }
       }
@@ -478,7 +478,7 @@ header[role=banner] {
         }
       }
       .icon {
-        fill: white;
+        fill: $colour-white;
       }
     }
   }
@@ -550,8 +550,17 @@ header[role=banner] {
         &.active,
         &:hover,
         &:focus {
+          background-color: $colour-dark-blue;
           .icon {
             fill: $colour-white;
+          }
+        }
+        &.active {
+          .path-search.cc-banner--visible & {
+            background-color: transparent;
+            .icon {
+              fill: $colour-dark-blue;
+            }  
           }
         }
       }
@@ -642,6 +651,14 @@ header[role=banner] {
     }
   }
 }
+/* Very specific selector for search icon color on search result page
+   when not scrolling and cookie banner is visible
+*/
+body.path-search.cc-banner--visible header[role=banner] {
+  .meta-icons > a.active.meta-icons__magnify .icon {
+    fill: $colour-dark-blue;
+  }
+}
 
 // Ensure wrapper height matches the content, so we can display nav fully underneath
 .cc_banner-wrapper {
@@ -659,7 +676,7 @@ header[role=banner] {
       &:hover,
       &:focus {
         .icon {
-          fill: $colour-dark-blue;
+          fill: $colour-white;
         }
       }
     }
