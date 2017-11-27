@@ -90,13 +90,6 @@
 
       @include font-size($h3-font-size);
       color: $colour-dark-blue;
-
-      &:focus {
-        // revert overriden browser default focus styling
-        border: none;
-        outline: 1px dotted #212121; // IE
-        outline: 5px auto -webkit-focus-ring-color;
-      }
     }
     .form-submit{
       margin: 0;
@@ -112,10 +105,7 @@
       background: $colour-ruby url( $image-path + "arrow-right.svg") center no-repeat;
 
      &:focus {
-        // revert overriden browser default focus styling
-        border: none;
-        outline: 1px dotted #212121; // IE
-        outline: 5px auto -webkit-focus-ring-color;
+        border: 1px solid $colour-white;
       }
     }
   }
