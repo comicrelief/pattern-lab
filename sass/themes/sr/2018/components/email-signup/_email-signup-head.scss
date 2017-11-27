@@ -91,20 +91,15 @@
       @include font-size($h4-font-size);
       color: $colour-dark-blue;
     }
-    .form-submit{
-      margin: 0;
-      height: 50px;
-      width: 50px;
-      background-color: $colour-ruby;
-    }
     input[type=submit].button {
-      width: 50px;
       margin: 0;
+      width: 50px;
+      height: 50px;
       border-radius: 0;
       text-indent: -9999px;
       background: $colour-ruby url( $image-path + "arrow-right.svg") center no-repeat;
 
-     &:focus {
+      &:focus {
         border: 1px solid $colour-white;
       }
     }
