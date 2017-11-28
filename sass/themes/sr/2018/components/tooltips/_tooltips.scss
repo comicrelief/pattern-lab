@@ -1,0 +1,7 @@
+.ui-tooltip.ui-tooltip--nav {
+  background-color: $colour-dark-blue;
+
+  &:before {
+    border-bottom-color: $colour-dark-blue;
+  }
+}
