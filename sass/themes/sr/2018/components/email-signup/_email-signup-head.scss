@@ -7,12 +7,11 @@
     background-color: $colour-dark-blue;
 
     @include breakpoint($screen-md) {
-      top: 20px;
       right: 65px;
       width: 380px;
     }
     @include breakpoint($desktop-nav-breakpoint) {
-      top: calc(#{$lg-nav-height} + 20px);
+      top: $lg-nav-height;
       right: 5px;
     }
   
@@ -24,13 +23,13 @@
       height: $sm-nav-height;
       background-color: $colour-dark-blue;
       @include breakpoint($screen-md) {
-        top: calc(0px - #{$md-nav-height} - 20px);
+        top: calc(0px - #{$md-nav-height});
         right: 0;
-        height: calc(#{$md-nav-height} + 20px);
+        height: $md-nav-height;
       }
       @include breakpoint($desktop-nav-breakpoint) {
-        top: calc(0px - #{$lg-nav-height} - 20px);
-        height: calc(#{$lg-nav-height} + 20px);
+        top: calc(0px - #{$lg-nav-height});
+        height: $lg-nav-height;
       }
       .icon {
         margin: 12px 10px;
