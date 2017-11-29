@@ -35,3 +35,13 @@
   border-bottom: 1px solid $colour;
   color: $colour;
 }
+
+// hide tooltips when meta-icons are active 
+@mixin hidetooltips($active) {
+  @if $active == 'true' {
+    $tooltip-display: none !global;
+  }
+  @else {
+    $tooltip-display: block !global;
+  }
+}
