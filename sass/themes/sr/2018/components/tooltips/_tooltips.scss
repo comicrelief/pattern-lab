@@ -2,6 +2,7 @@
   background-color: $colour-dark-blue;
 
   &:before {
-    border-bottom-color: $colour-dark-blue;
+    // important flag needed to override colour
+    border-bottom-color: $colour-dark-blue !important; 
   }
 }
