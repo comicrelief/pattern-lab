@@ -456,9 +456,6 @@ header[role=banner] {
         fill: $colour-white;
       }
     }
-    // show tooltips
-    @include hidetooltips('false');
-
     &.active {
       height: calc(#{$sm-nav-height} + 20px);
       background-color: $colour-dark-blue;
@@ -483,8 +480,6 @@ header[role=banner] {
       .icon {
         fill: $colour-white;
       }
-      // hide tooltips when meta-icons are active
-      @include hidetooltips('true');
     }
   }
 
