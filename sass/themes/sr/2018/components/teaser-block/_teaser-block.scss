@@ -28,6 +28,11 @@
     top: auto;
     height: auto;
     background-image: linear-gradient(transparent, $colour-dark-blue);
+
+    /* Ensure the last element is flush to the padding of the block */
+    > *:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &:hover {
