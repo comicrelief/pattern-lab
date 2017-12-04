@@ -17,20 +17,21 @@
   }
 
   .teaser-block__body {
+    /* Increase padding-top to extend gradient 'reach';
+     * provides better accessibility against the first line of text */
+    padding: 80px 30px 40px;
     margin: 0;
     width: 100%;
     position: absolute;
     bottom: 0;
     top: auto;
     height: auto;
-    padding: 40px 30px;
-    padding-top: 80px;
     background-image: linear-gradient(transparent, #29022c);
   }
 
   &:hover {
     .teaser-block__image:after {
-      background-color: rgba(0,0,0, 0.5);
+      background-color: rgba(0, 0, 0, 0.6);
     }
   }
 }
