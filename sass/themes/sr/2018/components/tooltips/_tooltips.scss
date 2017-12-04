@@ -1,0 +1,9 @@
+.ui-tooltip.ui-tooltip--nav {
+  background-color: $colour-dark-blue;
+  // place tooltip behind open esu/search dropdown because colour clash
+  z-index: 99;
+  &:before {
+    // important flag needed to override colour
+    border-bottom-color: $colour-dark-blue !important; 
+  }
+}
