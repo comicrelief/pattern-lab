@@ -14,7 +14,7 @@
     transition: background-color 0.2s linear;
     // Set this up as totally transparent to fade-in on hover
     // $colour-dark-blue in RGB with alpha
-    background-color: rgba(6,29,56,0);
+    background-color: rgba($colour-dark-blue, 0);
   }
 
   .teaser-block__body {
@@ -33,7 +33,7 @@
   &:hover {
     .teaser-block__image:after {
       // $colour-dark-blue in RGB with alpha
-      background-color: rgba(6,29,56, 0.5);
+      background-color: rgba($colour-dark-blue, 0.5);
     }
   }
 }
