@@ -13,7 +13,8 @@
     left:0;
     transition: background-color 0.2s linear;
     // Set this up as totally transparent to fade-in on hover
-    background-color: rgba(0,0,0,0);
+    // $colour-dark-blue in RGB with alpha
+    background-color: rgba(6,29,56,0);
   }
 
   .teaser-block__body {
@@ -26,12 +27,15 @@
     bottom: 0;
     top: auto;
     height: auto;
-    background-image: linear-gradient(transparent, #29022c);
+    background-image: linear-gradient(transparent, $colour-dark-blue);
   }
 
   &:hover {
     .teaser-block__image:after {
-      background-color: rgba(0, 0, 0, 0.6);
+      // $colour-dark-blue in RGB with alpha
+      background-color: rgba(6,29,56,0.6);
     }
   }
 }
+
+//(6,29,56,0)
