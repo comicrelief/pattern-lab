@@ -33,9 +33,10 @@
   &:hover {
     .teaser-block__image:after {
       // $colour-dark-blue in RGB with alpha
-      background-color: rgba(6,29,56,0.6);
+      background-color: rgba(6,29,56, 0.5);
     }
   }
 }
 
-//(6,29,56,0)
+
+
