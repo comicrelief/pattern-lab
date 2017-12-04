@@ -2,9 +2,21 @@
   padding: 20px;
   text-align: initial;
 }
+
 .teaser-block--bg-image {
+  .teaser-block__image:after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    transition: background-color 0.2s linear;
+    // Set this up as totally transparent to fade-in on hover
+    background-color: rgba(0,0,0,0);
+  }
+
   .teaser-block__body {
-    background-image: linear-gradient(transparent,#29022c);
     margin: 0;
     width: 100%;
     position: absolute;
@@ -13,27 +25,12 @@
     height: auto;
     padding: 40px 30px;
     padding-top: 80px;
-
-    @include breakpoint($screen-md){
-      //padding: 40px 30px;
-    }
+    background-image: linear-gradient(transparent, #29022c);
   }
 
   &:hover {
     .teaser-block__image:after {
-      content: " ";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left:0;
-
-      // need to animate this
       background-color: rgba(0,0,0, 0.5);
-    }
-
-    .teaser-block__body {
-      background: none;
     }
   }
 }
