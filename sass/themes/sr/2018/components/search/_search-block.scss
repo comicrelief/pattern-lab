@@ -11,18 +11,15 @@
   z-index: 100;
   
   @include breakpoint($screen-md) {
-    top: calc(#{$md-nav-height} + 20px);
+    top: $md-nav-height;
   }
   @include breakpoint($desktop-nav-breakpoint) {
-    top: calc(#{$lg-nav-height} + 20px); 
+    top: $lg-nav-height; 
   }
 
   .cc-banner--visible & {
     position: relative;
     top: 0;
-    @include breakpoint($screen-md) {
-      top: 20px;
-    }
   }
   .search-block__wrapper {
     position: absolute;
@@ -118,16 +115,16 @@
     top: calc(0px - #{$sm-nav-height});
     right: calc(92px + 65px); 
     width: 46px;
-    height: calc(#{$sm-nav-height} + 20px);
+    height: $sm-nav-height;
     background-color: $colour-dark-blue;
     @include breakpoint($screen-md) {
-      top: calc(0px - #{$md-nav-height} - 20px);
-      height: calc(#{$md-nav-height} + 20px);
+      top: calc(0px - #{$md-nav-height});
+      height: $md-nav-height;
     }
     @include breakpoint($desktop-nav-breakpoint) {
-      top: calc(0px - #{$lg-nav-height} - 20px);
+      top: calc(0px - #{$lg-nav-height});
       right: calc(92px + 5px); 
-      height: calc(#{$lg-nav-height} + 20px);
+      height: $lg-nav-height;
     }
     .icon {
       margin: 12px 10px;
@@ -167,10 +164,6 @@
     .search-block {
       position: relative;
       top: 0;
-      @include breakpoint($screen-md) {
-        top: 20px;
-      } 
     }
   }    
 }
-
