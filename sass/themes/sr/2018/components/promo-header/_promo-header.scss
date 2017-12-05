@@ -13,6 +13,19 @@
 
   .promo-header__content-inner {
     margin: 0 auto;
+
+    h1 {
+      text-shadow: 0 0 50px rgba(0,0,0,0.50);
+    }
+  }
+
+  // Remove text shadow for 'no image' promos 
+  .promo-header--no-image & {
+    .promo-header__content-inner {
+      h1 {
+        text-shadow: none;
+      }
+    }
   }
 
   p {
@@ -37,7 +50,7 @@
 
 /* Override offsets from the base theme */
 header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
-  padding-top: 0;
+  padding: 15px;
 
   @include breakpoint($screen-md) {
     margin-top: 0;
