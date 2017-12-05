@@ -37,11 +37,14 @@
     /* Re-add our margin to the CTA if present, so the above last-child doesn't
     sit flush with it */
     .teaser-block__cta {
-      margin-top: 15px;
+      a.btn { margin-top: 20px; }
+      span.link {margin-top: 15px; }
+
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .teaser-block__image:after {
       // $colour-dark-blue in RGB with alpha
       background-color: rgba($colour-dark-blue, 0.5);
