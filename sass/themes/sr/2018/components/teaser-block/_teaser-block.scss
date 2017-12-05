@@ -30,7 +30,7 @@
     background-image: linear-gradient(transparent, $colour-dark-blue);
 
     /* Ensure the last element is flush to the padding of the block */
-    > *:last-child {
+    .cr-body > *:last-child {
       margin-bottom: 0;
     }
   }
