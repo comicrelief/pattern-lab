@@ -13,7 +13,6 @@
     left:0;
     transition: background-color 0.2s linear;
     // Set this up as totally transparent to fade-in on hover
-    // $colour-dark-blue in RGB with alpha
     background-color: rgba($colour-dark-blue, 0);
   }
 
@@ -35,22 +34,23 @@
     }
 
     /* Re-add our margin to the CTA if present, so the above last-child doesn't
-    sit flush with it */
+      sit flush with it */
     .teaser-block__cta {
-      a.btn { margin-top: 20px; }
-      span.link {margin-top: 15px; }
-
+      .btn { 
+        margin-top: 20px;
+      }
+      .link { 
+        display: inline-block;
+        margin-top: 15px;
+        width: auto;
+      }
     }
   }
 
   &:hover,
-  &:focus {
+    .teaser-block__link:focus  {
     .teaser-block__image:after {
-      // $colour-dark-blue in RGB with alpha
       background-color: rgba($colour-dark-blue, 0.5);
     }
   }
 }
-
-
-
