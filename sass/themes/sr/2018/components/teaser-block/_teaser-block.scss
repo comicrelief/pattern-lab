@@ -33,6 +33,12 @@
     .cr-body > *:last-child {
       margin-bottom: 0;
     }
+
+    /* Re-add our margin to the CTA if present, so the above last-child doesn't
+    sit flush with it */
+    .teaser-block__cta {
+      margin-top: 15px;
+    }
   }
 
   &:hover {
