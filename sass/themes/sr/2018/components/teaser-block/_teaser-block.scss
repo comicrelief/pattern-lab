@@ -48,7 +48,7 @@
   }
 
   &:hover,
-    .teaser-block__link:focus  {
+  .teaser-block__link:focus  {
     .teaser-block__image:after {
       background-color: rgba($colour-dark-blue, 0.5);
     }
