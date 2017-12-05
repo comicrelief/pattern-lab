@@ -4,6 +4,17 @@
   }
 }
 .promo-header__content {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+
+  .promo-header__content-inner {
+    margin: 0 auto;
+  }
+
   p {
     .promo-header--feature & {
       color: $colour-dark-blue-lighter;
@@ -21,5 +32,18 @@
 
   @include breakpoint($screen-lg) {
     min-height: 500px;
+  }
+}
+
+/* Override offsets from the base theme */
+header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
+  padding-top: 0;
+
+  @include breakpoint($screen-md) {
+    margin-top: 0;
+  }
+
+  @include breakpoint($screen-lg) {
+    margin-top: 0;
   }
 }
