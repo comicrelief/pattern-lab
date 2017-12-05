@@ -98,14 +98,14 @@
   z-index: 10;
   max-width: 1200px;
   margin: auto;
-  @include breakpoint($screen-md-max) {
+  //@include breakpoint($screen-md-max) {
     position: absolute;
     top: 50%;
     right: 0;
     left: 0;
     width: 100%;
     transform: translateY(-50%);
-  }
+  //}
   .promo-header--feature & {
     position: relative;
     top: 0;
@@ -126,11 +126,11 @@
     padding: 15px;
     text-align: center;
     word-break: break-word;
-    @include breakpoint($screen-md) {
+    //@include breakpoint($screen-md) {
       width: span(10);
       margin: 50px auto 40px;
       padding: 0;
-    }
+    //}
     @include breakpoint($screen-md-max) {
       width: 50%;
       text-align: left;
