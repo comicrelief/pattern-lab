@@ -35,7 +35,8 @@
   }
 }
 
-// As we can't maintain the ratio, at least set a height on browsers that can't display objectfit our promo feature image
+/* As we can't maintain the ratio, at least set a height on 
+ * browsers that can't display objectfit our promo feature image */
 .promo-header__bg-image.compat-object-fit {
   min-height: 300px;
 
@@ -50,10 +51,11 @@
 
 /* Override offsets from the base theme */
 header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
-  padding: 15px;
+  padding: 20px;
 
   @include breakpoint($screen-md) {
     margin-top: 0;
+    padding: 0;
   }
 
   @include breakpoint($screen-lg) {
