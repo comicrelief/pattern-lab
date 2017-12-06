@@ -3,29 +3,23 @@
     min-height: 500px;
   }
 }
+
 .promo-header__content {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
+  .promo-header--default & {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
 
-  .promo-header__content-inner {
-    margin: 0 auto;
-
-    h1 {
-      // Remove the stock h1 margin-bottom to keep it properly vertically aligned
-      margin-bottom: 0;
-      text-shadow: 0 0 50px rgba(0,0,0,0.50);
-    }
-  }
-
-  // Remove text shadow for 'no image' promos 
-  .promo-header--no-image & {
     .promo-header__content-inner {
+      margin: 0 auto;
+
       h1 {
-        text-shadow: none;
+        // Remove the stock h1 margin-bottom to keep it properly vertically aligned
+        margin-bottom: 0;
+        text-shadow: 0 0 50px rgba(0,0,0,0.50);
       }
     }
   }
@@ -52,7 +46,7 @@
 }
 
 /* Override offsets from the base theme */
-header[role=banner].sticky-nav__header ~ main .promo-header__content .promo-header__content-inner {
+header[role=banner].sticky-nav__header ~ main .promo-header--default .promo-header__content .promo-header__content-inner {
   padding: 20px;
 
   @include breakpoint($screen-md) {
