@@ -15,6 +15,8 @@
     margin: 0 auto;
 
     h1 {
+      // Remove the stock h1 margin-bottom to keep it properly vertically aligned
+      margin-bottom: 0;
       text-shadow: 0 0 50px rgba(0,0,0,0.50);
     }
   }
