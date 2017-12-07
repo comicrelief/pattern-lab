@@ -26,14 +26,12 @@
 }
 .promo-header {
   &.promo-header--feature {
-    //display: table;
     width: 100%;
     min-height: initial;
     background: transparent;
     display: flex;
     flex-direction: column;
 
-    
     .bg_video {
       position: relative !important;
       height: 400px;
@@ -44,7 +42,7 @@
     }
 
     .promo-header__bg-image {
-      // Reorder markup to show image first
+      // Reorder markup to show image first on this feature variant
       order: 1;
       display: block;
     }
