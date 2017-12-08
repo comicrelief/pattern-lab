@@ -74,10 +74,9 @@
   @include sr_button_types($colour-dark-blue, $colour-white);
 }
 
-/* This variation has a custom hover state, so we'll override stuff here,
- * rather than changing a common mixin */
+/* This variation has a custom hover state, so we'll just add it here
+rather than including it in a common mixin */
 .btn--ruby {
-
   @include sr_button_types($colour-white, $colour-ruby);
 
   // Psuedo-element that's faded-in to act as our new hoverstate
@@ -102,4 +101,3 @@
     }
   }
 }
-
