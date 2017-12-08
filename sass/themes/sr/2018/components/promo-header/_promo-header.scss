@@ -5,7 +5,7 @@
 }
 
 .promo-header__content {
-  .promo-header--default:not(.promo-header--video) & {
+  .promo-header--default:not(.promo-header--video):not(.promo-header--no-image) & {
     position: absolute;
     top: 50%;
     right: 0;
