@@ -5,7 +5,7 @@
 }
 
 .promo-header__content {
-  .promo-header--default & {
+  .promo-header--default:not(.promo-header--video):not(.promo-header--no-image) & {
     position: absolute;
     top: 50%;
     right: 0;
@@ -46,7 +46,8 @@
 }
 
 /* Override offsets from the base theme */
-header[role=banner].sticky-nav__header ~ main .promo-header--default .promo-header__content .promo-header__content-inner {
+header[role=banner].sticky-nav__header ~ main .promo-header--default:not(.promo-header--video):not(.promo-header--no-image)
+ .promo-header__content .promo-header__content-inner {
   padding: 20px;
 
   @include breakpoint($screen-md) {
