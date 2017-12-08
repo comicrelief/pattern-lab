@@ -24,7 +24,8 @@
   border: none;
   position: relative;
   @include border-radius(0);
-  // Animate the position
+
+  // To animate the hover-state position
   transition: 0.3s;
 
   &:hover {
@@ -94,7 +95,7 @@ rather than including it in a common mixin */
     display: block;
   }
 
-  // Fade-in custom psuedo-element
+  // Fade in custom psuedo-element
   &:hover {
     &:before {
       opacity: 1;
