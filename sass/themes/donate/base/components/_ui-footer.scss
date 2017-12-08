@@ -1,0 +1,86 @@
+footer[role=contentinfo] {
+  padding: 50px 5px;
+  background-color: #29022c;
+
+  @include bp(md) {
+    width: 100%;
+  }
+
+  @include bp($screen-lg) {
+    padding-top: 100px;
+  }
+  .footer__copyright p {
+    text-align: center;
+    color: #747373;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .footer__branding {
+    text-align: center;
+    a {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      .icon {
+        width: inherit;
+        height: inherit;
+      }
+    }
+  }
+  .footer__follow {
+    text-align: center;
+    color: $white;
+  }
+}
+
+.footer__copyright p {
+  margin: 0;
+  padding: 10px;
+}
+
+.menu--footer {
+  display: block;
+  margin: 15px 0 15px;
+}
+
+.menu--footer ul {
+  text-align: center;
+  margin-left: 0;
+}
+
+ul.menu {
+  list-style: none outside;
+  margin-left: 1em;
+  padding: 0;
+  text-align: center;
+}
+
+.menu--footer ul li {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.menu-item {
+  padding-top: 0.2em;
+  margin: 0;
+}
+
+.menu--footer ul li a {
+  display: block;
+  @include transition(color 180ms);
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
+  border-right: 1px solid white;
+  margin: 0 5px 0 0;
+  padding: 0 20px 0 10px;
+}
+
+.menu--footer ul li:last-child a {
+  margin: 0;
+  border-right: none;
+}
+
+.menu--footer ul li a:hover {
+  color: #ddd;
+}

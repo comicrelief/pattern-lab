@@ -1,0 +1,14 @@
+body.payin {
+  font-family: $body-font;
+}
+
+.header {
+  display: none;
+}
+
+footer {
+  .cr-footer,
+  .footer__branding {
+    display: none;
+  }
+}

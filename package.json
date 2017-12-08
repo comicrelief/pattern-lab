@@ -8,6 +8,7 @@
     "build": "grunt build",
     "build-base": "grunt build:base",
     "build-cr17": "grunt build:cr17",
+    "build-donate": "grunt build:donate",
     "build-frost": "grunt build:frost",
     "build-payin": "grunt build:payin",
     "build-rnd17": "grunt build:rnd17",

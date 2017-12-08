@@ -1,0 +1,54 @@
+// ==========================================================================
+// Core variables * comment files you want to override
+// ==========================================================================
+
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_theme.scss";
+@import "../../../base/variables/_typography.scss";
+
+// ==========================================================================
+// SR18 variables * comment files you want to override
+// ==========================================================================
+@import "../../sr/2018/variables/_colours.scss";
+@import "../../sr/2018/variables/_typography.scss";
+@import "../../sr/2018/variables/_mixins.scss";
+@import "../../sr/2018/variables/_main-nav.scss";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+@import "../../../base/_core";
+
+// ==========================================================================
+// Base UI components
+// ==========================================================================
+@import "../../../base/_components";
+
+// ==========================================================================
+// SR18 UI components
+// ==========================================================================
+@import "../../sr/2018/components/background-colours/background-colours";
+@import "../../sr/2018/components/buttons/buttons";
+@import "../../sr/2018/components/links/links";
+@import "../../sr/2018/components/loading/loading";
+@import "../../sr/2018/components/typography/fonts";
+@import "../../sr/2018/components/typography/typography";
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "../../payin/variables/_payin-mixins";
+@import "../../payin/variables/_payin-variables";
+
+// ==========================================================================
+// Payin UI components
+// ==========================================================================
+@import "../../payin/components/_payin-form.scss";
+
+// ==========================================================================
+// Donate sr18 styling
+// ==========================================================================
+@import "_donate-sr18-styles.scss";

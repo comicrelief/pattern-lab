@@ -1,4 +1,3 @@
-@import "_payin-variables";
 // ==========================================================================
 // Core variables * comment files you want to override
 // ==========================================================================
@@ -16,7 +15,41 @@
 @import "../../base/_core";
 
 // ==========================================================================
-// UI components
+// Base UI components
 // ==========================================================================
 
-@import "../../base/_components";
+@import "../../base/components/background-colours/background-colours";
+@import "../../base/components/buttons/buttons";
+@import "../../base/components/form/form";
+@import "../../base/components/grid/grid";
+@import "../../base/components/header/base-header";
+@import "../../base/components/links/links";
+@import "../../base/components/list/list";
+@import "../../base/components/navigation/footer-nav";
+@import "../../base/components/footer/footer";
+@import "../../base/components/navigation/hamburger-menu-button";
+@import "../../base/components/navigation/main-nav";
+@import "../../base/components/promo-header/promo-header";
+@import "../../base/components/selectbox/selectbox";
+@import "../../base/components/social/social";
+@import "../../base/components/table/table";
+@import "../../base/components/typography/typography";
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "variables/_payin-mixins";
+@import "variables/_payin-variables";
+
+// ==========================================================================
+// Payin UI components
+// ==========================================================================
+@import "components/_payin-form.scss"
+
+// Elements
+//
+// Style guide: 10
+
+// Components
+//
+// Style guide: 20
