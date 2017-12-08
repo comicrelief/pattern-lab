@@ -40,6 +40,15 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+      donate: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/donate',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/donate',
+          ext: '.css'
+        }]
+      },
       frost: {
         files: [{
           expand: true,
@@ -248,6 +257,16 @@ module.exports = function (grunt) {
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
       },
+      donate: {
+        options: {
+          verbose: true,
+          builder: 'kss',
+          title: 'Donate PatternLab',
+          css: ['../css/themes/donate/donate.css'],
+        },
+        src: ['sass/base', 'sass/themes/donate'],
+        dest: 'dist/donate'
+      },
       rnd17: {
         options: {
           verbose: true,
@@ -275,7 +294,22 @@ module.exports = function (grunt) {
           title: 'Payin Online PatternLab',
           css: ['../css/themes/payin/payin.css', '../css/kss/payin.css']
         },
-        src: ['sass/base', 'sass/themes/payin'],
+        src: ['sass/base/core', 
+              'sass/base/variables',
+              'sass/base/components/typography/typography',
+              'sass/base/components/background-colours',
+              'sass/base/components/buttons',
+              'sass/base/components/links',
+              'sass/base/components/list',
+              'sass/base/components/selectbox/selectbox',
+              'sass/base/components/form',
+              'sass/base/components/navigation/_footer-nav',
+              'sass/base/components/footer',
+              'sass/base/components/header/base-header',
+              'sass/base/components/promo-header/promo-header',
+              'sass/base/components/social',
+              'sass/themes/payin',
+             ],
         dest: 'dist/payin'
       },
       frost: {
@@ -352,6 +386,9 @@ module.exports = function (grunt) {
       cr17: {
         src: ['dist/css/themes/cr/**/*.css']
       },
+      donate: {
+        src: ['dist/css/themes/donate/**/*.css']
+      },
       frost: {
         src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css']
       },
@@ -388,7 +425,7 @@ module.exports = function (grunt) {
     'postcss:all',
   ]);
 
-    grunt.registerTask('build:base', [
+  grunt.registerTask('build:base', [
     'sass_globbing',
     'sass:base',
     'modernizr',
@@ -405,6 +442,13 @@ module.exports = function (grunt) {
     'modernizr',
     'kss:cr17',
     'postcss:cr17',
+  ]);
+
+  grunt.registerTask('build:donate', [
+    'sass:donate',
+    'modernizr',
+    'kss:donate',
+    'postcss:donate',
   ]);
 
   grunt.registerTask('build:frost', [
