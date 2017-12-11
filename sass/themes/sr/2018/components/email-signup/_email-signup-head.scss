@@ -102,8 +102,6 @@
 
       &:focus,
       &:hover {
-        // Override standard btn animation 
-        transform: translateY(0);
         background-size: 60px 60px;
         border: 0;
       }

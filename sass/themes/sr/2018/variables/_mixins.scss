@@ -2,6 +2,13 @@
 @mixin sr_button_types($colour, $bg-colour) {
   color: $colour;
   background-color: $bg-colour;
+
+  // To animate the hover-state position
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
   
   &-ghost {
     padding: 20px 29px;
@@ -13,6 +20,7 @@
 
     &:hover {
       box-shadow:inset 0px 0px 0px 3px $bg-colour;
+      transform: translateY(-3px);
     }
   }
 }
