@@ -262,9 +262,13 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss',
           title: 'Donate PatternLab',
-          css: ['../css/themes/donate/donate.css'],
+          css: ['../css/themes/donate/donate.css', '../css/kss/donate.css'],
         },
-        src: ['sass/base', 'sass/themes/donate'],
+        src: ['sass/themes/donate', 
+              'sass/themes/sr/2018', 
+              'sass/themes/payin/variables',
+              'sass/themes/payin/components',
+             ],
         dest: 'dist/donate'
       },
       rnd17: {
