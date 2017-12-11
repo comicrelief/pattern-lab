@@ -24,13 +24,6 @@
   border: none;
   position: relative;
   @include border-radius(0);
-
-  // To animate the hover-state position
-  transition: 0.3s;
-
-  &:hover {
-    transform: translateY(-3px);
-  }
     
   span {
     font-size: inherit;

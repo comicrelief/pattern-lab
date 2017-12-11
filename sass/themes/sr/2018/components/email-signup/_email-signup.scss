@@ -16,12 +16,10 @@
 
       &:focus,
       &:hover {
-        // Override standard btn animation 
-        transform: translateY(0);
         background-position: center;
         background-size: 60px 60px;
       }
-      
+
       &:focus {
         outline: 1px dotted #212121;
         // Webkit specific override where applicable
