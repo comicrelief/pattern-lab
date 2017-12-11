@@ -99,6 +99,7 @@
       background: $colour-ruby url( $image-path + "arrow-right.svg") center no-repeat;
       background-size: 45px 45px;
       transition: background-size 0.1s linear;
+
       &:focus,
       &:hover {
         // Override standard btn animation 
@@ -106,6 +107,7 @@
         background-size: 60px 60px;
         border: 0;
       }
+      
       &:focus {
         outline: 1px dotted #212121;
         // Webkit specific override where applicable
