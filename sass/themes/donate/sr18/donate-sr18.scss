@@ -25,7 +25,22 @@
 // ==========================================================================
 // Base UI components
 // ==========================================================================
-@import "../../../base/_components";
+// @import "../../../base/_components";
+
+// choose components one by one
+
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/form/form";
+@import "../../../base/components/header/base-header";
+
+@import "../../../base/components/navigation/feature-nav";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/typography/typography";
+
 
 // ==========================================================================
 // SR18 UI components
@@ -46,7 +61,7 @@
 // ==========================================================================
 // Payin UI components
 // ==========================================================================
-@import "../../payin/components/_payin-form.scss";
+@import "../../payin/components/_payin-form";
 
 // ==========================================================================
 // Donate sr18 styling
