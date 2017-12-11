@@ -264,10 +264,12 @@ module.exports = function (grunt) {
           title: 'Donate PatternLab',
           css: ['../css/themes/donate/donate.css', '../css/kss/donate.css'],
         },
-        src: ['sass/themes/donate', 
-              'sass/themes/sr/2018', 
+        src: ['sass/base/components/promo-header',
+              'sass/base/components/footer', 
               'sass/themes/payin/variables',
               'sass/themes/payin/components',
+              'sass/themes/sr/2018',
+              'sass/themes/donate'
              ],
         dest: 'dist/donate'
       },
