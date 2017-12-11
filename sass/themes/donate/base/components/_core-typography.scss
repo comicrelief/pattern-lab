@@ -1,14 +1,3 @@
-
-// Headings
-//
-// These are the Headings
-//
-// Markup:
-// <h1>Heading 1</h1>
-// <h2>Heading 2</h2>
-//
-// Style guide: Typography.Headings
-
 h1 {
   margin: 0 0 20px;
   color: $black;
@@ -106,28 +95,11 @@ a {
   }
 }
 
-// Paragraphs
-//
-// These are the Paragraphs
-//
-// Markup:
-// <p>Paragraphs</p>
-//
-// Style guide: Typography.Paragraphs
-
 p {
   padding: 0;
   font-size: 16px;
 }
 
-// Lists
-//
-// These are the list items
-//
-// Markup:
-// <ul><li>List 1</li></ul>
-//
-// Style guide: Typography.Lists
 
 ul {
   list-style: none; 
@@ -149,15 +121,6 @@ ol ul {
   margin: 1.5rem 0 1.5rem 3rem;
 }
 
-// HR
-//
-// These are the HR items
-//
-// Markup:
-// <hr>
-//
-// Style guide: Typography.HR
-
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
@@ -165,30 +128,6 @@ hr {
   border-top: 1px solid $item-grey; 
 }
 
-// Links
-//
-// Standard links
-//
-// Markup: 
-// <p>
-//   <a class="link {{modifier_class}}" href="#">
-//     Link
-//   </a>
-// </p>
-// 
-// .link--red - Red standalone link
-// .link--inline-red - Red inline link
-// .link--black - Black standalone link
-// .link--inline-black - Black inline link
-// .link--grey - Grey standalone link
-// .link--inline-grey - Grey inline link
-// .link--white - White standalone link
-// .link--inline-white - White inline link
-// :hover - Link hover state 
-// :active - Link active state
-// :focus - Link focus state
-//
-// Style guide: Typography.Links
 
 .link {
   text-decoration: none;
@@ -222,15 +161,6 @@ hr {
   }
 }
 
-// External Link
-//
-// This is External Link
-//
-// Markup:
-// <a href="#" class="external-link">External Link</a>
-//
-// Style guide: Typography.External-Link
-
 .external-link {
   &:after {
     display: inline-block;
@@ -248,27 +178,3 @@ hr {
 @include link-variation($linkList);
 @include bg-color-variations($colorList);
 @include type-color-variations($colorList);
-
-// ==========================================================================
-// Styleguide
-// ==========================================================================
-
-#kssref-colours .kss-modifier__example {
-  div {
-    height: 60px; 
-    width: 60px;
-    display: block;
-  }
-}
-
-.styleguide-link {
-    float: right;
-    clear: both;
-    margin-right: 5%;
-    text-decoration: none;
-    color: $white;
-}
-
-.page-title {
-  padding-top: 20px;
-}
