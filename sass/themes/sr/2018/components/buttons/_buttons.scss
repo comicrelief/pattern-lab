@@ -22,7 +22,16 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: none;
+  position: relative;
   @include border-radius(0);
+
+  // To animate the hover-state position
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+    
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -59,12 +68,37 @@
 .btn--dark-blue-lighter {
   @include sr_button_types($colour-white, $colour-dark-blue-lighter);
 }
-.btn--ruby {
-  @include sr_button_types($colour-white, $colour-ruby);
-}
 .btn--white-smoke {
   @include sr_button_types($colour-dark-blue, $colour-white-smoke);
 }
 .btn--white {
   @include sr_button_types($colour-dark-blue, $colour-white);
+}
+
+/* This variation has a custom hover state, so we'll just add it here
+rather than including it in a common mixin */
+.btn--ruby {
+  @include sr_button_types($colour-white, $colour-ruby);
+
+  // Psuedo-element that's faded-in to act as our new hoverstate
+  &:before {    
+    background-image: linear-gradient(90deg, $colour-purple, $colour-ruby);
+    content: '';    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -100;
+    transition: opacity 0.8s;
+    display: block;
+  }
+
+  // Fade in custom psuedo-element
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
 }

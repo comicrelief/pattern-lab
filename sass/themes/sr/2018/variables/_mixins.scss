@@ -2,25 +2,17 @@
 @mixin sr_button_types($colour, $bg-colour) {
   color: $colour;
   background-color: $bg-colour;
-  &:hover,
-  &:focus,
-  &:active {
-    @if ($bg-colour == $colour-black) or ($bg-colour == $colour-dark-blue) or ($bg-colour == $colour-dark-blue-lighter) {
-      background-color: lighten($bg-colour, 10%);
-    }
-    @else {
-      background-color: darken($bg-colour, 5%);
-    } 
-  }
+  
   &-ghost {
     padding: 20px 29px;
     border: 1px solid $bg-colour;
     color: $bg-colour;
     background-color: transparent;
     background-clip: initial;
+    box-shadow:inset 0px 0px 0px 1px $bg-colour;
+
     &:hover {
-      background-color: $bg-colour;
-      color: $colour;
+      box-shadow:inset 0px 0px 0px 3px $bg-colour;
     }
   }
 }
