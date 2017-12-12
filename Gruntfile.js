@@ -268,7 +268,8 @@ module.exports = function (grunt) {
               'sass/base/components/footer', 
               'sass/themes/payin/variables',
               'sass/themes/payin/components',
-              'sass/themes/sr/2018',
+              'sass/themes/sr/2018/variables',
+              'sass/themes/sr/2018/components',
               'sass/themes/donate'
              ],
         dest: 'dist/donate'
