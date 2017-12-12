@@ -93,9 +93,11 @@
       mask-size: 25px;
       -webkit-mask-size: 25px;
     }
+
     &:hover {
       background-color: $colour-black;
     }
+    
     &:focus {
       outline: 1px dotted #212121;
       // Webkit specific override where applicable
