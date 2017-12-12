@@ -8,7 +8,6 @@
 // ==========================================================================
 @import "../../../base/_core";
 
-
 // ==========================================================================
 // SR18 variables * comment files you want to override
 // ==========================================================================
@@ -21,21 +20,19 @@
 // ==========================================================================
 // Base UI components
 // ==========================================================================
-// @import "../../../base/_components";
 
 // choose components one by one
-
-@import "../../../base/components/footer/footer";
-@import "../../../base/components/form/form";
-@import "../../../base/components/navigation/footer-nav";
-@import "../../../base/components/navigation/hamburger-menu-button";
-@import "../../../base/components/navigation/main-nav";
-@import "../../../base/components/meta-icons/meta-icons";
-@import "../../../base/components/header/base-header";
-@import "../../../base/components/promo-header/promo-header";
-@import "../../../base/components/selectbox/selectbox";
 @import "../../../base/components/typography/typography";
-
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/form/form";
+@import "../../../base/components/header/base-header";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/meta-icons/meta-icons";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/social/social";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/promo-header/promo-header";
 
 // ==========================================================================
 // SR18 UI components
@@ -46,7 +43,6 @@
 @import "../../sr/2018/components/buttons/buttons";
 @import "../../sr/2018/components/links/links";
 @import "../../sr/2018/components/navigation/main-nav";
-@import "../../sr/2018/components/loading/loading";
 @import "../../sr/2018/components/promo-header/promo-header";
 
 // ==========================================================================
@@ -72,3 +68,10 @@
 // Components
 //
 // Style guide: 20
+
+// Donate Page
+//
+// Markup: donate-page.twig
+//
+// Style guide: 30
+
