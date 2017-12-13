@@ -508,12 +508,6 @@ form {
   .form__group--custom_link {
     margin-top: -15px;
   }
-  .form__group--terms_conditions {
-    @include breakpoint($screen-md) {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
-  }
 }
 #giving-page {
   .form__group--terms_conditions {
