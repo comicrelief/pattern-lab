@@ -6,7 +6,8 @@
   // To animate the hover-state position
   transition: 0.3s;
 
-  &:hover {
+  &:hover,
+  &:focus {
     transform: translateY(-3px);
   }
   
@@ -18,7 +19,8 @@
     background-clip: initial;
     box-shadow:inset 0px 0px 0px 1px $bg-colour;
 
-    &:hover {
+    &:hover,
+    &:focus  {
       box-shadow:inset 0px 0px 0px 3px $bg-colour;
       transform: translateY(-3px);
     }
