@@ -15,3 +15,13 @@ footer {
     display: none;
   }
 }
+
+/* FORM  */
+// hide details and billing address rows initially
+.form__row--your-detail,
+.form__row--billing-detail {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
