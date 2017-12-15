@@ -49,6 +49,9 @@
   function toggleMenu() {
     $('a.main-nav-toggle').on('click', function (e) {
 
+      // Allow us to add a '#' href value to the burger nav to make it tab-focussable 
+      e.preventDefault();
+
       // Change state for visual effect.
       $(this).toggleClass('is-active');
 
