@@ -25,3 +25,11 @@ footer {
     display: block;
   }
 }
+
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
