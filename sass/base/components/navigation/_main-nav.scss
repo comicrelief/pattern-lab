@@ -253,11 +253,11 @@
   height: auto;
   max-height: none;
   
-  @include breakpoint($desktop-nav-breakpoint) {
-    display: block; 
-  }
-
   &.menu-open {
     max-height: none;
+  }
+  
+  @include breakpoint($desktop-nav-breakpoint) {
+    display: block; 
   }
 }
