@@ -47,16 +47,24 @@
   }
 
   function toggleMenu() {
+
+    var isOpen = false;
+
     $('a.main-nav-toggle').on('click', function (e) {
 
       // Allow us to add a '#' href value to the burger nav to make it tab-focussable 
       e.preventDefault();
 
-      // Change state for visual effect.
-      $(this).toggleClass('is-active');
+      isOpen = !isOpen;
 
-      // Change state of menu itself.
-      $('#main-menu', $(this).parents('.main-nav__wrapper')).toggleClass('menu-open');
+      // Change state for visual effect, and also update the aria-expanded attribute for assistive tech
+      $(this).toggleClass('is-active').attr('aria-expanded', function (i, attr) {
+        return attr == 'true' ? 'false' : 'true'
+      });
+
+      // Change state of menu itself, animating with jQuery so we're hiding the UL only once it's finished animating closed, making sure assistive
+      // technologies can't read-out the nav items 
+      $('#main-menu', $(this).parents('.main-nav__wrapper')).toggleClass('menu-open', isOpen).addClass('animating').slideToggle(300);
 
       // Close all menus if we've closed the nav
       if (!($(this).hasClass('is-active'))) {
