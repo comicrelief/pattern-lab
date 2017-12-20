@@ -1,6 +1,7 @@
 (function ($) {
 
   var animationSpeed = 0;
+  var totalItems = 0;
 
   $('.main-nav').addClass("crNavigation-processed");
 
@@ -25,8 +26,13 @@
       $('#main-menu').smartmenus('menuHideAll');
     });
 
+    // Create our aria label dynamically
+    totalItems =  $('#main-menu').find('a').not('.has-submenu').length;
+    
+    $('.main-nav-toggle').attr('aria-label', 'Open and close navigation menu, ' +totalItems+ ' items listed');
+
     // Set our speed depending on the type of nav
-    animationSpeed =  $('#main-menu').hasClass('main-nav--feature__items') ? 0 : 250; 
+    animationSpeed =  $('#main-menu').hasClass('main-nav--feature__items') ? 0 : 250;
   }
 
   /* Updates empty duplicate link (added by template) with the parent item's text and link, dynamically */
