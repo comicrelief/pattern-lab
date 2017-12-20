@@ -1,5 +1,7 @@
 (function ($) {
 
+  var animationSpeed = 0;
+
   $('.main-nav').addClass("crNavigation-processed");
 
   setUpNav();
@@ -22,6 +24,9 @@
     $('#main-menu').bind('activate.smapi', function (e, menu) {
       $('#main-menu').smartmenus('menuHideAll');
     });
+
+    // Set our speed depending on the type of nav
+    animationSpeed =  $('#main-menu').hasClass('main-nav--feature__items') ? 0 : 250; 
   }
 
   /* Updates empty duplicate link (added by template) with the parent item's text and link, dynamically */
@@ -64,7 +69,7 @@
 
       // Change state of menu itself, animating with jQuery so we're hiding the UL only once it's finished animating closed, making sure assistive
       // technologies can't read-out the nav items 
-      $('#main-menu', $(this).parents('.main-nav__wrapper')).toggleClass('menu-open', isOpen).addClass('animating').slideToggle(300);
+      $('#main-menu', $(this).parents('.main-nav__wrapper')).toggleClass('menu-open', isOpen).slideToggle( animationSpeed );
 
       // Close all menus if we've closed the nav
       if (!($(this).hasClass('is-active'))) {
@@ -94,7 +99,7 @@
         // Remove any 'item-open' classes and add class to clicked item
         $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
 
-        $($listItem).toggleClass('item-open');
+        $listItem.addClass('item-open');
       }
     });    
   }
@@ -123,28 +128,25 @@
 
         // Focussed on a non-nav anchor? Remove active states
         if (!($thisAnchor.is($('a', $context)))) {
-          $parentLi.removeClass("focused"); 
+          $parentLi.removeClass("focused item-open"); 
         }
 
         // If we're focussing on a nav item anchor, add focus class to the parent li, so we can affect all subnav styling
         else {
-          
           if ($thisAnchor.is($parentAnchor)) {
             // Unfocus all other focussed parent items
-            $parentLi.removeClass("focused");
-            $(this).closest( $parentLi ).addClass("focused");
+            $parentLi.removeClass("focused item-open");
+            $(this).closest( $parentLi ).addClass("focused item-open");
           }
-
           // Else, check its not a subitem, then remove focus class from all nav item
           else if (!($thisAnchor.is($subAnchor))) {
-            $parentLi.removeClass("focused"); 
+            $parentLi.removeClass("focused item-open"); 
           }
         }
       }
 
       /* BLUR event */
       else {
-
         // If we're blurring away from the last-child subnav item, remove our overall focus class from the menu
         if ($thisAnchor.is($subAnchor)) {
           $thisAnchor.parent('li:last-child').closest('li.focused').removeClass("focused");

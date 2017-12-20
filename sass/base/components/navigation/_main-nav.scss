@@ -258,6 +258,8 @@
   }
   
   @include breakpoint($desktop-nav-breakpoint) {
-    display: block; 
+    // Override any prior jQuery animations from changing breakpoint
+    display: block !important;
   }
+
 }
