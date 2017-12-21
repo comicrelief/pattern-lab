@@ -21,6 +21,7 @@
 
   &:hover {
     @include border-radius(0px);
+    transform: translateY(0px); // override subtheme
   }
 }
 .btn--full-width {
