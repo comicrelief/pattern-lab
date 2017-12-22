@@ -3,7 +3,7 @@
   <div class="main-nav__icons main-nav__burger">
     <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle" href="#" aria-expanded="false">
       <div class="c-hamburger__text">
-        <span class="visually-hidden">Open and close navigation menu</span>
+        <span class="visually-hidden">Open and close Navigation Menu</span>
       </div>
       <span></span>
     </a>
@@ -15,8 +15,9 @@
       <li class="menu-item">
         <a href="/home">Home</a>
       </li>
-      <li class="menu-item menu-item--expanded">
-        <a href="/fundraise" class="is-active">Fundraise (active)</a>
+      <li class="menu-item menu-item--expanded"> 
+        {# Add haspopup attr to our 'button' items #}
+        <a href="/fundraise" class="is-active" aria-haspopup="true" aria-expanded="false">Fundraise (active)</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
             <a href="/fundraise">
@@ -31,7 +32,7 @@
         </ul>
       </li>
       <li class="menu-item menu-item--expanded menu-item--active-trail">
-        <a href="/link">What's going on</a>
+        <a href="/link" aria-haspopup="true" aria-expanded="false">What's going on</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
             <a href="/whats-going-on">
@@ -46,7 +47,7 @@
         </ul>
       </li>
       <li class="menu-item menu-item--expanded">
-        <a href="/FAQ">FAQ</a>
+        <a href="/FAQ" aria-haspopup="true" aria-expanded="false">FAQ</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
             <a href="/FAQ">
@@ -61,7 +62,7 @@
         </ul>
       </li>
       <li class="menu-item menu-item--expanded">
-        <a href="/legal">Legal</a>
+        <a href="/legal" aria-haspopup="true" aria-expanded="false">Legal</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
             <a href="/legal">
