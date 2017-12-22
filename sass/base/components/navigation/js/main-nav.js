@@ -29,7 +29,7 @@
     // Create our aria label dynamically
     totalItems =  $('#main-menu').find('a').not('.has-submenu').length;
     
-    $('.main-nav-toggle').attr('aria-label', 'Open and close navigation menu, ' +totalItems+ ' items listed');
+    $('.main-nav-toggle').attr('aria-label', 'Open and close Navigation Menu, ' +totalItems+ ' items listed');
 
     // Set our speed depending on the type of nav
     animationSpeed =  $('#main-menu').hasClass('main-nav--feature__items') ? 0 : 250;
@@ -99,13 +99,21 @@
 
         e.preventDefault();
 
-        $listItem = $(this).parent('li.menu-item--expanded');
+        $this = $(this);
+        $listItem = $this.parent('li.menu-item--expanded');
         $listItemParents = $listItem.parents('li.item-open');
 
         // Remove any 'item-open' classes and add class to clicked item
-        $('li.item-open', $context).not($listItem).not($listItemParents).removeClass('item-open');
+        $('li.item-open', $context).not($listItem).not($listItemParents).attr('aria-expanded', 'false').removeClass('item-open');
 
+        // Remove expanded attribute from all menu items
+        $('li.menu-item--expanded > a', $context).attr('aria-expanded', 'false');
+
+        // Add active class
         $listItem.addClass('item-open');
+
+        // Add expanded state
+        $this.attr('aria-expanded', 'true');
       }
     });    
   }
