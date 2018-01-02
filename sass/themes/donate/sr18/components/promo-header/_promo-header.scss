@@ -1,0 +1,41 @@
+.promo-header {
+  padding: 20px;
+  min-height: 140px;
+  @include gradient-background($colour-purple, $colour-ruby);
+  
+  h1, p, span {
+    color: $colour-white;
+  }
+  p {
+    margin-bottom: 0;
+    @include font-size($h3-font-size);
+  }
+  h1 {
+   font-family: $font-medium;
+   text-transform: none;
+   @include font-size($h2-font-size);
+  }
+  br {
+    display: none;
+  }
+}
+
+@include breakpoint($screen-md) {
+  .promo-header {
+    min-height: 200px;
+  }
+}
+
+@include breakpoint($screen-lg) {
+  .promo-header {
+    p {
+      margin-bottom: 20px;
+    }
+    h1 {
+      @include font-size($h1-small-font-size);
+    }
+    br {
+      display: block;
+    }
+  }
+}
