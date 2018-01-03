@@ -29,8 +29,12 @@
     background-image: linear-gradient(transparent, $colour-dark-blue);
 
     /* Ensure the last element is flush to the padding of the block */
-    .cr-body > *:last-child {
-      margin-bottom: 0;
+    .cr-body {
+      height: 100%;
+      
+      > *:last-child {
+        margin-bottom: 0;
+      }
     }
 
     /* Re-add our margin to the CTA if present, so the above last-child doesn't
