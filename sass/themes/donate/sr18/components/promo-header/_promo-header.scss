@@ -13,6 +13,7 @@
   h1 {
    font-family: $font-medium;
    text-transform: none;
+   
    @include font-size($h2-font-size);
   }
   // no line break before donation amount in span
@@ -20,6 +21,15 @@
     display: none;
   }
 }
+
+// remove h1 text text-shadow
+.promo-header--default:not(.promo-header--video):not(.promo-header--no-image) {
+  .promo-header__content .promo-header__content-inner {
+    h1 {
+      text-shadow: none;
+    }
+  }
+}  
 
 @include breakpoint($screen-md) {
   .promo-header {
