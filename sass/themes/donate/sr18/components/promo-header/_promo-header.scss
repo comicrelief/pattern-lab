@@ -15,6 +15,7 @@
    text-transform: none;
    @include font-size($h2-font-size);
   }
+  // no line break before donation amount in span
   br {
     display: none;
   }
@@ -34,6 +35,7 @@
     h1 {
       @include font-size($h1-small-font-size);
     }
+    // show line break to keep pound sign and amount on same line 
     br {
       display: block;
     }
