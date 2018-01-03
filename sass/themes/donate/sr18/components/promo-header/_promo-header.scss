@@ -1,6 +1,5 @@
 .promo-header {
-  padding: 20px;
-  min-height: 140px;
+  min-height: 100px;
   @include gradient-background($colour-purple, $colour-ruby);
   
   h1, p, span {
