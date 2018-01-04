@@ -9,7 +9,7 @@
     margin-bottom: 0;
     @include font-size($h3-font-size);
   }
-  h1#donation-message {
+  h1#promo-header__text {
    font-family: $font-medium;
    text-transform: none;
    text-shadow: none;
@@ -33,7 +33,7 @@
     p {
       margin-bottom: 20px;
     }
-    h1#donation-message {
+    h1#promo-header__text {
       @include font-size($h1-small-font-size);
     }
     // show line break to keep pound sign and amount on same line 
