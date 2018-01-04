@@ -61,6 +61,13 @@
                         <p class="font--xsmall font--center">*If you’re making a personal donation please give us your full name, home address and tick the box or we can’t claim Gift Aid. You must be a UK taxpayer and understand that if you pay less Income Tax and / or Capital Gains Tax in your current tax year than the amount of Gift Aid claimed on all your donations it is your responsibility to pay any difference. <a class="link--inline-grey" href="http://www.rednoseday.com/frequently-asked-questions#gift-aid" id="faq-gift-aid" target="_blank">Find out more about Gift Aid</a>.</p>
                     </div>
                 </div>
+                <div class="form__row form__row--payment-buttons">
+                <div class="form__fieldset">
+                    <button id="comicrelief_payinbundle_payment_apple_pay" class="payment-button show">apple pay</button>
+                    <button id="comicrelief_payinbundle_payment_paypal" class="payment-button">paypal</button>
+                    <button id="comicrelief_payinbundle_payment_card" class="payment-button">pay by card</button>
+                </div>
+            </div>
                 <div class="form__row form__row--your-detail show">
                     <div class="form__fieldset">
                         <h4 class="form__subtitle">Your details</h4>
@@ -405,15 +412,16 @@
                                     <div class="form__field--error"></div>
                                 </div>
                             </div>
+                            <input type="hidden" id="comicrelief_payinbundle_payment_affiliate" name="comicrelief_payinbundle_payment[affiliate]">
+                            <div class="form__row form__nav">
+                                <div class="form__fieldset">
+                                    <div class="form__field--wrapper form__submit form__field--submit"><button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]">Continue</button></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <input type="hidden" id="comicrelief_payinbundle_payment_affiliate" name="comicrelief_payinbundle_payment[affiliate]">
-                <div class="form__row form__nav">
-                    <div class="form__fieldset">
-                        <div class="form__field--wrapper form__submit form__field--submit"><button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]">Make donation</button></div>
-                    </div>
-                </div>
+                
             </form>
             <div class="form__row form__row--logos">
                 <p><img src="/images/logo/frsb.png"></p>

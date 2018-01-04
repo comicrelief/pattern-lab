@@ -127,12 +127,12 @@ module.exports = function (grunt) {
           dest: 'dist/images'
         }]
       },
-      rnd17: { // Use for subthemes
+      rnd17: {
         files: {
           'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
         }
       },
-      cr17: { // Use for subthemes
+      cr17: {
         files: {
           'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
         }
@@ -145,7 +145,16 @@ module.exports = function (grunt) {
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
-      }
+      },
+      payin: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/payin/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images/form'
+        }]
+      },
     },
 
     svgmin: {
@@ -468,6 +477,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build:payin', [
     'sass:payin',
     'modernizr',
+    'imagemin:payin',
     'kss:payin',
     'postcss:payin',
   ]);

@@ -25,3 +25,19 @@ footer {
     display: block;
   }
 }
+
+// hide extended billing address fields
+.form__field--address {
+  display: block;
+  &.hide {
+    display: none;
+  }
+}
+
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
