@@ -1,3 +1,5 @@
+$colour-grey: #A2B3BA;
+$colour-green: #00ffaa;
 body.payin {
   font-family: $body-font;
 }
@@ -6,29 +8,9 @@ body.payin {
   display: none;
 }
 
-.content {
-  background-color: $colour-dark-blue;
-  h4, p, label {
-    color: $colour-white;
-  }
-  .form__step {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-}
-
-
 footer {
   .cr-footer,
   .footer__branding {
     display: none;
-  }
-}
-
-// only show Apple Pay button when supported
-#comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  &.show {
-    display: block;
   }
 }

@@ -74,10 +74,23 @@
   display: none;
 }
 
+// giftaid row
+.form__row--giftaid {
+  p:nth-of-type(2) {
+    color: $colour-grey;
+  }
+  a {
+    color: $colour-green;
+  }
+  .form__field--wrapper.form__field--giftaid {
+    background-color: transparent;
+  }
+}
+
 // labels and fields 
 .form__field--address-detail {
   label {
-    color: #A2B3BA;
+    color: $colour-grey;
   }
 }
 label.required {
@@ -95,7 +108,7 @@ input[type="number"],
 input[type="text"], 
 select {
   max-width: 100%;
-  border: 2px solid #A2B3BA;
+  border: 2px solid $colour-grey;
   border-radius: 3px;
   background-color: transparent;
   color: $colour-white;
