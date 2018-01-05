@@ -155,6 +155,15 @@ module.exports = function (grunt) {
           dest: 'dist/images/form'
         }]
       },
+      donate: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/donate/sr18/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images/form'
+        }]
+      },
     },
 
     svgmin: {
@@ -463,6 +472,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build:donate', [
     'sass:donate',
     'modernizr',
+    'imagemin:donate',
     'kss:donate',
     'postcss:donate',
   ]);
