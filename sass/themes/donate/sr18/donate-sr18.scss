@@ -57,7 +57,12 @@
 @import "../../payin/components/_payin-form";
 
 // ==========================================================================
-// Donate sr18 styling
+// Donate sr18 variables
+// ==========================================================================
+@import "variables/_colours.scss";
+
+// ==========================================================================
+// Donate sr18 components
 // ==========================================================================
 @import "_donate-sr18-styles.scss";
 @import "components/promo-header/_promo-header.scss";
