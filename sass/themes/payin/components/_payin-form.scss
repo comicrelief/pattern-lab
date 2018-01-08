@@ -179,10 +179,21 @@ select:focus {
       left: 0px;
       text-decoration: underline;
 
+      &:before {
+        display: none;
+      }
+
       &:hover {
         text-decoration: none;
       }
-    } 
+    }
+     input[type=checkbox] {
+      position: absolute;
+      top: 15px;
+      opacity: 0;
+      width: 100%;
+      cursor: pointer;
+    }  
   }
 }
 
