@@ -539,7 +539,7 @@ header[role=banner] {
 
         .site-logo {
           background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
-          background-size: 133px 60px;
+          background-size: 105px 60px;
         }
       }
 
@@ -606,9 +606,9 @@ header[role=banner] {
       @include breakpoint($desktop-nav-breakpoint) {
         margin-top: 8px;
         height: 60px;
-        width: 133px;
+        width: 105px;
         background: url( $image-path + "SR18_logo_date_whitetext.svg") no-repeat 0 0;
-        background-size: 133px 60px;
+        background-size: 105px 60px;
 
 
         // Hide the simple logo image and replace with bg-img with date
@@ -654,7 +654,7 @@ body.path-search.cc-banner--visible header[role=banner] {
       background-image: none;
       @include breakpoint($desktop-nav-breakpoint) {
         background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
-        background-size: 133px 60px;
+        background-size: 105px 60px;
       }
     }
   
