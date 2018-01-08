@@ -78,12 +78,58 @@
 .form__row--giftaid {
   p:nth-of-type(2) {
     color: $colour-grey;
+    text-align: left;
   }
   a {
     color: $colour-green;
   }
   .form__field--wrapper.form__field--giftaid {
+    padding: 0;
     background-color: transparent;
+  }
+  label.form__checkbox {
+    left: initial;
+    margin: 0 5px 0.6em 5px;
+    padding-right: 60px;
+    width: 100%;
+  }
+  label.form__checkbox:before {
+    top: 15px;
+    right: 10px;
+    left: initial;
+    border: 1px solid $colour-green;
+    border-radius: 30px;
+    // specific breakpoint 
+    @include breakpoint(614px) {
+      top: 6px;
+    }
+  }
+  label.form__checkbox:after {
+    content: '';
+    position: absolute;
+    vertical-align: top;
+    top: 20px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 20px;
+    // specific breakpoint
+    @include breakpoint(614px) {
+      top: 11px;
+    }
+  }
+  input[type="checkbox"]:checked+label:before {
+    border: 2px solid $colour-green;
+    background-image: none;
+    background-color: transparent;
+  } 
+  input[type="checkbox"]:checked+label:after {
+    background-image: none;
+    background-color: $colour-green;
+  }
+  input[type="checkbox"]:focus+label:before {
+     border: 2px solid $colour-green;
   }
 }
 
@@ -103,6 +149,7 @@ label:not(.required, .form__checkbox):after {
   content: " (Optional)";
 
 }
+
 input[type="email"], 
 input[type="number"], 
 input[type="text"], 
