@@ -538,7 +538,7 @@ header[role=banner] {
         height: $lg-nav-height;
 
         .site-logo {
-          background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
+          background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
           background-size: 133px 60px;
         }
       }
@@ -607,7 +607,7 @@ header[role=banner] {
         margin-top: 8px;
         height: 60px;
         width: 133px;
-        background: url( $image-path + "SR18_logo_nav_130x130_Generic_SR_Logo_DMY_white.svg") no-repeat 0 0;
+        background: url( $image-path + "SR18_logo_date_whitetext.svg") no-repeat 0 0;
         background-size: 133px 60px;
 
 
@@ -653,7 +653,7 @@ body.path-search.cc-banner--visible header[role=banner] {
     .site-logo {
       background-image: none;
       @include breakpoint($desktop-nav-breakpoint) {
-        background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
+        background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
         background-size: 133px 60px;
       }
     }
