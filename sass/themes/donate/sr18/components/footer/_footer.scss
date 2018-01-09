@@ -1,9 +1,10 @@
 footer[role=contentinfo] {
-  margin: 0 auto;
   padding: 0 0 140px;
-  max-width: 1200px;
   background-color: $colour-dark-blue;
-
+  .footer__content-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
   // give the same with as form rows
   .footer__copyright {
     margin: 0 auto;

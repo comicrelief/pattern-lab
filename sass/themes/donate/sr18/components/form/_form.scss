@@ -27,7 +27,8 @@
     width: span(8);
   }
 }
-.form__fieldset {
+.form__fieldset,
+.card-list {
   float: none;
   margin: 0 auto;
   padding: 0;
@@ -36,13 +37,44 @@
   @include breakpoint($screen-md) {
     width: span(10);
   }
+}
+.card-list {
+  text-align: center;
+
+  .card-logo {
+    display: inline-block;
+    margin: 0 gutter();
+    width: 40px;
+    height: 40px;
+    background: no-repeat center center;
+
+    &.logo-mastercard {
+      background-image: url("/images/form/mastercard-logo.png");
+    }
+    &.logo-visa {
+      background-image: url("/images/form/visa-debit-logo.png");
+    }
+    &.logo-jcb {
+      background-image: url("/images/form/jcb-logo.png");
+    }
+    &.logo-amex {
+      background-image: url("/images/form/American_Express_logo.png");
+    }
+  }
+}
+
+
+// .form__fieldset {
   .search-box,
   .form__field--address-detail {
     margin: 0;
     width: 100%;
     max-width: 100%;
   }
-}
+// }
+  
+
+
 .form__field--wrapper {
   margin-right: 0;
   margin-left: 0;
