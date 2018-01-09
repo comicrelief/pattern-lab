@@ -344,6 +344,7 @@ form {
   #btnNext {
     @extend .btn--rectangle;
     width: 100%;
+    transform: translateY(0px);
 
     @include breakpoint($screen-md) {
       position: absolute;

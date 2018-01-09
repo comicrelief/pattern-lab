@@ -1,0 +1,44 @@
+.promo-header {
+  min-height: 100px;
+  @include gradient-background($colour-purple, $colour-ruby);
+  
+  h1, p, span {
+    color: $colour-white;
+  }
+  p {
+    margin-bottom: 0;
+    @include font-size($h3-font-size);
+  }
+  h1#promo-header__text {
+   font-family: $font-medium;
+   text-transform: none;
+   text-shadow: none;
+   
+   @include font-size($h2-font-size);
+  }
+  // no line break before donation amount in span
+  br {
+    display: none;
+  }
+}
+
+@include breakpoint($screen-md) {
+  .promo-header {
+    min-height: 200px;
+  }
+}
+
+@include breakpoint($screen-lg) {
+  .promo-header {
+    p {
+      margin-bottom: 20px;
+    }
+    h1#promo-header__text {
+      @include font-size($h1-small-font-size);
+    }
+    // show line break to keep pound sign and amount on same line 
+    br {
+      display: block;
+    }
+  }
+}

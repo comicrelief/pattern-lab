@@ -5,9 +5,6 @@ body.payin {
 .header {
   display: none;
 }
-.promo-header {
-  @include gradient-background($colour-purple, $colour-ruby);
-}
 
 footer {
   .cr-footer,
