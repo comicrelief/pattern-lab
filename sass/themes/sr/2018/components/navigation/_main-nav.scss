@@ -538,8 +538,11 @@ header[role=banner] {
         height: $lg-nav-height;
 
         .site-logo {
-          background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
-          background-size: 133px 60px;
+          margin-top: 6px;
+          background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
+          background-size: 135px 61px;
+          width: 110px;
+          height: 75px;
         }
       }
 
@@ -586,10 +589,10 @@ header[role=banner] {
     }
 
     .site-logo {
+      margin-top: 5px;
       min-width: 0px;
       width: 40px;
       height: 40px;
-      margin-top: 5px;
       background: none;
 
       img {
@@ -604,12 +607,11 @@ header[role=banner] {
       }
       
       @include breakpoint($desktop-nav-breakpoint) {
-        margin-top: 8px;
-        height: 60px;
-        width: 133px;
-        background: url( $image-path + "SR18_logo_nav_130x130_Generic_SR_Logo_DMY_white.svg") no-repeat 0 0;
-        background-size: 133px 60px;
-
+        margin-top: 6px;
+        background: url( $image-path + "SR18_logo_date_whitetext.svg") no-repeat 0 0;
+        background-size: 135px 61px;
+        width: 110px;
+        height: 75px;
 
         // Hide the simple logo image and replace with bg-img with date
         img {
@@ -653,8 +655,11 @@ body.path-search.cc-banner--visible header[role=banner] {
     .site-logo {
       background-image: none;
       @include breakpoint($desktop-nav-breakpoint) {
-        background: url( $image-path + "SR18_logo_nav_130x130_SR_Logo_DMY.svg") no-repeat 0 0;
-        background-size: 133px 60px;
+        margin-top: 6px;
+        background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
+        background-size: 135px 61px;
+        width: 110px;
+        height: 75px;
       }
     }
   
