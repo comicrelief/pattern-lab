@@ -122,7 +122,7 @@ select {
 }
 // place select arrow 18px from end of select box as per design
 select {
-  background: transparent url(/images/form/donate-select-arrow.png) calc(100% - 18px) center no-repeat;
+  background: transparent url($image-path + "donate-select-arrow.png") calc(100% - 18px) center no-repeat;
 }
 
 // buttons
@@ -130,7 +130,7 @@ select {
   border: none;
   background-color: transparent;
   input[type="button"] {
-    background: transparent url(/images/form/donate-magnifying-glass.png) center center no-repeat;
+    background: transparent url($image-path + "donate-magnifying-glass.png") center center no-repeat;
   }
 }
 button[type=submit] {
@@ -240,16 +240,16 @@ button.payment-button {
     background: no-repeat center center;
 
     &.logo-mastercard {
-      background-image: url("/images/form/mastercard-logo.png");
+      background-image: url($image-path + "mastercard-logo.png");
     }
     &.logo-visa {
-      background-image: url("/images/form/visa-debit-logo.png");
+      background-image: url($image-path + "visa-debit-logo.png");
     }
     &.logo-jcb {
-      background-image: url("/images/form/jcb-logo.png");
+      background-image: url($image-path + "jcb-logo.png");
     }
     &.logo-amex {
-      background-image: url("/images/form/American_Express_logo.png");
+      background-image: url($image-path + "American_Express_logo.png");
     }
   }
 }

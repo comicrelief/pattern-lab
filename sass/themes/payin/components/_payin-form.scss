@@ -143,7 +143,7 @@ select:focus {
     max-width: 100%;  
   }
   input[type="checkbox"]:checked+label:before {
-    background: url(/images/form/checkbox-tick-new.png) 50% 50% no-repeat rgb(255, 255, 255);
+    background: url( $image-path + "checkbox-tick-new.png") 50% 50% no-repeat rgb(255, 255, 255);
     background-size: 14px;
   }
   input[type="checkbox"]:focus+label:before {
@@ -450,7 +450,7 @@ input[type="button"] {
     height: 50px;
     cursor: pointer;
     text-indent: -999px;
-    background-image: url(/images/form/payment_icon.jpg);
+    background-image: url($image-path + "payment_icon.jpg");
     background-repeat: no-repeat;
     position: absolute;
     top: 0px;
@@ -582,7 +582,7 @@ input[type="text"].form__field--postcode-lookup {
   }
 
   .btnPostcodeSearch {
-    background: url(/images/form/lookup-icon.png) center center no-repeat;
+    background: url($image-path + "lookup-icon.png") center center no-repeat;
     outline: 0;
     padding: 0px;
     margin: 0px;
@@ -593,14 +593,14 @@ input[type="text"].form__field--postcode-lookup {
       background-color: transparent;
     }
     &.loading {
-      background-image: url(/images/form/loader.gif);
+      background-image: url($image-path + "loader.gif");
     }
   }
 }
 
 // Validation for forms
 .help-block {
-  background: $colour-white url(/images/form/info-icon.png) left 2px no-repeat;
+  background: $colour-white url($image-path + "info-icon.png") left 2px no-repeat;
   @include font-size($p-xsmall-font-size);
   padding-left: 23px;
   z-index: 2;
@@ -610,7 +610,7 @@ input[type="text"].form__field--postcode-lookup {
 
   &.form-error {
     background-color: transparent;
-    background-image: url(/images/form/alert-icon.png);
+    background-image: url($image-path + "alert-icon.png");
     z-index: 1;
     position: absolute;
   }
