@@ -191,6 +191,11 @@ label:not(.required, .form__checkbox):after {
   content: " (Optional)";
 
 }
+span.help-block {
+  left: 0;
+  width: 100%;
+  border-radius: 2px;
+}
 
 input[type="email"], 
 input[type="number"], 
