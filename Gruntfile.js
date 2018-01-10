@@ -152,7 +152,7 @@ module.exports = function (grunt) {
           flatten: true,
           cwd: 'sass/themes/payin/components',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/images/form'
+          dest: 'dist/images'
         }]
       },
       donate: {
@@ -161,7 +161,7 @@ module.exports = function (grunt) {
           flatten: true,
           cwd: 'sass/themes/donate/sr18/components',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/images/form'
+          dest: 'dist/images'
         }]
       },
     },
