@@ -5,3 +5,78 @@ body.payin {
 .header {
   display: none;
 }
+
+footer {
+  .cr-footer,
+  .footer__branding {
+    display: none;
+  }
+}
+
+/* FORM  */
+// hide details and billing address rows initially
+.form__row--your-detail,
+.form__row--billing-detail {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+// hide extended billing address fields
+.form__field--address {
+  display: block;
+  &.hide {
+    display: none;
+  }
+}
+
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+/* Thank You page */
+#promo-header--success {
+  br {
+    display: inline;
+  }
+
+  h1, h2, h3 {
+    text-transform: none;
+  }
+
+  .promo-header__content {
+    position: relative;
+    top: auto;
+    transform: translateY(0);
+    //margin: 10px auto;
+
+    .promo-header__content-inner {
+      width: span(10);
+      padding: 15px 0 60px;
+    }
+  }
+ 
+  .thumb {
+    height: 144px;
+    width: 133px;
+    margin: 30px auto;
+    background-image: url('/images/form/thumb.png');
+    background-size: 133px 144px;
+    background-position: center center;
+  }
+
+  .trans-no {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
