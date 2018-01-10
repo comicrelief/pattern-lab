@@ -13,6 +13,40 @@
 
 /* Form */ 
 
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+// hide and show for payment, giftaid, details, billing address and logos rows
+.form__row--payment,
+.form__row--giftaid,
+.form__row--your-detail,
+.form__row--billing-detail,
+.form__row--logos {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+// hide extended billing address fields
+.form__field--address {
+  display: block;
+  &.hide {
+    display: none;
+  }
+}
+
+// hide form row's title and copy
+.form__subtitle,
+.form__subcopy {
+  display: none;
+}
+
 // sizing for rows and wrapers
 .form__row {
   margin: 0 auto;
@@ -38,70 +72,84 @@
     width: span(10);
   }
 }
-.card-list {
-  text-align: center;
-
-  .card-logo {
-    display: inline-block;
-    margin: 0 gutter();
-    width: 40px;
-    height: 40px;
-    background: no-repeat center center;
-
-    &.logo-mastercard {
-      background-image: url("/images/form/mastercard-logo.png");
-    }
-    &.logo-visa {
-      background-image: url("/images/form/visa-debit-logo.png");
-    }
-    &.logo-jcb {
-      background-image: url("/images/form/jcb-logo.png");
-    }
-    &.logo-amex {
-      background-image: url("/images/form/American_Express_logo.png");
-    }
-  }
-}
-.search-box,
-.form__field--address-detail {
-  margin: 0;
-  width: 100%;
-  max-width: 100%;
-} 
-.form__field--wrapper {
+.form__field--wrapper, {
   margin-right: 0;
   margin-left: 0;
   width: 100%;
 }
+.search-box,
+.form__field--wrapper.form__field--address-detail {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+} 
 .form__address-detail-toggle {
   padding-bottom: 30px;
-}
+} 
 
-  
 
-// hide and show for payment, giftaid, details, billing address and logos rows
-.form__row--payment,
-.form__row--giftaid,
-.form__row--your-detail,
-.form__row--billing-detail,
-.form__row--logos {
-  display: none;
-  &.show {
-    display: block;
+// labels and fields 
+.form__field--address-detail {
+  label {
+    color: $colour-grey;
   }
 }
-// hide extended billing address fields
-.form__field--address {
-  display: block;
-  &.hide {
+label.required {
+  font-weight: bold; 
+  &:after {
     display: none;
-  }
+  } 
+}
+label:not(.required, .form__checkbox):after {
+  content: " (Optional)";
+
+}
+span.help-block {
+  left: 0;
+  width: 100%;
+  border-radius: 2px;
 }
 
-// hide form row's title and copy
-.form__subtitle,
-.form__subcopy {
-  display: none;
+input[type="email"], 
+input[type="number"], 
+input[type="text"], 
+select {
+  max-width: 100%;
+  border: 2px solid $colour-grey;
+  border-radius: 3px;
+  background-color: transparent;
+  color: $colour-white;
+}
+// place select arrow 18px from end of select box as per design
+select {
+  background: transparent url(/images/form/donate-select-arrow.png) calc(100% - 18px) center no-repeat;
+}
+
+// buttons
+.search-box .search-box-button {
+  border: none;
+  background-color: transparent;
+  input[type="button"] {
+    background: transparent url(/images/form/donate-magnifying-glass.png) center center no-repeat;
+  }
+}
+button[type=submit] {
+  @extend .btn;
+  width: 100%;
+  color: $colour-white;
+  background-color: $colour-purple;
+}
+button.payment-button {
+  @extend .btn;
+  width: 100%;
+  background-color: $colour-white;
+  display: block;
+  &+.btn {
+    @include breakpoint($screen-md) {
+      margin-top: 30px;
+      margin-left: 0;
+    }
+  }
 }
 
 // giftaid row
@@ -180,74 +228,28 @@
   }
 }
 
-// labels and fields 
-.form__field--address-detail {
-  label {
-    color: $colour-grey;
-  }
-}
-label.required {
-  font-weight: bold; 
-  &:after {
-    display: none;
-  } 
-}
-label:not(.required, .form__checkbox):after {
-  content: " (Optional)";
+// card logo row 
+.card-list {
+  text-align: center;
 
-}
-span.help-block {
-  left: 0;
-  width: 100%;
-  border-radius: 2px;
-}
+  .card-logo {
+    display: inline-block;
+    margin: 0 gutter();
+    width: 40px;
+    height: 40px;
+    background: no-repeat center center;
 
-input[type="email"], 
-input[type="number"], 
-input[type="text"], 
-select {
-  max-width: 100%;
-  border: 2px solid $colour-grey;
-  border-radius: 3px;
-  background-color: transparent;
-  color: $colour-white;
-}
-
-// place select arrow 18px from end of select box as per design
-select {
-  background: transparent url(/images/form/donate-select-arrow.png) calc(100% - 18px) center no-repeat;
-}
-
-// buttons
-.search-box .search-box-button {
-  border: none;
-  background-color: transparent;
-  input[type="button"] {
-    background: transparent url(/images/form/donate-magnifying-glass.png) center center no-repeat;
-  }
-}
-button[type=submit] {
-  @extend .btn;
-  width: 100%;
-  color: $colour-white;
-  background-color: $colour-purple;
-}
-button.payment-button {
-  @extend .btn;
-  width: 100%;
-  background-color: $colour-white;
-  display: block;
-  &+.btn {
-    @include breakpoint($screen-md) {
-      margin-top: 30px;
-      margin-left: 0;
+    &.logo-mastercard {
+      background-image: url("/images/form/mastercard-logo.png");
     }
-  }
-}
-// only show Apple Pay button when supported
-#comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  &.show {
-    display: block;
+    &.logo-visa {
+      background-image: url("/images/form/visa-debit-logo.png");
+    }
+    &.logo-jcb {
+      background-image: url("/images/form/jcb-logo.png");
+    }
+    &.logo-amex {
+      background-image: url("/images/form/American_Express_logo.png");
+    }
   }
 }
