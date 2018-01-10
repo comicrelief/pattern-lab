@@ -62,19 +62,12 @@
     }
   }
 }
-
-
-// .form__fieldset {
-  .search-box,
-  .form__field--address-detail {
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-// }
-  
-
-
+.search-box,
+.form__field--address-detail {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+} 
 .form__field--wrapper {
   margin-right: 0;
   margin-left: 0;
@@ -125,42 +118,59 @@
     padding-right: 60px;
     width: 100%;
   }
+
   label.form__checkbox:before {
+    display: none;
+  }
+
+  /* Specific selector to override placement of checkbox. 
+     Place checkbox on top of label and span so it's checked when 
+     clicking the fake checkbox in the span.
+  */
+  .form__checkbox input[type="checkbox"] {
+    z-index: 1;
+    top: 5px;
+    height: 50px;
+  }
+  input[type="checkbox"]+span {
+    position: absolute;
+    float: none;
     top: 15px;
     right: 10px;
     left: initial;
+    margin-right: 0;
     border: 1px solid $colour-green;
+    background-color: transparent;
     border-radius: 30px;
-    // specific breakpoint 
+    // specific breakpoint where text breaks
     @include breakpoint(614px) {
-      top: 6px;
+      top: 3px;
+    }
+    @include breakpoint($screen-lg) {
+      top: 12px;
     }
   }
-  label.form__checkbox:after {
+  input[type="checkbox"]+span:after {
     content: '';
     position: absolute;
     vertical-align: top;
-    top: 20px;
-    right: 15px;
+    top: 3px;
+    right: 3px;
     width: 20px;
     height: 20px;
     border: none;
     border-radius: 20px;
-    // specific breakpoint
-    @include breakpoint(614px) {
-      top: 11px;
-    }
   }
-  input[type="checkbox"]:checked+label:before {
+  input[type="checkbox"]:checked+span {
     border: 2px solid $colour-green;
     background-image: none;
     background-color: transparent;
   } 
-  input[type="checkbox"]:checked+label:after {
+  input[type="checkbox"]:checked+span:after {
     background-image: none;
     background-color: $colour-green;
   }
-  input[type="checkbox"]:focus+label:before {
+  input[type="checkbox"]:focus+span {
      border: 2px solid $colour-green;
   }
 }
