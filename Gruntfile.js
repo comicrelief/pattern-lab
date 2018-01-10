@@ -164,6 +164,15 @@ module.exports = function (grunt) {
           dest: 'dist/images'
         }]
       },
+      donate: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/donate/sr18/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images/form'
+        }]
+      },
     },
 
     svgmin: {
