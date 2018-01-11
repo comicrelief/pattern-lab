@@ -68,7 +68,7 @@ footer {
     height: 144px;
     width: 133px;
     margin: 30px auto;
-    background-image: url('/images/form/thumb.png');
+    background-image: url($image-path + 'thumb.png');
     background-size: 133px 144px;
     background-position: center center;
   }
