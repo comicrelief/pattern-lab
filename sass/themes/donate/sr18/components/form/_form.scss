@@ -144,19 +144,29 @@ button.payment-button {
       margin-left: 0;
     }
   }
+  // after element to place button images / apple styling in. (allows for falling back on text)
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+  }
 }
-
 // only show Apple Pay button when supported
 #comicrelief_payinbundle_payment_apple_pay {
   display: none;
-  -webkit-appearance: -apple-pay-button;
-  -apple-pay-button-style: white;
+  &:after {
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-style: white;
+  }
   &.show {
     display: block;
   }
 }
-#comicrelief_payinbundle_payment_paypal {
-  background: $colour-white url($image-path + "paypal-logo.png") center / 100px no-repeat;
+#comicrelief_payinbundle_payment_paypal:after {
+  background: transparent url($image-path + "paypal-logo.png") center / 100px no-repeat;
 }
 // giftaid row
 .form__row--giftaid {
