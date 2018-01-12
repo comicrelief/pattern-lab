@@ -13,14 +13,6 @@
 
 /* Form */ 
 
-// only show Apple Pay button when supported
-#comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  &.show {
-    display: block;
-  }
-}
-
 // hide and show for payment, giftaid, details, billing address and logos rows
 .form__row--payment,
 .form__row--giftaid,
@@ -152,6 +144,16 @@ button.payment-button {
   }
 }
 
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  height: 60px;
+  -webkit-appearance: -apple-pay-button;
+  -apple-pay-button-style: white;
+  &.show {
+    display: block;
+  }
+}
 // giftaid row
 .form__row--giftaid {
   p:nth-of-type(2) {
