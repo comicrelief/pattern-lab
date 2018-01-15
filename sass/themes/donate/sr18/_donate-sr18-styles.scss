@@ -40,7 +40,8 @@ footer {
 }
 
 /* Thank You page */
-#promo-header--success {
+#promo-header--success, 
+#promo-header--failure {
   br {
     display: inline;
   }
@@ -81,5 +82,11 @@ footer {
   p {
     font-size: 16px;
     line-height: 18px;
+  }
+}
+
+#promo-header--failure {
+  h1 {
+    margin: 0 0 20px;
   }
 }
