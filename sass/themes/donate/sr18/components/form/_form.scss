@@ -171,6 +171,17 @@ button.payment-button {
 }
 // giftaid row
 .form__row--giftaid {
+  h1 {
+    picture {
+      img {
+        width: 119px;
+        margin-top: 15px;
+        @include breakpoint($screen-md) {
+          width: 298px;
+        }
+      }
+    }
+  }
   p:nth-of-type(2) {
     color: $colour-grey;
     text-align: left;
