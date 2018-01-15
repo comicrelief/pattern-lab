@@ -250,8 +250,8 @@ button.payment-button {
 
   .card-logo {
     display: inline-block;
-    margin: 0 gutter();
-    width: 40px;
+    margin: 0;
+    width: span(3);
     height: 40px;
     background: no-repeat center center;
 
