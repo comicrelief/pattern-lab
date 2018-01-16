@@ -260,22 +260,39 @@ button.payment-button {
 
   .card-logo {
     display: inline-block;
-    margin: 0;
-    width: span(3);
-    height: 40px;
-    background: no-repeat center center;
+    margin: 0 gutter();
+    width: 60px;
+    height: 37px;
+    background-image: url($image-path + "accepted-payments-sprite.png");
+    background-size: auto 37px;
 
-    &.logo-mastercard {
-      background-image: url($image-path + "mastercard-logo.png");
-    }
-    &.logo-visa {
-      background-image: url($image-path + "visa-debit-logo.png");
-    }
-    &.logo-jcb {
-      background-image: url($image-path + "jcb-logo.png");
+    &.logo-maestro {
+      background-position: 0 0;
     }
     &.logo-amex {
-      background-image: url($image-path + "American_Express_logo.png");
+      background-position: -66px 0;
+    }
+    &.logo-mastercard {
+      background-position: -132px 0;
+    }
+    &.logo-visa {
+      background-position: -198px 0;
+    }
+
+    @include breakpoint($screen-md) {
+      width: 82px;
+      height: 50px;
+      background-size: auto 50px;
+
+      &.logo-amex {
+        background-position: -90px 0;
+      }
+      &.logo-mastercard {
+        background-position: -180px 0;
+      }
+      &.logo-visa {
+        background-position: -270px 0;
+      }
     }
   }
 }
