@@ -69,6 +69,10 @@
     @include span(6);
     @include push(3);
   }
+
+  h3 {
+    color: $colour-white;
+  }
 }
 
 .app-link-block__form {
