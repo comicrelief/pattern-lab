@@ -10,34 +10,19 @@
     opacity:  0.7;
   }
 }
-
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+::placeholder {
   color: $colour-dark-blue-lighter;
   font-size: 18px;
   font-family: $body-font;
   opacity:  1;
   overflow: visible;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: $colour-dark-blue-lighter;
-  font-size: 18px;
-  font-family: $body-font;
   opacity:  0.7;
-  overflow: visible;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: $colour-dark-blue-lighter;
-  font-size: 18px;
-  font-family: $body-font;
   opacity:  0.7;
-  overflow: visible;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $colour-dark-blue-lighter;
-  font-size: 18px;
-  font-family: $body-font;
-  opacity:  1;
-  overflow: visible;
 }
 
 .app-link-block__outerwrapper {
