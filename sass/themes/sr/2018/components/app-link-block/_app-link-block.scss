@@ -4,25 +4,25 @@
 //
 // Style guide: 20.1003
 
+// remove ios default form styles
+%disable-default {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 // safari only hack
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
   ::-webkit-input-placeholder {
     opacity:  0.7;
   }
 }
+
 ::placeholder {
   color: $colour-dark-blue-lighter;
   font-size: 18px;
   font-family: $body-font;
   opacity:  1;
   overflow: visible;
-}
-
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  opacity:  0.7;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  opacity:  0.7;
 }
 
 .app-link-block__outerwrapper {
@@ -55,8 +55,22 @@
     @include push(3);
   }
 
-  h3 {
-    color: $colour-white;
+  .sr-app-link-success-message {
+      display: none;
+  }
+
+  .success {
+    .sr-app-link-success-message {
+      display: block;
+
+       p {
+         @include font-size($h3-font-size);
+         font-family: $body-font;
+         color: $colour-white;
+         font-weight: bolder;
+         text-align: center;
+       }
+    }
   }
 }
 
@@ -75,10 +89,6 @@
     text-align: center;
     font-family: $body-font;
     color: $colour-white;
-
-    @include breakpoint($screen-md) {
-      @include span(12);
-    }
   }
 
   .form-item {
@@ -91,18 +101,16 @@
   }
 
   .form-tel {
+    @extend %disable-default;
     max-width: 100%;
     height: 60px;
     padding: 12px 0 15px 20px;
     border: 0;
   }
 
-  .app-link-block__visuallyhidden {
-    @include visuallyhidden;
-  }
-
   .form-submit {
-    @include span(12 of 12 no-gutters)
+    @extend %disable-default;
+    @include span(12 of 12 no-gutters);
 
     @include breakpoint($screen-md) {
       @include span(5 of 12 0);
@@ -113,18 +121,56 @@
     }
   }
 
-  .app-link-block__error-message {
-    margin-left: - span(8 wide);
-    position: absolute;
-    bottom: 0;
-    left: auto;
-    right: auto;
-    width: 100%;
+  .phone-number-valid-message {
+    padding-left: 10px;
+    &:before {
+      content: '';
+      display: inline-block;
+      font-size: inherit;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      top: 2px;
+      margin-right: 3px
+    }
+  }
+
+  .phone-number-valid-message {
+    @include font-size($p-small-font-size);
+    @include span(12);
+    position: relative;
     font-family: $body-font;
     color: $colour-white;
+    text-align: center;
+    top:20px;
 
-    @include breakpoint($screen-md) {
-      margin-left: -22%;
+    > div {
+       display: inline-block;
+     }
+  }
+
+  &.error {
+      .form-tel {
+        border: 3px solid $colour-ruby;
+      }
+
+      .phone-number-valid-message {
+        &:before {
+          background:url( $image-path + "error-red-cross.svg") -10px -8px no-repeat;
+        }
+      }
+  }
+
+  &.valid {
+    .form-tel {
+      border: 3px solid $colour-green;
+    }
+    .phone-number-valid-message {
+      &:before {
+        content: "\2713";
+        color:$colour-green;
+        text-align: center;
+      }
     }
   }
 }
