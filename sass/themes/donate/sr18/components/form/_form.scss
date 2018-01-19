@@ -126,6 +126,24 @@ select {
     background: transparent url($image-path + "donate-magnifying-glass.png") center center no-repeat;
   }
 }
+.search-box {
+  .postcodeSearch{
+    float: none;
+  }
+  .search-box-button {
+    position: relative;
+    width: 100%;
+  }
+}  
+#postcode_button {
+  @extend .btn;
+  display: block;
+  margin-top: 15px;
+  width: 100%;
+  height: 60px;
+  border-radius: 2px;
+  background-color: $colour-white;
+}
 button[type=submit] {
   @extend .btn;
   width: 100%;
