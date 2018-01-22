@@ -22,6 +22,7 @@
         font-weight: 300;
         font-family: $body-font;
         transition: color 180ms;
+        
         &:hover, &:focus {
           color: $colour-smoke-grey;
           text-decoration: underline;
