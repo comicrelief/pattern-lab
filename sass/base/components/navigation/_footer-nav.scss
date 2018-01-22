@@ -22,8 +22,9 @@
         font-weight: 300;
         font-family: $body-font;
         transition: color 180ms;
-        &:hover {
+        &:hover, &:focus {
           color: $colour-smoke-grey;
+          text-decoration: underline;
         }
         &.is-active {
           color: #c8c8c8;
