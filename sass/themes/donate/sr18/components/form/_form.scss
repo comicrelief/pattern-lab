@@ -139,8 +139,16 @@ select {
     background-image: none;
     background-color: $colour-white;
   }
+  
+  &.has-error {
+    #postcode_button {
+      margin-top: 45px;
+    }
+    div.form__field--error {
+      margin-top: 15px;
+    }
+  }
 }  
-
 button[type=submit] {
   @extend .btn;
   width: 100%;
