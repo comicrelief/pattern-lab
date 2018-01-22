@@ -138,6 +138,7 @@ select {
     border-radius: 2px;
     background-image: none;
     background-color: $colour-white;
+    appearance: none; //iOS fix
   }
   div.form__field--error {
     margin-top: 15px;
