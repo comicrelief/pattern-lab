@@ -139,13 +139,12 @@ select {
     background-image: none;
     background-color: $colour-white;
   }
-  
+  div.form__field--error {
+    margin-top: 15px;
+  }
   &.has-error {
     #postcode_button {
       margin-top: 45px;
-    }
-    div.form__field--error {
-      margin-top: 15px;
     }
   }
 }  
