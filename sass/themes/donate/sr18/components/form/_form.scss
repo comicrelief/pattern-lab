@@ -119,13 +119,6 @@ select {
 }
 
 // buttons
-.search-box .search-box-button {
-  border: none;
-  background-color: transparent;
-  input[type="button"] {
-    background: transparent url($image-path + "donate-magnifying-glass.png") center center no-repeat;
-  }
-}
 .search-box {
   .postcodeSearch{
     float: none;
@@ -133,17 +126,21 @@ select {
   .search-box-button {
     position: relative;
     width: 100%;
+    background: none;
+    border: none;
+  }
+  #postcode_button {
+    @extend .btn;
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    height: 60px;
+    border-radius: 2px;
+    background-image: none;
+    background-color: $colour-white;
   }
 }  
-#postcode_button {
-  @extend .btn;
-  display: block;
-  margin-top: 15px;
-  width: 100%;
-  height: 60px;
-  border-radius: 2px;
-  background-color: $colour-white;
-}
+
 button[type=submit] {
   @extend .btn;
   width: 100%;
