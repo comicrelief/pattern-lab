@@ -116,6 +116,20 @@ select {
 // place select arrow 18px from end of select box as per design
 select {
   background: transparent url($image-path + "donate-select-arrow.png") calc(100% - 18px) center no-repeat;
+
+  // make the option color default again (fixes inheritance of white colour on Windows)
+  option {
+    color: initial;
+  }
+}
+// IE11 specific fix (-ms-high-contrast:none is not supported by Edge)
+@media all and (-ms-high-contrast: none) {
+  select {
+    background: none;
+    option {
+      color: grey;
+    }
+  }
 }
 
 // buttons
