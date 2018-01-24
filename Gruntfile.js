@@ -63,7 +63,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'sass/themes/payin',
           src: ['{,**/}*.scss'],
-          dest: 'dist/css/themes/payin',
+          dest: 'dist/css/themes/payin/default',
           ext: '.css'
         }]
       },
@@ -284,8 +284,8 @@ module.exports = function (grunt) {
         },
         src: ['sass/base/components/promo-header',
               'sass/base/components/footer', 
-              'sass/themes/payin/variables',
-              'sass/themes/payin/components',
+              'sass/themes/payin/default/variables',
+              'sass/themes/payin/default/components',
               'sass/themes/sr/2018/variables',
               'sass/themes/sr/2018/components',
               'sass/themes/donate'
@@ -333,7 +333,7 @@ module.exports = function (grunt) {
               'sass/base/components/header/base-header',
               'sass/base/components/promo-header/promo-header',
               'sass/base/components/social',
-              'sass/themes/payin',
+              'sass/themes/payin/default',
              ],
         dest: 'dist/payin'
       },

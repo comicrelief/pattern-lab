@@ -48,13 +48,13 @@
 // ==========================================================================
 // Payin variables
 // ==========================================================================
-@import "../../payin/variables/_payin-mixins";
-@import "../../payin/variables/_payin-variables";
+@import "../../payin/default/variables/_payin-mixins";
+@import "../../payin/default/variables/_payin-variables";
 
 // ==========================================================================
 // Payin UI components
 // ==========================================================================
-@import "../../payin/components/_payin-form";
+@import "../../payin/default/components/_payin-form";
 
 // ==========================================================================
 // Donate sr18 variables
