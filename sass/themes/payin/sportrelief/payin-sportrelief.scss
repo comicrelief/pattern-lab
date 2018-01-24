@@ -1,0 +1,107 @@
+// ==========================================================================
+// Core variables * comment files you want to override
+// ==========================================================================
+
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_theme.scss";
+@import "../../../base/variables/_typography.scss";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+@import "../../../base/_core";
+
+// ==========================================================================
+// Base UI components
+// ==========================================================================
+
+@import "../../../base/components/background-colours/background-colours";
+@import "../../../base/components/buttons/buttons";
+@import "../../../base/components/form/form";
+@import "../../../base/components/grid/grid";
+@import "../../../base/components/header/base-header";
+@import "../../../base/components/links/links";
+@import "../../../base/components/list/list";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/social/social";
+@import "../../../base/components/table/table";
+@import "../../../base/components/typography/typography";
+
+// ==========================================================================
+// SR18 variables * comment files you want to override
+// ==========================================================================
+@import "../../sr/2018/variables/_colours.scss";
+@import "../../sr/2018/variables/_typography.scss";
+@import "../../sr/2018/variables/_mixins.scss";
+@import "../../sr/2018/variables/_main-nav.scss";
+
+
+// ==========================================================================
+// Base UI components
+// ==========================================================================
+
+// choose components one by one
+@import "../../../base/components/typography/typography";
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/form/form";
+@import "../../../base/components/header/base-header";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/meta-icons/meta-icons";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/social/social";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/promo-header/promo-header";
+
+// ==========================================================================
+// SR18 UI components
+// ==========================================================================
+@import "../../sr/2018/components/typography/fonts";
+@import "../../sr/2018/components/typography/typography";
+@import "../../sr/2018/components/background-colours/background-colours";
+@import "../../sr/2018/components/buttons/buttons";
+@import "../../sr/2018/components/links/links";
+@import "../../sr/2018/components/navigation/main-nav";
+@import "../../sr/2018/components/promo-header/promo-header";
+
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "../default/variables/_payin-mixins";
+@import "../default/variables/_payin-variables";
+
+// ==========================================================================
+// Payin UI components
+// ==========================================================================
+@import "../default/components/_payin-form.scss"
+
+// ==========================================================================
+// Payin Sportrelief variables
+// ==========================================================================
+// @import "variables/_colours.scss";
+
+// ==========================================================================
+// Payin Sportrelief components
+// ==========================================================================
+// @import "_donate-sr18-styles.scss";
+// @import "components/promo-header/_promo-header.scss";
+// @import "components/form/_form.scss";
+// @import "components/footer/_footer.scss";
+
+
+// Elements
+//
+// Style guide: 10
+
+// Components
+//
+// Style guide: 20
