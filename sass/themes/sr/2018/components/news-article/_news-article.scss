@@ -1,8 +1,13 @@
+.cr-article {
+	background-color: $colour-white;
+}
+
 .cr-article__header {
 	text-align: left;
 
 	.cr-article__title {
 		@include font-size($h1-large-font-size);
+		font-family: $font-black--sr18;
 		color: $colour-black;
 		margin: 20px 20px 40px;
 
@@ -74,7 +79,7 @@
 		}
 	}
 
-	.cr-article__image {
+	.cr-article__image, .cr-article__video {
 		padding-top: 110px;
 	}
 
