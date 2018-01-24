@@ -46,6 +46,8 @@
 
 		@include breakpoint($screen-md) {
 			@include span(5);
+			margin-left: 0;
+			margin-right: 0;
 		}
 
 	  span {
@@ -60,6 +62,8 @@
 
 		@include breakpoint($screen-md) {
 			@include span(7);
+			margin-right: 0;
+			margin-left: 0;
 		}
 
 		li {
