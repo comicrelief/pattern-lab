@@ -63,10 +63,11 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'sass/themes/payin',
           src: ['{,**/}*.scss'],
-          dest: 'dist/css/themes/payin/default',
+          dest: 'dist/css/themes/payin/sportrelief',
           ext: '.css'
         }]
       },
+
       rnd17: {
         files: [{
           expand: true,
@@ -150,7 +151,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          cwd: 'sass/themes/payin/components',
+          cwd: 'sass/themes/payin/sportrelief',
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
@@ -333,7 +334,7 @@ module.exports = function (grunt) {
               'sass/base/components/header/base-header',
               'sass/base/components/promo-header/promo-header',
               'sass/base/components/social',
-              'sass/themes/payin/default',
+              'sass/themes/payin/sportrelief',
              ],
         dest: 'dist/payin'
       },
