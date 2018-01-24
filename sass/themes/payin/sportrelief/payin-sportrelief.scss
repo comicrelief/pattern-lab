@@ -15,34 +15,12 @@
 @import "../../../base/_core";
 
 // ==========================================================================
-// Base UI components
-// ==========================================================================
-
-@import "../../../base/components/background-colours/background-colours";
-@import "../../../base/components/buttons/buttons";
-@import "../../../base/components/form/form";
-@import "../../../base/components/grid/grid";
-@import "../../../base/components/header/base-header";
-@import "../../../base/components/links/links";
-@import "../../../base/components/list/list";
-@import "../../../base/components/navigation/footer-nav";
-@import "../../../base/components/footer/footer";
-@import "../../../base/components/navigation/hamburger-menu-button";
-@import "../../../base/components/navigation/main-nav";
-@import "../../../base/components/promo-header/promo-header";
-@import "../../../base/components/selectbox/selectbox";
-@import "../../../base/components/social/social";
-@import "../../../base/components/table/table";
-@import "../../../base/components/typography/typography";
-
-// ==========================================================================
 // SR18 variables * comment files you want to override
 // ==========================================================================
 @import "../../sr/2018/variables/_colours.scss";
 @import "../../sr/2018/variables/_typography.scss";
 @import "../../sr/2018/variables/_mixins.scss";
 @import "../../sr/2018/variables/_main-nav.scss";
-
 
 // ==========================================================================
 // Base UI components
@@ -60,6 +38,9 @@
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
+
 
 // ==========================================================================
 // SR18 UI components
@@ -71,7 +52,6 @@
 @import "../../sr/2018/components/links/links";
 @import "../../sr/2018/components/navigation/main-nav";
 @import "../../sr/2018/components/promo-header/promo-header";
-
 
 // ==========================================================================
 // Payin variables
