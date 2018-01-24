@@ -334,7 +334,8 @@ module.exports = function (grunt) {
               'sass/base/components/header/base-header',
               'sass/base/components/promo-header/promo-header',
               'sass/base/components/social',
-              'sass/themes/payin/sportrelief',
+              'sass/themes/payin/default/components',
+              'sass/themes/payin/sportrelief'
              ],
         dest: 'dist/payin'
       },

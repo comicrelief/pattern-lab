@@ -82,7 +82,7 @@
 // ==========================================================================
 // Payin UI components
 // ==========================================================================
-@import "../default/components/_payin-form.scss"
+@import "../default/components/_payin-form"
 
 // ==========================================================================
 // Payin Sportrelief variables
@@ -105,3 +105,21 @@
 // Components
 //
 // Style guide: 20
+
+// Payin Page
+//
+// Markup: payin-page.twig
+//
+// Style guide: 30
+
+// Thank You Page
+//
+// Markup: thank-you-page.twig
+//
+// Style guide: 40
+
+// Failure Page
+//
+// Markup: failure-page.twig
+//
+// Style guide: 50
