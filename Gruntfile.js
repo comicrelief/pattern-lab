@@ -63,7 +63,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'sass/themes/payin',
           src: ['{,**/}*.scss'],
-          dest: 'dist/css/themes/payin/',
+          dest: 'dist/css/themes/payin',
           ext: '.css'
         }]
       },
