@@ -43,7 +43,7 @@
 			text-indent: 0;
 		}
 	}
-	
+
 	.cr-article__social-links  {
 		@include span(12 no-gutters);
 		text-align: right;
@@ -93,6 +93,7 @@
 	}
 
 	.cr-article__image, .cr-article__video {
+		clear: both;
 		@include breakpoint($screen-lg) {
 				@include susy-clearfix; // temporary fix until clearfix mixin is fixed
 		}
