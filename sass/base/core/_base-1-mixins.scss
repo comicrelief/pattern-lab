@@ -12,7 +12,7 @@
 }
 
 /** Button mixin, used by $buttonList in _buttons.scss
- * 
+ *
  * Parameters:
  * $button[1] = name
  * $button[2] = background-color
@@ -58,8 +58,8 @@
 @mixin link-variation($link) {
   .link--#{nth($link, 1)} {
     border-bottom: 4px solid nth($link, 2);
-    &:hover, 
-    &:focus, 
+    &:hover,
+    &:focus,
     &:active {
       border-bottom: 4px solid nth($link, 3);
     }
@@ -153,20 +153,20 @@
     margin-left: multimap-get( $ratio-map, $ratio, "offset");
     width: multimap-get( $ratio-map, $ratio, "width");
     height: auto;
-  } 
+  }
 }
 
 // Visually hidden
 
-@mixin visuallyhidden { 
+@mixin visuallyhidden {
   position: absolute;
   margin: -1px;
   padding: 0;
   width: 1px;
   height: 1px;
   border: 0;
-  overflow: hidden; 
-  clip: rect(1px 1px 1px 1px); 
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
   word-wrap: normal;
 }
 
@@ -224,9 +224,9 @@
 }
 
 @mixin linear-gradient( $color1, $color2 ) {
-  background-color: $color2; 
+  background-color: $color2;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2));
-  background-image: -webkit-linear-gradient(left, $color1, $color2); 
+  background-image: -webkit-linear-gradient(left, $color1, $color2);
   background-image:    -moz-linear-gradient(right, $color2, $color1);
   background-image:     -ms-linear-gradient(left, $color1, $color2);
   background-image:      -o-linear-gradient(left, $color1, $color2);
@@ -261,5 +261,44 @@
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
     @content;
+  }
+}
+
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder($color, $font-size, $body-font) {
+  @include optional-at-root('::placeholder') {
+    color: $color;
+    font-size: $font-size;
+    font-family: $body-font;
+    opacity:  1;
+    overflow: visible;
+  }
+  @include optional-at-root('::-webkit-input-placeholder') {
+    color: $color;
+    font-size: $font-size;
+    font-family: $body-font;
+    opacity:  1;
+    overflow: visible;
+  }
+  
+  @include optional-at-root(':-ms-input-placeholder') {
+    color: $color;
+    font-size: $font-size;
+    font-family: $body-font;
+    opacity:  1;
+    overflow: visible;
+  }
+
+  // safari only hack
+  @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+    @include optional-at-root('::-webkit-input-placeholder') ::-webkit-input-placeholder {
+      opacity:  0.7;
+    }
   }
 }
