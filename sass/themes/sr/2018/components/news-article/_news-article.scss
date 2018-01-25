@@ -36,13 +36,14 @@
 		 @include breakpoint($screen-md) {
 				@include span(6);
 				@include font-size($p-large-font-size);
+				margin-bottom: 110px;
 		}
 
 		@include breakpoint($screen-lg) {
 			text-indent: 0;
 		}
 	}
-
+	
 	.cr-article__social-links  {
 		@include span(12 no-gutters);
 		text-align: right;
@@ -51,6 +52,7 @@
 		@include breakpoint($screen-md) {
 			 @include span(6);
 			 text-indent: 0;
+			 margin-bottom: 110px;
 		}
 	}
 
@@ -91,10 +93,8 @@
 	}
 
 	.cr-article__image, .cr-article__video {
-		padding-top: 110px;
-
 		@include breakpoint($screen-lg) {
-				@include clearfix;
+				@include susy-clearfix; // temporary fix until clearfix mixin is fixed
 		}
 	}
 
