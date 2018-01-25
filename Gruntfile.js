@@ -67,7 +67,6 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
-
       rnd17: {
         files: [{
           expand: true,
