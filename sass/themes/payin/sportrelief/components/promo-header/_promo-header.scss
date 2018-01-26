@@ -1,4 +1,13 @@
 .promo-header {
   background-color: $colour-black;
-  color: $colour-white;
+
+  h1 {
+    color: $colour-white;
+    margin-bottom: 36px;
+  }
+
+  p {
+    @include font-size($p-xlarge-font-size);
+    color: $colour-white;
+  }
 }
