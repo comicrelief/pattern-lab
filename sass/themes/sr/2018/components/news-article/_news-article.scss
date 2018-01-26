@@ -98,4 +98,24 @@
         @include susy-clearfix; // temporary fix until clearfix mixin is fixed
       }
     }
+
+    .cr-article__caption {
+ 		 	margin: 0;
+ 			width: 100%;
+ 			padding: 0 20px;
+
+      @include breakpoint($screen-md) {
+        padding: 0;
+      }
+
+ 			figcaption {
+ 				font-family: $font-regular--sr18;
+ 				background-color: $colour-white;
+ 				color: $colour-black;
+ 				border-bottom: 1px solid $colour-grey;
+ 				text-align: left;
+ 				padding-left: 0;
+ 				padding-right: 0;
+ 			}
+ 		}
   }
