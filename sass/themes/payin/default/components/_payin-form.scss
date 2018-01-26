@@ -281,50 +281,6 @@ input[type="button"] {
     @include font-size($h4-font-size);
   }
 }
-.form__row {
-  @at-root {
-    .audience__public {
-      .form__row--title {
-        background-color: $colour-yellow;        
-        h4 {
-          color: $colour-red;
-        }
-      }
-    }
-    .audience__school  {
-      .form__row--title {
-        background-color: $colour-blue;        
-        h4 {
-          color: $colour-purple;
-        }
-      }
-    }
-    .audience__work  {
-      .form__row--title {
-        background-color: $colour-red;
-        h4 {
-          color: $colour-yellow;
-        }
-      }
-    }
-    .audience__youth  {
-      .form__row--title {
-        background-color: $colour-purple;
-        h4 {
-          color: $colour-pink;
-        }
-      }
-    }
-    .form__step--payment {
-      .form__row--title {
-        background-color: $colour-dark-blue;
-        h4 {
-          color: $colour-white;
-        }
-      }
-    }
-  } 
-}
 
 .form__nav:nth-child(2) {
   button, .button {
