@@ -87,6 +87,7 @@
       @extend .btn;
       @extend .btn--ruby;
       @include span(12 of 12 no-gutters);
+      padding: 21px; // Reduce l-r padding a little here to ensure copy is always centred on smaller breakpoints
 
       @include breakpoint($screen-md) {
         @include span(5 of 12 0);
@@ -186,8 +187,8 @@
 
   .ajax-progress.ajax-progress-throbber {
     position: absolute;
-    bottom: 30px;
-    left: 0;
+    bottom: 9px;
+    left: 7px;
     width: 100%;
     text-align: center;
 
