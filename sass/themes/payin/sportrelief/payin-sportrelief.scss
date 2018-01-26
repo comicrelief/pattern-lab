@@ -1,11 +1,17 @@
 // ==========================================================================
 // Core variables * comment files you want to override
 // ==========================================================================
-@import "../../../base/_variables";
+
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_theme.scss";
+@import "../../../base/variables/_typography.scss";
 
 // ==========================================================================
 // Core components
 // ==========================================================================
+
 @import "../../../base/_core";
 
 // ==========================================================================
@@ -15,7 +21,6 @@
 @import "../../sr/2018/variables/_typography.scss";
 @import "../../sr/2018/variables/_mixins.scss";
 @import "../../sr/2018/variables/_main-nav.scss";
-
 
 // ==========================================================================
 // Base UI components
@@ -33,6 +38,9 @@
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
+
 
 // ==========================================================================
 // SR18 UI components
@@ -48,26 +56,22 @@
 // ==========================================================================
 // Payin variables
 // ==========================================================================
-@import "../../payin/default/variables/_payin-mixins";
-@import "../../payin/default/variables/_payin-variables";
+@import "../default/variables/_payin-mixins";
+@import "../default/variables/_payin-variables";
 
 // ==========================================================================
 // Payin UI components
 // ==========================================================================
-@import "../../payin/default/components/_payin-form";
+@import "../default/components/_payin-form"
 
 // ==========================================================================
-// Donate sr18 variables
+// Payin Sportrelief variables
 // ==========================================================================
-@import "variables/_colours.scss";
 
 // ==========================================================================
-// Donate sr18 components
+// Payin Sportrelief components
 // ==========================================================================
-@import "_donate-sr18-styles.scss";
-@import "components/promo-header/_promo-header.scss";
-@import "components/form/_form.scss";
-@import "components/footer/_footer.scss";
+
 
 // Elements
 //
@@ -77,9 +81,9 @@
 //
 // Style guide: 20
 
-// Donate Page
+// Payin Page
 //
-// Markup: donate-page.twig
+// Markup: payin-page.twig
 //
 // Style guide: 30
 
