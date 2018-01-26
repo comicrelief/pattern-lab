@@ -36,7 +36,7 @@
       @include breakpoint($screen-md) {
         @include span(6);
         @include font-size($p-large-font-size);
-        margin-bottom: 110px;
+        margin-bottom: 15px;
       }
 
       @include breakpoint($screen-lg) {
@@ -52,7 +52,7 @@
       @include breakpoint($screen-md) {
         @include span(6);
         text-indent: 0;
-        margin-bottom: 110px;
+        margin-bottom: 15px;
       }
     }
 
