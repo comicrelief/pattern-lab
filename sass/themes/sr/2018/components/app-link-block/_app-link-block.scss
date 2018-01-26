@@ -183,8 +183,19 @@
        }
     }
   }
-}
 
+  .ajax-progress.ajax-progress-throbber {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    .message {
+      color: $colour-white;
+    }
+  }
+}
 
 .app-link__download {
   @include span(12);
