@@ -41,16 +41,7 @@
     color: $colour-grey;
   }
 }
-label.required {
-  font-weight: bold; 
-  &:after {
-    display: none;
-  } 
-}
-label:not(.required, .form__checkbox):after {
-  content: " (Optional)";
 
-}
 span.help-block {
   left: 0;
   width: 100%;
