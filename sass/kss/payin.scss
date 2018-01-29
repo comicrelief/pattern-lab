@@ -21,3 +21,8 @@
   	background-size: contain;
 	}
 }
+
+// Position this normally as we can't do the cool 'sticky' functionality inside the styleguide
+.kss-modifier__example header[role=banner].sticky-nav__header {
+  position: relative;
+}
