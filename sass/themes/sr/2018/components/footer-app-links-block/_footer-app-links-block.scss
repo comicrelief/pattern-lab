@@ -1,0 +1,22 @@
+// Footer App Links Block
+//
+// Markup: footer-app-links-block.twig
+//
+// Style guide: 20.1004
+
+
+.block-sr-footer-app-links {
+  width: 100%;
+  height: auto;
+
+  .footer-app-links--outer-wrapper {
+    @include container();
+  }
+
+
+  .footer-app-links--inner-wrapper {
+    @include span(12);
+    text-align: center;
+  }
+
+}
