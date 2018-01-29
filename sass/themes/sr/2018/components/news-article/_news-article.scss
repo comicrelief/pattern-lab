@@ -36,7 +36,7 @@
       @include breakpoint($screen-md) {
         @include span(6);
         @include font-size($p-large-font-size);
-        margin-bottom: 110px;
+        margin-bottom: 15px;
       }
 
       @include breakpoint($screen-lg) {
@@ -52,7 +52,7 @@
       @include breakpoint($screen-md) {
         @include span(6);
         text-indent: 0;
-        margin-bottom: 110px;
+        margin-bottom: 15px;
       }
     }
 
@@ -98,4 +98,19 @@
         @include susy-clearfix; // temporary fix until clearfix mixin is fixed
       }
     }
+
+    .cr-article__caption {
+      padding:25px 20px 20px;
+      margin-top: -40px;
+      font-family: $font-regular--sr18;
+      background-color: $colour-white;
+      color: $colour-black;
+      border-bottom: 1px solid $colour-grey;
+      text-align: left;
+
+      @include breakpoint($screen-lg) {
+        padding-left:0;
+        padding-right:0;
+      }
+     }
   }
