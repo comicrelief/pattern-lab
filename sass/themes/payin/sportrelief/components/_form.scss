@@ -1,14 +1,4 @@
-.content {
-  
-  // keep sizing of container the same as promo header/general sr18 styling
-  .form__step {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-}
-
-/* Form */ 
-
 .form__row--title {
+  width: 100%;
   background-color: $colour-white-smoke;
 }
