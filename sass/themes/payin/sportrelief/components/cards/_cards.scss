@@ -1,56 +1,53 @@
-.card {
-  @include breakpoint($screen-md) {
-    @include span(12);
-  }
-}
-
 .cards__wrapper {
-  max-width: 1500px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.cards__item {
-  position:relative;
-  min-width: 300px;
-  height:350px;
+.card {
+  height: 350px;
 
   @include breakpoint($screen-md) {
-    min-width: 275px;
-    max-width: 275px;
-    margin: 0 30px 0 0;
+    max-width: span(4 of 12);
   }
 
   &--family {
-    background: url($image-path + "myself-friends-family.jpg") 0/100% no-repeat;
+    background: url($image-path + "myself-friends-family.jpg") center/cover no-repeat;
   }
 
   &--school {
-    background: url($image-path + "nursery-school-university.jpg") 0/100% no-repeat;
+    background: url($image-path + "nursery-school-university.jpg") 0 0/cover no-repeat;
   }
 
   &--work {
-    background: url($image-path + "workplace-organisation.jpg") 0/100% no-repeat;
+    background: url($image-path + "workplace-organisation.jpg") 0 -59px /cover no-repeat;
+
+    @include breakpoint($screen-md) {
+      background-position: center;
+    }
   }
 
   &--leisure {
-    background: url($image-path + "gym-leisure-sports.jpg") 0/100% no-repeat;
+    background: url($image-path + "gym-leisure-sports.jpg") 0 0/cover no-repeat;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    width:100%;
   }
 
   .cards__content {
-    position: absolute;
-    bottom: 0;
-    left: auto;
-    right: auto;
-    padding:0 30px 20px;
-    text-align: left;
 
     h3 {
       color: $colour-white;
+      position: absolute;
+      bottom: 0;
+      left: auto;
+      right: auto;
+      padding:0 30px 20px;
+      text-align: left;
     }
 
-    p {
-      color: $colour-white;
-    }
   }
 }
