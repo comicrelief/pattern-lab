@@ -20,11 +20,7 @@
   }
 
   &--work {
-    background: url($image-path + "workplace-organisation.jpg") 0 -59px /cover no-repeat;
-
-    @include breakpoint($screen-md) {
-      background-position: center;
-    }
+    background: url($image-path + "workplace-organisation.jpg") 0 0/cover no-repeat;
   }
 
   &--leisure {
