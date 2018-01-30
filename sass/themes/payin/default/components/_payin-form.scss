@@ -528,37 +528,67 @@ input[type="text"].form__field--postcode-lookup {
 }
 
 .search-box {
-  position: relative;
-
+  .postcodeSearch{
+    float: none;
+  }
   .search-box-button {
-    height: 50px;
-    width: 56px;
-    border: 1px solid #c2c2c2;
-    background: #fafafa;
-    position: absolute;
-    right: 0px;
+    position: relative;
+    width: 100%;
+    background: none;
+    border: none;
   }
-
-  .postcodeSearch {
-    float: left;
+  #postcode_button {
+    @extend .btn;
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    height: 60px;
+    border-radius: 2px;
+    background-image: none;
+    background-color: $colour-white;
+    appearance: none; //iOS fix
   }
-
-  .btnPostcodeSearch {
-    background: url($image-path + "lookup-icon.png") center center no-repeat;
-    outline: 0;
-    padding: 0px;
-    margin: 0px;
-    width: 56px;
-    height: 50px;
-
-    &:hover {
-      background-color: transparent;
-    }
-    &.loading {
-      background-image: url($image-path + "loader.gif");
+  div.form__field--error {
+    margin-top: 15px;
+  }
+  &.has-error {
+    #postcode_button {
+      margin-top: 45px;
     }
   }
-}
+} 
+// .search-box {
+//   position: relative;
+
+//   .search-box-button {
+//     height: 50px;
+//     width: 56px;
+//     border: 1px solid #c2c2c2;
+//     background: #fafafa;
+//     position: absolute;
+//     right: 0px;
+//   }
+
+//   .postcodeSearch {
+//     float: left;
+//   }
+
+//   .btnPostcodeSearch {
+//     background: url($image-path + "lookup-icon.png") center center no-repeat;
+//     outline: 0;
+//     padding: 0px;
+//     margin: 0px;
+//     width: 56px;
+//     height: 50px;
+
+//     &:hover {
+//       background-color: transparent;
+//     }
+//     &.loading {
+//       background-image: url($image-path + "loader.gif");
+//     }
+//   }
+// }
 
 // Validation for forms
 .help-block {

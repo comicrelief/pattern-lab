@@ -2,3 +2,21 @@
   width: 100%;
   background-color: $colour-white-smoke;
 }
+
+.form__subtitle {
+  @extend h2;
+  text-align: center;
+}
+
+label,
+input,
+select {
+  color: $colour-dark-blue;
+}
+
+input[type="email"], 
+input[type="number"], 
+input[type="text"], 
+select {
+  border-color: $colour-dark-blue;
+}
