@@ -7,7 +7,7 @@
   }
 
   p {
-    @include font-size($p-xlarge-font-size);
+    @include font-size($p-large-font-size);
     color: $colour-white;
   }
 }
