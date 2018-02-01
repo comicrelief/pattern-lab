@@ -150,8 +150,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          cwd: 'sass/themes/payin/sportrelief',
-          src: ['**/*.{png,jpg,gif}'],
+          cwd: 'sass/themes/payin/',
+          src: ['default/**/*.{png,jpg,gif}', 'sportrelief/**/*.{png,jpg,gif}' ],
           dest: 'dist/images'
         }]
       },
