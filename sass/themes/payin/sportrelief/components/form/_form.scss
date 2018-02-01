@@ -1,11 +1,22 @@
 .form__row--title {
   width: 100%;
   background-color: $colour-white-smoke;
+
+  h4 {
+    @include font-size($p-font-size);
+    font-family: $font-regular;
+    color: $colour-dark-blue-lighter;
+
+    span {
+      font-weight: bold;
+    }
+  }
 }
 
 .form__subtitle {
   @extend h2;
   text-align: center;
+  color: $colour-dark-blue-lighter;
 }
 
 label,
@@ -27,15 +38,30 @@ input[type="text"] {
 }
 
 .search-box #postcode_button {
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
   color: $colour-dark-purple;
   border: 1px solid $colour-dark-purple;
 }
-.form__field--address-detail label {
-  margin-left: auto;
-  margin-left: auto;
-  width: 50%;
-  text-align: center;
+
+.form__row--keep-touch label.form__checkbox {
+  left: 40px;
+   
+   &:before {
+    left: -40px;
+   }
+}
+
+
+@include breakpoint($screen-md) {
+  .search-box #postcode_button {
+    margin-top: 30px;
+  }
+  // center address buttons
+  .search-box #postcode_button,
+  .form__field--address-detail label.form__checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+
 }
