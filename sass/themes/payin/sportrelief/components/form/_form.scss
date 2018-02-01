@@ -42,12 +42,43 @@ input[type="text"] {
   border: 1px solid $colour-dark-purple;
 }
 
-.form__row--keep-touch label.form__checkbox {
-  left: 40px;
-   
-   &:before {
-    left: -40px;
-   }
+.form__row--keep-touch {
+  label.form__checkbox {
+    top: 0;
+    left: 40px;
+     
+     &:before {
+      display: none;
+    }
+  }
+  input[type="checkbox"] {
+    z-index: 1;
+    top: 10px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+
+  }
+  input[type="checkbox"]+span {
+    z-index: 0;
+    float: none;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $colour-light-grey;
+    background-color: green;
+  }
+
+  input[type="checkbox"]:checked+span {
+    border-width: 2px;
+    background-image: url( $image-path + "checkbox-tick-new.png") 50% 50% no-repeat;
+  }
+  input[type="checkbox"]:focus+span {
+    border-width: 2px;
+  }
 }
 
 
@@ -63,5 +94,4 @@ input[type="text"] {
     width: 50%;
     text-align: center;
   }
-
 }
