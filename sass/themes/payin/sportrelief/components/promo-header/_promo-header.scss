@@ -1,6 +1,10 @@
 .promo-header {
   background-color: $colour-black;
 
+  .promo-header__content {
+    top: 65%;
+  }
+
   h1 {
     color: $colour-white;
     margin-bottom: 36px;
