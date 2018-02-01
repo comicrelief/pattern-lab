@@ -1,0 +1,34 @@
+.header__inner-home {
+  float: right;
+}
+
+.header__inner-wrapper {
+  padding: 0 15px;
+}
+
+.block-branding {
+  float: left;
+
+  .site-logo {
+    min-width: 0;
+    margin-top: 0;
+    width: 50px;
+    height: 50px;
+
+    @include breakpoint($screen-md) {
+      width: 124px;
+      height: 50px;
+      background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
+    }
+
+    img {
+      display:block;
+      max-width: 100%;
+      height: 100%;
+
+      @include breakpoint($screen-md) {
+        display: none;
+      }
+    }
+  }
+}
