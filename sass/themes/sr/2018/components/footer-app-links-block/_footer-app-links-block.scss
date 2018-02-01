@@ -17,6 +17,7 @@
   .footer-app-links__inner-wrapper {
     @include span(12);
     text-align: center;
+    position: relative;
 
     @include breakpoint($screen-lg) {
       text-align: left;
