@@ -272,7 +272,7 @@ label:not(.required, .form__checkbox):after {
     padding: 30px 0;
   }
   @include breakpoint($screen-lg) {
-    width: span(8);
+    width: span(6);
   }
 }
 .form__fieldset,
