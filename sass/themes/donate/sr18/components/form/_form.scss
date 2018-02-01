@@ -78,36 +78,11 @@ select {
 }
 
 // buttons
-.search-box {
-  .postcodeSearch{
-    float: none;
-  }
-  .search-box-button {
-    position: relative;
-    width: 100%;
-    background: none;
-    border: none;
-  }
-  #postcode_button {
-    @extend .btn;
-    display: block;
-    margin: 15px 0;
-    width: 100%;
-    height: 60px;
-    border-radius: 2px;
-    background-image: none;
-    background-color: $colour-white;
-    appearance: none; //iOS fix
-  }
-  div.form__field--error {
-    margin-top: 15px;
-  }
-  &.has-error {
-    #postcode_button {
-      margin-top: 45px;
-    }
-  }
-}  
+.search-box #postcode_button {
+  border-radius: 2px;
+  background-color: $colour-white;
+}
+  
 button[type=submit] {
   @extend .btn;
   width: 100%;
