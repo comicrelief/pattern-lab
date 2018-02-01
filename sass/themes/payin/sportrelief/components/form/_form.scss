@@ -43,6 +43,10 @@ input[type="text"] {
 }
 
 .form__row--keep-touch {
+  p {
+    @include font-size($p-xsmall-font-size);
+    color: $colour-dark-purple;
+  }
   label.form__checkbox {
     top: 0;
     left: 40px;
@@ -57,27 +61,23 @@ input[type="text"] {
     margin: 0;
     width: 30px;
     height: 30px;
-    background-color: red;
 
   }
   input[type="checkbox"]+span {
-    z-index: 0;
-    float: none;
     position: absolute;
     top: 10px;
     left: 0;
     width: 30px;
     height: 30px;
-    border: 1px solid $colour-light-grey;
-    background-color: green;
+    border: 1px solid $colour-grey;
+    background-color: transparent;
   }
 
   input[type="checkbox"]:checked+span {
-    border-width: 2px;
-    background-image: url( $image-path + "checkbox-tick-new.png") 50% 50% no-repeat;
+    background: url($image-path + "checkbox-tick-new.png") center/50% no-repeat;
   }
   input[type="checkbox"]:focus+span {
-    border-width: 2px;
+    border-color: $colour-dark-purple;
   }
 }
 
