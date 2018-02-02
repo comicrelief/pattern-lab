@@ -58,6 +58,7 @@ select {
   label.form__checkbox {
     top: 0;
     left: 40px;
+    width: calc(100% - 40px);
      
      &:before {
       display: none;
