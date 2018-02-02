@@ -2,10 +2,18 @@ header[role=banner] {
   height: 60px;
 }
 
-
 .header__inner-home {
   float: right;
   margin-right: 15px;
+  display: flex;
+  align-items: center;
+  font-family: $font-bold--sr18;
+
+  a {
+    span {
+      color: $colour-black;
+    }
+  }
 }
 
 .header__inner-wrapper {
