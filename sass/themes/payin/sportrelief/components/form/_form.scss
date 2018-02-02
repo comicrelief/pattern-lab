@@ -20,21 +20,18 @@
 }
 
 label,
-input,
-select {
+input {
   color: $colour-dark-purple;
 }
 
 input[type="email"], 
 input[type="number"], 
-input[type="text"], 
-select {
-  border: 1px solid $colour-dark-purple;
-}
-input[type="email"], 
-input[type="number"], 
 input[type="text"] {
+  border: 1px solid $colour-dark-purple;
   background-color: $colour-light-grey;
+}
+select {
+  border: 1px solid $colour-royal-blue;
 }
 
 .search-box #postcode_button {
