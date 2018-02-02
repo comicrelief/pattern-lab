@@ -1,15 +1,18 @@
 header[role=banner] {
-  height: 60px;
+  height: 90px;
 }
 
 .header__inner-home {
   float: right;
-  margin-right: 15px;
-  display: flex;
-  align-items: center;
+  margin: 28px 15px 0 0;
   font-family: $font-bold--sr18;
 
   a {
+    border-bottom:2px solid transparent;
+
+    &:hover {
+      border-color:inherit;
+    }
     span {
       color: $colour-black;
     }
@@ -17,7 +20,7 @@ header[role=banner] {
 }
 
 .header__inner-wrapper {
-  padding: 0 15px;
+  padding: 0 15px 0;
 }
 
 .block-branding {
@@ -25,25 +28,12 @@ header[role=banner] {
 
   .site-logo {
     min-width: 0;
-    margin-top: 0;
-    margin-left: 0;
-    width: 50px;
-    height: 50px;
-
-    @include breakpoint($screen-md) {
-      width: 124px;
+    margin: 18px 15px 15px;
+      /*width: 124px;
       height: 50px;
       background: url( $image-path + "SR18_logo_date_blacktext.svg") no-repeat 0 0;
-    }
-
     img {
-      display:block;
-      max-width: 100%;
-      height: 100%;
-
-      @include breakpoint($screen-md) {
-        display: none;
-      }
-    }
+      display:none;
+    }*/
   }
 }
