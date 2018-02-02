@@ -103,8 +103,23 @@ select {
 button.payment-button {
   border: 1px solid $colour-dark-purple;
 }
-button[type=submit] {
+#comicrelief_payinbundle_payment_card {
+  transition: background-color 1s, color 1s;
+  
+  &:hover,
+  &:active {
+    color: $colour-white;
+    background-color: $colour-dark-purple;
+  }
+}
 
+
+
+button[type=submit] {
+  @include sr_button_types($colour-white, $colour-ruby); 
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 

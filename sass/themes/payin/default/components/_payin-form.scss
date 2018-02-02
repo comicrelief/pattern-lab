@@ -175,6 +175,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   @extend .button;
+  @extend .btn;
 }
 
 .disabled {
@@ -325,14 +326,14 @@ button.payment-button {
   }
 }
 
-.form__nav:nth-child(2) {
-  button, .button {
-    margin-top: 0;
-    @include breakpoint($screen-md) {
-      margin-top: 20px;
-    }
-  }
-}
+// .form__nav:nth-child(2) {
+//   button, .button {
+//     margin-top: 0;
+//     @include breakpoint($screen-md) {
+//       margin-top: 20px;
+//     }
+//   }
+// }
 .audience,
 .form__field--establishmentId {
   display: none;
