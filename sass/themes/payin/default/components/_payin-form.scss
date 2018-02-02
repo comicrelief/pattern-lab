@@ -269,6 +269,7 @@ label:not(.required, .form__checkbox):after {
   }
 }
 .form__field--wrapper, {
+  position: relative;
   margin-right: 0;
   margin-left: 0;
   width: 100%;
