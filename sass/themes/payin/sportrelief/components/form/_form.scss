@@ -13,6 +13,13 @@
   }
 }
 
+// hide billing address row until pay by card is clicked
+.form__row--billing-detail {
+  display: none; 
+   &.show {
+    display: block;
+   }
+}
 .form__row--your-detail,
 .form__row--payment {
   padding: 30px 0 0;
