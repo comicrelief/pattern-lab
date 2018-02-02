@@ -90,27 +90,7 @@ button[type=submit] {
   background-color: $colour-purple;
 }
 button.payment-button {
-  @extend .btn;
-  display: block;
-  width: 100%;
-  height: 60px;
   border-radius: 5px;
-  background-color: $colour-white;
-  &+.btn {
-    @include breakpoint($screen-md) {
-      margin-top: 30px;
-      margin-left: 0;
-    }
-  }
-  // after element to place button images / apple styling in. (allows for falling back on text)
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width:100%;
-    height: 100%;
-  }
 }
 // only show Apple Pay button when supported
 #comicrelief_payinbundle_payment_apple_pay {
@@ -123,9 +103,7 @@ button.payment-button {
     display: block;
   }
 }
-#comicrelief_payinbundle_payment_paypal:after {
-  background: transparent url($image-path + "paypal-logo.png") center / 100px no-repeat;
-}
+
 // giftaid row
 .form__row--giftaid {
   h1 {

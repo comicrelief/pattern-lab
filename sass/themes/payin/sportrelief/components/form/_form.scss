@@ -13,7 +13,8 @@
   }
 }
 
-// hide billing address row until pay by card is clicked
+// hide address fields until shown
+.form__field--address,
 .form__row--billing-detail {
   display: none; 
    &.show {
@@ -99,6 +100,13 @@ select {
   }
 }
 
+button.payment-button {
+  border: 1px solid $colour-dark-purple;
+}
+button[type=submit] {
+
+}
+
 
 @include breakpoint($screen-md) {
   .form__row--your-detail,
@@ -115,5 +123,11 @@ select {
     margin-right: auto;
     width: 50%;
     text-align: center;
+  }
+
+  button.payment-button,
+  button[type=submit] {
+    width: 50%;
+
   }
 }
