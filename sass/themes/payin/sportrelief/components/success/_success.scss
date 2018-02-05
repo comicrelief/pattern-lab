@@ -1,25 +1,53 @@
 #payin-step-four {
   .form__row {
     background-color: $colour-white-smoke;
-  }
-}
 
-.form__row--success {
-  p {
-    color: $colour-dark-blue;
-  }
-}
-
-.form__row--user-generate-content {
-  .form__fieldset {
-    margin-bottom: 85px;
-
-    input[type="submit"] {
-      @extend .btn--ruby;
+    &.form__nav {
+      background: none;
     }
   }
+
+  .form__row--success {
+
+    p {
+      color: $colour-dark-blue;
+    }
+  }
+
+  .form__row--user-generate-content {
+    >.form__fieldset {
+      margin-bottom: 85px;
+    }
+
+    .form__field--submit {
+      margin-bottom: 0;
+
+      @include breakpoint($screen-md) {
+        width: span(12);
+      }
+    }
+
+    .terms {
+      display: inline-block;
+    }
+
+    .form__field--permission {
+      z-index: 0;
+    }
+
+    .form-user-content {
+      margin-top: 85px;
+    }
+
+  }
 }
+
+
 
 .cards {
   clear: both;
+
+  a {
+    text-decoration: none;
+  }
 }

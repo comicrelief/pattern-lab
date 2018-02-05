@@ -15,43 +15,61 @@
   </div>
   <div class="form__row--user-generate-content">
     <div class="form__fieldset">
-      <div class="form-error">
-        error message...
+      <div class="form-error"></div>
+        <div class="form-user-content">
+          <p class="font--large">Tell us about your fundraising activities and you could feature in our next campaign!</p>
+          <div class="form-user-content--copy-">
+            <div class="form__field--wrapper form__text form__field--whatYouDid">
+              <label class="form__field form__field--whatYouDid form__text required" for="comicrelief_payin_success_whatYouDid"></label>
+              <textarea id="comicrelief_payin_success_whatYouDid" name="comicrelief_payin_success[whatYouDid]" required="required" maxlength="400" placeholder="Enter your Sport Relief 2018 story..." class="form__field form__field--whatYouDid" data-validation="required length" data-validation-length="max400"></textarea>
+              <div class="form__field--error"></div>
+            </div>
+            <div class="form-terms">
+              <div class="form__field--wrapper form__checkbox form__field--permission">
+                <label class="form__field form__field--permission form__checkbox required" for="comicrelief_payin_success_permission"></label>
+                <input type="checkbox" id="comicrelief_payin_success_permission" name="comicrelief_payin_success[permission]" required="required" class="form__field form__field--permission" value="1" data-validation="required">
+                <div class="form__field--error"></div>
+              </div>
+              <span class="terms">I am happy for Comic Relief to contact me about my fundraising</span>
+            </div>
+            <div class="form__row form__nav">
+              <div class="form__fieldset">
+                <div class="form__field--wrapper form__submit form__field--submit">
+                  <button type="submit" id="comicrelief_payin_success_submit" name="comicrelief_payin_success[submit]" class="btn btn--ruby">Submit story</button>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
-      <div class="form-user-content--copy-">
-        <label for="whatyoudid">Tell us about your fundraising activities and you could feature in our next campaign!</label>
-        <textarea placeholder="Enter your Sport Relief 2018 story..."  maxlength="400" id="whatyoudid" ></textarea>
     </div>
-    <div class="form-terms">
-      <input type="checkbox" id="subscribe" />
-      <label for="subscribe" class="terms">I am happy for Comic Relief to contact me about my fundraising</label>
-    </div>
-    <input type="submit" value="submit story" class="button"/>
   </div>
-</div>
   <div class="form__row bg--white-smoke cards cards--three-grid-centre">
     <div class="cards__wrapper">
       <div class="card">
-        <div class="card__image">
-            <img src="kss-assets/images/1-1-img.jpg" alt="Where does the money go">
-          </div>
-        <div class="card__content-wrapper">
-            <div class="cards__content">
-              <h3>Where your money goes</h3>
-              <p>Learn about the projects we support and the impact that your money has.</p>
+        <a href="#">
+          <div class="card__image">
+              <img src="kss-assets/images/1-1-img.jpg" alt="Where does the money go">
             </div>
-          </div>
+          <div class="card__content-wrapper">
+              <div class="cards__content">
+                <h3>Where your money goes</h3>
+                <p>Learn about the projects we support and the impact that your money has.</p>
+              </div>
+            </div>
+        </a>
       </div>
       <div class="card">
-        <div class="card__image">
+        <a href="#">
+          <div class="card__image">
             <img src="kss-assets/images/1-1-img.jpg" alt="Fundraiser gallery">
           </div>
-        <div class="card__content-wrapper">
+          <div class="card__content-wrapper">
             <div class="cards__content">
               <h3>Fundraiser Gallery</h3>
               <p>Showcase your fabulous fundraising photos in out fundraising gallery.</p>
             </div>
           </div>
+        </a>
       </div>
     </div>
   </div>
