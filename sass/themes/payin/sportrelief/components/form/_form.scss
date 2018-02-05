@@ -100,6 +100,14 @@ select {
     border-color: $colour-dark-purple;
   }
 }
+.form__row--keep-touch {
+  .form__subcopy--privacy-policy {
+    text-align: center;
+  }
+  .form__subcopy {
+    margin-bottom: 0;
+  }
+}
 
 button.payment-button {
   border: 1px solid $colour-dark-purple;
@@ -148,7 +156,7 @@ button[type=submit] {
 
   button.payment-button,
   button[type=submit] {
-    width: 50%;
+    width: auto;
 
   }
 }
