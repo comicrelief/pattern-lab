@@ -9,3 +9,17 @@
     color: $colour-dark-blue;
   }
 }
+
+.form__row--user-generate-content {
+  .form__fieldset {
+    margin-bottom: 85px;
+
+    input[type="submit"] {
+      @extend .btn--ruby;
+    }
+  }
+}
+
+.cards {
+  clear: both;
+}
