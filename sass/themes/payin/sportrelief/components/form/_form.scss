@@ -44,7 +44,8 @@ input {
 
 input[type="email"], 
 input[type="number"], 
-input[type="text"] {
+input[type="text"],
+textarea {
   border: 1px solid $colour-dark-purple;
   background-color: $colour-light-grey;
 }
@@ -113,13 +114,18 @@ button.payment-button {
   }
 }
 
-
-
 button[type=submit] {
   @include sr_button_types($colour-white, $colour-ruby); 
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.help-block {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
 }
 
 
