@@ -27,6 +27,7 @@ legend {
   display: block;
   padding-top: 10px;
   margin-bottom: .6em;
+  font-size: 18px;
   font-family: $body-font;
 }
 
@@ -49,16 +50,16 @@ textarea {
   background-color: $colour-white;
   border: 1px solid $item-grey;
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   font-family: $font-regular;
   box-shadow: none;
   box-sizing: border-box;
   appearance: none; 
-  @include placeholder($colour-dark-grey, 16px , $font-regular);
+  @include placeholder($colour-dark-grey, 18px , $font-regular);
 }
 
 input:focus {
-  @include placeholder(transparent, 16px , $font-regular);
+  @include placeholder(transparent, 18px , $font-regular);
 }
 
 textarea {
@@ -80,7 +81,7 @@ select {
   padding: 12px 50px 14px 10px;
   width: 100%;
   height: 50px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   font-family: $font-regular;
   background: $colour-white url($image-path + "form_sprite.png") 100% -51px no-repeat;
@@ -129,6 +130,8 @@ select {
     left: 20px;
     padding-right: calc(2*#{gutter()});
     width: 100%;
+    font-size: 18px;
+    font-family: $body-font;
     word-break: break-word;
     
     &:before {
