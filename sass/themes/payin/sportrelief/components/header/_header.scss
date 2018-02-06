@@ -1,0 +1,33 @@
+header[role=banner] {
+  height: 90px;
+}
+
+.header__inner-home {
+  float: right;
+  margin: 28px 15px 0 0;
+  font-family: $font-bold--sr18;
+
+  a {
+    border-bottom:2px solid transparent;
+
+    &:hover {
+      border-color:inherit;
+    }
+    span {
+      color: $colour-black;
+    }
+  }
+}
+
+.header__inner-wrapper {
+  padding: 0 15px 0;
+}
+
+.block-branding {
+  float: left;
+
+  .site-logo {
+    min-width: 0;
+    margin: 18px 15px 15px;
+  }
+}
