@@ -17,6 +17,7 @@
 // ==========================================================================
 // SR18 variables * comment files you want to override
 // ==========================================================================
+@import "../../sr/2018/variables/_colours.scss";
 @import "../../sr/2018/variables/_typography.scss";
 @import "../../sr/2018/variables/_mixins.scss";
 @import "../../sr/2018/variables/_main-nav.scss";
@@ -72,9 +73,7 @@
 // ==========================================================================
 @import "components/promo-header/_promo-header.scss";
 @import "components/cards/_cards.scss";
-@import "components/header/_header.scss";
 @import "components/success/_success.scss";
-
 // Elements
 //
 // Style guide: 10
