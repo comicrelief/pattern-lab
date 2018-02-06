@@ -16,9 +16,9 @@
 // hide address fields until shown
 .form__field--address,
 .form__row--billing-detail {
-  display: none; 
+  display: block; 
    &.show {
-    display: block;
+    display: none;
    }
 }
 .form__row--your-detail,
@@ -160,7 +160,7 @@ button[type=submit] {
   .form__field--address-detail label.form__checkbox {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: auto;
     text-align: center;
   }
 
