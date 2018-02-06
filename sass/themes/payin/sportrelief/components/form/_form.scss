@@ -61,7 +61,7 @@ select {
 .form__row--keep-touch,
 .form__row--billing-detail {
   p {
-    @include font-size($p-xsmall-font-size);
+    font-size: 18px;
     color: $colour-dark-purple;
   }
   label.form__checkbox {
@@ -102,6 +102,7 @@ select {
 }
 .form__row--keep-touch {
   .form__subcopy--privacy-policy {
+    font-size: 16px;
     text-align: center;
   }
   .form__subcopy {
