@@ -193,15 +193,24 @@ module.exports = function (grunt) {
           src: ['{,**/}*.svg'],
           dest: 'dist/images'
         }]
+      },
+      payin: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/base/components/navigation/',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
       }
     },
 
     uglify: {
       plugins_js: {
         files: [{
-          src: 
+          src:
             [
-              'node_modules/smartmenus/dist/jquery.smartmenus.min.js', 
+              'node_modules/smartmenus/dist/jquery.smartmenus.min.js',
               'node_modules/lightcase/src/js/lightcase.js'
             ],
           dest: 'dist/js/plugins.min.js'
@@ -212,7 +221,7 @@ module.exports = function (grunt) {
           src: ['sass/base/components/{,**/}*.js'],
           dest: 'dist/js/base-components.min.js'
         }]
-      }   
+      }
     },
 
     sass_globbing: {
@@ -283,7 +292,7 @@ module.exports = function (grunt) {
           css: ['../css/themes/donate/donate.css', '../css/kss/donate.css'],
         },
         src: ['sass/base/components/promo-header',
-              'sass/base/components/footer', 
+              'sass/base/components/footer',
               'sass/themes/payin/default/variables',
               'sass/themes/payin/default/components',
               'sass/themes/sr/2018/variables',
@@ -343,7 +352,7 @@ module.exports = function (grunt) {
           title: 'Frost PatternLab',
           css: ['../css/themes/frost/frost.css', '../css/kss/frost.css']
         },
-        src: ['sass/base/core', 
+        src: ['sass/base/core',
               'sass/base/variables',
               'sass/base/components/buttons',
               'sass/base/components/background-colours',
@@ -487,6 +496,7 @@ module.exports = function (grunt) {
     'sass:payin',
     'modernizr',
     'imagemin:payin',
+    'svgmin:payin',
     'kss:payin',
     'postcss:payin',
   ]);
