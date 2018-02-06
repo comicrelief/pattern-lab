@@ -38,13 +38,14 @@
     }
 
     /* temporary till form styles are done  DL */
-    .form__field {
+    .form__checkbox {
       @include font-size($p-small-font-size);
-      color: #29022c;
-
-      &.form__text {
+      color: $colour-black;
+    }
+    .form__text {
         @include font-size($p-large-font-size);
         margin-bottom: 35px;
+        color: $colour-black;
       }
     }
 
@@ -74,13 +75,29 @@
     }
 
     .form__checkbox {
+
       label {
         &.form__checkbox {
           top: 0;
           left: 0;
+          width: 85%;
+          float: right;
+
+          &:before {
+            display:none;
+          }
         }
       }
-    }
+      .help-block {
+        left: 80px;
+        top: auto;
+        bottom: -15px;
+      }
+      input[type="checkbox"]{
+        +span {
+          float:right;
+        }
+      }
   }
 }
 
@@ -89,7 +106,6 @@
 
   a {
     text-decoration: none;
-
     text-align: center;
 
     h3, p {
