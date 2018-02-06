@@ -130,7 +130,9 @@ button[type=submit] {
   width: 100%;
 }
 
-.help-block {
+//specificity needed for form error
+.help-block,
+.help-block.form-error {
   position: relative;
   top: 0;
   left: 0;
