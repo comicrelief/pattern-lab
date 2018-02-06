@@ -547,7 +547,8 @@ form {
 }
 #create-account,
 #giving-page,
-#reset-password  {
+#reset-password,
+#confirm-team-join {
 	// no back button
   .form__group--nav_buttons {
     .form__nav {
@@ -571,6 +572,11 @@ form {
       font-family: $font-bold;
       @include font-size($h5-font-size);
     }
+  }
+}
+#confirm-team-join {
+  .form__group--nav_buttons {
+    float: none;
   }
 }
 
