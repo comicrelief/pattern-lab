@@ -17,7 +17,6 @@
 // ==========================================================================
 // SR18 variables * comment files you want to override
 // ==========================================================================
-@import "../../sr/2018/variables/_colours.scss";
 @import "../../sr/2018/variables/_typography.scss";
 @import "../../sr/2018/variables/_mixins.scss";
 @import "../../sr/2018/variables/_main-nav.scss";
@@ -58,7 +57,7 @@
 // ==========================================================================
 @import "../default/variables/_payin-mixins";
 @import "../default/variables/_payin-variables";
-
+@import "../default/variables/_payin-colours"
 // ==========================================================================
 // Payin UI components
 // ==========================================================================

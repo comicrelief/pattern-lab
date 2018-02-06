@@ -10,7 +10,7 @@
   .form__row--success {
 
     p {
-      color: $colour-dark-blue;
+      color: $colour-black-pearl;
     }
   }
 
@@ -24,6 +24,27 @@
 
       @include breakpoint($screen-md) {
         width: span(12);
+      }
+
+      .btn--ruby {
+        &:hover, &:focus {
+          transform: translateY(0px);
+
+        }
+        &:before {
+          background-image: none;
+        }
+      }
+    }
+
+    /* temporary till form styles are done  DL */
+    .form__field {
+      @include font-size($p-small-font-size);
+      color: #29022c;
+
+      &.form__text {
+        @include font-size($p-large-font-size);
+        margin-bottom: 35px;
       }
     }
 
@@ -39,10 +60,29 @@
       margin-top: 85px;
     }
 
+    .form-terms {
+      width: span(10);
+      top: 0;
+      text-align: center;
+      margin:0 auto;
+      padding-bottom: 70px;
+
+      .terms {
+        position: absolute;
+        top: 5px;
+      }
+    }
+
+    .form__checkbox {
+      label {
+        &.form__checkbox {
+          top: 0;
+          left: 0;
+        }
+      }
+    }
   }
 }
-
-
 
 .cards {
   clear: both;
