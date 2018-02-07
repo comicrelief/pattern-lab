@@ -198,8 +198,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          cwd: 'sass/base/components/navigation/',
-          src: ['{,**/}*.svg'],
+          cwd: 'sass/',
+          src: ['base/components/navigation/{,**/}*.svg', 'themes/payin/{,**/}*.svg'],
           dest: 'dist/images'
         }]
       }
