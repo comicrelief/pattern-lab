@@ -17,7 +17,7 @@
 .form__field--address,
 .form__row--billing-detail {
   display: block; 
-   &.show {
+   &.hide {
     display: none;
    }
 }
