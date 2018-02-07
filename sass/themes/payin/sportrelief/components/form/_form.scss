@@ -54,9 +54,25 @@ select {
   background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px no-repeat;
 }
   
-.search-box #postcode_button {
-  color: $colour-dark-purple;
-  border: 1px solid $colour-dark-purple;
+// after element to put loading gif in on top of postcode find address button   
+.search-box {
+  .search-box-button.loading {
+    &:after {
+      position: absolute;
+      content:'';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $colour-dark-purple;
+      background: $colour-white url($image-path + "loader.gif") center no-repeat;
+    }
+  }
+  #postcode_button {
+    color: $colour-dark-purple;
+    border: 1px solid $colour-dark-purple;
+    border-radius: 0;
+  }
 }
 
 .form__row--keep-touch,
@@ -153,18 +169,24 @@ button[type=submit] {
   .form__row--payment {
     padding: 60px 0 0;
   }
-  .search-box #postcode_button {
-    margin-top: 30px;
+
+  // center buttons
+  .search-box {
+    .search-box-button.loading:after {
+      left: 25%;
+      width: 50%;
+    }
+    #postcode_button {
+      margin: 30px auto 15px;
+      width: 50%;
+    }
   }
-  // center address buttons
-  .search-box #postcode_button,
   .form__field--address-detail label.form__checkbox {
     margin-left: auto;
     margin-right: auto;
     width: auto;
     text-align: center;
   }
-
   button.payment-button,
   button[type=submit] {
     width: auto;
