@@ -51,8 +51,9 @@ textarea {
 }
 select {
   border: 1px solid $colour-royal-blue;
+  background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px no-repeat;
 }
-
+  
 .search-box #postcode_button {
   color: $colour-dark-purple;
   border: 1px solid $colour-dark-purple;
