@@ -18,19 +18,21 @@
       <div class="form-error"></div>
         <div class="form-user-content">
           <div class="form-user-content--copy-">
-            <div class="form__field--wrapper form__text form__field--whatYouDid">
+            <div class="form__field--wrapper form__text form__field--whatYouDid has-error">
               <label class="form__field form__field--whatYouDid form__text required" for="comicrelief_payin_success_whatYouDid">
                 Tell us about your fundraising activities and you could feature in our next campaign!
               </label>
               <textarea id="comicrelief_payin_success_whatYouDid" name="comicrelief_payin_success[whatYouDid]" required="required" maxlength="400" placeholder="Enter your Sport Relief 2018 story..." class="form__field form__field--whatYouDid" data-validation="required length" data-validation-length="max400"></textarea>
               <div class="form__field--error"></div>
+              <span class="help-block form-error">This is a required field</span>
             </div>
-            <div class="form__field--wrapper form__checkbox form__field--permission has-success">
+            <div class="form__field--wrapper form__checkbox form__field--permission has-error">
               <label class="form__checkbox required" for="comicrelief_payin_success_permission">
                 I am happy for Comic Relief to contact me about my fundraising
               </label>
               <input type="checkbox" id="comicrelief_payin_success_permission" name="comicrelief_payin_success[permission]" required="required" value="1" data-validation="required" class="valid" style="">
               <span></span>
+              <span class="help-block form-error">This is a required field</span>
             </div>
             <div class="form__row form__nav">
               <div class="form__fieldset">

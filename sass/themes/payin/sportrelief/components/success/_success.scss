@@ -43,34 +43,12 @@
       color: $colour-black;
     }
     .form__text {
-        @include font-size($p-large-font-size);
-        margin-bottom: 35px;
-        color: $colour-black;
-      }
-    }
+      @include font-size($p-large-font-size);
+      margin-bottom: 35px;
+      color: $colour-black;
 
-    .terms {
-      display: inline-block;
-    }
-
-    .form__field--permission {
-      z-index: 0;
-    }
-
-    .form-user-content {
-      margin-top: 85px;
-    }
-
-    .form-terms {
-      width: span(10);
-      top: 0;
-      text-align: center;
-      margin:0 auto;
-      padding-bottom: 70px;
-
-      .terms {
-        position: absolute;
-        top: 5px;
+      .help-block {
+        top: auto;
       }
     }
 
@@ -89,15 +67,20 @@
         }
       }
       .help-block {
-        left: 80px;
+        left: 48px;
         top: auto;
-        bottom: -15px;
+        bottom: -8px;
+
+        @include breakpoint($screen-md) {
+          bottom: -15px;
+        }
       }
       input[type="checkbox"]{
         +span {
           float:right;
         }
       }
+    }
   }
 }
 
