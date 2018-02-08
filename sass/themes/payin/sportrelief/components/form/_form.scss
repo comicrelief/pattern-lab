@@ -63,10 +63,11 @@ select {
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% + 3px); // cover button as it's not hovered anymore
       border: 1px solid $colour-black;
-      box-shadow:inset 0px 0px 0px 2px $colour-black;
+      box-shadow:inset 0px 0px 0px 3px $colour-black;
       background: $colour-white url($image-path + "loader.gif") center no-repeat;
+      transform: translateY(-3px); // place at same position as hovered button
     }
   }
   #postcode_button {
