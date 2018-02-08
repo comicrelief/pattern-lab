@@ -131,11 +131,13 @@ select {
 button.payment-button {
   @extend .btn--black-ghost;
 }
-#comicrelief_payinbundle_payment_card {
-  &:active,
-  &:visited {
-    color: $colour-white;
-    background-color: $colour-dark-purple;
+#comicrelief_payinbundle_payment_card.clicked {
+  color: $colour-white;
+  background-color: $colour-black;
+
+  &:focus,
+  &:hover {
+    transform: translateY(0);
   }
 }
 
