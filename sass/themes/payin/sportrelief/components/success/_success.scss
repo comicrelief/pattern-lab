@@ -88,11 +88,17 @@
   clear: both;
 
   a {
-    text-decoration: none;
+    color: $colour-black-pearl;
     text-align: center;
+  }
 
-    h3, p {
+  h3 {
+    color: $colour-black-pearl;
+    text-align: center;
+  }
+
+  p {
       color: $colour-black-pearl;
-    }
+      text-align: center;
   }
 }

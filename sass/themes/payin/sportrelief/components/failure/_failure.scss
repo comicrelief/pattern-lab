@@ -25,13 +25,17 @@
     width: span(5);
   }
 
+  p {
+    color: $colour-black-pearl;
+  }
+
   .contact-information {
     margin-top: 35px;
     @include font-size($p-xsmall-font-size);
 
     a {
       text-decoration: underline;
-      color: $colour-black;
+      color: $colour-black-pearl;
     }
   }
 }
