@@ -163,6 +163,16 @@ button[type=submit] {
   padding: 0 0 5px 25px;
 }
 
+.form__row--payment {
+  .form__subcopy {
+    text-align: center;
+  }
+}
+.form__row--billing-detail {
+  .form__subcopy {
+    font-weight: bold;
+  }
+}
 
 @include breakpoint($screen-md) {
   .form__row--your-detail,
@@ -186,6 +196,12 @@ button[type=submit] {
     margin-right: auto;
     width: auto;
     text-align: center;
+  }
+  .form__row--billing-detail {
+    label.form__checkbox {
+      margin: 0 0 3%;
+      text-align: left;
+    }
   }
   button.payment-button,
   button[type=submit] {
