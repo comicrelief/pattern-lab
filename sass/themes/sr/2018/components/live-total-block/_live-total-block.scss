@@ -1,0 +1,90 @@
+// Live Total Block
+//
+// Markup: live-total-block.twig
+//
+// Style guide: 20.1005
+
+// remove ios default form styles
+.live-total-block {
+    background-color: $colour-purple-violent;
+    color: $colour-white;
+    font-family: $font-bold--sr18;
+
+  .live-total-block__outerwrapper {
+    @include container();
+    padding: 40px calc(4 * #{gutter()});
+  }
+
+  .live-total-block__wrapper {
+    @include span(12);
+
+    @include breakpoint($screen-md) {
+      @include span(8);
+    }
+
+    .live-total__progress {
+      @include span(12);
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
+
+      .progress-outer-circle {
+        position: relative;
+        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+        border: 5px solid rgba(6,18,56,0.3);
+        margin: 0 auto;
+
+        @include breakpoint($screen-md) {
+          float: right;
+        }
+
+        &:after {
+          content:'';
+          display:block;
+          position: absolute;
+          background:url($image-path + "sr18-logo-2018.svg") no-repeat center center;
+          width: 80px;
+          height: 76px;
+          left: 0;
+          top: 2px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .live-total__content {
+      @include span(12);
+      text-align: center;
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
+
+      h2 {
+        font-size: 12px;
+        color: $colour-white;
+        margin-bottom: 0;
+        line-height:1.1;
+      }
+
+      .live-total {
+        font-size: 48px;
+        line-height:1;
+      }
+
+      .live-total__button {
+        background-color: #00FFA9;
+        color: #061238;
+        border-radius: 30px;
+        max-width: 190px;
+        height: 25px;
+        line-height: 1.5;
+        margin: 10px auto
+      }
+    }
+  }
+}
