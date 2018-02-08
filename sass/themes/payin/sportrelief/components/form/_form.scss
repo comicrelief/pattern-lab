@@ -69,8 +69,7 @@ select {
     }
   }
   #postcode_button {
-    color: $colour-dark-purple;
-    border: 1px solid $colour-dark-purple;
+    @extend .btn--black-ghost;
     border-radius: 0;
   }
 }
@@ -128,13 +127,11 @@ select {
 }
 
 button.payment-button {
-  border: 1px solid $colour-dark-purple;
+  @extend .btn--black-ghost;
 }
 #comicrelief_payinbundle_payment_card {
-  transition: background-color 1s, color 1s;
-  
-  &:hover,
-  &:active {
+  &:active,
+  &:visited {
     color: $colour-white;
     background-color: $colour-dark-purple;
   }
@@ -148,10 +145,6 @@ button[type=submit] {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-
-  &:hover {
-    transform: translateY(0); 
-  }
 }
 
 //specificity needed for form error
