@@ -1,0 +1,98 @@
+#payin-step-four {
+  .form__row {
+    background-color: $colour-white-smoke;
+
+    &.form__nav {
+      background: none;
+    }
+  }
+
+  .form__row--success {
+
+    p {
+      color: $colour-dark-blue-lighter;
+    }
+  }
+
+  .form__row--user-generate-content {
+    >.form__fieldset {
+      margin-bottom: 85px;
+    }
+
+    .form__field--submit {
+      margin-bottom: 0;
+
+      @include breakpoint($screen-md) {
+        width: span(12);
+      }
+
+      .btn--ruby {
+        &:hover, &:focus {
+          transform: translateY(0px);
+
+        }
+        &:before {
+          background-image: none;
+        }
+      }
+    }
+
+    /* temporary till form styles are done  DL */
+    .form__checkbox {
+      @include font-size($p-small-font-size);
+      color: $colour-black;
+    }
+    .form__text {
+      @include font-size($p-large-font-size);
+      margin-bottom: 35px;
+      color: $colour-black;
+
+      .help-block {
+        top: auto;
+      }
+    }
+
+    .form__checkbox {
+
+      label {
+        &.form__checkbox {
+          top: 0;
+          left: 0;
+          width: 85%;
+          float: right;
+
+          &:before {
+            display:none;
+          }
+        }
+      }
+      .help-block {
+        left: 48px;
+        top: auto;
+        bottom: -8px;
+
+        @include breakpoint($screen-md) {
+          bottom: -15px;
+        }
+      }
+      input[type="checkbox"]{
+        +span {
+          float:right;
+        }
+      }
+    }
+  }
+}
+
+.cards {
+  clear: both;
+
+  a {
+    text-decoration: none;
+    text-align: center;
+
+    h3, p {
+      color: $colour-black-pearl;
+    }
+  }
+}
