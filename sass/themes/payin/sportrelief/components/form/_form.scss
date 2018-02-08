@@ -191,13 +191,13 @@ button[type=submit] {
       width: 50%;
     }
   }
-  .form__field--address-detail label.form__checkbox {
+  .form__checkbox-text-only label.form__checkbox {
     margin-left: auto;
     margin-right: auto;
     width: auto;
     text-align: center;
   }
-  .form__row--billing-detail {
+  .form__checkbox--same-address {
     label.form__checkbox {
       margin: 0 0 3%;
       text-align: left;
