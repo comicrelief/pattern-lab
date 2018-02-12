@@ -6,10 +6,6 @@
     @include font-size($p-font-size);
     font-family: $font-regular;
     color: $colour-dark-blue-lighter;
-
-    span {
-      font-weight: bold;
-    }
   }
 }
 
