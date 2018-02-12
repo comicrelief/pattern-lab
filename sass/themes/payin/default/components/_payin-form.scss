@@ -87,6 +87,10 @@ select {
   background: $colour-white url($image-path + "form_sprite.png") 100% -51px no-repeat;
   cursor: pointer;
 }
+// hide native IE arrow
+select::-ms-expand {
+    display: none;
+}
 
 .form__select-open {
   background-position: 100% 0;
