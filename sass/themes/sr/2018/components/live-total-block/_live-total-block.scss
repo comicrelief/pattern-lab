@@ -5,10 +5,34 @@
 // Style guide: 20.1005
 
 // remove ios default form styles
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+ //$bgColor: rgba(6,18,56,1);
+ $backColor: #1d0a43;
+ $barColor: #00FFA9;
+ $step: 1; // step of % for created classes
+ $loops: 100;
+ $increment: (360 / $loops);
+ $half: round($loops / 2);
+ @for $i from 0 through $loops {
+   [data-percentage="#{$i*$step}"] {
+     @if $i < 50 {
+ 		$nextdeg: 90deg + ( $increment * $i );
+ 		background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor)
+     }
+     @else {
+ 		$nextdeg: -90deg + ( $increment * ( $i - $half ) );
+ 		background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor)
+    }
+   }
+ }
+
 .live-total-block {
-    background-color: $colour-purple-violent;
-    color: $colour-white;
-    font-family: $font-bold--sr18;
+  @include gradient-background(#420D6D , #061238);
+  color: $colour-white;
+  font-family: $font-bold--sr18;
 
   .live-total-block__outerwrapper {
     @include container();
@@ -19,41 +43,8 @@
     @include span(12);
 
     @include breakpoint($screen-md) {
-      @include span(8);
-    }
-
-    .live-total__progress {
-      @include span(12);
-
-      @include breakpoint($screen-md) {
-        @include span(6);
-      }
-
-      .progress-outer-circle {
-        position: relative;
-        display: block;
-        width: 90px;
-        height: 90px;
-        border-radius: 50px;
-        border: 5px solid rgba(6,18,56,0.3);
-        margin: 0 auto;
-
-        @include breakpoint($screen-md) {
-          float: right;
-        }
-
-        &:after {
-          content:'';
-          display:block;
-          position: absolute;
-          background:url($image-path + "sr18-logo-2018.svg") no-repeat center center;
-          width: 80px;
-          height: 76px;
-          left: 0;
-          top: 2px;
-          margin: 0 auto;
-        }
-      }
+      width: span(8);
+      margin: 0 auto;
     }
 
     .live-total__content {
@@ -68,22 +59,83 @@
         font-size: 12px;
         color: $colour-white;
         margin-bottom: 0;
-        line-height:1.1;
+        line-height:1.5;
       }
 
       .live-total {
-        font-size: 48px;
-        line-height:1;
+        font-size: 40px;
+        line-height:1.2;
+
+        @include breakpoint($screen-md) {
+          font-size: 48px;
+        }
       }
 
       .live-total__button {
         background-color: #00FFA9;
         color: #061238;
-        border-radius: 30px;
+        border-radius: 60px;
         max-width: 190px;
         height: 25px;
         line-height: 1.5;
-        margin: 10px auto
+        margin: 20px auto
+      }
+    }
+
+    .live-total__progress {
+      @include span(12);
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
+
+      .progress-outer-circle {
+        position: relative;
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+
+        @include breakpoint($screen-md) {
+          float: right;
+          margin: 0;
+        }
+
+        .progress-inner-circle {
+          position: absolute;
+          width: 83px;
+          height: 83px;
+          background-color: rgba(6,18,56,0.3);
+          border-radius: 50%;;
+          top:50%;
+          left:50%;
+          right:50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .progress-circle-fill {
+          position: relative;
+          width: 83px;
+          height: 83px;
+          border-radius: 50%;
+          background-color: #2a0f58;
+          top:0;
+          left:0;
+          right:0;
+
+          &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 7%;
+            left: 6%;
+            width: 73px;
+            height: 73px;
+            background:url($image-path + "sr18-logo-2018.svg") no-repeat center center;
+            margin: 0 auto;
+          }
+        }
+
       }
     }
   }
