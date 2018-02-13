@@ -34,7 +34,6 @@
           </div>
         </a>
       </div>
-
       <!-- Nursery, school or university -->
       <div class="card card--school">
         <a id="audience__school" href="#payin-step-two" aria-label="paying in money from fundraising in a nursery, school, university or youth group.">
@@ -43,7 +42,6 @@
           </div>
         </a>
       </div>
-
       <!-- Workplace or organisation -->
       <div class="card card--work">
         <a id="audience__work" href="#payin-step-two" aria-label="paying in money from fundraising in a workplace.">
@@ -68,13 +66,12 @@
       <form name="comicrelief_payin_general" method="post" novalidate="novalidate" class="has-validation-callback">
         <input type="hidden" id="comicrelief_payin_general_audience" name="comicrelief_payin_general[audience]" value="public">
         <div class="form__row form__row--title">
-          <h4>I'm paying in money on behalf of myself, friends or family</h4>
+          <h4>I'm paying in money on behalf of <strong>myself, friends or family</strong></h4>
           <p></p>
         </div>
         <div class="form__row form__row--your-detail">
           <div class="form__fieldset">
             <h4 class="form__subtitle">Your details</h4>
-            <p class="form__subcopy">(Fields marked with a * are mandatory)</p>
             <div class="form__field--wrapper form__choice form__field--title">
               <label class="form__field form__field--title form__choice required" for="comicrelief_payin_general_title">Title</label>
               <select id="comicrelief_payin_general_title" name="comicrelief_payin_general[title]" class="form__field form__field--title">
@@ -118,14 +115,12 @@
         </div>
         <div class="form__row form__row--address-detail form__row--address-lookup">
           <div class="form__fieldset">
-            <h4 class="form__subtitle">Address details</h4>
-            <p class="form__subcopy">(Fields marked with a * are mandatory)</p>
             <!-- address detail -->
             <!-- postcode search -->
             <div class="form__field--wrapper form__text form__field--postcode">
               <div class="search-box">
                 <label class="form__field form__field--postcode form__text required" for="comicrelief_payin_general_postcode">Postcode</label><input type="text" id="comicrelief_payin_general_postcode" name="comicrelief_payin_general[postcode]" required="required" maxlength="15" placeholder="SE1 7TP" data-validation="required required length" data-validation-error-msg="Please enter a valid postcode" class="form__field form__field--postcode postcodeSearch" data-validation-length="max15">
-                <div class="search-box-button"><label for="postcode_button" class="visually-hidden">Search</label><input type="button" id="postcode_button" name="btnPostcodeSearch" class="btnPostcodeSearch postcode"></div>
+                <div class="search-box-button"><label for="postcode_button" class="visually-hidden">Search</label><input type="button" id="postcode_button" name="btnPostcodeSearch" class="btnPostcodeSearch postcode" value="FIND ADDRESS"></div>
                 <div class="form__field--error"></div>
               </div>
             </div>
@@ -140,7 +135,7 @@
             <div class="form__field--wrapper form__checkbox form__field--address-detail form__checkbox-text-only">
               <label for="address-detail" class="form__field form__checkbox">Or enter your address manually</label>
               <input type="checkbox" id="address-detail" class="form__field form__field--address-detail">
-              <div class="form__field--address hide">
+              <div class="form__field--address">
                 <div class="form__field--wrapper form__text form__field--address1">
                   <label class="form__field form__field--address1 form__text required" for="comicrelief_payin_general_address1">Address1</label><input type="text" id="comicrelief_payin_general_address1" name="comicrelief_payin_general[address1]" required="required" maxlength="100" data-validation="alphanumeric required length" data-validation-allowing="-_ '@/&amp;" data-validation-error-msg="Please fill in address 1" data-validation-help="Only allows alphanumeric characters and _ - / @ &amp;" class="form__field form__field--address1 has-help-txt" data-validation-length="max100">
                   <div class="form__field--error"></div>
@@ -429,22 +424,26 @@
         </div>
         <div class="form__row form__row--keep-touch">
           <div class="form__fieldset">
-            <h4 class="form__subtitle">Stay up to date</h4>
-            <p class="form__subcopy">We'd love to keep you in the loop with what Comic Relief is up to and how your fundraising money is helping change lives for the better. It's the least we can do for your incredible support.</p>
-            <p class="form__subcopy">Your details will be kept safe and never given to other organisations. This applies to the e-mail and address entered above. See our <a href="https://www.rednoseday.com/legal#privacy" target="blank">privacy policy</a>.</p>
-            <div class="form__field--wrapper form__checkbox form__field--permissionEmail">
-              <label class="form__field form__field--permissionEmail form__checkbox" for="comicrelief_payin_general_permissionEmail">I'm happy to hear from Comic Relief by email.</label><input type="checkbox" id="comicrelief_payin_general_permissionEmail" name="comicrelief_payin_general[permissionEmail]" class="form__field form__field--permissionEmail" value="1">
-              <div class="form__field--error"></div>
-            </div>
+            <p class="form__subcopy">Certificate</p>
             <div class="form__field--wrapper form__checkbox form__field--permissionPost">
-              <label class="form__field form__field--permissionPost form__checkbox" for="comicrelief_payin_general_permissionPost">I'm happy to receive items by post a couple of times a year (like a free Fundraising kit).</label><input type="checkbox" id="comicrelief_payin_general_permissionPost" name="comicrelief_payin_general[permissionPost]" class="form__field form__field--permissionPost" value="1" checked="checked">
+              <label class="form__field form__field--permissionPost form__checkbox" for="comicrelief_payin_general_permissionPost">I would like to request a fundraising certificate</label><input type="checkbox" id="comicrelief_payin_general_permissionPost" name="comicrelief_payin_general[permissionPost]" class="form__field form__field--permissionPost" value="1" checked="checked">
+              <span></span>
               <div class="form__field--error"></div>
             </div>
+            <p class="form__subcopy">Our emails</p>
+            <div class="form__field--wrapper form__checkbox form__field--permissionEmail">
+              <label class="form__field form__field--permissionEmail form__checkbox" for="comicrelief_payin_general_permissionEmail">To receive fundraising tips, tools, campaign news by email, and be kept in the loop with how you can support and give donations to Comic Relief, please tick this box. Even if you’re already signed-up, please tick the box to continue to get emails from us.
+              </label><input type="checkbox" id="comicrelief_payin_general_permissionEmail" name="comicrelief_payin_general[permissionEmail]" class="form__field form__field--permissionEmail" value="1">
+              <span></span>
+              <div class="form__field--error"></div>
+            </div>
+            <p class="form__subcopy form__subcopy--privacy-policy">
+              Comic Relief may send you marketing and fundraising materials by post and process your personal information for our legitimate business interests. If you do not want to receive anything by post please contact us or simply tick the box included on all our materials and return to us. We will never share or sell your details with anyone for marketing purposes. Read our <a href="https://www.sportrelief.com/privacy-policy" target="blank">privacy policy</a> to see how we look after your information.</p>
           </div>
         </div>
         <div class="form__row form__nav">
           <div class="form__fieldset">
-            <div class="form__field--wrapper form__submit form__field--submit"><button type="submit" id="comicrelief_payin_general_submit" name="comicrelief_payin_general[submit]">Next</button></div>
+            <div class="form__field--wrapper form__submit form__field--submit"><button type="submit" id="comicrelief_payin_general_submit" name="comicrelief_payin_general[submit]">Continue to payment</button></div>
           </div>
         </div>
         <input type="hidden" id="comicrelief_payin_general__token" name="comicrelief_payin_general[_token]" value="lmQW-y5CwEJ2W12SZ87hmY-BihLYwhaiLinJTTwG_is">
@@ -550,7 +549,7 @@
             <div class="form__field--wrapper form__text form__field--postcode">
               <div class="search-box">
                 <label class="form__field form__field--postcode form__text required" for="comicrelief_payin_school_postcode">Postcode</label><input type="text" id="comicrelief_payin_school_postcode" name="comicrelief_payin_school[postcode]" required="required" maxlength="15" placeholder="SW11" data-validation="required required length" data-validation-error-msg="Please enter a valid postcode" class="form__field form__field--postcode postcodeSearch" data-validation-length="max15">
-                <div class="search-box-button"><label for="postcode_button" class="visually-hidden">Search</label><input type="button" id="postcode_button" name="btnPostcodeSearch" class="btnPostcodeSearch eddirect"></div>
+                <div class="search-box-button"><label for="postcode_button" class="visually-hidden">Search</label><input type="button" id="postcode_button" name="btnPostcodeSearch" class="btnPostcodeSearch eddirect" value="FIND ADDRESS"></div>
                 <div class="form__field--error"></div>
               </div>
             </div>
@@ -1692,6 +1691,363 @@
         </div>
         <input type="hidden" id="comicrelief_payin_youth__token" name="comicrelief_payin_youth[_token]" value="tOxO3hdAsgc_3fCt0uIGcnLba_w0MEpJyQyfEbvALHc">
       </form>
+    </div>
+  </section>
+  <section id="payin-step-three" class="content">
+    <div class="form__step form__step--payment">
+      <form name="comicrelief_payinbundle_payment" method="post" novalidate="novalidate" class="has-validation-callback">
+        <div class="form__row form__row--title">
+          <h4>Continue step 2 of 3: <span>Payment details</span></h4>
+        </div>
+        <div class="form__row form__row--payment">
+          <div class="form__fieldset">
+            <h4 class="form__subtitle">Payment details</h4>
+            <p class="form__subcopy">There are a number of different ways you can pay - with a credit or debit card or through paypal.</p>
+            <div class="form__field--wrapper form__number form__field--amount">
+              <label class="form__field form__field--amount form__number required" for="comicrelief_payinbundle_payment_amount">Amount</label><input type="text" id="comicrelief_payinbundle_payment_amount" name="comicrelief_payinbundle_payment[amount]" required="required" placeholder="0.00" data-validation="number required" data-validation-allowing="range[1.00;5000.00],float" data-validation-error-msg="Please enter number between 1 and 5000" class="form__field form__field--amount">
+              <div class="form__field--error"></div>
+            </div>
+            <div class="form__field--wrapper form__choice form__field--currency">
+              <label class="form__field form__field--currency form__choice required" for="comicrelief_payinbundle_payment_currency">Currency</label>
+              <select id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" class="form__field form__field--currency">
+                <option value="GBP">£ GBP</option>
+                <option value="USD">$ USD</option>
+                <option value="AUD">$ AUD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+              <div class="form__field--error"></div>
+            </div>
+            <div class="form__field--wrapper form__choice form__field--paymentType">
+              <label class="form__field form__field--paymentType form__choice required">Payment method</label>
+              <button id="comicrelief_payinbundle_payment_paypal" class="payment-button" aria-label="paypal">Paypal</button>
+              <button id="comicrelief_payinbundle_payment_card" class="payment-button"aria-label="pay by card">pay by card</button>
+              <div class="form__field--error"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row form__row--billing-detail form__row--address-lookup">
+          <div class="form__fieldset">
+            <p class="form__subcopy">Billing address</p>
+            <!-- address detail -->
+            <!-- postcode search -->
+            <div class="form__field--wrapper form__text form__field--same-address">
+              <label for="address-detail" class="form__field form__checkbox">Same as personal address</label>
+              <input type="checkbox" id="address-detail" class="form__field form__field--address-detail">
+              <span></span>
+            </div>
+            <div class="form__field--wrapper form__text form__field--postcode">
+              <div class="search-box">
+                <label class="form__field form__field--postcode form__text required" for="comicrelief_payinbundle_payment_postcode">Postcode</label><input type="text" id="comicrelief_payinbundle_payment_postcode" name="comicrelief_payinbundle_payment[postcode]" required="required" maxlength="15" placeholder="" data-validation="required required length" data-validation-error-msg="Please enter a valid postcode" class="form__field form__field--postcode postcodeSearch" value="SE1 7TP" data-validation-length="max15">
+                <div class="search-box-button"><label for="postcode_button" class="visually-hidden">Search</label><input type="button" id="postcode_button" name="btnPostcodeSearch" class="btnPostcodeSearch postcode" value="FIND ADDRESS"></div>
+                <div class="form__field--error"></div>
+              </div>
+            </div>
+            <!-- address dropdown list -->
+            <div class="form__field--wrapper form__select form__field--address-list address-list-wrapper">
+              <label for="address-list" class="form__field">Please select your address:</label>
+              <select id="comicrelief_payinbundle_payment_address-list" name="address-list" class="form__field select-address address-list">
+                <option value="">Please select...</option>
+              </select>
+            </div>
+            <!-- address fields -->
+            <div class="form__field--wrapper form__checkbox form__field--address-detail ">
+              <div class="form__field--address hide">
+                <div class="form__field--wrapper form__text form__field--address1">
+                  <label class="form__field form__field--address1 form__text required" for="comicrelief_payinbundle_payment_address1">Address1</label><input type="text" id="comicrelief_payinbundle_payment_address1" name="comicrelief_payinbundle_payment[address1]" required="required" maxlength="100" data-validation="alphanumeric required length" data-validation-allowing="-_ '@/&amp;" data-validation-error-msg="Please fill in address 1" data-validation-help="Only allows alphanumeric characters and _ - / @ &amp;" class="form__field form__field--address1 has-help-txt" value="59-62 ALBERT EMBANKMENT" data-validation-length="max100">
+                  <div class="form__field--error"></div>
+                </div>
+                <div class="form__field--wrapper form__text form__field--address2">
+                  <label class="form__field form__field--address2 form__text" for="comicrelief_payinbundle_payment_address2">Address2</label><input type="text" id="comicrelief_payinbundle_payment_address2" name="comicrelief_payinbundle_payment[address2]" maxlength="100" data-validation="alphanumeric length" data-validation-allowing="-_ '@/&amp;" data-validation-error-msg="Only allows alphanumeric characters and _ - / @ &amp;" class="form__field form__field--address2" data-validation-length="max100" data-validation-optional="true">
+                  <div class="form__field--error"></div>
+                </div>
+                <div class="form__field--wrapper form__text form__field--address3">
+                  <label class="form__field form__field--address3 form__text" for="comicrelief_payinbundle_payment_address3">Address3</label><input type="text" id="comicrelief_payinbundle_payment_address3" name="comicrelief_payinbundle_payment[address3]" maxlength="100" data-validation="alphanumeric length" data-validation-allowing="-_ '@/&amp;" data-validation-error-msg="Only allows alphanumeric characters and _ - / @ &amp;" class="form__field form__field--address3" data-validation-length="max100" data-validation-optional="true">
+                  <div class="form__field--error"></div>
+                </div>
+                <div class="form__field--wrapper form__text form__field--address4">
+                  <label class="form__field form__field--address4 form__text" for="comicrelief_payinbundle_payment_address4">Address4</label><input type="text" id="comicrelief_payinbundle_payment_address4" name="comicrelief_payinbundle_payment[address4]" maxlength="100" data-validation="alphanumeric length" data-validation-allowing="-_ '@/&amp;" data-validation-error-msg="Only allows alphanumeric characters and _ - / @ &amp;" class="form__field form__field--address4" data-validation-length="max100" data-validation-optional="true">
+                  <div class="form__field--error"></div>
+                </div>
+                <div class="form__field--wrapper form__text form__field--town">
+                  <label class="form__field form__field--town form__text required" for="comicrelief_payinbundle_payment_town">Town</label><input type="text" id="comicrelief_payinbundle_payment_town" name="comicrelief_payinbundle_payment[town]" required="required" maxlength="50" data-validation="alphanumeric required length" data-validation-allowing="-_ '@/&amp;" data-validation-error-msg="Please fill in town" data-validation-help="Only allows alphanumeric characters and _ - / @ &amp;" class="form__field form__field--town has-help-txt" value="LONDON" data-validation-length="max50">
+                  <div class="form__field--error"></div>
+                </div>
+                <div class="form__field--wrapper form__choice form__field--country">
+                  <label class="form__field form__field--country form__choice required" for="comicrelief_payinbundle_payment_country">Country</label>
+                  <select id="comicrelief_payinbundle_payment_country" name="comicrelief_payinbundle_payment[country]" class="form__field form__field--country">
+                    <option value="GB" selected="selected">United Kingdom</option>
+                    <option disabled="disabled">-------------------</option>
+                    <option value="AF">Afghanistan</option>
+                    <option value="AX">Åland Islands</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AQ">Antarctica</option>
+                    <option value="AG">Antigua &amp; Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                    <option value="AC">Ascension Island</option>
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="BS">Bahamas</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="BB">Barbados</option>
+                    <option value="BY">Belarus</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BZ">Belize</option>
+                    <option value="BJ">Benin</option>
+                    <option value="BM">Bermuda</option>
+                    <option value="BT">Bhutan</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BA">Bosnia &amp; Herzegovina</option>
+                    <option value="BW">Botswana</option>
+                    <option value="BR">Brazil</option>
+                    <option value="IO">British Indian Ocean Territory</option>
+                    <option value="VG">British Virgin Islands</option>
+                    <option value="BN">Brunei</option>
+                    <option value="BG">Bulgaria</option>
+                    <option value="BF">Burkina Faso</option>
+                    <option value="BI">Burundi</option>
+                    <option value="KH">Cambodia</option>
+                    <option value="CM">Cameroon</option>
+                    <option value="CA">Canada</option>
+                    <option value="IC">Canary Islands</option>
+                    <option value="CV">Cape Verde</option>
+                    <option value="BQ">Caribbean Netherlands</option>
+                    <option value="KY">Cayman Islands</option>
+                    <option value="CF">Central African Republic</option>
+                    <option value="EA">Ceuta &amp; Melilla</option>
+                    <option value="TD">Chad</option>
+                    <option value="CL">Chile</option>
+                    <option value="CN">China</option>
+                    <option value="CX">Christmas Island</option>
+                    <option value="CC">Cocos (Keeling) Islands</option>
+                    <option value="CO">Colombia</option>
+                    <option value="KM">Comoros</option>
+                    <option value="CG">Congo - Brazzaville</option>
+                    <option value="CD">Congo - Kinshasa</option>
+                    <option value="CK">Cook Islands</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CI">Côte d’Ivoire</option>
+                    <option value="HR">Croatia</option>
+                    <option value="CU">Cuba</option>
+                    <option value="CW">Curaçao</option>
+                    <option value="CY">Cyprus</option>
+                    <option value="CZ">Czechia</option>
+                    <option value="DK">Denmark</option>
+                    <option value="DG">Diego Garcia</option>
+                    <option value="DJ">Djibouti</option>
+                    <option value="DM">Dominica</option>
+                    <option value="DO">Dominican Republic</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="EG">Egypt</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GQ">Equatorial Guinea</option>
+                    <option value="ER">Eritrea</option>
+                    <option value="EE">Estonia</option>
+                    <option value="ET">Ethiopia</option>
+                    <option value="EZ">Eurozone</option>
+                    <option value="FK">Falkland Islands</option>
+                    <option value="FO">Faroe Islands</option>
+                    <option value="FJ">Fiji</option>
+                    <option value="FI">Finland</option>
+                    <option value="FR">France</option>
+                    <option value="GF">French Guiana</option>
+                    <option value="PF">French Polynesia</option>
+                    <option value="TF">French Southern Territories</option>
+                    <option value="GA">Gabon</option>
+                    <option value="GM">Gambia</option>
+                    <option value="GE">Georgia</option>
+                    <option value="DE">Germany</option>
+                    <option value="GH">Ghana</option>
+                    <option value="GI">Gibraltar</option>
+                    <option value="GR">Greece</option>
+                    <option value="GL">Greenland</option>
+                    <option value="GD">Grenada</option>
+                    <option value="GP">Guadeloupe</option>
+                    <option value="GU">Guam</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="GG">Guernsey</option>
+                    <option value="GN">Guinea</option>
+                    <option value="GW">Guinea-Bissau</option>
+                    <option value="GY">Guyana</option>
+                    <option value="HT">Haiti</option>
+                    <option value="HN">Honduras</option>
+                    <option value="HK">Hong Kong SAR China</option>
+                    <option value="HU">Hungary</option>
+                    <option value="IS">Iceland</option>
+                    <option value="IN">India</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="IR">Iran</option>
+                    <option value="IQ">Iraq</option>
+                    <option value="IE">Ireland</option>
+                    <option value="IM">Isle of Man</option>
+                    <option value="IL">Israel</option>
+                    <option value="IT">Italy</option>
+                    <option value="JM">Jamaica</option>
+                    <option value="JP">Japan</option>
+                    <option value="JE">Jersey</option>
+                    <option value="JO">Jordan</option>
+                    <option value="KZ">Kazakhstan</option>
+                    <option value="KE">Kenya</option>
+                    <option value="KI">Kiribati</option>
+                    <option value="XK">Kosovo</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="KG">Kyrgyzstan</option>
+                    <option value="LA">Laos</option>
+                    <option value="LV">Latvia</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="LS">Lesotho</option>
+                    <option value="LR">Liberia</option>
+                    <option value="LY">Libya</option>
+                    <option value="LI">Liechtenstein</option>
+                    <option value="LT">Lithuania</option>
+                    <option value="LU">Luxembourg</option>
+                    <option value="MO">Macau SAR China</option>
+                    <option value="MK">Macedonia</option>
+                    <option value="MG">Madagascar</option>
+                    <option value="MW">Malawi</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="MV">Maldives</option>
+                    <option value="ML">Mali</option>
+                    <option value="MT">Malta</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MQ">Martinique</option>
+                    <option value="MR">Mauritania</option>
+                    <option value="MU">Mauritius</option>
+                    <option value="YT">Mayotte</option>
+                    <option value="MX">Mexico</option>
+                    <option value="FM">Micronesia</option>
+                    <option value="MD">Moldova</option>
+                    <option value="MC">Monaco</option>
+                    <option value="MN">Mongolia</option>
+                    <option value="ME">Montenegro</option>
+                    <option value="MS">Montserrat</option>
+                    <option value="MA">Morocco</option>
+                    <option value="MZ">Mozambique</option>
+                    <option value="MM">Myanmar (Burma)</option>
+                    <option value="NA">Namibia</option>
+                    <option value="NR">Nauru</option>
+                    <option value="NP">Nepal</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="NC">New Caledonia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="NE">Niger</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="NU">Niue</option>
+                    <option value="NF">Norfolk Island</option>
+                    <option value="KP">North Korea</option>
+                    <option value="MP">Northern Mariana Islands</option>
+                    <option value="NO">Norway</option>
+                    <option value="OM">Oman</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="PW">Palau</option>
+                    <option value="PS">Palestinian Territories</option>
+                    <option value="PA">Panama</option>
+                    <option value="PG">Papua New Guinea</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Peru</option>
+                    <option value="PH">Philippines</option>
+                    <option value="PN">Pitcairn Islands</option>
+                    <option value="PL">Poland</option>
+                    <option value="PT">Portugal</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="QA">Qatar</option>
+                    <option value="RE">Réunion</option>
+                    <option value="RO">Romania</option>
+                    <option value="RU">Russia</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="WS">Samoa</option>
+                    <option value="SM">San Marino</option>
+                    <option value="ST">São Tomé &amp; Príncipe</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="SN">Senegal</option>
+                    <option value="RS">Serbia</option>
+                    <option value="SC">Seychelles</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="SG">Singapore</option>
+                    <option value="SX">Sint Maarten</option>
+                    <option value="SK">Slovakia</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="SB">Solomon Islands</option>
+                    <option value="SO">Somalia</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="GS">South Georgia &amp; South Sandwich Islands</option>
+                    <option value="KR">South Korea</option>
+                    <option value="SS">South Sudan</option>
+                    <option value="ES">Spain</option>
+                    <option value="LK">Sri Lanka</option>
+                    <option value="BL">St. Barthélemy</option>
+                    <option value="SH">St. Helena</option>
+                    <option value="KN">St. Kitts &amp; Nevis</option>
+                    <option value="LC">St. Lucia</option>
+                    <option value="MF">St. Martin</option>
+                    <option value="PM">St. Pierre &amp; Miquelon</option>
+                    <option value="VC">St. Vincent &amp; Grenadines</option>
+                    <option value="SD">Sudan</option>
+                    <option value="SR">Suriname</option>
+                    <option value="SJ">Svalbard &amp; Jan Mayen</option>
+                    <option value="SZ">Swaziland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SY">Syria</option>
+                    <option value="TW">Taiwan</option>
+                    <option value="TJ">Tajikistan</option>
+                    <option value="TZ">Tanzania</option>
+                    <option value="TH">Thailand</option>
+                    <option value="TL">Timor-Leste</option>
+                    <option value="TG">Togo</option>
+                    <option value="TK">Tokelau</option>
+                    <option value="TO">Tonga</option>
+                    <option value="TT">Trinidad &amp; Tobago</option>
+                    <option value="TA">Tristan da Cunha</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="TR">Turkey</option>
+                    <option value="TM">Turkmenistan</option>
+                    <option value="TC">Turks &amp; Caicos Islands</option>
+                    <option value="TV">Tuvalu</option>
+                    <option value="UM">U.S. Outlying Islands</option>
+                    <option value="VI">U.S. Virgin Islands</option>
+                    <option value="UG">Uganda</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="UN">United Nations</option>
+                    <option value="US">United States</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="UZ">Uzbekistan</option>
+                    <option value="VU">Vanuatu</option>
+                    <option value="VA">Vatican City</option>
+                    <option value="VE">Venezuela</option>
+                    <option value="VN">Vietnam</option>
+                    <option value="WF">Wallis &amp; Futuna</option>
+                    <option value="EH">Western Sahara</option>
+                    <option value="YE">Yemen</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ZW">Zimbabwe</option>
+                  </select>
+                  <div class="form__field--error"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form__row form__nav">
+          <div class="form__fieldset">
+            <div class="form__field--wrapper form__submit form__field--submit"><button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]">Make payment</button></div>
+          </div>
+        </div>
+        <input type="hidden" id="comicrelief_payinbundle_payment__token" name="comicrelief_payinbundle_payment[_token]" value="fNT1ycDjAlE4ZjuWzLAFj1cyJ8AK0uhYzgtvHX9Di7s">
+      </form>
+      <div class="form__row form__row--logos">
+        <p><img src="/images/form/frsb.jpg"></p>
+      </div>
     </div>
   </section>
 </main>

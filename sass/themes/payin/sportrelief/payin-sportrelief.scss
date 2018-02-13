@@ -15,7 +15,12 @@
 @import "../../../base/_core";
 
 // ==========================================================================
-// SR18 variables * comment files you want to override
+// CR variables 
+// ==========================================================================
+@import "../../cr/2017/variables/_colours.scss";
+
+// ==========================================================================
+// SR18 variables 
 // ==========================================================================
 @import "../../sr/2018/variables/_colours.scss";
 @import "../../sr/2018/variables/_typography.scss";
@@ -29,7 +34,6 @@
 // choose components one by one
 @import "../../../base/components/typography/typography";
 @import "../../../base/components/selectbox/selectbox";
-@import "../../../base/components/form/form";
 @import "../../../base/components/header/base-header";
 @import "../../../base/components/navigation/hamburger-menu-button";
 @import "../../../base/components/meta-icons/meta-icons";
@@ -71,11 +75,15 @@
 // ==========================================================================
 // Payin Sportrelief components
 // ==========================================================================
+@import "components/header/_header.scss";
 @import "components/promo-header/_promo-header.scss";
 @import "components/cards/_cards.scss";
+@import "components/form/_form";
 @import "components/success/_success.scss";
-@import "components/header/_header.scss";
 @import "components/failure/_failure.scss";
+@import "components/promo-header/_promo-header.scss";
+@import "components/form/_form";
+
 // Elements
 //
 // Style guide: 10
