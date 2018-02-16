@@ -1,18 +1,4 @@
 #payin-step-four {
-  .form__row {
-    background-color: $colour-white-smoke;
-
-    &.form__nav {
-      background: none;
-    }
-  }
-
-  .form__row--success {
-
-    p {
-      color: $colour-dark-blue-lighter;
-    }
-  }
 
   .form__field--whatYouDid label,
   .form__field--permission {
@@ -35,23 +21,24 @@
       }
     }
   }
-}
 
-.cards {
-  clear: both;
+  .cards {
+    clear: both;
+    background-color: $colour-white-smoke;
 
-  a {
-    color: $colour-black-pearl;
-    text-align: center;
-  }
-
-  h3 {
-    color: $colour-black-pearl;
-    text-align: center;
-  }
-
-  p {
+    a {
       color: $colour-black-pearl;
       text-align: center;
+    }
+
+    h3 {
+      color: $colour-black-pearl;
+      text-align: center;
+    }
+
+    p {
+        color: $colour-black-pearl;
+        text-align: center;
+    }
   }
 }
