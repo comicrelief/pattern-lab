@@ -330,14 +330,6 @@ button.payment-button {
   }
 }
 
-// .form__nav:nth-child(2) {
-//   button, .button {
-//     margin-top: 0;
-//     @include breakpoint($screen-md) {
-//       margin-top: 20px;
-//     }
-//   }
-// }
 .audience,
 .form__field--establishmentId {
   display: none;
@@ -371,9 +363,6 @@ button.payment-button {
   color: $colour-white;
   text-align: center;
   
-  .form__row {
-    background-color: $colour-dark-blue;
-  }
   .form__fieldset {
     @include span(12);
   }
@@ -553,7 +542,6 @@ input[type="text"].form__field--postcode-lookup {
       background-color: $colour-light-grey;
       cursor: pointer;
       color: $colour-red;
-      // @include transition( 0.3s ease-in-out background-color);
       transition: 0.3s ease-in-out background-color;
     };
   }
@@ -589,38 +577,6 @@ input[type="text"].form__field--postcode-lookup {
     }
   }
 } 
-// .search-box {
-//   position: relative;
-
-//   .search-box-button {
-//     height: 50px;
-//     width: 56px;
-//     border: 1px solid #c2c2c2;
-//     background: #fafafa;
-//     position: absolute;
-//     right: 0px;
-//   }
-
-//   .postcodeSearch {
-//     float: left;
-//   }
-
-//   .btnPostcodeSearch {
-//     background: url($image-path + "lookup-icon.png") center center no-repeat;
-//     outline: 0;
-//     padding: 0px;
-//     margin: 0px;
-//     width: 56px;
-//     height: 50px;
-
-//     &:hover {
-//       background-color: transparent;
-//     }
-//     &.loading {
-//       background-image: url($image-path + "loader.gif");
-//     }
-//   }
-// }
 
 // Validation for forms
 .help-block {
