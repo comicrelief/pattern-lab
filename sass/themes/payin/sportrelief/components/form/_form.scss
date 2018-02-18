@@ -9,6 +9,10 @@
   }
 }
 
+.form-row {
+  background-color: transparent;
+}
+
 // hide address fields until shown
 .form__field--address,
 .form__row--billing-detail {
@@ -72,8 +76,10 @@ select {
   }
 }
 
+.form__row--your-detail,
 .form__row--keep-touch,
-.form__row--billing-detail {
+.form__row--billing-detail,
+.form__row--user-generate-content {
   p {
     font-size: 18px;
     color: $colour-dark-purple;

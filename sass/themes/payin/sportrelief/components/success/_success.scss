@@ -1,17 +1,9 @@
 #payin-step-four {
-  .form__row {
-    background-color: $colour-white-smoke;
 
-    &.form__nav {
-      background: none;
-    }
-  }
-
-  .form__row--success {
-
-    p {
-      color: $colour-dark-blue-lighter;
-    }
+  .form__field--whatYouDid label,
+  .form__field--permission {
+    margin: 0 auto 40px;
+    width: auto;
   }
 
   .form__row--user-generate-content {
@@ -28,69 +20,25 @@
         width: span(12);
       }
     }
-
-    /* temporary till form styles are done  DL */
-    .form__checkbox {
-      @include font-size($p-small-font-size);
-      color: $colour-black;
-    }
-    .form__text {
-      @include font-size($p-large-font-size);
-      margin-bottom: 35px;
-      color: $colour-black;
-
-      .help-block {
-        top: auto;
-      }
-    }
-
-    .form__checkbox {
-
-      label {
-        &.form__checkbox {
-          top: 0;
-          left: 0;
-          width: 85%;
-          float: right;
-
-          &:before {
-            display:none;
-          }
-        }
-      }
-      .help-block {
-        left: 48px;
-        top: auto;
-        bottom: -8px;
-
-        @include breakpoint($screen-md) {
-          bottom: -15px;
-        }
-      }
-      input[type="checkbox"]{
-        +span {
-          float:right;
-        }
-      }
-    }
-  }
-}
-
-.cards {
-  clear: both;
-
-  a {
-    color: $colour-black-pearl;
-    text-align: center;
   }
 
-  h3 {
-    color: $colour-black-pearl;
-    text-align: center;
-  }
+  .cards {
+    clear: both;
+    background-color: $colour-white-smoke;
 
-  p {
+    a {
       color: $colour-black-pearl;
       text-align: center;
+    }
+
+    h3 {
+      color: $colour-black-pearl;
+      text-align: center;
+    }
+
+    p {
+        color: $colour-black-pearl;
+        text-align: center;
+    }
   }
 }
