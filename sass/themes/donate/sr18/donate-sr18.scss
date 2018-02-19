@@ -24,7 +24,6 @@
 // choose components one by one
 @import "../../../base/components/typography/typography";
 @import "../../../base/components/selectbox/selectbox";
-@import "../../../base/components/form/form";
 @import "../../../base/components/header/base-header";
 @import "../../../base/components/navigation/hamburger-menu-button";
 @import "../../../base/components/meta-icons/meta-icons";
@@ -48,19 +47,26 @@
 // ==========================================================================
 // Payin variables
 // ==========================================================================
-@import "../../payin/variables/_payin-mixins";
-@import "../../payin/variables/_payin-variables";
+@import "../../payin/default/variables/_payin-mixins";
+@import "../../payin/default/variables/_payin-variables";
 
 // ==========================================================================
 // Payin UI components
 // ==========================================================================
-@import "../../payin/components/_payin-form";
+@import "../../payin/default/components/_payin-form";
 
 // ==========================================================================
-// Donate sr18 styling
+// Donate sr18 variables
+// ==========================================================================
+@import "variables/_colours.scss";
+
+// ==========================================================================
+// Donate sr18 components
 // ==========================================================================
 @import "_donate-sr18-styles.scss";
 @import "components/promo-header/_promo-header.scss";
+@import "components/form/_form.scss";
+@import "components/footer/_footer.scss";
 
 // Elements
 //
@@ -76,3 +82,14 @@
 //
 // Style guide: 30
 
+// Thank You Page
+//
+// Markup: thank-you-page.twig
+//
+// Style guide: 40
+
+// Failure Page
+//
+// Markup: failure-page.twig
+//
+// Style guide: 50

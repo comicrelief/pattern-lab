@@ -2,7 +2,7 @@
 
 $font-stack: helvetica, arial, sans-serif;
 
-//SR 18 fonts 
+//SR 18 fonts
 $font-black--sr18: "Founders-GroteskXCondensed-Bold", $font-stack;
 $font-bold--sr18: "Founders-Grotesk-Semibold", $font-stack;
 $font-regular--sr18: "Founders-Grotesk-Regular", $font-stack;
@@ -39,7 +39,9 @@ $h1-font-size: (
   $screen-lg: (117px, 88px)
 );
 $h1-small-font-size: (
-  $screen-lg: (82px, 90px)
+  null: (40px, 33px),
+  $screen-md: (82px, 65px),
+  $screen-lg: (82px, 65px)
 );
 $h2-font-size: (
   null: (28px, 31px),

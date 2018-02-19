@@ -1,0 +1,111 @@
+// ==========================================================================
+// Core variables * comment files you want to override
+// ==========================================================================
+
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_theme.scss";
+@import "../../../base/variables/_typography.scss";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+@import "../../../base/_core";
+
+// ==========================================================================
+// CR variables 
+// ==========================================================================
+@import "../../cr/2017/variables/_colours.scss";
+
+// ==========================================================================
+// SR18 variables 
+// ==========================================================================
+@import "../../sr/2018/variables/_colours.scss";
+@import "../../sr/2018/variables/_typography.scss";
+@import "../../sr/2018/variables/_mixins.scss";
+@import "../../sr/2018/variables/_main-nav.scss";
+
+// ==========================================================================
+// Base UI components
+// ==========================================================================
+
+// choose components one by one
+@import "../../../base/components/typography/typography";
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/header/base-header";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/meta-icons/meta-icons";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/social/social";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
+
+
+// ==========================================================================
+// SR18 UI components
+// ==========================================================================
+@import "../../sr/2018/components/typography/fonts";
+@import "../../sr/2018/components/typography/typography";
+@import "../../sr/2018/components/background-colours/background-colours";
+@import "../../sr/2018/components/buttons/buttons";
+@import "../../sr/2018/components/links/links";
+@import "../../sr/2018/components/navigation/main-nav";
+@import "../../sr/2018/components/promo-header/promo-header";
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "../default/variables/_payin-mixins";
+@import "../default/variables/_payin-variables";
+@import "../default/variables/_payin-colours";
+// ==========================================================================
+// Payin UI components
+// ==========================================================================
+@import "../default/components/_payin-form";
+
+// ==========================================================================
+// Payin Sportrelief variables
+// ==========================================================================
+
+// ==========================================================================
+// Payin Sportrelief components
+// ==========================================================================
+@import "components/header/_header.scss";
+@import "components/promo-header/_promo-header.scss";
+@import "components/cards/_cards.scss";
+@import "components/form/_form";
+@import "components/success/_success.scss";
+@import "components/failure/_failure.scss";
+@import "components/promo-header/_promo-header.scss";
+@import "components/form/_form";
+
+// Elements
+//
+// Style guide: 10
+
+// Components
+//
+// Style guide: 20
+
+// Payin Page
+//
+// Markup: payin-page.twig
+//
+// Style guide: 30
+
+// Success Page
+//
+// Markup: success-page.twig
+//
+// Style guide: 40
+
+// Failure Page
+//
+// Markup: failure-page.twig
+//
+// Style guide: 50

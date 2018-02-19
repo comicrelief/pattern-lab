@@ -1,0 +1,236 @@
+/* Section for form */ 
+.content {
+  background-color: $colour-dark-blue;
+  h4, p, label {
+    color: $colour-white;
+  }
+}
+
+/* Form */ 
+
+// hide and show for payment, giftaid, details, billing address and logos rows
+.form__row--payment,
+.form__row--giftaid,
+.form__row--your-detail,
+.form__row--billing-detail,
+.form__row--card-logos,
+.form__row--logos, {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+// hide extended billing address fields
+.form__field--address {
+  display: block;
+  &.hide {
+    display: none;
+  }
+}
+
+// hide form row's title and copy
+.form__subtitle,
+.form__subcopy {
+  display: none;
+}
+
+// labels and fields 
+.form__field--address-detail {
+  label {
+    color: $colour-grey;
+  }
+}
+
+span.help-block {
+  left: 0;
+  width: 100%;
+  border-radius: 2px;
+}
+
+input[type="email"], 
+input[type="number"], 
+input[type="text"], 
+select {
+  max-width: 100%;
+  border: 2px solid $colour-grey;
+  border-radius: 3px;
+  background-color: transparent;
+  color: $colour-white;
+  @include placeholder($colour-grey, 18px , $font-regular);
+}
+// place select arrow 18px from end of select box as per design
+select {
+  background: transparent url($image-path + "donate-select-arrow.png") calc(100% - 18px) center no-repeat;
+
+  // make the option color default again (fixes inheritance of white colour on Windows)
+  option {
+    color: initial;
+  }
+}
+// IE11 specific fix (-ms-high-contrast:none is not supported by Edge)
+@media all and (-ms-high-contrast: none) {
+  select {
+    background: none;
+    option {
+      color: grey;
+    }
+  }
+}
+
+// buttons
+.search-box #postcode_button {
+  border-radius: 2px;
+  background-color: $colour-white;
+}
+  
+button[type=submit] {
+  @extend .btn;
+  width: 100%;
+  color: $colour-white;
+  background-color: $colour-purple;
+}
+button.payment-button {
+  border-radius: 5px;
+}
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &:after {
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-style: white;
+  }
+  &.show {
+    display: block;
+  }
+}
+
+// giftaid row
+.form__row--giftaid {
+  h1 {
+    img {
+      width: 119px;
+      margin-top: 15px;
+      @include breakpoint($screen-md) {
+        width: 298px;
+      }
+    }
+  }
+  p:nth-of-type(2) {
+    color: $colour-grey;
+    text-align: left;
+  }
+  a {
+    color: $colour-green;
+  }
+  .form__field--wrapper.form__field--giftaid {
+    padding: 0;
+    background-color: transparent;
+  }
+  label.form__checkbox {
+    left: initial;
+    margin: 0 5px 0.6em 5px;
+    padding-right: 60px;
+    width: 100%;
+  }
+
+  label.form__checkbox:before {
+    display: none;
+  }
+
+  /* Specific selector to override placement of checkbox. 
+     Place checkbox on top of label and span so it's checked when 
+     clicking the fake checkbox in the span.
+  */
+  .form__checkbox input[type="checkbox"] {
+    z-index: 1;
+    top: 5px;
+    height: 50px;
+  }
+  input[type="checkbox"]+span {
+    position: absolute;
+    float: none;
+    top: 15px;
+    right: 10px;
+    left: initial;
+    margin-right: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $colour-green;
+    background-color: transparent;
+    border-radius: 30px;
+    // specific breakpoint where text breaks
+    @include breakpoint(614px) {
+      top: 3px;
+    }
+    @include breakpoint($screen-lg) {
+      top: 18px;
+    }
+  }
+  input[type="checkbox"]+span:after {
+    content: '';
+    position: absolute;
+    vertical-align: top;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 20px;
+  }
+  input[type="checkbox"]:checked+span {
+    border: 2px solid $colour-green;
+    background-image: none;
+    background-color: transparent;
+  } 
+  input[type="checkbox"]:checked+span:after {
+    background-image: none;
+    background-color: $colour-green;
+  }
+  input[type="checkbox"]:focus+span {
+     border: 2px solid $colour-green;
+  }
+}
+
+// card logo row 
+.card-list {
+  text-align: center;
+
+  .card-logo {
+    display: inline-block;
+    margin: 0 gutter();
+    width: 60px;
+    height: 37px;
+    background-image: url($image-path + "accepted-payments-sprite.png");
+    background-size: auto 37px;
+
+    &.logo-maestro {
+      background-position: 0 0;
+    }
+    &.logo-amex {
+      background-position: -66px 0;
+    }
+    &.logo-mastercard {
+      background-position: -132px 0;
+    }
+    &.logo-visa {
+      background-position: -198px 0;
+    }
+
+    @include breakpoint($screen-md) {
+      width: 82px;
+      height: 50px;
+      background-size: auto 50px;
+
+      &.logo-amex {
+        background-position: -90px 0;
+      }
+      &.logo-mastercard {
+        background-position: -180px 0;
+      }
+      &.logo-visa {
+        background-position: -270px 0;
+      }
+    }
+  }
+}

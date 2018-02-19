@@ -1,0 +1,17 @@
+.promo-header {
+  background-color: $colour-black-pearl;
+
+  .promo-header__content {
+    top: 65%;
+  }
+
+  h1 {
+    color: $colour-white;
+    margin-bottom: 36px;
+  }
+
+  p {
+    @include font-size($p-large-font-size);
+    color: $colour-white;
+  }
+}

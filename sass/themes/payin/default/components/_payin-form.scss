@@ -5,17 +5,29 @@
 // Style guide: 20.22
 
 // ==========================================================================
-// Forms
+// Form section
 // ==========================================================================
 body.payin {
   font-family: $body-font;
 }
 
+// keep sizing of container the same as promo header/general styling
+.form__step {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+// ==========================================================================
+// Form 
+// =========================================================================
+
+// form fields, labels, buttons
 label,
 legend {
   display: block;
   padding-top: 10px;
   margin-bottom: .6em;
+  font-size: 18px;
   font-family: $body-font;
 }
 
@@ -38,36 +50,17 @@ textarea {
   background-color: $colour-white;
   border: 1px solid $item-grey;
   width: 100%;
-
-  // @include box-shadow(none);
-  // @include box-sizing(border-box);
-  // @include appearance(none);
+  font-size: 18px;
+  font-family: $font-regular;
   box-shadow: none;
   box-sizing: border-box;
   appearance: none; 
-
-  @include breakpoint($screen-md) {
-    max-width: 290px;
-  }
+  @include placeholder($colour-dark-grey, 18px , $font-regular);
 }
 
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="date"]:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-select:focus {
-  border: 1px solid $colour-jasper-grey;
+input:focus {
+  @include placeholder(transparent, 18px , $font-regular);
 }
-
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 textarea {
   min-height: 65px;
@@ -80,58 +73,27 @@ textarea {
   }
 }
 
-select
-{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #ddd;
-  background: $colour-white url(/images/form/form_sprite.png) 100% -51px no-repeat;
-  height: 50px;
+select {
   position: relative;
-  width: 100%;
-  font-size: 16px;
-  font-weight: 300;
-  font-family: "sofia-pro", "Verdana", Arial, sans-serif;
-  cursor: pointer;
-  outline: 0 none;
+  appearance: none;
+  border-radius: 0px;
+  border: 1px solid #ddd;
   padding: 12px 50px 14px 10px;
-  text-decoration: none;
-  @include breakpoint($screen-md) {
-    max-width: 290px;
-  }
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: $font-regular;
+  background: $colour-white url($image-path + "form_sprite.png") 100% -51px no-repeat;
+  cursor: pointer;
 }
-select:focus {
-  outline: 0;
+// hide native IE arrow
+select::-ms-expand {
+    display: none;
 }
 
 .form__select-open {
   background-position: 100% 0;
-}
-
-input[type=checkbox] {
-  // @include appearance(none);
-  appearance: none;
-  display: inline-block;
-  border:1px solid $item-grey;
-  background-color: $colour-white;
-  min-width: 30px;
-  min-height: 30px;
-  margin: 0;
-}
-input[type="checkbox"]:checked {
-  background: url(/images/form/checkbox-tick-new.png) 50% 50% no-repeat rgb(255, 255, 255);
-  // @include background-size(14px);
-  background-size: 14px;
 }
 
 .form__checkbox, 
@@ -146,22 +108,50 @@ input[type="checkbox"]:checked {
 }
 .form__checkbox {
   @include clearfix;
-  
-  label.form__checkbox {
+
+  input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    display: block;
+    left: 0;
+    margin: 5px 10px 10px 0px;
+    padding: 10px;
+    border: 1px solid #e8e8e8;
     width: 100%;
-    padding-right: calc(2*#{gutter()});
-    word-break: break-word;
+    max-width: 100%;  
+  }
+  input[type="checkbox"]:checked+label:before {
+    background: url( $image-path + "checkbox-tick-new.png") 50% 50% no-repeat rgb(255, 255, 255);
+    background-size: 14px;
+  }
+  input[type="checkbox"]:focus+label:before {
+    border: 2px solid #e8e8e8;
+  }
+
+  label.form__checkbox {
+    overflow: visible;
     position: relative;
-    left: 40px;
+    left: 20px;
+    padding-right: calc(2*#{gutter()});
+    width: 100%;
+    font-size: 18px;
+    font-family: $body-font;
+    word-break: break-word;
+    
+    &:before {
+      border: 1px solid #e8e8e8;
+      content: '';
+      height: 30px;
+      top: 6px;
+      left: -40px;
+      position: absolute;
+      vertical-align: top;
+      width: 30px;
+    }
 
     @include breakpoint($screen-lg) {
       top: 10px;
     }
-  }
-
-  input[type=checkbox] {
-    position: absolute; 
-    top: 15px;
   }
 
   &.form__checkbox-text-only {
@@ -169,14 +159,16 @@ input[type="checkbox"]:checked {
       left: 0px;
       text-decoration: underline;
 
-      &:hover {
-        text-decoration: none;
+      &:before {
+        display: none;
       }
     }
-
-    input[type=checkbox] {
-      @include opacity(0);
+     input[type=checkbox] {
+      position: absolute;
+      top: 15px;
+      opacity: 0;
       width: 100%;
+      height: 50px;
       cursor: pointer;
     }  
   }
@@ -187,6 +179,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   @extend .button;
+  @extend .btn;
 }
 
 .disabled {
@@ -194,70 +187,140 @@ input[type="button"] {
 
   input,
   button {
-    // @include notransition;
     transition: none;
     cursor: initial;
   }
   button:hover,
   input:hover {
-    background-color: $colour-red; 
-    // @include notransition;
-    transition: none;
+  background-color: $colour-red; 
+  transition: none;
   }
 }
-.required:after {
-  content: " *";
-  color: $colour-red;
+label.required {
+  font-weight: bold;
+}
+label:not(.required, .form__checkbox):after {
+  content: " (Optional)";
 }
 
-// Layout
-.form__row {
-  background-color: $colour-white;
-  padding: 30px 0px;
-  box-sizing: border-box;
-  &:after {
-    @include clearfix;
+.search-box {
+  .postcodeSearch{
+    float: none;
   }
-  @include breakpoint($screen-md) {
-    padding: 60px 0px;
+  .search-box-button {
+    position: relative;
+    width: 100%;
+    background: none;
+    border: none;
   }
-}
-.form__fieldset {
-  padding: 0px calc(2*#{gutter()});
-
-  @include breakpoint($screen-md) {
-    @include span(10);
-    padding-left: span(1);
-    padding-right: span(1);
+  #postcode_button {
+    @extend .btn;
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    height: 60px;
+    border-radius: none;
+    background-image: none;
+    background-color: $colour-black;
+    appearance: none; //iOS fix
   }
-}
-.form__field--wrapper {
-  @include span(12);
-  margin-bottom: 3%;
-  position: relative;
-
-  @include breakpoint($screen-md) {
-    @include span(6);
-  
-    &.form__field--title,
-    &.form__field--permissionEmail,
-    &.form__field--permissionPost,
-    &.form__field--paymentType,
-    &.form__field--address-detail,
-    &.form__field--permission,
-    &.form__field--whatYouDid {
-      @include span(12);
+  div.form__field--error {
+    margin-top: 15px;
+  }
+  &.has-error {
+    #postcode_button {
+      margin-top: 45px;
     }
   }
 }
 
-.form__row--address-detail,
-.form__row--giftaid,
-.form__row--billing-detail,
-.form__row--logos,
-#payin-step-two .form__nav {
-  background-color: $colour-smoke-grey;
+button.payment-button {
+  @extend .btn;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: $colour-white;
+  &+.btn {
+    @include breakpoint($screen-md) {
+      margin-top: 30px;
+      margin-left: auto;
+    }
+  }
+  // after element to place button images / apple styling in. (allows for falling back on text)
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+  }
 }
+#comicrelief_payinbundle_payment_paypal:after {
+  background: transparent url($image-path + "paypal-logo.png") center / 100px no-repeat;
+}
+// Layout
+.form__row {
+  margin: 0 auto;
+  padding: 15px 0;
+  width: span(10);
+  background-color: transparent;
+
+  &:after {
+    @include clearfix;
+  }
+
+  @include breakpoint($screen-md) {
+    padding: 30px 0;
+  }
+  @include breakpoint($screen-lg) {
+    width: span(6);
+  }
+}
+.form__fieldset,
+.card-list {
+  float: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  @include breakpoint($screen-md) {
+    width: span(10);
+  }
+}
+.form__fieldset,
+.card-list {
+  float: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  @include breakpoint($screen-md) {
+    width: span(10);
+  }
+}
+.form__field--wrapper, {
+  position: relative;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+}
+.form__field--wrapper, {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 3%;
+  width: 100%;
+}
+.search-box,
+.form__field--wrapper.form__field--address-detail {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.form__address-detail-toggle {
+  padding-bottom: 30px;
+} 
+
 .form__row--title {
   padding: 20px 10px 10px;
   text-align: center;
@@ -266,59 +329,7 @@ input[type="button"] {
     @include font-size($h4-font-size);
   }
 }
-.form__row {
-  @at-root {
-    .audience__public {
-      .form__row--title {
-        background-color: $colour-yellow;        
-        h4 {
-          color: $colour-red;
-        }
-      }
-    }
-    .audience__school  {
-      .form__row--title {
-        background-color: $colour-blue;        
-        h4 {
-          color: $colour-purple;
-        }
-      }
-    }
-    .audience__work  {
-      .form__row--title {
-        background-color: $colour-red;
-        h4 {
-          color: $colour-yellow;
-        }
-      }
-    }
-    .audience__youth  {
-      .form__row--title {
-        background-color: $colour-purple;
-        h4 {
-          color: $colour-pink;
-        }
-      }
-    }
-    .form__step--payment {
-      .form__row--title {
-        background-color: $colour-dark-blue;
-        h4 {
-          color: $colour-white;
-        }
-      }
-    }
-  } 
-}
 
-.form__nav:nth-child(2) {
-  button, .button {
-    margin-top: 0;
-    @include breakpoint($screen-md) {
-      margin-top: 20px;
-    }
-  }
-}
 .audience,
 .form__field--establishmentId {
   display: none;
@@ -352,9 +363,6 @@ input[type="button"] {
   color: $colour-white;
   text-align: center;
   
-  .form__row {
-    background-color: $colour-dark-blue;
-  }
   .form__fieldset {
     @include span(12);
   }
@@ -435,12 +443,11 @@ input[type="button"] {
     height: 50px;
     cursor: pointer;
     text-indent: -999px;
-    background-image: url(/images/form/payment_icon.jpg);
+    background-image: url($image-path + "payment_icon.jpg");
     background-repeat: no-repeat;
     position: absolute;
     top: 0px;
     left: 15px;
-    // @include background-size(cover);
     background-size: cover;
   }
   .payment--paypal_express {
@@ -504,22 +511,14 @@ input[type="text"].form__field--postcode-lookup {
 }
 .addressLookup {
   border: 1px solid $item-grey; 
-  width: 300px;
+  // width: 300px;
   max-height: 260px;
   position: absolute; 
   background-color: #fff;
   margin-top: -35px;
-
-  // @include box-shadow(none);
-  // @include box-sizing(border-box);
-  // @include appearance(none);
   box-shadow: none;
   box-sizing: border-box;
   appearance: none;
-
-  @include breakpoint($screen-md) {
-    max-width: 290px;
-  }
 }
 
 .addressLookup .addresses {
@@ -543,49 +542,45 @@ input[type="text"].form__field--postcode-lookup {
       background-color: $colour-light-grey;
       cursor: pointer;
       color: $colour-red;
-      // @include transition( 0.3s ease-in-out background-color);
       transition: 0.3s ease-in-out background-color;
     };
   }
 }
 
 .search-box {
-  position: relative;
-  max-width: 290px;
-
+  .postcodeSearch{
+    float: none;
+  }
   .search-box-button {
-    height: 50px;
-    width: 56px;
-    border: 1px solid #c2c2c2;
-    background: #fafafa;
-    position: absolute;
-    right: 0px;
+    position: relative;
+    width: 100%;
+    background: none;
+    border: none;
   }
-
-  .postcodeSearch {
-    float: left;
+  #postcode_button {
+    @extend .btn;
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+    height: 60px;
+    border-radius: 2px;
+    background-image: none;
+    background-color: $colour-white;
+    appearance: none; //iOS fix
   }
-
-  .btnPostcodeSearch {
-    background: url(/images/form/lookup-icon.png) center center no-repeat;
-    outline: 0;
-    padding: 0px;
-    margin: 0px;
-    width: 56px;
-    height: 50px;
-
-    &:hover {
-      background-color: transparent;
-    }
-    &.loading {
-      background-image: url(/images/form/loader.gif);
+  div.form__field--error {
+    margin-top: 15px;
+  }
+  &.has-error {
+    #postcode_button {
+      margin-top: 45px;
     }
   }
-}
+} 
 
 // Validation for forms
 .help-block {
-  background: $colour-white url(/images/form/info-icon.png) left 2px no-repeat;
+  background: $colour-white url($image-path + "info-icon.png") left 2px no-repeat;
   @include font-size($p-xsmall-font-size);
   padding-left: 23px;
   z-index: 2;
@@ -595,7 +590,7 @@ input[type="text"].form__field--postcode-lookup {
 
   &.form-error {
     background-color: transparent;
-    background-image: url(/images/form/alert-icon.png);
+    background-image: url($image-path + "alert-icon.png");
     z-index: 1;
     position: absolute;
   }
@@ -654,10 +649,6 @@ input[type="text"].form__field--postcode-lookup {
 
   img {
     max-height: 105px;
-  }
-
-  .form__fieldset {
-    width: 100%!important;
   }
 
   .form__checkbox input[type=checkbox] {

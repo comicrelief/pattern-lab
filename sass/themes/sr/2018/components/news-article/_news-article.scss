@@ -1,0 +1,116 @@
+  .cr-article {
+    background-color: $colour-white;
+  }
+
+  .cr-article__header {
+    text-align: left;
+
+    .cr-article__title {
+      @include font-size($h1-small-font-size);
+      font-family: $font-black--sr18;
+      color: $colour-black;
+      margin-bottom: 40px;
+      margin-left:20px;
+      margin-right:20px;
+
+      @include breakpoint($screen-md) {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
+      @include breakpoint($screen-lg) {
+        @include span(12);
+      }
+
+    }
+
+    .cr-article__date {
+      @include span(12 no-gutters);
+      font-family: $font-regular--sr18;
+      @include font-size($p-xxsmall-font-size);
+      margin-bottom: 10px;
+      color: $colour-black;
+      text-transform: capitalize;
+      text-indent: 30px;
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+        @include font-size($p-large-font-size);
+        margin-bottom: 15px;
+      }
+
+      @include breakpoint($screen-lg) {
+        text-indent: 0;
+      }
+    }
+
+    .cr-article__social-links  {
+      @include span(12 no-gutters);
+      text-align: right;
+      text-indent: 30px;
+
+      @include breakpoint($screen-md) {
+        @include span(6);
+        text-indent: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    .social-links-label {
+      @include span(4);
+      @include font-size($p-xxsmall-font-size);
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+
+      @include breakpoint($screen-md) {
+        @include span(5);
+        @include font-size($p-large-font-size);
+        margin-top: -12px;
+      }
+
+      span {
+        color: $colour-black;
+      }
+    }
+
+    .social-links {
+      @include span(8);
+      margin-left: -5%;
+      text-align: left;
+      color: $colour-black;
+
+      @include breakpoint($screen-md) {
+        @include span(7 no-gutters);
+      }
+
+      li {
+        a {
+          display: block;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .cr-article__image, .cr-article__video {
+      clear: both;
+      @include breakpoint($screen-lg) {
+        @include susy-clearfix; // temporary fix until clearfix mixin is fixed
+      }
+    }
+
+    .cr-article__caption {
+      padding:25px 20px 20px;
+      margin-top: -40px;
+      font-family: $font-regular--sr18;
+      background-color: $colour-white;
+      color: $colour-black;
+      border-bottom: 1px solid $colour-grey;
+      text-align: left;
+
+      @include breakpoint($screen-lg) {
+        padding-left:0;
+        padding-right:0;
+      }
+     }
+  }
