@@ -127,6 +127,7 @@ select {
   
   .form__subcopy--certificate,
   .form__subcopy--contact {
+    @extend p;
     font-weight: bold;
   }
 }
