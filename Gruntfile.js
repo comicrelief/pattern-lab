@@ -210,7 +210,6 @@ module.exports = function (grunt) {
         files: [{
           src:
             [
-              'node_modules/smartmenus/dist/jquery.smartmenus.min.js',
               'node_modules/lightcase/src/js/lightcase.js'
             ],
           dest: 'dist/js/plugins.min.js'
