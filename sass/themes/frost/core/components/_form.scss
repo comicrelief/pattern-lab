@@ -270,12 +270,6 @@ form {
     font-style: italic;
     @include font-size($p-xsmall-font-size);
   }
-  .form__field--checkbox {
-    .form__field--copy {
-      margin-top: 10px;
-      display: inline-block;
-    }
-  }
 }
 
 .user-affiliation {
@@ -436,6 +430,16 @@ form {
 .password-checkbox {
   label {
     margin: 20px 0px 0px 0px;
+  }
+}
+
+.form__group--password_input,
+.form__group--contact_prefs {
+  .form__field--checkbox {
+    .form__field--copy {
+      margin-top: 10px;
+      display: block;
+    }
   }
 }
 

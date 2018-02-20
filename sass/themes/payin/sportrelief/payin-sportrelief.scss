@@ -15,7 +15,12 @@
 @import "../../../base/_core";
 
 // ==========================================================================
-// SR18 variables * comment files you want to override
+// CR variables 
+// ==========================================================================
+@import "../../cr/2017/variables/_colours.scss";
+
+// ==========================================================================
+// SR18 variables 
 // ==========================================================================
 @import "../../sr/2018/variables/_colours.scss";
 @import "../../sr/2018/variables/_typography.scss";
@@ -29,7 +34,6 @@
 // choose components one by one
 @import "../../../base/components/typography/typography";
 @import "../../../base/components/selectbox/selectbox";
-@import "../../../base/components/form/form";
 @import "../../../base/components/header/base-header";
 @import "../../../base/components/navigation/hamburger-menu-button";
 @import "../../../base/components/meta-icons/meta-icons";
@@ -58,7 +62,7 @@
 // ==========================================================================
 @import "../default/variables/_payin-mixins";
 @import "../default/variables/_payin-variables";
-
+@import "../default/variables/_payin-colours";
 // ==========================================================================
 // Payin UI components
 // ==========================================================================
@@ -71,10 +75,14 @@
 // ==========================================================================
 // Payin Sportrelief components
 // ==========================================================================
+@import "components/header/_header.scss";
 @import "components/promo-header/_promo-header.scss";
 @import "components/cards/_cards.scss";
-@import "components/header/_header.scss";
+@import "components/form/_form";
+@import "components/success/_success.scss";
 @import "components/failure/_failure.scss";
+@import "components/promo-header/_promo-header.scss";
+@import "components/form/_form";
 
 // Elements
 //
@@ -90,9 +98,9 @@
 //
 // Style guide: 30
 
-// Thank You Page
+// Success Page
 //
-// Markup: thank-you-page.twig
+// Markup: success-page.twig
 //
 // Style guide: 40
 

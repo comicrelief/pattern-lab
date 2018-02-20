@@ -1,0 +1,44 @@
+#payin-step-four {
+
+  .form__field--whatYouDid label,
+  .form__field--permission {
+    margin: 0 auto 40px;
+    width: auto;
+  }
+
+  .form__row--user-generate-content {
+    margin-top: 83px;
+    
+    >.form__fieldset {
+      margin-bottom: 85px;
+    }
+
+    .form__field--submit {
+      margin-bottom: 0;
+
+      @include breakpoint($screen-md) {
+        width: span(12);
+      }
+    }
+  }
+
+  .cards {
+    clear: both;
+    background-color: $colour-white-smoke;
+
+    a {
+      color: $colour-black-pearl;
+      text-align: center;
+    }
+
+    h3 {
+      color: $colour-black-pearl;
+      text-align: center;
+    }
+
+    p {
+        color: $colour-black-pearl;
+        text-align: center;
+    }
+  }
+}

@@ -1,0 +1,211 @@
+.form__row--title {
+  width: 100%;
+  background-color: $colour-white-smoke;
+
+  h4 {
+    @include font-size($p-font-size);
+    font-family: $font-regular;
+    color: $colour-dark-blue-lighter;
+  }
+}
+
+.form-row {
+  background-color: transparent;
+}
+
+// hide address fields until shown
+.form__field--address,
+.form__row--billing-detail {
+  display: block; 
+   &.hide {
+    display: none;
+   }
+}
+.form__row--your-detail,
+.form__row--payment {
+  padding: 30px 0 0;
+}
+
+.form__row--address-detail,
+.form__row--billing-detail {
+  padding: 0;
+}
+
+.form__subtitle {
+  @extend h2;
+  text-align: center;
+  color: $colour-dark-blue-lighter;
+}
+
+label,
+input {
+  color: $colour-dark-purple;
+}
+
+input[type="email"], 
+input[type="number"], 
+input[type="text"],
+textarea {
+  border: 1px solid $colour-dark-purple;
+  background-color: $colour-light-grey;
+}
+select {
+  border: 1px solid $colour-royal-blue;
+  background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
+}
+  
+// after element to put loading gif in on top of postcode find address button   
+.search-box {
+  .search-box-button.loading {
+    &:after {
+      position: absolute;
+      content:'';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 3px); // cover button as it's not hovered anymore
+      border: 1px solid $colour-black;
+      box-shadow:inset 0 0 0 3px $colour-black;
+      background: $colour-white url($image-path + "loader.gif") center no-repeat;
+      transform: translateY(-3px); // place at same position as hovered button
+    }
+  }
+  #postcode_button {
+    @extend .btn--black-ghost;
+    border-radius: 0;
+  }
+}
+
+.form__row--your-detail,
+.form__row--keep-touch,
+.form__row--billing-detail,
+.form__row--user-generate-content {
+  p {
+    font-size: 18px;
+    color: $colour-dark-purple;
+  }
+  label.form__checkbox {
+    top: 0;
+    left: 40px;
+    width: calc(100% - 40px);
+     
+     &:before {
+      display: none;
+    }
+  }
+  input[type="checkbox"] {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+
+  }
+  input[type="checkbox"]+span {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $colour-grey;
+    background-color: transparent;
+  }
+
+  input[type="checkbox"]:checked+span {
+    background: url($image-path + "checkbox-tick-new.png") center/50% no-repeat;
+  }
+  input[type="checkbox"]:focus+span {
+    border-color: $colour-dark-purple;
+  }
+}
+.form__row--keep-touch {
+  .form__subcopy--privacy-policy {
+    font-size: 16px;
+  }
+  
+  .form__subcopy--certificate,
+  .form__subcopy--contact {
+    @extend p;
+    font-weight: bold;
+  }
+}
+
+button.payment-button {
+  @extend .btn--black-ghost;
+}
+#comicrelief_payinbundle_payment_card.clicked {
+  color: $colour-white;
+  background-color: $colour-black;
+
+  &:focus,
+  &:hover {
+    transform: translateY(0);
+  }
+}
+
+.form__field--wrapper.form__submit {
+  text-align: center;
+}
+button[type=submit] {
+  @extend .btn--ruby;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+//specificity needed for form error
+.help-block,
+.help-block.form-error {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0 0 5px 25px;
+}
+
+.form__row--payment {
+  .form__subcopy {
+    text-align: center;
+  }
+}
+.form__row--billing-detail {
+  .form__subcopy {
+    font-weight: bold;
+  }
+}
+
+@include breakpoint($screen-md) {
+  .form__row--your-detail,
+  .form__row--payment {
+    padding: 60px 0 0;
+  }
+
+  // center buttons
+  .search-box {
+    .search-box-button.loading:after {
+      left: 25%;
+      width: 50%;
+    }
+    #postcode_button {
+      margin: 30px auto 15px;
+      width: 50%;
+    }
+  }
+  .form__checkbox-text-only label.form__checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
+  }
+  .form__checkbox--same-address {
+    label.form__checkbox {
+      margin: 0 0 3%;
+      text-align: left;
+    }
+  }
+  button.payment-button,
+  button[type=submit] {
+    width: auto;
+  }
+}
