@@ -142,3 +142,14 @@
     }
   }
 }
+
+#main-menu.main-nav--feature__items {
+  @include breakpoint($desktop-nav-breakpoint) {
+    // Override any prior jQuery animations from changing breakpoint
+    display: none !important;
+
+    &.menu-open {
+      display: block !important;
+    }
+  }
+}

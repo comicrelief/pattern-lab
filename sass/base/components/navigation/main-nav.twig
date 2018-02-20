@@ -1,77 +1,79 @@
 <div class="main-nav__wrapper">
   <!-- Main navigation menu -->
-  <div class="main-nav__icons main-nav__burger">
-    <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle">
-      <div class="c-hamburger__text">
-        <span class="visually-hidden">Open and close navigation menu</span>
-      </div>
-      <span></span>
-    </a>
-  </div>
   <nav role="navigation" class="navigation menu--main">
+    <div class="main-nav__icons main-nav__burger">
+      <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle" href="#" aria-expanded="false" aria-haspopup="true">
+        <div class="c-hamburger__text">
+          <span class="visually-hidden">Open and close Navigation Menu</span>
+        </div>
+        <span></span>
+      </a>
+  </div>
     <h2 class="visually-hidden" id="main-nav__title"> Main navigation menu </h2>
     <!-- Mobile: navigation toggle button -->
     <ul id="main-menu" class="main-nav__items sm menu--level-0 ">
       <li class="menu-item">
-        <a href="/">Home</a>
+        <a href="/home">Home</a>
       </li>
-      <li class="menu-item menu-item--expanded">
-        <a href="/" class="is-active">Fundraise (active)</a>
+      <li class="menu-item menu-item--expanded"> 
+        {# Add haspopup attr to our 'button' items #}
+        <a href="/fundraise" class="is-active" aria-haspopup="true" aria-expanded="false">Fundraise (active)</a> 
+        
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
-            <a href="/">
+            <a href="/fundraise">
             </a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 1</a>
+            <a href="/sub-item-1">sub-item 1</a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 2</a>
+            <a href="/sub-item 2">sub-item 2</a>
           </li>
         </ul>
       </li>
       <li class="menu-item menu-item--expanded menu-item--active-trail">
-        <a href="/link">What's going on</a>
+        <a href="/link" aria-haspopup="true" aria-expanded="false">What's going on</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
-            <a href="/">
+            <a href="/whats-going-on">
             </a>
           </li>
           <li class="menu-item">
-            <a href="/" class="is-active">sub-item 1 (active)</a>
+            <a href="/sub-item-1" class="is-active">sub-item 1 (active)</a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 2</a>
+            <a href="/sub-item 2">sub-item 2</a>
           </li>
         </ul>
       </li>
       <li class="menu-item menu-item--expanded">
-        <a href="/">FAQ</a>
+        <a href="/FAQ" aria-haspopup="true" aria-expanded="false">FAQ</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
-            <a href="/">
+            <a href="/FAQ">
             </a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 1</a>
+            <a href="/sub-item-1">sub-item 1</a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 2</a>
+            <a href="/sub-item-2">sub-item 2</a>
           </li>
         </ul>
       </li>
       <li class="menu-item menu-item--expanded">
-        <a href="/">Legal</a>
+        <a href="/legal" aria-haspopup="true" aria-expanded="false">Legal</a>
         <ul class="main-nav__items menu--level-1">
           <li class="menu-item menu-item--duplicate">
-            <a href="/">
+            <a href="/legal">
             </a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 1</a>
+            <a href="/sub-item-1">sub-item 1</a>
           </li>
           <li class="menu-item">
-            <a href="/">sub-item 2</a>
+            <a href="/sub-item-2">sub-item 2</a>
           </li>
         </ul>
       </li>
