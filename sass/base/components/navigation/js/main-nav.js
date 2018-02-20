@@ -14,18 +14,6 @@
     toggleMenu();
     stickyNav();
 
-    /* Setup the Smartmenus plugin with our main menu */
-    $('#main-menu').smartmenus({
-      subIndicatorsText: "",
-      keepHighlighted: false,
-      hideOnClick: true,
-    });
-
-    /* Bind the 'show' function to also hide all the other submenus */
-    $('#main-menu').bind('activate.smapi', function (e, menu) {
-      $('#main-menu').smartmenus('menuHideAll');
-    });
-
     // Create our aria label dynamically
     totalItems =  $('#main-menu').find('a').not('.has-submenu').length;
     
