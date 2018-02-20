@@ -15,140 +15,140 @@
  $transition-length: 1s;
 
 .live-total-block {
-	@include gradient-background(#420D6D , #061238);
-	color: $colour-white;
-	font-family: $font-bold--sr18;
+  @include gradient-background(#420D6D , #061238);
+  color: $colour-white;
+  font-family: $font-bold--sr18;
 
-	.live-total-block__outerwrapper {
-		@include container();
-		padding: 40px calc(4 * #{gutter()});
-	}
+  .live-total-block__outerwrapper {
+    @include container();
+    padding: 40px calc(4 * #{gutter()});
+  }
 
-	.live-total-block__wrapper {
-		@include span(12);
+  .live-total-block__wrapper {
+    @include span(12);
 
-		@include breakpoint($screen-md) {
-			width: span(8);
-			margin: 0 auto;
-		}
+    @include breakpoint($screen-md) {
+      width: span(8);
+      margin: 0 auto;
+    }
 
-		.live-total__content {
-			@include span(12);
-			text-align: center;
+    .live-total__content {
+      @include span(12);
+      text-align: center;
 
-			@include breakpoint($screen-md) {
-				@include span(6);
-			}
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
 
-			h2 {
-				font-size: 12px;
-				color: $colour-white;
-				margin-bottom: 0;
-				line-height:1.5;
-			}
+      h2 {
+        font-size: 12px;
+        color: $colour-white;
+        margin-bottom: 0;
+        line-height:1.5;
+      }
 
-			.live-total {
-				font-size: 40px;
-				line-height:1.2;
+      .live-total {
+        font-size: 40px;
+        line-height:1.2;
 
-				@include breakpoint($screen-md) {
-					font-size: 48px;
-				}
-			}
+        @include breakpoint($screen-md) {
+          font-size: 48px;
+        }
+      }
 
-			.live-total__button {
-				background-color: #00FFA9;
-				color: #061238;
-				border-radius: 60px;
-				max-width: 190px;
-				height: 25px;
-				line-height: 1.5;
-				margin: 20px auto
-			}
-		}
+      .live-total__button {
+        background-color: #00FFA9;
+        color: #061238;
+        border-radius: 60px;
+        max-width: 190px;
+        height: 25px;
+        line-height: 1.5;
+        margin: 20px auto
+      }
+    }
 
-		.live-total__progress {
-			@include span(12);
+    .live-total__progress {
+      @include span(12);
 
-			@include breakpoint($screen-md) {
-				@include span(6);
-			}
+      @include breakpoint($screen-md) {
+        @include span(6);
+      }
 
-			.progress-outer-circle {
-				position: relative;
-				width: $circle-size;
-				height: $circle-size;
-				border-radius: 50%;
-				margin: 0 auto 20px;
-				background-color: $circle-background;
+      .progress-outer-circle {
+        position: relative;
+        width: $circle-size;
+        height: $circle-size;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        background-color: $circle-background;
 
-				@include breakpoint($screen-md) {
-					float: right;
-					margin: 0;
-				}
+        @include breakpoint($screen-md) {
+          float: right;
+          margin: 0;
+        }
 
-				.progress-circle__slice {
-						width: $circle-size;
-						height: $circle-size;
-						position: absolute;
-						-webkit-backface-visibility: hidden;
-						transition: transform $transition-length;
-						border-radius: 50%;
+        .progress-circle__slice {
+            width: $circle-size;
+            height: $circle-size;
+            position: absolute;
+            -webkit-backface-visibility: hidden;
+            transition: transform $transition-length;
+            border-radius: 50%;
 
-						&:before, .progress-circle__bar {
-							position: absolute;
-							content: '';
-							display:block;
-							width: $circle-size;
-							height:$circle-size;
-							-webkit-backface-visibility: hidden;
-							transition: transform $transition-length;
-							border-radius: 50%;
-							clip: rect(0px, $circle-size/2, $circle-size, 0px);
-							background-color: $circle-color;
-						}
-					}
+            &:before, .progress-circle__bar {
+              position: absolute;
+              content: '';
+              display:block;
+              width: $circle-size;
+              height:$circle-size;
+              -webkit-backface-visibility: hidden;
+              transition: transform $transition-length;
+              border-radius: 50%;
+              clip: rect(0px, $circle-size/2, $circle-size, 0px);
+              background-color: $circle-color;
+            }
+          }
 
-				.progress-circle__slice {
-					clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
-				}
+        .progress-circle__slice {
+          clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+        }
 
-				.progress-circle__overlay {
-					width: $inset-size;
-					height: $inset-size;
-					position: absolute;
-					margin-left: ($circle-size - $inset-size)/2;
-					margin-top: ($circle-size - $inset-size)/2;
-					background-color: $inset-color;
-					border-radius: 50%;
+        .progress-circle__overlay {
+          width: $inset-size;
+          height: $inset-size;
+          position: absolute;
+          margin-left: ($circle-size - $inset-size)/2;
+          margin-top: ($circle-size - $inset-size)/2;
+          background-color: $inset-color;
+          border-radius: 50%;
 
-					&:after {
-						content: '';
-						position: absolute;
-						display: block;
-						top: 7%;
-						left: 6%;
-						width: 73px;
-						height: 73px;
-						background:url($image-path + "sr18-logo-2018.svg") no-repeat center center;
-						margin: 0 auto;
-					}
-				}
+          &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 7%;
+            left: 6%;
+            width: 73px;
+            height: 73px;
+            background:url($image-path + "sr18-logo-2018.svg") no-repeat center center;
+            margin: 0 auto;
+          }
+        }
 
-				$i: 0;
-				$increment: 180deg / 100;
-				@while $i <= 100 {
-					&[data-percentage='#{$i}'] {
-							.progress-circle__slice.full, .progress-circle__slice:before {
-								transform: rotate($increment * $i);
-							}
-							.progress-circle__bar {
-								transform: rotate($increment * $i * 2);
-							}
-						$i: $i + 1;
-					}
-				}
-			}
-		}
-	}
+        $i: 0;
+        $increment: 180deg / 100;
+        @while $i <= 100 {
+          &[data-percentage='#{$i}'] {
+              .progress-circle__slice.full, .progress-circle__slice:before {
+                transform: rotate($increment * $i);
+              }
+              .progress-circle__bar {
+                transform: rotate($increment * $i * 2);
+              }
+            $i: $i + 1;
+          }
+        }
+      }
+    }
+  }
 }
