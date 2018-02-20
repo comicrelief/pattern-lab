@@ -6,122 +6,121 @@
 
 // remove ios default form styles
 
-/* -------------------------------------
- * Mixin for progress-% class
- * ------------------------------------- */
- //$bgColor: rgba(6,18,56,1);
- $backColor: #1d0a43;
- $barColor: #00FFA9;
- $step: 1; // step of % for created classes
- $loops: 100;
- $increment: (360 / $loops);
- $half: round($loops / 2);
- @for $i from 0 through $loops {
-   [data-percentage="#{$i*$step}"] {
-     @if $i < 50 {
- 		$nextdeg: 90deg + ( $increment * $i );
- 		background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor)
-     }
-     @else {
- 		$nextdeg: -90deg + ( $increment * ( $i - $half ) );
- 		background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor)
-    }
-   }
- }
+ /* variables for animated pie chart */
+ $circle-size: 95px;
+ $circle-background: #1d0a43;
+ $circle-color: #00FFA9;
+ $inset-size: 83px;
+ $inset-color: #2a0f58;
+ $transition-length: 1s;
 
 .live-total-block {
-  @include gradient-background(#420D6D , #061238);
-  color: $colour-white;
-  font-family: $font-bold--sr18;
+	@include gradient-background(#420D6D , #061238);
+	color: $colour-white;
+	font-family: $font-bold--sr18;
 
-  .live-total-block__outerwrapper {
-    @include container();
-    padding: 40px calc(4 * #{gutter()});
-  }
+	.live-total-block__outerwrapper {
+		@include container();
+		padding: 40px calc(4 * #{gutter()});
+	}
 
-  .live-total-block__wrapper {
-    @include span(12);
+	.live-total-block__wrapper {
+		@include span(12);
 
-    @include breakpoint($screen-md) {
-      width: span(8);
-      margin: 0 auto;
-    }
+		@include breakpoint($screen-md) {
+			width: span(8);
+			margin: 0 auto;
+		}
 
-    .live-total__content {
-      @include span(12);
-      text-align: center;
+		.live-total__content {
+			@include span(12);
+			text-align: center;
 
-      @include breakpoint($screen-md) {
-        @include span(6);
-      }
+			@include breakpoint($screen-md) {
+				@include span(6);
+			}
 
-      h2 {
-        font-size: 12px;
-        color: $colour-white;
-        margin-bottom: 0;
-        line-height:1.5;
-      }
+			h2 {
+				font-size: 12px;
+				color: $colour-white;
+				margin-bottom: 0;
+				line-height:1.5;
+			}
 
-      .live-total {
-        font-size: 40px;
-        line-height:1.2;
+			.live-total {
+				font-size: 40px;
+				line-height:1.2;
 
-        @include breakpoint($screen-md) {
-          font-size: 48px;
+				@include breakpoint($screen-md) {
+					font-size: 48px;
+				}
+			}
+
+			.live-total__button {
+				background-color: #00FFA9;
+				color: #061238;
+				border-radius: 60px;
+				max-width: 190px;
+				height: 25px;
+				line-height: 1.5;
+				margin: 20px auto
+			}
+		}
+
+		.live-total__progress {
+			@include span(12);
+
+			@include breakpoint($screen-md) {
+				@include span(6);
+			}
+
+			.progress-outer-circle {
+				position: relative;
+				width: $circle-size;
+				height: $circle-size;
+				border-radius: 50%;
+				margin: 0 auto 20px;
+        background-color: $circle-background;
+
+				@include breakpoint($screen-md) {
+					float: right;
+					margin: 0;
+				}
+
+        .progress-circle__slice {
+        		width: $circle-size;
+        		height: $circle-size;
+        		position: absolute;
+        		-webkit-backface-visibility: hidden;
+        		transition: transform $transition-length;
+        		border-radius: 50%;
+
+        		&:before, .progress-circle__bar {
+              position: absolute;
+        			content: '';
+        			display:block;
+        			width: $circle-size;
+        			height:$circle-size;
+        			-webkit-backface-visibility: hidden;
+        			transition: transform $transition-length;
+        			border-radius: 50%;
+        			clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        			background-color: $circle-color;
+        		}
+        	}
+
+        .progress-circle__slice {
+        	clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
         }
-      }
 
-      .live-total__button {
-        background-color: #00FFA9;
-        color: #061238;
-        border-radius: 60px;
-        max-width: 190px;
-        height: 25px;
-        line-height: 1.5;
-        margin: 20px auto
-      }
-    }
-
-    .live-total__progress {
-      @include span(12);
-
-      @include breakpoint($screen-md) {
-        @include span(6);
-      }
-
-      .progress-outer-circle {
-        position: relative;
-        width: 95px;
-        height: 95px;
-        border-radius: 50%;
-        margin: 0 auto 20px;
-
-        @include breakpoint($screen-md) {
-          float: right;
-          margin: 0;
-        }
-
-        .progress-inner-circle {
-          position: absolute;
-          width: 83px;
-          height: 83px;
-          background-color: rgba(6,18,56,0.3);
-          border-radius: 50%;;
-          top:50%;
-          left:50%;
-          right:50%;
-          transform: translate(-50%, -50%);
-        }
-
-        .progress-circle-fill {
-          position: relative;
-          width: 83px;
-          height: 83px;
-          border-radius: 50%;
-          background-color: #2a0f58;
-          top:0;
-          left:0;
-          right:0;
+        .progress-circle__overlay {
+        	width: $inset-size;
+        	height: $inset-size;
+        	position: absolute;
+        	margin-left: ($circle-size - $inset-size)/2;
+        	margin-top: ($circle-size - $inset-size)/2;
+        	background-color: $inset-color;
+        	border-radius: 50%;
 
           &:after {
             content: '';
@@ -136,7 +135,20 @@
           }
         }
 
-      }
-    }
-  }
+        $i: 0;
+        $increment: 180deg / 100;
+        @while $i <= 100 {
+        	&[data-percentage='#{$i}'] {
+        			.progress-circle__slice.full, .progress-circle__slice:before {
+        				transform: rotate($increment * $i);
+        			}
+        			.progress-circle__bar {
+        				transform: rotate($increment * $i * 2);
+        			}
+        		$i: $i + 1;
+        	}
+        }
+			}
+		}
+	}
 }
