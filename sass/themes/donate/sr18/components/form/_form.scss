@@ -7,6 +7,12 @@
 }
 
 /* Form */ 
+@include breakpoint($screen-lg) {
+  .form__row {
+    width: span(8);
+  }
+}
+
 
 // hide and show for payment, giftaid, details, billing address and logos rows
 .form__row--payment,
