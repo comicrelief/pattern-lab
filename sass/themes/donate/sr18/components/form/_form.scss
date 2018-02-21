@@ -92,6 +92,11 @@ button[type=submit] {
 }
 button.payment-button {
   border-radius: 5px;
+  height: 55px;
+  padding: 18px 30px;
+}
+div#paypal-button-container {
+  margin: 15px 0;
 }
 // only show Apple Pay button when supported
 #comicrelief_payinbundle_payment_apple_pay {
