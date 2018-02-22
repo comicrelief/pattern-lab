@@ -102,6 +102,7 @@
 
         // Add expanded state
         $this.attr('aria-expanded', 'true');
+        
       }
     });    
   }
