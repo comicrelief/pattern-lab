@@ -130,7 +130,7 @@
 
         // Focussed on a non-nav anchor? Remove active states
         if (!($thisAnchor.is($('a', $context)))) {
-          $parentLi.removeClass("focused item-open"); 
+          $parentLi.removeClass("focused item-open").children('a').attr('aria-expanded', 'false'); 
         }
 
         // If we're focussing on a nav item anchor, add focus class to the parent li, so we can affect all subnav styling
@@ -138,11 +138,12 @@
           if ($thisAnchor.is($parentAnchor)) {
             // Unfocus all other focussed parent items
             $parentLi.removeClass("focused item-open");
-            $(this).closest( $parentLi ).addClass("focused item-open");
+            $(this).closest( $parentLi ).addClass("focused item-open").children('a').attr('aria-expanded', 'true');
+
           }
           // Else, check its not a subitem, then remove focus class from all nav item
           else if (!($thisAnchor.is($subAnchor))) {
-            $parentLi.removeClass("focused item-open"); 
+            $parentLi.removeClass("focused item-open").children('a').attr('aria-expanded', 'false'); ; 
           }
         }
       }
