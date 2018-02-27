@@ -160,9 +160,9 @@ div#paypal-button-container {
   input[type="checkbox"]:checked+span {
     border: 2px solid $colour-green;
     background-color: $colour-green;
-  } 
+  }
   input[type="checkbox"]:focus+span {
-     border: 2px solid $colour-green;
+    border: 2px solid $colour-green;
   }
 }
 
