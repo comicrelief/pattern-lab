@@ -93,29 +93,7 @@ select {
       display: none;
     }
   }
-  input[type="checkbox"] {
-    z-index: 1;
-    position: absolute;
-    top: 10px;
-    margin: 0;
-    width: 30px;
-    height: 30px;
-    opacity: 0;
-
-  }
-  input[type="checkbox"]+span {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    border: 1px solid $colour-grey;
-    background-color: transparent;
-  }
-
-  input[type="checkbox"]:checked+span {
-    background: url($image-path + "checkbox-tick-new.png") center/50% no-repeat;
-  }
+  
   input[type="checkbox"]:focus+span {
     border-color: $colour-dark-purple;
   }

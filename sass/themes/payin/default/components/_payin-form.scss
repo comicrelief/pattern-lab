@@ -109,23 +109,29 @@ select::-ms-expand {
 .form__checkbox {
   @include clearfix;
 
-  input[type=checkbox] {
-    opacity: 0;
+  input[type="checkbox"] {
+    z-index: 1;
     position: absolute;
-    display: block;
+    top: 10px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+  }
+  input[type="checkbox"]+span {
+    position: absolute;
+    top: 10px;
     left: 0;
-    margin: 5px 10px 10px 0px;
-    padding: 10px;
-    border: 1px solid #e8e8e8;
-    width: 100%;
-    max-width: 100%;  
+    width: 30px;
+    height: 30px;
+    border: 1px solid $colour-grey;
+    background-color: transparent;
   }
-  input[type="checkbox"]:checked+label:before {
-    background: url( $image-path + "checkbox-tick-new.png") 50% 50% no-repeat rgb(255, 255, 255);
-    background-size: 14px;
+  input[type="checkbox"]:checked+span {
+    background: url($image-path + "checkbox-tick-new.png") center/50% no-repeat;
   }
-  input[type="checkbox"]:focus+label:before {
-    border: 2px solid #e8e8e8;
+  input[type="checkbox"]:focus+span {
+    border-color: $colour-black;
   }
 
   label.form__checkbox {
@@ -650,11 +656,7 @@ input[type="text"].form__field--postcode-lookup {
   img {
     max-height: 105px;
   }
-
-  .form__checkbox input[type=checkbox] {
-    top: 28px;
-  }
-
+  
   .form__field--wrapper.form__field--giftaid {
     text-align: left;
     background: #fff;
