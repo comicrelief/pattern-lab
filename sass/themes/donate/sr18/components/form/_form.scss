@@ -1,247 +1,352 @@
-/* Section for form */ 
+/* Section for form */
 .content {
   background-color: $colour-dark-blue;
-  h4, p, label {
+
+  h4, p {
     color: $colour-white;
   }
-}
 
-/* Form */ 
-@include breakpoint($screen-lg) {
+  /* Form */
   .form__row {
-    width: span(8);
-  }
-}
-
-
-// hide and show for payment, giftaid, details, billing address and logos rows
-.form__row--payment,
-.form__row--giftaid,
-.form__row--your-detail,
-.form__row--billing-detail,
-.form__row--card-logos,
-.form__row--logos, {
-  display: none;
-  &.show {
-    display: block;
-  }
-}
-
-// hide extended billing address fields
-.form__field--address {
-  display: block;
-  &.hide {
-    display: none;
-  }
-}
-
-// hide form row's title and copy
-.form__subtitle,
-.form__subcopy {
-  display: none;
-}
-
-// labels and fields 
-.form__field--address-detail {
-  label {
-    color: $colour-grey;
-  }
-}
-
-span.help-block {
-  left: 0;
-  width: 100%;
-  border-radius: 2px;
-}
-
-input[type="email"], 
-input[type="number"], 
-input[type="text"], 
-select {
-  max-width: 100%;
-  border: 2px solid $colour-grey;
-  border-radius: 3px;
-  background-color: transparent;
-  color: $colour-white;
-  @include placeholder($colour-grey, 18px , $font-regular);
-}
-// place select arrow 18px from end of select box as per design
-select {
-  background: transparent url($image-path + "donate-select-arrow.png") calc(100% - 18px) center no-repeat;
-
-  // make the option color default again (fixes inheritance of white colour on Windows)
-  option {
-    color: initial;
-  }
-}
-// IE11 specific fix (-ms-high-contrast:none is not supported by Edge)
-@media all and (-ms-high-contrast: none) {
-  select {
-    background: none;
-    option {
-      color: grey;
+    @include breakpoint($screen-lg) {
+      width: span(8);
     }
   }
-}
 
-// buttons
-.search-box #postcode_button {
-  border-radius: 2px;
-  background-color: $colour-white;
-}
-  
-button[type=submit] {
-  @extend .btn;
-  width: 100%;
-  color: $colour-white;
-  background-color: $colour-purple;
-}
-button.payment-button {
-  border-radius: 5px;
-  height: 55px;
-  padding: 18px 30px;
-}
-div#paypal-button-container {
-  margin: 15px 0;
-}
-// only show Apple Pay button when supported
-#comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  &:after {
-    -webkit-appearance: -apple-pay-button;
-    -apple-pay-button-style: white;
+  .form__field {
+    color: $colour-white;
   }
-  &.show {
+
+  // hide and show for payment, giftaid, details, billing address and logos rows
+  .form__row--payment,
+  .form__row--giftaid,
+  .form__row--your-detail,
+  .form__row--billing-detail,
+  .form__row--card-logos,
+  .form__row--logos,
+  .form__row--payment-amount {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+
+  // hide extended billing address fields
+  .form__field--address {
     display: block;
+    &.hide {
+      display: none;
+    }
   }
-}
 
-// giftaid row
-.form__row--giftaid {
-  h1 {
-    img {
-      width: 119px;
-      margin-top: 15px;
-      @include breakpoint($screen-md) {
-        width: 298px;
+  // hide form row's title and copy
+  .form__subtitle,
+  .form__subcopy {
+    display: none;
+  }
+
+  // labels and fields
+  .form__field--address-detail {
+    label {
+      color: $colour-grey;
+    }
+  }
+
+  span.help-block {
+    left: 0;
+    width: 100%;
+    border-radius: 2px;
+  }
+
+  input[type="email"],
+  input[type="number"],
+  input[type="text"],
+  select {
+    max-width: 100%;
+    border: 2px solid $colour-grey;
+    border-radius: 3px;
+    background-color: transparent;
+    color: $colour-white;
+    @include placeholder($colour-grey, 18px , $font-regular);
+  }
+
+  /* Remove visually the number spinner */
+  /* For Firefox */
+  input[type='number'] {
+    -moz-appearance:textfield;
+  }
+  /* Webkit browsers like Safari and Chrome */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // place select arrow 18px from end of select box as per design
+  select {
+    background: transparent url($image-path + "donate-select-arrow.png") calc(100% - 18px) center no-repeat;
+
+    // make the option color default again (fixes inheritance of white colour on Windows)
+    option {
+      color: initial;
+    }
+  }
+  // IE11 specific fix (-ms-high-contrast:none is not supported by Edge)
+  @media all and (-ms-high-contrast: none) {
+    select {
+      background: none;
+      option {
+        color: grey;
       }
     }
   }
-  p:nth-of-type(2) {
-    color: $colour-grey;
-    text-align: left;
+
+  // buttons
+  .search-box #postcode_button {
+    border-radius: 2px;
+    background-color: $colour-white;
   }
-  a {
-    color: $colour-green;
-  }
-  .form__field--wrapper.form__field--giftaid {
-    padding: 0;
-    background-color: transparent;
-  }
-  label.form__checkbox {
-    left: initial;
-    margin: 0 5px 0.6em 5px;
-    padding-right: 60px;
+
+  button[type=submit] {
+    @extend .btn;
     width: 100%;
+    color: $colour-white;
+    background-color: $colour-purple;
   }
-
-  label.form__checkbox:before {
+  button.payment-button {
+    border-radius: 5px;
+    height: 55px;
+    padding: 18px 30px;
+  }
+  div#paypal-button-container {
+    margin: 15px 0;
+  }
+  // only show Apple Pay button when supported
+  #comicrelief_payinbundle_payment_apple_pay {
     display: none;
+    &:after {
+      -webkit-appearance: -apple-pay-button;
+      -apple-pay-button-style: white;
+    }
+    &.show {
+      display: block;
+    }
   }
 
-  /* Specific selector to override placement of checkbox. 
-     Place checkbox on top of label and span so it's checked when 
-     clicking the fake checkbox in the span.
-  */
-  .form__checkbox input[type="checkbox"] {
-    z-index: 1;
-    top: 5px;
-    height: 50px;
-  }
-  input[type="checkbox"]+span {
-    position: absolute;
-    float: none;
-    top: 15px;
-    right: 10px;
-    left: initial;
-    margin-right: 0;
-    width: 30px;
-    height: 30px;
-    border: 1px solid $colour-green;
-    background-color: transparent;
-    border-radius: 30px;
-    // specific breakpoint where text breaks
-    @include breakpoint(614px) {
-      top: 3px;
-    }
-    @include breakpoint($screen-lg) {
-      top: 18px;
-    }
-  }
-  input[type="checkbox"]+span:after {
-    content: '';
-    position: absolute;
-    vertical-align: top;
-    top: 3px;
-    right: 3px;
-    width: 20px;
-    height: 20px;
-    border: none;
-    border-radius: 20px;
-  }
-  input[type="checkbox"]:checked+span {
-    border: 2px solid $colour-green;
-    background-image: none;
-    background-color: transparent;
-  } 
-  input[type="checkbox"]:checked+span:after {
-    background-image: none;
-    background-color: $colour-green;
-  }
-  input[type="checkbox"]:focus+span {
-     border: 2px solid $colour-green;
-  }
-}
+  // giftaid row
+  .form__row--giftaid {
+    h1 {
+      background:url($image-path + "giftaid-mobile.jpg") no-repeat center;
+      background-size:contain;
+      width: 119px;
+      height:68px;
+      margin: 0 auto 20px;
 
-// card logo row 
-.card-list {
-  text-align: center;
 
-  .card-logo {
-    display: inline-block;
-    margin: 0 gutter();
-    width: 60px;
-    height: 37px;
-    background-image: url($image-path + "accepted-payments-sprite.png");
-    background-size: auto 37px;
-
-    &.logo-maestro {
-      background-position: 0 0;
+      @include breakpoint($screen-md) {
+        background:url($image-path + "giftaid.jpg") no-repeat center;
+        background-size:contain;
+        width: 298px;
+        height: 105px;
+      }
     }
-    &.logo-amex {
-      background-position: -66px 0;
+    p:nth-of-type(2) {
+      color: $colour-grey;
+      text-align: left;
     }
-    &.logo-mastercard {
-      background-position: -132px 0;
+    a {
+      color: $colour-green;
     }
-    &.logo-visa {
-      background-position: -198px 0;
+    .form__field--wrapper.form__field--giftaid {
+      padding: 0;
+      background-color: transparent;
+    }
+    label.form__checkbox {
+      left: initial;
+      margin: 0 5px 0.6em 5px;
+      padding-right: 60px;
+      width: 100%;
     }
 
-    @include breakpoint($screen-md) {
-      width: 82px;
+    label.form__checkbox:before {
+      display: none;
+    }
+
+    /* Specific selector to override placement of checkbox.
+       Place checkbox on top of label and span so it's checked when
+       clicking the fake checkbox in the span.
+    */
+    .form__checkbox input[type="checkbox"] {
+      z-index: 1;
+      top: 5px;
       height: 50px;
-      background-size: auto 50px;
+    }
+    input[type="checkbox"]+span {
+      position: absolute;
+      float: none;
+      top: 15px;
+      right: 10px;
+      left: initial;
+      margin-right: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid $colour-green;
+      background-color: transparent;
+      border-radius: 30px;
+      // specific breakpoint where text breaks
+      @include breakpoint(614px) {
+        top: 3px;
+      }
+      @include breakpoint($screen-lg) {
+        top: 18px;
+      }
+    }
+    input[type="checkbox"]+span:after {
+      content: '';
+      position: absolute;
+      vertical-align: top;
+      top: 3px;
+      right: 3px;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 20px;
+    }
+    input[type="checkbox"]:checked+span {
+      border: 2px solid $colour-green;
+      background-image: none;
+      background-color: transparent;
+    }
+    input[type="checkbox"]:checked+span:after {
+      background-image: none;
+      background-color: $colour-green;
+    }
+    input[type="checkbox"]:focus+span {
+       border: 2px solid $colour-green;
+    }
+  }
 
+  // card logo row
+  .card-list {
+    text-align: center;
+
+    .card-logo {
+      display: inline-block;
+      margin: 0 gutter();
+      width: 60px;
+      height: 37px;
+      background-image: url($image-path + "accepted-payments-sprite.png");
+      background-size: auto 37px;
+
+      &.logo-maestro {
+        background-position: 0 0;
+      }
       &.logo-amex {
-        background-position: -90px 0;
+        background-position: -66px 0;
       }
       &.logo-mastercard {
-        background-position: -180px 0;
+        background-position: -132px 0;
       }
       &.logo-visa {
-        background-position: -270px 0;
+        background-position: -198px 0;
+      }
+
+      @include breakpoint($screen-md) {
+        width: 82px;
+        height: 50px;
+        background-size: auto 50px;
+
+        &.logo-amex {
+          background-position: -90px 0;
+        }
+        &.logo-mastercard {
+          background-position: -180px 0;
+        }
+        &.logo-visa {
+          background-position: -270px 0;
+        }
       }
     }
+  }
+
+  .form__row--payment-amount {
+    p, .number-input-label {
+      color: $colour-white;
+    }
+
+    .form__fieldset {
+      position: relative;
+      text-align: center;
+    }
+
+    label:not(.required){
+      &:after {
+        content: '';
+      }
+    }
+
+    .form__radiobutton {
+      margin-bottom: 15px;
+
+      .form__field {
+        font-family: $font-bold--sr18;
+        color: $colour-black;
+        padding-top: 0;
+        line-height: 1.9;
+        text-align: center;
+      }
+    }
+
+    .form__field {
+      text-align: left;
+    }
+
+    input[type=radio] {
+      position: absolute;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 60px;
+      height: 40px;
+    }
+
+    input[type=radio]+label {
+      display: inline-block;
+      background-color: $colour-white;
+      border: 2px solid $colour-dark-blue-lighter;
+      width: 60px;
+      height: 40px;
+      margin-right: 10px;
+
+      @include breakpoint($screen-md){
+        margin-right: 20px;
+      }
+    }
+
+    input[type=radio]:checked+label{
+        background-color:#2BFDAC;
+    }
+
+    input[type=radio]:focus+label{
+      border: 2px solid $colour-dark-blue-lighter;
+    }
+
+    .number-input-label {
+      position: absolute;
+      display: inline-block;
+      left: 0;
+      top: 14px;
+      line-height: 21px;
+      color: $colour-white;
+      font-size: 19px;
+      font-family: $font-regular;
+      margin-left: 15px;
+      margin-top:1px;
+    }
+
+    .form__field--amount {
+      padding-left: 28px;
+    }
+
   }
 }
