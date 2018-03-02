@@ -265,9 +265,11 @@ div#paypal-button-container {
 
   .form__radio {
     position: absolute;
+    z-index: -1;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    border: 0;
     width: 60px;
     height: 40px;
   }
