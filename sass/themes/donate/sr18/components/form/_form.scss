@@ -301,7 +301,7 @@
       text-align: left;
     }
 
-    input[type=radio] {
+    .form__radio {
       position: absolute;
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -310,7 +310,7 @@
       height: 40px;
     }
 
-    input[type=radio]+label {
+    .form__radio+label {
       display: inline-block;
       background-color: $colour-white;
       border: 2px solid $colour-dark-blue-lighter;
@@ -323,19 +323,18 @@
       }
     }
 
-    input[type=radio]:checked+label{
+    .form__radio:checked+label{
         background-color:#2BFDAC;
     }
 
-    input[type=radio]:focus+label{
+    .form__radio:focus+label{
       border: 2px solid $colour-dark-blue-lighter;
     }
 
     .number-input-label {
       position: absolute;
-      display: inline-block;
-      left: 28px;
-      top: 55px;
+      left: 0px;
+      top: 14px;
       line-height: 21px;
       color: $colour-white;
       font-size: 19px;
@@ -345,8 +344,15 @@
     }
 
     .form__field--amount {
-      padding-left: 28px;
+      .form__field--amount {
+        padding-left: 28px;
+      }
+
+      label {
+        @extend .visually-hidden;
+      }
     }
+
 
   }
 }
