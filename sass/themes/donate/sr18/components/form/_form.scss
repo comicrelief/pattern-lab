@@ -91,49 +91,12 @@
       color: initial;
     }
   }
-}
-
-// buttons
-.search-box #postcode_button {
-  border-radius: 2px;
-  background-color: $colour-white;
-}
-  
-button[type=submit] {
-  @extend .btn;
-  width: 100%;
-  color: $colour-white;
-  background-color: $colour-purple;
-}
-button.payment-button {
-  border-radius: 5px;
-  height: 55px;
-  padding: 18px 30px;
-}
-div#paypal-button-container {
-  margin: 15px 0;
-}
-
-// only show Apple Pay button when supported
-#comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  &:after {
-    -webkit-appearance: -apple-pay-button;
-    -apple-pay-button-style: white;
-  }
-  &.show {
-    display: block;
-  }
-}
-
-// giftaid row
-.form__row--giftaid {
-  h1 {
-    img {
-      width: 119px;
-      margin-top: 15px;
-      @include breakpoint($screen-md) {
-        width: 298px;
+  // IE11 specific fix (-ms-high-contrast:none is not supported by Edge)
+  @media all and (-ms-high-contrast: none) {
+    select {
+      background: none;
+      option {
+        color: grey;
       }
     }
   }
@@ -150,35 +113,24 @@ div#paypal-button-container {
     color: $colour-white;
     background-color: $colour-purple;
   }
-  .form__field--wrapper.form__field--giftaid {
-    margin: 0 auto 30px;
-    padding: 0;
-    width: auto;
-    background-color: transparent;
+  button.payment-button {
+    border-radius: 5px;
+    height: 55px;
+    padding: 18px 30px;
   }
-  label.form__checkbox {
-    top: 0;
-    left: 40px;
-    width: calc(100% - 40px);
-    
-    &:before {
-      display: none;
+  div#paypal-button-container {
+    margin: 15px 0;
+  }
+  // only show Apple Pay button when supported
+  #comicrelief_payinbundle_payment_apple_pay {
+    display: none;
+    &:after {
+      -webkit-appearance: -apple-pay-button;
+      -apple-pay-button-style: white;
     }
-  }
-
-  input[type="checkbox"] {
-    top: 15px;
-  }
-  input[type="checkbox"]+span {
-    top: 15px;
-    border: 1px solid $colour-green;
-  }
-  input[type="checkbox"]:checked+span {
-    border: 2px solid $colour-green;
-    background-color: $colour-green;
-  }
-  input[type="checkbox"]:focus+span {
-    border: 2px solid $colour-green;
+    &.show {
+      display: block;
+    }
   }
 
   // giftaid row
