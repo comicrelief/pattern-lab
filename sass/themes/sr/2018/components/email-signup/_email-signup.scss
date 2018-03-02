@@ -3,5 +3,28 @@
   &.block--cr-email-signup--workplace,
   &.block--cr-email-signup--register-interest {
     @extend .bg--gradient-purple-ruby;
+
+    .block--cr-email-signup__inner-wrapper .button.form-submit,
+    input[type=text] {
+      border-radius: 0;
+    }
+
+    .block--cr-email-signup__inner-wrapper .button.form-submit {
+      background-position: center;
+      background-size: 45px 45px;
+      transition: background-size 0.1s linear;
+
+      &:focus,
+      &:hover {
+        background-position: center;
+        background-size: 60px 60px;
+      }
+
+      &:focus {
+        outline: 1px dotted #212121;
+        // Webkit specific override where applicable
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
   }
 }

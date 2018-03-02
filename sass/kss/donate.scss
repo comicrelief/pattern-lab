@@ -1,0 +1,27 @@
+// ==========================================================================
+// KSS styles
+// ==========================================================================
+
+#kss-node .kss-sidebar {
+    background: #1e1e1e;
+}
+
+.kss-header {
+  a {
+    img { display: none; }
+    width: 150px;
+    height: 50px;
+    display: block;
+    background: url(/kss-assets/images/pattern_logo_sr.png) left top no-repeat;
+    background: url(/kss-assets/images/pattern_logo_sr.png) left top no-repeat;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+  }
+}
+
+// Position this normally as we can't do the cool 'sticky' functionality inside the styleguide
+.kss-modifier__example header[role=banner].sticky-nav__header {
+  position: relative;
+}

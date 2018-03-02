@@ -58,6 +58,15 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+      donate: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/donate',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/donate',
+          ext: '.css'
+        }]
+      },
       rnd17: {
         files: [{
           expand: true,
@@ -118,12 +127,12 @@ module.exports = function (grunt) {
           dest: 'dist/images'
         }]
       },
-      rnd17: { // Use for subthemes
+      rnd17: {
         files: {
           'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
         }
       },
-      cr17: { // Use for subthemes
+      cr17: {
         files: {
           'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
         }
@@ -136,7 +145,25 @@ module.exports = function (grunt) {
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
-      }
+      },
+      payin: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/payin/',
+          src: ['default/**/*.{png,jpg,gif}', 'sportrelief/**/*.{png,jpg,gif}' ],
+          dest: 'dist/images'
+        }]
+      },
+      donate: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/donate/sr18/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
+      },
     },
 
     svgmin: {
@@ -166,15 +193,23 @@ module.exports = function (grunt) {
           src: ['{,**/}*.svg'],
           dest: 'dist/images'
         }]
+      },
+      payin: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/',
+          src: ['base/components/navigation/{,**/}*.svg', 'themes/payin/{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
       }
     },
 
     uglify: {
       plugins_js: {
         files: [{
-          src: 
+          src:
             [
-              'node_modules/smartmenus/dist/jquery.smartmenus.min.js', 
               'node_modules/lightcase/src/js/lightcase.js'
             ],
           dest: 'dist/js/plugins.min.js'
@@ -185,7 +220,7 @@ module.exports = function (grunt) {
           src: ['sass/base/components/{,**/}*.js'],
           dest: 'dist/js/base-components.min.js'
         }]
-      }   
+      }
     },
 
     sass_globbing: {
@@ -275,8 +310,39 @@ module.exports = function (grunt) {
           title: 'Payin Online PatternLab',
           css: ['../css/themes/payin/payin.css', '../css/kss/payin.css']
         },
-        src: ['sass/base', 'sass/themes/payin'],
+        src: ['sass/base/core',
+              'sass/base/variables',
+              'sass/base/components/selectbox',
+              'sass/base/components/form',
+              'sass/base/components/navigation/_footer-nav',
+              'sass/base/components/footer',
+              'sass/base/components/header/base-header',
+              'sass/base/components/promo-header',
+              'sass/base/components/card-block',
+              'sass/base/components/cards',
+              'sass/base/components/social',
+              'sass/themes/sr/2018',
+              'sass/themes/payin/default/components',
+              'sass/themes/payin/sportrelief'
+             ],
         dest: 'dist/payin'
+      },
+      donate: {
+        options: {
+          verbose: true,
+          builder: 'kss',
+          title: 'Donate PatternLab',
+          css: ['../css/themes/donate/donate.css', '../css/kss/donate.css'],
+        },
+        src: ['sass/base/components/promo-header',
+              'sass/base/components/footer',
+              'sass/themes/payin/default/variables',
+              'sass/themes/payin/default/components',
+              'sass/themes/sr/2018/variables',
+              'sass/themes/sr/2018/components',
+              'sass/themes/donate'
+             ],
+        dest: 'dist/donate'
       },
       frost: {
         options: {
@@ -285,7 +351,7 @@ module.exports = function (grunt) {
           title: 'Frost PatternLab',
           css: ['../css/themes/frost/frost.css', '../css/kss/frost.css']
         },
-        src: ['sass/base/core', 
+        src: ['sass/base/core',
               'sass/base/variables',
               'sass/base/components/buttons',
               'sass/base/components/background-colours',
@@ -352,6 +418,9 @@ module.exports = function (grunt) {
       cr17: {
         src: ['dist/css/themes/cr/**/*.css']
       },
+      donate: {
+        src: ['dist/css/themes/donate/**/*.css']
+      },
       frost: {
         src: ['dist/css/kss/frost.css', 'dist/css/themes/frost/**/*.css']
       },
@@ -388,7 +457,7 @@ module.exports = function (grunt) {
     'postcss:all',
   ]);
 
-    grunt.registerTask('build:base', [
+  grunt.registerTask('build:base', [
     'sass_globbing',
     'sass:base',
     'modernizr',
@@ -407,6 +476,14 @@ module.exports = function (grunt) {
     'postcss:cr17',
   ]);
 
+  grunt.registerTask('build:donate', [
+    'sass:donate',
+    'modernizr',
+    'imagemin:donate',
+    'kss:donate',
+    'postcss:donate',
+  ]);
+
   grunt.registerTask('build:frost', [
     'sass:frost',
     'modernizr',
@@ -417,6 +494,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build:payin', [
     'sass:payin',
     'modernizr',
+    'imagemin:payin',
+    'svgmin:payin',
     'kss:payin',
     'postcss:payin',
   ]);

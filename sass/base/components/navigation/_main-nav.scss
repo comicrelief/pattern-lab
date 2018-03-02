@@ -30,11 +30,8 @@
     overflow: hidden;
     margin: 0;
     width: 100%;
-    max-height: 0;
     z-index: 100;
     background-color: $colour-smoke-grey;
-    transition-property: max-height;
-    transition-duration: 850ms;
 
     // Menu items
     li {
@@ -249,4 +246,20 @@
       }
     }  
   }
+}
+
+#main-menu {
+  display: none;
+  height: auto;
+  max-height: none;
+  
+  &.menu-open {
+    max-height: none;
+  }
+  
+  @include breakpoint($desktop-nav-breakpoint) {
+    // Override any prior jQuery animations from changing breakpoint
+    display: block !important;
+  }
+
 }

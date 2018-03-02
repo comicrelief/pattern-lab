@@ -1,0 +1,99 @@
+html {
+  background-color: $colour-dark-blue;
+}
+body.payin {
+  font-family: $body-font;
+}
+
+.header {
+  display: none;
+}
+
+footer {
+  .cr-footer,
+  .footer__branding {
+    display: none;
+  }
+}
+
+/* FORM  */
+// hide details and billing address rows initially
+.form__row--your-detail,
+.form__row--billing-detail {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+// hide extended billing address fields
+.form__field--address {
+  display: block;
+  &.hide {
+    display: none;
+  }
+}
+
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+
+/* Thank You page */
+#promo-header--success, 
+#promo-header--failure {
+  br {
+    display: inline;
+  }
+
+  h1, h2, h3 {
+    text-transform: none;
+  }
+
+  h1 {
+    text-shadow: none;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .promo-header__content {
+    position: relative;
+    top: auto;
+    transform: translateY(0);
+
+    .promo-header__content-inner {
+      width: span(10);
+      padding: 30px 0 60px;
+    }
+  }
+ 
+  .thumb {
+    height: 144px;
+    width: 133px;
+    background-image: url($image-path + 'thumb.png');
+    background-position: center center;
+    background-size: 133px 144px;
+    margin: 30px auto;
+  }
+
+  .trans-no {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+#promo-header--failure {
+  h1 {
+    margin: 0 0 20px;
+  }
+}

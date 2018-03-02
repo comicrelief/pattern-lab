@@ -1,0 +1,142 @@
+.block--cr-email-signup--head.cr-header-email-signup-form {
+  position: relative;
+  .block--cr-email-signup__inner-wrapper {
+    overflow: visible;
+    top: 0;
+    padding: 20px;
+    background-color: $colour-dark-blue;
+
+    @include breakpoint($screen-md) {
+      right: 65px;
+      width: 380px;
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: $lg-nav-height;
+      right: 5px;
+    }
+  
+    a.close-button {
+      position: absolute;
+      top: calc(0px - #{$sm-nav-height});
+      right: 65px; 
+      width: 46px;
+      height: $sm-nav-height;
+      background-color: $colour-dark-blue;
+      @include breakpoint($screen-md) {
+        top: calc(0px - #{$md-nav-height});
+        right: 0;
+        height: $md-nav-height;
+      }
+      @include breakpoint($desktop-nav-breakpoint) {
+        top: calc(0px - #{$lg-nav-height});
+        height: $lg-nav-height;
+      }
+      .icon {
+        margin: 12px 10px;
+        width: 25px;
+        height: 25px;
+        fill: white;
+        @include breakpoint($screen-md) {
+          margin: 12px 6px;
+          width: 35px;
+          height: 35px;
+        }
+        @include breakpoint($desktop-nav-breakpoint) {
+          margin: 26px 12px 28px;
+          width: 20px;
+          height: 21px;
+        }
+      }
+      &:focus,
+      &:hover {
+        .icon {
+          fill: $colour-white;
+        }  
+      }
+    }
+    .cr-email-signup--messages {
+      margin: 0;
+      width: 100%;
+      p {
+        margin: 0 auto 20px;
+        width: 80%;
+        font-family: $font-bold--sr18;
+        color: $colour-white;
+        word-wrap: break-word;
+        @include font-size($h3-font-size);
+      }
+    }
+    .esu-first-success-message,
+    .esu-second-success-message {
+      p {
+        margin: 0 auto;
+      }
+    }
+    form {
+      width: 100%;
+    }
+    .form-item {
+      margin: 0;
+      width: calc(100% - 50px);
+      background-color: $colour-white;
+    }
+    input[type=text] {
+      padding: 0 10px;
+      height: 50px;
+      max-width: 100%;
+      border-radius: 0;
+      font-family: $font-bold--sr18;
+
+      @include font-size($h4-font-size);
+      color: $colour-dark-blue;
+    }
+    input[type=submit].button {
+      margin: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 0;
+      text-indent: -9999px;
+      background: $colour-ruby url( $image-path + "arrow-right.svg") center no-repeat;
+      background-size: 45px 45px;
+      transition: background-size 0.1s linear;
+
+      &:focus,
+      &:hover {
+        background-size: 60px 60px;
+        border: 0;
+      }
+      
+      &:focus {
+        outline: 1px dotted #212121;
+        // Webkit specific override where applicable
+        outline: 5px auto -webkit-focus-ring-color;
+      }
+    }
+  }
+
+  &.block--cr-email-signup--error {
+    .block--cr-email-signup__inner-wrapper {
+      padding: 20px;
+
+      .cr-email-signup--messages {
+        p {
+          margin: 0 auto; 
+        }
+      }
+
+      input[type=text] {
+        border: 1px solid $colour-ruby;
+      }
+      input[type=submit].button {
+         border: none;
+      }
+    }
+
+    .esu-errors.error-msg-cr-header-email-signup-form {
+      float: none;
+      margin: 0 auto;
+      width: 100%;
+      background-color: $colour-dark-blue;
+    }
+  }
+}

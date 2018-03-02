@@ -1,0 +1,88 @@
+.button {
+  @include box-sizing(border-box);
+  @include appearance( none );
+  @include border-radius( $corner-radius );
+  @include transition( 0.3s ease-in-out background-color);
+
+  background-color: $red;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: $type-md;
+  font-weight: 600;
+  line-height: 50px;
+  padding: 0 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px 0 0;
+  width: 100%;
+  display: inline-block;
+  height: 50px;
+  @include GT-Walsheim-Bold;
+  
+  &:hover {
+    background-color: $purple; 
+    @include transition( 0.6s ease-in-out background-color);
+  }
+
+  &.button--ghost {
+    @include transition( 0s liner background-color);
+    background-color: transparent;
+    border: 2px solid $black;
+    color: $black;
+
+      &:hover {       
+        background-color: $black;
+        color: $white;
+        border: 0;
+        padding: 2px 37px;
+      }
+      &:active {
+        @include opacity(0.7);
+      }
+  }
+
+  &.button--ghost-black {
+    @include transition( 0s liner background-color);
+    background-color: transparent;
+    border: 2px solid $white;
+    color: $white;
+
+      &:hover {       
+        background-color: $white;
+        color: $black;
+        border: 0;
+        padding: 2px 37px;
+      }
+      &:active {
+        @include opacity(0.7);
+      }
+  }
+  @include bp(md) { 
+    width: 290px;
+  }
+}
+.button + .button { 
+  @include bp(md) {
+    margin-left: 20px;
+  } 
+}
+.button--lg {
+  font-size: 18px;
+  line-height: 22px;
+  
+  @include bp(md) {
+    height: 70px;
+    padding: 24px 70px;
+    font-size: 21px;
+    @include border-radius(35px);
+  }
+}
+
+/* 
+ * Process $buttonList colour variations through our button-variation mixin.
+ */
+@each $button in $buttonList {
+  @include button--variation($button);
+}

@@ -11,18 +11,15 @@
   z-index: 100;
   
   @include breakpoint($screen-md) {
-    top: calc(#{$md-nav-height} + 20px);
+    top: $md-nav-height;
   }
   @include breakpoint($desktop-nav-breakpoint) {
-    top: calc(#{$lg-nav-height} + 20px); 
+    top: $lg-nav-height; 
   }
 
   .cc-banner--visible & {
     position: relative;
     top: 0;
-    @include breakpoint($screen-md) {
-      top: 20px;
-    }
   }
   .search-block__wrapper {
     position: absolute;
@@ -85,22 +82,29 @@
     background-color: $colour-ruby;
   }
   input[type=submit] {
-    width: 25px;
+    width: 50px;
     height: 50px;
     background-color: $colour-white;
-    mask: url($image-path + "magnify-icon.svg") no-repeat right center;
+    mask: url($image-path + "magnify-icon.svg") no-repeat center;
     mask-size: 23px;
-    -webkit-mask: url($image-path + "magnify-icon.svg") no-repeat right center;
+    -webkit-mask: url($image-path + "magnify-icon.svg") no-repeat center;
     -webkit-mask-size: 23px;
     @include breakpoint($screen-md) {
       mask-size: 25px;
       -webkit-mask-size: 25px;
     }
+
     &:hover {
-      background-color: darken($colour-white, 10%);
+      background-color: $colour-black;
+    }
+    
+    &:focus {
+      outline: 1px dotted #212121;
+      // Webkit specific override where applicable
+      outline: 5px auto -webkit-focus-ring-color;
     }
     .no-cssmask & {
-      background: transparent url($image-path + "search_page_icon.png") center right no-repeat;
+      background: transparent url($image-path + "search_page_icon.png") center no-repeat;
       background-size: 23px;
       @include breakpoint($screen-md) {
         background-size: 25px;
@@ -118,16 +122,16 @@
     top: calc(0px - #{$sm-nav-height});
     right: calc(92px + 65px); 
     width: 46px;
-    height: calc(#{$sm-nav-height} + 20px);
+    height: $sm-nav-height;
     background-color: $colour-dark-blue;
     @include breakpoint($screen-md) {
-      top: calc(0px - #{$md-nav-height} - 20px);
-      height: calc(#{$md-nav-height} + 20px);
+      top: calc(0px - #{$md-nav-height});
+      height: $md-nav-height;
     }
     @include breakpoint($desktop-nav-breakpoint) {
-      top: calc(0px - #{$lg-nav-height} - 20px);
+      top: calc(0px - #{$lg-nav-height});
       right: calc(92px + 5px); 
-      height: calc(#{$lg-nav-height} + 20px);
+      height: $lg-nav-height;
     }
     .icon {
       margin: 12px 10px;
@@ -167,10 +171,6 @@
     .search-block {
       position: relative;
       top: 0;
-      @include breakpoint($screen-md) {
-        top: 20px;
-      } 
     }
   }    
 }
-

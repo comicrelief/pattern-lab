@@ -1,0 +1,59 @@
+.cards__wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards-wall {
+
+  &.cards {
+    padding-top: 30px;
+  }
+
+  .card {
+    height: 350px;
+    margin: 0 5% 20px;
+
+    @include breakpoint($screen-md) {
+      max-width: span(4 of 12);
+      margin: 0 1.25% 20px;
+    }
+
+    &--family {
+      background: url($image-path + "myself-friends-family.jpg") center/cover no-repeat;
+    }
+
+    &--school {
+      background: url($image-path + "nursery-school-university.jpg") 0 0/cover no-repeat;
+    }
+
+    &--work {
+      background: url($image-path + "workplace-organisation.jpg") 0 0/cover no-repeat;
+    }
+
+    &--leisure {
+      background: url($image-path + "gym-leisure-sports.jpg") 0 0/cover no-repeat;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      width:100%;
+    }
+
+    .cards__content {
+
+      h3 {
+        color: $colour-white;
+        position: absolute;
+        bottom: 0;
+        left: auto;
+        right: auto;
+        padding:0 30px 20px;
+        text-align: left;
+      }
+
+    }
+  }
+
+}

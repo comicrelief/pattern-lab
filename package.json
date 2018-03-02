@@ -8,6 +8,7 @@
     "build": "grunt build",
     "build-base": "grunt build:base",
     "build-cr17": "grunt build:cr17",
+    "build-donate": "grunt build:donate",
     "build-frost": "grunt build:frost",
     "build-payin": "grunt build:payin",
     "build-rnd17": "grunt build:rnd17",
@@ -49,7 +50,6 @@
     "lightcase": "^2.4.0",
     "npm-link-local": "^1.1.0",
     "semantic-release": "^6.3.2",
-    "smartmenus": "^1.0.1",
     "snyk": "^1.36.2"
   },
   "repository": {

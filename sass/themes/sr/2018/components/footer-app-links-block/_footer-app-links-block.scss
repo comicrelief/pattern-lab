@@ -1,0 +1,69 @@
+// Footer App Links Block
+//
+// Markup: footer-app-links-block.twig
+//
+// Style guide: 20.1004
+
+.block-sr-footer-app-links {
+  width: 100%;
+  height: auto;
+  background-color: #2e003a;
+  padding: 20px 0;
+
+  .footer-app-links__outer-wrapper {
+    @include container();
+  }
+
+  .footer-app-links__inner-wrapper {
+    @include span(12);
+    text-align: center;
+    position: relative;
+
+    @include breakpoint($screen-lg) {
+      text-align: left;
+    }
+  }
+
+  .footer-app-links__copy,
+  .footer-app-links__download {
+    @include span(12);
+  }
+
+  .footer-app-links__copy {
+    h3 {
+      font-family: $font-black--sr18;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-size: 40px;      
+    }
+
+    @include breakpoint($screen-lg) {
+      @include span(8);
+    }
+  }
+  
+  .footer-app-links__download {
+    position: relative;
+    margin-top: 10px;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      width: 163px;
+    }
+
+    img {
+      width: 100%;
+      display: block; 
+    }
+
+    @include breakpoint($screen-lg) {
+      @include span(4);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      margin-top: 0;
+    }
+  }
+}

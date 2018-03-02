@@ -1,0 +1,123 @@
+// ==========================================================================
+// Common
+// ==========================================================================
+
+body, input {
+  @include GT-Walsheim-Regular;    
+  font-size: $font-size; 
+  line-height: 153.333%;
+  background: $dark-blue;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+* html .clearfix { 
+  zoom: 1; 
+}
+
+*:first-child+html .clearfix { 
+  zoom: 1; 
+}
+
+* {
+  margin: 0;
+}
+
+*,
+*:before, 
+*:after {
+  @include box-sizing(border-box);
+}
+
+// ==========================================================================
+// Utilities 
+// ==========================================================================
+
+.left { 
+  float: left; 
+}
+
+.right { 
+  float: right; 
+}
+
+.hide { 
+  display: none; 
+}
+
+.centered {
+  text-align: center;
+}
+
+.hide-text {
+  text-indent: -100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 0;
+  line-height: 0;
+  min-height: 0;
+}
+
+.nowrap { 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.uppercase { 
+  text-transform: uppercase; 
+}
+
+/* new clearfix */
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.visually-hidden { // For accessibility / screen-reader
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.mobile-only {
+  display: inline;
+
+  @include bp(md) {
+    display: none; 
+  }
+}
+.exclude-mobile {
+  display: none;
+  
+  @include bp(md) {
+    display: inline; 
+  }
+}

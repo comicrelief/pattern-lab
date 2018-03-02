@@ -1,0 +1,229 @@
+// Default settings
+
+$image-path: '../../../../public/assets/images/';
+
+$red: #f04257;
+$blue: #22d2dc;
+$yellow: #fbef51;
+$green: #b2e55e;
+$teal: #00beca;
+$royal-blue: #0565d1;
+$purple: #7d2ca9;
+$dark-purple: #7023b7;
+$pink: #fc9eb9;
+
+$black: #030e1a;
+$dark-blue: #061d38;
+$jasper-grey: #666;
+$gainsboro-grey: #c7c7c7;
+$light-grey: #dddddd;
+$smoke-grey: #fafafa;
+$white: #fff;
+$item-grey: #ddd;
+$dark-grey: #282828;
+
+// Array of colours for use in SASS maps
+$colorList: (
+  ("red" $red),
+  ("blue" $blue), 
+  ("yellow" $yellow),
+  ("green" $green), 
+  ("teal" $teal), 
+  ("royal-blue" $royal-blue), 
+  ("purple" $purple),
+  ("dark-purple" $dark-purple),
+  ("pink" $pink),
+  ("black" $black),
+  ("dark-blue" $dark-blue),
+  ("white" $white),
+  ("jasper-grey" $jasper-grey),
+  ("gainsboro-grey" $gainsboro-grey),
+  ("light-grey" $light-grey),
+  ("smoke-grey" $smoke-grey)
+);
+
+/**
+ * Parameters
+ * $inlinelink[1] = name
+ * $inlinelink[2] = border-color
+ * $inlinelink[3] = border-color for hover & focus
+ */
+$linkList: (
+  ("red" $red $purple),
+  ("blue" $blue $yellow), 
+  ("yellow" $yellow $blue),
+  ("green" $green $teal), 
+  ("teal" $teal $pink), 
+  ("royal-blue" $royal-blue $red), 
+  ("purple" $purple $royal-blue),
+  ("pink" $pink $green),
+  ("white" $white $black),
+  ("jasper-grey" $jasper-grey $red),
+  ("gainsboro-grey" $gainsboro-grey $red),
+  ("light-grey" $light-grey $red),
+  ("smoke-grey" $smoke-grey $red)
+);
+
+/* 
+ * Font
+ */
+/* don't remove, this is being used as default font size for SR16 */
+$font-size: 16px;
+$body-font: 'GT-Walsheim-Regular', 'open-sans', Helvetica, Arial, Sans-serif;
+
+/* 
+ * Size
+ */
+$type-xxl: 30px;
+$type-xl: 25px;
+$type-lg: 20px;
+$type-md: 18px;
+$type-sm: 14px;
+$type-xs: 12px; //not being used, value can be updated
+
+/* 
+ * Spacing
+ */
+
+/* 
+ * Rounded corners
+ */
+$corner-radius: 35px;
+$round-radius: 50%;
+
+ /*
+ * Button
+ *
+ * Parameters
+ * $button[1] = name
+ * $button[2] = background-color
+ * $button[3] = background-color for hover & focus
+ * $button[4] = text color
+ * $button[5] = ghost border color
+ * $button[6] = ghost text color for hover and focus
+ */
+$buttonList: (
+  ("black-ghost" transparent $dark-blue $dark-blue),
+  ("white-ghost" transparent $white $white),
+  ("red" $red $purple $white),
+  ("blue" $blue $yellow $black), 
+  ("yellow" $yellow $blue $black),
+  ("green" $green $teal $black), 
+  ("teal" $teal $pink $black), 
+  ("royal-blue" $royal-blue $red $white), 
+  ("purple" $purple $royal-blue $white),
+  ("pink" $pink $green $black),
+  ("white" $white $black $black)
+);
+
+ /*
+ * Text-link
+ *
+ * Parameters
+ * $textLink[1] = name
+ * $textLink[2] = text-link-color
+ * $textLink[3] = text-link-color for hover
+ */
+$textLinkList: (
+("red" $red $purple),
+  ("blue" $blue $yellow), 
+  ("yellow" $yellow $blue),
+  ("green" $green $teal), 
+  ("teal" $teal $pink), 
+  ("royal-blue" $royal-blue $red), 
+  ("purple" $purple $royal-blue),
+  ("pink" $pink $green),
+  ("white" $white $black),
+  ("jasper-grey" $jasper-grey $red),
+  ("gainsboro-grey" $gainsboro-grey $red),
+  ("light-grey" $light-grey $red),
+  ("smoke-grey" $smoke-grey $red)
+);
+
+/* 
+ * Icon Font
+ */
+$font-date: 20150814;
+
+$iconlist: (
+  ("facebook-filled" "\e600"),
+  ("twitter-filled" "\e601"),
+  ("google-plus-filled", "\e602"),
+  ("youtube-filled" "\e603"),
+  ("instagram-filled" "\e604"),
+  ("tumblr-filled" "\e605"),
+  ("zoom-filled" "\e606"),
+  ("zoomin-filled" "\e607"),
+  ("circle-filled" "\e608"),
+  ("search-filled" "\e609"),
+  ("user-filled" "\e60a"),
+  ("basket-filled" "\e60b"),
+  ("sound-off-filled" "\e60c"),
+  ("sound-on-filled" "\e60d"),
+  ("pause-large-filled" "\e60e"),
+  ("play-large-filled" "\e60f"),
+  ("stop-large-filled" "\e610"),
+  ("pause-filled" "\e611"),
+  ("play-filled" "\e612"),
+  ("stop-filled" "\e613"),
+  ("facebook" "\e614"), 
+  ("twitter" "\e615"), 
+  ("google-plus" "\e616"),
+  ("youtube" "\e617"),
+  ("instagram" "\e618"),
+  ("tumblr" "\e619"),
+  ("arrow-left" "\e61a"),
+  ("arrow-right" "\e61b"),
+  ("arrow-up" "\e61c"),
+  ("arrow-down" "\e61d"),
+  ("minus" "\e61e"),
+  ("plus" "\e61f"),
+  ("cross" "\e620"),
+  ("tick" "\e621"),
+  ("zoom" "\e622"),
+  ("zoomin" "\e623"),
+  ("pen" "\e624"),
+  ("return" "\e625"),
+  ("circle-selected" "\e626"),
+  ("help" "\e627"),
+  ("circle" "\e628"),
+  ("edit" "\e629"),
+  ("more" "\e62a"),
+  ("less" "\e62b"),
+  ("scroll-down" "\e62c"),
+  ("scroll-up" "\e62d"),
+  ("search" "\e62e"),
+  ("user" "\e62f"),
+  ("email" "\e630"),
+  ("mobile-nav" "\e631"),
+  ("basket" "\e632"),
+  ("sound-off" "\e633"),
+  ("sound-on" "\e634"),
+  ("fullscreen" "\e635"),
+  ("fit-to-screen" "\e636"),
+  ("pause-large" "\e637"),
+  ("play-large" "\e638"),
+  ("stop-large" "\e639"),
+  ("pause" "\e63a"),
+  ("play" "\e63b"),
+  ("stop" "\e63c"),
+);
+
+
+/*
+ * Generic padding/spacing settings
+ */
+
+$gutters: 0 15px;
+$big-gutters: 0 40px;
+$grid-gutter: 2.54%;
+
+/*
+ * Generic background colours
+ */
+
+$border-colour-grey: #d5d5d5;
+
+/* Spacing around single message rows */
+$row-padding--sm: 30px;
+$row-padding--md: 60px;

@@ -42,6 +42,12 @@
   .validation__error {
     text-align: center;
   }
+  .form__subcopy {
+    margin-bottom: 20px;
+  }
+  .form__subcopy:empty {
+    margin-bottom: 0;
+  }
 }
 
 #userUrlGp {
