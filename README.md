@@ -2,7 +2,7 @@
 > A Node-based project to supply Sass components and a styleguide generator.
 
 ## The idea
-To have a centralised hub supply common styling across CR products. 
+To have a centralised hub supply common styling across Comic Relief products. 
 
 ## Quicklinks
 
