@@ -1,0 +1,9 @@
+.promo-header {
+  min-height: 300px;
+  background: transparent url($image-path + "promo-header-cr-donate.jpg") top center no-repeat;
+  
+  @include breakpoint($screen-md) {
+    min-height: 400px;
+    z-index: -1;
+  }
+}

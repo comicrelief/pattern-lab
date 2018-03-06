@@ -159,8 +159,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          cwd: 'sass/themes/donate/sr18/components',
-          src: ['**/*.{png,jpg,gif}'],
+          cwd: 'sass/themes/donate/',
+          src: ['**/components/**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
       },
