@@ -1,0 +1,30 @@
+header[role=banner] {
+  height: 105px;
+  padding-top: 30px;
+}
+
+.header__inner-wrapper {
+  cursor: auto;
+}
+
+.block-branding {
+  float: left;
+
+  .site-logo {
+    margin-top: -40px;
+    height: 105px;
+    overflow: hidden;
+  }
+}
+
+.block-branding, .header__inner-home {
+  @include breakpoint($screen-lg) {
+    width: 50%;
+  }
+}
+
+.header__inner-home {
+  float: right;
+  text-align: right;
+  padding-right:13px;
+}
