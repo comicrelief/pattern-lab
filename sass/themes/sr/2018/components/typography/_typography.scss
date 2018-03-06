@@ -37,12 +37,12 @@ h1.alternate {
   font-size: 30px;
   line-height: 32px;
 
-  @include breakpoint($screen-md){
+  @include breakpoint($screen-md) {
     font-size: 52px;
     line-height: 55px;
   }
 
-  @include breakpoint($screen-lg){
+  @include breakpoint($screen-lg) {
     font-size: 66px;
     line-height: 66px;
   } 
