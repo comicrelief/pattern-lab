@@ -3,7 +3,7 @@
 // Checkboxes
 .form__row--giftaid .form__field--wrapper.form__checkbox,
 .form__field--wrapper.form__checkbox {
-  background-color: $colour-grey;
+  background-color: $colour-smoke-grey;
   &.form__checkbox-text-only {
     background-color: initial;
   }
@@ -16,7 +16,8 @@
   input[type="checkbox"]+span {
     top: 50%;
     left: initial;
-    border: 1px solid $colour-black;
+    border: 1px solid $colour-grey;
+    background-color: $colour-white;
     transform: translateY(-50%);
   }
   input[type="checkbox"]:focus+span {
