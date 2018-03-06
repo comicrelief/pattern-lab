@@ -19,7 +19,7 @@
     @include span(9);
 
     @include breakpoint($screen-md) {
-      @include span(3);
+      @include span(2);
     }
   }
 
@@ -37,7 +37,7 @@
     margin-top: 15px;
 
     @include breakpoint($screen-md) {
-      @include span(7);
+      @include span(8);
       clear: none;
       margin-top: 0;
     }
