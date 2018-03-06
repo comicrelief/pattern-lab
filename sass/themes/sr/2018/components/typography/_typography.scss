@@ -36,7 +36,8 @@ h1.alternate {
   text-transform: none;
   font-size: 30px;
   line-height: 32px;
-
+  letter-spacing: inherit;
+  
   @include breakpoint($screen-md) {
     font-size: 52px;
     line-height: 55px;
