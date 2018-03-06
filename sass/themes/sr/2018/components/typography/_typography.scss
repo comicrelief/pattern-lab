@@ -30,6 +30,25 @@ h3.alternate {
   @extend h2;
 }
 
+// Bespoke for SR18 OTN
+h1.alternate {
+  @extend h3;
+  text-transform: none;
+  font-size: 30px;
+  line-height: 32px;
+  letter-spacing: inherit;
+  
+  @include breakpoint($screen-md) {
+    font-size: 52px;
+    line-height: 55px;
+  }
+
+  @include breakpoint($screen-lg) {
+    font-size: 66px;
+    line-height: 66px;
+  } 
+}
+
 h5 {
   @include font-size($h5-font-size);
 }
