@@ -1,5 +1,6 @@
 // cr-donate specific form styling overrides 
 
+// Checkboxes
 .form__row--giftaid .form__field--wrapper.form__checkbox,
 .form__field--wrapper.form__checkbox {
   background-color: $colour-grey;
@@ -11,7 +12,6 @@
   display: none;
 }
 .form__checkbox {
-
   input[type="checkbox"],
   input[type="checkbox"]+span {
     top: 50%;
@@ -22,7 +22,6 @@
   input[type="checkbox"]:focus+span {
     border-width: 2px;
   }
-
   label.form__checkbox {
     left: 45px;
     padding: 0;
@@ -30,13 +29,10 @@
   }
 }
 
-
-
 @include breakpoint($screen-md) {
   .promo-header {
     z-index: -1; // move this to promo header component
   }
-  // smaller width and border for form element on medium and larger screens
   form {
     margin: -100px auto 0;
     width: span(10);
