@@ -37,6 +37,7 @@
       width: auto;
     }
   }
+
   + .btn {
     margin-top: 30px;
     margin-bottom: 0;
@@ -94,4 +95,13 @@ rather than including it in a common mixin */
       opacity: 1;
     }
   }
+}
+
+// Bespoke for SR18 OTN
+.btn.btn--alternate {
+  @extend .btn--ruby;
+  margin-top: 10px;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 28px 36px;
 }
