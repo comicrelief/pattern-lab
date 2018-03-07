@@ -1,12 +1,16 @@
-/* Section for form */ 
+/* Section for form */
 .content {
   background-color: $colour-dark-blue;
   h4, p, label {
     color: $colour-white;
   }
+
+  .form__field {
+    color: $colour-white;
+  }
 }
 
-/* Form */ 
+/* Form */
 @include breakpoint($screen-lg) {
   .form__row {
     width: span(8);
@@ -41,7 +45,7 @@
   display: none;
 }
 
-// labels and fields 
+// labels and fields
 .form__field--address-detail {
   label {
     color: $colour-grey;
@@ -54,9 +58,9 @@ span.help-block {
   border-radius: 2px;
 }
 
-input[type="email"], 
-input[type="number"], 
-input[type="text"], 
+input[type="email"],
+input[type="number"],
+input[type="text"],
 select {
   max-width: 100%;
   border: 2px solid $colour-grey;
@@ -84,12 +88,24 @@ select {
   }
 }
 
+/* Remove visually the number spinner */
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 // buttons
 .search-box #postcode_button {
   border-radius: 2px;
   background-color: $colour-white;
 }
-  
+
 button[type=submit] {
   @extend .btn;
   width: 100%;
@@ -120,12 +136,17 @@ div#paypal-button-container {
 // giftaid row
 .form__row--giftaid {
   h1 {
-    img {
-      width: 119px;
-      margin-top: 15px;
-      @include breakpoint($screen-md) {
-        width: 298px;
-      }
+    background:url($image-path + "giftaid-mobile.jpg") no-repeat center;
+    background-size:contain;
+    width: 119px;
+    height:68px;
+    margin: 15px auto 20px;
+
+    @include breakpoint($screen-md) {
+      background:url($image-path + "giftaid.jpg") no-repeat center;
+      background-size:contain;
+      width: 298px;
+      height: 105px;
     }
   }
   p:nth-of-type(2) {
@@ -145,7 +166,7 @@ div#paypal-button-container {
     top: 0;
     left: 40px;
     width: calc(100% - 40px);
-    
+
     &:before {
       display: none;
     }
@@ -167,7 +188,7 @@ div#paypal-button-container {
   }
 }
 
-// card logo row 
+// card logo row
 .card-list {
   text-align: center;
 
@@ -206,6 +227,93 @@ div#paypal-button-container {
       &.logo-visa {
         background-position: -270px 0;
       }
+    }
+  }
+}
+
+.form__row--payment-amount {
+  p, .number-input-label {
+    color: $colour-white;
+  }
+
+  .form__fieldset {
+    position: relative;
+    text-align: center;
+  }
+
+  label:not(.required){
+    &:after {
+      content: '';
+    }
+  }
+
+  .form__radiobutton {
+    margin-bottom: 15px;
+
+    .form__field {
+      font-family: $font-bold--sr18;
+      color: $colour-black;
+      padding-top: 0;
+      line-height: 1.9;
+      text-align: center;
+    }
+  }
+
+  .form__field {
+    text-align: left;
+  }
+
+  .form__radio {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    width: 60px;
+    height: 40px;
+    opacity: 0;
+  }
+
+  .form__radio+label {
+    display: inline-block;
+    background-color: $colour-white;
+    border: 2px solid $colour-dark-blue-lighter;
+    width: 60px;
+    height: 40px;
+    margin-right: 10px;
+
+    @include breakpoint($screen-md){
+      margin-right: 20px;
+    }
+  }
+
+  .form__radio:checked+label{
+    background-color:#2BFDAC;
+  }
+
+  .form__radio:focus+label{
+    border: 2px solid $colour-dark-blue-lighter;
+  }
+
+  .number-input-label {
+    position: absolute;
+    left: 0px;
+    top: 0.73em;
+    line-height: 21px;
+    color: $colour-white;
+    font-size: 19px;
+    font-family: $font-regular;
+    margin-left: 15px;
+    margin-top:1px;
+  }
+
+  .form__field--amount {
+    .form__field--amount {
+      padding-left: 28px;
+    }
+
+    label {
+      @extend .visually-hidden;
     }
   }
 }

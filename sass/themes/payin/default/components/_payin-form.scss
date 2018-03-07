@@ -18,7 +18,7 @@ body.payin {
 }
 
 // ==========================================================================
-// Form 
+// Form
 // =========================================================================
 
 // form fields, labels, buttons
@@ -33,7 +33,7 @@ legend {
 
 fieldset {
   padding: 0;
-  border-width: 0; 
+  border-width: 0;
 }
 
 input[type="email"],
@@ -46,7 +46,7 @@ input[type="url"],
 input[type="password"],
 textarea {
   height: 50px;
-  padding: 13px; 
+  padding-left:13px;
   background-color: $colour-white;
   border: 1px solid $item-grey;
   width: 100%;
@@ -54,7 +54,7 @@ textarea {
   font-family: $font-regular;
   box-shadow: none;
   box-sizing: border-box;
-  appearance: none; 
+  appearance: none;
   @include placeholder($colour-dark-grey, 18px , $font-regular);
 }
 
@@ -65,7 +65,7 @@ input:focus {
 textarea {
   min-height: 65px;
   padding-top: 6px;
-  padding-bottom: 6px; 
+  padding-bottom: 6px;
 
   @include breakpoint($screen-md) {
     max-width: 100%;
@@ -96,7 +96,7 @@ select::-ms-expand {
   background-position: 100% 0;
 }
 
-.form__checkbox, 
+.form__checkbox,
 .form__radio {
   position: relative;
 }
@@ -143,7 +143,7 @@ select::-ms-expand {
     font-size: 18px;
     font-family: $body-font;
     word-break: break-word;
-    
+
     &:before {
       border: 1px solid #e8e8e8;
       content: '';
@@ -176,7 +176,7 @@ select::-ms-expand {
       width: 100%;
       height: 50px;
       cursor: pointer;
-    }  
+    }
   }
 }
 
@@ -198,7 +198,7 @@ input[type="button"] {
   }
   button:hover,
   input:hover {
-  background-color: $colour-red; 
+  background-color: $colour-red;
   transition: none;
   }
 }
@@ -325,7 +325,7 @@ button.payment-button {
 }
 .form__address-detail-toggle {
   padding-bottom: 30px;
-} 
+}
 
 .form__row--title {
   padding: 20px 10px 10px;
@@ -368,7 +368,7 @@ button.payment-button {
 #payin-step-four {
   color: $colour-white;
   text-align: center;
-  
+
   .form__fieldset {
     @include span(12);
   }
@@ -406,7 +406,7 @@ button.payment-button {
 }
 .form__row--upsell {
   clear: both;
-  
+
   .button {
     line-height: 45px;
   }
@@ -516,10 +516,10 @@ input[type="text"].form__field--postcode-lookup {
   float: left;
 }
 .addressLookup {
-  border: 1px solid $item-grey; 
+  border: 1px solid $item-grey;
   // width: 300px;
   max-height: 260px;
-  position: absolute; 
+  position: absolute;
   background-color: #fff;
   margin-top: -35px;
   box-shadow: none;
@@ -540,7 +540,7 @@ input[type="text"].form__field--postcode-lookup {
     font-size: 14px;
     border-top: 1px solid $item-grey;
     text-decoration: none;
-    display: block;    
+    display: block;
     width: 100%;
     margin: 0;
 
@@ -582,7 +582,7 @@ input[type="text"].form__field--postcode-lookup {
       margin-top: 45px;
     }
   }
-} 
+}
 
 // Validation for forms
 .help-block {
@@ -656,7 +656,7 @@ input[type="text"].form__field--postcode-lookup {
   img {
     max-height: 105px;
   }
-  
+
   .form__field--wrapper.form__field--giftaid {
     text-align: left;
     background: #fff;
