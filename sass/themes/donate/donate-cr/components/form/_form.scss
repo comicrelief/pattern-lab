@@ -3,7 +3,7 @@
 // smaller width and border for form element on medium and larger screens
 @include breakpoint($screen-md) {
   form {
-    margin: -100px auto 0;
+    margin: -75px auto 0;
     width: span(10);
     border: 2px solid $colour-grey;
     background-color: $colour-white;
