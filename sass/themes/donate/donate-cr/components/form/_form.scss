@@ -20,8 +20,8 @@
     background-color: $colour-white;
     transform: translateY(-50%);
   }
-  input[type="checkbox"]:focus+span {
-    border-width: 2px;
+  input[type="checkbox"]:checked+span {
+    background-color: $colour-white;
   }
   label.form__checkbox {
     top: 14px;
