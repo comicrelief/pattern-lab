@@ -9,23 +9,6 @@
 		text-align: left;
 		width: 100%;
 		position: relative;
-		&:before {
-			background: url($image-path + "press-logos.png") no-repeat 0 0;
-			background-size: 70px;
-			content: " ";
-			display: block;
-			width: 70px;
-			height: 70px;
-			position: absolute;
-			left: 30px;
-			top: 10px;
-			.page-node-type-article-press-release--comicrelief & {
-				background-position: 0 -77px;
-			}
-			.page-node-type-article-press-release--sportrelief & {
-				background-position: 0 -157px;
-			}
-		}
 	}
 	.cr-article__social-links {
 		display: none;
