@@ -11,6 +11,7 @@
   .cc_message {
     line-height: 14px;
     padding: 10px 0;
+    width: calc(100% - 88px);
   }
 
   @include breakpoint($screen-md) {
