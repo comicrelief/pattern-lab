@@ -5,18 +5,34 @@
 // Style guide: 20.115
 
 .cookie-consent.cc_container {
+
+  padding: 0;
+
+  .cc_message {
+    line-height: 14px;
+    padding: 10px 0;
+  }
+
   @include breakpoint($screen-md) {
-    padding: 10px 20px;
+    padding: 0;
 
     .cc_message {
       width: auto;
-      margin-top: 8px;
       font-size: 14px;
-      line-height: 16px;
+      line-height: 14px;
+      margin: 0 auto;
+      padding: 9px 0;
     }
   }
 
   .btn {
+    border: 0;
+    box-shadow: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
     @include breakpoint($screen-lg) {
       // re-add mob styles
       text-indent: -9999px;
