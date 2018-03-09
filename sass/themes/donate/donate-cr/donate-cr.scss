@@ -12,12 +12,12 @@
 // CR variables * comment files you want to override
 // ==========================================================================
 @import "../../cr/2017/variables/_colours.scss";
+@import "../../cr/2017/variables/_typography.scss";
 
 // ==========================================================================
 // SR18 variables * comment files you want to override
 // ==========================================================================
 @import "../../sr/2018/variables/_colours.scss";
-@import "../../sr/2018/variables/_typography.scss";
 @import "../../sr/2018/variables/_mixins.scss";
 @import "../../sr/2018/variables/_main-nav.scss";
 
@@ -38,14 +38,18 @@
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/promo-header/promo-header";
 
+
+// ==========================================================================
+// CR UI components
+// ==========================================================================
+@import "../../cr/2017/components/typography/_fonts.scss";
+@import "../../cr/2017/components/typography/_typography.scss";
+
 // ==========================================================================
 // SR18 UI components
 // ==========================================================================
-@import "../../sr/2018/components/typography/fonts";
-@import "../../sr/2018/components/typography/typography";
 @import "../../sr/2018/components/background-colours/background-colours";
 @import "../../sr/2018/components/buttons/buttons";
-@import "../../sr/2018/components/links/links";
 @import "../../sr/2018/components/navigation/main-nav";
 @import "../../sr/2018/components/promo-header/promo-header";
 
@@ -63,10 +67,10 @@
 // ==========================================================================
 // Donate CR variables
 // ==========================================================================
-
+@import "variables/_colours.scss";
 
 // ==========================================================================
 // Donate CR components
 // ==========================================================================
 @import "components/form/_form.scss";
-
+@import "components/partner-footer/_partner-footer.scss";
