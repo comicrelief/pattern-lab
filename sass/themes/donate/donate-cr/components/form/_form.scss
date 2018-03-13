@@ -3,10 +3,14 @@
 // Checkboxes
 .form__row--giftaid .form__field--wrapper.form__checkbox,
 .form__field--wrapper.form__checkbox {
+  padding: 0.5em 1em 1em 1em;
   background-color: $colour-smoke-grey;
   &.form__checkbox-text-only {
     background-color: initial;
   }
+}
+.form__field--wrapper.form__checkbox {
+  margin-bottom: 1em;
 }
 .form__checkbox:before {
   display: none;
