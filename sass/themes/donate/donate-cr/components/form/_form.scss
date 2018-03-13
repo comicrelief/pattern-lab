@@ -1,5 +1,6 @@
 // cr-donate specific form styling overrides 
 form,
+form a,
 input {
   color: $colour-dark-purple;
 }
@@ -10,6 +11,7 @@ input[type="text"],
 select,
 textarea {
   border: 1px solid $colour-dark-purple;
+  @include placeholder($colour-dark-purple, 18px , $font-regular);
 }
 select {
   background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
@@ -50,6 +52,11 @@ select {
   }
 }
 
+// text styling
+.form__subtitle {
+  @extend h2;
+  text-align: center;
+}
 .form__subcopy--contact {
   font-weight: bold;
 }
