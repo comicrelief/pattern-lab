@@ -27,7 +27,7 @@
 <section id="payin-step-three" class="content">
 <div class="form__step form__step--payment">
 	<form name="comicrelief_payinbundle_payment" method="post" novalidate="novalidate" class="has-validation-callback">
-    <div class="form__row form__row--payment-amount show">
+    <div class="form__row form__row--payment-amount" style="display:none">
 			<div id="js-radiobutton-handler" class="form__fieldset form__radiobutton">
 					<p class="select-label">Select or enter amount</p>
 		      <input type="radio" name="amount" value="15" id="select-amount-fifteen" class="form__radio" data-ischecked="false" />
@@ -45,18 +45,32 @@
 			</div>
 			</div>
     </div>
-		<div class="form__row form__row--payment">
-			<div class="form__fieldset">
-				<h4 class="form__subtitle">Payment details</h4>
-				<p class="form__subcopy">
-					There are a number of different ways you can pay - with a credit or debit card or through paypal.
-				</p>
-				<div class="form__field--wrapper form__text form__field--amount">
-					<label class="form__field form__field--amount form__text" for="comicrelief_payinbundle_payment_amount">Amount</label><input type="text" id="comicrelief_payinbundle_payment_amount" name="comicrelief_payinbundle_payment[amount]" placeholder="0.00" data-validation="number" data-validation-allowing="range[1.00;5000.00],float" data-validation-error-msg="Please enter number between 1 and 5000" class="form__field form__field--amount">
-					<div class="form__field--error">
-					</div>
+		<div class="form__row form__row--payment-amount">
+			<div id="js-radiobutton-handler" class="form__fieldset form__radiobutton">
+				<p class="select-label">To donate, choose an amount or enter your own below</p>
+		    <div class="form__radiobutton--row">
+					<input type="radio" name="amount" value="30" id="select-amount-thirty" class="form__radio" data-ischecked="false" />
+					<label for="select-amount-thirty" class="form__field">£30</label>
+					<span>Mattis semper nostra hic porta dis nullam</span>
 				</div>
-				<div class="form__field--wrapper form__choice form__field--currency">
+				<div class="form__radiobutton--row">
+					<input type="radio"  name="amount" value="50" id="select-amount-fifty" class="form__radio" />
+		      <label for="select-amount-fifty" class="form__field" >£50</label>
+					<span>Mattis semper nostra hic porta dis nullam</span>
+				</div>
+				<div class="form__radiobutton--row">
+		      <input type="radio"  name="amount" value="150" id="select-amount-onehundredfifty" class="form__radio" />
+					<label for="select-amount-onehundredfifty" class="form__field">£150</label>
+					<span>Mattis semper nostra hic porta dis nullam</span>
+				</div>
+			</div>
+			<div class="form__fieldset">
+				<span id="js-currency-label" class="number-input-label">£</span>
+				<div class="form__money form__field--amount">
+		      <label for="comicrelief_payinbundle_payment_amount" class="form__field">Enter amount</label>
+					<input type="text" id="comicrelief_payinbundle_payment_amount" name="comicrelief_payinbundle_payment[amount]" placeholder="0" data-validation="number" data-validation-allowing="range[1.00;5000.00],float" data-validation-error-msg="Please enter number between 1 and 5000" class="form__field form__field--amount">
+				</div>
+				<div class="form__choice form__field--currency">
 					<label class="form__field form__field--currency form__choice required" for="comicrelief_payinbundle_payment_currency">Currency</label>
 					<select id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" class="form__field form__field--currency">
 						<option value="GBP">£ GBP</option>
@@ -68,7 +82,10 @@
 					</div>
 				</div>
 			</div>
-		</div>
+			<div class="form__fieldset form__submit form__field--submit">
+				<button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]" class="js-donate-btn btn btn--red">Donate now</button>
+			</div>
+    </div>
 		<div class="form__row form__row--giftaid show">
 			<div class="form__fieldset">
 				<h1 class="donate__giftaid-title">
@@ -461,7 +478,7 @@
 				</div>
 				<input type="hidden" id="comicrelief_payinbundle_payment_affiliate" name="comicrelief_payinbundle_payment[affiliate]">
 				<div class="form__field--wrapper form__submit form__field--submit">
-					<button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]">Continue</button>
+					<button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]" class="btn btn--red">Continue</button>
 				</div>
 			</div>
 		</div>

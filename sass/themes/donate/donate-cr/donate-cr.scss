@@ -13,6 +13,7 @@
 // ==========================================================================
 @import "../../cr/2017/variables/_colours.scss";
 @import "../../cr/2017/variables/_typography.scss";
+@import "../../cr/2017/variables/_mixins.scss";
 
 // ==========================================================================
 // SR18 variables * comment files you want to override
@@ -44,7 +45,7 @@
 // ==========================================================================
 @import "../../cr/2017/components/typography/_fonts.scss";
 @import "../../cr/2017/components/typography/_typography.scss";
-
+@import "../../cr/2017/components/buttons/_buttons.scss";
 // ==========================================================================
 // SR18 UI components
 // ==========================================================================
@@ -75,3 +76,4 @@
 @import "components/form/_form.scss";
 @import "components/promo-header/_promo-header.scss";
 @import "components/partner-footer/_partner-footer.scss";
+@import "components/buttons/_buttons.scss";
