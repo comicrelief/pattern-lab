@@ -698,7 +698,7 @@ input[type="text"].form__field--postcode-lookup {
 
   .form__radiobutton--row {
     margin-bottom: 20px;
-    background-color:$colour-light-grey;;
+    background-color:$colour-light-grey;
     color: $colour-dark-purple;
 
     span {
@@ -732,7 +732,7 @@ input[type="text"].form__field--postcode-lookup {
   .form__radio+label {
     display: inline-block;
     background-color: $colour-white;
-    border: 2px solid$colour-light-grey;;
+    border: 2px solid$colour-light-grey;
     width: 80px;
     height: 84px;
     text-align: center;

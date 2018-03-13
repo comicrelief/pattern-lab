@@ -101,9 +101,9 @@
     }
 
     .form__radio:checked+label, .form__radio:focus+label{
-      background-color:$colour-blue;
+      background-color:$colour-royal-blue;
       color: $colour-white;
-      border: 2px solid $colour-blue;
+      border: 2px solid $colour-royal-blue;
       transition: 0.3s all;
     }
   }
@@ -128,7 +128,7 @@
       padding-left: 28px;
       float: left;
       width: span(6);
-      margin-right: calc(2 * #{gutter()})
+      margin-right: calc(2 * #{gutter()});
     }
   }
 
@@ -137,7 +137,7 @@
     .form__field--currency {
       float: left;
       width: span(6);
-      margin-left: calc(2 * #{gutter()})
+      margin-left: calc(2 * #{gutter()});
     }
   }
 
