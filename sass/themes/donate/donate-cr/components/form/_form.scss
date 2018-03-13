@@ -23,6 +23,7 @@ select {
   padding: 0.5em 1em 1em 1em;
   background-color: $colour-smoke-grey;
   &.form__checkbox-text-only {
+    padding: initial;
     background-color: initial;
   }
 }
