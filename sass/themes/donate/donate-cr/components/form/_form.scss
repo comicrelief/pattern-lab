@@ -35,6 +35,10 @@
   }
 }
 
+.form__subcopy--contact {
+  font-weight: bold;
+}
+
 @include breakpoint($screen-md) {
   form {
     margin: -75px auto 0;
