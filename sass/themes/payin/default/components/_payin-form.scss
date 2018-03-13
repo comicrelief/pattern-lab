@@ -673,3 +673,76 @@ input[type="text"].form__field--postcode-lookup {
 .form__field--address-list {
   display: none;
 }
+
+// Custom radio buttons
+.form__radiobutton {
+
+  .select-label {
+    text-align: center;
+  }
+
+  label:not(.required){
+    &:after {
+      content: '';
+    }
+  }
+
+  .form__field {
+    display: inline-block;
+    font-family: $font-bold;
+    color: $colour-blue;
+    padding-top: 0;
+    line-height: 4.5;
+    text-align: center;
+  }
+
+  .form__radiobutton--row {
+    margin-bottom: 20px;
+    background-color:$colour-light-grey;;
+    color: $colour-dark-purple;
+
+    span {
+      display: inline-block;
+      font-family: $body-font;
+      margin-left: 3%;
+      max-width: 65%;
+      vertical-align: middle;
+
+      @include breakpoint($screen-md) {
+        width: 65%;
+      }
+    }
+  }
+
+  .form__field {
+    text-align: left;
+  }
+
+  .form__radio {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    width: 80px;
+    height: 84px;
+    opacity: 0;
+  }
+
+  .form__radio+label {
+    display: inline-block;
+    background-color: $colour-white;
+    border: 2px solid$colour-light-grey;;
+    width: 80px;
+    height: 84px;
+    text-align: center;
+  }
+
+  .form__radio:checked+label, .form__radio:focus+label{
+    background-color:$colour-blue;
+  }
+
+  .form__radio:checked+label {
+    transition: 0.3s all;
+  }
+}

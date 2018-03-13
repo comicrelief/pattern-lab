@@ -58,102 +58,60 @@
     color: $colour-dark-purple;
   }
 
-  .select-label {
-    @include font-size($p-font-size);
-    font-family: $font-bold;
-    margin: 15px 0 25px;
-    text-align: center;
-
-    @include breakpoint($screen-md) {
-      margin: 30px 0 38px;
-    }
-  }
-
   .form__fieldset {
     @include clearfix;
     position: relative;
     margin-bottom: 3%;
   }
 
-  label:not(.required){
-    &:after {
-      content: '';
-    }
-  }
-
   .form__radiobutton {
+
+    .select-label {
+      @include font-size($p-font-size);
+      font-family: $font-bold;
+      margin: 15px 0 25px;
+
+      @include breakpoint($screen-md) {
+        margin: 30px 0 38px;
+      }
+    }
+
+    .form__field {
+      font-family: $font-bold;
+      color: $colour-blue;
+      margin-bottom:0;
+    }
 
     &.form__fieldset {
       margin-bottom: 0;
     }
-    
-    .form__field {
-      display: inline-block;
-      font-family: $font-bold;
-      color: $colour-blue;
-      padding-top: 0;
-      line-height: 4.5;
-      text-align: center;
-      margin-bottom:0;
-    }
-  }
 
-  .form__radiobutton--row {
-    margin-bottom: 20px;
-    background-color: $colour-mercury-grey;
-    color: $colour-dark-purple;
+    .form__radiobutton--row {
+      background-color: $colour-mercury-grey;
+      color: $colour-dark-purple;
 
-    span {
-      display: inline-block;
-      font-family: $body-font;
-      margin-left: 3%;
-      max-width: 65%;
-      vertical-align: middle;
-
-      @include breakpoint($screen-md) {
-        width: 65%;
+      span {
+        font-family: $body-font;
       }
     }
+
+    .form__radio+label {
+      background-color: $colour-white;
+      border: 2px solid $colour-mercury-grey;
+    }
+
+    .form__radio:checked+label, .form__radio:focus+label{
+      background-color:$colour-blue;
+      color: $colour-white;
+      border: 2px solid $colour-blue;
+      transition: 0.3s all;
+    }
   }
 
-  .form__field {
-    text-align: left;
-  }
-
-  .form__radio {
-    position: absolute;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 0;
-    width: 80px;
-    height: 84px;
-    opacity: 0;
-  }
-
-  .form__radio+label {
-    display: inline-block;
-    background-color: $colour-white;
-    border: 2px solid $colour-mercury-grey;
-    width: 80px;
-    height: 84px;
-  }
-
-  .form__radio:checked+label, .form__radio:focus+label{
-    background-color:$colour-blue;
-    color: $colour-white;
-    transition: 0.3s all;
-    border: 2px solid $colour-blue;
-  }
-
-  .form__radio:checked+label {
-    transition: 0.3s all;
-  }
-
-  .number-input-label {
+  .currency-input-label {
     position: absolute;
     left: 0px;
-    top: 0.8em;
+    top: 0.75em;
     line-height: 21px;
     color: $colour-dark-purple;
     font-size: 18px;
