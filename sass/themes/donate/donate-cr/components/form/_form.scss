@@ -17,6 +17,14 @@ select {
   background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
 }
 
+// Remove large space between billing address row and keep in touch row
+.form__row--billing-detail {
+  padding-bottom: 0;
+}
+.form__row--keep-touch {
+  padding-top: 0;
+}
+
 // Checkboxes
 .form__row--giftaid .form__field--wrapper.form__checkbox,
 .form__field--wrapper.form__checkbox {
