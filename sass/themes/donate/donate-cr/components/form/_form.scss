@@ -31,8 +31,8 @@ select {
   padding: 0.5em 1em 1em 1em;
   background-color: $colour-smoke-grey;
   &.form__checkbox-text-only {
-    padding: initial;
-    background-color: initial;
+    padding: 0;
+    background-color: transparent;
   }
 }
 .form__field--wrapper.form__checkbox {
@@ -45,7 +45,7 @@ select {
   input[type="checkbox"],
   input[type="checkbox"]+span {
     top: 50%;
-    left: initial;
+    left: 20px;
     border: 1px solid $colour-grey;
     background-color: $colour-white;
     transform: translateY(-50%);
