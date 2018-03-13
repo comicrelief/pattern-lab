@@ -1,4 +1,19 @@
 // cr-donate specific form styling overrides 
+form,
+input {
+  color: $colour-dark-purple;
+}
+
+input[type="email"], 
+input[type="number"], 
+input[type="text"],
+select,
+textarea {
+  border: 1px solid $colour-dark-purple;
+}
+select {
+  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
+}
 
 // Checkboxes
 .form__row--giftaid .form__field--wrapper.form__checkbox,
@@ -37,6 +52,9 @@
 
 .form__subcopy--contact {
   font-weight: bold;
+}
+.form__subcopy--bfpo {
+  font-size: 16px;
 }
 
 @include breakpoint($screen-md) {
