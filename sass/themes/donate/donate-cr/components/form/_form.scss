@@ -100,11 +100,14 @@
       border: 2px solid $colour-mercury-grey;
     }
 
-    .form__radio:checked+label, .form__radio:focus+label{
+    .form__radio:checked+label {
       background-color:$colour-royal-blue;
       color: $colour-white;
-      border: 2px solid $colour-royal-blue;
       transition: 0.3s all;
+    }
+
+    .form__radio:focus+label {
+      border: 2px solid $colour-royal-blue;
     }
   }
 
@@ -129,6 +132,10 @@
       float: left;
       width: span(6);
       margin-right: calc(2 * #{gutter()});
+    }
+
+    &.form__field--wrapper {
+      margin-bottom: 0;
     }
   }
 
