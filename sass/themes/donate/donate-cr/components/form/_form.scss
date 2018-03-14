@@ -113,6 +113,10 @@
     .form__radio:focus+label {
       border: 2px solid $colour-royal-blue;
     }
+
+    .form__radio:not(:checked):focus+label {
+      border: 2px solid $colour-mercury-grey;
+    }
   }
 
   .currency-input-label {
