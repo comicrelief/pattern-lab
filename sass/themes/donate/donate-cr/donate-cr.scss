@@ -32,7 +32,6 @@
 @import "../../../base/components/header/base-header";
 @import "../../../base/components/navigation/hamburger-menu-button";
 @import "../../../base/components/meta-icons/meta-icons";
-@import "../../../base/components/navigation/main-nav";
 @import "../../../base/components/social/social";
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/footer/footer";
@@ -52,7 +51,6 @@
 // ==========================================================================
 @import "../../sr/2018/components/background-colours/background-colours";
 @import "../../sr/2018/components/buttons/buttons";
-@import "../../sr/2018/components/navigation/main-nav";
 @import "../../sr/2018/components/promo-header/promo-header";
 
 // ==========================================================================
@@ -75,6 +73,8 @@
 // Donate CR components
 // ==========================================================================
 @import "components/form/_form.scss";
+@import "components/header/_header.scss";
+@import "components/promo-header/_promo-header.scss";
 @import "components/partner-footer/_partner-footer.scss";
 @import "components/cards/_cards.scss";
 @import "components/success/_success.scss";
