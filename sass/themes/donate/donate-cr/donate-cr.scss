@@ -9,19 +9,17 @@
 @import "../../../base/_core";
 
 // ==========================================================================
+// SR18 variables * comment files you want to override
+// ==========================================================================
+@import "../../sr/2018/variables/_colours.scss";
+@import "../../sr/2018/variables/_mixins.scss";
+
+// ==========================================================================
 // CR variables * comment files you want to override
 // ==========================================================================
 @import "../../cr/2017/variables/_colours.scss";
 @import "../../cr/2017/variables/_typography.scss";
 @import "../../cr/2017/variables/_mixins.scss";
-
-// ==========================================================================
-// SR18 variables * comment files you want to override
-// ==========================================================================
-@import "../../sr/2018/variables/_colours.scss";
-@import "../../sr/2018/variables/_mixins.scss";
-@import "../../sr/2018/variables/_main-nav.scss";
-
 
 // ==========================================================================
 // Base UI components
@@ -31,13 +29,14 @@
 @import "../../../base/components/typography/typography";
 @import "../../../base/components/selectbox/selectbox";
 @import "../../../base/components/header/base-header";
-@import "../../../base/components/navigation/hamburger-menu-button";
-@import "../../../base/components/meta-icons/meta-icons";
-@import "../../../base/components/social/social";
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/promo-header/promo-header";
 
+// ==========================================================================
+// SR18 UI components
+// ==========================================================================
+@import "../../sr/2018/components/buttons/buttons";
 
 // ==========================================================================
 // CR UI components
@@ -45,13 +44,6 @@
 @import "../../cr/2017/components/typography/_fonts.scss";
 @import "../../cr/2017/components/typography/_typography.scss";
 @import "../../cr/2017/components/buttons/_buttons.scss";
-// ==========================================================================
-// SR18 UI components
-// ==========================================================================
-@import "../../sr/2018/components/background-colours/background-colours";
-@import "../../sr/2018/components/buttons/buttons";
-@import "../../sr/2018/components/promo-header/promo-header";
-
 // ==========================================================================
 // Payin variables
 // ==========================================================================

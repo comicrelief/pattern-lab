@@ -1,12 +1,42 @@
-// cr-donate specific form styling overrides
+// cr-donate specific form styling overrides 
+form,
+form a,
+input {
+  color: $colour-dark-purple;
+}
+
+input[type="email"], 
+input[type="number"], 
+input[type="text"],
+select,
+textarea {
+  border: 1px solid $colour-dark-purple;
+  @include placeholder($colour-dark-purple, 18px , $font-regular);
+}
+select {
+  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
+}
+
+// Remove large space between billing address row and keep in touch row
+.form__row--billing-detail {
+  padding-bottom: 0;
+}
+.form__row--keep-touch {
+  padding-top: 0;
+}
 
 // Checkboxes
 .form__row--giftaid .form__field--wrapper.form__checkbox,
 .form__field--wrapper.form__checkbox {
+  padding: 0.5em 1em 1em 1em;
   background-color: $colour-smoke-grey;
   &.form__checkbox-text-only {
-    background-color: initial;
+    padding: 0;
+    background-color: transparent;
   }
+}
+.form__field--wrapper.form__checkbox {
+  margin-bottom: 1em;
 }
 .form__checkbox:before {
   display: none;
@@ -15,7 +45,7 @@
   input[type="checkbox"],
   input[type="checkbox"]+span {
     top: 50%;
-    left: initial;
+    left: 20px;
     border: 1px solid $colour-grey;
     background-color: $colour-white;
     transform: translateY(-50%);
@@ -29,6 +59,18 @@
     padding: 0;
     width: calc(100% - 45px);
   }
+}
+
+// text styling
+.form__subtitle {
+  @extend h2;
+  text-align: center;
+}
+.form__subcopy--contact {
+  font-weight: bold;
+}
+.form__subcopy--bfpo {
+  font-size: 16px;
 }
 
 @include breakpoint($screen-md) {
