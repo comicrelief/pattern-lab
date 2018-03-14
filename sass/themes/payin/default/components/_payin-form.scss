@@ -242,6 +242,7 @@ label:not(.required, .form__checkbox):after {
 
 button.payment-button {
   @extend .btn;
+  position: relative;
   display: block;
   width: 100%;
   height: 60px;
