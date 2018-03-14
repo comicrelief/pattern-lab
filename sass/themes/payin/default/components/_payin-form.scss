@@ -92,6 +92,18 @@ select::-ms-expand {
     display: none;
 }
 
+/* Remove visually the number spinner */
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .form__select-open {
   background-position: 100% 0;
 }
