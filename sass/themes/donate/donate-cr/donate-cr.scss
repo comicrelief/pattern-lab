@@ -29,7 +29,6 @@
 @import "../../../base/components/typography/typography";
 @import "../../../base/components/selectbox/selectbox";
 @import "../../../base/components/header/base-header";
-@import "../../../base/components/navigation/main-nav";
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/promo-header/promo-header";
@@ -66,5 +65,6 @@
 // Donate CR components
 // ==========================================================================
 @import "components/form/_form.scss";
+@import "components/header/_header.scss";
 @import "components/promo-header/_promo-header.scss";
 @import "components/partner-footer/_partner-footer.scss";
