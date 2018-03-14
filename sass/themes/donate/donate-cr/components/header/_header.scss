@@ -29,6 +29,7 @@ header[role=banner] {
 }
 
 .block-branding, .header__inner-home {
+  
   @include breakpoint($screen-lg) {
     width: 50%;
   }
