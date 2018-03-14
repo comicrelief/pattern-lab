@@ -731,19 +731,14 @@ input[type="text"].form__field--postcode-lookup {
   }
 
   .form__radio+label {
-    display: inline-block;
-    background-color: $colour-white;
-    border: 2px solid$colour-light-grey;
-    width: 80px;
-    height: 84px;
     text-align: center;
   }
 
-  .form__radio:checked+label, .form__radio:focus+label{
-    background-color:$colour-blue;
+  .form__radio:checked+label{
+    background-color:#2BFDAC;
   }
 
-  .form__radio:checked+label {
-    transition: 0.3s all;
+  .form__radio:focus+label{
+    border: 2px solid $colour-dark-blue-lighter;
   }
 }
