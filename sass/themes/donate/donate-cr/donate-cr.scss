@@ -19,6 +19,7 @@
 // ==========================================================================
 @import "../../cr/2017/variables/_colours.scss";
 @import "../../cr/2017/variables/_typography.scss";
+@import "../../cr/2017/variables/_mixins.scss";
 
 // ==========================================================================
 // Base UI components
@@ -42,7 +43,7 @@
 // ==========================================================================
 @import "../../cr/2017/components/typography/_fonts.scss";
 @import "../../cr/2017/components/typography/_typography.scss";
-
+@import "../../cr/2017/components/buttons/_buttons.scss";
 // ==========================================================================
 // Payin variables
 // ==========================================================================
@@ -66,3 +67,4 @@
 @import "components/header/_header.scss";
 @import "components/promo-header/_promo-header.scss";
 @import "components/partner-footer/_partner-footer.scss";
+@import "components/buttons/_buttons.scss";
