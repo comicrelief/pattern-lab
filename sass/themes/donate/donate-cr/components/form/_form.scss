@@ -75,21 +75,28 @@ select {
 
 // buttons 
 button,
+button.payment-button,
 input[type="button"] {
   @extend .btn;
   @extend .btn--fixed-width;
 }
-button[type="submit"] {
-  @extend .btn--red;
-}
+
 .search-box #postcode_button {
   @extend .btn--dark-purple-ghost;
   border-width: 2px;
   border-radius: 30px;
 }
-// only show Apple Pay button when supported
+
+button[type="submit"],
+#comicrelief_payinbundle_payment_card, {
+  @extend .btn--red;
+}
+// Apple Pay button only shows when supported
 #comicrelief_payinbundle_payment_apple_pay {
   display: none;
+  // fallback if apple pay styling doesn't come through
+  @extend .btn--black;
+  // apple pay styling
   &:after {
     -webkit-appearance: -apple-pay-button;
     -apple-pay-button-style: black;
@@ -97,6 +104,10 @@ button[type="submit"] {
   &.show {
     display: block;
   }
+}
+// PayPal fallback styling
+#comicrelief_payinbundle_payment_paypal {
+  border: 2px solid;
 }
 
 
