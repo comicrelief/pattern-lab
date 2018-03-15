@@ -1,12 +1,12 @@
-// cr-donate specific form styling overrides 
+// cr-donate specific form styling overrides
 form,
 form a,
 input {
   color: $colour-dark-purple;
 }
 
-input[type="email"], 
-input[type="number"], 
+input[type="email"],
+input[type="number"],
 input[type="text"],
 select,
 textarea {
@@ -153,7 +153,7 @@ select {
     }
 
     .form__radio:focus+label {
-      border: 2px solid $colour-royal-blue;
+      border: 2px solid $colour-mercury-grey;
     }
 
     .form__radio:not(:checked):focus+label {
