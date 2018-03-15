@@ -73,6 +73,7 @@ select {
   font-size: 16px;
 }
 
+// buttons 
 button,
 input[type="button"] {
   @extend .btn;
@@ -85,6 +86,17 @@ button[type="submit"] {
   @extend .btn--dark-purple-ghost;
   border-width: 2px;
   border-radius: 30px;
+}
+// only show Apple Pay button when supported
+#comicrelief_payinbundle_payment_apple_pay {
+  display: none;
+  &:after {
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-style: black;
+  }
+  &.show {
+    display: block;
+  }
 }
 
 
