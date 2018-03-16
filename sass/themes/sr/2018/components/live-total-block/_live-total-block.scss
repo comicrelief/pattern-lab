@@ -25,10 +25,10 @@
   }
 
   .live-total-block__wrapper {
-    @include span(12);
+    @include span(12 of 12 0);
 
     @include breakpoint($screen-md) {
-      @include span(9 of 12 0);
+      width: 73%;
     }
 
     .live-total__content {
