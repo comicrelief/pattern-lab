@@ -23,19 +23,12 @@
 .form__row--giftaid,
 .form__row--your-detail,
 .form__row--billing-detail,
+.form__field--address,
 .form__row--card-logos,
 .form__row--logos, {
   display: none;
   &.show {
     display: block;
-  }
-}
-
-// hide extended billing address fields
-.form__field--address {
-  display: block;
-  &.hide {
-    display: none;
   }
 }
 

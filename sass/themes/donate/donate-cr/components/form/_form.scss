@@ -4,7 +4,17 @@ form a,
 input {
   color: $colour-dark-purple;
 }
-
+form {
+  @include breakpoint($screen-md) {
+    margin: -75px auto 0;
+    width: span(10);
+    border: 2px solid $colour-grey;
+    background-color: $colour-white;
+  }
+  @include breakpoint($screen-lg) {
+    width: span(7);
+  }
+}
 input[type="email"],
 input[type="number"],
 input[type="text"],
@@ -16,6 +26,27 @@ textarea {
 select {
   background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
 }
+.form__row {
+  width: span(11);
+
+  @include breakpoint($screen-md) {
+    width: span(10);
+  }
+}
+
+// hide and show for payment, giftaid, details, billing address and logos rows
+.form__row--payment,
+.form__row--giftaid,
+.form__row--your-detail,
+.form__row--billing-detail,
+.form__field--address,
+.form__row--card-logos,
+.form__row--logos, {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
 
 // Remove large space between billing address row and keep in touch row
 .form__row--billing-detail {
@@ -26,18 +57,6 @@ select {
 }
 
 // Checkboxes
-.form__row--giftaid .form__field--wrapper.form__checkbox,
-.form__field--wrapper.form__checkbox {
-  padding: 0.5em 1em 1em 1em;
-  background-color: $colour-smoke-grey;
-  &.form__checkbox-text-only {
-    padding: 0;
-    background-color: transparent;
-  }
-}
-.form__field--wrapper.form__checkbox {
-  margin-bottom: 1em;
-}
 .form__checkbox:before {
   display: none;
 }
@@ -60,6 +79,26 @@ select {
     width: calc(100% - 45px);
   }
 }
+.form__row--giftaid .form__field--wrapper.form__checkbox,
+.form__field--wrapper.form__checkbox {
+  margin-bottom: 1em;
+  padding: 0.5em 1em 1em 1em;
+  background-color: $colour-smoke-grey;
+  &.form__checkbox-text-only {
+    padding: 0;
+    background-color: transparent;
+
+    .form__address-detail-toggle {
+      padding: 20px 0;
+    }
+    // make sure the checkbox covers the whole label so it's clickable
+    input[type="checkbox"] {
+      top: 45px;
+      left: 0;
+      height: 60px;
+    }
+  }
+}
 
 // text styling
 .form__subtitle {
@@ -80,7 +119,6 @@ input[type="button"] {
   @extend .btn;
   @extend .btn--fixed-width;
 }
-
 .search-box {
     #postcode_button {
     @extend .btn--dark-purple-ghost;
@@ -91,7 +129,6 @@ input[type="button"] {
     border: 2px solid;
   }
 }
-
 button[type="submit"],
 #comicrelief_payinbundle_payment_card, {
   @extend .btn--red;
@@ -121,29 +158,7 @@ button[type="submit"],
   background-image: url($image-path + "paypal.svg");
 }
 
-
-@include breakpoint($screen-md) {
-  form {
-    margin: -75px auto 0;
-    width: span(10);
-    border: 2px solid $colour-grey;
-    background-color: $colour-white;
-  }
-}
-@include breakpoint($screen-lg) {
-  form {
-    width: span(7);
-  }
-}
-
-.form__row {
-  width: span(11);
-
-  @include breakpoint($screen-md) {
-    width: span(10);
-  }
-}
-
+// Amount row styling
 .form__row--payment-amount {
   p, .number-input-label {
     color: $colour-dark-purple;
