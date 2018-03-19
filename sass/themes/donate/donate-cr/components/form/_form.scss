@@ -204,3 +204,16 @@ select {
     }
   }
 }
+
+.form__row--giftaid {
+  h1 {
+    background:url($image-path + "gift_aid_logo.png") no-repeat center;
+    background-size: contain;
+    width: 210px;
+
+    @include breakpoint($screen-md) {
+      width: 298px;
+    }
+
+  }
+}
