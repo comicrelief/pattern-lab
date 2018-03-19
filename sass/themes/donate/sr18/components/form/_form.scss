@@ -20,7 +20,6 @@
 
 // hide and show for payment, giftaid, details, billing address and logos rows
 .form__row--payment,
-.form__row--giftaid,
 .form__row--your-detail,
 .form__row--billing-detail,
 .form__field--address,
@@ -30,6 +29,9 @@
   &.show {
     display: block;
   }
+}
+.form__row--giftaid {
+  display: block;
 }
 
 // hide form row's title and copy
