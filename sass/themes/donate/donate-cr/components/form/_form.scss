@@ -2,6 +2,7 @@
 form,
 form a,
 input {
+  font-family: $body-font;
   color: $colour-dark-purple;
 }
 form {
@@ -42,7 +43,7 @@ select {
 .form__row--billing-detail,
 .form__field--address,
 .form__row--keep-touch,
-.form__field--submit,
+.form__nav,
 .form__row--card-logos,
 .form__row--logos, {
   display: none;
@@ -55,8 +56,32 @@ select {
 .form__row--billing-detail {
   padding-bottom: 0;
 }
+.form__row--payment-buttons,
+.form__row--billing-detail,
 .form__row--keep-touch {
   padding-top: 0;
+}
+
+// Back button
+.form__back {
+  display: block;
+  position: relative;
+  padding-left: 1em;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 0.5em;
+    height: 0.5em;
+    border-left: 2px solid $colour-dark-purple;
+    border-top: 2px solid $colour-dark-purple;
+    transform: rotate(-45deg);
+  }
 }
 
 // Checkboxes
