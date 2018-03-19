@@ -683,6 +683,19 @@ input[type="text"].form__field--postcode-lookup {
     max-height: 105px;
   }
 
+  h1 {
+    background:url($image-path + "giftaid-mobile.jpg") no-repeat center;
+    background-size:contain;
+    width: 119px;
+    height:68px;
+    margin: 15px auto 20px;
+
+    @include breakpoint($screen-md) {
+      width: 298px;
+      height: 105px;
+    }
+  }
+
   .form__field--wrapper.form__field--giftaid {
     text-align: left;
     background: #fff;
