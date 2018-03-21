@@ -326,3 +326,14 @@ button[type="submit"],
     }
   }
 }
+
+// help text and error messages
+.help-block {
+  top: 105%;
+}
+.form__field--amount.help-block {
+  top: 55px;
+}
+.form__field--wrapper {
+  margin-bottom: 5%;
+}
