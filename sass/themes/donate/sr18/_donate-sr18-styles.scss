@@ -16,24 +16,6 @@ footer {
   }
 }
 
-/* FORM  */
-// hide details and billing address rows initially
-.form__row--your-detail,
-.form__row--billing-detail {
-  display: none;
-  &.show {
-    display: block;
-  }
-}
-
-// hide extended billing address fields
-.form__field--address {
-  display: block;
-  &.hide {
-    display: none;
-  }
-}
-
 // only show Apple Pay button when supported
 #comicrelief_payinbundle_payment_apple_pay {
   display: none;

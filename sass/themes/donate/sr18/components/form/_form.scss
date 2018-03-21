@@ -17,18 +17,37 @@
   }
 }
 
-
-// hide and show for payment, giftaid, details, billing address and logos rows
-.form__row--payment,
-.form__row--your-detail,
-.form__row--billing-detail,
-.form__field--address,
-.form__row--card-logos,
-.form__row--logos, {
-  display: none;
-  &.show {
-    display: block;
+// hide and show for form rows if js is enabled
+.js-enabled {
+  .form__row--payment,
+  .form__row--your-detail,
+  .form__row--billing-detail,
+  .form__field--address,
+  .form__row--card-logos,
+  .form__row--logos,
+  .form__field--error {
+    display: none;
+    &.show {
+      display: block;
+    }
   }
+}
+// when js is not enabled the (functioning) form fields should be visible
+// hide error fields until server side validation is fixed
+.no-js {
+ .form__row--payment-buttons,
+  .search-box-button,
+  .form__address-detail-toggle,
+  #address-detail,
+  .form__field--error {
+    display: none;
+  }
+  .form__field--error ul {
+    color: $colour-red;
+  }
+}
+.form__row--logos {
+  display: none;
 }
 .form__row--giftaid {
   display: block;
