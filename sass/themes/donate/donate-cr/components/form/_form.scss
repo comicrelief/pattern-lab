@@ -73,6 +73,7 @@ select {
   font-size: 16px;
 }
 
+
 @include breakpoint($screen-md) {
   form {
     margin: -75px auto 0;
@@ -216,4 +217,15 @@ select {
     }
 
   }
+}
+
+// help text and error messages
+.help-block {
+  top: 105%;
+}
+.form__field--amount.help-block {
+  top: 55px;
+}
+.form__field--wrapper {
+  margin-bottom: 5%;
 }
