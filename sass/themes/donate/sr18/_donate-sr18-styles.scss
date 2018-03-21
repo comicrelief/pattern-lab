@@ -16,14 +16,6 @@ footer {
   }
 }
 
-// only show Apple Pay button when supported
-#comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  &.show {
-    display: block;
-  }
-}
-
 /* Thank You page */
 #promo-header--success, 
 #promo-header--failure {
