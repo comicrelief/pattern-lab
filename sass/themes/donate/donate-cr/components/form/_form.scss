@@ -115,6 +115,9 @@ select {
   input[type="checkbox"]:checked+span {
     background-color: $colour-white;
   }
+  input[type="checkbox"]:focus+span {
+    border-width: 2px;
+  }
   label.form__checkbox {
     top: 14px;
     left: 45px;
@@ -260,11 +263,11 @@ button[type="submit"],
     }
 
     .form__radio:focus+label {
-      border: 2px solid $colour-mercury-grey;
+      border: 2px solid $colour-dark-purple;
     }
 
     .form__radio:not(:checked):focus+label {
-      border: 2px solid $colour-mercury-grey;
+      border: 2px solid $colour-dark-purple;
     }
   }
 
