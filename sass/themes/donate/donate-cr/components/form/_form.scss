@@ -328,8 +328,17 @@ button[type="submit"],
 }
 
 // help text and error messages
-.help-block {
+.error-container {
+  position: absolute;
+}
+.help-block,
+.error-container {
   top: 105%;
+}
+.help-block.form-error {
+  display: block;
+  position: relative;
+  background-position: left 40%;
 }
 .form__field--amount.help-block {
   top: 55px;
