@@ -278,6 +278,7 @@ button.payment-button {
 #comicrelief_payinbundle_payment_paypal:after {
   background: transparent url($image-path + "paypal-logo.png") center / 100px no-repeat;
 }
+
 // Layout
 .form__row {
   margin: 0 auto;
@@ -575,6 +576,17 @@ input[type="text"].form__field--postcode-lookup {
     width: 100%;
     background: none;
     border: none;
+
+    &.loading:after {
+      @extend .btn;
+      position: absolute;
+      content:'';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $colour-white url($image-path + "loader.gif") center no-repeat;
+    }
   }
   #postcode_button {
     @extend .btn;
@@ -612,6 +624,7 @@ input[type="text"].form__field--postcode-lookup {
     background-image: url($image-path + "alert-icon.png");
     z-index: 1;
     position: absolute;
+    text-align: left;
   }
 }
 #comicrelief_payinbundle_payment_paymentType {
