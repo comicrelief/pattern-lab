@@ -13,6 +13,7 @@ body.payin {
 
 // keep sizing of container the same as promo header/general styling
 .form__step {
+  position: relative;
   margin: 0 auto;
   max-width: 1200px;
 }

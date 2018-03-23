@@ -5,7 +5,6 @@
 
   @include breakpoint($screen-md) {
     min-height: 400px;
-    z-index: -1;
     background: url($image-path + "promo-header-cr-donate.jpg") top center no-repeat;
   }
 }
@@ -17,20 +16,23 @@
   }
 }
 
-
 .promo-header--success {
 
-  h1, h2, h3 {
-    font-family:$font-bold;
+  h1, h2, h3, p, ul {
     color: $colour-dark-purple;
   }
 
-  p {
-    color: $colour-dark-purple;
+  h1, h2, h3 {
+    font-family:$font-bold;
+  }
+
+  ul {
+    margin-bottom: 15px;
   }
 
   .promo-header__content {
     margin-top: 45%;
+    font-family: "Sailec-Bold",sans-serif;
 
     @include breakpoint($screen-md) {
       position: relative;
