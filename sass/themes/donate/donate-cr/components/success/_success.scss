@@ -6,7 +6,7 @@
 
   @include breakpoint($screen-md) {
     width: span(6);
-    margin-top: 40px;
+    margin: 40px auto;
 
   }
 
