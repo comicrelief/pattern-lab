@@ -16,3 +16,31 @@
     background: none;
   }
 }
+
+
+.promo-header--success {
+
+  h1, h2, h3 {
+    font-family:$font-bold;
+    color: $colour-dark-purple;
+  }
+
+  p {
+    color: $colour-dark-purple;
+  }
+
+  .promo-header__content {
+    margin-top: 45%;
+
+    @include breakpoint($screen-md) {
+      position: relative;
+      top:0;
+      margin:528px auto 0;
+    }
+
+    @include breakpoint($screen-lg) {
+      margin-top:658px;
+    }
+  }
+
+}
