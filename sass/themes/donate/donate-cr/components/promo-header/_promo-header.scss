@@ -32,7 +32,7 @@
 
   .promo-header__content {
     margin-top: 45%;
-    font-family: "Sailec-Bold",sans-serif;
+    font-family:$font-regular;
 
     @include breakpoint($screen-md) {
       position: relative;
