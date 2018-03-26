@@ -5,7 +5,7 @@
   text-align: center;
 
   @include breakpoint($screen-md) {
-    width: span(6);
+    width: span(7);
     margin: 40px auto;
 
   }
