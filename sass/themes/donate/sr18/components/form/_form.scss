@@ -24,8 +24,7 @@
   .form__row--billing-detail,
   .form__field--address,
   .form__row--card-logos,
-  .form__row--logos,
-  .form__field--error {
+  .form__row--logos {
     display: none;
     &.show {
       display: block;
