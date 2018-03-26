@@ -5,15 +5,6 @@
 
   @include breakpoint($screen-md) {
     min-height: 400px;
-    z-index: -1;
     background: url($image-path + "promo-header-cr-donate.jpg") top center no-repeat;
-  }
-}
-
-
-.promo-header--failure {
-  &.promo-header {
-    background: none;
-    z-index: auto
   }
 }

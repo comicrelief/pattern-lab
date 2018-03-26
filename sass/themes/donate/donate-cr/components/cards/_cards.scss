@@ -1,0 +1,33 @@
+.cards__wrapper {
+  @include container;
+
+  .card__image {
+    height:228px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .card {
+    background: $colour-mercury-grey;
+  }
+
+  .card__content-wrapper {
+    position: relative;
+    height: 100%;
+    padding: 48px 20px 35px;
+    text-align: center;
+
+    h3 {
+      color: $colour-dark-purple;
+    }
+
+    a {
+      color: $colour-dark-purple;
+      font-family:$font-bold;
+    }
+  }
+}
