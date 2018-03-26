@@ -1,0 +1,25 @@
+.inner-content {
+  width: span(10);
+  margin: 10px auto;
+  font-family:$font-regular;
+  text-align: center;
+
+  @include breakpoint($screen-md) {
+    width: span(7);
+    margin: 40px auto;
+
+  }
+
+  p, ul {
+    color: $colour-dark-purple;
+    text-align: left;
+
+    @include breakpoint($screen-md) {
+      text-align: center;
+    }
+  }
+
+  ul {
+    margin-bottom: 15px;
+  }
+}

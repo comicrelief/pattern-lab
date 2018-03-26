@@ -32,6 +32,8 @@
 @import "../../../base/components/navigation/footer-nav";
 @import "../../../base/components/footer/footer";
 @import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
 
 // ==========================================================================
 // SR18 UI components
@@ -67,4 +69,6 @@
 @import "components/header/_header.scss";
 @import "components/promo-header/_promo-header.scss";
 @import "components/partner-footer/_partner-footer.scss";
+@import "components/cards/_cards.scss";
 @import "components/buttons/_buttons.scss";
+@import "components/success/_success.scss";
