@@ -5,12 +5,12 @@
     width: auto;
   }
 
-  .form__field--whatYouDid label {
+  .form__field--whatyoudid label {
     text-align: left;
     margin: 0;
   }
 
-  .form__field--whatYouDid {
+  .form__field--whatyoudid {
     padding:0 15px;
 
     @include breakpoint($screen-md) {
