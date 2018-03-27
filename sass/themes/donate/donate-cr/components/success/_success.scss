@@ -19,6 +19,13 @@
     }
   }
 
+
+  &.inner-content--failure {
+    p {
+      text-align: center;
+    }
+  }
+
   ul {
     margin-bottom: 15px;
   }
