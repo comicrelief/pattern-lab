@@ -781,3 +781,8 @@ input[type="text"].form__field--postcode-lookup {
     border: 2px solid $colour-light-grey;
   }
 }
+
+.form__field--help-info {
+  display:block;
+  text-align: left;
+}
