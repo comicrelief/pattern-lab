@@ -10,10 +10,19 @@
     margin: 0;
   }
 
+  .form__field--whatYouDid {
+    padding:0 15px;
+
+    @include breakpoint($screen-md) {
+      padding: 0;
+    }
+  }
+
   .form__field--help-info{
     margin-bottom: 40px;
     color:$colour-black;
     font-family: $font-regular--sr18;
+    font-size: 18px;
   }
 
   .form__row--user-generate-content {
