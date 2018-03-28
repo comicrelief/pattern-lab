@@ -40,6 +40,11 @@
       display: block;
       height: 100%;
       width:100%;
+
+      &:hover {
+        transition: background-color 0.2s linear;
+        background-color: rgba(6,29,56,0.5);
+      }
     }
 
     .cards__content {
