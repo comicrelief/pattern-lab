@@ -228,6 +228,8 @@ button[type="submit"],
     @include breakpoint($screen-md) {
       margin: 30px 0 38px;
     }
+    label:not(.required):not(.form__checkbox):after {
+    content: "";
   }
 
   .form__togglebtn-amount {
