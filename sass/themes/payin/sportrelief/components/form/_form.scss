@@ -216,3 +216,9 @@ button[type=submit] {
     }
   }
 }
+
+.form__field--wrapper {
+  &.form__field--paymentType {
+    margin-bottom: 80px;
+  }
+}
