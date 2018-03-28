@@ -2,7 +2,13 @@
 
   .form__field--permission {
     margin: 0 auto 40px;
-    width: auto;
+    width: 90%;
+    text-align: left;
+
+    @include breakpoint($screen-md) {
+      width: auto;
+      text-align: center;
+    }
   }
 
   .form__field--whatyoudid label {
