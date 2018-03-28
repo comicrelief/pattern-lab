@@ -431,12 +431,12 @@ button.payment-button {
   padding-bottom: 459px;
 }
 .form__field--permission,
-.form__field--whatYouDid {
+.form__field--whatyoudid {
   .required:after {
     content: "";
   }
 }
-.form__field--whatYouDid {
+.form__field--whatyoudid {
   .help-block {
     left: 0px;
     top: 170px;
@@ -780,4 +780,9 @@ input[type="text"].form__field--postcode-lookup {
   .form__radio:focus+label{
     border: 2px solid $colour-light-grey;
   }
+}
+
+.form__field--help-info {
+  display:block;
+  text-align: left;
 }
