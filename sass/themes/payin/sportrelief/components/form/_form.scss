@@ -2,8 +2,8 @@
   width: 100%;
   background-color: $colour-white-smoke;
 
-  h4 {
-    @include font-size($p-font-size);
+  h3 {
+    font-size:28px;
     font-family: $font-regular;
     color: $colour-dark-blue-lighter;
   }
@@ -13,10 +13,23 @@
   background-color: transparent;
 }
 
+.form__step {
+  max-width: none;
+}
+
+.form__row {
+  @include container;
+
+  &.form__row--title {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 // hide address fields until shown
 .form__field--address,
 .form__row--billing-detail {
-  display: block; 
+  display: block;
    &.hide {
     display: none;
    }
@@ -42,8 +55,8 @@ input {
   color: $colour-dark-purple;
 }
 
-input[type="email"], 
-input[type="number"], 
+input[type="email"],
+input[type="number"],
 input[type="text"],
 textarea {
   border: 1px solid $colour-dark-purple;
@@ -53,8 +66,8 @@ select {
   border: 1px solid $colour-royal-blue;
   background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
 }
-  
-// after element to put loading gif in on top of postcode find address button   
+
+// after element to put loading gif in on top of postcode find address button
 .search-box {
   .search-box-button.loading {
     &:after {
@@ -88,12 +101,12 @@ select {
     top: 0;
     left: 40px;
     width: calc(100% - 40px);
-     
+
      &:before {
       display: none;
     }
   }
-  
+
   input[type="checkbox"]:focus+span {
     border-color: $colour-dark-purple;
   }
@@ -102,7 +115,7 @@ select {
   .form__subcopy--privacy-policy {
     font-size: 16px;
   }
-  
+
   .form__subcopy--certificate,
   .form__subcopy--contact {
     @extend p;
@@ -156,7 +169,7 @@ button[type=submit] {
 @include breakpoint($screen-md) {
   .form__row--your-detail,
   .form__row--payment {
-    padding: 60px 0 0;
+    padding: 80px 0 0;
   }
 
   // center buttons
@@ -166,7 +179,7 @@ button[type=submit] {
       width: 50%;
     }
     #postcode_button {
-      margin: 30px auto 15px;
+      margin: 30px auto 20px;
       width: 50%;
     }
   }
@@ -185,5 +198,27 @@ button[type=submit] {
   button.payment-button,
   button[type=submit] {
     width: auto;
+  }
+}
+
+.form__field--address-detail {
+  label.form__checkbox{
+    padding: 0;
+  }
+}
+
+.form__row {
+  &.form__nav {
+    padding: 40px 0 80px;
+
+    .form__field--wrapper {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__field--wrapper {
+  &.form__field--paymentType {
+    margin-bottom: 80px;
   }
 }
