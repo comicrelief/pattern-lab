@@ -16,7 +16,7 @@
 // hide address fields until shown
 .form__field--address,
 .form__row--billing-detail {
-  display: block; 
+  display: block;
    &.hide {
     display: none;
    }
@@ -42,8 +42,8 @@ input {
   color: $colour-dark-purple;
 }
 
-input[type="email"], 
-input[type="number"], 
+input[type="email"],
+input[type="number"],
 input[type="text"],
 textarea {
   border: 1px solid $colour-dark-purple;
@@ -53,8 +53,8 @@ select {
   border: 1px solid $colour-royal-blue;
   background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
 }
-  
-// after element to put loading gif in on top of postcode find address button   
+
+// after element to put loading gif in on top of postcode find address button
 .search-box {
   .search-box-button.loading {
     &:after {
@@ -88,12 +88,12 @@ select {
     top: 0;
     left: 40px;
     width: calc(100% - 40px);
-     
+
      &:before {
       display: none;
     }
   }
-  
+
   input[type="checkbox"]:focus+span {
     border-color: $colour-dark-purple;
   }
@@ -102,7 +102,7 @@ select {
   .form__subcopy--privacy-policy {
     font-size: 16px;
   }
-  
+
   .form__subcopy--certificate,
   .form__subcopy--contact {
     @extend p;
@@ -185,5 +185,17 @@ button[type=submit] {
   button.payment-button,
   button[type=submit] {
     width: auto;
+  }
+}
+
+button#comicrelief_payin_success_submit:disabled {
+  background: rgba(0,0,0,0.5);
+  cursor: no-drop;
+
+  &:hover {
+    opacity: 1;
+    &:before {
+      background-image:none;
+    }
   }
 }
