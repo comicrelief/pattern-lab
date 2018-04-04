@@ -2,7 +2,18 @@
   background-color: $colour-black-pearl;
 
   .promo-header__content {
-    top: 65%;
+    top: 0;
+    transform: translate(0);
+
+    .promo-header__content-inner {
+      @include breakpoint($screen-md) {
+        margin-top:100px;
+      }
+    }
+  }
+
+  &.promo-header--small {
+    min-height: 325px;
   }
 
   h1 {
