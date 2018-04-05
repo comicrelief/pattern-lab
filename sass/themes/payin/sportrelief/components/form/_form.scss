@@ -188,12 +188,17 @@ button[type=submit] {
   }
 }
 
-button#comicrelief_payin_success_submit:disabled {
+button:disabled {
   background: rgba(0,0,0,0.5);
   cursor: no-drop;
 
+  &:before {
+    background-image:none;
+  }
+
   &:hover {
     opacity: 1;
+    transform: translateY(0);
     &:before {
       background-image:none;
     }
