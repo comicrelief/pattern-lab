@@ -2,8 +2,8 @@
   width: 100%;
   background-color: $colour-white-smoke;
 
-  h4 {
-    @include font-size($p-font-size);
+  h3 {
+    font-size:28px;
     font-family: $font-regular;
     color: $colour-dark-blue-lighter;
   }
@@ -11,6 +11,19 @@
 
 .form-row {
   background-color: transparent;
+}
+
+.form__step {
+  max-width: none;
+}
+
+.form__row {
+  @include container;
+
+  &.form__row--title {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 // hide address fields until shown
@@ -156,7 +169,7 @@ button[type=submit] {
 @include breakpoint($screen-md) {
   .form__row--your-detail,
   .form__row--payment {
-    padding: 60px 0 0;
+    padding: 80px 0 0;
   }
 
   // center buttons
@@ -166,7 +179,7 @@ button[type=submit] {
       width: 50%;
     }
     #postcode_button {
-      margin: 30px auto 15px;
+      margin: 30px auto 20px;
       width: 50%;
     }
   }
@@ -187,7 +200,27 @@ button[type=submit] {
     width: auto;
   }
 }
+.form__field--address-detail {
+  label.form__checkbox{
+    padding: 0;
+  }
+}
 
+.form__row {
+  &.form__nav {
+    padding: 40px 0 80px;
+
+    .form__field--wrapper {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__field--wrapper {
+  &.form__field--paymentType {
+    margin-bottom: 80px;
+  }
+}
 button:disabled {
   background: rgba(0,0,0,0.5);
   cursor: no-drop;
