@@ -46,24 +46,21 @@
 			</div>
     </div>
 		<div class="form__row form__row--payment-amount">
-			<div id="js-radiobutton-handler" class="form__fieldset form__radiobutton">
+			<div id="js-togglebtn-amount" class="form__fieldset form__togglebtn-amount">
 				<p class="select-label">To donate, choose an amount or enter your own below</p>
-		    <div class="form__radiobutton--row">
-					<input type="radio" name="amount" value="30" id="select-amount-thirty" class="form__radio" data-ischecked="false" />
-					<label for="select-amount-thirty" class="form__field">£30</label>
-					<span>Mattis semper nostra hic porta dis nullam</span>
+          <button class="select-amount-btn selected">
+            <span class="select-amount" data-amount="£30">£30</span>
+            <span class="select-amount--context">Mattis semper nostra hic porta dis nullam</span>
+          </button>
+          <button class="select-amount-btn">
+            <span class="select-amount" data-amount="£50">£50</span>
+            <span class="select-amount--context">Mattis semper nostra hic porta dis nullam</span>
+          </button>
+          <button class="select-amount-btn">
+            <span class="select-amount" data-amount="£150">£150</span>
+            <span class="select-amount--context">Mattis semper nostra hic porta dis nullam</span>
+					</button>
 				</div>
-				<div class="form__radiobutton--row">
-					<input type="radio"  name="amount" value="50" id="select-amount-fifty" class="form__radio" />
-		      <label for="select-amount-fifty" class="form__field" >£50</label>
-					<span>Mattis semper nostra hic porta dis nullam</span>
-				</div>
-				<div class="form__radiobutton--row">
-		      <input type="radio"  name="amount" value="150" id="select-amount-onehundredfifty" class="form__radio" />
-					<label for="select-amount-onehundredfifty" class="form__field">£150</label>
-					<span>Mattis semper nostra hic porta dis nullam</span>
-				</div>
-			</div>
 			<div class="form__fieldset">
 				<span id="js-currency-label" class="currency-input-label">£</span>
 				<div class="form__money form__field--amount">
