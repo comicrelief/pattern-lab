@@ -23,7 +23,7 @@ input[type="text"],
 select,
 textarea {
   border: 1px solid $colour-dark-purple;
-  @include placeholder($colour-dark-purple, 18px , $font-regular);
+  @include placeholder (#757575, 18px, $body-font);
 }
 select {
   background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
@@ -219,7 +219,7 @@ button[type="submit"],
 
     &.form__amount-submit {
       margin-top: 45px;
-      
+
       @include breakpoint($screen-md) {
         margin-top: 55px;
       }
