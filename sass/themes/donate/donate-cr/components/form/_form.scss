@@ -218,7 +218,11 @@ button[type="submit"],
     margin-bottom: 3%;
 
     &.form__amount-submit {
-      margin-top: 6%;
+      margin-top: 45px;
+      
+      @include breakpoint($screen-md) {
+        margin-top: 55px;
+      }
     }
   }
 
