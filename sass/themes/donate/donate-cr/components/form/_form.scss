@@ -167,6 +167,13 @@ input[type="button"] {
   @extend .btn;
   @extend .btn--fixed-width;
 }
+
+button.payment-button {
+  border-radius: 5px;
+  height: 55px;
+  padding: 18px 30px;
+}
+
 .search-box {
     #postcode_button {
     @extend .btn--dark-purple-ghost;
@@ -186,12 +193,12 @@ button[type="submit"],
   display: none;
   // fallback if apple pay styling doesn't come through
   // making sure this doesn't stick out if apple styling does come through
-  height: 59px;
+  height: 54px;
   @extend .btn--black;
   // apple pay styling
   &:after {
     margin-top: -1px;
-    height: 60px;
+    height: 55px;
     -webkit-appearance: -apple-pay-button;
     -apple-pay-button-style: black;
   }
