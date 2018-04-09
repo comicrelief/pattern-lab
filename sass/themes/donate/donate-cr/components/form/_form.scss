@@ -325,10 +325,12 @@ button[type="submit"],
 }
 
 .form__row--giftaid {
-  h1 {
+  h2 {
+    margin: 15px auto 20px;
+    width: 210px;
+    height: 105px;
     background:url($image-path + "gift_aid_logo.png") no-repeat center;
     background-size: contain;
-    width: 210px;
 
     @include breakpoint($screen-md) {
       width: 298px;
