@@ -81,6 +81,7 @@ select {
 .form__back {
   display: block;
   position: relative;
+  margin-bottom: 30px;
   padding-left: 1em;
   font-weight: bold;
   text-align: left;
@@ -148,13 +149,9 @@ select {
 
 // text styling
 h2 {
-  margin: 15px 0 25px;
+  margin: 15px 0 30px;
   font-family: $font-bold;
   @include font-size($h3-font-size);
-
-  @include breakpoint($screen-md) {
-    margin: 30px 0 38px;
-  }
 }
 .form__row--giftaid p:nth-of-type(2) {
   text-align: left;
