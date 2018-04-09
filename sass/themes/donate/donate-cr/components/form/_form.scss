@@ -147,12 +147,17 @@ select {
 }
 
 // text styling
-.form__subtitle {
-  @extend h2;
-  text-align: center;
+h2 {
+  margin: 15px 0 25px;
+  font-family: $font-bold;
+  @include font-size($h3-font-size);
+
+  @include breakpoint($screen-md) {
+    margin: 30px 0 38px;
+  }
 }
-.form__subcopy--contact {
-  font-weight: bold;
+.form__row--giftaid p:nth-of-type(2) {
+  text-align: left;
 }
 .form__subcopy--bfpo {
   font-size: 16px;
@@ -217,20 +222,6 @@ button[type="submit"],
 
     &.form__amount-submit {
       margin-top: 6%;
-    }
-  }
-
-  .select-label {
-    @include font-size($p-font-size);
-    font-family: $font-bold;
-    margin: 15px 0 25px;
-
-    @include breakpoint($screen-md) {
-      margin: 30px 0 38px;
-    }
-
-    label:not(.required):not(.form__checkbox):after {
-      content: "";
     }
   }
 
@@ -329,7 +320,7 @@ button[type="submit"],
     margin: 15px auto 20px;
     width: 210px;
     height: 105px;
-    background:url($image-path + "gift_aid_logo.png") no-repeat center;
+    background: url($image-path + "gift_aid_logo.png") no-repeat center;
     background-size: contain;
 
     @include breakpoint($screen-md) {
