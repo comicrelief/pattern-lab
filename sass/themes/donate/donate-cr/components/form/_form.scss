@@ -372,9 +372,9 @@ button[type="submit"],
   margin-bottom: 7%;
   
   @include breakpoint($screen-md) {
-    margin-bottom: 7%;
+    margin-bottom: 5%;
   }
-  
+
   &.form__field--postcode {
     margin-bottom: 0;
   }
