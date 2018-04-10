@@ -1,5 +1,4 @@
 /* Main navigation styling */ 
-
 .header__inner-wrapper {
 
   // Position logo to left, menu in center, meta icon block to the right
@@ -314,7 +313,7 @@ header[role=banner] {
   }
 
    @include breakpoint($desktop-nav-breakpoint) {
-    height: 107px;
+    height: 109px;
   }
 
   .block-cr-meta-icons,
