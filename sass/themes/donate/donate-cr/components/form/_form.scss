@@ -68,6 +68,7 @@ select {
 }
 
 // Remove large space between billing address row and keep in touch row
+.form__row--your-detail,
 .form__row--billing-detail {
   padding-bottom: 0;
 }
@@ -136,7 +137,7 @@ select {
     background-color: transparent;
 
     .form__address-detail-toggle {
-      padding: 20px 0;
+      padding-bottom: 20px;
     }
     // make sure the checkbox covers the whole label so it's clickable
     input[type="checkbox"] {
