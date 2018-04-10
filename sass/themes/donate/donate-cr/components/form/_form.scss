@@ -366,5 +366,9 @@ button[type="submit"],
   background-position: left 40%;
 }
 .form__field--wrapper {
-  margin-bottom: 5%;
+  margin-bottom: 7%;
+  
+  @include breakpoint($screen-md) {
+    margin-bottom: 7%;
+  }
 }
