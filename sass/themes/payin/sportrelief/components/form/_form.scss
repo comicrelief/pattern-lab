@@ -200,7 +200,6 @@ button[type=submit] {
     width: auto;
   }
 }
-
 .form__field--address-detail {
   label.form__checkbox{
     padding: 0;
@@ -220,5 +219,21 @@ button[type=submit] {
 .form__field--wrapper {
   &.form__field--paymentType {
     margin-bottom: 80px;
+  }
+}
+button:disabled {
+  background: rgba(0,0,0,0.5);
+  cursor: no-drop;
+
+  &:before {
+    background-image:none;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(0);
+    &:before {
+      background-image:none;
+    }
   }
 }
