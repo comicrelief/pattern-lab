@@ -1,6 +1,42 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.7.1
-ignore: {}
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:marked:20170907':
+    - grunt-kss > kss > marked:
+        reason: None given
+        expires: '2017-10-25T17:08:08.959Z'
+  'npm:tunnel-agent:20170305':
+    - bin-build > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - bin-wrapper > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - gifsicle > bin-build > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - gifsicle > bin-wrapper > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-build > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-wrapper > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-build > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-build > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-wrapper > download > caw > tunnel-agent:
+        reason: None given
+        expires: '2017-10-25T17:08:08.960Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:marked:20170112':
@@ -9,3 +45,6 @@ patch:
   'npm:qs:20140806-1':
     - grunt-connect > connect > qs:
         patched: '2017-07-12T15:46:00.203Z'
+  'npm:minimatch:20160620':
+    - customizr > glob > minimatch:
+        patched: '2017-09-25T17:01:39.287Z'
