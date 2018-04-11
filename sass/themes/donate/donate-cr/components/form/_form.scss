@@ -115,7 +115,7 @@ select {
     transform: translateY(-50%);
   }
   input[type="checkbox"]:checked+span {
-    background-color: $colour-white;
+     background: $colour-white url($image-path + "checkbox-tick.svg") center/75% no-repeat;
   }
   input[type="checkbox"]:focus+span {
     border-width: 2px;

@@ -199,10 +199,19 @@ module.exports = function (grunt) {
           expand: true,
           flatten: true,
           cwd: 'sass/',
-          src: ['base/components/navigation/{,**/}*.svg', 'themes/payin/{,**/}*.svg'],
+          src: ['themes/payin/{,**/}*.svg'],
           dest: 'dist/images'
         }]
-      }
+      },
+      donate: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/donate/donate-cr/components',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
+      },
     },
 
     uglify: {
@@ -480,6 +489,7 @@ module.exports = function (grunt) {
     'sass:donate',
     'modernizr',
     'imagemin:donate',
+    'svgmin:donate',
     'kss:donate',
     'postcss:donate',
   ]);
