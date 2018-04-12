@@ -70,7 +70,7 @@
   },
   "homepage": "https://github.com/comicrelief/pattern-lab#readme",
   "engines": {
-    "node": ">=8",
+    "node": ">=6",
     "npm": ">=4"
   },
   "release": {
