@@ -1,6 +1,8 @@
 'use strict';
 
 var tilde_importer = require('grunt-sass-tilde-importer');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
 module.exports = function (grunt) {
 
