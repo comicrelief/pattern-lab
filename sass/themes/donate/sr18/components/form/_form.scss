@@ -52,6 +52,14 @@
   display: block;
 }
 
+// remove large spaces between form rows
+.form__row--your-detail {
+  padding-bottom: 0;
+}
+.form__row--billing-detail {
+  padding-top: 0;
+}
+
 // hide form row's title and copy
 .form__subtitle,
 .form__subcopy {
