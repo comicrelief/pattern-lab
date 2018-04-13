@@ -212,7 +212,7 @@ button[type="submit"],
 }
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
-  border-radius: 30px;
+  border-radius: 5px;
   background-color: $colour-grey;
   background-image: url($image-path + "paypal.svg");
 }
