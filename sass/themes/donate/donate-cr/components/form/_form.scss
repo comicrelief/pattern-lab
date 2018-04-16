@@ -38,16 +38,7 @@ select {
 
 // hide and show for form rows if js is enabled
 .js-enabled {
-  .form__row--payment,
-  .form__row--giftaid,
-  .form__row--payment-buttons,
-  .form__row--your-detail,
-  .form__row--billing-detail,
-  .form__field--address,
-  .form__row--keep-touch,
-  .form__nav,
-  .form__row--card-logos,
-  .form__row--logos, {
+  .form__row--section{
     display: none;
     &.show {
       display: block;
@@ -370,7 +361,7 @@ button[type="submit"],
 }
 .form__field--wrapper {
   margin-bottom: 7%;
-  
+
   @include breakpoint($screen-md) {
     margin-bottom: 5%;
   }
