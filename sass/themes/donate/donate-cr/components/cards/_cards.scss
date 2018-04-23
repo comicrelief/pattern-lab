@@ -1,33 +1,54 @@
-.cards__wrapper {
-  @include container;
+.cards {
+  padding: 30px 10px;
 
-  .card__image {
-    height:228px;
-    overflow: hidden;
+  .cards__wrapper {
+    @include container
 
-    img {
-      display: block;
-      max-width: 100%;
+    .cards__item {
+      margin:0 1.25% 28px;
+
+      @include breakpoint($screen-md) {
+        width: 30%;
+      }
+    }
+
+    .cards__image {
+      height:228px;
+      overflow: hidden;
+      margin-bottom: 65px;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    .card__content-wrapper {
+      position: relative;
+      height: 100%;
+      padding: 48px 20px 35px;
+
+      @include breakpoint($screen-md) {
+        text-align: center;
+      }
+
+      h3 {
+        color: $colour-dark-purple;
+      }
+
+      a {
+        color: $colour-dark-purple;
+        font-family:$font-bold;
+      }
     }
   }
 
-  .card {
-    background: $colour-mercury-grey;
-  }
+  .cards-header {
+    margin-bottom: 180px;
 
-  .card__content-wrapper {
-    position: relative;
-    height: 100%;
-    padding: 48px 20px 35px;
-    text-align: center;
-
-    h3 {
-      color: $colour-dark-purple;
-    }
-
-    a {
-      color: $colour-dark-purple;
-      font-family:$font-bold;
+    @include breakpoint($screen-md) {
+      margin:0 auto 95px;
+      width: 60%;
     }
   }
 }
