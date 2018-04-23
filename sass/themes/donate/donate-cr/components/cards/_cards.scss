@@ -5,17 +5,16 @@
     @include container
 
     .cards__item {
-      margin:0 1.25% 28px;
+      margin:0 5% 28px;
 
       @include breakpoint($screen-md) {
+        margin:0 1.25% 28px;
         width: 30%;
       }
     }
 
     .cards__image {
-      height:228px;
-      overflow: hidden;
-      margin-bottom: 65px;
+      margin-bottom: 30px;
 
       img {
         display: block;
@@ -27,6 +26,7 @@
       position: relative;
       height: 100%;
       padding: 48px 20px 35px;
+      text-align: left;
 
       @include breakpoint($screen-md) {
         text-align: center;
@@ -44,7 +44,7 @@
   }
 
   .cards-header {
-    margin-bottom: 180px;
+    margin-bottom: 50px;
 
     @include breakpoint($screen-md) {
       margin:0 auto 95px;
