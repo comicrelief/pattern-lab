@@ -36,9 +36,10 @@ select {
   }
 }
 
-// hide and show for form rows if js is enabled
+// hide and show when js is enabled
 .js-enabled {
-  .form__row--section{
+  .form__row--section,
+  #giftaid-text-percentage {
     display: none;
     &.show {
       display: block;
@@ -49,12 +50,16 @@ select {
 .no-js {
   .form__next,
   .form__back,
+  #giftaid-text-calculated,
   #comicrelief_payinbundle_payment_paypal,
   .search-box-button,
   .form__subcopy--bfpo,
   .form__address-detail-toggle,
   #address-detail {
     display: none;
+  }
+  .giftaid-text--percentage {
+    display: block;
   }
 }
 
