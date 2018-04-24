@@ -1,5 +1,5 @@
 .cards {
-  padding: 30px 10px;
+  padding: 30px;
 
   .cards__wrapper {
     @include container
@@ -25,12 +25,8 @@
     .cards__content-wrapper {
       position: relative;
       height: 100%;
-      padding: 48px 20px 35px;
+      padding: 30px 20px 0;
       text-align: left;
-
-      @include breakpoint($screen-md) {
-        text-align: center;
-      }
 
       h3 {
         color: $colour-dark-purple;
@@ -38,16 +34,16 @@
 
       a {
         color: $colour-dark-purple;
-        font-family:$font-bold;
+        font-family:$font-regular;
       }
     }
   }
 
   .cards-header {
-    margin-bottom: 50px;
+    margin-bottom: 38px;
 
     @include breakpoint($screen-md) {
-      margin:0 auto 95px;
+      margin:0 auto;
       width: 60%;
     }
   }
