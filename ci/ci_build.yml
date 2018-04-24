@@ -8,6 +8,9 @@ image_resource:
 inputs:
 - name: pattern-lab
 
+caches:
+  - path: pattern-lab/node_modules
+
 outputs:
 - name: pattern-lab-build
 
