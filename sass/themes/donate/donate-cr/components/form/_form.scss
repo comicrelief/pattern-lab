@@ -248,8 +248,8 @@ button[type="submit"],
     font-family: $body-font;
     background-color: $colour-mercury-grey;
     color: $colour-dark-purple;
-    margin-bottom: 20px;
     background-clip: inherit;
+    margin: 0 0 20px 0;
 
     .select-amount {
       display: inline-block;
