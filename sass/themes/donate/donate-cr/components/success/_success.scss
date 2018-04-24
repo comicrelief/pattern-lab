@@ -58,6 +58,7 @@
         vertical-align: middle;
         color: $colour-dark-purple;
       }
+
       ul {
         display: inline-block;
         vertical-align: middle;
@@ -81,11 +82,11 @@
               height: 50px;
             }
 
-              .icon {
-                display: inherit;
-                width: inherit;
-                height: inherit;
-              }
+            .icon {
+              display: inherit;
+              width: inherit;
+              height: inherit;
+            }
           }
         }
       }
