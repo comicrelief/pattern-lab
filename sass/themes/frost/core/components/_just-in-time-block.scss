@@ -1,0 +1,63 @@
+
+// Just-In-Time block
+//
+// Markup: just-in-time-block.twig
+//
+// Style guide: 20.1004
+
+.form__row--just-in-time-block {
+
+  .toggle-link {
+    position: relative;
+    font-size: 16px;
+    transition: all 0.5s ease;
+    border-bottom: 1px solid #666;
+    font-family: $font-regular;
+    color: #666;
+    
+    &:after {
+      content:'\2303';
+      position:absolute;
+      font-family:Arial;
+      margin-left: 4px;
+      transform: rotate(180deg);
+      overflow: hidden;
+      bottom: 5px;
+      line-height: 19px;
+      font-size: 25px;
+      color: inherit;
+    }
+
+    &.close-link {
+      &:after {
+        transform: rotate(0);
+        bottom: -4px;
+      }
+    }
+  }
+
+  .just-in-time--content {
+    display: block !important;
+    margin-top:15px;
+    overflow: hidden;
+    transition: max-height 0.5s linear; 
+    height: auto;
+    max-height: 0;
+  }
+
+  .close-link {
+    display:none;
+  }
+
+  .show-link:target + .close-link {
+    display: inline;
+  }
+
+  .show-link:target {
+    display:none;
+  }
+
+  .show-link:target ~ .just-in-time--content{
+    max-height: 500px;
+  }
+}
