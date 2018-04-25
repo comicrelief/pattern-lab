@@ -1,4 +1,3 @@
-
 // Just-in-time block
 //
 // Markup: just-in-time-block.twig
@@ -17,6 +16,7 @@
     &:focus,
     &:hover {
       border-bottom: 1px solid #666;
+      text-decoration: none;
     }
 
     &:after {
