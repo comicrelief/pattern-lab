@@ -363,6 +363,7 @@ module.exports = function (grunt) {
               'sass/base/components/progress-indicator',
               'sass/base/components/navigation/_footer-nav',
               'sass/base/components/social',
+              'sass/base/components/just-in-time-block',
               'sass/themes/frost'
              ],
         dest: 'dist/frost'
