@@ -18,12 +18,19 @@
     display: block !important;
     margin-top:15px;
     overflow: hidden;
-    transition: max-height 0.5s linear; 
+    transition: max-height 0.4s ease-in-out; 
     height: auto;
     max-height: 0;
+
+    strong {
+      font-family: $font-regular;
+    }
   }
 
-  .show-link:target ~ .just-in-time--content{
-    max-height: 500px;
+  .show-link:target ~ .just-in-time--content {
+    /* Need to provide a hard value here for max-height to animate to;
+     * supplied copy seems to be about 300px height on SM breakpoint, 
+     * have left a bit of wiggle room here for good measure */
+    max-height: 400px;
   }
 }
