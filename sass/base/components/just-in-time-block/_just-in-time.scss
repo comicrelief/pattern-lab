@@ -12,11 +12,11 @@
     border-bottom: 1px solid #666;
     font-family: $font-medium;
     color: #666;
+    text-decoration: none;
 
     &:focus,
     &:hover {
       border-bottom: 1px solid #666;
-      text-decoration: none;
     }
 
     &:after {
