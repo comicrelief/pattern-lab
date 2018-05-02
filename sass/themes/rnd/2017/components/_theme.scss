@@ -221,6 +221,10 @@
   &.show {
     #main-menu {
       display: block !important;
+      top: 70px;
+      @media (min-width: 1150px) {
+        top: 76px;
+      }
     }
   }
 }
@@ -233,4 +237,10 @@
 
 .header__inner-wrapper {
   display: block;
+}
+
+.block--cr-email-signup--head.show .block--cr-email-signup__inner-wrapper {
+  @media (min-width: 1150px) {
+    top: 76px;  
+  }
 }
