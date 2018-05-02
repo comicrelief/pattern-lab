@@ -20,9 +20,13 @@ header[role=banner] {
     margin-top: -4px;
     overflow: hidden;
 
+    img {
+      height: 50px;
+    }
+
     @include breakpoint($screen-md) {
       width: 124px;
-      margin-top: -40px;
+      margin-top: -5px!important;
       height: 105px;
     }
   }
