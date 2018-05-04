@@ -47,10 +47,6 @@
     transition: max-height 0.5s ease-in-out; 
     height: auto;
     max-height: 0;
-
-    strong {
-      font-family: $font-regular;
-    }
   }
 
   .close-link {
