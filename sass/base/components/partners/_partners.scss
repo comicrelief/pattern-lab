@@ -98,28 +98,24 @@
         }
         .node__content {
           position: relative;
-          
-          .partner__link {
-            a {
-              display:block;
 
-              span {
-                display: none;
-              }
-              img {
-                position: relative;
-                display: block;
-                max-width: 100%;
-                height: auto;
-              }
-            }
-          }
-          &:hover {
-            .partner__link a {
+          .partner__link a {
+            display: block;
+
+            img {
+              position: relative;
               display: block;
-              
+              max-width: 100%;
+              height: auto;
+            }
+
+            span {
+              position: absolute;
+              clip: rect(1px, 1px, 1px, 1px);
+            }
+            
+            &:hover {
               span {
-                position: absolute;
                 display: block;
                 top: 50%;
                 left: 0;
@@ -130,7 +126,7 @@
                 line-height: 18px;
                 text-align: center;
                 transform: translateY(-50%);
-                z-index: 5;
+                clip: auto;
               }
 
               &:after {
@@ -145,7 +141,8 @@
                 height: 100%;
                 background-color: $colour-red;
               }
-            }
+
+            }  
           }
         }
       }
