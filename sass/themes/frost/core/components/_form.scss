@@ -624,3 +624,26 @@ form {
     }
   }
 }
+
+// ==========================================================================
+// Deny U16 Block
+// ==========================================================================
+h2.u16-deny__title {
+  font-family: $font-bold;
+  font-size: 20px;
+  line-height: 26px;
+  margin: 30px 0 20px;
+  
+  @include breakpoint($screen-md) {
+    margin: 45px 0 35px;
+  }
+  
+  @include breakpoint($screen-lg) {
+    margin: 75px 0 35px;
+  }
+}
+
+p.u16-deny__body {
+  font-size: 18px;
+  line-height: 26px;
+}
