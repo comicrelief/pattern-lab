@@ -8,6 +8,7 @@
 
 .form__checkbox {
     position: relative;
+    padding-top: 5px;
     @include clearfix;
   
     input[type="checkbox"] {
@@ -35,7 +36,6 @@
     input[type="checkbox"]+span,
     input[type="checkbox"]:checked+span {
       background-color: $colour-white;
-      transform: translateY(-50%);
     }
 
     input[type="checkbox"]:focus+span {
@@ -45,15 +45,15 @@
     label.form__checkbox {
       overflow: visible;
       position: relative;
-      top: -14px;
+      top: 0px;
       left: 45px;
       width: calc(100% - 45px);
       font-size: 18px;
       font-family: $body-font;
       word-break: break-word;
     
-      @include breakpoint($screen-lg) {
-        top: 10px;
+      @include breakpoint($screen-md) {
+        top: 3px;
       }
     }
   

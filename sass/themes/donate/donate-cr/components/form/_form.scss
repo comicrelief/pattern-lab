@@ -106,7 +106,7 @@ select {
   input[type="checkbox"]+span {
     top: 50%;
     left: 20px;
-
+    transform: translateY(-50%);
   }
   input[type="checkbox"]:checked+span {
     background-color: $colour-white;
