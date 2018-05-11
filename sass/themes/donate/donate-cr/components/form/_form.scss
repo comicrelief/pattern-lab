@@ -106,9 +106,7 @@ select {
   input[type="checkbox"]+span {
     top: 50%;
     left: 20px;
-    border: 1px solid $colour-grey;
-    background-color: $colour-white;
-    transform: translateY(-50%);
+
   }
   input[type="checkbox"]:checked+span {
     background-color: $colour-white;
@@ -117,10 +115,7 @@ select {
     border-width: 2px;
   }
   label.form__checkbox {
-    top: 14px;
-    left: 45px;
-    padding: 0;
-    width: calc(100% - 45px);
+    top: 7px;
   }
 }
 .form__row--giftaid .form__field--wrapper.form__checkbox,

@@ -184,13 +184,7 @@ div#paypal-button-container {
     background-color: transparent;
   }
   label.form__checkbox {
-    top: 0;
-    left: 40px;
-    width: calc(100% - 40px);
-
-    &:before {
-      display: none;
-    }
+    top: -14px;
   }
 
   input[type="checkbox"] {
