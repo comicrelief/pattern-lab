@@ -97,15 +97,6 @@ select {
     font-size: 18px;
     color: $colour-dark-purple;
   }
-  label.form__checkbox {
-    top: 0;
-    left: 40px;
-    width: calc(100% - 40px);
-
-     &:before {
-      display: none;
-    }
-  }
 
   input[type="checkbox"]:focus+span {
     border-color: $colour-dark-purple;
