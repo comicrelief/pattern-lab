@@ -290,7 +290,7 @@ module.exports = function (grunt) {
           title: 'Red Nose Day PatternLab',
           css: ['../css/themes/rnd/2017/rnd17.css', '../css/kss/rnd.css'],
         },
-        src: ['sass/base', 'sass/themes/rnd/2017'],
+        src: ['sass/themes/rnd/2017'],
         dest: 'dist/rnd'
       },
       sr18: {

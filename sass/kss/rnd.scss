@@ -3,8 +3,9 @@
 // KSS styles
 // ==========================================================================
 
-#kss-node .kss-sidebar {
-  background: #ef4256;
+#kss-node .kss-sidebar,
+#kss-node .kss-title--level-1 {
+  background: #e53138;
 }
 
 .kss-header {

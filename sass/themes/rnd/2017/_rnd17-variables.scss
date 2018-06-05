@@ -1,14 +1,26 @@
-/* RND17 colours */
+// Colours
+// 
+// Markup: colour.twig
+//
+// Style guide: 10.2
 
-$colour-red: #f04257;
-$colour-blue: #22d2dc;
-$colour-yellow: #fbef51;
-$colour-green: #b2e55e;
-$colour-teal: #00beca;
-$colour-royal-blue: #0565d1;
-$colour-purple: #7d2ca9;
-$colour-dark-purple: #7023b7;
-$colour-pink: #fc9eb9;
+// $colour-red: #f04257;
+$colour-red: #e53138;
+// $colour-blue: #22d2dc;
+$colour-blue: #2a72b7;
+// $colour-yellow: #fbef51;
+$colour-yellow: #ffc700;
+// $colour-green: #b2e55e;
+$colour-green: #79ac2b;
+// $colour-teal: #00beca;
+// $colour-royal-blue: #0565d1;
+// $colour-purple: #7d2ca9;
+$colour-purple: #78368c;
+// $colour-dark-purple: #7023b7;
+// $colour-pink: #fc9eb9;
+$colour-pink: #c6037c;
+$colour-orange: #fc7b39;
+$colour-light-blue: #5ec2ea;
 
 $colour-black: #030e1a;
 $colour-dark-blue: #061d38;
@@ -23,3 +35,14 @@ $colour-white: #fff;
 $item-grey: #ddd;
 /* Single message row background colour, used in June site, to be renamed and updated */
 $cream-grey: #F5F2ED;
+
+
+/*
+rgb(299, 49, 56) #e53138 Red
+rgb(252, 123, 57) #fc7b39 Orange
+rgb(255, 199, 0) #ffc700 yellow 
+rgb(121, 172, 43) #79ac2b green 
+rgb(42, 114, 183) #2a72b7 blue 
+rgb(198, 3, 124) #c6037c magenta (pink)
+rgb(120, 54, 140) #78368c colour-purple
+rgb(94, 194, 234) #5ec2ea light blue */
