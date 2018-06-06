@@ -1,32 +1,26 @@
+@import "_rnd17-variables";
 // ==========================================================================
 // Core variables * comment files you want to override
 // ==========================================================================
-@import "../../../base/_core.scss";
-@import "../../../base/_variables.scss";
 
+// @import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_theme.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_typography.scss";
 
-@import "../../../base/components/typography/typography";
-@import "../../../base/components/card-block/card";
-@import "../../../base/components/cards/cards";
-@import "../../../base/components/single-msg/single-msg";
 // ==========================================================================
-// RND 
+// Core components
 // ==========================================================================
-@import "_colour.scss";
-@import "_lists.scss";
 
+@import "../../../base/_core";
+
+// ==========================================================================
+// UI components
+// ==========================================================================
+
+@import "../../../base/_components";
+@import "components/kids-nav/_kids-nav";
 @import "components/_loading.scss";
 @import "components/_otn.scss";
 @import "components/_theme.scss";
-@import "components/background-colours/background-colours";
-@import "components/buttons/buttons";
-@import "components/links/links";
-@import "components/single-msg/single-msg-colours";
-
-// Elements
-//
-// Style guide: 10
-
-// Components
-//
-// Style guide: 20

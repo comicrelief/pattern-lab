@@ -11,7 +11,7 @@
     "build-donate": "grunt build:donate",
     "build-frost": "grunt build:frost",
     "build-payin": "grunt build:payin",
-    "build-rnd17": "grunt build:rnd17",
+    "build-rnd19": "grunt build:rnd19",
     "build-sr18": "grunt build:sr18",
     "build-shop18": "grunt build:shop18",
     "dev-server": "grunt connect",

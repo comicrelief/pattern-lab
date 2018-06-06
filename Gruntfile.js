@@ -67,12 +67,12 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
-      rnd17: {
+      rnd19: {
         files: [{
           expand: true,
-          cwd: 'sass/themes/rnd/2017',
+          cwd: 'sass/themes/rnd/2019',
           src: ['{,**/}*.scss'],
-          dest: 'dist/css/themes/rnd/2017',
+          dest: 'dist/css/themes/rnd/2019',
           ext: '.css'
         }]
       },
@@ -126,6 +126,11 @@ module.exports = function (grunt) {
           src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
+      },
+      rnd17: {
+        files: {
+          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
+        }
       },
       cr17: {
         files: {
@@ -278,14 +283,14 @@ module.exports = function (grunt) {
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
       },
-      rnd17: {
+      rnd19: {
         options: {
           verbose: true,
           builder: 'kss',
           title: 'Red Nose Day PatternLab',
           css: ['../css/themes/rnd/2017/rnd17.css', '../css/kss/rnd.css'],
         },
-        src: ['sass/base/components/single-msg', 'sass/themes/rnd/2017'],
+        src: [ 'sass/themes/rnd/2019'],
         dest: 'dist/rnd'
       },
       sr18: {
@@ -423,7 +428,7 @@ module.exports = function (grunt) {
       payin: {
         src: ['dist/css/kss/payin.css', 'dist/css/themes/payin/**/*.css']
       },
-      rnd17: {
+      rnd19: {
         src: ['dist/css/kss/rnd.css', 'dist/css/themes/rnd/**/*.css']
       },
       sr18: {
@@ -496,11 +501,11 @@ module.exports = function (grunt) {
     'postcss:payin',
   ]);
 
-  grunt.registerTask('build:rnd17', [
-    'sass:rnd17',
+  grunt.registerTask('build:rnd19', [
+    'sass:rnd19',
     'modernizr',
-    'kss:rnd17',
-    'postcss:rnd17',
+    'kss:rnd19',
+    'postcss:rnd19',
   ]);
 
   grunt.registerTask('build:sr18', [
