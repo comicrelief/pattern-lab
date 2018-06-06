@@ -1,0 +1,38 @@
+ {% set colour = ["yellow", "light-blue", "green", "purple", "orange", "pink"] %}
+<section class="cards {{modifier_class}}">
+  <h2 class="cards__title">Cards title</h2>
+  <div class="cards__wrapper">
+    {% for i in 0..5 %}
+    <div class="card ">
+      <div class="card__image">
+        <img src="kss-assets/images/1-1-img.jpg" alt="card image">
+      </div>
+      <div class="card__content-wrapper ">
+        <div class="card__content ">
+          <h3>Follow in Dermont's footsteps</h3>
+          <p>Phosfluorescently recaptiualize covalent strategic theme areas rather than value-added methodologies.</p>
+          <a class="card__link link link--{{ colour[i] }} inline" href="#">Get your Dancing Kit</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% for i in 0..4 %}
+    <div class="card bg--{{ colour[i] }}">
+      <div class="card__image">
+        <img src="kss-assets/images/1-1-img.jpg" alt="card image">
+      </div>
+      <div class="card__content-wrapper  ">
+        <div class="card__content">
+          <h3>Follow in Dermont's footsteps</h3>
+          <p>Phosfluorescently recaptiualize covalent strategic theme areas rather than value-added methodologies.</p>
+          {% if colour[i] == "purple"  %}
+           <p class="font--small font--font-white"> <a class="card__link link link--white inline"  href="#">Get your Dancing Kit</a></p>
+          {% else %} 
+          <a class="card__link link link--blue inline" href="#">Get your Dancing Kit</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
