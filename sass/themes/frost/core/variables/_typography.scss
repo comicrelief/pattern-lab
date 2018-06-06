@@ -98,3 +98,9 @@ $p-intro-font-size: (
   $screen-md: (23px, 23px),
   $screen-lg: (23px, 23px)
 );
+
+strong {
+  /* Reduce the weight to normal and let the
+   * Bold font 'do the work' to make it more readable */
+  font-weight: normal;
+}
