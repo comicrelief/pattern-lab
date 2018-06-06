@@ -127,11 +127,6 @@ module.exports = function (grunt) {
           dest: 'dist/images'
         }]
       },
-      rnd17: {
-        files: {
-          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
-        }
-      },
       cr17: {
         files: {
           'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
@@ -504,7 +499,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build:rnd17', [
     'sass:rnd17',
     'modernizr',
-    'imagemin:rnd17',
     'kss:rnd17',
     'postcss:rnd17',
   ]);
