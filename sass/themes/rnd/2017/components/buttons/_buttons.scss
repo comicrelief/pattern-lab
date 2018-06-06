@@ -1,7 +1,7 @@
 // Buttons
 //
-// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Bold weight of the Proxima Nova font. All buttons
-// 
+// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. N.B. the hover state colours are just an example. Please take accessibility into account when choosing colours (see Colours section).
+//
 // .btn--black-ghost - Black ghost button
 // .btn--red - Red button
 // .btn--blue - Blue button
@@ -12,13 +12,10 @@
 // .btn--orange - Orange button
 // .btn--green - Green button
 // .btn--white - White button
-// :hover - Button hover state 
-// :active - Button active state
-// :focus - Button focus state
 //
 // Markup: buttons.twig
 //
-// Style guide: 10.4
+// Style guide: 10.3
 
 .btn {
   display: inline-block;

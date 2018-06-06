@@ -1,21 +1,10 @@
 // Links
 //
-// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Bold weight of the Proxima Nova font. All buttons
-// 
-// .link--large - Large - The font size is 18px and line height is 28px. Border / underline is 4px.
-// .link--small - Small - The font size is 16px and line height is 26px. Border / underline is 4px.
-// :hover - Link hover state
-// :active - Link active state
-// :focus - Link focus state
+// For important call to actions use buttons. N.B. the link underline colours and hover states are just examples.
 //
 // Markup: links.twig
 //
-// Style guide: 10.5
-
-/*  
- * Link styles,
- * Copied from SR16 theme
- */
+// Style guide: 10.4
 
 .link {
   text-decoration: none;
