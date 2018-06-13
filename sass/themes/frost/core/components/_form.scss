@@ -651,3 +651,36 @@ p.u16-deny__body {
   font-size: 18px;
   line-height: 26px;
 }
+
+input[type='checkbox'] {
+  + .checkbox {
+    // space for new focus ring
+    margin-left: 3px;
+  }
+
+  // Attempting to recreate native browser focus states
+  &:focus {
+    + .checkbox {
+      // IE, FF etc
+      outline: 1px dotted black;
+
+      // Chrome etc.
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: 0px;
+    }
+  }
+}
+
+input[type='radio'] {
+  &:focus {
+    // Attempt to recreate native browser focus states
+    + label span.radio-button {
+      // IE, FF etc.
+      outline: 1px dotted black;
+
+      // Chrome etc.
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: 0px;
+    }
+  }
+}
