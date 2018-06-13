@@ -35,19 +35,3 @@
   font-family: "GT-Walsheim-Regular",helvetica,arial,sans-serif;
   top: 25px;
 }
-
-#block-rnd17-main-menu {
-  #main-menu {
-    display: none !important;
-  }
-
-  &.show {
-    #main-menu {
-      display: block !important;
-      top: 70px;
-      @media (min-width: 1150px) {
-        top: 76px;
-      }
-    }
-  }
-}
