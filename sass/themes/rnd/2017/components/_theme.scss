@@ -3,14 +3,22 @@
 // General overrides - we need to split those rules to specific files
 
 // Header overrides
+header[role=banner] {
+  height: 80px;
+
+   @include breakpoint($desktop-nav-breakpoint) {
+    height: 107px;
+  }
+}
+// hide top wrapper as this doesn't exist in rnd
+.header__top-wrapper {
+  display: none;
+}
+
 #block-rnd17-branding {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.header__inner-wrapper {
-  display: block;
 }
 
 .block--cr-email-signup--head.show .block--cr-email-signup__inner-wrapper {
