@@ -45,10 +45,28 @@ select:focus {
   box-shadow: inset 0 0 1px $colour-light-blue;
 }
 
-input[type="checkbox"] + span {
-  background-color: $colour-input-grey;
-  border: 1px solid $colour-border-grey;
-	@include border-radius(2px);
+input[type="checkbox"] {
+   + span {
+    background-color: $colour-input-grey;
+    border: 1px solid $colour-border-grey;
+    @include border-radius(2px);
+  }
+
+  + .checkbox {
+    // space for new focus ring
+    margin-left: 3px;
+  }
+
+  // Attempting to recreate native browser focus states
+  &:focus {
+    + .checkbox {
+      // IE, FF etc
+      outline: 1px dotted black;
+      // Chrome etc.
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: 0px;
+    }
+  }
 }
 
 select {
@@ -650,4 +668,17 @@ h2.u16-deny__title {
 p.u16-deny__body {
   font-size: 18px;
   line-height: 26px;
+}
+
+input[type='radio'] {
+  &:focus {
+    // Attempt to recreate native browser focus states
+    + label span.radio-button {
+      // IE, FF etc.
+      outline: 1px dotted black;
+      // Chrome etc.
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: 0px;
+    }
+  }
 }
