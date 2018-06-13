@@ -3,7 +3,7 @@
 // Core variables * comment files you want to override
 // ==========================================================================
 
-// @import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_colours.scss";
 @import "../../../base/variables/_grid.scss";
 @import "../../../base/variables/_theme.scss";
 @import "../../../base/variables/_lists.scss";
@@ -21,10 +21,7 @@
 
 @import "../../../base/_components";
 @import "components/navigation/kids-nav/_kids-nav";
-@import "components/navigation/_main-nav.scss";
 @import "components/navigation/_feature-nav.scss";
-@import "components/meta-icons/_meta-icons.scss";
-@import "components/tooltips/_tooltips.scss";
 @import "components/_loading.scss";
 @import "components/_otn.scss";
 @import "components/_theme.scss";
