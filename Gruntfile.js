@@ -129,7 +129,7 @@ module.exports = function (grunt) {
       },
       rnd17: {
         files: {
-          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/kids-nav/images/kids-nav-sprite.png'
+          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/navigation/kids-nav/images/kids-nav-sprite.png'
         }
       },
       cr17: {
