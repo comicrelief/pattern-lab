@@ -21,6 +21,8 @@
 
 @import "../../../base/_components";
 @import "components/navigation/kids-nav/_kids-nav";
+@import "components/header/_base-header.scss";
+@import "components/email-signup/_email-signup.scss";
+@import "components/social/_social.scss";
 @import "components/_loading.scss";
 @import "components/_otn.scss";
-@import "components/_theme.scss";
