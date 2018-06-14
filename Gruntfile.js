@@ -266,7 +266,7 @@ module.exports = function (grunt) {
       base: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'PatternLab',
           css: 'css/themes/base/base.css'
         },
@@ -276,7 +276,7 @@ module.exports = function (grunt) {
       cr17: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Comic Relief PatternLab',
           css: '../css/themes/cr/2017/cr17.css'
         },
@@ -286,7 +286,7 @@ module.exports = function (grunt) {
       rnd17: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Red Nose Day PatternLab',
           css: ['../css/themes/rnd/2017/rnd17.css', '../css/kss/rnd.css'],
         },
@@ -296,7 +296,7 @@ module.exports = function (grunt) {
       sr18: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Sport Relief PatternLab',
           css: ['../css/themes/sr/2018/sr18.css', '../css/kss/sr.css']
         },
@@ -306,7 +306,7 @@ module.exports = function (grunt) {
       payin: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Payin Online PatternLab',
           css: ['../css/themes/payin/payin.css', '../css/kss/payin.css']
         },
@@ -330,7 +330,7 @@ module.exports = function (grunt) {
       donate: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Donate PatternLab',
           css: ['../css/themes/donate/donate.css', '../css/kss/donate.css'],
         },
@@ -347,7 +347,7 @@ module.exports = function (grunt) {
       frost: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Frost PatternLab',
           css: ['../css/themes/frost/frost.css', '../css/kss/frost.css']
         },
@@ -371,7 +371,7 @@ module.exports = function (grunt) {
       shop18: {
         options: {
           verbose: true,
-          builder: 'kss',
+          builder: 'kss/builder',
           title: 'Shop 2018 PatternLab',
           css: ['../css/themes/shop/2018/shop18.css', '../css/kss/shop.css'],
         },
