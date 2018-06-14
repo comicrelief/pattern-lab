@@ -1,0 +1,29 @@
+header[role=banner] {
+  height: 76px;
+
+   @include breakpoint($desktop-nav-breakpoint) {
+    height: 107px;
+  }
+}
+// hide top wrapper as this doesn't exist in rnd
+.header__top-wrapper {
+  display: none;
+}
+.site-logo {
+  margin-top: 0;
+  width: 66px;
+  height: 66px;
+  min-width: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @include breakpoint($screen-md) {
+    margin-top: 5px;
+  }
+  @include breakpoint($desktop-nav-breakpoint) {
+    margin-top: 12px;
+    width: 80px;
+  }
+}

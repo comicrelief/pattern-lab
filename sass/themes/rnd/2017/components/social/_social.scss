@@ -1,0 +1,21 @@
+// Footer Social icons
+.footer__social-links {
+  li {
+    margin: 5px 4px 0;
+    @media (min-width: 740px) {
+      margin: 5px 8px 0;
+    }
+    a {
+      -webkit-transition: 0.5s opacity;
+      transition: 0.5s opacity;
+      border-radius: 50%;
+      background: black;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+  .icon {
+    fill: none;
+  }
+}
