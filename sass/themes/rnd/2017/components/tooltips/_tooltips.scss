@@ -2,8 +2,11 @@
 .ui-tooltip.ui-tooltip--nav {
 
   // Override the JS so we can keep the position within CSS
-  top: 76px !important;
-
+  top: 80px !important;
+  
+  @include breakpoint($desktop-nav-breakpoint) {
+    top: 107px !important;
+  }
   //Reposition this to take our admin menu into account
   .user-logged-in & {
     top: 156px !important;
