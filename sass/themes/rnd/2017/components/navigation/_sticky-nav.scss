@@ -1,0 +1,305 @@
+header[role=banner].sticky-nav__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $sticky-nav-height-sm;
+  z-index: 100;
+  border: none;
+  background: transparent;
+  background-image: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
+  -webkit-transition: background-color 350ms linear;
+  transition: background-color 350ms linear;
+  @include breakpoint($desktop-nav-breakpoint) {
+    height: $sticky-nav-height-lg;
+  }
+  body.cc-banner--visible & {
+    background-image: none;
+  }
+  // Tweak the styles when the nav is scrolling so has a solid background
+  &.scrolling {
+    background: white;
+    box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.2);
+  }
+  .meta-icons a {
+    .icon {
+      fill: $colour-dark-blue;
+    }
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: $colour-dark-blue;
+      .icon {
+        fill: $colour-white;
+      }
+    }
+    &.active {
+      .path-search.cc-banner--visible & {
+        background-color: transparent;
+        .icon {
+          fill: $colour-dark-blue;
+        }  
+      }
+    }
+  }
+  .c-hamburger {
+        span,
+        span:after,
+        span:before {
+          background-color: $colour-dark-blue;
+        }
+
+        &.is-active {
+          span {
+            background-color: transparent;
+
+            &:after,
+            &:before {
+              background-color: $colour-dark-blue;
+            }
+          }
+        }
+      }
+  .main-nav__wrapper {
+    // UL menu
+    .main-nav__items {
+      @include breakpoint($desktop-nav-breakpoint) {
+        background-color: transparent;
+      }
+      li.item-open,
+      li {
+        a {
+          // Transparent 'top of screen' state
+          color: white;
+          @include breakpoint($desktop-nav-breakpoint) {
+            span {
+              color: inherit;
+            }
+          }
+        }
+      }
+      // Parent items of the menu
+      &.menu--level-0 {
+        > li.item-open,
+        > li {
+          &:hover > a {
+            color: $colour-dark-blue;
+
+            @include breakpoint($desktop-nav-breakpoint) {
+              color: white;
+            }
+
+            span {
+              color: inherit;
+
+              // &:after {
+              //   @extend .nav-underline;
+              // }
+            }
+          }
+
+        // // Our JS-manipulated focus state
+        // &.focused >a {
+        //   span.menu-item__text {
+        //     border-bottom: none;
+
+        //     &:after {
+        //       @extend .nav-underline;
+        //     }
+        //   }
+        // }
+          > a {
+            @include breakpoint($desktop-nav-breakpoint) {
+              // Transparent nav state
+              color: white;
+            }
+            .scrolling &,
+            body.cc-banner--visible {
+              color: $colour-dark-blue;
+              background-image: none;
+            }
+          }
+        }
+      }
+      // First level of sub items (dropdwn)
+      &.menu--level-1 { 
+        li.menu-item.menu-item--duplicate {
+          > a {
+            color: white;
+          }
+        }
+        li.item-open a,
+        li a,
+        li a span {
+          color: $colour-white;
+        } 
+      }
+      // First and second levels of sub items
+      &.menu--level-1,
+      &.menu--level-2 {
+        li a,
+        li.item-open a {
+          color: $colour-white;
+          &:hover {
+            background-color: #3e1c43;
+          }
+        }
+        li.menu-item,
+        li.item-open.menu-item {
+          @include breakpoint($desktop-nav-breakpoint) {
+            a:focus {
+              background-color: #3e1c43;
+            }
+          }
+        }
+      }
+      li.item-open,
+      li {
+        // Reset base styles, so we're targetting the anchor and not the li
+        > ul li:hover {
+          background-color: transparent;
+        }
+
+        > ul li a:hover {
+          background-color: #3e1c43;
+        }
+      }
+      // Second levels of sub items
+      &.menu--level-2 {
+        li.menu-item {
+          a {
+            background-color: #3e1c43;
+            &:hover {
+              background-color: #3e1c43;
+            }
+          }
+        }
+      }
+    }
+  }
+  .block-cr-meta-icons,
+  .meta-icons,
+  .meta-icons__login,
+  .meta-icons__magnify,
+  .meta-icons__esu-toggle,
+  .main-nav__icons.main-nav__burger,
+  .c-hamburger {
+    height: $sticky-nav-height-sm;
+    .icon {
+
+      fill: $colour-white;
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      height: $sticky-nav-height-lg;
+      background-color: transparent;
+    }
+  }
+  // Menu icon
+  .c-hamburger {
+    span {
+      background-color: $colour-white;
+      &:after,
+      &:before {
+        background-color: $colour-white;
+      }
+    }
+    &:hover,
+    &:focus {
+      background-color: $colour-dark-blue;
+    }
+    &.is-active {
+      background-color: $colour-dark-blue;
+      span {
+        background-color: $colour-dark-blue;
+
+        &:before,
+        &:after {
+          background-color: $colour-white;
+        }
+      }
+    } 
+  }
+  // States for ESU, Search and FROST button
+  .meta-icons > a {
+    -webkit-transition: 0.2s background-color;
+    transition: 0.2s background-color;
+    &:hover,
+    &:focus {
+      background-color: $colour-dark-blue;
+      .icon {
+        margin: 11px 5px;
+        fill: $colour-white;
+      }
+    }
+    &.active {
+      background-color: $colour-dark-blue;
+      .path-search & {
+        &.meta-icons__magnify {
+          background-color: transparent;
+        }
+      }
+      .icon {
+        fill: $colour-white;
+      }
+    }
+  }
+  // Cookie banner-related tweaks to make sure our icons are visible over the temporarily white header 
+  body.cc-banner--visible & {
+    .meta-icons > a {
+      .icon {
+        fill: $colour-dark-blue;
+      }
+      &.active,
+      &:hover,
+      &:focus {
+        .icon {
+          fill: $colour-white;
+        }
+      }
+    }
+    .c-hamburger {
+      span, span:after, span:before {
+        background-color: $colour-dark-blue;
+      }
+
+      &.is-active {
+        span {
+          background-color: transparent;
+        }
+
+        span:after, span:before {
+          background-color: $colour-dark-blue;
+        }
+      }
+    }
+  }
+  // Reposition the nav when the admin menu is in place
+  body.toolbar-vertical &,
+  body.toolbar-horizontal & {
+    top: 74px;
+
+    &.scrolling {
+      top: 0;
+      @include breakpoint($screen-md) {
+        top: auto;
+      }
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: 115px;
+    }
+  }
+}
+
+/* Very specific selector for search icon color on search result page
+   when not scrolling and cookie banner is visible
+*/
+body.path-search.cc-banner--visible header[role=banner] {
+  .meta-icons > a.active.meta-icons__magnify .icon {
+    fill: $colour-dark-blue;
+  }
+}
+// Ensure wrapper height matches the content, so we can display nav fully underneath
+.cc_banner-wrapper {
+  height: auto;
+}
