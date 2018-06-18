@@ -1,4 +1,3 @@
-@import "_rnd17-variables";
 // ==========================================================================
 // Core variables * comment files you want to override
 // ==========================================================================
@@ -16,14 +15,24 @@
 @import "../../../base/_core";
 
 // ==========================================================================
-// UI components
+// Base components
 // ==========================================================================
 
 @import "../../../base/_components";
+
+// ==========================================================================
+// RND variables
+// ==========================================================================
+@import "variables/_colours.scss";
+@import "variables/_navigation.scss";
+// ==========================================================================
+// RND components
+// ==========================================================================
+
 @import "components/header/_base-header.scss";
 @import "components/navigation/kids-nav/_kids-nav";
+@import "components/navigation/_sticky-nav";
 @import "components/email-signup/_email-signup.scss";
-// @import "components/tooltips/_tooltips.scss";
 @import "components/social/_social.scss";
 @import "components/_loading.scss";
 @import "components/_otn.scss";
