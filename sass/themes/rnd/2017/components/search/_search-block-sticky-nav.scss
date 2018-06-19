@@ -48,7 +48,7 @@
       p {
         margin: 0 auto 20px;
         width: 60%;
-        font-family: $font-bold--sr18;
+        font-family: $font-bold;
         color: $colour-white;
         word-wrap: break-word;
         @include font-size($h3-font-size);
@@ -73,7 +73,7 @@
     input[type=text] {
       padding: 0;
       height: 50px;
-      font-family: $font-bold--sr18;
+      font-family: $font-bold;
       @include font-size($h3-font-size);
       color: $colour-dark-blue;
     }
@@ -81,7 +81,7 @@
       margin: 0;
       height: 50px;
       width: 50px;
-      background-color: $colour-ruby;
+      background-color: $colour-red;
     }
     input[type=submit] {
       width: 50px;
