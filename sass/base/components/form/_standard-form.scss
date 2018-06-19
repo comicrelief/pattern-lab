@@ -274,7 +274,7 @@ label.required {
   }
 
   input[type="radio"]:checked + span {
-    background: url($image-path + "checked-radiobutton-white.png") center no-repeat;
+    background: url($image-path + "checked-radiobutton-white.png") center 8px no-repeat;
     background-size: 15px;
     background-color: #340f78;
     border: 1px solid transparent;
