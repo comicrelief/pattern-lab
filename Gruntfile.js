@@ -128,9 +128,13 @@ module.exports = function (grunt) {
         }]
       },
       rnd17: {
-        files: {
-          'dist/images/kids-nav-sprite.png': 'sass/themes/rnd/2017/components/navigation/kids-nav/images/kids-nav-sprite.png'
-        }
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/rnd/2017/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
       },
       cr17: {
         files: {
