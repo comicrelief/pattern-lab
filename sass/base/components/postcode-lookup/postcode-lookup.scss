@@ -1,8 +1,11 @@
 // Postcode lookup
 //
+// This is Progress bar
+//
 // Markup: postcode-lookup.twig
 //
 // Style guide: 20.1005
+
 .search-box {
     .postcodeSearch{
       float: none;
@@ -14,7 +17,8 @@
       border: none;
     }
     #postcode_button {
-      // @extend .btn;
+      @extend .btn;
+      @include border-radius(0);
       display: block;
       margin: 15px 0;
       width: 100%;
@@ -33,3 +37,16 @@
       }
     }
   }
+
+.form_field--findaddress {
+    width: 100%;
+
+  .form__field--text {
+    display:inline-block;
+  }
+
+  .form__btn {
+    display:inline-block;
+    max-width:182px;
+  }
+}

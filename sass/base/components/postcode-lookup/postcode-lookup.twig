@@ -1,15 +1,29 @@
 <div class="form__field--wrapper form__text form__field--postcode">
 	<div class="search-box">
     <label class="form__field form__field--postcode form__text required" id="postcode-label" for="comicrelief_payinbundle_payment_postcode">Postcode</label>
-    <p class="form__subcopy form__subcopy--bfpo">(For BFPO enter your address manually)</p>
-    <input type="text" id="comicrelief_payinbundle_payment_postcode" name="comicrelief_payinbundle_payment[postcode]" required="required" placeholder="SE1 7TP" maxlength="15" data-validation="required required length" data-validation-error-msg="Please enter a valid postcode" class="form__field form__field--postcode postcodeSearch error" data-validation-error-msg-container="#postcode-error" aria-describedby="postcode-label postcode-error" data-validation-length="max15" style="border-color: rgb(185, 74, 72);">
+    
+    <div class="form_field--findaddress">
+        <input 
+            type="text" 
+            id="comicrelief_payinbundle_payment_postcode" 
+            name="comicrelief_payinbundle_payment[postcode]" 
+            required="required" 
+            placeholder="SE1 7TP"
+            class="form__field form__field--text"
+        />
+        <div class="form__btn">
+            <input 
+                type="button" 
+                id="postcode_button" 
+                name="btnPostcodeSearch" 
+                class="btnPostcodeSearch btn form__btn--findaddress" 
+                value="FIND ADDRESS"
+            />
+        </div>
+    </div>
+    <a href="#" class="form__field--address-detail-link">Or enter your address manually</a>
     <div id="postcode-error" class="error-container js-error has-error" aria-live="assertive" role="status">
         <span class="help-block form-error">Please enter a valid postcode</span>
     </div>
-    <div class="search-box-button">
-        <label for="postcode_button" class="visually-hidden">Find address</label>
-        <input type="button" id="postcode_button" name="btnPostcodeSearch" class="btnPostcodeSearch postcode" value="FIND ADDRESS">
-    </div>
-		<div class="form__field--error" aria-live="assertive" role="status"></div>
 	</div>
 </div>
