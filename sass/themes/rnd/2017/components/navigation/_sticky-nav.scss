@@ -696,3 +696,22 @@ body.path-search.cc-banner--visible header[role=banner] {
     }
   }
 }
+//tooltips styling
+.ui-tooltip.ui-tooltip--nav {
+  position: fixed;
+  top: calc(#{$sm-nav-height} + 15px) !important;
+  background-color: $colour-dark-blue;
+  // place tooltip behind open esu/search dropdown because colour clash
+  z-index: 99;
+
+  @include breakpoint($screen-md) {
+    top: calc(#{$md-nav-height} + 15px) !important;
+  }
+  @include breakpoint($desktop-nav-breakpoint) {
+    top: calc(#{$lg-nav-height} + 15px) !important;
+  }
+  &:before {
+    // important flag needed to override colour
+    border-bottom-color: $colour-dark-blue !important;
+  }
+}
