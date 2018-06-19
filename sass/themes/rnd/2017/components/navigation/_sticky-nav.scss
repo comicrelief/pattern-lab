@@ -98,7 +98,7 @@
     &.menu--level-0 {
       @include breakpoint($desktop-nav-breakpoint) {
         width: 100%;
-        text-align: center;
+        text-align: right;
         height: 100%;
       }
 
