@@ -7,7 +7,7 @@
 // Style guide: 20.62
 
 .form__checkbox {
-    position: relative;
+   /* position: relative;
     padding-top: 5px;
     @include clearfix;
   
@@ -27,6 +27,9 @@
       width: 30px;
       height: 30px;
       border: 1px solid $colour-grey;
+    } */
+    input[type="checkbox"]+span {
+      border: 1px solid $colour-grey;
     }
 
     input[type="checkbox"]:checked+span {
@@ -42,7 +45,7 @@
       border-color: $colour-black;
     }
   
-    label.form__checkbox {
+    /* label.form__checkbox {
       overflow: visible;
       position: relative;
       top: 0px;
@@ -55,7 +58,7 @@
       @include breakpoint($screen-md) {
         top: 3px;
       }
-    }
+    } */
   
     &.form__checkbox-text-only {
       label.form__checkbox {

@@ -23,7 +23,7 @@ body.payin {
 // =========================================================================
 
 // form fields, labels, buttons
-label,
+/*label,
 legend {
   display: block;
   padding-top: 10px;
@@ -35,7 +35,7 @@ legend {
 fieldset {
   padding: 0;
   border-width: 0;
-}
+} */
 
 input[type="email"],
 input[type="number"],
@@ -46,63 +46,20 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea {
-  height: 50px;
-  padding-left:13px;
-  background-color: $colour-white;
   border: 1px solid $item-grey;
-  width: 100%;
-  font-size: 18px;
-  font-family: $font-regular;
-  box-shadow: none;
-  box-sizing: border-box;
-  appearance: none;
   @include placeholder($colour-dark-grey, 18px , $font-regular);
 }
 
-input:focus {
-  @include placeholder(transparent, 18px , $font-regular);
-}
-
 textarea {
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  border: 1px solid $item-grey;
 
   @include breakpoint($screen-md) {
-    max-width: 100%;
     height: 150px;
   }
 }
 
 select {
-  position: relative;
-  appearance: none;
-  border-radius: 0px;
   border: 1px solid #ddd;
-  padding: 12px 50px 14px 10px;
-  width: 100%;
-  height: 50px;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: $font-regular;
-  background: $colour-white url($image-path + "form_sprite.png") 100% -51px no-repeat;
-  cursor: pointer;
-}
-// hide native IE arrow
-select::-ms-expand {
-    display: none;
-}
-
-/* Remove visually the number spinner */
-/* For Firefox */
-input[type='number'] {
-  -moz-appearance:textfield;
-}
-/* Webkit browsers like Safari and Chrome */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .form__select-open {
@@ -112,6 +69,7 @@ input[type=number]::-webkit-outer-spin-button {
 .form__radio {
   position: relative;
 }
+
 .form__radio {
   label {
     width: 100%;
@@ -125,37 +83,22 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   @extend .button;
-  @extend .btn;
 }
 
-.disabled {
-  @include opacity(0.4);
-
-  input,
-  button {
-    transition: none;
-    cursor: initial;
-  }
-  button:hover,
-  input:hover {
-  background-color: $colour-red;
-  transition: none;
-  }
-}
 label.required {
   font-weight: bold;
 }
 
 .search-box {
-  .postcodeSearch{
+  /*.postcodeSearch{
     float: none;
-  }
-  .search-box-button {
+  }*/
+  /*.search-box-button {
     position: relative;
     width: 100%;
     background: none;
     border: none;
-  }
+  }*/
   #postcode_button {
     @extend .btn;
     display: block;
@@ -246,12 +189,6 @@ button.payment-button {
   @include breakpoint($screen-md) {
     width: span(10);
   }
-}
-.form__field--wrapper, {
-  position: relative;
-  margin-right: 0;
-  margin-left: 0;
-  width: 100%;
 }
 .form__field--wrapper, {
   margin-right: 0;
@@ -548,11 +485,9 @@ input[type="text"].form__field--postcode-lookup {
   top: 95px;
 
   &.form-error {
-    background-color: transparent;
-    background-image: url($image-path + "alert-icon.png");
-    z-index: 1;
-    position: absolute;
-    text-align: left;
+    background:none;
+    font-weight: normal;
+    padding-left: 0px;
   }
 }
 #comicrelief_payinbundle_payment_paymentType {
@@ -562,7 +497,7 @@ input[type="text"].form__field--postcode-lookup {
 }
 .form__field--error,
 .form-error {
-  color: $colour-red;
+  //color: $colour-red;
   @include font-size($p-xsmall-font-size);
 }
 .validation__text {

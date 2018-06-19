@@ -1,0 +1,292 @@
+// Forms
+//
+// New Standard Forms
+//
+// Markup: form.twig
+//
+// Style guide: 10.90
+
+$colour-scorpion-grey:#595959;
+$colour-ribbon-red: #EA0043;
+
+/*
+/* = Generic form styles
+*/
+label,
+legend,
+.form__row--label{
+  display: block;
+  padding-top: 10px;
+  margin-bottom: 15px;
+  font-family: $body-font;
+  @include font-size($p-large-font-size);
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+  textarea {
+  height: 50px;
+  padding-left:12px;
+  background-color: $colour-white;
+  border: 1px solid $colour-scorpion-grey;
+  width: 100%;
+  font-family: $body-font;
+  box-shadow: none;
+  box-sizing: border-box;
+  appearance: none;
+  @include placeholder($colour-scorpion-grey, 18px , $font-regular);
+  @include font-size($p-large-font-size);
+}
+
+textarea {
+  min-height: 65px;
+  
+
+  @include breakpoint($screen-md) {
+    max-width: 100%;
+    height: 96px;
+  }
+}
+
+.form__textarea {
+  textarea {
+    padding: 6px 12px;
+  }
+}
+
+select {
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  border: 1px solid $colour-scorpion-grey;
+  padding: 12px 50px 8px 10px;
+  width: 100%;
+  height: 50px;
+  @include font-size($p-large-font-size);
+  font-weight: 300;
+  font-family: $body-font;
+  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+// hide native IE arrow
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  border: 1px solid $colour-scorpion-grey;
+  box-shadow: border-box;
+}
+/* Remove visually the number spinner */
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @extend .btn;
+}
+
+.disabled {
+  @include opacity(0.4);
+
+  input,
+  button {
+    transition: none;
+    cursor: initial;
+  }
+  button:hover,
+  input:hover {
+  background-color: $colour-red;
+  transition: none;
+  }
+}
+
+button:disabled {
+  background: rgba(0,0,0,0.5);
+  cursor: no-drop;
+
+  &:before {
+    background-image:none;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(0);
+    &:before {
+      background-image:none;
+    }
+  }
+}
+
+label.required {
+  font-weight: bold;
+}
+
+.form-help-text {
+  @include font-size($p-large-font-size);
+}
+
+.form__field--wrapper {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.form__fieldset--label {
+  font-family: $body-font;
+  @include font-size($p-large-font-size);
+  font-weight:bold;
+}
+
+/* 
+/* = Form validation 
+*/
+.form-error {
+  position: relative;
+  font-size: 16px;
+  font-family: $body-font;
+  margin-top: 10px;
+  display: inline-block;
+  vertical-align: top;
+  color: $colour-ribbon-red;
+  font-weight: bold;
+
+  &:before {
+    position: relative;
+    content: '';
+    display: inline-block;
+    top: 0.28em;
+    margin-right: 8px;
+    background: url($image-path + "error-alert-icon.png") left 0/100% no-repeat;
+    width:18px;
+    height:19px;
+  }
+}
+
+.form__field {
+
+  &.form__field--error-outline {
+    border: 1px solid $colour-ribbon-red;
+  }
+}
+
+/*
+/* = checkbox and radio button forms
+*/
+.form__checkbox, 
+.form__checkbox--single,
+.form__radio {
+  position: relative;
+  padding-top: 5px;
+  @include clearfix;
+
+  &.form__checkbox--inline,
+  &.form__radio--inline {
+    width: span(12);
+  }
+
+  input[type="checkbox"], 
+  input[type="radio"] {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+  }
+
+  input[type="checkbox"]:checked + span {
+    background: url($image-path + "checkbox-white-tick.png") center/50% no-repeat;
+    background-size: 100%;
+    background-color: #340f78;
+    border: 1px solid transparent;
+  }
+
+  input[type="checkbox"] + span,
+  input[type="radio"] + span, {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #595959;
+  }
+
+  input[type="checkbox"]:focus+span {
+    border-color: #595959;
+    border-width: 3px;
+  }
+
+  label.form__checkbox, 
+  label.form__radio {
+    overflow: visible;
+    position: relative;
+    top: 0px;
+    left: 45px;
+    width: calc(100% - 45px);
+    font-size: 18px;
+    font-family: $body-font;
+    word-break: break-word;
+  
+    @include breakpoint($screen-md) {
+      top: 3px;
+    }
+  }
+}
+
+/* 
+/* = Radio button form 
+*/
+.form__radio.form__radio--inline {
+  position: relative;
+  padding-top: 5px;
+  @include clearfix;
+
+  input[type="radio"] + span {
+    left: 2px;
+    @include border-radius(30px);    
+  }
+
+  input[type="radio"]:checked + span {
+    background: url($image-path + "checked-radiobutton-white.png") center no-repeat;
+    background-size: 15px;
+    background-color: #340f78;
+    border: 1px solid transparent;
+  }
+  input[type="radio"]:focus + span:after {
+    position: absolute;
+    content: '';
+    height: 35px;
+    width: 35px;
+    left: -4px;
+    top: -3px;
+    background: url(/images/radio-button-focus.png) center no-repeat;
+    background-size: 35px
+  }
+}
