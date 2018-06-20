@@ -141,11 +141,12 @@ button:disabled {
 }
 
 label {
-  font-family: $font-bold;
+  font-family: $font-regular;
+  font-weight: 700;
 }
 
 .form-help-text {
-  @include font-size($p-large-font-size);
+  @include font-size($p-font-size);
 }
 
 .form__field--wrapper {
@@ -159,6 +160,7 @@ label {
   @include font-size($p-font-size);
   font-family: $body-font;
   font-weight:bold;
+  margin-bottom: 12px;
 }
 
 /* 
