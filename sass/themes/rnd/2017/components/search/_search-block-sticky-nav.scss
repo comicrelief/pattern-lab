@@ -28,7 +28,7 @@
     right: 0;
     padding: 20px;
     width: 100%;
-    background-color: $colour-dark-blue;
+    background-color: $colour-black;
 
     @include breakpoint($screen-md) {
       // offset from right width of icon buttons and hamburger button
@@ -72,7 +72,7 @@
     height: 50px;
     font-family: $font-bold;
     @include font-size($h3-font-size);
-    color: $colour-dark-blue;
+    color: $colour-black;
   }
   .form-actions {
     margin: 0;
@@ -122,7 +122,7 @@
     right: calc(92px + 65px); 
     width: 46px;
     height: $sm-nav-height;
-    background-color: $colour-dark-blue;
+    background-color: $colour-black;
     @include breakpoint($screen-md) {
       top: calc(0px - #{$md-nav-height});
       height: $md-nav-height;

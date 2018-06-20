@@ -12,7 +12,7 @@
       overflow: visible;
       top: 0;
       padding: 20px;
-      background-color: $colour-dark-blue;
+      background-color: $colour-black;
 
       @include breakpoint($screen-md) {
         right: 65px;
@@ -28,7 +28,7 @@
         right: 65px;
         width: 46px;
         height: $sm-nav-height;
-        background-color: $colour-dark-blue;
+        background-color: $colour-black;
         @include breakpoint($screen-md) {
           top: calc(0px - #{$md-nav-height});
           right: 0;
@@ -95,7 +95,7 @@
         font-family: $font-bold;
 
         @include font-size($h4-font-size);
-        color: $colour-dark-blue;
+        color: $colour-black;
       }
       input[type=submit].button {
         margin: 0;
@@ -143,7 +143,7 @@
         float: none;
         margin: 0 auto;
         width: 100%;
-        background-color: $colour-dark-blue;
+        background-color: $colour-black;
       }
     }
   }
