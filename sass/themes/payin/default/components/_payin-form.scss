@@ -23,19 +23,6 @@ body.payin {
 // =========================================================================
 
 // form fields, labels, buttons
-/*label,
-legend {
-  display: block;
-  padding-top: 10px;
-  margin-bottom: .6em;
-  font-size: 18px;
-  font-family: $body-font;
-}
-
-fieldset {
-  padding: 0;
-  border-width: 0;
-} */
 
 input[type="email"],
 input[type="number"],
@@ -90,15 +77,6 @@ label.required {
 }
 
 .search-box {
-  /*.postcodeSearch{
-    float: none;
-  }*/
-  /*.search-box-button {
-    position: relative;
-    width: 100%;
-    background: none;
-    border: none;
-  }*/
   #postcode_button {
     @extend .btn;
     display: block;
@@ -497,7 +475,6 @@ input[type="text"].form__field--postcode-lookup {
 }
 .form__field--error,
 .form-error {
-  //color: $colour-red;
   @include font-size($p-xsmall-font-size);
 }
 .validation__text {

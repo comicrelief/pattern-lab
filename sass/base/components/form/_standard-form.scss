@@ -206,11 +206,10 @@ label {
   &.form__checkbox--inline,
   &.form__radio--inline {
     width: span(12);
-    margin-bottom: 18px;
+    margin-bottom: 0;
   }
 
-  input[type="checkbox"], 
-  input[type="radio"] {
+  input[type="checkbox"]{
     z-index: 1;
     position: absolute;
     top: 10px;
@@ -266,6 +265,18 @@ label {
   position: relative;
   padding-top: 5px;
   @include clearfix;
+
+  input[type="radio"] {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    left: 0;
+    right: 0;
+  }
 
   input[type="radio"] + span {
     left: 2px;
