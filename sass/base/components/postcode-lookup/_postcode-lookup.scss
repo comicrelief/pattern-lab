@@ -1,0 +1,52 @@
+// Postcode lookup
+//
+// This is postcode lookup
+//
+// Markup: postcode-lookup.twig
+//
+// Style guide: 20.1005
+
+.search-box {
+  .form_field--findaddress {
+    @include span(12 wider);
+    margin-left: 0;
+
+    .form__field--text {
+      @include span(12 no-gutters);
+
+      @include breakpoint($screen-md) {
+        @include span(8 of 12 no-gutters);
+      }
+    }
+
+    .form__btn {
+      @include span(12 no-gutters);
+
+      @include breakpoint($screen-md) {
+        @include span(4 of 12 no-gutters);
+      }
+      
+      .form__btn--findaddress{
+        @extend .btn;
+        @include border-radius(0);
+        border: 0;
+        background:$colour-persian-purple;
+        height: 50px;
+        padding: 16px;
+        width: 100%;
+
+        @include breakpoint($screen-md) {
+          width: auto;
+        }
+
+       &:hover {
+          background:$colour-persian-purple;
+        }
+      }
+    }
+  }
+}
+
+.form__fieldset form__field--address-detail {
+  @include span(12);
+}
