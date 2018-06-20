@@ -1,0 +1,37 @@
+// Burger menu
+.c-hamburger {
+  width: 60px;
+  height: 67px;
+  @media screen and (min-width: 740px) {
+    text-indent: 0;
+    width: 125px;
+  }
+  @media screen and (min-width: 1150px) {
+    height: 72px;
+  }
+  span {
+    top: 31px;
+    right: 15px;
+    height: 4px;
+    width: 30px;
+    &:before,
+    &:after {
+      height: 4px;
+    }
+    &:before {
+      top: -4px -6px;
+    }
+    &:after {
+      bottom: -4px -6px;
+    }
+    @media (min-width: 1150px) {
+      right: 20px;
+      top: 35px;
+    }
+  }
+}
+// Remove fonts from campaign
+.c-hamburger__text {
+  font-family: "GT-Walsheim-Regular",helvetica,arial,sans-serif;
+  top: 25px;
+}

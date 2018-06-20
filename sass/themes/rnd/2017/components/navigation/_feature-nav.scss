@@ -1,0 +1,69 @@
+// Meta nav
+.feature-nav__items {
+  margin-top: 0;
+  margin-left: 10px;
+  li {
+    padding: 26px 0;
+    margin: 0 5px;
+    &:nth-child(n+4) {
+      display:none;
+    }
+    .menu--level-1 {
+      display: none;
+    }
+  }
+}
+.feature-nav__icons {
+  @media screen and (min-width: 1150px) {
+    height: 72px;
+  }
+}
+
+.main-nav__wrapper.main-nav--feature__wrapper .main-nav--feature__featured-items li {
+  @media screen and (min-width: 1150px) {
+    padding: 26px 0;
+    margin: 0 5px;
+  }
+}
+
+.main-nav__wrapper.main-nav--feature__wrapper {
+   @media screen and (min-width: 1150px) {
+      width: 100%;
+    }
+  
+  .feature-nav.main-nav--feature__inner-wrapper {
+    @media screen and (min-width: 1150px) {
+      height: 100%;
+    }
+  }
+
+  .main-nav--feature__featured-items {
+    @media screen and (min-width: 1150px) {
+      margin-top: 0;
+      height: 73px;
+    }
+  }
+  .c-hamburger.main-nav-toggle .c-hamburger__text {
+    @media screen and (min-width: 740px) {
+      top: 22px;
+    }
+    @media screen and (min-width: 1150px) {
+      top: 25px;
+    }
+  }
+}
+
+.main-nav__icons.main-nav__burger.feature-nav__icons.feature-nav__burger {
+  height: 66px;
+
+  @media screen and (min-width: 1150px) {
+    height: 72px;
+  }
+}
+
+
+.main-nav__wrapper.main-nav--feature__wrapper .main-nav__items.main-nav--feature__items.menu-open {
+  @media (min-width: 1150px) {
+    top: 76px;
+  }
+}

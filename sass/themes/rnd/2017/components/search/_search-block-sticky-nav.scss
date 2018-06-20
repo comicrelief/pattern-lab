@@ -1,0 +1,175 @@
+.search-block {
+  // offset top from navigation and give it the same width as the header inner wrapper
+  position: fixed;
+  overflow: visible;
+  top: $sm-nav-height;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 100;
+
+  @include breakpoint($screen-md) {
+    top: $md-nav-height;
+  }
+  @include breakpoint($desktop-nav-breakpoint) {
+    top: $lg-nav-height;
+  }
+
+  .cc-banner--visible & {
+    position: relative;
+    top: 0;
+  }
+  .search-block__wrapper {
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    width: 100%;
+    background-color: $colour-dark-blue;
+
+    @include breakpoint($screen-md) {
+      // offset from right width of icon buttons and hamburger button
+      right: calc(92px + 65px);
+      width: 380px;
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      // offset from right width of icon buttons and margin meta-icons
+      right: calc(92px + 5px);
+    }
+  }
+  .search-block__message {
+    margin: 0;
+    width: 100%;
+    p {
+      margin: 0 auto 20px;
+      width: 60%;
+      font-family: $font-bold;
+      color: $colour-white;
+      word-wrap: break-word;
+      @include font-size($h3-font-size);
+    }
+  }
+  .search-block__form {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    form {
+      margin: 0;
+      border: none;
+    }
+  }
+  .form-item {
+    margin: 0;
+    padding: 0 10px;
+    width: calc(100% - 50px);
+    background-color: $colour-white;
+  }
+  input[type=text] {
+    padding: 0;
+    height: 50px;
+    font-family: $font-bold;
+    @include font-size($h3-font-size);
+    color: $colour-dark-blue;
+  }
+  .form-actions {
+    margin: 0;
+    height: 50px;
+    width: 50px;
+    background-color: $colour-red;
+  }
+  input[type=submit] {
+    width: 50px;
+    height: 50px;
+    background-color: $colour-white;
+    mask: url($image-path + "magnify-icon.svg") no-repeat center;
+    mask-size: 23px;
+    -webkit-mask: url($image-path + "magnify-icon.svg") no-repeat center;
+    -webkit-mask-size: 23px;
+    @include breakpoint($screen-md) {
+      mask-size: 25px;
+      -webkit-mask-size: 25px;
+    }
+
+    &:hover {
+      background-color: $colour-black;
+    }
+    
+    &:focus {
+      outline: 1px dotted #212121;
+      // Webkit specific override where applicable
+      outline: 5px auto -webkit-focus-ring-color;
+    }
+    .no-cssmask & {
+      background: transparent url($image-path + "search_page_icon.png") center no-repeat;
+      background-size: 23px;
+      @include breakpoint($screen-md) {
+        background-size: 25px;
+      }
+      &:focus,
+      &:hover {
+        background-image: url($image-path + "search_page_icon_hover.png");
+        background-color: transparent;
+      }
+    } 
+  }
+
+  a.close-button {
+    position: absolute;
+    top: calc(0px - #{$sm-nav-height});
+    right: calc(92px + 65px); 
+    width: 46px;
+    height: $sm-nav-height;
+    background-color: $colour-dark-blue;
+    @include breakpoint($screen-md) {
+      top: calc(0px - #{$md-nav-height});
+      height: $md-nav-height;
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: calc(0px - #{$lg-nav-height});
+      right: calc(92px + 5px); 
+      height: $lg-nav-height;
+    }
+    .icon {
+      margin: 12px 10px;
+      width: 25px;
+      height: 25px;
+      fill: white;
+      @include breakpoint($screen-md) {
+        margin: 12px 6px;
+        width: 35px;
+        height: 35px;
+      }
+      @include breakpoint($desktop-nav-breakpoint) {
+        margin: 26px 12px 28px;
+        width: 20px;
+        height: 21px;
+      }
+    }
+    &:focus,
+    &:hover {
+      .icon {
+        fill: $colour-white;
+      }  
+    }
+    .path-search & {
+      display: none;
+    }
+  }  
+}
+//IE
+.no-object-fit {
+  .search-block {
+    // override base theme's IE fix
+    position: fixed;
+  }
+  // positioning for when cookie message is visible
+  .cc-banner--visible {
+    .search-block {
+      position: relative;
+      top: 0;
+    }
+  }
+}
