@@ -7,6 +7,8 @@
 // Style guide: 20.1005
 
 .search-box {
+  float:left;
+  
   .form_field--findaddress {
     @include span(12 wider);
     margin-left: 0;

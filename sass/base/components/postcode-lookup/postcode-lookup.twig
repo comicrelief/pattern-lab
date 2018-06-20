@@ -20,6 +20,34 @@
                 />
             </div>
         </div>
+    </div>
+    <div class="form__fieldset form__field--address-detail">
+        <a href="#" class="form__field--address-detail-toggle link">Or enter your address manual</a>
+    </div>
+</div>
+
+<div class="form__field--wrapper form__text form__field--postcode">
+	<div class="search-box form__field--wrapper">
+        <label class="form__field form__field--postcode form__text required" id="postcode-label" for="comicrelief_payinbundle_payment_postcode">Postcode</label>
+        <div class="form_field--findaddress">
+            <input 
+                type="text" 
+                id="comicrelief_payinbundle_payment_postcode" 
+                name="comicrelief_payinbundle_payment[postcode]" 
+                required="required" 
+                placeholder="SE1 7TP"
+                class="form__field form__field--text form__field--error-outline"
+            />
+            <div class="form__btn">
+                <input 
+                    type="button" 
+                    id="postcode_button" 
+                    name="btnPostcodeSearch" 
+                    class="btnPostcodeSearch btn form__btn--findaddress" 
+                    value="FIND ADDRESS"
+                />
+            </div>
+        </div>
         <div id="postcode-error" class="error-container js-error has-error" aria-live="assertive" role="status">
             <span class="help-block form-error">Please enter a valid postcode</span>
         </div>
