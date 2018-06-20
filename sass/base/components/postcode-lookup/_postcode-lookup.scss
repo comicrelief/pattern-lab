@@ -8,13 +8,13 @@
 
 .search-box {
   float:left;
-  
+
   .form_field--findaddress {
     @include span(12 wider);
     margin-left: 0;
 
     .form__field--text {
-      @include span(12 no-gutters);
+      @include span(6 of 12 no-gutters);
 
       @include breakpoint($screen-md) {
         @include span(8 of 12 no-gutters);
@@ -22,7 +22,7 @@
     }
 
     .form__btn {
-      @include span(12 no-gutters);
+      @include span(6 of 12 no-gutters);
 
       @include breakpoint($screen-md) {
         @include span(4 of 12 no-gutters);
@@ -31,14 +31,17 @@
       .form__btn--findaddress{
         @extend .btn;
         @include border-radius(0);
+        @include font-size($p-font-size);
         border: 0;
         background:$colour-persian-purple;
         height: 50px;
-        padding: 16px;
+        padding: 15px 0;
         width: 100%;
 
         @include breakpoint($screen-md) {
           width: auto;
+          padding-left: 15px;
+          padding-right: 15px;
         }
 
        &:hover {
