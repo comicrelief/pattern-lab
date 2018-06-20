@@ -15,7 +15,7 @@ legend,
 .form__row--label{
   display: block;
   padding-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   font-family: $body-font;
   @include font-size($p-large-font-size);
 }
@@ -75,7 +75,7 @@ select {
   @include font-size($p-large-font-size);
   font-weight: 300;
   font-family: $body-font;
-  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
+  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 18px/20px 20px no-repeat;
   cursor: pointer;
   margin-bottom: 0;
 }
@@ -140,7 +140,7 @@ button:disabled {
   }
 }
 
-label.required {
+label {
   font-weight: bold;
 }
 

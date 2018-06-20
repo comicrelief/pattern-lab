@@ -130,7 +130,3 @@ input[type="reset"],
 input[type="button"] {
   @extend .btn;
 }
-
-.required:after {
-  content: " *";
-} 
