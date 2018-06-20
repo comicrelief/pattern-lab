@@ -44,7 +44,7 @@
   margin-right: 0;
 
   span {
-    color: $colour-dark-blue;
+    color: $colour-black;
   }
 
   li.menu-item {
@@ -72,7 +72,7 @@
         line-height: 16px;
 
         // Transparent 'top of screen' state
-        color: white;
+        color: $colour-black;
 
         span {
           position: relative;
@@ -106,10 +106,10 @@
       > li {
          &:hover > a {
           
-          color: $colour-dark-blue;
+          color: $colour-black;
 
           @include breakpoint($desktop-nav-breakpoint) {
-            color: white;
+            color: $colour-black;
           }
 
           span {
@@ -168,11 +168,11 @@
             height: auto;
 
             // Transparent nav state
-            color: white;
+            color: $colour-black;
 
             header[role=banner].sticky-nav__header.scrolling &,
             body.cc-banner--visible header[role=banner].sticky-nav__header & {
-              color: $colour-dark-blue;
+              color: $colour-black;
               background-image: none;
             }
 
@@ -186,6 +186,7 @@
 
     // First level of sub items (dropdwn)
     &.menu--level-1 {
+      background-color: $colour-black;
       li.menu-item.menu-item--duplicate {
         > a {
           color: white;
@@ -197,7 +198,7 @@
           height: 53px;
           @include breakpoint($desktop-nav-breakpoint) {
             &:focus {
-              background-color: #3e1c43;
+              background-color: #1e354b;
             }
           }
 
@@ -219,7 +220,7 @@
               width: 10px;
               height: 10px;
               border: 11px solid transparent;
-              border-bottom-color: $colour-dark-blue;
+              border-bottom-color: $colour-black;
               top: -22px;
             }
           }
@@ -295,7 +296,7 @@
         }
 
         &:hover {
-          background-color: #3e1c43;
+          background-color: #1e354b;
 
           &.is-active span.menu-item__text {
             border-bottom: 2px solid $colour-white;
@@ -319,7 +320,7 @@
             height: auto;
 
             &:focus {
-              background-color: #3e1c43;
+              background-color: #1e354b;
   
               span {
                 border-bottom: none;
@@ -339,7 +340,7 @@
       }
 
       > ul li a:hover {
-        background-color: #3e1c43;
+        background-color: #1e354b;
       }
 
       &:hover >a span.menu-item__text {
@@ -362,10 +363,10 @@
         a {
           // Indent tertiary items
           padding-left: 40px;
-          background-color: #3e1c43;
+          background-color: #1e354b;
 
           &:hover {
-            background-color: #3e1c43;
+            background-color: #1e354b;
           }
         }
       } 
@@ -403,7 +404,7 @@ header[role=banner] {
     height: $sm-nav-height;
 
     .icon {
-      fill: $colour-white;
+      fill: $colour-black;
       margin: 12px 10px;
     }
 
@@ -447,7 +448,7 @@ header[role=banner] {
 
         &:before,
         &:after {
-          background-color: $colour-dark-blue;
+          background-color: $colour-black;
         }
       }
     } 
@@ -462,14 +463,14 @@ header[role=banner] {
     transition: 0.2s background-color;
     &:hover,
     &:focus {
-      background-color: $colour-dark-blue;
+      background-color: $colour-black;
       .icon {
         fill: $colour-white;
       }
     }
     &.active {
       height: calc(#{$sm-nav-height} + 20px);
-      background-color: $colour-dark-blue;
+      background-color: $colour-black;
       .path-search & {
         height: $sm-nav-height;
         &.meta-icons__magnify {
@@ -517,9 +518,6 @@ header[role=banner] {
     width: 100%;
     z-index: 100;
     background: transparent;
-    background-image: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
-    -webkit-transition: background-color 350ms linear;
-    transition: background-color 350ms linear;
     height: $sm-nav-height;
 
     @include breakpoint($screen-md) {
@@ -557,12 +555,12 @@ header[role=banner] {
 
       .meta-icons a {
         .icon {
-          fill: $colour-dark-blue;
+          fill: $colour-black;
         }
         &.active,
         &:hover,
         &:focus {
-          background-color: $colour-dark-blue;
+          background-color: $colour-black;
           .icon {
             fill: $colour-white;
           }
@@ -571,7 +569,7 @@ header[role=banner] {
           .path-search.cc-banner--visible & {
             background-color: transparent;
             .icon {
-              fill: $colour-dark-blue;
+              fill: $colour-black;
             }  
           }
         }
@@ -581,7 +579,7 @@ header[role=banner] {
         span,
         span:after,
         span:before {
-          background-color: $colour-dark-blue;
+          background-color: $colour-black;
         }
 
         &.is-active {
@@ -590,7 +588,7 @@ header[role=banner] {
 
             &:after,
             &:before {
-              background-color: $colour-dark-blue;
+              background-color: $colour-black;
             }
           }
         }
@@ -628,7 +626,7 @@ header[role=banner] {
 */
 body.path-search.cc-banner--visible header[role=banner] {
   .meta-icons > a.active.meta-icons__magnify .icon {
-    fill: $colour-dark-blue;
+    fill: $colour-black;
   }
 }
 
@@ -642,7 +640,7 @@ body.path-search.cc-banner--visible header[role=banner] {
   body.cc-banner--visible & {
     .meta-icons > a {
       .icon {
-        fill: $colour-dark-blue;
+        fill: $colour-black;
       }
       &.active,
       &:hover,
@@ -664,7 +662,7 @@ body.path-search.cc-banner--visible header[role=banner] {
   
     .c-hamburger {
       span, span:after, span:before {
-        background-color: $colour-dark-blue;
+        background-color: $colour-black;
       }
 
       &.is-active {
@@ -673,7 +671,7 @@ body.path-search.cc-banner--visible header[role=banner] {
         }
 
         span:after, span:before {
-          background-color: $colour-dark-blue;
+          background-color: $colour-black;
         }
       }
     }
@@ -700,7 +698,7 @@ body.path-search.cc-banner--visible header[role=banner] {
 .ui-tooltip.ui-tooltip--nav {
   position: fixed;
   top: calc(#{$sm-nav-height} + 15px) !important;
-  background-color: $colour-dark-blue;
+  background-color: $colour-black;
   // place tooltip behind open esu/search dropdown because colour clash
   z-index: 99;
 
@@ -712,6 +710,6 @@ body.path-search.cc-banner--visible header[role=banner] {
   }
   &:before {
     // important flag needed to override colour
-    border-bottom-color: $colour-dark-blue !important;
+    border-bottom-color: $colour-black !important;
   }
 }
