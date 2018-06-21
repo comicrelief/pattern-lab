@@ -200,6 +200,7 @@ label {
 */
 .form__checkbox, 
 .form__checkbox--single,
+.form__field-wrapper--checkbox,
 .form__radio {
   position: relative;
   padding-top: 5px;
@@ -258,6 +259,12 @@ label {
       top: 3px;
     }
   }
+}
+
+.form__field-wrapper--checkbox {
+    .form__field-label {
+        font-weight: normal;
+    }
 }
 
 /* 
