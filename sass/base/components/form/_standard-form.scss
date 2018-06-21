@@ -1,0 +1,319 @@
+// Forms
+//
+// New Standard Forms
+//
+// Markup: form.twig
+//
+// Style guide: 10.90
+
+/*
+/* = Generic form styles
+*/
+
+label,
+legend,
+.form__row--label{
+  display: block;
+  padding-top: 10px;
+  margin-bottom: 12px;
+  font-family: $body-font;
+  @include font-size($p-font-size);
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+  textarea {
+  height: 50px;
+  padding-left:12px;
+  background-color: $colour-white;
+  border: 1px solid $colour-scorpion-grey;
+  width: 100%;
+  font-family: $body-font;
+  box-shadow: none;
+  box-sizing: border-box;
+  appearance: none;
+  @include placeholder($colour-scorpion-grey, 18px , $font-regular);
+  @include font-size($p-font-size);
+}
+
+textarea {
+  min-height: 65px;
+  
+
+  @include breakpoint($screen-md) {
+    max-width: 100%;
+    height: 96px;
+  }
+}
+
+.form__textarea {
+  textarea {
+    padding: 6px 12px;
+  }
+}
+
+select {
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0px;
+  border: 1px solid $colour-scorpion-grey;
+  padding: 12px 50px 8px 10px;
+  width: 100%;
+  height: 50px;
+  @include font-size($p-font-size);
+  font-weight: 300;
+  font-family: $body-font;
+  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 18px/20px 20px no-repeat;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+// hide native IE arrow
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  border: 1px solid $colour-scorpion-grey;
+  box-shadow: border-box;
+}
+/* Remove visually the number spinner */
+/* For Firefox */
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  @extend .btn;
+}
+
+.disabled {
+  @include opacity(0.4);
+
+  input,
+  button {
+    transition: none;
+    cursor: initial;
+  }
+  button:hover,
+  input:hover {
+  background-color: $colour-red;
+  transition: none;
+  }
+}
+
+button:disabled {
+  background: rgba(0,0,0,0.5);
+  cursor: no-drop;
+
+  &:before {
+    background-image:none;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(0);
+    &:before {
+      background-image:none;
+    }
+  }
+}
+
+label {
+  font-family: $font-regular;
+  font-weight: 700;
+}
+
+.form-help-text {
+  @include font-size($p-font-size);
+}
+
+.form__field--wrapper {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.form__fieldset--label {
+  @include font-size($p-font-size);
+  font-family: $body-font;
+  font-weight:bold;
+  margin-bottom: 12px;
+}
+
+/* 
+/* = Form validation 
+*/
+.form-error {
+  position: relative;
+  font-size: 16px;
+  font-family: $body-font;
+  margin-top: 10px;
+  display: inline-block;
+  vertical-align: top;
+  color: $colour-ribbon-red;
+  font-weight: bold;
+
+  &:before {
+    position: relative;
+    content: '';
+    display: inline-block;
+    top: 0.28em;
+    margin-right: 8px;
+    background: url($image-path + "error-alert-icon.png") left 0/100% no-repeat;
+    width:18px;
+    height:19px;
+  }
+}
+
+.form__field {
+
+  &.form__field--error-outline {
+    border: 1px solid $colour-ribbon-red;
+  }
+}
+
+/*
+/* = checkbox and radio button forms
+*/
+.form__checkbox, 
+.form__checkbox--single,
+.form__radio {
+  position: relative;
+  padding-top: 5px;
+  @include clearfix;
+
+  &.form__checkbox--inline,
+  &.form__radio--inline {
+    width: span(12);
+    margin-bottom: 0;
+  }
+
+  input[type="checkbox"]{
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+  }
+
+  input[type="checkbox"]:checked + span {
+    background: url($image-path + "checkbox-white-tick.png") center/50% no-repeat;
+    background-size: 100%;
+    background-color: $colour-persian-purple;
+    border: 1px solid transparent;
+  }
+
+  input[type="checkbox"] + span,
+  input[type="radio"] + span, {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $colour-scorpion-grey;
+  }
+
+  input[type="checkbox"]:focus+span {
+    border-color: $colour-scorpion-grey;
+    border-width: 3px;
+  }
+
+  label.form__checkbox, 
+  label.form__radio {
+    overflow: visible;
+    position: relative;
+    top: 0px;
+    left: 45px;
+    width: calc(100% - 45px);
+    font-size: 18px;
+    font-family: $body-font;
+    word-break: break-word;
+  
+    @include breakpoint($screen-md) {
+      top: 3px;
+    }
+  }
+}
+
+/* 
+/* = Radio button form 
+*/
+.form__radio.form__radio--inline {
+  position: relative;
+  padding-top: 5px;
+  @include clearfix;
+
+  input[type="radio"] {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    left: 0;
+    right: 0;
+  }
+
+  input[type="radio"] + span {
+    left: 2px;
+    @include border-radius(30px);    
+  }
+
+  input[type="radio"]:checked + span {
+    background-color: $colour-persian-purple;
+    border: 1px solid $colour-persian-purple;
+  }
+
+  input[type="radio"]:checked + span:before {
+    position: absolute;
+    content: '';
+    top: 8px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius:30px;
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+    margin: 0 auto;
+  }
+
+  input[type="radio"]:focus + span:after {
+    position: absolute;
+    content: '';
+    height: 34px;
+    width: 34px;
+    left: -3px;
+    top: -3px;
+    border: 3px solid $colour-scorpion-grey;;
+    border-radius:30px;
+  }
+}
+
+

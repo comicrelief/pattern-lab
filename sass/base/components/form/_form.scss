@@ -3,9 +3,7 @@
 //
 // Standard Forms
 //
-// Markup: form.twig
-//
-// Style guide: 10.90
+// Kept in for legacy use of sites using this base styles
 
 label,
 legend {
@@ -131,8 +129,4 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   @extend .btn;
-}
-
-.required:after {
-  content: " *";
 }

@@ -7,25 +7,7 @@
 // Style guide: 20.62
 
 .form__checkbox {
-    position: relative;
-    padding-top: 5px;
-    @include clearfix;
-  
-    input[type="checkbox"] {
-      z-index: 1;
-      position: absolute;
-      top: 10px;
-      margin: 0;
-      width: 30px;
-      height: 30px;
-      opacity: 0;
-    }
     input[type="checkbox"]+span {
-      position: absolute;
-      top: 10px;
-      left: 0;
-      width: 30px;
-      height: 30px;
       border: 1px solid $colour-grey;
     }
 
@@ -40,21 +22,6 @@
 
     input[type="checkbox"]:focus+span {
       border-color: $colour-black;
-    }
-  
-    label.form__checkbox {
-      overflow: visible;
-      position: relative;
-      top: 0px;
-      left: 45px;
-      width: calc(100% - 45px);
-      font-size: 18px;
-      font-family: $body-font;
-      word-break: break-word;
-    
-      @include breakpoint($screen-md) {
-        top: 3px;
-      }
     }
   
     &.form__checkbox-text-only {

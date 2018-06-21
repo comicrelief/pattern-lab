@@ -25,9 +25,7 @@ textarea {
   border: 1px solid $colour-dark-purple;
   @include placeholder (#757575, 18px, $body-font);
 }
-select {
-  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
-}
+
 .form__row {
   width: span(11);
 
