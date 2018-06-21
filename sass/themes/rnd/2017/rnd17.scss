@@ -24,16 +24,14 @@
 // RND variables
 // ==========================================================================
 @import "variables/_colours.scss";
-@import "variables/_navigation.scss";
 // ==========================================================================
 // RND components
 // ==========================================================================
 
 @import "components/header/_base-header.scss";
-@import "components/navigation/kids-nav/_kids-nav";
-@import "components/navigation/_sticky-nav";
+@import "components/navigation/kids-nav/_kids-nav.scss";
+@import "components/navigation/_main-nav.scss";
 @import "components/email-signup/_email-signup.scss";
-@import "components/search/_search-block-sticky-nav.scss";
 @import "components/social/_social.scss";
 @import "components/_loading.scss";
 @import "components/_otn.scss";
