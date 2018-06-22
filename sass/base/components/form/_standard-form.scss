@@ -12,7 +12,7 @@
 
 label,
 legend,
-.form__row--label{
+.form__field-label{
   display: block;
   padding-top: 10px;
   margin-bottom: 12px;
@@ -198,9 +198,9 @@ label {
 /*
 /* = checkbox and radio button forms
 */
-.form__checkbox, 
-.form__checkbox--single,
+.form__checkbox,
 .form__field-wrapper--checkbox,
+.form__field-wrapper--radio,
 .form__radio {
   position: relative;
   padding-top: 5px;
@@ -254,12 +254,38 @@ label {
     font-family: $body-font;
     word-break: break-word;
   }
+
+  label.form__field-label {
+    font-weight: normal;
+  }
 }
 
+/* Checkbox with paragraph and label included */
 .form__field-wrapper--checkbox {
-    .form__field-label {
-        font-weight: normal;
-    }
+    
+  &.form__checkbox-paragraph {
+
+      .form__checkbox--inline {
+          position: relative;
+          padding-top: 5px;
+          overflow: hidden;
+      }
+  }
+
+  /* Checkbox with background */
+  &.form__field-wrapper--background {
+      background: #F0F0F0;
+      padding: 18px 18px 8px;
+      label {
+        padding-top: 5px;
+      }
+
+      input[type="checkbox"] + span,
+      input[type="checkbox"] {
+        top: 18px;
+        left: 18px;
+      }
+  }
 }
 
 /* 
