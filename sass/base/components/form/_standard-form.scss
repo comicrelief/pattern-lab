@@ -244,20 +244,15 @@ label {
     border-width: 3px;
   }
 
-  label.form__checkbox, 
-  label.form__radio {
+  .form__field-label {
     overflow: visible;
     position: relative;
-    top: 0px;
+    top: 0;
     left: 45px;
     width: calc(100% - 45px);
     font-size: 18px;
     font-family: $body-font;
     word-break: break-word;
-  
-    @include breakpoint($screen-md) {
-      top: 3px;
-    }
   }
 }
 
