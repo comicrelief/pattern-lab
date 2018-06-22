@@ -244,7 +244,8 @@ label {
     border-width: 3px;
   }
 
-  .form__field-label {
+  .form__field-label,
+  label.form__checkbox {
     overflow: visible;
     position: relative;
     top: 0;
@@ -255,7 +256,8 @@ label {
     word-break: break-word;
   }
 
-  label.form__field-label {
+  label.form__field-label,
+  label.form__checkbox {
     font-weight: normal;
   }
 }
