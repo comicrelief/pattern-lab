@@ -81,40 +81,47 @@
 			<span class="form-error">This is a error message</span>
 		</div>
     </div>
-	<div class="form__row form__field--wrapper form__row--radio">
+	<div class="form__row form__field--wrapper form__field-wrapper--radio">
 		<p class="form__fieldset--label"> List of radio buttons </p>
 		<div class="form__field--wrapper form__radio form__radio--inline">
-			<label class="form__radio" for="comicrelief_payin_general_permissionEmail">Option 1</label>
+			<label class="form__field-label" for="comicrelief_payin_general_permissionEmail">Option 1</label>
 			<input type="radio" id="radio-1" name="radio-group" value="1" checked/>
 			<span></span>
 		</div>
 		<div class="form__field--wrapper form__radio form__radio--inline">
-			<label class="form__radio" for="comicrelief_payin_general_permissionEmail">Option 2</label>
+			<label class="form__field-label" for="comicrelief_payin_general_permissionEmail">Option 2</label>
 			<input type="radio" id="radio-2" name="radio-group" value="2" />
 			<span></span>
 		</div>
 	</div>
-	<div class="form__row form__field--wrapper form__row--checkbox">
+	<div class="form__row form__field--wrapper form__field-wrapper--checkbox">
 		<p class="form__fieldset--label"> List of checkboxes </p>
 		<div class="form__field--wrapper form__checkbox form__checkbox--inline">
-			<label class="form__checkbox" for="checkbox-1">Option 1</label>
+			<label class="form__field-label" for="checkbox-1">Option 1</label>
 			<input type="checkbox" id="checkbox-1" name="group-checkbox" value="1" checked />
 			<span></span>
 		</div>
 		<div class="form__field--wrapper form__checkbox form__checkbox--inline">
-			<label class="form__checkbox" for="checkbox-2">Option 2</label>
+			<label class="form__field-label" for="checkbox-2">Option 2</label>
 			<input type="checkbox" id="checkbx-2" name="group-checkbox" value="2" />
 			<span></span>
 		</div>
 	</div>
-	<div class="form__field--wrapper form__checkbox">
+	<div class="form__field--wrapper form__field-wrapper--checkbox form__checkbox-paragraph">
 		<p class="form__fieldset--label">Single checkbox with paragraph text (optional)</p>
 		<p>This block also reiterates that we don’t use asterisks but the (optional) indication for fields that are not mandatory.</p>
-		<div class="form__checkbox--single">
-			<label class="form__checkbox" for="singlecheckbox">Option 1</label>
+		<div class="form__checkbox--inline">
+			<label class="form__field-label" for="singlecheckbox">Option 1</label>
 			<input type="checkbox" id="singlecheckbox" name="singlecheckbox" value="1" />
 			<span></span>
 		</div>
+    </div>
+    <div class="form__field--wrapper form__field-wrapper--checkbox form__field-wrapper--background">
+        <div class="form__checkbox--inline">
+            <label class="form__field-label" for="singlecheckbox1">Single checkbox with background colour</label>
+            <input type="checkbox" id="singlecheckbox1" name="singlecheckbox1" value="2" />
+            <span></span>
+        </div>
     </div>
 </div>
 
