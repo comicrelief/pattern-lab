@@ -114,7 +114,7 @@ https://deploy-preview-[PULL_REQUEST_ID]--cr-pattern-lab.netlify.com/
 ```
 Pull request commits and merge also trigger CI visual regression tests as explained below. Output is available at
 ```
-https://ci.apps.comicrelief.com/teams/main/pipelines/pattern-lab
+https://ci.services.comicrelief.com/teams/main/pipelines/pattern-lab
 ```
 
  ## Visual Regression
@@ -133,5 +133,5 @@ yarn backstop-test-local
 
 [npm-image]: https://badge.fury.io/js/%40comicrelief%2Fpattern-lab.svg
 [npm-url]: https://www.npmjs.com/package/@comicrelief/pattern-lab
-[concourse-image]: https://ci.apps.comicrelief.com/api/v1/teams/main/pipelines/pattern-lab/jobs/pattern-lab-test/badge
-[concourse-url]: https://ci.apps.comicrelief.com/teams/main/pipelines/pattern-lab
+[concourse-image]: https://ci.services.comicrelief.com/api/v1/teams/main/pipelines/pattern-lab/jobs/pattern-lab-test/badge
+[concourse-url]: https://ci.services.comicrelief.com/teams/main/pipelines/pattern-lab
