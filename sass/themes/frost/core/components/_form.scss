@@ -682,3 +682,14 @@ input[type='radio'] {
     }
   }
 }
+
+// Attempt to recreate native browser focus states
+button {
+  &:focus {
+    // IE, FF etc.
+    outline: 1px dotted black;
+    // Chrome etc.
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-offset: 0px;
+  }
+}
