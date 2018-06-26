@@ -1,31 +1,128 @@
-<form>
-<div>
- <select>
-   <option value selected="selected">- Please select -</option>
-   <option value="1">1</option>
-   <option value="2">2</option>
-   <option value="3">3</option>
-   <option value="4">4</option>
- </select><br>
+<form novalidate>
+	<div id="field-wrapper--standard" class="form__fieldset form__field--wrapper form__field-wrapper--text">
+		<label id="field-label--standard" for="field-input--standard" class="form__field-label required">Input required with paragraph text and hint</label>
+		<p class="form-help-text">This is support text, for example information on how long the password should be</p>
+		<input 
+			type="text" 
+			id="field-input--standard" 
+			name="standard" 
+			class="form__field form__field--text" 
+			required="required" 
+			placeholder="This is hint text" 
+			pattern="" 
+			aria-describedby="field-label--standard"
+		>
+	</div>
+	<div id="field-wrapper--standard-error" class="form__fieldset form__field--wrapper form__field-wrapper--text">
+		<label id="field-label--firstname" for="field-input--firstname" class="form__field-label required">Input with error mesaage</label>
+		<input 
+			type="text" 
+			id="field-input--standard-error" 
+			name="firstname" 
+			class="form__field form__field--text form__field--error-outline" 
+			required="" 
+			placeholder="Field completed incorrectly" 
+			pattern="" 
+			aria-describedby="field-label--standard"
+		>
+		<div id="field-error--standard-error" class="form__field-error-container form__field-error-container--text" aria-live="assertive" role="status">
+			<span class="form-error">This is an error message</span>
+		</div>
+	</div>
+	<div id="field-wrapper--standard-optional" class="form__fieldset form__field--wrapper form__field-wrapper--text">
+		<label id="field-wrapper--standard-optional" for="field-input--standard" class="form__field-label">Simple input <span>(optional)</span></label>
+		<input 
+			type="text" 
+			id="field-wrapper--standard-optional" 
+			name="standard" 
+			class="form__field form__field--text error-border" 
+			placeholder="" 
+			pattern="" 
+			aria-describedby="field-label--standard"
+		>
+	</div>
+	<div class="form__field--wrapper form__choice form__field--select">
+		<label class="form__field form__field--country form__choice required" for="field-input--select">Dropdown menu</label>
+		<select 
+			id="field-input--select" 
+			name="select-1" 
+			class="form__field form__field--select"
+		> 
+			<option >Please select</option>
+			<option value="GB">United Kingdom</option>
+			<option disabled="disabled">-------------------</option>
+		</select>
+	</div>
+
+	<div class="form__field--wrapper form__choice form__field--select">
+		<label class="form__field form__field--country form__choice required" for="field-input--select">Dropdown menu</label>
+		<select 
+			id="field-input--select" 
+			name="select-2" 
+			class="form__field form__field--country form__field--error-outline"
+		> 
+			<option >Please select</option>
+			<option value="GB">United Kingdom</option>
+			<option disabled="disabled">-------------------</option>
+		</select>
+		</select>
+		<div class="form__field--error" aria-live="assertive" role="status">
+			<span class="form-error">This is a error message</span>
+		</div>
+	</div>
+	<div class="form__field--wrapper form__textarea">
+        <label class="form__texarea required" for="comicrelief_payin_general_permissionEmail require">Long copy/Message field</label>
+        <textarea class="form__field">This is text area</textarea>
+    </div>
+	<div class="form__field--wrapper form__textarea">
+        <label class="form__texarea required" for="comicrelief_payin_general_permissionEmail">Long copy/Message field</label>
+        <textarea class="form__field form__field--error-outline">This is text area</textarea>
+		<div class="form__field--error" aria-live="assertive" role="status">
+			<span class="form-error">This is a error message</span>
+		</div>
+    </div>
+	<div class="form__row form__field--wrapper form__field-wrapper--radio">
+		<p class="form__fieldset--label"> List of radio buttons </p>
+		<div class="form__field--wrapper form__radio form__radio--inline">
+			<label class="form__field-label" for="comicrelief_payin_general_permissionEmail">Option 1</label>
+			<input type="radio" id="radio-1" name="radio-group" value="1" checked/>
+			<span></span>
+		</div>
+		<div class="form__field--wrapper form__radio form__radio--inline">
+			<label class="form__field-label" for="comicrelief_payin_general_permissionEmail">Option 2</label>
+			<input type="radio" id="radio-2" name="radio-group" value="2" />
+			<span></span>
+		</div>
+	</div>
+	<div class="form__row form__field--wrapper form__field-wrapper--checkbox">
+		<p class="form__fieldset--label"> List of checkboxes </p>
+		<div class="form__field--wrapper form__checkbox form__checkbox--inline">
+			<label class="form__field-label" for="checkbox-1">Option 1</label>
+			<input type="checkbox" id="checkbox-1" name="group-checkbox" value="1" checked />
+			<span></span>
+		</div>
+		<div class="form__field--wrapper form__checkbox form__checkbox--inline">
+			<label class="form__field-label" for="checkbox-2">Option 2</label>
+			<input type="checkbox" id="checkbx-2" name="group-checkbox" value="2" />
+			<span></span>
+		</div>
+	</div>
+	<div class="form__field--wrapper form__field-wrapper--checkbox form__checkbox-paragraph">
+		<p class="form__fieldset--label">Single checkbox with paragraph text (optional)</p>
+		<p>This block also reiterates that we don’t use asterisks but the (optional) indication for fields that are not mandatory.</p>
+		<div class="form__checkbox--inline">
+			<label class="form__field-label" for="singlecheckbox">Option 1</label>
+			<input type="checkbox" id="singlecheckbox" name="singlecheckbox" value="1" />
+			<span></span>
+		</div>
+    </div>
+    <div class="form__field--wrapper form__field-wrapper--checkbox form__field-wrapper--background">
+        <div class="form__checkbox--inline">
+            <label class="form__field-label" for="singlecheckbox1">Single checkbox with background colour</label>
+            <input type="checkbox" id="singlecheckbox1" name="singlecheckbox1" value="2" />
+            <span></span>
+        </div>
+    </div>
 </div>
-<div>
-	<label for="checkbox">
-		<input type="checkbox">
-		<span></span>
-		<span>This is a checkbox</span>
-	</label>
-</div>
-<div>
-	<label for="radio">
-		<input type="radio">
-		<span></span>
-		<span>This is a radio button</span>
-	</label>
-</div>
-<div>
-	<textarea>This is text area</textarea>
-</div>
-<div>
-	<input type="submit">
-</div>
+
 </form>
