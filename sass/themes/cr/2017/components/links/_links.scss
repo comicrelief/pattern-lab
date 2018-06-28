@@ -33,6 +33,13 @@
   &.link--light-grey {
     @include link($colour-light-grey, $colour-mint-green);
   }
+  &.link--black{
+    @include link($colour-black, $colour-royal-blue);
+    border-color: $colour-red;
+    &:hover {
+        color: $colour-black;
+    }
+  }
 }
 // Default link for Article and Page types
 .cr-article__body .link,
