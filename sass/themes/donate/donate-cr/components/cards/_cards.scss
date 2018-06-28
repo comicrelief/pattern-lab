@@ -2,9 +2,10 @@
   padding: 30px;
 
   .cards__wrapper {
-    @include container
+    @include container;
 
     .cards__item {
+      width: 100%;
       margin:0 5% 28px;
 
       @include breakpoint($screen-md) {
@@ -42,6 +43,27 @@
     @include breakpoint($screen-md) {
       margin:0 auto;
       width: 60%;
+    }
+  }
+
+  // Extends the cards unit to allow background images for success pages
+  &.cards--three-grid-unit {
+    .cards__image {
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      padding-top: 75%;
+      overflow: hidden;
+  
+      &.cards__item--kevin-story {
+        background-image: url($image-path + "kevin-card.jpg");
+      }
+      &.cards__item--aziza-story{
+        background-image: url($image-path + "aziza-card.jpg");
+      }
+      &.cards__item--georgia-story{
+        background-image: url($image-path + "georgia-card.jpg");
+      }
     }
   }
 }
