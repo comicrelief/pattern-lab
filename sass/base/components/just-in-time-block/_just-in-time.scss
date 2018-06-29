@@ -60,7 +60,8 @@
   .show-link:target {
     display:none;
   }
-  .show-link:target ~ .just-in-time--content {
+  .show-link:target ~ .just-in-time--content,
+  .just-in-time--content.just-in-time--content-show {
     /* Need to provide a hard value here for max-height to animate to;
      * supplied copy seems to be about 300px height on SM breakpoint, 
      * have left a bit of wiggle room here for good measure */
