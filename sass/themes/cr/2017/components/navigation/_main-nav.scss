@@ -342,19 +342,19 @@ header[role=banner] {
 
   .site-logo {
     min-width: 0px;
-    width: 70px;
-    height: 37px;
+    width: 50px;
+    height: 50px;
 
     @include breakpoint($screen-md) {
-      width: 82px;
-      height: 43px;
+      width: 58px;
+      height: 58px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
       width: 80px;
-      height: 41px;
-      margin-top: 31px !important;
-      background: url(../logo-mobile.gif) no-repeat 0 0;
+      height: 80px;
+      margin: 14px 0 0 14px !important;
+      background: url(../cr18-logo.png) no-repeat 0 0;
       background-size: 100%;
       
       // Keep image hidden, remove this from template?
