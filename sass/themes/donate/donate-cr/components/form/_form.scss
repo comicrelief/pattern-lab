@@ -341,22 +341,12 @@ button[type="submit"],
 }
 .help-block,
 .error-container {
-  top: 105%;
+  top: 0;
 }
-.error-container {
-  .form__field--amount & {
-    position: absolute;
-    top: 55px;
-  }
-  .form__field--postcode & {
-    position: relative;
-    top: 4px;
-  }
-}
+
 .help-block.form-error {
   display: block;
   position: relative;
-  background-position: left 40%;
 }
 .form__field--wrapper {
   margin-bottom: 7%;
