@@ -354,7 +354,7 @@ header[role=banner] {
       width: 80px;
       height: 80px;
       margin: 14px 0 0 14px !important;
-      background: url(../cr18-logo.png) no-repeat 0 0;
+      background: url($image-path + "cr18-logo.png") no-repeat 0 0;
       background-size: 100%;
       
       // Keep image hidden, remove this from template?
