@@ -243,6 +243,7 @@ button[type="submit"],
     color: $colour-dark-purple;
     background-clip: inherit;
     margin: 0 0 20px 0;
+    text-shadow: none;
 
     .select-amount {
       display: inline-block;
@@ -336,7 +337,7 @@ button[type="submit"],
 
 // help text and error messages
 .error-container {
-  position: absolute;
+  position: relative;
 }
 .help-block,
 .error-container {
