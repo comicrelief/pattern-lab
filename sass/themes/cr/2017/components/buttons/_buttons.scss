@@ -22,6 +22,7 @@
   font-family: $font-bold;
   font-size: 18px;
   line-height: 18px;
+  text-shadow: 0 1px 1px $colour-dark-purple;
   @include border-radius(30px);
   span {
     font-size: inherit;
