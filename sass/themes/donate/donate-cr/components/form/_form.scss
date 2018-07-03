@@ -303,6 +303,11 @@ button[type="submit"],
     &.form__field--wrapper {
       margin-bottom: 0;
     }
+
+    .error-container {
+        position: relative;
+        top: 25px;
+      }
   }
 
   .form__field--currency {
