@@ -243,6 +243,7 @@ button[type="submit"],
     color: $colour-dark-purple;
     background-clip: inherit;
     margin: 0 0 20px 0;
+    text-shadow: none;
 
     .select-amount {
       display: inline-block;
@@ -302,6 +303,16 @@ button[type="submit"],
     &.form__field--wrapper {
       margin-bottom: 0;
     }
+
+    .error-container {
+        position: relative;
+        top: 25px;
+
+      .help-block.form-error {
+        position: absolute;
+        top: 25px;
+      }
+    }
   }
 
   .form__field--currency {
@@ -336,26 +347,16 @@ button[type="submit"],
 
 // help text and error messages
 .error-container {
-  position: absolute;
+  position: relative;
 }
 .help-block,
 .error-container {
-  top: 105%;
+  top: 0;
 }
-.error-container {
-  .form__field--amount & {
-    position: absolute;
-    top: 55px;
-  }
-  .form__field--postcode & {
-    position: relative;
-    top: 4px;
-  }
-}
+
 .help-block.form-error {
   display: block;
   position: relative;
-  background-position: left 40%;
 }
 .form__field--wrapper {
   margin-bottom: 7%;
