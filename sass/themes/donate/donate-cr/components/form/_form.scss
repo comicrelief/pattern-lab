@@ -307,7 +307,12 @@ button[type="submit"],
     .error-container {
         position: relative;
         top: 25px;
+
+      .help-block.form-error {
+        position: absolute;
+        top: 25px;
       }
+    }
   }
 
   .form__field--currency {
