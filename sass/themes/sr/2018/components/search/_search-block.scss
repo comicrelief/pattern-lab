@@ -32,12 +32,12 @@
 
     @include breakpoint($screen-md) {
       // offset from right width of icon buttons and hamburger button
-      right: calc(92px + 65px);
+      right: calc(0px + 65px);
       width: 380px;
     }
     @include breakpoint($desktop-nav-breakpoint) {
       // offset from right width of icon buttons and margin meta-icons
-      right: calc(92px + 5px);
+      right: calc(0px + 5px);
     }
   }
   .search-block__message {
@@ -120,7 +120,7 @@
   a.close-button {
     position: absolute;
     top: calc(0px - #{$sm-nav-height});
-    right: calc(92px + 65px); 
+    right: calc(0px + 65px); 
     width: 46px;
     height: $sm-nav-height;
     background-color: $colour-dark-blue;
@@ -130,7 +130,7 @@
     }
     @include breakpoint($desktop-nav-breakpoint) {
       top: calc(0px - #{$lg-nav-height});
-      right: calc(92px + 5px); 
+      right: calc(0 + 5px); 
       height: $lg-nav-height;
     }
     .icon {
