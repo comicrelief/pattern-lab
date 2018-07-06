@@ -1,39 +1,37 @@
 <div class="form__field--wrapper form__text form__field--postcode">
-	<div class="search-box form__field--wrapper">
+  <div class="search-box form__field--wrapper">
         <label class="form__field form__field--postcode form__text required" id="postcode-label" for="comicrelief_payinbundle_payment_postcode">Postcode</label>
-        <div class="form_field--findaddress">
+        <div class="form_field--postcode">
             <input 
-                type="text" 
-                id="comicrelief_payinbundle_payment_postcode" 
-                name="comicrelief_payinbundle_payment[postcode]" 
+                type="text"
+                id="comicrelief_payinbundle_payment_postcode"
+                name="comicrelief_payinbundle_payment[postcode]"
                 required="required" 
                 placeholder="SE1 7TP"
                 class="form__field form__field--text"
             />
             <div class="form__btn">
                 <input 
-                    type="button" 
-                    id="postcode_button" 
-                    name="btnPostcodeSearch" 
-                    class="btnPostcodeSearch btn form__btn--findaddress" 
+                    type="button"
+                    id="postcode_button"
+                    name="btnPostcodeSearch"
+                    class="btnPostcodeSearch btn form__btn--postcode"
                     value="FIND ADDRESS"
                 />
             </div>
         </div>
     </div>
-    <div class="form__fieldset form__field--address-detail">
-        <a href="#" class="form__field--address-detail-toggle link">Or enter your address manually</a>
-    </div>
+    <a role="button" href="" class="form__btn--address-detail link">Or enter your address manually</a>
 </div>
 
 <div class="form__field--wrapper form__text form__field--postcode">
-	<div class="search-box form__field--wrapper">
+  <div class="search-box form__field--wrapper">
         <label class="form__field form__field--postcode form__text required" id="postcode-label" for="comicrelief_payinbundle_payment_postcode">Postcode</label>
-        <div class="form_field--findaddress">
+        <div class="form_field--postcode">
             <input 
                 type="text" 
                 id="comicrelief_payinbundle_payment_postcode" 
-                name="comicrelief_payinbundle_payment[postcode]" 
+                name="comicrelief_payinbundle_payment[postcode]"
                 required="required" 
                 placeholder="SE1 7TP"
                 class="form__field form__field--text form__field--error-outline"
@@ -43,7 +41,7 @@
                     type="button" 
                     id="postcode_button" 
                     name="btnPostcodeSearch" 
-                    class="btnPostcodeSearch btn form__btn--findaddress" 
+                    class="btnPostcodeSearch btn form__btn--postcode"
                     value="FIND ADDRESS"
                 />
             </div>
@@ -52,7 +50,5 @@
             <span class="help-block form-error">Please enter a valid postcode</span>
         </div>
     </div>
-    <div class="form__fieldset form__field--address-detail">
-        <a href="#" class="form__field--address-detail-toggle link">Or enter your address manually</a>
-    </div>
+    <a role="button" href="" class="form__btn--address-detail link">Or enter your address manually</a>
 </div>
