@@ -8,7 +8,7 @@
 
 .search-box {
 
-  .form_field--findaddress {
+  .form_field--postcode {
     @include span(12 wider);
     margin-left: 0;
 
@@ -27,7 +27,7 @@
         @include span(4 of 12 no-gutters);
       }
       
-      .form__btn--findaddress{
+      .form__btn--postcode {
         @extend .btn;
         @include border-radius(0);
         @include font-size($p-font-size);
