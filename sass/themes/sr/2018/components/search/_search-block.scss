@@ -130,7 +130,7 @@
     }
     @include breakpoint($desktop-nav-breakpoint) {
       top: calc(0px - #{$lg-nav-height});
-      right: calc(0 + 5px); 
+      right: calc(0px + 5px); 
       height: $lg-nav-height;
     }
     .icon {
