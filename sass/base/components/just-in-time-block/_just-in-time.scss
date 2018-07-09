@@ -11,14 +11,14 @@ $colour-scorpion: #595959;
   .toggle-link {
     position: relative;
     font-size: 18px;
-    border-bottom: 4px solid $color-scorpion;
+    border-bottom: 4px solid $colour-scorpion;
     font-family: $font-bold;
-    color: $color-scorpion;
+    color: $colour-scorpion;
     text-decoration: none;
 
     &:focus,
     &:hover {
-      border-bottom: 4px solid $color-scorpion;
+      border-bottom: 4px solid $colour-scorpion;
     }
 
     &:after {
@@ -59,7 +59,7 @@ $colour-scorpion: #595959;
     max-height: 0;
 
     p {
-        color: $color-scorpion;
+        color: $colour-scorpion;
     }
   }
 
