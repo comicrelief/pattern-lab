@@ -27,7 +27,7 @@
         @include span(4 of 12 no-gutters);
       }
       
-      .form__btn--postcode {
+      input[type="button"] {
         @extend .btn;
         @include border-radius(0);
         @include font-size($p-font-size);
