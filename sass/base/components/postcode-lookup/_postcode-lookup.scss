@@ -18,7 +18,7 @@
         @include span(6 no-gutters);
 
         @include breakpoint($screen-md) {
-          @include span(8 no-gutters);
+          @include span(7 no-gutters);
         }
       }
 
@@ -26,7 +26,7 @@
         @include span(6 wider no-gutters);
 
         @include breakpoint($screen-md) {
-          @include span(4 wider no-gutters);
+          @include span(5 wider no-gutters);
         }
 
         .form__btn--postcode {
