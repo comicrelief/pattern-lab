@@ -6,51 +6,56 @@
 //
 // Style guide: 20.1005
 
-.search-box {
+.form__row--address-lookup {
+  .search-box {
 
-  .form__field--postcode {
-    @include clearfix;
-    margin-left: 0;
-    width: 100%;
+    .form__field--postcode {
+      @include clearfix;
+      margin-left: 0;
+      width: 100%;
 
-    .form__field--text {
-      @include span(6 no-gutters);
-
-      @include breakpoint($screen-md) {
-        @include span(8 no-gutters);
-      }
-    }
-
-    .form__btn {
-      @include span(6 wider no-gutters);
-
-      @include breakpoint($screen-md) {
-        @include span(4 wider no-gutters);
-      }
-      
-      .form__btn--postcode {
-        @extend .btn;
-        @include border-radius(0);
-        @include font-size($p-font-size);
-        margin: 0 !important;
-        padding: 15px 0;
-        width: 100%;
-        height: 50px;
-        border: 0;
-        color: $colour-white;
-        background:$colour-persian-purple;
+      .form__field--text {
+        @include span(6 no-gutters);
 
         @include breakpoint($screen-md) {
-          width: auto;
-          padding-left: 15px;
-          padding-right: 15px;
+          @include span(8 no-gutters);
+        }
+      }
+
+      .form__btn {
+        @include span(6 wider no-gutters);
+
+        @include breakpoint($screen-md) {
+          @include span(4 wider no-gutters);
         }
 
-       &:hover {
+        .form__btn--postcode {
+          @extend .btn;
+          @include border-radius(0);
+          @include font-size($p-font-size);
+          margin: 0 !important;
+          padding: 15px 0;
+          width: 100%;
+          height: 50px;
+          border: 0;
+          color: $colour-white;
           background:$colour-persian-purple;
+
+          @include breakpoint($screen-md) {
+            width: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+
+          &:hover {
+            background:$colour-persian-purple;
+          }
         }
       }
     }
+  }
+  a.link {
+    @extend .link--purple;
   }
 }
 
