@@ -14,25 +14,25 @@
     width: 100%;
 
     .form__field--text {
-      @include span(6 of 12 no-gutters);
+      @include span(6 no-gutters);
 
       @include breakpoint($screen-md) {
-        @include span(8 of 12 no-gutters);
+        @include span(8 no-gutters);
       }
     }
 
     .form__btn {
-      @include span(6 of 12 no-gutters);
+      @include span(6 wider no-gutters);
 
       @include breakpoint($screen-md) {
-        @include span(4 of 12 no-gutters);
+        @include span(4 wider no-gutters);
       }
       
       .form__btn--postcode {
         @extend .btn;
         @include border-radius(0);
         @include font-size($p-font-size);
-        margin-top: 0 !important;
+        margin: 0 !important;
         padding: 15px 0;
         width: 100%;
         height: 50px;
