@@ -7,8 +7,13 @@
 // Style guide: 20.1005
 
 .form__row--address-lookup {
-  .search-box {
 
+  #field-wrapper--addressSelect,
+  .search-box {
+    width: auto;
+  }
+  
+  .search-box {
     .form__field--postcode {
       margin-left: 0;
       width: 100%;
