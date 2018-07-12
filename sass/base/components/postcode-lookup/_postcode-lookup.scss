@@ -10,7 +10,7 @@
   .search-box {
 
     .form__field--postcode {
-      @include clearfix;
+      @extend .clearfix;
       margin-left: 0;
       width: 100%;
 
