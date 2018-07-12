@@ -211,7 +211,14 @@
 }
 
 @mixin clearfix {
-  overflow: hidden;
+  &:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
 }
 
 /* Opacity prefixes not supported by PostCSS */
