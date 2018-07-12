@@ -10,7 +10,6 @@
   .search-box {
 
     .form__field--postcode {
-      @extend .clearfix;
       margin-left: 0;
       width: 100%;
 
@@ -51,6 +50,14 @@
             background:$colour-persian-purple;
           }
         }
+      }
+      &:after {
+        clear: both;
+        content: " ";
+        display: block;
+        font-size: 0;
+        height: 0;
+        visibility: hidden;
       }
     }
   }
