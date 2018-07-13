@@ -1,0 +1,74 @@
+// ==========================================================================
+// Core variables * comment files you want to override
+// ==========================================================================
+@import "../../../base/_variables";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+@import "../../../base/_core";
+
+// ==========================================================================
+// SR18 variables * comment files you want to override
+// ==========================================================================
+@import "../../sr/2018/variables/_colours.scss";
+@import "../../sr/2018/variables/_mixins.scss";
+
+// ==========================================================================
+// CR variables * comment files you want to override
+// ==========================================================================
+@import "../../cr/2017/variables/_colours.scss";
+@import "../../cr/2017/variables/_typography.scss";
+@import "../../cr/2017/variables/_mixins.scss";
+
+// ==========================================================================
+// Base UI components
+// ==========================================================================
+
+// choose components one by one
+@import "../../../base/components/typography/typography";
+@import "../../../base/components/selectbox/selectbox";
+@import "../../../base/components/header/base-header";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/form/standard-form";
+@import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
+
+// ==========================================================================
+// SR18 UI components
+// ==========================================================================
+
+// ==========================================================================
+// CR UI components
+// ==========================================================================
+@import "../../cr/2017/components/typography/_fonts.scss";
+@import "../../cr/2017/components/typography/_typography.scss";
+@import "../../cr/2017/components/buttons/_buttons.scss";
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "../../payin/default/variables/_payin-mixins";
+@import "../../payin/default/variables/_payin-colours";
+
+// ==========================================================================
+// Payin UI components
+// ==========================================================================
+@import "../../payin/default/components/_payin-form";
+@import "../../payin/default/components/checkbox/checkbox";
+// ==========================================================================
+// Donate CR variables
+// ==========================================================================
+@import "variables/_colours.scss";
+
+// ==========================================================================
+// Donate CR components
+// ==========================================================================
+@import "components/form/_form.scss";
+@import "components/header/_header.scss";
+@import "components/partner-footer/_partner-footer.scss";
+@import "components/cards/_cards.scss";
+@import "components/buttons/_buttons.scss";
+@import "components/success/_success.scss";
