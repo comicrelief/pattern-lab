@@ -11,15 +11,15 @@
 // ==========================================================================
 // SR18 variables * comment files you want to override
 // ==========================================================================
-@import "../../sr/2018/variables/_colours.scss";
-@import "../../sr/2018/variables/_mixins.scss";
+@import "../../sr/2018/variables/_colours";
+@import "../../sr/2018/variables/_mixins";
 
 // ==========================================================================
 // CR variables * comment files you want to override
 // ==========================================================================
-@import "../../cr/2017/variables/_colours.scss";
-@import "../../cr/2017/variables/_typography.scss";
-@import "../../cr/2017/variables/_mixins.scss";
+@import "../../cr/2017/variables/_colours";
+@import "../../cr/2017/variables/_typography";
+@import "../../cr/2017/variables/_mixins";
 
 // ==========================================================================
 // Base UI components
@@ -43,9 +43,9 @@
 // ==========================================================================
 // CR UI components
 // ==========================================================================
-@import "../../cr/2017/components/typography/_fonts.scss";
-@import "../../cr/2017/components/typography/_typography.scss";
-@import "../../cr/2017/components/buttons/_buttons.scss";
+@import "../../cr/2017/components/typography/_fonts";
+@import "../../cr/2017/components/typography/_typography";
+@import "../../cr/2017/components/buttons/_buttons";
 
 // ==========================================================================
 // Payin variables
@@ -61,14 +61,14 @@
 // ==========================================================================
 // Donate CR variables
 // ==========================================================================
-@import "variables/_colours.scss";
+@import "variables/_colours";
 
 // ==========================================================================
 // Donate CR components
 // ==========================================================================
-@import "components/form/_form.scss";
-@import "components/header/_header.scss";
-@import "components/partner-footer/_partner-footer.scss";
-@import "components/cards/_cards.scss";
-@import "components/buttons/_buttons.scss";
-@import "components/success/_success.scss";
+@import "components/form/_form";
+@import "components/header/_header";
+@import "components/partner-footer/_partner-footer";
+@import "components/cards/_cards";
+@import "components/buttons/_buttons";
+@import "components/success/_success";
