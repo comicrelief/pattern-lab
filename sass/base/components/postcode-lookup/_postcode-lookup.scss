@@ -44,6 +44,7 @@
           border: 0;
           color: $colour-white;
           background:$colour-persian-purple;
+          -webkit-appearance: none;
 
           @include breakpoint($screen-md) {
             width: auto;
