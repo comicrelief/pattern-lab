@@ -261,7 +261,7 @@ button[type="submit"],
   }
 
   .form__fieldset {
-    @include clearfix;
+    @extend .clearfix;
     position: relative;
     margin-bottom: 3%;
 
