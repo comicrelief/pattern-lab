@@ -1,3 +1,81 @@
+// Form Layout
+.form__step {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+
+// Layout
+.form__row {
+    margin: 0 auto;
+    padding: 15px 0;
+    width: span(10);
+    background-color: transparent;
+  
+    &:after {
+      @include clearfix;
+    }
+  
+    @include breakpoint($screen-md) {
+      padding: 30px 0;
+    }
+    @include breakpoint($screen-lg) {
+      width: span(6);
+    }
+  }
+  .form__fieldset,
+  .card-list {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  
+    @include breakpoint($screen-md) {
+      width: span(10);
+    }
+  }
+  
+  .form__field--wrapper, {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 3%;
+    width: 100%;
+  }
+
+  .form__row--giftaid {
+    text-align: center;
+  
+    img {
+      max-height: 105px;
+    }
+  
+    h1 {
+      background:url($image-path + "giftaid-mobile.jpg") no-repeat center;
+      background-size:contain;
+      width: 119px;
+      height:68px;
+      margin: 15px auto 20px;
+  
+      @include breakpoint($screen-md) {
+        width: 298px;
+        height: 105px;
+      }
+    }
+  
+    .form__field--wrapper.form__field--giftaid {
+      text-align: left;
+      background: #fff;
+      width: 100%;
+      padding: 0.5em 1em 1em 1em;
+      font-size: 1.5em;
+    }
+  
+    .font--red {
+      color: $colour-red;
+    }
+  }
+
 // cr-donate specific form styling overrides
 form,
 form a,
@@ -143,7 +221,7 @@ h3 {
   margin: 15px 0 30px;
   font-family: $font-bold;
 }
-h2 {
+h1, h2 {
   @include font-size($h3-font-size);
 }
 .form__row--giftaid p {
@@ -208,9 +286,8 @@ button[type="submit"],
 
 // Amount row styling
 .form__row--payment-amount {
-  h3 {
+  p {
     @extend p;
-
   }
   p, .number-input-label {
     color: $colour-dark-purple;
@@ -332,7 +409,8 @@ button[type="submit"],
 }
 
 .form__row--giftaid {
-  h3 {
+
+.giftaid-title {
     margin: 15px auto 20px;
     width: 210px;
     height: 105px;
