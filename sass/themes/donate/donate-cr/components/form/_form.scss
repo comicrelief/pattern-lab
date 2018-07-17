@@ -140,48 +140,6 @@ textarea {
   }
 }
 
-// Checkboxes
-/* .form__checkbox:before {
-  display: none;
-}
-.form__checkbox {
-  input[type="checkbox"],
-  input[type="checkbox"]+span {
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-  }
-  input[type="checkbox"]:checked+span {
-    background-color: $colour-white;
-  }
-  input[type="checkbox"]:focus+span {
-    border-width: 2px;
-  }
-  label.form__checkbox {
-    top: 7px;
-  }
-}
-.form__row--giftaid .form__field--wrapper.form__checkbox,
-.form__field--wrapper.form__checkbox {
-  margin-bottom: 1em;
-  padding: 0.5em 1em 1em 1em;
-  background-color: $colour-smoke-grey;
-  &.form__checkbox-text-only {
-    padding: 0;
-    background-color: transparent;
-
-    .form__address-detail-toggle {
-      padding-bottom: 20px;
-    }
-    // make sure the checkbox covers the whole label so it's clickable
-    input[type="checkbox"] {
-      top: 45px;
-      left: 0;
-      height: 60px;
-    }
-  }
-}
- */
 // text styling
 h2,
 h3 {
@@ -261,7 +219,7 @@ button[type="submit"],
   }
 
   .form__fieldset {
-    @extend .clearfix;
+    @include clearfix;
     position: relative;
     margin-bottom: 3%;
 
