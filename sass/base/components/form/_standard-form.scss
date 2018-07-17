@@ -38,11 +38,13 @@ input[type="password"],
   padding-left:12px;
   background-color: $colour-white;
   border: 1px solid $colour-scorpion-grey;
+  border-radius: 0;
   width: 100%;
   font-family: $body-font;
   box-shadow: none;
   box-sizing: border-box;
   appearance: none;
+  -webkit-appearance: none;
   @include placeholder($colour-scorpion-grey, 18px , $font-regular);
   @include font-size($p-font-size);
 }
