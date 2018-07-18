@@ -198,9 +198,6 @@ button[type="submit"],
     -webkit-appearance: -apple-pay-button;
     -apple-pay-button-style: black;
   }
-  &.show {
-    display: block;
-  }
 }
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
