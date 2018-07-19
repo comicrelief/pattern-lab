@@ -1,3 +1,48 @@
+// Form Layout
+.form__step {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+
+// Layout
+.form__row {
+    margin: 0 auto;
+    padding: 15px 0;
+    width: span(10);
+    background-color: transparent;
+  
+    &:after {
+      @include clearfix;
+    }
+  
+    @include breakpoint($screen-md) {
+      padding: 30px 0;
+    }
+    @include breakpoint($screen-lg) {
+      width: span(6);
+    }
+  }
+  .form__fieldset,
+  .card-list {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  
+    @include breakpoint($screen-md) {
+      width: span(10);
+    }
+  }
+  
+  .form__field--wrapper, {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 3%;
+    width: 100%;
+  }
+
 // cr-donate specific form styling overrides
 form,
 form a,
@@ -95,55 +140,13 @@ textarea {
   }
 }
 
-// Checkboxes
-.form__checkbox:before {
-  display: none;
-}
-.form__checkbox {
-  input[type="checkbox"],
-  input[type="checkbox"]+span {
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-  }
-  input[type="checkbox"]:checked+span {
-    background-color: $colour-white;
-  }
-  input[type="checkbox"]:focus+span {
-    border-width: 2px;
-  }
-  label.form__checkbox {
-    top: 7px;
-  }
-}
-.form__row--giftaid .form__field--wrapper.form__checkbox,
-.form__field--wrapper.form__checkbox {
-  margin-bottom: 1em;
-  padding: 0.5em 1em 1em 1em;
-  background-color: $colour-smoke-grey;
-  &.form__checkbox-text-only {
-    padding: 0;
-    background-color: transparent;
-
-    .form__address-detail-toggle {
-      padding-bottom: 20px;
-    }
-    // make sure the checkbox covers the whole label so it's clickable
-    input[type="checkbox"] {
-      top: 45px;
-      left: 0;
-      height: 60px;
-    }
-  }
-}
-
 // text styling
 h2,
 h3 {
   margin: 15px 0 30px;
   font-family: $font-bold;
 }
-h2 {
+h1, h2 {
   @include font-size($h3-font-size);
 }
 .form__row--giftaid p {
@@ -195,9 +198,6 @@ button[type="submit"],
     -webkit-appearance: -apple-pay-button;
     -apple-pay-button-style: black;
   }
-  &.show {
-    display: block;
-  }
 }
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
@@ -208,9 +208,8 @@ button[type="submit"],
 
 // Amount row styling
 .form__row--payment-amount {
-  h3 {
+  p {
     @extend p;
-
   }
   p, .number-input-label {
     color: $colour-dark-purple;
@@ -332,7 +331,8 @@ button[type="submit"],
 }
 
 .form__row--giftaid {
-  h3 {
+
+.giftaid-title {
     margin: 15px auto 20px;
     width: 210px;
     height: 105px;
