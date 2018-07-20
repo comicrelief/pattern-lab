@@ -158,8 +158,7 @@ h1, h2 {
 
 // buttons
 button,
-button.payment-button,
-input[type="button"] {
+button.payment-button {
   @extend .btn;
   @extend .btn--fixed-width;
 }
