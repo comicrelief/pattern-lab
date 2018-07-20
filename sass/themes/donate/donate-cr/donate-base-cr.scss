@@ -7,6 +7,7 @@
 // Core components
 // ==========================================================================
 @import "../../../base/_core";
+@import "../../../base/components/links/links";
 
 // ==========================================================================
 // CR variables * comment files you want to override
@@ -14,6 +15,7 @@
 @import "../../cr/2017/variables/_colours";
 @import "../../cr/2017/variables/_typography";
 @import "../../cr/2017/variables/_mixins";
+
 
 // ==========================================================================
 // Base UI components
@@ -29,6 +31,7 @@
 @import "../../../base/components/promo-header/promo-header";
 @import "../../../base/components/card-block/card";
 @import "../../../base/components/cards/cards";
+@import "../../../base/components/postcode-lookup/postcode-lookup";
 
 // ==========================================================================
 // CR UI components
@@ -52,3 +55,4 @@
 @import "components/cards/_cards";
 @import "components/buttons/_buttons";
 @import "components/success/_success";
+

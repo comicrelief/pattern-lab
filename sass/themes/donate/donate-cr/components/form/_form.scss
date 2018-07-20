@@ -158,8 +158,7 @@ h1, h2 {
 
 // buttons
 button,
-button.payment-button,
-input[type="button"] {
+button.payment-button {
   @extend .btn;
   @extend .btn--fixed-width;
 }
@@ -170,16 +169,6 @@ button.payment-button {
   padding: 18px 30px;
 }
 
-.search-box {
-    #postcode_button {
-    @extend .btn--dark-purple-ghost;
-    border-width: 2px;
-    border-radius: 30px;
-  }
-  .search-box-button.loading:after {
-    border: 2px solid;
-  }
-}
 button[type="submit"],
 #comicrelief_payinbundle_payment_card, {
   @extend .btn--red;
