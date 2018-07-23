@@ -2,10 +2,10 @@
 buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
 instances: 1
 memory: 64M
-domain: apps.comicrelief.com
+domain: services.comicrelief.com
 applications:
   - name: pattern-lab
     hosts:
-      - pattern-lab-systest
+      - pattern-lab
 env:
   FORCE_HTTPS: true
