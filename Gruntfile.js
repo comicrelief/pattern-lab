@@ -137,9 +137,13 @@ module.exports = function (grunt) {
         }]
       },
       cr17: {
-        files: {
-          'dist/cr/images/news-default-img.jpg': 'sass/themes/cr/2017/components/news-teaser/images/news-default-img.jpg'
-        }
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/cr/2017/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
       },
       sr18: {
         files: [{

@@ -157,17 +157,7 @@ button.payment-button {
     width: span(10);
   }
 }
-.form__fieldset,
-.card-list {
-  float: none;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
 
-  @include breakpoint($screen-md) {
-    width: span(10);
-  }
-}
 .form__field--wrapper, {
   margin-right: 0;
   margin-left: 0;

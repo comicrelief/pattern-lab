@@ -4,19 +4,21 @@
 //
 // Style guide: 20.1004
 
+$colour-scorpion: #595959;
+
 .form__row--just-in-time-block {
 
   .toggle-link {
     position: relative;
     font-size: 18px;
-    border-bottom: 1px solid #666;
-    font-family: $font-medium;
-    color: #666;
+    border-bottom: 4px solid $colour-scorpion;
+    font-family: $font-bold;
+    color: $colour-scorpion;
     text-decoration: none;
 
     &:focus,
     &:hover {
-      border-bottom: 1px solid #666;
+      border-bottom: 4px solid $colour-scorpion;
     }
 
     &:after {
@@ -24,13 +26,21 @@
       position:absolute;
       font-family:Arial;
       margin-left: 4px;
-      transform: rotate(180deg);
       overflow: hidden;
-      bottom: 5px;
       line-height: 19px;
       font-size: 25px;
       color: inherit;
+      font-weight: bold;
     }
+
+
+    &.show-link {
+      &:after {
+        transform: rotate(180deg);
+        bottom: 5px;
+      }
+    }
+    
 
     &.close-link {
       &:after {
@@ -47,6 +57,10 @@
     transition: max-height 0.5s ease-in-out; 
     height: auto;
     max-height: 0;
+
+    p {
+        color: $colour-scorpion;
+    }
   }
 
   .close-link {
@@ -60,7 +74,8 @@
   .show-link:target {
     display:none;
   }
-  .show-link:target ~ .just-in-time--content {
+  .show-link:target ~ .just-in-time--content,
+  .just-in-time--content.just-in-time--content-show {
     /* Need to provide a hard value here for max-height to animate to;
      * supplied copy seems to be about 300px height on SM breakpoint, 
      * have left a bit of wiggle room here for good measure */

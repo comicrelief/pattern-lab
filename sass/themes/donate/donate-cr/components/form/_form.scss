@@ -1,3 +1,48 @@
+// Form Layout
+.form__step {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+
+// Layout
+.form__row {
+    margin: 0 auto;
+    padding: 15px 0;
+    width: span(10);
+    background-color: transparent;
+  
+    &:after {
+      @include clearfix;
+    }
+  
+    @include breakpoint($screen-md) {
+      padding: 30px 0;
+    }
+    @include breakpoint($screen-lg) {
+      width: span(6);
+    }
+  }
+  .form__fieldset,
+  .card-list {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  
+    @include breakpoint($screen-md) {
+      width: span(10);
+    }
+  }
+  
+  .form__field--wrapper, {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 3%;
+    width: 100%;
+  }
+
 // cr-donate specific form styling overrides
 form,
 form a,
@@ -95,55 +140,13 @@ textarea {
   }
 }
 
-// Checkboxes
-.form__checkbox:before {
-  display: none;
-}
-.form__checkbox {
-  input[type="checkbox"],
-  input[type="checkbox"]+span {
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-  }
-  input[type="checkbox"]:checked+span {
-    background-color: $colour-white;
-  }
-  input[type="checkbox"]:focus+span {
-    border-width: 2px;
-  }
-  label.form__checkbox {
-    top: 7px;
-  }
-}
-.form__row--giftaid .form__field--wrapper.form__checkbox,
-.form__field--wrapper.form__checkbox {
-  margin-bottom: 1em;
-  padding: 0.5em 1em 1em 1em;
-  background-color: $colour-smoke-grey;
-  &.form__checkbox-text-only {
-    padding: 0;
-    background-color: transparent;
-
-    .form__address-detail-toggle {
-      padding-bottom: 20px;
-    }
-    // make sure the checkbox covers the whole label so it's clickable
-    input[type="checkbox"] {
-      top: 45px;
-      left: 0;
-      height: 60px;
-    }
-  }
-}
-
 // text styling
 h2,
 h3 {
   margin: 15px 0 30px;
   font-family: $font-bold;
 }
-h2 {
+h1, h2 {
   @include font-size($h3-font-size);
 }
 .form__row--giftaid p {
@@ -155,8 +158,7 @@ h2 {
 
 // buttons
 button,
-button.payment-button,
-input[type="button"] {
+button.payment-button {
   @extend .btn;
   @extend .btn--fixed-width;
 }
@@ -167,16 +169,6 @@ button.payment-button {
   padding: 18px 30px;
 }
 
-.search-box {
-    #postcode_button {
-    @extend .btn--dark-purple-ghost;
-    border-width: 2px;
-    border-radius: 30px;
-  }
-  .search-box-button.loading:after {
-    border: 2px solid;
-  }
-}
 button[type="submit"],
 #comicrelief_payinbundle_payment_card, {
   @extend .btn--red;
@@ -195,9 +187,6 @@ button[type="submit"],
     -webkit-appearance: -apple-pay-button;
     -apple-pay-button-style: black;
   }
-  &.show {
-    display: block;
-  }
 }
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
@@ -208,9 +197,8 @@ button[type="submit"],
 
 // Amount row styling
 .form__row--payment-amount {
-  h3 {
+  p {
     @extend p;
-
   }
   p, .number-input-label {
     color: $colour-dark-purple;
@@ -243,6 +231,7 @@ button[type="submit"],
     color: $colour-dark-purple;
     background-clip: inherit;
     margin: 0 0 20px 0;
+    text-shadow: none;
 
     .select-amount {
       display: inline-block;
@@ -302,6 +291,16 @@ button[type="submit"],
     &.form__field--wrapper {
       margin-bottom: 0;
     }
+
+    .error-container {
+        position: relative;
+        top: 25px;
+
+      .help-block.form-error {
+        position: absolute;
+        top: 25px;
+      }
+    }
   }
 
   .form__field--currency {
@@ -321,7 +320,8 @@ button[type="submit"],
 }
 
 .form__row--giftaid {
-  h3 {
+
+.giftaid-title {
     margin: 15px auto 20px;
     width: 210px;
     height: 105px;
@@ -336,26 +336,16 @@ button[type="submit"],
 
 // help text and error messages
 .error-container {
-  position: absolute;
+  position: relative;
 }
 .help-block,
 .error-container {
-  top: 105%;
+  top: 0;
 }
-.error-container {
-  .form__field--amount & {
-    position: absolute;
-    top: 55px;
-  }
-  .form__field--postcode & {
-    position: relative;
-    top: 4px;
-  }
-}
+
 .help-block.form-error {
   display: block;
   position: relative;
-  background-position: left 40%;
 }
 .form__field--wrapper {
   margin-bottom: 7%;
