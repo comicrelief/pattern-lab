@@ -60,6 +60,9 @@
 }
 .promo-header--video {
   min-height: 200px;
+  @include breakpoint($screen-md-max) {
+    min-height: 600px;
+  }
   //override styling set by vide library
   .bg_video {
     position: absolute !important;
