@@ -59,6 +59,7 @@
   }
 }
 .promo-header--video {
+  min-height: 200px;
   //override styling set by vide library
   .bg_video {
     position: absolute !important;
