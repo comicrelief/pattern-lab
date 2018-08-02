@@ -36,7 +36,7 @@
         .form__btn--postcode {
           @extend .btn;
           @include border-radius(0);
-          @include font-size($p-font-size);
+          font-size: 16px;
           margin: 0 !important;
           padding: 15px 0;
           width: 100%;
@@ -47,6 +47,7 @@
           -webkit-appearance: none;
 
           @include breakpoint($screen-md) {
+            font-size: 18px;
             width: auto;
             padding-left: 15px;
             padding-right: 15px;
