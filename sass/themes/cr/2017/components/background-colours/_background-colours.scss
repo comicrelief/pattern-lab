@@ -46,6 +46,32 @@
   background-color: $colour-light-grey;
 }
 
+/* New for 2018! */
+.bg--cr-red{
+  background-color: $cr-red;
+}
+.bg--cr-orange {
+  background-color: $cr-orange;
+}
+.bg--cr-yellow {
+  background-color: $cr-yellow;
+}
+.bg--cr-green {
+  background-color: $cr-green;
+}
+.bg--cr-blue {
+  background-color: $cr-blue;
+}
+.bg--cr-magenta {
+  background-color: $cr-magenta;
+}
+.bg--cr-purple {
+  background-color: $cr-purple;
+}
+.bg--cr-light-blue {
+  background-color: $cr-light-blue;
+}
+
 /**
  * Needed to break-out these bg styles out a bit as the mutiple
  * nested selectors were breaking the styles and/or getting them overridden? Weird. **/
