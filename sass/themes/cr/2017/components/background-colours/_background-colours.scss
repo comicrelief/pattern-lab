@@ -47,29 +47,29 @@
 }
 
 /* New for 2018! */
-.bg--cr-red {
-  background-color: $cr-red;
+.bg--red {
+  background-color: $colour-red;
 }
-.bg--cr-orange {
-  background-color: $cr-orange;
+.bg--orange {
+  background-color: $colour-orange;
 }
-.bg--cr-yellow {
-  background-color: $cr-yellow;
+.bg--yellow {
+  background-color: $colour-yellow;
 }
-.bg--cr-green {
-  background-color: $cr-green;
+.bg--green {
+  background-color: $colour-green;
 }
-.bg--cr-blue {
-  background-color: $cr-blue;
+.bg--blue {
+  background-color: $colour-blue;
 }
-.bg--cr-magenta {
-  background-color: $cr-magenta;
+.bg--magenta {
+  background-color: $colour-magenta;
 }
-.bg--cr-purple {
-  background-color: $cr-purple;
+.bg--purple {
+  background-color: $colour-purple;
 }
-.bg--cr-light-blue {
-  background-color: $cr-light-blue;
+.bg--light-blue {
+  background-color: $colour-light-blue;
 }
 
 /**
@@ -88,10 +88,10 @@
   .bg--light-grey,
   .bg--grey,
   .bg--mint-green,
-  .bg--cr-light-blue,
-  .bg--cr-green,
-  .bg--cr-orange,
-  .bg--cr-yellow {
+  .bg--light-blue,
+  .bg--green,
+  .bg--orange,
+  .bg--yellow {
     h2,
     h3,
     h4,
@@ -116,10 +116,10 @@
   .bg--royal-blue,
   .bg--red,
   .bg--purple,
-  .bg--cr-red,
-  .bg--cr-purple,
-  .bg--cr-blue,
-  .bg--cr-magenta {
+  .bg--red,
+  .bg--purple,
+  .bg--blue,
+  .bg--magenta {
     h2,
     h3,
     h4,
@@ -130,6 +130,7 @@
     }
   }
 }
+
 .bg--black { @include light-backgrounds };
 .bg--dark-purple { @include light-backgrounds };
 .bg--royal-blue { @include light-backgrounds };
@@ -142,12 +143,12 @@
 .bg--mint-green { @include dark-backgrounds };
 
 /* New for 2018!  */
-.bg--cr-red { @include dark-backgrounds };
-.bg--cr-purple { @include dark-backgrounds };
-.bg--cr-blue { @include dark-backgrounds };
-.bg--cr-magenta { @include dark-backgrounds };
+.bg--red { @include dark-backgrounds };
+.bg--purple { @include dark-backgrounds };
+.bg--blue { @include dark-backgrounds };
+.bg--magenta { @include dark-backgrounds };
 
-.bg--cr-light-blue { @include light-backgrounds };
-.bg--cr-green { @include light-backgrounds };
-.bg--cr-orange { @include light-backgrounds };
-.bg--cr-yellow { @include light-backgrounds };
+.bg--light-blue { @include light-backgrounds };
+.bg--green { @include light-backgrounds };
+.bg--orange { @include light-backgrounds };
+.bg--yellow { @include light-backgrounds };

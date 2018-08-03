@@ -41,42 +41,33 @@
     }
   }
 
-  /* $cr-red: #e52631;
-  $cr-orange: #fc7b39;
-  $cr-yellow: #ffc700;
-  $cr-green: #79ac2b;
-  $cr-blue: #2a72b7;
-  $cr-magenta: #c6037c;
-  $cr-purple: #78368c;
-  $cr-light-blue: #5ec2ea; */
-
-  &.link--cr-red {
-    @include link($cr-red, $colour-mint-green);
+  &.link--red {
+    @include link($colour-red, $colour-mint-green);
   }
-  &.link--cr-orange {
-    @include link($cr-orange, $colour-mint-green);
+  &.link--orange {
+    @include link($colour-orange, $colour-mint-green);
   }
-  &.link--cr-yellow {
-    @include link($cr-yellow, $colour-mint-green);
+  &.link--yellow {
+    @include link($colour-yellow, $colour-mint-green);
   }
-  &.link--cr-green {
-    @include link($cr-green, $colour-mint-green);
+  &.link--green {
+    @include link($colour-green, $colour-mint-green);
   }
-  &.link--cr-blue {
-    @include link($cr-blue, $colour-mint-green);
+  &.link--blue {
+    @include link($colour-blue, $colour-mint-green);
   }
-  &.link--cr-magenta {
-    @include link($cr-magenta, $colour-mint-green);
+  &.link--magenta {
+    @include link($colour-magenta, $colour-mint-green);
   }
-  &.link--cr-purple {
-    @include link($cr-purple, $colour-mint-green);
+  &.link--purple {
+    @include link($colour-purple, $colour-mint-green);
   }
-  &.link--cr-light-blue {
-    @include link($cr-light-blue, $colour-mint-green);
+  &.link--light-blue {
+    @include link($colour-light-blue, $colour-mint-green);
   }
 }
 // Default link for Article and Page types
-.cr-article__body .link,
+.article__body .link,
 .basic-page--content .link {
   @include link($colour-black, $colour-red);
   line-height: 14px;
