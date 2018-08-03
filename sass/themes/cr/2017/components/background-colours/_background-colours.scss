@@ -47,7 +47,7 @@
 }
 
 /* New for 2018! */
-.bg--cr-red{
+.bg--cr-red {
   background-color: $cr-red;
 }
 .bg--cr-orange {
@@ -87,7 +87,11 @@
   .bg--white,
   .bg--light-grey,
   .bg--grey,
-  .bg--mint-green {
+  .bg--mint-green,
+  .bg--cr-light-blue,
+  .bg--cr-green,
+  .bg--cr-orange,
+  .bg--cr-yellow {
     h2,
     h3,
     h4,
@@ -111,7 +115,11 @@
   .bg--dark-purple,
   .bg--royal-blue,
   .bg--red,
-  .bg--purple {
+  .bg--purple,
+  .bg--cr-red,
+  .bg--cr-purple,
+  .bg--cr-blue,
+  .bg--cr-magenta {
     h2,
     h3,
     h4,
@@ -132,3 +140,14 @@
 .bg--grey { @include dark-backgrounds };
 .bg--light-grey { @include dark-backgrounds };
 .bg--mint-green { @include dark-backgrounds };
+
+/* New for 2018!  */
+.bg--cr-red { @include dark-backgrounds };
+.bg--cr-purple { @include dark-backgrounds };
+.bg--cr-blue { @include dark-backgrounds };
+.bg--cr-magenta { @include dark-backgrounds };
+
+.bg--cr-light-blue { @include light-backgrounds };
+.bg--cr-green { @include light-backgrounds };
+.bg--cr-orange { @include light-backgrounds };
+.bg--cr-yellow { @include light-backgrounds };

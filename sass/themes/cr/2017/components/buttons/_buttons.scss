@@ -69,3 +69,29 @@
 .btn--white {
   @include cr_button_types($colour-dark-purple, $colour-white);
 }
+
+/* New for 2018! */
+.btn--cr-red {
+  @include cr_button_types($colour-white, $cr-red);
+}
+.btn--cr-magenta {
+  @include cr_button_types($colour-white, $cr-magenta);
+}
+.btn--cr-purple {
+  @include cr_button_types($colour-white, $cr-purple);
+}
+.btn--cr-blue  {
+  @include cr_button_types($colour-white, $cr-blue);
+}
+.btn--cr-orange {
+  @include cr_button_types($colour-dark-purple, $cr-orange);
+}
+.btn--cr-yellow {
+  @include cr_button_types($colour-dark-purple, $cr-yellow);
+}
+.btn--cr-green {
+  @include cr_button_types($colour-dark-purple, $cr-green);
+}
+.btn--cr-light-blue {
+  @include cr_button_types($colour-dark-purple, $cr-light-blue);
+}
