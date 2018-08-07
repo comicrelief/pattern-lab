@@ -42,6 +42,22 @@ span {
     &--grey {
       color: $colour-grey;
     }
+    // New for 2018!
+    &--magenta {
+      color: $colour-magenta;
+    }
+    &--blue {
+      color: $colour-blue;
+    }
+    &--orange {
+      color: $colour-orange;
+    }
+    &--yellow {
+      color: $colour-yellow;
+    }
+    &--green {
+      color: $colour-green;
+    }
   }
 }
 i.font--family-black {
