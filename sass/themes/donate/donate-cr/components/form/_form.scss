@@ -5,7 +5,6 @@
     max-width: 1200px;
   }
 
-
 // Layout
 .form__row {
     margin: 0 auto;
@@ -210,29 +209,5 @@ button[type="submit"],
   }
 }
 
-// help text and error messages
-/* .error-container {
-  position: relative;
-}
-.help-block,
-.error-container {
-  top: 0;
-}
-
-.help-block.form-error {
-  display: block;
-  position: relative;
-}
-.form__field--wrapper {
-  margin-bottom: 7%;
-
-  @include breakpoint($screen-md) {
-    margin-bottom: 5%;
-  }
-
-  &.form__field--postcode {
-    margin-bottom: 0;
-  }
-} */
 
 
