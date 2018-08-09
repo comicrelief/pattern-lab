@@ -195,130 +195,6 @@ button[type="submit"],
   background-image: url($image-path + "paypal.svg");
 }
 
-// Amount row styling
-.form__row--payment-amount {
-  p {
-    @extend p;
-  }
-  p, .number-input-label {
-    color: $colour-dark-purple;
-  }
-
-  .form__fieldset {
-    @include clearfix;
-    position: relative;
-    margin-bottom: 3%;
-
-    &.form__amount-submit {
-      margin-top: 45px;
-
-      @include breakpoint($screen-md) {
-        margin-top: 55px;
-      }
-    }
-  }
-
-  .form__togglebtn-amount {
-    .select-amount-btn {
-    letter-spacing: normal;
-    padding:0;
-    border-radius: 0;
-    text-transform: none;
-    text-align: left;
-    border: 2px solid $colour-mercury-grey;
-    font-family: $body-font;
-    background-color: $colour-mercury-grey;
-    color: $colour-dark-purple;
-    background-clip: inherit;
-    margin: 0 0 20px 0;
-    text-shadow: none;
-
-    .select-amount {
-      display: inline-block;
-      background-color: $colour-white;
-      font-family: $font-bold;
-      color: $colour-royal-blue;
-      width: 80px;
-      height: 84px;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 4.5;
-    }
-    .select-amount--context {
-      display: inline-block;
-      background: $colour-mercury-grey;
-      margin-left: 3%;
-      max-width: 65%;
-      vertical-align: middle;
-      line-height: 1.3;
-    }
-
-    &.selected {
-      border: 2px solid $colour-royal-blue;
-
-      .select-amount {
-        color: $colour-white;
-        background-color: $colour-royal-blue;
-      }
-
-    }
-  }
-  }
-
-  .currency-input-label {
-    position: absolute;
-    left: 0px;
-    top: 0.75em;
-    line-height: 21px;
-    color: $colour-dark-purple;
-    font-size: 18px;
-    font-family: $body-font;
-    margin-left: 15px;
-    margin-top:1px;
-    z-index: 9;
-  }
-
-  .form__field--amount {
-
-    .form__field--amount {
-      @include placeholder (#757575, 18px, $body-font);
-      padding-left: 28px;
-      float: left;
-      width: span(6);
-      margin-right: calc(2 * #{gutter()});
-    }
-
-    &.form__field--wrapper {
-      margin-bottom: 0;
-    }
-
-    .error-container {
-        position: relative;
-        top: 25px;
-
-      .help-block.form-error {
-        position: absolute;
-        top: 25px;
-      }
-    }
-  }
-
-  .form__field--currency {
-
-    .form__field--currency {
-      float: left;
-      width: span(6);
-      margin-left: calc(2 * #{gutter()});
-    }
-  }
-
-  .form__field--currency, .form__field--amount {
-    label {
-      @extend .visually-hidden;
-    }
-  }
-}
-
 .form__row--giftaid {
 
 .giftaid-title {
@@ -335,7 +211,7 @@ button[type="submit"],
 }
 
 // help text and error messages
-.error-container {
+/* .error-container {
   position: relative;
 }
 .help-block,
@@ -357,10 +233,6 @@ button[type="submit"],
   &.form__field--postcode {
     margin-bottom: 0;
   }
-}
+} */
 
-.form__row--upsell {
-    background: $colour-mercury-grey;
-    text-align: center;
-    padding-bottom: 30px;
-}
+
