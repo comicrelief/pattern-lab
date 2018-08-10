@@ -1,20 +1,25 @@
 header[role=banner] {
-  height: 50px;
+
+  &.header {
+    height: 50px;
+    padding: 4px 0;
+    border-bottom: 2px solid;
   
-  @include breakpoint($screen-md) {
-    height: 105px;
-    padding: 10px 0;
+    @include breakpoint($screen-md) {
+      height: 109px;
+      padding: 14px 0;
+    }
+
+    .header__inner-wrapper {
+      cursor: auto;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
 .block-branding {
   margin: 0 auto;
-  width: span(10);
-  text-align: center;
-
-  @include breakpoint($screen-lg) {
-    width: span(7);
-  }
   
   .site-logo {
     float: none;
