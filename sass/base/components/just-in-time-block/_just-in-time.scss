@@ -61,6 +61,10 @@ $colour-scorpion: #595959;
     p {
         color: $colour-scorpion;
     }
+
+    &.just-in-time--content-close{
+      display: none;
+    }
   }
 
   .close-link {
@@ -80,5 +84,9 @@ $colour-scorpion: #595959;
      * supplied copy seems to be about 300px height on SM breakpoint, 
      * have left a bit of wiggle room here for good measure */
     max-height: 450px;
+  }
+
+  .close-link:target ~ .just-in-time--content {
+    @include visuallyhidden; 
   }
 }
