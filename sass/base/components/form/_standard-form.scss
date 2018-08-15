@@ -234,6 +234,7 @@ label {
   input[type="checkbox"] + span,
   input[type="radio"] + span, {
     position: absolute;
+    background-color: $colour-white;
     top: 5px;
     left: 0;
     width: 30px;
