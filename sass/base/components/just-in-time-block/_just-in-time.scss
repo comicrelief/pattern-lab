@@ -63,7 +63,7 @@ $colour-scorpion: #595959;
     }
 
     &.just-in-time--content-close{
-      a {
+      a, .link {
         display: none; // hack to hide links from screen readers butnkeep animation
       }
     }
