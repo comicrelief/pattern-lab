@@ -182,7 +182,8 @@ label {
     position: relative;
     content: '';
     display: inline-block;
-    top: 0.28em;
+    top:-1px;
+    vertical-align: middle;
     margin-right: 8px;
     background: url($image-path + "error-alert-icon.png") left 0/100% no-repeat;
     width:18px;
