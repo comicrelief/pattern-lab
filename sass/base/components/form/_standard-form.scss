@@ -264,9 +264,14 @@ label {
   label.form__checkbox {
     font-weight: normal;
   }
-  
-  .form__field-additional-text p {
-    margin-left: 45px;
+}
+
+.form__field-wrapper--radio {
+  .form__field-additional-text {
+    margin-bottom: 0;
+    p {
+      margin-left: 45px;
+    }  
   }
 }
 
@@ -353,5 +358,3 @@ label {
     border-radius:30px;
   }
 }
-
-
