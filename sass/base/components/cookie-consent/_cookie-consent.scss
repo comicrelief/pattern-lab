@@ -52,7 +52,7 @@
     }
     
     @include breakpoint($screen-lg) {
-      width: auto;
+      min-width: 128px;
       text-indent: 0;
       color: $colour-black;
       background-image: none;
@@ -65,3 +65,4 @@
     }
   }
 }
+
