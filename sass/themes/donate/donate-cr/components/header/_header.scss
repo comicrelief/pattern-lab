@@ -1,15 +1,12 @@
 header[role=banner] {
-
   &.header {
     height: 50px;
     padding: 4px 0;
     border-width: 2px;
-  
     @include breakpoint($screen-md) {
       height: 109px;
       padding: 14px 0;
     }
-
     .header__inner-wrapper {
       cursor: auto;
       display: flex;
@@ -19,23 +16,28 @@ header[role=banner] {
 }
 
 .block-branding {
-
-  .site-logo {
+  .site-logo,
+  &.site-logo--rnddonate {
     float: none;
     min-width: auto;
     height: auto;
     width: 40px;
-    margin:0 auto;
+    margin: 0 auto;
     z-index: auto;
     overflow: visible;
-
     @include breakpoint($screen-md) {
       width: 80px;
     }
-
     img {
-      max-width:100%;
+      max-width: 100%;
       display: block;
+    }
+    &.site-logo--srdonate {
+      width: 90px;
+      @include breakpoint($screen-md) {
+        margin: 13px auto;
+        width: 124px;
+      }
     }
   }
 }
