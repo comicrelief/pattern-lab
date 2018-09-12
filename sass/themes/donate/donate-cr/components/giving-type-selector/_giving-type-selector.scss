@@ -1,28 +1,43 @@
 #giving_type_selector {
   margin-top: 7%;
   .form__field--wrapper {
+    position: relative;
     margin-bottom: 0;
     display: inline-block;
     width: 50%;
-    border: solid 2px $colour-mercury-grey;
-    color: $colour-royal-blue;
-    text-align: center;
     cursor: pointer;
 
+    &:after {
+      @include clearfix();
+    }
 
-    &.checked {
-      color: $colour-white;
-      border-color: $colour-royal-blue;
-      background-color: $colour-royal-blue;
+    input {
+      position: absolute;
+      opacity: 0;
     }
     label {
       margin: 0;
       padding: 14px 0;
       width: 100%;
       height: 100%;
+      border: solid 2px $colour-mercury-grey;
+      color: $colour-royal-blue;
       line-height: 18px;
       font-family: $font-bold;
+      text-align: center;
       cursor: pointer;
+    }
+    input:focus + label {
+      // IE, FF etc.
+      outline: 1px dotted black;
+      // Chrome etc.
+      outline: -webkit-focus-ring-color auto 5px;
+      outline-offset: 0px;
+    }
+    input:checked + label {
+      color: $colour-white;
+      border-color: $colour-royal-blue;
+      background-color: $colour-royal-blue;
     }
   }
 
@@ -30,4 +45,3 @@
     margin-top: 7%;
   }
 }
-
