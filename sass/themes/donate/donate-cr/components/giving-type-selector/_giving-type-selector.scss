@@ -1,0 +1,33 @@
+#giving_type_selector {
+  margin-top: 7%;
+  .form__field--wrapper {
+    margin-bottom: 0;
+    display: inline-block;
+    width: 50%;
+    border: solid 2px $colour-mercury-grey;
+    color: $colour-royal-blue;
+    text-align: center;
+    cursor: pointer;
+
+
+    &.checked {
+      color: $colour-white;
+      border-color: $colour-royal-blue;
+      background-color: $colour-royal-blue;
+    }
+    label {
+      margin: 0;
+      padding: 14px 0;
+      width: 100%;
+      height: 100%;
+      line-height: 18px;
+      font-family: Sailec-Bold;
+      cursor: pointer;
+    }
+  }
+
+  &+.form__fieldset.form__amount-submit {
+    margin-top: 7%;
+  }
+}
+
