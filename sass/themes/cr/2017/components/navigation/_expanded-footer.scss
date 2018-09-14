@@ -1,0 +1,66 @@
+// Expanded Footer
+//
+// Expanded footer (aka TURBOFOOTER™) for the CR.com site in 2018
+// 
+// Markup: expanded-footer.twig
+//
+// Style guide: 185.5
+
+footer.footer--expanded {
+  background: #f2f2f2;
+
+  ul.menu.menu--level-0 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+     // This presents each submenu/category in the footer
+     >li.menu-item {
+       @include span(12);
+
+       @include breakpoint($screen-md) {
+         @include span(6);
+       }
+
+       @include breakpoint($screen-lg) {
+         @include span(4);
+       }
+
+       // category 'title' link
+       > a {
+       color: black;
+       font-weight: 600;
+       font-size: 35px;
+       text-decoration: none;
+
+         // all within that category
+         + ul.menu--level-0.menu--level-1 {
+           width: 100%;
+           margin: 0;
+
+           // each link item
+           li {
+             padding: 10px 10px 10px 0;
+           }
+
+           @include breakpoint($screen-md) {      
+             // split submenus
+             div.menu--expanded-footer__left {
+               float: left;
+               width: 50%;
+             }
+
+             div.menu--expanded-footer__right {
+               float: right;
+              width: 50%;
+              li {
+                 padding: 10px 0px 10px 10px;
+              }
+             }
+           }
+         }
+       }
+     }
+  }
+}
