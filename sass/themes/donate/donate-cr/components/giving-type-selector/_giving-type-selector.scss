@@ -27,6 +27,18 @@
       font-weight: initial;
       text-align: center;
       cursor: pointer;
+
+      @include breakpoint($screen-sm) {
+        span:before {
+          content: "\A";
+          white-space: pre;
+        }
+      }
+      @include breakpoint($screen-md) {
+        span:before {
+          display: none;
+        }
+      }
     }
     input:focus + label {
       // IE, FF etc.
