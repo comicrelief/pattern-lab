@@ -1,5 +1,5 @@
 #giving_type_selector {
-  margin-top: 7%;
+   margin: 2em 0;
   .form__field--wrapper {
     position: relative;
     margin-bottom: 0;
@@ -40,9 +40,5 @@
       border-color: $colour-royal-blue;
       background-color: $colour-royal-blue;
     }
-  }
-
-  &+.form__fieldset.form__amount-submit {
-    margin-top: 7%;
   }
 }
