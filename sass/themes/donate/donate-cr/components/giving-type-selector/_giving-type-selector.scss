@@ -15,7 +15,10 @@
       position: absolute;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       opacity: 0;
+      cursor: pointer;
     }
     label {
       margin: 0;
@@ -41,25 +44,18 @@
           display: none;
         }
       }
-
-      &.checked {
-        color: $colour-white;
-        border-color: $colour-royal-blue;
-        background-color: $colour-royal-blue;
-      }
     }
-    input:focus + .giving_selector--focus-styling {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-
+    input:focus + label {
       // IE, FF etc.
       outline: 1px dotted black;
       // Chrome etc.
       outline: -webkit-focus-ring-color auto 5px;
       outline-offset: 0px;
+    }
+    input:checked + label {
+      color: $colour-white;
+      border-color: $colour-royal-blue;
+      background-color: $colour-royal-blue;
     }
   }
 }
