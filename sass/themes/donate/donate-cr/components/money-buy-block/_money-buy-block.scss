@@ -25,18 +25,19 @@
   .form__togglebtn-amount {
     .select-amount-btn {
       position: relative;
-      letter-spacing: normal;
+      margin: 0 0 20px 0;
       padding: 10px 0;
+      min-height: 84px;
       border-radius: 0;
-      text-transform: none;
-      text-align: left;
       border: 2px solid $colour-mercury-grey;
-      font-family: $body-font;
       background-color: $colour-mercury-grey;
       color: $colour-dark-purple;
-      background-clip: inherit;
-      margin: 0 0 20px 0;
+      font-family: $body-font;
+      text-transform: none;
+      text-align: left;
       text-shadow: none;
+      letter-spacing: normal;
+      background-clip: inherit;
 
       .select-amount {
         position: absolute;
@@ -46,8 +47,8 @@
         right: 0;
         width: 4.5em;
         background-color: $colour-white;
-        font-family: $font-bold;
         color: $colour-royal-blue;
+        font-family: $font-bold;
         text-align: center;
 
         .amount-text {
