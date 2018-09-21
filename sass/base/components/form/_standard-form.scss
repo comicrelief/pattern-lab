@@ -125,7 +125,7 @@ input[type="button"] {
   }
 }
 
-button:disabled, input[type='button']:disabled {
+button:disabled, .disable-btn:disabled {
   background: rgba(0,0,0,0.5);
   cursor: no-drop;
 
