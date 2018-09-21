@@ -33,22 +33,66 @@ footer.footer--expanded {
        font-weight: 600;
        font-size: 35px;
        text-decoration: none;
+       position: relative;
+
+        &:after {
+          content:'\2303';
+          position:absolute;
+          font-family:Arial;
+          margin-left: 4px;
+          overflow: hidden;
+          line-height: 19px;
+          font-size: 25px;
+          color: inherit;
+          font-weight: bold;
+          top: 5px;
+          transform: rotate(180deg);
+          transition-duration: 0.1s;
+          transition-property: transform;
+          transition-timing-function: ease;
+        }
+
+        &.js-show {
+          + ul.menu--level-0.menu--level-1 {
+            max-height: 300px;
+          
+            @include breakpoint($screen-md) {
+              max-height: 150px;
+            }
+
+          }
+          &:after {
+            transform: rotate(0);
+          }
+        }
 
          // all within that category
          + ul.menu--level-0.menu--level-1 {
-            width: 100%;
-            margin: 0;
-            max-height: 0;
-            overflow-y: hidden;
-            transition: max-height 0.8s cubic-bezier(0.2,1,0.5,1);
-
-           &.js-show {
-            max-height: 400px;
-           }
+          width: 100%;
+          margin: 0;
+          max-height: 0;
+          overflow-y: hidden;
+          transition: max-height 0.5s ease;
 
            // each link item
            li {
              padding: 10px 10px 10px 0;
+             width: 100%;
+
+             a {
+              color: black;
+              font-weight: 400;
+              font-size: 18px;
+              text-decoration: none;
+              &:after {
+                content: none;
+              }
+             }
+           }
+
+           div.menu--expanded-footer__left,
+           div.menu--expanded-footer__right {
+            width: 100%;
            }
 
            @include breakpoint($screen-md) {      
@@ -59,7 +103,7 @@ footer.footer--expanded {
              }
 
              div.menu--expanded-footer__right {
-               float: right;
+              float: right;
               width: 50%;
               li {
                  padding: 10px 0px 10px 10px;
