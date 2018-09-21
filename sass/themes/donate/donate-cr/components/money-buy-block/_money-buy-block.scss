@@ -45,7 +45,7 @@
         left: 0;
         bottom: 0;
         right: 0;
-        width: 4.5em;
+        width: 80px;
         background-color: $colour-white;
         color: $colour-royal-blue;
         font-family: $font-bold;
@@ -60,7 +60,8 @@
       .select-amount--context {
         display: block;
         background: $colour-mercury-grey;
-        margin-left: 5em;
+        margin-left: 100px;
+        margin-right: 5px;
         max-width: 65%;
         vertical-align: middle;
         line-height: 1.3;
