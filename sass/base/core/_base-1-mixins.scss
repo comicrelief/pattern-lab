@@ -175,6 +175,10 @@
   @include visuallyhidden;
 }
 
+.hide {
+  display: none;
+}
+
 //no objectfit
  @mixin no-objectfit {
   .no-objectfit & {
