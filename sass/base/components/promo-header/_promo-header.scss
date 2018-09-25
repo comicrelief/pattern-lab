@@ -78,6 +78,10 @@
   .video {
     position: relative !important;
     height: 100%;
+
+    video {
+      visibility: visible !important;
+    }
   }
   &.promo-header--small {
     height: 400px;
