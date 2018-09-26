@@ -29,6 +29,10 @@ footer.footer--expanded {
     line-height: 29px;
   }
 
+  .footer__branding {
+    margin-top: 60px;
+  }
+
   ul.menu.menu--level-0 {
     width: 100%;
     display: flex;
@@ -51,7 +55,7 @@ footer.footer--expanded {
        // category 'title' link
        > a {
        color: $colour-black;
-       font-size: 30px;
+       font-size: 31px;
        text-decoration: none;
        position: relative;
 
