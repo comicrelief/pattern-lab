@@ -70,6 +70,7 @@ footer.footer--expanded {
           color: inherit;
           font-weight: bold;
           top: 5px;
+          right: -35px;
           transform: rotate(180deg);
           transition-duration: 0.1s;
           transition-property: transform;
@@ -105,10 +106,9 @@ footer.footer--expanded {
              margin: 0;
 
              a {
-              color: black;
-              font-weight: 400;
-              font-size: 18px;
-              text-decoration: none;
+              @extend .link;
+              @extend .link--dark-purple;
+
               &:after {
                 content: none;
               }
