@@ -8,6 +8,26 @@
 
 footer.footer--expanded {
   background: #f2f2f2;
+  padding: 50px 18px 185px;
+
+  // Social Links
+  .footer__social-links {
+    margin: 0 0 48px;
+    ul li {
+      margin: 5px 8px 0;
+
+      a {
+        width: 52px;
+        height: 52px;
+      }
+    }
+  }
+
+  .footer__copyright p {
+    color: $colour-black;
+    font-size: 18px;
+    line-height: 29px;
+  }
 
   ul.menu.menu--level-0 {
     width: 100%;
@@ -17,7 +37,8 @@ footer.footer--expanded {
 
      // This presents each submenu/category in the footer
      >li.menu-item {
-       @include span(12);
+      @include span(12);
+      margin-bottom: 45px;
 
        @include breakpoint($screen-md) {
          @include span(6);
@@ -29,9 +50,8 @@ footer.footer--expanded {
 
        // category 'title' link
        > a {
-       color: black;
-       font-weight: 600;
-       font-size: 35px;
+       color: $colour-black;
+       font-size: 30px;
        text-decoration: none;
        position: relative;
 
@@ -78,6 +98,7 @@ footer.footer--expanded {
            li {
              padding: 10px 10px 10px 0;
              width: 100%;
+             margin: 0;
 
              a {
               color: black;
