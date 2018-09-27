@@ -10,12 +10,12 @@
 
 .meta-icons {
   float: left;
-  top: calc(50% - 35px);
+  position: relative;
+  top: calc(50% - 15px);
   @include breakpoint($desktop-nav-breakpoint) {
     position: relative;
     z-index: 10;
     float: left;
-    // height: 103px;
     .icon {
       width: 35px;
       height: 35px;
@@ -38,9 +38,6 @@
     @include breakpoint($screen-md) {
       width: 46px;
     }
-    // @include breakpoint($desktop-nav-breakpoint) {
-    //   height: 103px;
-    // }
     &.active {
       .icon {
         background-color: $colour-mint-green;
@@ -56,19 +53,8 @@
       width: 35px;
       height: 35px;
       padding: 5px;
-      // margin: 21px 4px;
       transition-property: fill;
       transition-duration: 150ms;
-      // @include breakpoint($screen-md) {
-      //   width: 35px;
-      //   height: 35px;
-      // }
-      // @include breakpoint($desktop-nav-breakpoint) {
-      //   width: 20px;
-      //   height: 21px;
-      //   margin: 40px 12px;
-      // }
-
       fill: $colour-jasper-grey;
     }
     &:hover,
