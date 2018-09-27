@@ -19,3 +19,5 @@ tests/visual/result/*
 tests/visual/reference/*
 tests/visual/html_report/*
 !tests/visual/result/README.md
+
+yarn-error.log

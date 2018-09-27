@@ -7,8 +7,9 @@
 // Style guide: 185.5
 
 footer.footer--expanded {
+  
   background: #f2f2f2;
-  padding: 50px 18px 185px;
+  padding: 50px 18px 65px;
 
   // Social Links
   .footer__social-links {
@@ -21,6 +22,19 @@ footer.footer--expanded {
         height: 52px;
       }
     }
+
+    @include breakpoint($screen-md) { 
+      margin-bottom: 75px;
+
+      ul li {
+        margin: 5px 10px 0;
+
+        a {
+          width: 75px;
+          height: 75px;
+        }
+      }
+    }
   }
 
   .footer__copyright p {
@@ -31,6 +45,10 @@ footer.footer--expanded {
 
   .footer__branding {
     margin-top: 60px;
+  }
+
+  .region.region-footer.cr-footer {
+    @include container();
   }
 
   ul.menu.menu--level-0 {
@@ -46,10 +64,12 @@ footer.footer--expanded {
 
        @include breakpoint($screen-md) {
          @include span(6);
+         margin-bottom: 30px;
        }
 
        @include breakpoint($screen-lg) {
-         @include span(4);
+        @include span(4);
+        margin-bottom: 85px;
        }
 
        // category 'title' link
@@ -58,6 +78,10 @@ footer.footer--expanded {
        font-size: 31px;
        text-decoration: none;
        position: relative;
+
+       @include breakpoint($screen-md) {
+         font-size: 41px;
+       }
 
         &:after {
           content:'\2303';
@@ -70,7 +94,6 @@ footer.footer--expanded {
           color: inherit;
           font-weight: bold;
           top: 5px;
-          right: -35px;
           transform: rotate(180deg);
           transition-duration: 0.1s;
           transition-property: transform;
@@ -82,7 +105,7 @@ footer.footer--expanded {
             max-height: 300px;
           
             @include breakpoint($screen-md) {
-              max-height: 150px;
+              max-height: 225px;
             }
 
           }
@@ -97,13 +120,17 @@ footer.footer--expanded {
           margin: 0;
           max-height: 0;
           overflow-y: hidden;
-          transition: max-height 0.5s ease;
+          transition: max-height 0.6s ease;
 
            // each link item
            li {
              padding: 10px 10px 10px 0;
              width: 100%;
              margin: 0;
+
+            @include breakpoint($screen-md) {
+              margin-top: 10px;
+            }
 
              a {
               @extend .link;
