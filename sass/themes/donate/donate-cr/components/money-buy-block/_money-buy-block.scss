@@ -24,34 +24,44 @@
   
   .form__togglebtn-amount {
     .select-amount-btn {
-      letter-spacing: normal;
-      padding:0;
+      position: relative;
+      margin: 0 0 20px 0;
+      padding: 10px 0;
+      min-height: 84px;
       border-radius: 0;
-      text-transform: none;
-      text-align: left;
       border: 2px solid $colour-mercury-grey;
-      font-family: $body-font;
       background-color: $colour-mercury-grey;
       color: $colour-dark-purple;
-      background-clip: inherit;
-      margin: 0 0 20px 0;
+      font-family: $body-font;
+      text-transform: none;
+      text-align: left;
       text-shadow: none;
-  
+      letter-spacing: normal;
+      background-clip: inherit;
+
       .select-amount {
-        display: inline-block;
-        background-color: $colour-white;
-        font-family: $font-bold;
-        color: $colour-royal-blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         width: 80px;
-        height: 84px;
+        background-color: $colour-white;
+        color: $colour-royal-blue;
+        font-family: $font-bold;
         text-align: center;
-        vertical-align: middle;
-        line-height: 4.5;
+
+        .amount-text {
+          position: relative;
+          top: calc(50% - 0.5em);
+        }
       }
+
       .select-amount--context {
-        display: inline-block;
+        display: block;
         background: $colour-mercury-grey;
-        margin-left: 3%;
+        margin-left: 100px;
+        margin-right: 5px;
         max-width: 65%;
         vertical-align: middle;
         line-height: 1.3;
