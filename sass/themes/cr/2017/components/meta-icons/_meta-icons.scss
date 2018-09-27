@@ -1,0 +1,84 @@
+// Meta icons
+// 
+// Markup: meta-icons.twig
+//
+//Style guide: 140.3
+
+.block-cr-meta-icons {
+  height: 77px;
+}
+
+.meta-icons {
+  float: left;
+  top: calc(50% - 35px);
+  @include breakpoint($desktop-nav-breakpoint) {
+    position: relative;
+    z-index: 10;
+    float: left;
+    // height: 103px;
+    .icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  .meta-icons__login {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .meta-icons__login,
+  .meta-icons__magnify,
+  .meta-icons__esu-toggle {
+    width: 35px;
+    height: 35px
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    @include breakpoint($screen-md) {
+      width: 46px;
+    }
+    // @include breakpoint($desktop-nav-breakpoint) {
+    //   height: 103px;
+    // }
+    &.active {
+      .icon {
+        background-color: $colour-mint-green;
+      }
+      
+    }
+    &:focus {
+      outline: none;
+    }
+    span {
+      display: none;
+    }
+    .icon {
+      width: 35px;
+      height: 35px;
+      padding: 5px;
+      // margin: 21px 4px;
+      transition-property: fill;
+      transition-duration: 150ms;
+      // @include breakpoint($screen-md) {
+      //   width: 35px;
+      //   height: 35px;
+      // }
+      // @include breakpoint($desktop-nav-breakpoint) {
+      //   width: 20px;
+      //   height: 21px;
+      //   margin: 40px 12px;
+      // }
+
+      fill: $colour-jasper-grey;
+    }
+    &:hover,
+    &:focus,
+    &.active {
+      .icon {
+        fill: $colour-black;
+        outline: none;
+      }
+    }
+  }
+}
