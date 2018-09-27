@@ -29,7 +29,7 @@
   .meta-icons__magnify,
   .meta-icons__esu-toggle {
     width: 35px;
-    height: 35px
+    height: 35px;
     margin: 0;
     padding: 0;
     border: none;
@@ -44,8 +44,7 @@
     &.active {
       .icon {
         background-color: $colour-mint-green;
-      }
-      
+      } 
     }
     &:focus {
       outline: none;
