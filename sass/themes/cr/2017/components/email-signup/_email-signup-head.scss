@@ -11,7 +11,7 @@
 .block--cr-email-signup.block--cr-email-signup--head {
   display: none;
   position: relative;
-  z-index: 101;
+  z-index: 99;
 
   @include breakpoint($screen-lg) {
     position: absolute;
