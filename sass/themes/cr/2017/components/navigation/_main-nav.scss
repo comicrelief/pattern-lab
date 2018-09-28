@@ -374,7 +374,6 @@ header[role=banner] {
   }
   
   @include breakpoint($desktop-nav-breakpoint) {
-    right: 0;
     top: 104px;
   }
 }
