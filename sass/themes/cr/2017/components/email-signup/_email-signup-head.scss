@@ -26,7 +26,15 @@
       }
     }
     .esu-errors.messages.messages--error {
-      margin-top: 0;
+      float: none;
+      position: relative;
+      margin: 0 auto;
+      @include breakpoint($screen-md) {
+        max-width: 75%;
+      }
+      @include breakpoint($screen-lg) {
+        max-width: 60%;
+      }
     }
   }
   button.esu-head-close {
