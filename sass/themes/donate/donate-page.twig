@@ -1,87 +1,67 @@
 <header class="header" role="banner">
-<div class="header__inner-wrapper">
-	<div id="block-branding" class="block block-branding">
-		<a href="https://www.sportrelief.com" target="_blank" title="Home" rel="home" class="site-logo">
-		<img src="/kss-assets/images/cr_logo.svg" alt="Home">
-		</a>
-	</div>
-	<div class="header__inner-home">
-		<a href="https://www.sportrelief.com" title="/Back to the Red Nose Day homepage" class="link inline">
-		<span>Back to home</span>
-		</a>
-	</div>
-</div>
+	<div class="header__inner-wrapper">
+    <div id="block-branding" class="block block-branding">
+      <a href="https://www.comicrelief.com" title="Home" rel="home noopener noreferrer" class="site-logo site-logo--crdonate">
+        <img src="kss/builder/kss-assets/images/cr_logo.svg" alt="Home">
+      </a>
+    </div>
+  </div>
 </header>
+
 <main role="contentinfo">
-<div class="promo-header promo-header--default promo-header--small promo-header--success">
-	<div class="promo-header__content">
-		<div class="promo-header__content-inner promo-header__content-inner--centre">
-			<p>
-				Great stuff!
-			</p>
-			<h1 id="promo-header__text">You're donating<span id="donationAmount"><br>
-			 &#163; 10.50</span></h1>
-		</div>
-	</div>
-</div>
+<div class="promo-header promo-header--default promo-header--small" style="background: url('../kss/builder/kss-assets/images/promo-header-1170-450.jpg') center top no-repeat transparent;"></div>
 <section id="payin-step-three" class="content">
 <div class="form__step form__step--payment">
-	<form name="comicrelief_payinbundle_payment" method="post" novalidate="novalidate" class="has-validation-callback">
-    <div class="form__row form__row--payment-amount" style="display:none">
-			<div id="js-radiobutton-handler" class="form__fieldset form__radiobutton">
-					<p class="select-label">Select or enter amount</p>
-		      <input type="radio" name="amount" value="15" id="select-amount-fifteen" class="form__radio" data-ischecked="false" />
-					<label for="select-amount-fifteen" class="form__field">£15</label>
-					<input type="radio"  name="amount" value="30" id="select-amount-thirty" class="form__radio" />
-		      <label for="select-amount-thirty" class="form__field" >£30</label>
-		      <input type="radio"  name="amount" value="50" id="select-amount-fifty" class="form__radio" />
-					<label for="select-amount-fifty" class="form__field">£50</label>
-			</div>
-			<div class="form__fieldset">
-				<span class="number-input-label">£</span>
-				<div class="form__field--wrapper form__money form__field--amount">
-	      <label for="comicrelief_payinbundle_payment_amount" class="form__field">Enter amount</label>
-				<input id="comicrelief_payinbundle_payment_amount" name="comicrelief_payinbundle_payment[amount]" required="required" placeholder="Enter amount" class="form__field form__field--amount error" type="number">
-			</div>
-			</div>
-    </div>
-		<div class="form__row form__row--payment-amount">
-			<div id="js-togglebtn-amount" class="form__fieldset form__togglebtn-amount">
-				<p class="select-label">To donate, choose an amount or enter your own below</p>
-          <button class="select-amount-btn selected">
-            <span class="select-amount" data-amount="£30">£30</span>
-            <span class="select-amount--context">Mattis semper nostra hic porta dis nullam</span>
-          </button>
-          <button class="select-amount-btn">
-            <span class="select-amount" data-amount="£50">£50</span>
-            <span class="select-amount--context">Mattis semper nostra hic porta dis nullam</span>
-          </button>
-          <button class="select-amount-btn">
-            <span class="select-amount" data-amount="£150">£150</span>
-            <span class="select-amount--context">Mattis semper nostra hic porta dis nullam</span>
-					</button>
-				</div>
-			<div class="form__fieldset">
-				<span id="js-currency-label" class="currency-input-label">£</span>
-				<div class="form__money form__field--amount">
-		      <label for="comicrelief_payinbundle_payment_amount" class="form__field">Enter amount</label>
-					<input type="text" id="comicrelief_payinbundle_payment_amount" name="comicrelief_payinbundle_payment[amount]" placeholder="0" data-validation="number" data-validation-allowing="range[1.00;5000.00],float" data-validation-error-msg="Please enter number between 1 and 5000" class="form__field form__field--amount">
-				</div>
-				<div class="form__choice form__field--currency">
-					<label class="form__field form__field--currency form__choice required" for="comicrelief_payinbundle_payment_currency">Currency</label>
-					<select id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" class="form__field form__field--currency">
-						<option value="GBP">£ GBP</option>
-						<option value="USD">$ USD</option>
-						<option value="AUD">$ AUD</option>
-						<option value="EUR">€ EUR</option>
-					</select>
-					<div class="form__field--error">
-					</div>
-				</div>
-			</div>
-			<div class="form__fieldset form__submit form__field--submit">
-				<button type="submit" id="comicrelief_payinbundle_payment_submit" name="comicrelief_payinbundle_payment[submit]" class="js-donate-btn btn btn--red">Donate now</button>
-			</div>
+	<!-- <form name="comicrelief_payinbundle_payment" method="post" novalidate="novalidate" class="has-validation-callback"> -->
+    <div class="form__step form__step--payment">
+      <form name="comicrelief_payinbundle_payment" method="post" novalidate="" class="has-validation-callback">
+        <div class="form__row form__row--payment form__row--moneybuy-block">
+          <div id="js-togglebtn-amount" class="form__fieldset form__togglebtn-amount">
+            <h1 class="form__subtitle select-label">Comic Relief supports projects around the world.</h1>
+            <p>Your donation could pay for:</p>
+            <div>
+              <button class="select-amount-btn" aria-label="£30 could pay for vital education about maternal health in Sierra Leone">
+                <span class="select-amount">
+                  <span class="amount-text">£30</span>
+                </span>
+                <span class="select-amount--context">vital education about maternal health in Sierra Leone</span>
+              </button>
+              <button class="select-amount-btn" aria-label="£50 could pay for over 160 tests to quickly diagnose people with malaria">
+                <span class="select-amount">
+                  <span class="amount-text">£50</span>
+                </span>
+                <span class="select-amount--context">over 160 tests to quickly diagnose people with malaria</span>
+              </button>
+              <button class="select-amount-btn" aria-label="£150 could pay for 6 specialist trauma counselling sessions for refugees in the UK">
+                <span class="select-amount">
+                  <span class="amount-text">£150</span>
+                </span>
+                <span class="select-amount--context">6 specialist trauma counselling sessions for refugees in the UK</span>
+              </button>
+            </div>
+          </div>
+        <div class="form__fieldset">
+          <span id="js-currency-label" class="currency-input-label">£</span>
+          <div class="form__field--wrapper form__money form__field--amount">
+            <label id="field-label--amount" class="form__field form__field--amount form__money required" for="field-input--amount">Enter amount</label>
+            <input type="number" id="field-input--amount" name="amount" required="" placeholder="0" pattern="[^[0-9]+$]" class="form__field form__field--amount " aria-describedby="field-label--amount field-error--amount" min="1" max="5000" value="">
+          </div>
+          <div class="form__field--wrapper form__choice form__field--currency">
+            <label class="form__field form__field--currency form__choice required" for="comicrelief_payinbundle_payment_currency"> Currency</label>
+            <select id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" class="form__field form__field--currency">
+              <optgroup label="currency"><option value="GBP" data-currency="£">£ GBP</option>
+                <option value="USD" data-currency="$">$ USD</option>
+                <option value="AUD" data-currency="$">$ AUD</option>
+                <option value="EUR" data-currency="€">€ EUR</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <div class="form__fieldset form__amount-submit">
+          <button id="comicrelief_payinbundle_payment_amount_submit" type="submit" name="comicrelief_payinbundle_payment[submit]" class="form__next">Donate now</button>
+        </div>
+        </div>
+      </form>
     </div>
 		<div class="form__row form__row--giftaid show">
 			<a id="js-back-giftaid" class="form__back" href="#" aria-label="Back to donation amount">Back</a>
@@ -516,7 +496,7 @@
 				</div>
 			</div>
 		</div>
-	</form>
+	<!-- </form> -->
 	<div class="form__row form__row--card-logos show">
 		<ul class="card-list">
 			<li class="card-logo logo-maestro"></li>

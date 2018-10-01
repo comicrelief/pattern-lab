@@ -42,13 +42,13 @@
 @import "../../base/components/postcode-lookup/postcode-lookup";
 
 // ==========================================================================
-// Donate CR variables
+// Donate variables
 // ==========================================================================
 @import "variables/_colours";
 @import "variables/_mixins";
 
 // ==========================================================================
-// Donate CR components
+// Donate components
 // ==========================================================================
 @import "components/form/_form";
 @import "components/header/_header";
@@ -59,4 +59,29 @@
 @import "components/money-buy-block/_money-buy-block";
 @import "components/giving-type-selector/_giving-type-selector";
 
+// Elements
+//
+// Style guide: 10
+
+// Components
+//
+// Style guide: 20
+
+// Donate Page
+//
+// Markup: donate-page.twig
+//
+// Style guide: 30
+
+// Thank You Page
+//
+// Markup: thank-you-page.twig
+//
+// Style guide: 40
+
+// Failure Page
+//
+// Markup: failure-page.twig
+//
+// Style guide: 50
 
