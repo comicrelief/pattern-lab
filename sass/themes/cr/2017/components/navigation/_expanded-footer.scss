@@ -9,18 +9,17 @@
 footer.footer--expanded {
   
   background: #f2f2f2;
-  padding: 50px 18px 65px;
+  padding: 45px 18px 40px;
 
-  @include breakpoint($screen-md) {
-    padding: 50px 18px 40px;
+  @include breakpoint($screen-lg) {
+    padding: 65px 18px 60px;
   }
 
   // Social Links
   .footer__social-links {
-    margin: 0 0 48px;
+    margin: 0 0 40px;
     ul li {
       margin: 5px 8px 0;
-
       a {
         width: 52px;
         height: 52px;
@@ -29,21 +28,30 @@ footer.footer--expanded {
     }
 
     @include breakpoint($screen-md) { 
-      margin-bottom: 50px;
-
       ul li {
         margin: 5px 10px 0;
-
         a {
           width: 75px;
           height: 75px;
         }
       }
     }
+
+    @include breakpoint($screen-lg) {
+      margin: 0 0 75px;
+    } 
   }
 
   .footer__copyright {
-    margin-top: 20px;
+    margin-top: 10px;
+
+    @include breakpoint($screen-md) {
+      margin-top: 15px;
+    }
+
+    @include breakpoint($screen-lg) {
+      margin-top: 10px;
+    }
     
     p {
       color: $colour-black;
@@ -53,10 +61,14 @@ footer.footer--expanded {
   } 
 
   .footer__branding {
-    margin-top: 60px;
-
+    margin-top: 35px;
+    
     @include breakpoint($screen-md) {
       margin-top: 35px;
+    }
+    
+    @include breakpoint($screen-lg) {
+      margin-top: 60px;
     }
   }
 
@@ -73,19 +85,19 @@ footer.footer--expanded {
      // Represents each submenu/category in the footer
      >li.menu-item {
       @include span(12);
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       text-align: center;
 
        @include breakpoint($screen-md) {
          @include span(6);
-         margin-bottom: 30px;
+         margin-bottom: 25px;
         text-align: center;
 
        }
 
        @include breakpoint($screen-lg) {
         @include span(4);
-        margin-bottom: 85px;
+        margin-bottom: 70px;
         text-align: left;
        }
 
