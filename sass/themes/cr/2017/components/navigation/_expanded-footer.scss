@@ -86,6 +86,7 @@ footer.footer--expanded {
        @include breakpoint($screen-lg) {
         @include span(4);
         margin-bottom: 85px;
+        text-align: left;
        }
 
        // category 'title' link
@@ -157,6 +158,7 @@ footer.footer--expanded {
 
             @include breakpoint($screen-md) {
               margin-top: 10px;
+              padding: 10px 10px 10px 0;
             }
 
              a {
