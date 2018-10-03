@@ -1,0 +1,10 @@
+.promo-header, .promo-header--small {
+  min-height: 200px;
+  background-size: cover!important;
+}
+
+@media (min-width: 640px) {
+  .promo-header, .promo-header--small {
+    min-height: 350px;
+  }
+}
