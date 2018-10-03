@@ -182,6 +182,20 @@ footer.footer--expanded {
               &:after {
                 content: none;
               }
+
+              // Added to the menu item via CMS
+              &.js-esu-popup {
+                position: relative;
+                margin-left: 45px;
+
+                svg.icon {
+                  position: absolute;
+                  top: -11px;
+                  left: -45px;
+                  width: 35px;
+                  height: 35px;
+                }
+              }
              }
            }
 
