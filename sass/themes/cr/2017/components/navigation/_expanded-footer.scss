@@ -11,8 +11,17 @@ footer.footer--expanded {
   background: #f2f2f2;
   padding: 45px 18px 40px;
 
+  span.lg-breakpoint {
+    display: none;
+    visibility: hidden;
+  }
+
   @include breakpoint($screen-lg) {
     padding: 65px 18px 60px;
+
+    span.lg-breakpoint {
+      display: block;
+    }
   }
 
   // Social Links
@@ -91,8 +100,7 @@ footer.footer--expanded {
        @include breakpoint($screen-md) {
          @include span(6);
          margin-bottom: 25px;
-        text-align: center;
-
+         text-align: center;
        }
 
        @include breakpoint($screen-lg) {
@@ -100,6 +108,22 @@ footer.footer--expanded {
         margin-bottom: 70px;
         text-align: left;
        }
+
+        &.item-open {
+          > ul.menu--level-0.menu--level-1 {
+            max-height: 300px;
+          
+            @include breakpoint($screen-lg) {
+              max-height: none;
+              height: auto;
+            }
+          }
+
+          > a:after {
+            transform: rotate(0);
+            top: 4px;
+          }
+        }
 
        // category 'title' link
        > a {
@@ -133,22 +157,6 @@ footer.footer--expanded {
           }
         }
 
-        &.js-show {
-          + ul.menu--level-0.menu--level-1 {
-            max-height: 300px;
-          
-            @include breakpoint($screen-lg) {
-              max-height: none;
-              height: auto;
-            }
-
-          }
-          &:after {
-            transform: rotate(0);
-            top: 4px;
-          }
-        }
-
          // all within that category
          + ul.menu--level-0.menu--level-1 {
           width: 100%;
@@ -179,6 +187,11 @@ footer.footer--expanded {
               font-family: "Sailec-Medium",sans-serif;
               border-bottom: 2px solid $colour-black;
 
+              &:hover,
+              &:focus {
+                border-bottom: 2px solid $colour-red;
+              }             
+
               &:after {
                 content: none;
               }
@@ -194,6 +207,13 @@ footer.footer--expanded {
                   left: -45px;
                   width: 35px;
                   height: 35px;
+                }
+
+                &:hover,
+                &:focus {
+                  svg.icon {
+                    fill: $colour-red;
+                  }
                 }
               }
              }
