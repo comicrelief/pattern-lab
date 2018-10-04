@@ -71,6 +71,11 @@ footer.footer--expanded {
 
   .footer__branding {
     margin-top: 35px;
+
+    a {
+      width: 85px;
+      height: 85px;
+    }
     
     @include breakpoint($screen-md) {
       margin-top: 35px;

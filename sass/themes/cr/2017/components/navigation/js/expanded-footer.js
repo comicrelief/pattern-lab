@@ -15,6 +15,10 @@
   function stopClick() {
     $('li.menu-item--expanded > a', $context).on('click', function (e) {
       e.preventDefault();
+
+      if ($(this).parent('li.menu-item--expanded')){
+
+      }
     });
   }
 
@@ -30,36 +34,28 @@
 
     $('a', $context).on('focus blur', function(e) {
 
-      if ( $('span.lg-breakpoint', $context).is(":not(:visible)")) {
-        
-        console.log('focusState', e);
-        
+      console.log("buh");
+
+      // Basic check to ensure we're running this code on the right breakpoints
+      if ($('span.lg-breakpoint', $context).is(":not(:visible)")) {
+              
         // Cache the anchor being focused/blurred
         $thisAnchor = $(this);
   
         /* FOCUS event */
         if ( e.type == "focus" ? true : false ) {
-  
-          // Focussed on a non-nav anchor? Remove active states
-          if (!($thisAnchor.is($('a', $context)))) {
-            $parentLi.removeClass("focused item-open").children('a').attr('aria-expanded', 'false'); 
-          }
-  
+    
           // If we're focussing on a nav item anchor, add focus class to the parent li, so we can affect all subnav styling
-          else {
+          if ($thisAnchor.is($('a', $context))) {
             if ($thisAnchor.is($parentAnchor)) {
               // Unfocus all other focussed parent items
-              $parentLi.removeClass("focused item-open");
+              // TODO: do we want this or not?
+              // $parentLi.removeClass("focused item-open");
               $(this).closest( $parentLi ).addClass("focused item-open").children('a').attr('aria-expanded', 'true');
-  
-            }
-            // Else, check its not a subitem, then remove focus class from all nav item
-            else if (!($thisAnchor.is($subAnchor))) {
-              $parentLi.removeClass("focused item-open").children('a').attr('aria-expanded', 'false'); ; 
             }
           }
         }
-  
+
         /* BLUR event */
         else {
           // If we're blurring away from the last-child subnav item, remove our overall focus class from the menu
