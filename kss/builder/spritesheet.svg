@@ -52,6 +52,7 @@
             <polygon id="Shape" fill="#FFFFFF" points="341.49 337.47 341.54 228.79 394.5 228.81 394.5 249.69 366.89 249.68 366.88 274.86 387.07 274.87 387.06 295.4 366.87 295.39 366.85 337.48"></polygon>
         </g>
     </g>
+  </symbol>
   <symbol id="close-cross" viewBox="3 3 32 32">
     <title>Close</title>
     <desc>Close window</desc>
