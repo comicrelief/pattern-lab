@@ -1,0 +1,128 @@
+.inner-content {
+  width: span(10);
+  margin: 10px auto;
+  font-family:$font-regular;
+  text-align: center;
+
+  @include breakpoint($screen-md) {
+    width: span(7);
+    margin: 40px auto;
+
+  }
+
+  p, ul {
+    color: $colour-dark-purple;
+    text-align: left;
+
+    @include breakpoint($screen-md) {
+      text-align: center;
+    }
+  }
+
+  h1 {
+    font-size: 38px;
+
+    @include breakpoint($screen-md) {
+      font-size: 58px;
+    }
+  }
+
+
+  &.inner-content--success {
+      margin-top: -30px;
+      position: relative;
+      width: 90%;
+      background-color: $colour-white;
+      padding-top:40px;
+
+      @include breakpoint($screen-md) {
+        width: 80%;
+      }
+
+    .success-transactionsid {
+      color: $colour-old-lavender;
+      text-align: center;
+
+      @include breakpoint($screen-md) {
+        margin: 80px 0;
+      }
+    }
+
+    .btn--red {
+      padding: 23px 20px 19px;
+    }
+
+    .success-social-links {
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        color: $colour-dark-purple;
+      }
+
+      ul {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 15px;
+
+        li {
+          display: inline-block;
+          margin-right: 5px;
+
+          @include breakpoint($screen-md) {
+            margin-right: 15px;
+          }
+
+          a {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+
+            @include breakpoint($screen-md) {
+              width: 50px;
+              height: 50px;
+            }
+
+            .icon {
+              display: inherit;
+              width: inherit;
+              height: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.inner-content {
+  margin-top: 50px;
+
+  h1 {
+    @include font-size($h1-font-size);
+  }
+
+  &.failure {
+    .btn {
+      margin-bottom: 15px;
+    }
+  }
+
+  &.sorry {
+    width: 85%;
+    margin-bottom: 50px;
+    @include breakpoint($screen-md) {
+      width: span(10);
+    }
+
+    h1 {
+      margin-bottom:50px;
+      line-height:1.3;
+    }
+    
+    p {
+      margin-bottom: 30px;
+      line-height:1.3;
+      text-align: center;
+    }
+  }
+}
