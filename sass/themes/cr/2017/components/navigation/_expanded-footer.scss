@@ -127,21 +127,25 @@ footer.footer--expanded {
 
        @include breakpoint($screen-lg) {
         &.menu-item--1,
-         &.menu-item--2,
-         &.menu-item--3,
-          &.menu-item--4,
-         &.menu-item--5,
-         &.menu-item--6 {
+        &.menu-item--2,
+        &.menu-item--3,
+        &.menu-item--4,
+        &.menu-item--5,
+        &.menu-item--6 {
           @include span(4);
-          margin-bottom: 70px;
           text-align: left;
           padding-right: 0;
+          margin-bottom: 70px;
          }
        }
 
         &.item-open {
           > ul.menu--level-0.menu--level-1 {
             max-height: 300px;
+
+            li a {
+              display: inline
+            }
           
             @include breakpoint($screen-lg) {
               max-height: none;
@@ -216,6 +220,8 @@ footer.footer--expanded {
               @extend .link--dark-purple;
               font-family: "Sailec-Medium",sans-serif;
               border-bottom: 2px solid $colour-black;
+              // Hide to prevent tabbing until the menu is open
+              display: none;
 
               &:hover,
               &:focus {
