@@ -90,7 +90,7 @@ footer.footer--expanded {
     @include container();
   }
 
-  ul.menu.menu--level-0 {
+  ul.menu.menu--level-0:not(.menu--level-1) {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -105,13 +105,38 @@ footer.footer--expanded {
        @include breakpoint($screen-md) {
          @include span(6);
          margin-bottom: 25px;
-         text-align: center;
+         text-align: left;
+
+         &.menu-item--1,
+         &.menu-item--3,
+         &.menu-item--5 {
+          @include span(5);
+          @include push(0.5);
+          text-align: right;
+          // Space for the chevron
+          padding-right: 23px;
+         }
+
+        &.menu-item--2,
+         &.menu-item--4,
+         &.menu-item--6 {
+          @include span(5);
+          @include push(1);
+         }
        }
 
        @include breakpoint($screen-lg) {
-        @include span(4);
-        margin-bottom: 70px;
-        text-align: left;
+        &.menu-item--1,
+         &.menu-item--2,
+         &.menu-item--3,
+          &.menu-item--4,
+         &.menu-item--5,
+         &.menu-item--6 {
+          @include span(4);
+          margin-bottom: 70px;
+          text-align: left;
+          padding-right: 0;
+         }
        }
 
         &.item-open {
@@ -126,7 +151,7 @@ footer.footer--expanded {
 
           > a:after {
             transform: rotate(0);
-            top: 4px;
+            top: 10px;
           }
         }
 
@@ -148,10 +173,10 @@ footer.footer--expanded {
           margin-left: 4px;
           overflow: hidden;
           line-height: 19px;
-          font-size: 25px;
+          font-size: 23px;
           color: inherit;
           font-weight: bold;
-          top: 0;
+          top: 5px;
           transform: rotate(180deg);
           transition-duration: 0.1s;
           transition-property: transform;
