@@ -208,7 +208,7 @@ footer.footer--expanded {
 
             @include breakpoint($screen-md) {
               margin-top: 10px;
-              padding: 10px 10px 10px 0;
+              padding: 10px 0;
             }
 
              a {

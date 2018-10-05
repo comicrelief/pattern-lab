@@ -9,17 +9,31 @@
   function setUpFooter() {
     $('.menu-item a', $context).wrapInner('<span class="menu-item__text"></span>');
     stopClick();
-    focusState();
+    // focusState();
   }
 
   function stopClick() {
     $('li.menu-item--expanded > a', $context).on('click', function (e) {
+
       e.preventDefault();
 
-      if ($(this).parent('li.menu-item--expanded')){
+      // Only run this code if we're not on LG
+      if ( $('span.lg-breakpoint').is(":not(:visible)")) {
+        
+        console.log("not LG");
+
+        $this = $(this);
+        $listItem = $this.parent('li.menu-item--expanded');
+        $listItemParents = $listItem.parents('li.item-open');
+
+        $listItem.toggleClass('item-open');
+
+        $this.attr('aria-expanded', function (i, attr) {
+          return attr == 'true' ? 'false' : 'true'
+        });
 
       }
-    });
+    });  
   }
 
   function focusState() {
