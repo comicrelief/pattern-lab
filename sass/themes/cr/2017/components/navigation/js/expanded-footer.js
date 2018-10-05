@@ -22,7 +22,7 @@
         
         console.log("not LG");
         
-        $this.parent('li.menu-item--expanded').toggleClass('item-open');
+        $(this).parent('li.menu-item--expanded').toggleClass('item-open');
 
         $(this).attr('aria-expanded', function (i, attr) {
           return attr == 'true' ? 'false' : 'true'
