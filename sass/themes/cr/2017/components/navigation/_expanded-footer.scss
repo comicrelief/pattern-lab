@@ -92,7 +92,14 @@ footer.footer--expanded {
 
   ul.menu.menu--level-0:not(.menu--level-1) {
     width: 100%;
-    display: flex;
+    display: -webkit-box;      
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display : flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     justify-content: flex-start;
 
