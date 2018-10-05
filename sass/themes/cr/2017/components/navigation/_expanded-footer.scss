@@ -114,7 +114,7 @@ footer.footer--expanded {
           @include push(0.5);
           text-align: right;
           // Space for the chevron
-          padding-right: 23px;
+          // padding-right: 23px;
          }
 
         &.menu-item--2,
@@ -134,7 +134,7 @@ footer.footer--expanded {
         &.menu-item--6 {
           @include span(4);
           text-align: left;
-          padding-right: 0;
+          // padding-right: 0;
           margin-bottom: 70px;
          }
        }
