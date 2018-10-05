@@ -223,6 +223,10 @@ footer.footer--expanded {
               // Hide to prevent tabbing until the menu is open
               display: none;
 
+              @include breakpoint($screen-lg) {
+                display: inline;
+              }
+
               &:hover,
               &:focus {
                 border-bottom: 2px solid $colour-red;
