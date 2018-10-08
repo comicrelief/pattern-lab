@@ -257,7 +257,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['sass/{,**/}*.{scss,sass}'],
-        tasks: ['sass', 'postcss:dist'],
+        tasks: ['sass', 'postcss:all'],
         options: {
           // Start a live reload server on the default port 35729
           livereload: true
