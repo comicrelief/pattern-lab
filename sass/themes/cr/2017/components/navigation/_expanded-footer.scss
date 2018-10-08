@@ -97,7 +97,6 @@ footer.footer--expanded {
 
   ul.menu.menu--level-0:not(.menu--level-1) {
     width: 100%;
-    margin: 0;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -117,7 +116,6 @@ footer.footer--expanded {
        @include breakpoint($screen-md) {
          @include span(6);
          margin-bottom: 25px;
-         text-align: left;
 
          &.menu-item--1,
          &.menu-item--3,
@@ -125,6 +123,9 @@ footer.footer--expanded {
           @include span(5);
           @include push(0.5);
           text-align: right;
+          ul.menu--level-1.menu.menu--level-0 li {
+            text-align: right;
+          }
          }
 
         &.menu-item--2,
@@ -132,6 +133,10 @@ footer.footer--expanded {
          &.menu-item--6 {
           @include span(5);
           @include push(1);
+          text-align: left;
+          ul.menu--level-1.menu.menu--level-0 li {
+            text-align: left;
+          }
          }
        }
 
@@ -145,6 +150,9 @@ footer.footer--expanded {
           @include span(4);
           text-align: left;
           margin-bottom: 70px;
+          ul.menu--level-1.menu.menu--level-0 li {
+            text-align: left;
+          }
          }
        }
 
@@ -225,7 +233,7 @@ footer.footer--expanded {
               padding: 10px 4px;
             }
 
-            @include breakpoint($screen-md) {
+            @include breakpoint($screen-lg) {
               text-align: left;
             }
 
