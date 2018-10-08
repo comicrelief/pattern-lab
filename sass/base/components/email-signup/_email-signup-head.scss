@@ -101,7 +101,6 @@
     }
   }
   .cr-email-signup--messages {
-    float: none;
     width: auto;
     height: 100%;
     margin: 0;
@@ -114,6 +113,7 @@
 
   form {
     .form-item-email {
+      float: none;
       margin: 0;
       width: 100%;
 
@@ -164,6 +164,7 @@
 
   input[type=submit].button {
     @extend .btn;
+    margin-bottom: 30px;
   }
 
   .form-item-school-phase + input[type=submit].button {
@@ -189,6 +190,7 @@
   }
   .esu-title-message,
   .esu-initial-message,
+  .esu-privacy-message,
   .esu-first-success-message,
   .esu-second-success-message {
     p {
