@@ -228,6 +228,12 @@ module.exports = function (grunt) {
           src: ['sass/base/components/{,**/}*.js'],
           dest: 'dist/js/base-components.min.js'
         }]
+      },
+      cr_components_js: {
+        files: [{
+          src: ['sass/themes/cr/2017/components/{,**/}*.js'],
+          dest: 'dist/js/cr-components.min.js'
+        }]
       }
     },
 
@@ -251,7 +257,7 @@ module.exports = function (grunt) {
       },
       sass: {
         files: ['sass/{,**/}*.{scss,sass}'],
-        tasks: ['sass', 'postcss:dist'],
+        tasks: ['sass', 'postcss:all'],
         options: {
           // Start a live reload server on the default port 35729
           livereload: true
@@ -481,6 +487,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build:cr17', [
     'sass:cr17',
     'modernizr',
+    'uglify:cr_components_js',
     'kss:cr17',
     'postcss:cr17',
   ]);
