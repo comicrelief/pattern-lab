@@ -2,7 +2,6 @@
 //
 // Style guide: 120
 
-
 // Email sign up header
 //
 // Markup: email-signup-header.twig
@@ -11,35 +10,33 @@
 
 
 //hide esu form initially
-.block--cr-email-signup--head {
+.block--cr-email-signup.block--cr-email-signup--head {
   display: none;
   position: relative;
-  z-index: 101;
+  z-index: 99;
 
   @include breakpoint($screen-lg) {
     position: absolute;
-  }
-  @include breakpoint($desktop-nav-breakpoint) {
-    &.block--cr-email-signup {
-      width: auto;
-      right: 0;
-    }
+    left: 0;
+    right: 0;
   }
 
   &.block--cr-email-signup--error.block--cr-email-signup {
     @include breakpoint($screen-md) {
-      .esu-errors.messages.messages--error {
-        position: relative;
-        top: auto;
-        width: 100%;
-        max-width: 100%;
-      }
       .block--cr-email-signup__inner-wrapper {
         padding: 25px 0;
       }
     }
     .esu-errors.messages.messages--error {
-      margin-top: 0;
+      float: none;
+      position: relative;
+      margin: 0 auto;
+      @include breakpoint($screen-md) {
+        max-width: 75%;
+      }
+      @include breakpoint($screen-lg) {
+        max-width: 60%;
+      }
     }
   }
   button.esu-head-close {
@@ -64,7 +61,8 @@
     background-color: $colour-black;
     @include breakpoint($screen-md) {
       right: 65px;
-      width: 350px;
+      left: 25%;
+      width: 50%;
       padding: 25px 0;
       .form-item-school-phase {
         width: 240px;
@@ -107,7 +105,7 @@
   }
   .cr-email-signup--messages {
     float: none;
-    width: 220px;
+    width: auto;
     height: 100%;
     margin: 0 auto;
   }
