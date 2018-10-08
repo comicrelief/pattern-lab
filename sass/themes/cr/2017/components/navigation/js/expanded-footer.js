@@ -19,9 +19,7 @@
 
       // Only run this code if we're not on LG
       if ( $('span.lg-breakpoint').is(":not(:visible)")) {
-        
-        console.log("not LG");
-        
+                
         $(this).parent('li.menu-item--expanded').toggleClass('item-open');
 
         $(this).attr('aria-expanded', function (i, attr) {
