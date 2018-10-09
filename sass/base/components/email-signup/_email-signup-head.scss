@@ -12,19 +12,21 @@
 //hide esu form initially
 .block--cr-email-signup.block--cr-email-signup--head {
   display: none;
-  position: relative;
+  position: fixed;
   z-index: 99;
+  top: 0;
+  overflow: visible;
 
   @include breakpoint($screen-lg) {
-    position: absolute;
     left: 0;
     right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
   }
 
   &.block--cr-email-signup--error.block--cr-email-signup {
     .esu-errors.messages.messages--error {
       float: none;
-      position: relative;
+      position: absolute;
       margin: 0 auto;
       @include breakpoint($screen-md) {
         max-width: 75%;
@@ -48,7 +50,8 @@
     display: block;
   }
   .block--cr-email-signup__inner-wrapper {
-    position: absolute;
+    position: relative;
+    overflow-y: auto;
     top: 0;
     right: 0;
     width: 100%;
@@ -67,14 +70,6 @@
       @include breakpoint($screen-lg) {
         padding: 55px;
       }
-    }
-    @include breakpoint($screen-lg) {
-      top: 78px;
-      right: 65px;
-    }
-    @include breakpoint($desktop-nav-breakpoint) {
-      top: 103px;
-      right: 0; 
     }
 
     a.close-button {
