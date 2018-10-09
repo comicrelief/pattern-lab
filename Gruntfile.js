@@ -282,7 +282,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss/builder',
           title: 'PatternLab',
-          css: 'css/themes/base/base.css'
+          css: ['css/themes/base/base.css', '../css/kss/base.css']
         },
         src: ['sass/base', 'sass/themes/base'],
         dest: 'dist'
