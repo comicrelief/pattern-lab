@@ -13,14 +13,15 @@
 .block--cr-email-signup.block--cr-email-signup--head {
   display: none;
   position: fixed;
-  z-index: 99;
+  z-index: 100;
   top: 0;
-  overflow: visible;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.5);
 
   @include breakpoint($screen-lg) {
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.5);
   }
 
   &.block--cr-email-signup--error.block--cr-email-signup {
@@ -67,8 +68,12 @@
         margin-right: 0;
         margin-left: 0;
       }
-      @include breakpoint($screen-lg) {
+      @include breakpoint($screen-md) {
+        top: 78px;
         padding: 55px;
+      }
+      @include breakpoint($desktop-nav-breakpoint) {
+        top: 103px;
       }
     }
 
