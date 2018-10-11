@@ -292,7 +292,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss/builder',
           title: 'Comic Relief PatternLab',
-          css: '../css/themes/cr/2017/cr17.css'
+          css: ['../css/themes/cr/2017/cr17.css', '../css/kss/cr.css'],
         },
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
