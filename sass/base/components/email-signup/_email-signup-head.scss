@@ -10,7 +10,8 @@
 
 
 //hide esu form initially
-.block--cr-email-signup.block--cr-email-signup--head {
+.block--cr-email-signup.block--cr-email-signup--head,
+.block--cr-email-signup.block--cr-email-signup--head.block--cr-email-signup--error {
   display: none;
   position: fixed;
   z-index: 100;
@@ -24,32 +25,6 @@
     right: 0;
   }
 
-  &.block--cr-email-signup--error.block--cr-email-signup {
-    .esu-errors.messages.messages--error {
-      float: none;
-      position: absolute;
-      margin: 0 auto;
-      @include breakpoint($screen-md) {
-        max-width: 75%;
-      }
-      @include breakpoint($screen-lg) {
-        max-width: 60%;
-      }
-    }
-  }
-  button.esu-head-close {
-    background: none;
-    border: none;
-  }
-}
-
-.ui-selectmenu-menu {
-  z-index: 102;
-}
-.block--cr-email-signup--head.cr-header-email-signup-form {
-  &.show {
-    display: block;
-  }
   .block--cr-email-signup__inner-wrapper {
     position: relative;
     overflow-y: auto;
@@ -100,6 +75,27 @@
       }
     }
   }
+
+  &.block--cr-email-signup--error.block--cr-email-signup {
+    .esu-errors.messages.messages--error {
+      position: relative;
+      margin-top: 20px;
+      padding: 0 0 0 40px;
+      max-width: 100%;
+      background: $colour-black url(/profiles/contrib/cr/themes/custom/campaign_base/images/patternlab/error-red-cross.svg) -10px center no-repeat;
+      text-align: left;
+    }
+  }
+}
+
+.ui-selectmenu-menu {
+  z-index: 102;
+}
+
+.block--cr-email-signup--head.cr-header-email-signup-form {
+  &.show {
+    display: block;
+  }
   .cr-email-signup--messages {
     width: auto;
     height: 100%;
@@ -109,7 +105,6 @@
       max-width: initial;
     }
   }
-
 
   form {
     .form-item-email {
