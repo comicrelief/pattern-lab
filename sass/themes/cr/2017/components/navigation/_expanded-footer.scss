@@ -6,7 +6,34 @@
 //
 // Style guide: 185.5
 
-footer.footer--expanded {
+// Keep all padding within each footer variant, rather than the wrapper
+footer[role=contentinfo] {
+  padding: 0;
+  @include breakpoint($screen-md) {
+    padding: 0;
+  }
+  @include breakpoint($screen-lg) {
+    padding: 0;
+  }
+}
+
+.footer-nav-inner-wrapper {
+  @include container();
+}
+
+// Add 'standard' padding back to the menu-specific wrapper
+div.footer--minimal.footer-nav-outer-wrapper {
+  padding: 50px 5px 185px;  
+  @include breakpoint($screen-md) {
+    padding: 50px 5px 140px;
+  }  
+  @include breakpoint($screen-lg) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+div.footer--expanded.footer-nav-outer-wrapper {
   line-height: initial;
   background: #f2f2f2;
   padding: 45px 18px 40px;
