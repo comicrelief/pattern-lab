@@ -35,21 +35,13 @@
     padding: 35px;
     background-color: $colour-black;
     @include breakpoint($screen-md) {
-      right: 65px;
+      top: 78px;
       left: 25%;
+      padding: 55px;
       width: 50%;
-      .form-item-school-phase {
-        width: 240px;
-        margin-right: 0;
-        margin-left: 0;
-      }
-      @include breakpoint($screen-md) {
-        top: 78px;
-        padding: 55px;
-      }
-      @include breakpoint($desktop-nav-breakpoint) {
-        top: 103px;
-      }
+    }
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: 103px;
     }
 
     a.close-button {
