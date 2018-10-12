@@ -116,23 +116,6 @@
         }
       }
     }
-    .form-item-school-phase {
-      margin: 0 auto;
-      width: 300px;
-      label {
-        top: -20px;
-        right: 15px;
-        clip: auto;
-        width: auto;
-        height: auto;
-        height: auto;
-        color: white;
-        font-size: 14px;
-      }
-      select {
-        width: 240px;
-      }
-    }
   }
 
   .js-form-type-select {
@@ -154,22 +137,6 @@
     margin-bottom: 30px;
   }
 
-  .form-item-school-phase + input[type=submit].button {
-    width: 60px;
-    margin: 0;
-    text-indent: -9999px;
-    background: $colour-gainsboro-grey url( $image-path + "arrow-right.svg") -4px center no-repeat;
-    @include breakpoint($screen-md) {
-      width: 100%;
-    }
-    &.step2 {
-      margin-top: 25px;
-    }
-
-    &:focus {
-      border: 3px solid $colour-red;
-    }
-  }
   .esu-title-message,
   .esu-initial-message,
   .esu-privacy-message,
