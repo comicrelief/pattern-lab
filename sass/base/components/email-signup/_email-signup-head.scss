@@ -31,7 +31,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    margin: 0;
+    margin: 0 0 60px 0;
     padding: 35px;
     background-color: $colour-black;
     @include breakpoint($screen-md) {
