@@ -74,7 +74,7 @@
       margin-top: 20px;
       padding: 0 0 0 40px;
       max-width: 100%;
-      background: $colour-black url(/profiles/contrib/cr/themes/custom/campaign_base/images/patternlab/error-red-cross.svg) -10px center no-repeat;
+      background: $colour-black url($image-path + "error-red-cross.svg") -10px center no-repeat;
       text-align: left;
     }
   }
