@@ -173,7 +173,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
         }
         >a:after {
           transform: rotate(0);
-          top: 10px;
+          top: 8px;
         }
       }
       // Category 'title' link
@@ -195,7 +195,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
           font-size: 23px;
           color: inherit;
           font-weight: bold;
-          top: 5px;
+          top: 0px;
           transform: rotate(180deg);
           transition-duration: 0.1s;
           transition-property: transform;
@@ -249,9 +249,14 @@ div.footer--expanded.footer-nav-outer-wrapper {
               &.js-esu-popup {
                 position: relative;
                 margin-left: 45px;
+
+                span {
+                  position: relative;
+                }
+
                 svg.icon {
                   position: absolute;
-                  top: -11px;
+                  bottom: -6px;
                   left: -45px;
                   width: 35px;
                   height: 35px;
