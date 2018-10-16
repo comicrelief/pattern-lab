@@ -1,8 +1,23 @@
-<h4>Susy grid <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/" target="_blank">toolkit</a></h4>
+{# <h4>Susy grid <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/" target="_blank">toolkit</a></h4>
+ #}
+	<h3>The grid used across our products uses the <strong>Susy</strong> grid-layout engine, to size and position content in a fluid manner based on percentages</h3>
+
+	<h3>We have 3 three breakpoints:</br>
+		- <strong>SM</strong>: 0-739px</br>
+		- <strong>MD</strong>: 740-1023px</br>
+		- <strong>LG</strong>: 1024+px
+	</h3>
+
+{# 	<h3>Example how can you use spans to layout your content</h3>
+ #}
+
 <div class="pl-grid kss-style">
-	<h3>Example how can you use spans to layout your content</h3>
+
+
 	<p>Susy has a few <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/#margins" target="_blank">mixins</a> to deal with the margins and paddings of the spans</p>
+
 	<p>12 columns</p>
+
 	<div class="pl-twelve-cols">
 		<div class="pl-item bg--red">item</div>
 		<div class="pl-item bg--red">item</div>
@@ -17,7 +32,9 @@
 		<div class="pl-item bg--red">item</div>
 		<div class="pl-item bg--red">item</div>
 	</div>
+
 	<p>6 by 6 default</p>
+
 	<pre>
 	.pl-item:first-child {
 		@include span(6);
@@ -26,10 +43,12 @@
 		@include span(6);
 	}
 	</pre>
+
 	<div class="pl-six-by-six-normal">
 		<div class="pl-item bg--red">item</div>
 		<div class="pl-item bg--jasper-grey">item</div>
 	</div>
+
 	<p>6 by 6 using no-gutters and <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/#narrow-wide-and-wider" target="_blank">wider</a></p>
 	<pre>
 	.pl-item:first-child {
