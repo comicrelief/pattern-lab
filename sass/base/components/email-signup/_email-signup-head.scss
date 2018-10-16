@@ -84,7 +84,7 @@
   z-index: 102;
 }
 
-.block--cr-email-signup--head.cr-header-email-signup-form {
+.block--cr-email-signup.block--cr-email-signup--head.cr-header-email-signup-form {
   &.visible {
     display: block;
   }
@@ -108,7 +108,7 @@
         @include visuallyhidden;
       }
       input {
-        margin: 30px 0;
+        margin: 0 0 30px 0;
         padding: 15px;
 
         @include breakpoint($screen-md) {
@@ -143,13 +143,17 @@
   .esu-first-success-message,
   .esu-second-success-message {
     p {
-      margin-bottom: 10px;
+      margin: 0 0 30px 0;
       text-align: left;
       color: $colour-white;
     }
   }
-  .esu-title-message p {
+  .cr-email-signup--messages .esu-title-message p {
       @extend h2;
+      margin: 0 0 30px 0 !important;
+  }
+  .esu-privacy-message p {
+    margin-bottom: 0;
   }
   .esu-second-success-message {
     @include span(8);
