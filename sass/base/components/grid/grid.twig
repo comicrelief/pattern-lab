@@ -1,78 +1,104 @@
-{# <h4>Susy grid <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/" target="_blank">toolkit</a></h4>
- #}
-	<h3>The grid used across our products uses the <strong>Susy</strong> grid-layout engine, to size and position content in a fluid manner based on percentages</h3>
-
-	<h3>We have 3 three breakpoints:</br>
-		- <strong>SM</strong>: 0-739px</br>
-		- <strong>MD</strong>: 740-1023px</br>
-		- <strong>LG</strong>: 1024+px
-	</h3>
-
-{# 	<h3>Example how can you use spans to layout your content</h3>
- #}
-
 <div class="pl-grid kss-style">
+  <div class="pl-copy">
+    <h3>Grid</h3>
+    <p>The grid used across all our products uses the <strong>Susy</strong> grid-layout engine, to size and position content in a responsive manner based around percentages within a 12 column grid.</p>
+    <p>This grey wrapper represents our Susy Grid 'container'; 100% width of the available space, with a max-width of 1200px.
+      The grid uses a 12-column layout, with a gutter (margin) down either side of each column. 	
+    </p>
+    <p>Here's 12 different items, each set to be 1 column wide (shown in red) using the 'span' mixin, with their associated gutters (blue):</p>
+  </div>
+  <div class="pl-twelve-cols pl-example">
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+  </div>
+  <div class="pl-copy">
+    <p>And the code we use to lay it out in this way:</p>
+    <pre>
+    	.pl-item {
+    		@include span(1);
+    }
+	</pre>
+	<p></p>
+    <p>Here's 2 items, both set to be 6 columns wide:</p>
+  </div>
+  <div class="pl-six-by-six-normal pl-example">
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--jasper-grey">.pl-item</div>
+  </div>
+  <div class="pl-copy">
+    <pre>
+.pl-item {
+	@include span(6);
+}
+	</pre>
+    <p></p>
+    <p>Here's 2 items- both set to be 6 columns wide again, but using the 'no-gutters' and 'wide' options, which removes both gutters, and adjusts the width on both sides to compensate.</p>
+  </div>
+  <div class="pl-six-by-six pl-example">
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--jasper-grey">.pl-item</div>
+  </div>
+  <div class="pl-copy">
+    <pre>
+.pl-item {
+	@include span(6 no-gutters wide);
+}
+	</pre>
+    <p></p>
+    <p>Finally, here's a 8 and 4 layout, but adding the extra space produced by 'no-gutters' to only the 2nd item, using the 'wider' mixin option on that item:</p>
+  </div>
+  <div class="pl-eight-by-four pl-example">
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--jasper-grey">.pl-item</div>
+  </div>
+  <div class="pl-copy">
+    <pre>
+.pl-item:first-child {
+	@include span(8 no-gutters);
+}
+.pl-item:last-child {
+	@include span(4 no-gutters wider);
+}
+	</pre>
+    <h3>Breakpoints</h3>
+    <p>In addition to the grid, all sites also use the same three breakpoints</br>
+      - <strong>SM</strong>: 0-739px</br>
+      - <strong>MD</strong>: 740-1023px</br>
+      - <strong>LG</strong>: 1024+px
+    </p>
+    <p>We're able to change our items are laid-out per breakpoint, using media queries in conjunction with the 'span' mixin. Here's 3 different way to layout a 4 item row, resize your browser to see it in action:
+    </p>
+  </div>
+  <div class="pl-breakpoints pl-example">
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--jasper-grey">.pl-item</div>
+    <div class="pl-item bg--red">.pl-item</div>
+    <div class="pl-item bg--jasper-grey">.pl-item</div>
+  </div>
+  <div class="pl-copy">
+    <pre>
+.pl-item {
+	// Mobile-first
+	@include span(12);
 
-
-	<p>Susy has a few <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/#margins" target="_blank">mixins</a> to deal with the margins and paddings of the spans</p>
-
-	<p>12 columns</p>
-
-	<div class="pl-twelve-cols">
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--red">item</div>
-	</div>
-
-	<p>6 by 6 default</p>
-
-	<pre>
-	.pl-item:first-child {
+	@include breakpoint($screen-md) {
 		@include span(6);
 	}
-	.pl-item:last-child {
-		@include span(6);
-	}
-	</pre>
 
-	<div class="pl-six-by-six-normal">
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--jasper-grey">item</div>
-	</div>
-
-	<p>6 by 6 using no-gutters and <a class="link" href="http://susydocs.oddbird.net/en/latest/toolkit/#narrow-wide-and-wider" target="_blank">wider</a></p>
-	<pre>
-	.pl-item:first-child {
-		@include span(6 no-gutters wide);
+	@include breakpoint($screen-lg) {
+		@include span(3);
 	}
-	.pl-item:last-child {
-		@include span(6 no-gutters wide);
-	}
+}
 	</pre>
-	<div class="pl-six-by-six">
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--jasper-grey">item</div>
-	</div>
-	<p>8 by 4</p>
-	<pre>
-	.pl-item:first-child {
-		@include span(8 no-gutters);
-	}
-	.pl-item:last-child {
-		@include span(4 no-gutters wider);
-	}
-	</pre>
-	<div class="pl-eight-by-four">
-		<div class="pl-item bg--red">item</div>
-		<div class="pl-item bg--jasper-grey">item</div>
-	</div>
+  </div>
 </div>
