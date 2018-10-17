@@ -71,12 +71,10 @@
   &.block--cr-email-signup--error.block--cr-email-signup {
     .esu-errors.messages.messages--error {
       position: relative;
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 10px;
+      margin: 0 1.25% 10px;
       padding: 0 0 0 40px;
       max-width: 100%;
-      background: $colour-black url($image-path + "error-icon.png") 0 center/4% no-repeat;
+      background: $colour-black url($image-path + "error-icon.png") 0 center/1em no-repeat;
       text-align: left;
     }
   }
