@@ -9,6 +9,10 @@
 // Style guide: 120.1
 
 
+// prevent body from scrolling when esu popup is visible
+.js-esu-head-noscroll {
+  overflow: hidden;
+}
 //hide esu form initially
 .block--cr-email-signup.block--cr-email-signup--head,
 .block--cr-email-signup.block--cr-email-signup--head.block--cr-email-signup--error {
