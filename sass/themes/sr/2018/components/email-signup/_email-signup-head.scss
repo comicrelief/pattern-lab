@@ -7,4 +7,9 @@
     @extend .btn--ruby;
     margin: 0 0 30px 0 !important;
   }
+  &.block--cr-email-signup--error.block--cr-email-signup {
+    .esu-errors.messages.messages--error {
+      background-color: $colour-dark-blue;
+    }
+  }
 }    
