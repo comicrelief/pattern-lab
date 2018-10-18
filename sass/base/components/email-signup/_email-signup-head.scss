@@ -44,7 +44,7 @@
       padding: 55px;
       width: 50%;
     }
-    @include breakpoint($desktop-nav-breakpoint) {
+    @include breakpoint($screen-lg) {
       top: 109px;
     }
 
@@ -138,7 +138,7 @@
 
   input[type=submit].button {
     @extend .btn;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   .esu-title-message,
@@ -154,7 +154,6 @@
   }
   .cr-email-signup--messages .esu-title-message p {
       @extend h2;
-      margin: 0 0 30px 0 !important;
   }
   .esu-privacy-message p {
     margin-bottom: 0;
