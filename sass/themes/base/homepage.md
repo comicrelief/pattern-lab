@@ -1,4 +1,4 @@
-This Styleguide/Pattern Library is built using the KSS Pattern Lab Node module- it documents the layouts, design patterns and components used across our sites, as well as the Sass variables, functions and mixins they use.
+This styleguide/pattern library is built using the KSS pattern lab Node module- it documents the layouts, design patterns and components used across our sites, as well as the Sass variables, functions and mixins they use.
 
 <p><a href="cr/index.html" class="link link--red">ComicRelief.com styleguide</a></p>
 <p><a href="rnd/index.html" class="link link--red">RedNoseDay.com styleguide</a></p>
