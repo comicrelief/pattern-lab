@@ -1,3 +1,3 @@
 
-##### RND Styleguide
+##### RedNoseDay.com Styleguide
 ===========================
