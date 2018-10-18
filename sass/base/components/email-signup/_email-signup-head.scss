@@ -47,6 +47,9 @@
     @include breakpoint($screen-lg) {
       top: 109px;
     }
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: 109px;
+    }
 
     a.close-button {
       position: absolute;
