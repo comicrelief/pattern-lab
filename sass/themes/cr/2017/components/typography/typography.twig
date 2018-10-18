@@ -1,13 +1,13 @@
 <style>
-.screen-desktop, .screen-medium {display:none}
-.screen-small{display:inline-block}
+.breakpoint-lg, .breakpoint-md{display:none}
+.breakpoint-sm{display:inline-block}
 @media (min-width: 740px){
-  .screen-medium {display:inline-block}
-  .screen-small, .screen-desktop {display:none}
+  .breakpoint-md{display:inline-block}
+  .breakpoint-sm, .breakpoint-lg {display:none}
 }
 @media (min-width: 1024px){
-  .screen-desktop {display:inline-block}
-  .screen-small, .screen-medium {display:none}
+  .breakpoint-lg {display:inline-block}
+  .breakpoint-sm, .breakpoint-md{display:none}
 }
 </style>
 <p>Comic Relief uses Sailec. This is used for headings and body copy in a number of weights</p>
@@ -36,41 +36,41 @@
 
 <h1 class="font--xlarge">Header 1</h1>
 <p>.font--xlarge, 
-  <span class="breakpoints screen-desktop">size: 83px, line height: 83px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 74px, line height: 75px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 66px, line height: 68px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 83px, line height: 83px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 74px, line height: 75px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 66px, line height: 68px, breakpoint: : sm</span>
 </p>
 
 <h1 class="font--large">Header 1</h1>
 <p>.font--large,
-  <span class="breakpoints screen-desktop">size: 58px, line height: 62px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 52px, line height: 57px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 41px, line height: 48px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 58px, line height: 62px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 52px, line height: 57px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 41px, line height: 48px, breakpoint: : sm</span>
 <p>
 <h2>Header 2</h2>
 <p>
-  <span class="breakpoints screen-desktop">size: 41px, line height: 48px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 36px, line height: 44px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 32px, line height: 41px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 41px, line height: 48px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 36px, line height: 44px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 32px, line height: 41px, breakpoint: : sm</span>
 </p>
 
 <h3>Header 3</h3>
 <p>
-  <span class="breakpoints screen-desktop">size: 26px, line height: 35px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 26px, line height: 35px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 29px, line height: 38px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 26px, line height: 35px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 26px, line height: 35px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 29px, line height: 38px, breakpoint: : sm</span>
 </p>
 <h4>Header 4</h4>
 <p>
-  <span class="breakpoints screen-desktop">size: 20px, line height: 31px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 20px, line height: 31px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 23px, line height: 33px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 20px, line height: 31px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 20px, line height: 31px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 23px, line height: 33px, breakpoint: : sm</span>
 </p>
 <h5>Header 5</h5>
 <p>
-  <span class="breakpoints screen-desktop">size: 18px, line height: 29px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 18px, line height: 29px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 20px, line height: 31px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 18px, line height: 29px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 18px, line height: 29px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 20px, line height: 31px, breakpoint: : sm</span>
 </p>
 <br/>
 <br/>
@@ -78,33 +78,33 @@
 <h3>Paragraphs</h3>
 <p class="font--xlarge">Lorem ipsum dolor sit amet.</p>
 <p>.font--xlarge, 
-  <span class="breakpoints screen-desktop">size: 23px, line height: 33px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 23px, line height: 28px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 23px, line height: 28px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 23px, line height: 33px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 23px, line height: 28px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 23px, line height: 28px, breakpoint: : sm</span>
 </p>
 <p class="font--large">Lorem ipsum dolor sit amet.</p>
 <p>.font--large,
-  <span class="breakpoints screen-desktop">size: 20px, line height: 31px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 20px, line height: 31px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 20px, line height: 31px, breakpoint: small</span>
+  <span class="breakpoint-lg">size: 20px, line height: 31px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 20px, line height: 31px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 20px, line height: 31px, breakpoint: : sm</span>
 </p>
 <p>Lorem ipsum dolor sit amet.</p>
-<p><span class="breakpoints screen-desktop">size: 18px, line height: 29px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 18px, line height: 29px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 18px, line height: 29px, breakpoint: small</span> 
+<p><span class="breakpoint-lg">size: 18px, line height: 29px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 18px, line height: 29px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 18px, line height: 29px, breakpoint: : sm</span> 
 </p>
 <p class="font--small">Lorem ipsum dolor sit amet.</p>
 <p class="font--small">.font--small,
-<span class="breakpoints screen-desktop">size: 16px, line height: 27px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 16px, line height: 27px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 16px, line height: 27px, breakpoint: small</span> 
+<span class="breakpoint-lg">size: 16px, line height: 27px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 16px, line height: 27px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 16px, line height: 27px, breakpoint: : sm</span> 
 </p>
 
 <p class="font--xsmall">Lorem ipsum dolor sit amet.</p>
 <p class="font--xsmall">.font--xsmall,
-<span class="breakpoints screen-desktop">size: 14px, line height: 26px, breakpoint: large</span>
-  <span class="breakpoints screen-medium">size: 14px, line height: 26px, breakpoint: medium</span>
-  <span class="breakpoints screen-small">size: 14px, line height: 26px, breakpoint: small</span>
+<span class="breakpoint-lg">size: 14px, line height: 26px, breakpoint: lg</span>
+  <span class="breakpoint-md">size: 14px, line height: 26px, breakpoint: md</span>
+  <span class="breakpoint-sm">size: 14px, line height: 26px, breakpoint: : sm</span>
 </p>
 <br/>
 <p class="font--red">Red font <i>.font--red</i> There are a range of paragraph sizes, using the typographic scale.</p>
