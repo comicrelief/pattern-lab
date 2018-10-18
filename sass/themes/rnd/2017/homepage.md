@@ -1,3 +1,3 @@
 
-##### RedNoseDay.com Styleguide
-===========================
+##### RedNoseDay.com styleguide
+===============================

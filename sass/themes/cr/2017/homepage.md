@@ -1,3 +1,3 @@
 
-##### CR.com Styleguide
-===========================
+##### ComicRelief.com styleguide
+================================

@@ -1,4 +1,14 @@
-This styleguide/pattern library is built using the KSS pattern lab Node module- it documents the layouts, design patterns and components used across our sites, as well as the Sass variables, functions and mixins they use.
+# Comic Relief Pattern Library
+
+This styleguide/pattern library is built using the KSS pattern lab Node module, documenting the layouts, design patterns and components used across our sites and products.
+
+
+##### Base theme styleguide
+===========================
+
+The navigation on the left links to the core components that make up the base theme, common elements that we need in every site/product.
+
+Each site/product has a subtheme (linked below) which inherits a lot of these core styles and components, imported on a need-to-have basis. In addition to this, they also include any new product-specific components or overrides.
 
 <p><a href="cr/index.html" class="link link--red">ComicRelief.com styleguide</a></p>
 <p><a href="rnd/index.html" class="link link--red">RedNoseDay.com styleguide</a></p>
