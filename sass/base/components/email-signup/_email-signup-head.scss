@@ -107,7 +107,6 @@
 
   form {
     .form-item-email {
-      float: none;
       margin: 0;
       width: 100%;
 
@@ -119,7 +118,7 @@
         padding: 15px;
 
         @include breakpoint($screen-md) {
-          max-width: initial;
+          max-width: 500pxx;
         }
       }
     }
