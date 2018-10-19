@@ -1,5 +1,5 @@
 
-##### Frost Styleguide
+##### Frost/Giving Pages Styleguide
 
 
 * [Comic Relief registration journey](https://giving.comicrelief.com/registration)
