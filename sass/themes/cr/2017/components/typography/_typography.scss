@@ -4,6 +4,20 @@
 //
 // Style guide: 10.1
 
+h1 {
+  &.font--xlarge{ 
+    @include font-size($h1-large-font-size);
+  }
+}
+
+h2{ 
+  font-family: $font-regular;
+}
+
+h5{ 
+  @include font-size($h5-font-size);
+}
+
 h1,
 h2,
 h3,
@@ -61,6 +75,12 @@ i.font--family-regular {
 }
 .font--family-regular {
 	font-family: $font-regular;
+}
+.font--family-light {
+	font-family: $font-light;
+}
+.font--family-medium {
+	font-family: $font-medium;
 }
 strong {
   font-family: $font-bold;
