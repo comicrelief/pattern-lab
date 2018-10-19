@@ -1,6 +1,6 @@
 
-##### Shop Styleguide
-===========================
+##### Shop styleguide
+=====================
 
 This consistutes the styles required for Shop- the compiled CSS will deployed to an S3 bucket on each deploy, ensuring the team building the shop can use the most up-to-date styles possible.
 

@@ -1,11 +1,19 @@
+# Comic Relief Pattern Library
+
+This styleguide/pattern library is built using the KSS pattern lab Node module, documenting the layouts, design patterns and components used across our sites and products.
 
 
-This web site is built using Sass and component-based styles. This front-end style guide documents the design components and the Sass variables, functions and mixins used to build the site.
+##### Base theme styleguide
+===========================
 
-<p><a href="cr/index.html" class="link link--red">CR Styleguide</a></p>
-<p><a href="frost/index.html" class="link link--red">Frost Styleguide</a></p>
-<p><a href="payin/index.html" class="link link--red">Payin Styleguide</a></p>
-<p><a href="donate/index.html" class="link link--red">Donate Styleguide</a></p>
-<p><a href="rnd/index.html" class="link link--red">RND Styleguide</a></p>
-<p><a href="sr/index.html" class="link link--red">SR Styleguide</a></p>
-<p><a href="shop/index.html" class="link link--red">Shop Styleguide</a></p>
+The navigation on the left links to the core components that make up the base theme, common elements that we need in every site/product.
+
+Each site/product has a subtheme (linked below) which inherits a lot of these core styles and components, imported on a need-to-have basis. In addition to this, they also include any new product-specific components or overrides.
+
+<p><a href="cr/index.html" class="link link--red">ComicRelief.com styleguide</a></p>
+<p><a href="rnd/index.html" class="link link--red">RedNoseDay.com styleguide</a></p>
+<p><a href="sr/index.html" class="link link--red">SportRelief.com styleguide</a></p>
+<p><a href="frost/index.html" class="link link--red">Frost/Giving Pages styleguide</a></p>
+<p><a href="payin/index.html" class="link link--red">Payin styleguide</a></p>
+<p><a href="donate/index.html" class="link link--red">Donate styleguide</a></p>
+<p><a href="shop/index.html" class="link link--red">Shop styleguide</a></p>
