@@ -1,52 +1,132 @@
-<p>The SR18 font is Founders Grotesk. This is used for headings and body copy in a number of weights (Black, Bold and Regular).</p>
-<h2>Fonts</h2>
-<p>The SR18 font is Founders Grotesk. This is used for headings and body copy in a number of weights (Black, Bold and Regular).</p>
-<h3 class="font--family-black">Black</h3>
+<style>
+.breakpoint-lg, .breakpoint-md{display:none}
+.breakpoint-sm{display:inline-block}
+@media (min-width: 740px){
+  .breakpoint-md{display:inline-block}
+  .breakpoint-sm, .breakpoint-lg {display:none}
+}
+@media (min-width: 1024px){
+  .breakpoint-lg {display:inline-block}
+  .breakpoint-sm, .breakpoint-md{display:none}
+}
+</style>
+<p>Sport Relief uses Founders Grotesk. This is used for headings and body copy in a number of weights</p>
+<h3>Fonts</h3>
+<h1 class="font--family-black">Black</h1>
 <p>Founders Grotesk X Condensed Bold <b>.font--family-black</b></p>
-<h3 class="font--family-bold">Bold</h3>
+<h1 class="font--family-bold">Bold</h1>
 <p>Founders Grotesk Semibold <b>.font--family-bold</b></p>
-<h3 class="font--family-regular">Regular</h3>
+<h1 class="font--family-regular">Regular</h1>
 <p>Founders Grotesk Regular <b>.font--family-regular</b></p>
 <br>
 <br>
 <br>
-<h2>Type Sizes</h2>
+<h3>Type Sizes</h3>
 <p>All type sizes and line heights come from a typographic scale, which has a base copy size of 20px.</p>
 <br>
 <br>
+<br>
 <h3>Headings</h3>
-<p>There are a range of heading sizes from H1 to H5, using the typographic scale.</p>
-<h1 class="font--large">This is fun, right?</h1>
-<p><b>h1.font--large:</b> Used mainly for headers on landing pages</p>
-<h1>This is fun, right?</h1>
-<p><b>h1:</b> Used in secondary page headers</p>
-<h1 class="alternate">This is fun, right?</h1>
-<p><b>h1.alternate:</b> Bespoke for OTN homepage</p>
-<h2>This is fun, right?</h2>
-<p><b>h2:</b> Used within pages, normally as row headings</p>
-<h3 class="alternate">This is fun, right?</h3>
-<p><b>h3.alternate:</b> Same styling as h2</p>
-<h3>This is fun, right?</h3>
-<p><b>h3:</b> Used within pages</p>
-<h4>This is fun, right?</h4>
-<p><b>h4:</b> Used within pages</p>
-<h5>This is fun, right?</h5>
-<p><b>h5:</b> Used within pages</p>
+<p>There are a range of heading sizes from H1 to H5, using the typographic scale. According to the typographic scale set the heading change sizes responsively for different media devices.</p>
+<h1 class="font--large">Header 1</h1>
+<p>
+  <span><b>.font--large</b> (Used for headers on landing pages)<br/></span>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 167px / line-height: 125px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 132px / line-height: 99px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 65px / line-height: 49px</span>
+</p>
+<h1>Header 1</h1>
+<p>
+  <span>(Used in secondary page headers) <br/><span>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 117px / line-height: 88px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 92px / line-height: 69px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 58px / line-height: 43px</span>
+</p>
+
+<h1 class="alternate">Header 1</h1>
+<p>
+  <span><b>.alternate</b> (Bespoke for OTN homepage)<br/></span>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 66px / line-height: 66px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 52px / line-height: 55px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 30px / line-height: 32px</span>
+</p>
+
+<h2>Header 2</h2>
+<p>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 36px / line-height: 40px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 32px / line-height: 35px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 28px / line-height: 31px</span>
+</p>
+<h3 class="alternate">Header 3</h3>
+<p>
+  <span><b>.alternate</b><br/></span>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 36px / line-height: 40px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 32px / line-height: 35px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 28px / line-height: 31px</span>
+</p>
+<h3>Header 3</h3>
+<p>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 28px / line-height: 31px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 25px / line-height: 28px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 23px / line-height: 25px</span>
+</p>
+<h4>Header 4</h4>
+<p>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 23px / line-height: 25px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 20px / line-height: 22px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 18px / line-height: 20px</span>
+</p>
+<h5>Header 5</h5>
+<p>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 18px / line-height: 20px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 16px / line-height: 17px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 16px / line-height: 17px</span>
+</p>
 <br/>
 <br/>
 <h3>Paragraphs</h3>
-<p class="font--xxlarge">There are a range of paragraph sizes, using the typographic scale.</p>
-<p>xxlarge font size <b>.font--xxlarge</b> </p>
-<p class="font--xlarge">There are a range of paragraph sizes, using the typographic scale.</p>
-<p>xlarge font size <b>.font--xlarge</b></p>
-<p class="font--large">There are a range of paragraph sizes, using the typographic scale.</p>
-<p>large font size <b>.font--large</b></p>
-<p class="font--small">There are a range of paragraph sizes, using the typographic scale.</p>
-<p>small font size <b>.font--small</b></p>
-<p class="font--xsmall">There are a range of paragraph sizes, using the typographic scale.</p>
-<p>xsmal font size <b>.font--xsmall</b></p>
-<p class="font--xxsmall">There are a range of paragraph sizes, using the typographic scale.</p>
-<p>xxsmall font size <b>.font--xxsmall</b></p>
+<p class="font--xxlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p><b>.font--xxlarge</b><br/>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 36px / line-height: 47px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 36px / line-height: 47px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 32px / line-height: 42px</span>
+</p>
+<p class="font--xlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p><b>.font--xlarge</b><br/>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 28px / line-height: 37px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 28px / line-height: 37px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 23px / line-height: 33px</span>
+</p>
+<p class="font--large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p><b>.font--large</b><br/>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 23px / line-height: 29px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 23px / line-height: 29px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 23px / line-height: 29px</span>
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 20px / line-height: 26px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 20px / line-height: 26px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 20px / line-height: 26px</span>
+</p>
+<p class="font--small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="font--small"><b>.font--small</b><br/>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 18px / line-height: 23px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 18px / line-height: 23px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 18px / line-height: 23px</span>
+</p>
+<p class="font--xsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="font--xsmall"><b>.font--xsmall</b><br/>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 16px / line-height: 21px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 16px / line-height: 21px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 16px / line-height: 21px</span>
+</p>
+<p class="font--xxsmall">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="font--xxsmall"><b>.font--xxsmall</b><br/>
+  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: 14px / line-height: 18px</span>
+  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: 14px / line-height: 18px</span>
+  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: 14px / line-height: 18px</span>
+</p>
 <br>
 <br>
 <p class="font--black">Black font <b>.font--black</b> There are a range of paragraph sizes, using the typographic scale.</p>
