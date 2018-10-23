@@ -29,6 +29,10 @@
     right: 0;
   }
 
+  .cc-banner--visible & {
+    top: 68px;
+  }
+
   .block--cr-email-signup__inner-wrapper {
     position: relative;
     overflow-y: auto;
