@@ -1,5 +1,13 @@
 .block--cr-email-signup--head.cr-header-email-signup-form,
 .block--cr-email-signup--head.block--cr-email-signup--error.cr-header-email-signup-form {
+
+  .cc-banner--visible & {
+    top: 62px;
+
+    @include breakpoint($screen-md) {
+      top: 14px;
+    }
+  }
   .block--cr-email-signup__inner-wrapper {
     background-color: $colour-dark-blue;
   }
