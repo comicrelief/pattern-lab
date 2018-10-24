@@ -13,6 +13,11 @@
 .js-esu-head-noscroll {
   position: fixed;
   overflow: hidden;
+
+  @include breakpoint($screen-lg) {
+    position: relative;
+    overflow: auto;
+  }
 }
 
 //hide esu form initially
