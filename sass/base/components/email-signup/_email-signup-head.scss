@@ -11,16 +11,8 @@
 
 // prevent body from scrolling when esu popup is visible
 .js-esu-head-noscroll {
-  position: relative;
+  position: fixed;
   overflow: hidden;
-
-  // cookie banner fixes
-  .cc_banner-wrapper {
-    position: fixed;
-    @include breakpoint($screen-md) {
-      position: relative;
-    }
-  }
 }
 //hide esu form initially
 .block--cr-email-signup.block--cr-email-signup--head,
