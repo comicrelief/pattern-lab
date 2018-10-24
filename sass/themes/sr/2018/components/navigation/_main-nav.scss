@@ -458,25 +458,18 @@ header[role=banner] {
       }
     }
     &.active {
-      height: calc(#{$sm-nav-height} + 20px);
+      height: $sm-nav-height;
       background-color: $colour-dark-blue;
       .path-search & {
-        height: $sm-nav-height;
         &.meta-icons__magnify {
           background-color: transparent;
         }
       }
       @include breakpoint($screen-md) {
-        height: calc(#{$md-nav-height} + 20px);
-        .path-search & {
-          height: $md-nav-height;
-        }
+       height: $md-nav-height;
       }
       @include breakpoint($desktop-nav-breakpoint) {
-        height: calc(#{$lg-nav-height} + 20px);
-        .path-search & {
-          height: $lg-nav-height;
-        }
+        height: $lg-nav-height;
       }
       .icon {
         fill: $colour-white;
