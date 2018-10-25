@@ -120,16 +120,22 @@ https://ci.services.comicrelief.com/teams/main/pipelines/pattern-lab
  ## Visual Regression
 - We're using [BackstopJS](https://github.com/garris/BackstopJS)
 - CI runs tests on pull request
-- backstop.json contains configration, currently the tests check against production
+- Currently the test check against dist/index.html and has the latest changes from master as reference in `test/visual/reference`.
+- See configuration in backstop.json:
 ```
 "url": "dist/index.html",
-"referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
 ```
-- Run visual regression test locally 
+- Run visual regression test locally:
 ```
 yarn backstop-test-local
 ```
-- View pass/fail report in http://pattern-lab-visual-regression.netlify.com/html_report/
+- This will open the pass/fail report from `/tests/visual/html_report/index.html` in your browser.
+- If the test fails, but the changes were inteded you can approve the test and use your changes as the new reference:
+```
+yarn backstop approve
+```
+- Run the test locally again and it should pass now.
+- Commit the new reference files.
 
 [npm-image]: https://badge.fury.io/js/%40comicrelief%2Fpattern-lab.svg
 [npm-url]: https://www.npmjs.com/package/@comicrelief/pattern-lab
