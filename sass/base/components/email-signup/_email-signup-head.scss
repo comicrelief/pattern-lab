@@ -2,7 +2,6 @@
 //
 // Style guide: 120
 
-
 // Email sign up header
 //
 // Markup: email-signup-header.twig
@@ -10,76 +9,52 @@
 // Style guide: 120.1
 
 
+// prevent body from scrolling when esu popup is visible
+.js-esu-head-noscroll {
+  position: fixed;
+  overflow: hidden;
+}
+
 //hide esu form initially
-.block--cr-email-signup--head {
+.block--cr-email-signup.block--cr-email-signup--head,
+.block--cr-email-signup.block--cr-email-signup--head.block--cr-email-signup--error {
   display: none;
-  position: relative;
-  z-index: 101;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.5);
 
   @include breakpoint($screen-lg) {
-    position: absolute;
-  }
-  @include breakpoint($desktop-nav-breakpoint) {
-    &.block--cr-email-signup {
-      width: auto;
-      right: 0;
-    }
+    left: 0;
+    right: 0;
   }
 
-  &.block--cr-email-signup--error.block--cr-email-signup {
-    @include breakpoint($screen-md) {
-      .esu-errors.messages.messages--error {
-        position: relative;
-        top: auto;
-        width: 100%;
-        max-width: 100%;
-      }
-      .block--cr-email-signup__inner-wrapper {
-        padding: 25px 0;
-      }
-    }
-    .esu-errors.messages.messages--error {
-      margin-top: 0;
-    }
+  .cc-banner--visible & {
+    top: 68px;
   }
-  button.esu-head-close {
-    background: none;
-    border: none;
-  }
-}
 
-.ui-selectmenu-menu {
-  z-index: 102;
-}
-.block--cr-email-signup--head.cr-header-email-signup-form {
-  &.show {
-    display: block;
-  }
   .block--cr-email-signup__inner-wrapper {
-    position: absolute;
+    position: relative;
+    overflow-y: auto;
     top: 0;
     right: 0;
     width: 100%;
-    margin: 0;
+    margin: 0 0 60px 0;
+    padding: 35px;
     background-color: $colour-black;
     @include breakpoint($screen-md) {
-      right: 65px;
-      width: 350px;
-      padding: 25px 0;
-      .form-item-school-phase {
-        width: 240px;
-        margin-right: 0;
-        margin-left: 0;
-      }
+      top: 78px;
+      left: 25%;
+      padding: 55px;
+      width: 50%;
     }
     @include breakpoint($screen-lg) {
-      top: 78px;
-      right: 65px;
+      top: 109px;
     }
     @include breakpoint($desktop-nav-breakpoint) {
-      top: 103px;
-      right: 0;
-      padding: 25px 0;
+      top: 109px;
     }
 
     a.close-button {
@@ -105,38 +80,56 @@
       }
     }
   }
-  .cr-email-signup--messages {
-    float: none;
-    width: 220px;
-    height: 100%;
-    margin: 0 auto;
-  }
-  form {
-    width: 300px;
-    margin: 0 auto;
-  }
-  .form-item-email,
-  .form-item-school-phase {
-    width: 240px;
-    select {
-      width: 240px;
+
+  &.block--cr-email-signup--error.block--cr-email-signup {
+    .esu-errors.messages.messages--error {
+      position: relative;
+      margin: 0 2px 10px;
+      padding: 0 0 0 25px;
+      max-width: 100%;
+      background: $colour-black url($image-path + "error-icon.png") 0 top/1em no-repeat;
+      text-align: left;
     }
   }
-  // Show this label, as the field doesnt make sense without it...
-  .form-item-school-phase label {
-    top: -20px;
-    right: 15px;
-    clip: auto;
+}
+
+.ui-selectmenu-menu {
+  z-index: 102;
+}
+
+.block--cr-email-signup.block--cr-email-signup--head.cr-header-email-signup-form {
+  &.visible {
+    display: block;
+  }
+  .cr-email-signup--messages {
     width: auto;
-    height: auto;
-    height: auto;
-    color: white;
-    font-size: 14px;
+    height: 100%;
+    margin: 0;
+
+    @include breakpoint($screen-md) {
+      max-width: initial;
+    }
   }
-  .js-form-item-email label {
-    @include visuallyhidden;
+
+  form {
+    .form-item-email {
+      margin: 0;
+      width: 100%;
+
+      label {
+        @include visuallyhidden;
+      }
+      input {
+        margin: 0 0 30px 0;
+        padding: 15px;
+
+        @include breakpoint($screen-md) {
+          max-width: 500pxx;
+        }
+      }
+    }
   }
-  .js-form-item-email,
+
   .js-form-type-select {
     margin: 0;
     input,
@@ -150,37 +143,28 @@
   .js-form-type-select {
     margin-top: 25px;
   }
-  input[type=submit].button {
-    width: 60px;
-    margin: 0;
-    text-indent: -9999px;
-    background: $colour-gainsboro-grey url( $image-path + "arrow-right.svg") -4px center no-repeat;
-    @include breakpoint($screen-md) {
-      //width: 100%;
-    }
-    &.step2 {
-      margin-top: 25px;
-    }
 
-    &:focus {
-      border: 3px solid $colour-red;
-    }
+  input[type=submit].button {
+    @extend .btn;
+    margin-bottom: 40px;
   }
-  .form-submit.step1,
-  .form-submit.step2 {
-    margin-top: 0;
-    border-radius: 0 36px 36px 0;
-  }
+
+  .esu-title-message,
   .esu-initial-message,
+  .esu-privacy-message,
   .esu-first-success-message,
   .esu-second-success-message {
     p {
-      margin-bottom: 10px;
-      text-align: center;
-      // Strongarm h4 extend into a new colour
-      color: $colour-white !important;
-      @extend h4;
+      margin: 0 0 30px 0;
+      text-align: left;
+      color: $colour-white;
     }
+  }
+  .cr-email-signup--messages .esu-title-message p {
+      @extend h2;
+  }
+  .esu-privacy-message p {
+    margin-bottom: 0;
   }
   .esu-second-success-message {
     @include span(8);

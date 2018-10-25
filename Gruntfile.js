@@ -291,7 +291,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss/builder',
           title: 'PatternLab',
-          css: 'css/themes/base/base.css'
+          css: ['css/themes/base/base.css', '../css/kss/base.css']
         },
         src: ['sass/base', 'sass/themes/base'],
         dest: 'dist'
@@ -301,7 +301,7 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss/builder',
           title: 'Comic Relief PatternLab',
-          css: '../css/themes/cr/2017/cr17.css'
+          css: ['../css/themes/cr/2017/cr17.css', '../css/kss/cr.css'],
         },
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
