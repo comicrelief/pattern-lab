@@ -2,7 +2,7 @@
 // KSS styles
 // ==========================================================================
 
-#kss-node .kss-sidebar {
+#kss-node .kss-sidebar, #kss-node .kss-nav__menu-child {
     background: #1e1e1e;
 }
 
@@ -25,3 +25,5 @@
 .kss-modifier__example header[role=banner].sticky-nav__header {
   position: relative;
 }
+
+

@@ -189,20 +189,16 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
     .kss-main,
     .kss-sidebar {
-      float: left;
-      margin-right: -100%;
       box-sizing: border-box;
     }
   }
 
   .kss-main {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px 0 30px;
+    padding: 0 20px;
+    margin-top:20px;
 
     @media screen and (min-width: 769px) {
-      width: 80%;
-      margin-left: 20%;
+      margin-top: 130px;
     }
 
     a.link--red {
@@ -221,9 +217,9 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   .kss-title--level-1 {
     background-color: #df1a40;
     margin-top: 0;
-    padding: 20px 20px 20px 30px;
+    padding: 20px;
     text-transform: uppercase;
-    margin: 0 -30px;
+    width: 100%;
     a {
       color: #fff;
     }
@@ -237,16 +233,17 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   }
 
   .kss-sidebar {
+    position: relative;
+    width: 100%;
+    min-height: 80px;
+    padding: 20px 10px 20px 20px;
     border-bottom:1px solid #ddd;
     background: #29022c;
+    z-index: 99;
 
     @media screen and (min-width: 769px) {
       position: fixed;
-      width: 20%;
-      height: 100%;
-      overflow: auto;
-      padding: 0 10px 0 20px;
-      border-bottom: 0;
+      top: 0;
     }
   }
 }
@@ -265,11 +262,51 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     }
   }
 
-  .kss-header,
+  .kss-header {
+    float: left;
+  }
+
   .kss-nav {
+    width: 100%;
+    clear: both;
+
     @media screen and (min-width: 769px) {
-      margin-top: 2em;
+      float: left;
+      width: auto;
+      clear: none;
     }
+  }
+
+  .kss-menu-button {
+    display: block;
+    float:right;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: 2.8em;
+    font-weight: bold;
+
+    @media screen and (min-width: 769px) {
+        display: none;
+    }
+
+    &:before {
+      position: absolute;
+      content: '\2630'; /* menu icon */
+      right: 20px;
+    }
+
+    &.kss-menu-button--close {
+      &:before {
+        content: '\0002DF'; /* close */
+        font-size: 3em;
+        margin-top: 20px;
+      }
+    }
+
+    span {
+      display: none;
+    }
+    
   }
 
   .kss-nav__menu {
@@ -277,66 +314,132 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     margin-bottom: ($kss-vertical-rhythm/2);
     padding: 0;
     list-style-type: none;
+    display: none;
+    
+    @media screen and (min-width: 769px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    &.kss-nav__menu--visible {
+      display: block;
+
+      @media screen and (min-width: 769px) {
+        display: block;
+      }
+    }
   }
 
   .kss-nav__menu-item {
-    display: inline-block;
-    padding-right: $kss-vertical-rhythm;
+    display: block;
+    margin-bottom: 10px;
 
     @media screen and (min-width: 769px) {
-      display: list-item;
-      padding-right: 0;
+
+      padding-right: 25px;
+      margin-bottom: 0;
     }
-  }
 
-  .kss-nav__menu-link {
-    position: relative;
-    display: inline-block;
-    font-size: 18px;
+    &.kss-nav__menu-item--active {
+      > .kss-nav__menu-link { 
+        border-bottom: 3px solid #ffffff;
+        position: relative;
+          &:after {
+            content: "\2303";
+            right: -17px;
+            top: 0;
+            position: absolute;
+            font-family: Arial;
+            font-weight:bold;
+            color: #ffffff;
+            font-size: 18px;
+            transform:rotate(180deg);
+          }
+      }
+      
+      .kss-nav__menu-child {
+        width: 100%;
+        background: #29022c;
+        padding-left: 0;
+        display: block;
 
-    &:before {
-      @media screen and (min-width: 769px) {
-        content: ' ';
-        position: absolute;
-        left: -20px;
-        width: 0;
-        height: 100%;
-        background-color: rgba(#000, 0);
+        @media screen and (min-width: 769px) {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          margin: 0;
+          padding: 30px 20px 20px;
+          list-style-type: none;
+          display:none;
+        }
+      
+        .kss-nav__menu-item {
+          width: 47%;
+          display: inline-block;
+          padding-left: 0;
+          vertical-align: top;
+    
+          @media screen and (min-width: 769px) {
+            width: 33%;
+          }
+          @media screen and (min-width: 1024px) {
+            width: 25%;
+          }
+        }
+      
+        .kss-nav__menu-link {
+          font-size: 15px;
+          color: #ac9dad;
+        }
+      }
+      &:hover, &:active {
+        .kss-nav__menu-child {
+
+          @media screen and (min-width: 769px) {
+            display: flex;
+            justify-content: flex-start;
+            flex-flow: row wrap;
+            align-items: stretch;
+          }
+        }
       }
     }
 
-    &.is-in-viewport:before {
-      background-color: #fff;
-      width: 5px;
-      transition: background-color .4s, width .6s;
-    }
-  }
-
-  .kss-nav__menu-child {
-    display: none;
-
-    @media screen and (min-width: 769px) {
-      display: block;
-      list-style-type: none;
-      margin: 0;
-      padding: 0 0 0 10px;
-
-      // @TODO: The ul is output even when there are no children. Fix this, so
-      // we can put these :first-child and :last child styles back on the ul.
-      li:first-child {
-        padding: 10px 0 0;
-      }
-
-      li:last-child {
-        padding: 0 0 10px;
-      }
+    &:last-child {
+     padding-right: 0;
     }
 
     .kss-nav__menu-link {
-      font-size: 15px;
-      color: #ac9dad;
+      position: relative;
+      display: inline-block;
+      font-size: 18px;
+  
+      &:before {
+        @media screen and (min-width: 769px) {
+          content:none;
+          position: absolute;
+          left: -20px;
+          width: 0;
+          height: 100%;
+          background-color: rgba(#000, 0);
+        }
+      }
+      &.is-in-viewport {
+         &:before {
+          background-color: #fff;
+          width: 5px;
+          transition: background-color .4s, width .6s;
+         }
+      }
+      span {
+        color: $kss-colors-link;
+      }
     }
   }
+
+  
 
   .kss-nav__ref {
     color: #333;
