@@ -93,6 +93,15 @@ module.exports = function (grunt) {
           dest: 'dist/css/themes/shop/2018',
           ext: '.css'
         }]
+      },
+      kssbase: {
+        files: [{
+          expand: true,
+          cwd: 'sass/kss/kss-assets',
+          src: ['{,**/}*.scss'],
+          dest: 'kss/builder/kss-assets',
+          ext: '.css'
+        }]
       }
     },
 
@@ -450,6 +459,9 @@ module.exports = function (grunt) {
       },
       shop18: {
         src: ['dist/css/kss/shop.css', 'dist/css/themes/shop/**/*.css']
+      },
+      kssbase: {
+        src: ['kss/builder/kss-assets/**/*.css']
       }
     }
   });

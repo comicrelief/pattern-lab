@@ -19,6 +19,9 @@
       <img width="150" src="kss-assets/pattern_logo.png" alt="Home">
     </a>
   </header>
+  <a href="#" class="kss-menu-button">
+    <span>Menu</span>
+  </a>
   <nav class="kss-nav">
     <ul class="kss-nav__menu">
       <li class="kss-nav__menu-item">
@@ -28,7 +31,7 @@
         </a>
       </li>
     {% for menu_item in menu %}
-      <li class="kss-nav__menu-item">
+      <li class="kss-nav__menu-item {% if menu_item.isActive and menu_item.children is not empty %}kss-nav__menu-item--active{% endif %}">
         <a class="kss-nav__menu-link" href="section-{{ menu_item.referenceURI }}.html">
           <span class="kss-nav__ref">{{ menu_item.referenceNumber }}</span><span class="kss-nav__name">{{ menu_item.header }}</span>
         </a>
@@ -253,6 +256,18 @@
   });
 
   $( document ).ready(function() {
+    let menuToggle = document.querySelector('.kss-menu-button');
+    let submenu = document.querySelector('.kss-nav__menu-item--active > a');
+
+    menuToggle.addEventListener('click', function(e){
+      let toggleElement = document.querySelector('.kss-nav__menu');
+
+      toggleElement.classList.toggle('kss-nav__menu--visible');
+      menuToggle.classList.toggle('kss-menu-button--close')
+
+    });
+
+
     // Video lightcase
     // $('a[data-rel^=lightcase]').lightcase({
     //   onFinish : {
