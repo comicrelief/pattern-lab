@@ -259,6 +259,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
     @media screen and (min-width: 769px) {
       font-size: 1.5em;
+      margin-bottom:10px
     }
   }
 
@@ -337,7 +338,6 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
     margin-bottom: 10px;
 
     @media screen and (min-width: 769px) {
-
       padding-right: 25px;
       margin-bottom: 0;
     }
@@ -369,7 +369,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
           position: absolute;
           left: 0;
           width: 100%;
-          margin: 0;
+          margin:0;
           padding: 30px 20px 20px;
           list-style-type: none;
           display:none;
@@ -385,7 +385,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
             width: 33%;
           }
           @media screen and (min-width: 1024px) {
-            width: 25%;
+            width: 20%;
           }
         }
       
@@ -399,7 +399,7 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
           @media screen and (min-width: 769px) {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             flex-flow: row wrap;
             align-items: stretch;
           }
