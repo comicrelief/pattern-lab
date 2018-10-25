@@ -3,7 +3,8 @@
 // KSS styles
 // ==========================================================================
 
-#kss-node .kss-sidebar, #kss-node .kss-nav__menu-child {
+#kss-node .kss-sidebar, #kss-node .kss-nav__menu-item--active.kss-nav__menu-item 
+.kss-nav__menu-child {
     background-color: #061d38;
 }
 
@@ -18,7 +19,9 @@
 		-webkit-background-size: contain;
   	-moz-background-size: contain;
   	-o-background-size: contain;
-  	background-size: contain;
+    background-size: contain;
+    position: relative;
+    z-index: 100;
 	}
 }
 
