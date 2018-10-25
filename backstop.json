@@ -21,7 +21,6 @@
     {
       "label": "Homepage",
       "url": "dist/index.html",
-      "referenceUrl": "http://cr-pattern-lab.netlify.com/index.html",
       "hideSelectors": [],
       "removeSelectors": [],
       "selectorExpansion": true,

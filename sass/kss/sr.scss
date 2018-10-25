@@ -34,7 +34,16 @@
 .kss-modifier__example .search-block {
   position: relative;
 }
-// Position ESE header block absolute for styleguide presentation
-.kss-modifier__example .cr-header-email-signup-form {
-  position: absolute;
+// Position this normally email signup head pop up block normally for styleguide
+@media (min-width: 1024px) {
+  .kss-modifier__example .block--cr-email-signup.block--cr-email-signup--head {
+    position: relative;
+  }
+} 
+
+.kss-modifier__example .block--cr-email-signup--head.cr-header-email-signup-form {
+  .block--cr-email-signup__inner-wrapper {
+    position: relative;
+    top: 0;
+  }
 }

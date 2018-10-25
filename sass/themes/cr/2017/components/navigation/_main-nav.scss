@@ -317,7 +317,6 @@ header[role=banner] {
   }
 
   .block-cr-meta-icons,
-  .meta-icons,
   .meta-icons__login,
   .meta-icons__magnify,
   .meta-icons__esu-toggle,
@@ -362,20 +361,5 @@ header[role=banner] {
         display: none;
       }
     }
-  }
-} 
-
-.block--cr-email-signup--head.cr-header-email-signup-form .block--cr-email-signup__inner-wrapper {
-  @include breakpoint($screen-md) {
-    right: 65px;
-  }
-  
-  @include breakpoint($screen-lg) {
-    top: 78px;
-  }
-  
-  @include breakpoint($desktop-nav-breakpoint) {
-    right: 0;
-    top: 104px;
   }
 }
