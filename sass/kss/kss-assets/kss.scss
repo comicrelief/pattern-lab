@@ -265,6 +265,10 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
   .kss-header {
     float: left;
+    a {
+      position: relative;
+      z-index: 100;
+    }
   }
 
   .kss-nav {
