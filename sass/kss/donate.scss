@@ -2,11 +2,6 @@
 // KSS styles
 // ==========================================================================
 
-#kss-node .kss-sidebar, #kss-node #kss-node .kss-nav__menu-item--active.kss-nav__menu-item 
-.kss-nav__menu-child {
-    background: #1e1e1e;
-}
-
 // Position this normally as we can't do the cool 'sticky' functionality inside the styleguide
 .kss-modifier__example header[role=banner].sticky-nav__header {
   position: relative;
