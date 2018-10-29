@@ -84,8 +84,11 @@ div.footer--expanded.footer-nav-outer-wrapper {
     }
     p {
       color: $colour-black;
-      font-size: 18px;
-      line-height: 29px;
+      @extend .font--xsmall;
+      @include breakpoint($screen-lg) {
+        font-size: 16px;
+        line-height: 27px;
+      }
     }
   }
   .footer__branding {
