@@ -5,7 +5,7 @@
 
 #kss-node .kss-sidebar, #kss-node .kss-nav__menu-item--active.kss-nav__menu-item 
 .kss-nav__menu-child {
-    background-color: #061d38;
+  background: #1e1e1e;
 }
 
 .kss-header {
@@ -14,8 +14,8 @@
 		width: 150px;
 		height: 50px;
 		display: block;
-		background: url(/kss-assets/images/pattern_logo_rnd.png) left top no-repeat;
-		background: url(/kss-assets/images/pattern_logo_rnd.png) left top no-repeat;
+		background: url(/kss-assets/images/pattern_logo_sr.png) left top no-repeat;
+		background: url(/kss-assets/images/pattern_logo_sr.png) left top no-repeat;
 		-webkit-background-size: contain;
   	-moz-background-size: contain;
   	-o-background-size: contain;
