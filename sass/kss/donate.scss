@@ -29,4 +29,18 @@
   position: relative;
 }
 
+.kss-image-dimension {
+  position:relative;
+  color: #fff;
+  display:block;
+  text-align: center;
+  margin-top: 10%;
+  @media (min-width: 1024px) {
+    margin-top: 5%;
+  }
+}
 
+#kss-node .kss-modifier__example.promo-header  {
+  margin-right:-20px;
+  margin-left: -20px;
+}
