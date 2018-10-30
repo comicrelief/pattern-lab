@@ -1,11 +1,3 @@
-// Checkbox
-//
-// Default checkbox form styling 
-//
-// Markup: checkbox.twig
-//
-// Style guide: 20.62
-
 .form__checkbox {
     input[type="checkbox"]+span {
       border: 1px solid $colour-grey;
@@ -47,4 +39,4 @@
 label:not(.required, .form__checkbox):after {
     content: " (Optional)";
 }
-  
+

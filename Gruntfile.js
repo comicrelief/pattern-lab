@@ -176,8 +176,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           flatten: true,
-          cwd: 'sass/themes/',
-          src: ['payin/default/**/*.{png,jpg,gif,svg}','donate/**/components/**/*.{png,jpg,gif}'],
+          cwd: 'sass/themes/donate',
+          src: ['**/*.{png,jpg,gif}'],
           dest: 'dist/images'
         }]
       },
@@ -357,14 +357,7 @@ module.exports = function (grunt) {
           title: 'Donate PatternLab',
           css: ['../css/themes/donate/donate.css', '../css/kss/donate.css'],
         },
-        src: ['sass/base/components/promo-header',
-              'sass/base/components/footer',
-              'sass/themes/payin/default/variables',
-              'sass/themes/payin/default/components',
-              'sass/themes/sr/2018/variables',
-              'sass/themes/sr/2018/components',
-              'sass/themes/donate'
-             ],
+        src: ['sass/themes/donate'],
         dest: 'dist/donate'
       },
       frost: {

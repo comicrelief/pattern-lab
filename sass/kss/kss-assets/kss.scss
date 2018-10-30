@@ -389,11 +389,12 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
             width: 33%;
           }
           @media screen and (min-width: 1024px) {
-            width: 20%;
+            min-width: 20%;
+            max-width: 33%;
           }
         }
       
-        .kss-nav__menu-link {
+        .kss-nav__menu-link { 
           font-size: 15px;
           color: #ac9dad;
         }
@@ -403,7 +404,6 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
 
           @media screen and (min-width: 769px) {
             display: flex;
-            justify-content: center;
             flex-flow: row wrap;
             align-items: stretch;
           }
