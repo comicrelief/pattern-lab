@@ -40,6 +40,15 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+      cr_brand: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/cr_brand',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/cr_brand',
+          ext: '.css'
+        }]
+      },
       frost: {
         files: [{
           expand: true,
@@ -102,7 +111,7 @@ module.exports = function (grunt) {
           dest: 'kss/builder/kss-assets',
           ext: '.css'
         }]
-      }
+      },
     },
 
     modernizr: {
@@ -247,17 +256,19 @@ module.exports = function (grunt) {
     },
 
     sass_globbing: {
-      your_target: {
-        files: {
-          'sass/base/_components.scss': ['sass/base/components/**/*.scss', '!sass/base/components/**/__*.scss'],
-          'sass/base/_variables.scss': 'sass/base/variables/*.scss',
-          'sass/base/_core.scss': 'sass/base/core/*.scss'
-        },
-        options: {
-          useSingleQuotes: false,
-          signature: '/* generated with grunt-sass-globbing */\n\n'
+      base: {
+        your_target: {
+          files: {
+            'sass/base/_components.scss': ['sass/base/components/**/*.scss', '!sass/base/components/**/__*.scss'],
+            'sass/base/_variables.scss': 'sass/base/variables/*.scss',
+            'sass/base/_core.scss': 'sass/base/core/*.scss'
+          },
+          options: {
+            useSingleQuotes: false,
+            signature: '/* generated with grunt-sass-globbing */\n\n'
+          }
         }
-      }
+      },
     },
 
     watch: {
@@ -305,6 +316,16 @@ module.exports = function (grunt) {
         },
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
+      },
+      cr_brand: {
+        options: {
+          verbose: true,
+          builder: 'kss/builder',
+          title: 'CR BRAND PatternLab',
+          css: ['../css/themes/cr_brand/cr_brand.css', '../css/kss/cr_brand.css'],
+        },
+        src: ['sass/themes/cr_brand', 'sass/base'],
+        dest: 'dist/cr_brand'
       },
       rnd17: {
         options: {
@@ -435,6 +456,9 @@ module.exports = function (grunt) {
       cr17: {
         src: ['dist/css/themes/cr/**/*.css']
       },
+      cr_brand: {
+        src: ['dist/css/themes/cr_brand/**/*.css']
+      },
       donate: {
         src: ['dist/css/themes/donate/**/*.css']
       },
@@ -455,7 +479,7 @@ module.exports = function (grunt) {
       },
       kssbase: {
         src: ['kss/builder/kss-assets/**/*.css']
-      }
+      },
     }
   });
 
@@ -467,7 +491,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'sass_globbing',
+    'sass_globbing:base',
     'sass:all',
     'modernizr',
     'imagemin',
@@ -478,7 +502,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build:base', [
-    'sass_globbing',
+    'sass_globbing:base',
     'sass:base',
     'modernizr',
     'imagemin:base',
@@ -543,6 +567,13 @@ module.exports = function (grunt) {
     'modernizr',
     'kss:shop18',
     'postcss:shop18',
+  ]);
+
+  grunt.registerTask('build:cr_brand', [
+    'sass:cr_brand',
+    'modernizr',
+    'kss:cr_brand',
+    'postcss:cr_brand',
   ]);
 
   grunt.registerTask('clean:test', [
