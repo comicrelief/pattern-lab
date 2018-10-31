@@ -1,0 +1,67 @@
+// Buttons
+//
+// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate (see Links). Buttons text uses the Black weight of the Sailec font.
+
+.btn {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
+  padding: 23px 40px 19px;
+  cursor: pointer;
+  transition: 0.3s all;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  border: none;
+  font-family: $font-bold;
+  font-size: 18px;
+  line-height: 18px;
+  @include border-radius(30px);
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  &.btn--full-width {
+    display: block;
+    width: 100%;
+    @include breakpoint($screen-md) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+  + .btn {
+    margin-top: 30px;
+    @include breakpoint($screen-md) {
+      margin-top: 0;
+      margin-left: 25px;
+    }
+  }
+  &--fixed-width {
+    width: 100%;
+  }
+}
+
+/* button(font_colour, bg_colour) */
+
+.btn--dark-purple, 
+.btn--black {
+  @include cr_button_types($colour-white, $colour-dark-purple);
+}
+.btn--purple {
+  @include cr_button_types($colour-white, $colour-purple);
+}
+.btn--royal-blue {
+  @include cr_button_types($colour-white, $colour-royal-blue);
+}
+.btn--red {
+  @include cr_button_types($colour-white, $colour-red);
+  text-shadow: 0 1px 1px $colour-dark-purple;
+}
+.btn--mint-green {
+  @include cr_button_types($colour-dark-purple, $colour-mint-green);
+}
+.btn--white {
+  @include cr_button_types($colour-dark-purple, $colour-white);
+}

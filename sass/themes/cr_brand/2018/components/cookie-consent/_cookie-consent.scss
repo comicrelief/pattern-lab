@@ -1,0 +1,22 @@
+// Cookie consent
+//
+// Markup: cookie-consent.twig
+//
+// Style guide: 20.115
+
+.cookie-consent.cc_container {
+  .cc_more_info {
+    font-size: 14px;
+    line-height: 16px;
+    @include breakpoint($screen-md) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  
+  @include breakpoint($screen-lg) {
+    .btn {
+      padding: 13px 20px;
+    }
+  }
+}

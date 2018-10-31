@@ -1,0 +1,69 @@
+// Meta icons
+// 
+// Markup: meta-icons.twig
+//
+//Style guide: 140.3
+
+.block-cr-meta-icons {
+  height: 77px;
+}
+
+.meta-icons {
+  float: left;
+  position: relative;
+  top: calc(50% - 15px);
+  @include breakpoint($desktop-nav-breakpoint) {
+    position: relative;
+    z-index: 10;
+    float: left;
+    .icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  .meta-icons__login {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .meta-icons__login,
+  .meta-icons__magnify,
+  .meta-icons__esu-toggle {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    @include breakpoint($screen-md) {
+      width: 46px;
+    }
+    &.active {
+      .icon {
+        background-color: $colour-mint-green;
+      } 
+    }
+    &:focus {
+      outline: none;
+    }
+    span {
+      display: none;
+    }
+    .icon {
+      width: 35px;
+      height: 35px;
+      padding: 5px;
+      transition-property: fill;
+      transition-duration: 150ms;
+      fill: $colour-jasper-grey;
+    }
+    &:hover,
+    &:focus,
+    &.active {
+      .icon {
+        fill: $colour-black;
+        outline: none;
+      }
+    }
+  }
+}

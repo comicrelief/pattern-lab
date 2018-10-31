@@ -1,0 +1,54 @@
+body {
+  font-family: $font-stack;
+}
+header[role=banner] {
+  height: auto;
+  .site-logo {
+    margin-top: 20px;
+  }   
+}
+
+// Social links
+
+.footer__social-links {
+  margin: 0 0 20px;
+  li {
+    margin: 5px 4px 0;
+    @media (min-width: 740px) {
+      margin: 5px 8px 0;
+    }
+    a {
+      -webkit-transition: 0.5s opacity;
+      transition: 0.5s opacity;
+      border-radius: 50%;
+      background: black;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+@import "components/background-colours/background-colours";
+@import "components/buttons/buttons";
+@import "components/highlight/highlight";
+@import "components/links/links";
+@import "components/loading/loading";
+@import "components/content-block/content-block";
+@import "components/media-block/media-block";
+@import "components/content-wall/content-wall";
+@import "components/typography/fonts";
+@import "components/typography/typography";
+@import "components/single-msg/single-msg";
+@import "components/navigation/main-nav";
+@import "components/navigation/feature-nav";
+@import "components/news-teaser/news-teaser";
+@import "components/cookie-consent/cookie-consent";
+@import "components/meta-icons/meta-icons";
+@import "components/navigation/expanded-footer";
+@import "components/email-signup/email-signup-head";
+
+// For fun
+body {
+  background-color: #ccffe8 !important;
+}

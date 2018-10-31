@@ -2,10 +2,138 @@
 // Core components
 // ==========================================================================
 
-@import "../../base/_variables";
-@import "../../base/_core";
-@import "../../base/_components";
+@import "../../base/core/base-1-mixins";
+@import "../../base/core/base-breakpoints";
+@import "../../base/core/base-common";
+@import "../../base/core/base-grid";
+@import "../../base/core/base-helper";
+@import "../../base/core/base-layout";
+@import "../../base/core/base-reset";
 
-// @import "2017/_cr_brand.scss";
-@import "2018/_cr_brand.scss";
-// @import "2019/_cr_brand.scss";
+// ==========================================================================
+// Core variables
+// ==========================================================================
+
+@import "../../base/variables/_grid.scss";
+@import "../../base/variables/_colours.scss";
+@import "../../base/variables/_typography.scss";
+@import "../../base/variables/_lists.scss";
+@import "../../base/variables/_theme.scss";
+
+// ==========================================================================
+// Sub Theme variables
+// ==========================================================================
+
+// TODO: need to do this dynamically?
+@import "2017/variables/_colours.scss";
+@import "2017/variables/_typography.scss";
+@import "2017/variables/_mixins.scss";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+// Import all components
+// @import "../../../base/_components";
+
+// Ou choose components one by one
+@import "../../base/components/animations/animations";
+@import "../../base/components/background-colours/background-colours";
+@import "../../base/components/background-single-msg/background-single-msg";
+@import "../../base/components/banners/card-banner";
+// @import "../../../base/components/buttons/buttons";
+@import "../../base/components/card-block/card";
+@import "../../base/components/cards/cards";
+@import "../../base/components/content-block/content-block";
+@import "../../base/components/content-wall/content-wall";
+@import "../../base/components/cookie-consent/cookie-consent";
+@import "../../base/components/custom-block/custom-block";
+@import "../../base/components/demo/demo";
+@import "../../base/components/email-signup/email-signup-head";
+@import "../../base/components/email-signup/email-signup";
+@import "../../base/components/external-link/external-link";
+@import "../../base/components/feature-articles-block/feature-articles-block";
+@import "../../base/components/footer/footer";
+@import "../../base/components/form/form";
+@import "../../base/components/grid/grid";
+@import "../../base/components/header/base-header";
+@import "../../base/components/iframe-block/iframe-block";
+@import "../../base/components/lightcase/lightcase";
+// @import "../../../base/components/links/links";
+@import "../../base/components/list/list";
+@import "../../base/components/media-block/media-block";
+@import "../../base/components/media/media";
+@import "../../base/components/navigation/feature-nav";
+@import "../../base/components/navigation/footer-nav";
+@import "../../base/components/navigation/hamburger-menu-button";
+@import "../../base/components/navigation/main-nav";
+@import "../../base/components/news-article/news-article";
+@import "../../base/components/news-article/press-release-article";
+@import "../../base/components/news-overview/news";
+@import "../../base/components/news-teaser/news-article-teaser";
+@import "../../base/components/news-teaser/news-teaser";
+@import "../../base/components/pagination/pagination";
+@import "../../base/components/paragraph--cr-single-message-row/paragraph--cr-single-message-row";
+@import "../../base/components/partners-row/partners-row";
+@import "../../base/components/partners-grid/partners-grid";
+@import "../../base/components/partners/partners";
+@import "../../base/components/progress-bar/progress-bar";
+@import "../../base/components/promo-header/promo-header";
+@import "../../base/components/quote-block/content-wall-quote";
+@import "../../base/components/related-articles/related-articles";
+@import "../../base/components/search-results/search-result";
+@import "../../base/components/search/search-block";
+@import "../../base/components/selectbox/selectbox";
+// @import "../../../base/components/single-msg/single-msg";
+@import "../../base/components/social/social";
+@import "../../base/components/story/story";
+@import "../../base/components/table/table";
+@import "../../base/components/teaser-block/teaser-block";
+@import "../../base/components/tooltips/tooltips";
+@import "../../base/components/typography/typography";
+@import "../../base/components/views/views";
+@import "../../base/components/just-in-time-block/_just-in-time";
+
+
+// ==========================================================================
+// Import specific year's theme inc. overrides and new components
+// ==========================================================================
+@import "2017/_cr17-components.scss";
+// @import "2018/_cr18-components.scss";
+// @import "2019/_cr19-components.scss";
+
+// ==========================================================================
+// Sub theme template overrides/additions
+// ==========================================================================
+
+// Cookie consent
+// Markup: cookie-consent.twig
+// Style guide: 20.115
+
+// Promo header
+// Markup: promo-header.twig
+// Style guide: 20.95
+
+// Footer
+// Markup: footer.twig
+// Style guide: 20.190
+
+// Typography
+// Markup: typography.twig
+// Style guide: 10.1
+
+// Links
+// Markup: links.twig
+// Style guide: 10.2
+
+// Buttons
+// Markup: buttons.twig
+// Style guide: 10.3
+
+// Background Colours
+// Markup: background-colours.twig
+// Style guide: 10.6
+
+// Colours
+// Markup: colour.twig
+// Style guide: 10.5

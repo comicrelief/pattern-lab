@@ -1,0 +1,365 @@
+/* Main navigation styling */ 
+.header__inner-wrapper {
+
+  // Position logo to left, menu in center, meta icon block to the right
+  height: 100%;
+  background-color: $colour-white;
+  justify-content: space-between;
+
+  // Remove clearfix so flexbox works properly
+  &:after {
+    content: none;
+  }
+
+  .main-nav__wrapper {
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-right: 35px;
+      background-color: transparent;
+    }
+  }
+}
+
+.main-nav__wrapper {
+  height: auto;
+
+  li.menu-item {
+    padding-top: 0;
+    position: relative;
+  }
+
+  // UL menu
+  .main-nav__items {
+    top: 67px;
+    
+    @include breakpoint($screen-md) {
+      top: 76px;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      top: 0;
+    }
+
+    li, 
+    li.item-open {
+      a {
+        font-size: 16px;
+        line-height: 16px;
+        color: $colour-dark-grey;
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          padding: 8px 7px 4px;
+        }
+      }
+    }
+
+    // Parent items of the menu
+    &.menu--level-0 {
+      @include breakpoint($desktop-nav-breakpoint) {
+        width: auto;
+        text-align: center;
+      }
+
+      > li.item-open,
+      > li {
+
+         &:hover >a {
+          background-color: $colour-mint-green;
+        }
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          padding: 39px 0px;
+          margin: 0 10px;
+        }
+
+        > a {
+          font-family: $font-medium;
+          text-transform: uppercase;
+          padding: 17px 20px;
+          height: 46px;
+          color: $colour-black;
+          
+          &.is-active span.menu-item__text {
+            border-bottom: 2px solid $colour-black;
+          }
+        
+          @include breakpoint($desktop-nav-breakpoint) {
+            font-size: 15px;
+            line-height: 15px;
+            padding: 7px 5px;
+            height: auto;
+
+            &.is-active span.menu-item__text {
+              border-bottom: 2px solid $colour-black;
+            }
+          }
+        }
+
+        // Donate button: can we target this better?
+        &:last-child {
+          @include breakpoint($desktop-nav-breakpoint) {
+            padding: 32px 0;
+            margin-left: 0;
+
+            > a.donate {
+              // Emulate some button styles here
+              display: inline-block;
+              width: auto;
+              margin: 0 auto;
+              cursor: pointer;
+              transition: 0.3s all;
+              text-align: center;
+              vertical-align: middle;
+              text-decoration: none;
+              border: none;
+              background-color: $colour-red;
+              border-radius: 30px;
+              padding: 13px 20px 10px;
+
+              span {
+                color: $colour-white;
+              }
+            }
+
+            &:hover > a.donate {
+              background-color: $colour-purple;
+            }
+          }
+        }
+      }
+    } 
+
+    // First level of sub items (dropdwn)
+    &.menu--level-1 {
+      li.menu-item.menu-item--duplicate {
+        > a {
+          color: $colour-mint-green;
+          font-family: $font-medium;
+          position: relative;
+          font-size: 21px;
+          line-height: 21px;
+          height: 49px;
+
+          &:after {
+            width: 14px;
+            border-bottom: 4px solid $colour-mint-green;
+            left: 12px;
+            top: auto;
+            bottom: 0;
+
+            @include breakpoint($desktop-nav-breakpoint) {
+              bottom: 10px;
+            }
+          }
+
+          &:before {
+            @include breakpoint($desktop-nav-breakpoint) {
+              left: 34px;
+              width: 10px;
+              height: 10px;
+              border: 11px solid transparent;
+              border-bottom-color: $colour-dark-purple;
+              top: -22px;
+            }
+          }
+
+          &.is-active {
+
+            // Add border to the span (to allow control over the width), rather than the :after psuedo
+            span.menu-item__text {
+              border-bottom: 4px solid $colour-mint-green;
+            }
+
+            &:after {
+              border-bottom: none;
+            }
+          }
+        }
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          height: 74px;
+          width: 100%;
+          padding: 0;
+
+          a {
+            padding: 26px 21px;
+            height: 74px;
+          }
+        }
+      }
+      
+      li.item-open a,
+      li a {
+        color: $colour-white;
+
+        &.is-active span.menu-item__text {
+          border-bottom: 2px solid $colour-white;
+        }
+      }
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        padding-bottom: 20px !important;
+      }
+    }
+
+    // First and second levels of sub items
+    &.menu--level-1,
+    &.menu--level-2 {
+      top: 0;
+      
+      @include breakpoint($desktop-nav-breakpoint) {
+        top: 103px;
+        text-align: left;
+      }
+      
+      li a,
+      li.item-open a {
+        font-family: $font-light;
+        font-size: 16px;
+        line-height: 16px;
+        color: $colour-white;
+        height: 44px;
+
+        @include breakpoint($desktop-nav-breakpoint) {
+          // The complex inherited styles need a little bullying to override here
+          font-size: 20px !important;
+          line-height: 20px !important;
+        }
+
+        &:hover {
+          background-color: #3e1c43;
+
+          &.is-active span.menu-item__text {
+            border-bottom: 2px solid $colour-white;
+          }
+        }
+
+        &.is-active span.menu-item__text {
+          border-bottom: 2px solid $colour-white;
+        }
+      }
+
+      li.menu-item,
+      li.item-open.menu-item {
+        @include breakpoint($desktop-nav-breakpoint) {
+          padding: 0;
+          height: 100%;
+          width: 100%;
+
+          a {
+            padding: 14px 21px;
+          }
+        }
+      }
+    }
+
+    li.item-open,
+    li {
+
+      // Reset base styles, so we're targetting the anchor and not the li
+      > ul li:hover {
+        background-color: $colour-dark-purple;
+      }
+
+      > ul li a:hover {
+        background-color: lighten($colour-dark-purple, 5%);
+      }
+
+      &:hover >a span.menu-item__text {
+        border-bottom: none;
+      }
+    }
+
+    // Secondary nav items that have tertiary menu items
+    &.menu--level-1 li.menu-item.menu-item--expanded {
+      @include breakpoint($desktop-nav-breakpoint) {
+        height: 100%;
+      }
+    }
+    
+    // Second levels of sub items
+    &.menu--level-2 {
+      li.menu-item {
+        padding: 0;
+
+        a {
+          // Indent tertiary items
+          padding-left: 40px;
+          background-color: lighten($colour-dark-purple, 10%);
+
+          &:hover {
+            background-color: lighten($colour-dark-purple, 15%) !important;
+          }
+        }
+      } 
+
+      @include breakpoint($desktop-nav-breakpoint) {
+        display: block;
+        position: relative;
+        top: 0;
+        height: 100%;
+        max-height: 100%;
+      }
+    }
+  } 
+}
+
+// TODO: move this to component files
+header[role=banner] {
+  border-bottom: 2px solid #dad5db;
+  height: 69px;
+
+  @include breakpoint($screen-md) {
+    height: 78px;
+  }
+
+   @include breakpoint($desktop-nav-breakpoint) {
+    height: 109px;
+  }
+
+  .block-cr-meta-icons,
+  .meta-icons__login,
+  .meta-icons__magnify,
+  .meta-icons__esu-toggle,
+  .main-nav__icons.main-nav__burger,
+  .c-hamburger {
+    height: 67px;
+
+    @include breakpoint($screen-md) {
+      height: 76px;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      height: 105px;
+    }
+  }
+
+  .block-cr-meta-icons {
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-right: 5px;
+    }
+  }
+
+  .site-logo {
+    min-width: 0px;
+    width: 50px;
+    height: 50px;
+
+    @include breakpoint($screen-md) {
+      width: 58px;
+      height: 58px;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      width: 80px;
+      height: 80px;
+      margin: 14px 0 0 14px !important;
+      background: url($image-path + "cr18-logo.png") no-repeat 0 0;
+      background-size: 100%;
+      
+      // Keep image hidden, remove this from template?
+      img {
+        display: none;
+      }
+    }
+  }
+}
