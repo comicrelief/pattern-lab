@@ -6,6 +6,8 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
 
+    cr_brand_year: "2018",
+
     sass: {
       options: {
         outputStyle: 'compressed',
@@ -43,9 +45,10 @@ module.exports = function (grunt) {
       cr_brand: {
         files: [{
           expand: true,
+          // Only compile the current/selected year
           cwd: 'sass/themes/cr_brand',
-          src: ['{,**/}*.scss'],
-          dest: 'dist/css/themes/cr_brand',
+          src: ['<%= cr_brand_year %>{,**/}*.scss'],
+          dest: 'dist/css/themes/cr_brand/',
           ext: '.css'
         }]
       },
@@ -322,9 +325,15 @@ module.exports = function (grunt) {
           verbose: true,
           builder: 'kss/builder',
           title: 'CR BRAND PatternLab',
-          css: ['../css/themes/cr_brand/cr_brand.css', '../css/kss/cr_brand.css'],
+          // CSS filepaths to use within the generated template/s
+          css: ['../css/themes/cr_brand/<%= cr_brand_year %>/cr_brand.css', '../css/kss/cr_brand.css'],
+          //css: ['../css/themes/cr/2017/cr17.css', '../css/kss/cr.css'],
         },
-        src: ['sass/themes/cr_brand', 'sass/base'],
+
+        // Where to take KSS comments from; use the selected/'current' year
+        src: ['sass/themes/cr_brand/<%= cr_brand_year %>', 'sass/base'],
+        
+        // Markup location
         dest: 'dist/cr_brand'
       },
       rnd17: {
