@@ -42,13 +42,12 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
-      cr_brand: {
+      crbrand: {
         files: [{
           expand: true,
-          // Only compile the current/selected year
-          cwd: 'sass/themes/cr_brand',
-          src: ['<%= cr_brand_year %>{,**/}*.scss'],
-          dest: 'dist/css/themes/cr_brand/',
+          cwd: 'sass/themes/cr_brand/<%= cr_brand_year %>',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/cr_brand',
           ext: '.css'
         }]
       },
@@ -320,17 +319,14 @@ module.exports = function (grunt) {
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
       },
-      cr_brand: {
+      crbrand: {
         options: {
           verbose: true,
           builder: 'kss/builder',
-          title: 'CR BRAND PatternLab',
+          title: 'CR Brand PatternLab',
           // CSS filepaths to use within the generated template/s
-          css: ['../css/themes/cr_brand/<%= cr_brand_year %>/cr_brand.css', '../css/kss/cr_brand.css'],
-          //css: ['../css/themes/cr/2017/cr17.css', '../css/kss/cr.css'],
+          css: ['../css/themes/cr_brand/<%= cr_brand_year %>/crbrand17.css', '../css/kss/crbrand17.css'],
         },
-
-        // Where to take KSS comments from; use the selected/'current' year
         src: ['sass/themes/cr_brand/<%= cr_brand_year %>', 'sass/base'],
         
         // Markup location
@@ -465,7 +461,7 @@ module.exports = function (grunt) {
       cr17: {
         src: ['dist/css/themes/cr/**/*.css']
       },
-      cr_brand: {
+      crbrand: {
         src: ['dist/css/themes/cr_brand/**/*.css']
       },
       donate: {
@@ -578,11 +574,11 @@ module.exports = function (grunt) {
     'postcss:shop18',
   ]);
 
-  grunt.registerTask('build:cr_brand', [
-    'sass:cr_brand',
+  grunt.registerTask('build:crbrand', [
+    'sass:crbrand',
     'modernizr',
-    'kss:cr_brand',
-    'postcss:cr_brand',
+    'kss:crbrand',
+    'postcss:crbrand',
   ]);
 
   grunt.registerTask('clean:test', [

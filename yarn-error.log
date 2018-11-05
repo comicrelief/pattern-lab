@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/andyp/.nvm/versions/node/v8.10.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js
+  /Users/andyp/.nvm/versions/node/v8.10.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run build-crbrand
 
 PATH: 
   /Users/andyp/.nvm/versions/node/v8.10.0/bin:/usr/local/bin:/Users/andyp/.platformsh/bin:/Users/andyp/.rvm/gems/ruby-2.1.5/bin:/Users/andyp/.rvm/gems/ruby-2.1.5@global/bin:/Users/andyp/.rvm/rubies/ruby-2.1.5/bin:/Applications/MAMP/bin/php/php5.6.10/bin:/usr/local/bin/identify:/usr/bin/identify:/usr/local/bin/convert:/usr/bin/convert:/usr/local/bin/:/usr/bin/:/usr/local/mysql/bin:/Users/andyp/.composer/vendor/bin:/Users/andyp/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/andyp/.rvm/bin:/usr/local/Cellar/openssl/1.0.2j/bin/openssl
@@ -30,7 +30,7 @@ npm manifest:
       "build-rnd17": "grunt build:rnd17",
       "build-sr18": "grunt build:sr18",
       "build-shop18": "grunt build:shop18",
-      "build-crbrand": "grunt build:cr_brand"
+      "build-crbrand": "grunt build:crbrand",
       "dev-server": "grunt connect",
       "semantic-release": "semantic-release pre && npm publish && semantic-release post",
       "commit": "git-cz",
@@ -8465,10 +8465,17 @@ Lockfile:
       bops "~0.1.1"
 
 Trace: 
-  SyntaxError: /Users/andyp/Sites/pattern-lab/pattern-lab/package.json: Unexpected string in JSON at position 647
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:1036:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 3
+  Command: sh
+  Arguments: -c grunt build:crbrand
+  Directory: /Users/andyp/Sites/pattern-lab/pattern-lab
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

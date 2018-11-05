@@ -14,7 +14,7 @@
     "build-rnd17": "grunt build:rnd17",
     "build-sr18": "grunt build:sr18",
     "build-shop18": "grunt build:shop18",
-    "build-crbrand": "grunt build:cr_brand",
+    "build-crbrand": "grunt build:crbrand",
     "dev-server": "grunt connect",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",

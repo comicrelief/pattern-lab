@@ -35,7 +35,7 @@
 // Import all components
 // @import "../../../base/_components";
 
-// TODO: sort this mess out
+// Ou choose components one by one
 @import "../../../base/components/animations/animations";
 @import "../../../base/components/background-colours/background-colours";
 @import "../../../base/components/background-single-msg/background-single-msg";
@@ -93,8 +93,41 @@
 @import "../../../base/components/views/views";
 @import "../../../base/components/just-in-time-block/_just-in-time";
 
+// ==========================================================================
+// Sub theme components overrides
+// ==========================================================================
 
-// ==========================================================================
-// Import specific year's theme inc. overrides and new components
-// ==========================================================================
-@import "_cr19-components.scss";
+@import "_crbrand17-components";
+
+
+// Cookie consent
+// Markup: cookie-consent.twig
+// Style guide: 20.115
+
+// Promo header
+// Markup: promo-header.twig
+// Style guide: 20.95
+
+// Footer
+// Markup: footer.twig
+// Style guide: 20.190
+
+// Typography
+// Markup: typography.twig
+// Style guide: 10.1
+
+// Links
+// Markup: links.twig
+// Style guide: 10.2
+
+// Buttons
+// Markup: buttons.twig
+// Style guide: 10.3
+
+// Background Colours
+// Markup: background-colours.twig
+// Style guide: 10.6
+
+// Colours
+// Markup: colour.twig
+// Style guide: 10.5
