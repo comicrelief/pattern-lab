@@ -325,7 +325,7 @@ module.exports = function (grunt) {
           builder: 'kss/builder',
           title: 'CR Brand PatternLab',
           // CSS filepaths to use within the generated template/s
-          css: ['../css/themes/cr_brand/<%= cr_brand_year %>/crbrand17.css', '../css/kss/crbrand17.css'],
+          css: ['../css/themes/cr_brand/<%= cr_brand_year %>/crbrand<%= cr_brand_year %>.css', '../css/kss/crbrand<%= cr_brand_year %>.css'],
         },
         src: ['sass/themes/cr_brand/<%= cr_brand_year %>', 'sass/base'],
         

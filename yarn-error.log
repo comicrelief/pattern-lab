@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/andyp/.nvm/versions/node/v8.10.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run build-crbrand
+  /Users/andyp/.nvm/versions/node/v8.10.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run build
 
 PATH: 
   /Users/andyp/.nvm/versions/node/v8.10.0/bin:/usr/local/bin:/Users/andyp/.platformsh/bin:/Users/andyp/.rvm/gems/ruby-2.1.5/bin:/Users/andyp/.rvm/gems/ruby-2.1.5@global/bin:/Users/andyp/.rvm/rubies/ruby-2.1.5/bin:/Applications/MAMP/bin/php/php5.6.10/bin:/usr/local/bin/identify:/usr/bin/identify:/usr/local/bin/convert:/usr/bin/convert:/usr/local/bin/:/usr/bin/:/usr/local/mysql/bin:/Users/andyp/.composer/vendor/bin:/Users/andyp/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/Users/andyp/.rvm/bin:/usr/local/Cellar/openssl/1.0.2j/bin/openssl
@@ -8466,9 +8466,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3
+  Exit signal: SIGSEGV
   Command: sh
-  Arguments: -c grunt build:crbrand
+  Arguments: -c grunt build
   Directory: /Users/andyp/Sites/pattern-lab/pattern-lab
   Output:
   
