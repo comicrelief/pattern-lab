@@ -113,7 +113,7 @@ module.exports = function (grunt) {
           dest: 'kss/builder/kss-assets',
           ext: '.css'
         }]
-      },
+      }
     },
 
     modernizr: {
@@ -484,7 +484,7 @@ module.exports = function (grunt) {
       },
       kssbase: {
         src: ['kss/builder/kss-assets/**/*.css']
-      },
+      }
     }
   });
 
