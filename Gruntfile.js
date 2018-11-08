@@ -251,7 +251,7 @@ module.exports = function (grunt) {
         files: {
           'sass/base/_components.scss': ['sass/base/components/**/*.scss', '!sass/base/components/**/__*.scss'],
           'sass/base/_variables.scss': 'sass/base/variables/*.scss',
-          'sass/base/_core.scss': 'sass/base/core/*.scss'
+          'sass/base/_core.scss': 'sass/base/core/*.scss',
         },
         options: {
           useSingleQuotes: false,
