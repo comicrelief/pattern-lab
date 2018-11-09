@@ -1,11 +1,4 @@
-// Expanded Footer
-//
-// Expanded footer (aka TURBOFOOTER™) for the CR.com site in 2018
-// 
-// Markup: expanded-footer.twig
-//
-// Style guide: 185.5
-// Keep all padding within each footer variant, rather than the wrapper
+
 footer[role=contentinfo] {
   padding: 0;
   @include breakpoint($screen-md) {
