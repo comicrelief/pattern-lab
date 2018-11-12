@@ -92,11 +92,13 @@
 @import "../../../base/components/typography/typography";
 @import "../../../base/components/views/views";
 @import "../../../base/components/just-in-time-block/_just-in-time";
+@import "../../../base/components/form/_standard-form.scss";
 
 // ==========================================================================
 // Sub theme components overrides
 // ==========================================================================
 
-@import "_cr-template.scss";
+@import "_cr17-template.scss";
 @import "_cr17-components";
+@import "../../../base/components/postcode-lookup/_postcode-lookup";
 
