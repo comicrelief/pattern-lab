@@ -61,21 +61,4 @@
 @import "components/money-buy-block/_money-buy-block";
 @import "components/giving-type-selector/_giving-type-selector";
 
-// Donate Page
-//
-// Markup: donate-page.twig
-//
-// Style guide: 30
-
-// Thank You Page
-//
-// Markup: success-page.twig
-//
-// Style guide: 40
-
-// Failure Page
-//
-// Markup: failure-page.twig
-//
-// Style guide: 50
-
+@import "_donate-styleguide.scss"
