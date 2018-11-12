@@ -1,3 +1,4 @@
+
 //==========================================================================
 // Elements
 // ==========================================================================
@@ -14,35 +15,17 @@
 
 // Links
 //
-// Links are used for call-to-actions that are lower in the hierachy and aren’t as key as ones used in buttons. They can also be used for call-to-actions with a longer character count.
-// 
-// .link--small - Small - The font size is 16px and line height is 26px. Border / underline is 4px.
-//
 // Markup: links.twig
 //
 // Style guide: 10.2
 
 // Buttons
-// 
-// .btn--black-ghost - Black ghost button
-// .btn--white-ghost - White ghost button
-// .btn--red - Red button
-// .btn--blue - Blue button
-// .btn--purple - Purple button
-// .btn--white - White button
-// :hover - Button hover state 
-// :active - Button active state
-// :focus - Button focus state
+//
+// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate. Buttons text uses the Founders Grotesk Semibold font.
 //
 // Markup: buttons.twig
 //
 // Style guide: 10.3
-
-// Background Colours
-//
-// To be used by row components
-//
-// Markup: background-colours.twig
 
 // Colours
 //
@@ -96,18 +79,6 @@
 // Markup: form.twig
 //
 // Style guide: 10.10
-
-// Highlight
-//
-// .highlight--red - Red highlight
-// .highlight--purple - Purple highlight
-// .highlight--royal-blue - Royal-blue highlight
-// .highlight--mint-green - Mint-green highlight
-// .highlight--white - Mint-green highlight
-// 
-// Markup: highlight.twig
-//
-// Style guide: 10.19
 
 // ==========================================================================
 // Components
@@ -199,8 +170,18 @@
 //
 // Markup: single-msg.twig
 //
+// .single-msg--copy-right - Copy right
 // .single-msg--copy-left - Copy left
-// .single-msg--copy-only - Copy only
+// .single-msg--feature-copy-right - Feature copy right
+// .single-msg--feature-copy-left - Feature copy left
+// .single-msg--copy-only - Copy only 8 columns
+// .single-msg--copy-only-large - Copy only 10 columns
+// .single-msg--default-padding - Default
+// .single-msg--negative-top - Reduce top padding
+// .single-msg--negative-bottom - Reduce bottom padding
+// .single-msg--no-top-padding - Remove top padding
+// .single-msg--no-bottom-padding - Remove bottom padding
+// .single-msg--no-padding - Remove top and bottom padding
 //
 // Style guide: 20.70
 
@@ -320,17 +301,23 @@
 //
 // Style guide: 20.115
 
-// Promo header
+// Footer App Links Block
 //
-// Markup: promo-header.twig
+// Markup: footer-app-links-block.twig
 //
-// Style guide: 20.95
+// Style guide: 20.1006
 
-// Footer
+// Live Total Block
 //
-// Markup: footer.twig
+// Markup: live-total-block.twig
 //
-// Style guide: 20.190
+// Style guide: 20.1007
+
+// App Link Block
+//
+// Markup: app-link-block.twig
+//
+// Style guide: 20.1003
 
 // ==========================================================================
 // Pages
@@ -493,15 +480,6 @@
 // Markup: footer-nav.twig
 //
 // Style guide: 185.3
-
-// Expanded Footer
-//
-// Expanded footer (aka TURBOFOOTER™) for the CR.com site in 2018
-// 
-// Markup: expanded-footer.twig
-//
-// Style guide: 185.5
-// Keep all padding within each footer variant, rather than the wrapper
 
 // ==========================================================================
 // Icons
