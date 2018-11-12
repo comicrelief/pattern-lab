@@ -780,3 +780,20 @@ select,
     }
   }
 }
+
+.cr-email-signup-fundraise-form,
+.cr-email-signup-register-interest-form,
+.cr-email-signup-workplace-form,
+.cr-email-signup-form {
+
+  .esu-privacy-message p {
+    color: white;
+  }
+
+  &.block--cr-email-signup--step-2,
+  &.block--cr-email-signup--step-3 {
+    .esu-privacy-message {
+      display: none;
+    }
+  }
+}
