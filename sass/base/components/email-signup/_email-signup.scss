@@ -781,6 +781,7 @@ select,
   }
 }
 
+// Privacy policy
 .cr-email-signup-fundraise-form,
 .cr-email-signup-register-interest-form,
 .cr-email-signup-workplace-form,
@@ -790,7 +791,7 @@ select,
     color: $colour-white;
   }
 
-  &.block--cr-email-signup--step-2,
+  &.block--cr-email-signup--step-2, 
   &.block--cr-email-signup--step-3 {
     .esu-privacy-message {
       display: none;
