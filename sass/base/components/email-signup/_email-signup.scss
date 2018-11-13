@@ -798,3 +798,15 @@ select,
     }
   }
 }
+
+.cr-email-signup-register-interest-form {
+  .esu-privacy-message {
+    @include breakpoint($screen-md){
+      @include span(6);
+      @include push(4);
+    }
+    @include breakpoint($screen-lg) {
+      @include push(5);
+    }
+  }
+}
