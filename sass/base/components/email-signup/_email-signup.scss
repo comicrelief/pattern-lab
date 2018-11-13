@@ -773,7 +773,10 @@ select,
 }
 
 .cr-email-signup-register-interest-form {
+  // Add 10px because of margin top on signup register interest
   .esu-privacy-message {
+    margin-top: calc(2em + 10px);
+    @include span(12);
     @include breakpoint($screen-md){
       @include span(6);
       @include push(4);
