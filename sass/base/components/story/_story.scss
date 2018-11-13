@@ -1,10 +1,3 @@
-// Story
-//
-// This is the Story row component (aka fundraising journey)
-//
-// Markup: _story.twig
-//
-// Style guide: 20.90
 
 @mixin zigzag-colour($colour){
   background: linear-gradient( 45deg, transparent 33.333%, $colour 33.333%, $colour 66.667%, transparent 66.667% ),

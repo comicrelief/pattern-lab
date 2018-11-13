@@ -333,21 +333,7 @@ module.exports = function (grunt) {
           title: 'Payin Online PatternLab',
           css: ['../css/themes/payin/payin.css', '../css/kss/payin.css']
         },
-        src: ['sass/base/core',
-              'sass/base/variables',
-              'sass/base/components/selectbox',
-              'sass/base/components/form',
-              'sass/base/components/navigation/_footer-nav',
-              'sass/base/components/footer',
-              'sass/base/components/header/base-header',
-              'sass/base/components/promo-header',
-              'sass/base/components/card-block',
-              'sass/base/components/cards',
-              'sass/base/components/social',
-              'sass/themes/sr/2018',
-              'sass/themes/payin/default/components',
-              'sass/themes/payin/sportrelief'
-             ],
+        src: ['sass/themes/payin'],
         dest: 'dist/payin'
       },
       donate: {
