@@ -775,7 +775,8 @@ select,
   }
 }
 
-.cr-email-signup-fundraise-form {
+.cr-email-signup-fundraise-form, 
+.cr-email-signup-form {
   @include breakpoint($screen-lg) {
     &.block--cr-email-signup.block--cr-email-signup--standard .block--cr-email-signup__inner-wrapper form {
       position: absolute;
