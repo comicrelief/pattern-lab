@@ -761,7 +761,6 @@ select,
 .cr-email-signup-register-interest-form,
 .cr-email-signup-workplace-form,
 .cr-email-signup-form {
-
   .esu-privacy-message p,
   .esu-initial-message p {
     color: $colour-white;
@@ -773,32 +772,35 @@ select,
       display: none;
     }
   }
+
+  // ESU privacy message 
+  .esu-privacy-message {
+    margin-top: 45px;
+    @include span(12);
+    @include breakpoint($screen-lg) {
+      @include span(10);
+    }
+  }
 }
 
-.cr-email-signup-fundraise-form, 
+// ESU Fundraise & Standard
+.cr-email-signup-fundraise-form,
 .cr-email-signup-form {
+  &.block--cr-email-signup.block--cr-email-signup--standard .block--cr-email-signup__inner-wrapper form {
+    @include span(12);
+  }
   @include breakpoint($screen-lg) {
     &.block--cr-email-signup.block--cr-email-signup--standard .block--cr-email-signup__inner-wrapper form {
-      position: absolute;
+      @include span(6);
+      @include push(3);
       top: 35%;
     }
   }
-
-  .esu-privacy-message {
-    margin-top: 25px;
-    @include span(10);
-    @include push(1);
-    @include breakpoint($screen-lg) {
-      @include span(10);
-
-    }
-  }
 }
 
+// ESU Interest
 .cr-email-signup-register-interest-form {
-  // Add 10px because of there is a margin top on signup register interest form
   .esu-privacy-message {
-    margin-top: calc(2em + 10px);
     @include span(12);
     @include breakpoint($screen-md){
       @include span(6);
