@@ -1,8 +1,8 @@
 header[role=banner] {
 
   &.header {
-    height: 50px;
-    padding: 4px 0;
+    min-height: 50px;
+    padding: 9px 0;
     border-width: 2px;
   
     @include breakpoint($screen-md) {
