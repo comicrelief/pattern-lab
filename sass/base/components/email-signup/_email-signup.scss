@@ -781,7 +781,27 @@ select,
       @include span(10);
     }
   }
+
 }
+
+// ESU Workplace remove margin top to privacy message on medium screen
+@include breakpoint($screen-md) {
+  .cr-email-signup-workplace-form {
+    .esu-privacy-message {
+      margin-top: -25px;
+    }
+  }
+}
+
+// ESU Workplace add margin top to privacy message on large screen
+@include breakpoint($screen-lg) {
+  .cr-email-signup-workplace-form {
+    .esu-privacy-message {
+      margin-top: 25px;
+    }
+  }
+}
+
 
 // ESU Fundraise & Standard
 .cr-email-signup-fundraise-form,
