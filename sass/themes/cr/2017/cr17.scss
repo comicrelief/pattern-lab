@@ -35,6 +35,17 @@
 // Import all components
 // @import "../../../base/_components";
 
+$susy: (  
+  columns: $columns,
+  container: $max-width,
+  gutters: 50px/50px,
+  global-box-sizing: border-box,
+  gutter-position: split,
+  output: float,
+  last-flow: to
+);
+
+
 // Ou choose components one by one
 @import "../../../base/components/animations/animations";
 @import "../../../base/components/background-colours/background-colours";
@@ -101,4 +112,5 @@
 @import "_cr17-styleguide.scss";
 @import "_cr17-components";
 @import "../../../base/components/postcode-lookup/_postcode-lookup";
+
 
