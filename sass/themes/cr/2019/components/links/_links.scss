@@ -1,0 +1,43 @@
+.link {
+  &.link--dark-purple{
+    @include link($colour-black, $colour-red);
+  }
+  &.link--purple {
+    @include link($colour-purple, $colour-dark-purple);
+  }
+  &.link--royal-blue {
+    @include link($colour-royal-blue, $colour-dark-purple);
+  }
+  &.link--red {
+    @include link($colour-red, $colour-dark-purple);
+  }
+  &.link--mint-green {
+    @include link($colour-mint-green, $colour-white);
+  }
+  &.link--white {
+    @include link($colour-white, $colour-mint-green);
+  }
+  &.link--grey {
+    @include link($colour-grey, $colour-mint-green);
+  }
+  &.link--light-grey {
+    @include link($colour-light-grey, $colour-mint-green);
+  }
+  &.link--black{
+    @include link($colour-black, $colour-royal-blue);
+    border-color: $colour-red;
+    &:hover {
+        color: $colour-black;
+    }
+  }
+}
+// Default link for Article and Page types
+.cr-article__body .link,
+.basic-page--content .link {
+  @include link($colour-black, $colour-red);
+  line-height: 14px;
+  border-bottom: 4px solid rgba($colour-black, 0.5);
+  &:hover {
+    border-bottom: 4px solid rgba($colour-red, 0.5);
+  }
+}
