@@ -1,21 +1,26 @@
-
-
-h1,
-h2,
-h3,
-h4,
-h5 { 
+h1, h2, h3, h4, h5 { 
   text-transform: uppercase;
   font-family: $anton;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-span {
+/* Override base theme variations, to make current content 'work' on some level */
+h1 {
+  &.font--font-black {
+    @include font-size($h1-font-size);
+  }
+  &.font--xlarge {
+    @include font-size($h1-font-size);
+  }
+  &.font--black-shadow {
+    @include font-size($h1-font-size);
+  } 
+}
+
+h1.text--title {
+  @include font-size($h1-title-font-size);
+}
+
+h1, h2, h3, h4, h5, p, span {
   &.font {
     &--red {
       color: $colour-red;
@@ -52,10 +57,10 @@ span {
 
 
 /* 2019 Classes .. to be used via Sass @extends, not as standalone WYSIWYG classes */
-.copy--subtitle,
-.copy--subtitle-small,
-.copy--label,
-.copy--label-small {
+.text--subtitle,
+.text--subtitle-small,
+.text--label,
+.text--label-small {
   font-family: $montserrat;
   font-weight: 800;
   strong {
@@ -63,14 +68,36 @@ span {
   }
 }
 
-.copy--body,
-.copy--body-small,
-.copy--footnote {
+.text--body,
+.text--body-small,
+.text--footnote {
   font-family: $montserrat;
   font-weight: 500;
   strong {
     font-weight: 700;
   }
+}
+
+.text--subtitle {
+  @include font-size($subtitle-font-size);
+}
+.text--subtitle-small {
+  @include font-size($subtitle-small-font-size);
+}
+.text--label {
+  @include font-size($label-font-size);
+}
+.text--label-small {
+  @include font-size($label-small-font-size);
+}
+.text--body {
+  @include font-size($body-font-size);
+}
+.text--body-small {
+  @include font-size($body-small-font-size);
+}
+.text--footnote {
+  @include font-size($footnote-font-size);
 }
 
 /* Backwards mapping so our existing content in the CMS doesn't look too wonky */
