@@ -1,6 +1,7 @@
 /* Generic styles */
 input.button,
 input.form-text,
+
 select,
 .ui-selectmenu-button {
   &:focus {
@@ -252,7 +253,11 @@ select,
       }
       form {
         margin-top: 20px;
-        @include span(12);
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        float: left;
+
         @include breakpoint($screen-lg) {
           margin-top: 0;
         }
@@ -294,6 +299,10 @@ select,
         }
       }
  
+      .esu-initial-message {
+        margin-left: 0;
+      }
+
     }
 
     .block--cr-email-signup__inner-wrapper {
@@ -302,8 +311,9 @@ select,
       }
 
       form {
-        @include span(12);
-
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         input[type="text"],
         input[type="submit"] {
           max-width: none;
@@ -383,7 +393,10 @@ select,
 
       form {
         margin-top: 10px;
-        @include span(12);
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        float: left;
 
         .form-item-email {
           @include span(10);
@@ -490,7 +503,10 @@ select,
           
           .esu-initial-message {
             margin-top: 0;
-            @include span(10);
+            @include span(10 wide);
+            
+            margin-left: 0;
+            margin-right: 0;
           }
         }
 
@@ -519,16 +535,10 @@ select,
 
     /* Register Interest ESU */
     &.block--cr-email-signup--register-interest {
-      .cr-email-signup--messages {
-          @include span(7);
-          @include push(4);
-      }
-
       .block--cr-email-signup__inner-wrapper {
         &:after {
           position:absolute;
           content: "";
-          background: url( $image-path + "fixedplaceholder-register-interest-bg-sm-1x.png") no-repeat;
           width: 127px;
           height: 177px;
           top: 50%;
@@ -537,12 +547,16 @@ select,
         }
 
         form {
-          @include span(7);
-          @include push(4);
-          
+          width: 100%;
+          margin-right: 0;
+          margin-left: 0;
+          float: left;
+
           .form-item-email {
-            @include span(8);
+            @include span(9);
+            @include push(1);
             margin-right: 0;
+
           }
 
           .form-submit {
@@ -648,9 +662,11 @@ select,
       .block--cr-email-signup__inner-wrapper {
         form {
           @include span(10);
+          margin-left: 0;
           padding-bottom: 0;
         }
       }
+      
     }
 
     /* Register Interest ESU */
@@ -683,6 +699,7 @@ select,
           margin-top: 10px;
           @include span(6);
           @include push(5);
+          float: left;
           
           .form-item-email {
             @include span(8);
@@ -738,6 +755,7 @@ select,
     .esu-initial-message {
       display: none !important;
     }
+
     .esu-second-success-message {
       display: block;
     }
@@ -775,7 +793,7 @@ select,
 @include breakpoint($screen-lg) {
   .cr-email-signup-workplace-form {
     .esu-initial-message {
-      margin-top: 0;
+      margin-top: 0; 
     }
     .esu-privacy-message {
       margin-top: 26px;
@@ -788,21 +806,17 @@ select,
 .cr-email-signup-fundraise-form,
 .cr-email-signup-form {
   &.block--cr-email-signup.block--cr-email-signup--standard .block--cr-email-signup__inner-wrapper form {
-    @include span(12);
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    float: left;
   }
+
   @include breakpoint($screen-lg) {
     &.block--cr-email-signup.block--cr-email-signup--standard .block--cr-email-signup__inner-wrapper form {
       @include span(6);
       @include push(3);
       top: 35%;
-    }
-  }
-}
-
-.cr-email-signup-workplace-form {
-  @include breakpoint($screen-lg) {
-    &.block--cr-email-signup.block--cr-email-signup--standard .block--cr-email-signup__inner-wrapper form {
-      margin-left: 0;
     }
   }
 }
@@ -815,8 +829,6 @@ select,
   .esu-privacy-message {
     @include span(12);
     @include breakpoint($screen-md){
-      @include span(6);
-      @include push(4);
     }
     @include breakpoint($screen-lg) {
       @include push(5);
