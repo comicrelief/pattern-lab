@@ -9,10 +9,6 @@ h5 {
   font-family: $anton;
 }
 
-h5{ 
-  // @include font-size($h5-font-size);
-}
-
 h1,
 h2,
 h3,
@@ -53,44 +49,52 @@ span {
     }
   }
 }
-i.font--family-black {
-  font-family: $montserrat-800;
-  font-weight: 800;
 
-}
-.font--family-black {
-  font-family: $montserrat-800;
-  font-weight: 800;
 
-}
-i.font--family-bold {
-  font-family: $montserrat-800;
+/* 2019 Classes .. to be used via Sass @extends, not as standalone WYSIWYG classes */
+.copy--subtitle,
+.copy--subtitle-small,
+.copy--label,
+.copy--label-small {
+  font-family: $montserrat;
   font-weight: 800;
-
+  strong {
+    font-weight: inherit;
+  }
 }
+
+.copy--body,
+.copy--body-small,
+.copy--footnote {
+  font-family: $montserrat;
+  font-weight: 500;
+  strong {
+    font-weight: 700;
+  }
+}
+
+/* Backwards mapping so our existing content in the CMS doesn't look too wonky */
+i.font--family-black,
+.font--family-black, 
+i.font--family-bold, 
 .font--family-bold {
-	font-family: $montserrat-800;
+  font-family: $montserrat;
   font-weight: 800;
+  text-transform: unset;
+}
 
-}
-i.font--family-regular {
-  font-family: $montserrat-500;
-  font-weight: 500;
-
-}
-.font--family-regular {
-  font-family: $montserrat-500;
-  font-weight: 500;
-}
-.font--family-light {
-  font-family: $montserrat-500;
-  font-weight: 500;
-}
-.font--family-medium {
-	font-family: $montserrat-500;
-  font-weight: 500;
-}
-strong {
-  font-family: $montserrat-700;
+i.font--family-regular,
+.font--family-regular,
+.font--family-medium,
+i.font--family-medium {
+  font-family: $montserrat;
   font-weight: 700;
+  text-transform: unset;
+}
+
+.font--family-light,
+i.font--family-light {
+  font-family: $montserrat;
+  font-weight: 500;
+  text-transform: unset;
 }
