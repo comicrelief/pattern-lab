@@ -13,16 +13,7 @@
 <p>Comic Relief uses Montserrat and Anton; the latter for headings, the former of body copy, labels etc.</p>
 
 <h1>Fonts</h1>
-{# <p class="font--family-black">Black</p>
-<p>Montserrat, 800 weight <b>.font--family-black</b></p>
-<p class="font--family-bold">Bold</p>
-<p>Montserrat, 800 weight <b>.font--family-bold</b></p>
-<p class="font--family-medium">Medium</p>
-<p>Montserrat, 500 weight <b>.font--family-medium</b></p>
-<p class="font--family-regular">Regular</p>
-<p>Montserrat, 500 weight <b>.font--family-regular</b></p>
-<p class="font--family-light">Light</p>
-<p>Montserrat, 500 weight <b>.font--family-light</b></p> #}
+
 <br/>
 <br/>
 <br/>
@@ -35,10 +26,10 @@
 <p>There are a range of heading sizes from H1 to H5, using the font size and line height. According to the typographic scale set the heading change sizes responsively for different media devices.</p>
 
 <h1 class="text--title">'Title' Header 1</h1>
-  <span><b>.text--title</b> (Used for headers and landing pages, noted as 'Title' H1 in the Design System)<br/></span>
-  <span class="breakpoint-lg"><b>Current breakpoint: LG </b> - font-size: 100px / line-height: 104px</span>
-  <span class="breakpoint-md"><b>Current breakpoint: MD </b> - font-size: 100px / line-height: 104px</span>
-  <span class="breakpoint-sm"><b>Current breakpoint: SM </b> - font-size: 100px / line-height: 104px</span>
+  <span class="font--red"><b>.text--title</b> (Used for headers and landing pages, noted as 'Title' H1 in the Design System)</span><br/>
+  <span class="breakpoint-lg font--red"><b>Current breakpoint: LG </b> - font-size: 100px / line-height: 104px</span>
+  <span class="breakpoint-md font--red"><b>Current breakpoint: MD </b> - font-size: 100px / line-height: 104px</span>
+  <span class="breakpoint-sm font--red"><b>Current breakpoint: SM </b> - font-size: 100px / line-height: 104px</span>
 <br/>
 <br/>
 
@@ -70,23 +61,9 @@
 
 <h3>Paragraphs</h3>
 
-{# <p class="font--xlarge">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<p><b>.font--xlarge</b><br/>
-  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: TBC / line-height: TBC</span>
-  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: TBC / line-height: TBC</span>
-  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: TBC / line-height: TBC</span>
-</p>
-
-<p class="font--large">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<p><b>.font--large</b><br/>
-  <span class="breakpoint-lg"><b>Current breakpoint: LG </b><br/> font-size: TBC / line-height: TBC</span>
-  <span class="breakpoint-md"><b>Current breakpoint: MD </b><br/> font-size: TBC / line-height: TBC</span>
-  <span class="breakpoint-sm"><b>Current breakpoint: SM </b><br/> font-size: TBC / line-height: TBC</span>
-</p> #}
-
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<span class="font--red"><b>Standard paragraph</b></span>
+<span class="font--red"><b>Standard paragraph</b></span><br/>
 <span class="breakpoint-lg font--red"><b>Current breakpoint: LG </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-md font--red"><b>Current breakpoint: MD </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-sm font--red"><b>Current breakpoint: SM </b> - font-size: TBC / line-height: TBC</span>
@@ -95,7 +72,7 @@
 <br/>
 
 <p class="text--subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<span class="font--red"><b>'Subtitle' .text--subtitle</b></span>
+<span class="font--red"><b>'Subtitle' .text--subtitle</b></span><br/>
 <span class="breakpoint-lg font--red"><b>Current breakpoint: LG </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-md font--red"><b>Current breakpoint: MD </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-sm font--red"><b>Current breakpoint: SM </b> - font-size: TBC / line-height: TBC</span>
@@ -106,7 +83,7 @@
 
 
 <p class="text--subtitle-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<span class="font--red"><b>'Subtitle small' .text--subtitle-small</b></span>
+<span class="font--red"><b>'Subtitle small' .text--subtitle-small</b></span><br/>
 <span class="breakpoint-lg font--red"><b>Current breakpoint: LG </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-md font--red"><b>Current breakpoint: MD </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-sm font--red"><b>Current breakpoint: SM </b> - font-size: TBC / line-height: TBC</span>
@@ -115,7 +92,7 @@
 <br/>
 
 <p class="text--label">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<span class="font--red"><b>'Label' .text--label</b></span>
+<span class="font--red"><b>'Label' .text--label</b></span><br/>
 <span class="breakpoint-lg font--red"><b>Current breakpoint: LG </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-md font--red"><b>Current breakpoint: MD </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-sm font--red"><b>Current breakpoint: SM </b> - font-size: TBC / line-height: TBC</span>
@@ -124,7 +101,7 @@
 <br/>
 
 <p class="text--label-small">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<span class="font--red"><b>'Label small' .text--label-small</b></span>
+<span class="font--red"><b>'Label small' .text--label-small</b></span><br/>
 <span class="breakpoint-lg font--red"><b>Current breakpoint: LG </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-md font--red"><b>Current breakpoint: MD </b> - font-size: TBC / line-height: TBC</span>
 <span class="breakpoint-sm font--red"><b>Current breakpoint: SM </b> - font-size: TBC / line-height: TBC</span>
