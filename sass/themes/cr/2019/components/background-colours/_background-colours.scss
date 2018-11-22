@@ -23,8 +23,8 @@
 .bg--dark-purple {
   background-color: $colour-dark-purple;
 }
-.bg--mint-green {
-  background-color: $colour-mint-green;
+.bg--teal {
+  background-color: $colour-teal;
 }
 .bg--black {
   background-color: $colour-black;
@@ -57,7 +57,7 @@
   .bg--white,
   .bg--light-grey,
   .bg--grey,
-  .bg--mint-green {
+  .bg--teal {
     h2,
     h3,
     h4,
@@ -101,4 +101,4 @@
 .bg--white { @include dark-backgrounds };
 .bg--grey { @include dark-backgrounds };
 .bg--light-grey { @include dark-backgrounds };
-.bg--mint-green { @include dark-backgrounds };
+.bg--teal { @include dark-backgrounds };

@@ -1,10 +1,10 @@
 // CR Colours
 
-$colour-red: #ea0043;
+/* $colour-red: #ea0043;
 $colour-dark-purple: #29022c;
 $colour-royal-blue: #4032fe;
 $colour-purple: #340f78;
-$colour-mint-green: #5df4cf;
+$colour-teal: #5df4cf;
 $colour-black: #29022c;
 $colour-dark-grey: #333;
 $colour-grey: #e8e8e8;
@@ -16,5 +16,68 @@ $colour-white: #fff;
 $colour-purple-light: #3e128f;
 $colour-dark-purple-light: #400344;
 $colour-royal-blue-light: #584bfe;
-$colour-mint-green-light: #8df7dd;
+$colour-teal-light: #8df7dd;
+$colour-red-light: #ff044c; */
+
+
+/**** New 2019 colors ****/
+
+/* Primary */
+$colour-red: #E52630;
+$colour-deep-violet: #2C0230;
+$colour-white: #FFFFFF;
+
+/* Secondary */
+$colour-grey: #918791;
+$colour-coral: #F9686D;
+$colour-orange: #FF9144;
+$colour-yellow: #FFE400;
+$colour-green: #4ECD57;
+$colour-blue: #6489FC;
+$colour-magenta: #FC59CE;
+$colour-purple: #C180F9;
+$colour-teal: #22CFD8;
+
+/* Secondary light */
+$colour-light-grey: #F4F2F4;
+$colour-light-coral: #FFCECE;
+$colour-light-orange: #FEE3CC;
+$colour-light-yellow: #FEFD5A;
+$colour-light-green: #62EF74;
+$colour-light-blue: #8BACFE;
+$colour-light-magenta: #FEB4DC;
+$colour-light-purple: #DFC6F6;
+$colour-light-teal: #86E4E9;
+
+/* Secondary dark */
+$colour-dark-grey: #4B324E;
+$colour-dark-coral: #961D35;
+$colour-dark-orange: #984316;
+$colour-dark-yellow: #665700;
+$colour-dark-green: #1B651D;
+$colour-dark-blue: #274084;
+$colour-dark-magenta: #821C5D;
+$colour-dark-purple: #48276E;
+$colour-dark-teal: #13767C;
+
+
+/* Mapping old colours to new ones for backwards compatibility with current CMS classes */
+/* $colour-red: $colour--red:
+$colour-dark-purple: #29022c;
+$colour-royal-blue: #4032fe;
+$colour-purple: #340f78;
+$colour-teal: #5df4cf;
+$colour-black: #29022c;
+$colour-dark-grey: #333;
+$colour-grey: #e8e8e8;
+$colour-light-grey: #F8F8F8;
+$colour-white: #fff;
+
+$colour-purple-light: #3e128f;
+$colour-dark-purple-light: #400344;
+$colour-royal-blue-light: #584bfe;
+$colour-teal-light: #8df7dd;
 $colour-red-light: #ff044c;
+ */
+
+

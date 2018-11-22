@@ -12,16 +12,16 @@
     @include link($colour-red, $colour-dark-purple);
   }
   &.link--mint-green {
-    @include link($colour-mint-green, $colour-white);
+    @include link($colour-teal, $colour-white);
   }
   &.link--white {
-    @include link($colour-white, $colour-mint-green);
+    @include link($colour-white, $colour-teal);
   }
   &.link--grey {
-    @include link($colour-grey, $colour-mint-green);
+    @include link($colour-grey, $colour-teal);
   }
   &.link--light-grey {
-    @include link($colour-light-grey, $colour-mint-green);
+    @include link($colour-light-grey, $colour-teal);
   }
   &.link--black{
     @include link($colour-black, $colour-royal-blue);

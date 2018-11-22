@@ -60,7 +60,7 @@
   text-shadow: 0 1px 1px $colour-dark-purple;
 }
 .btn--mint-green {
-  @include cr_button_types($colour-dark-purple, $colour-mint-green);
+  @include cr_button_types($colour-dark-purple, $colour-teal);
 }
 .btn--white {
   @include cr_button_types($colour-dark-purple, $colour-white);

@@ -1,3 +1,4 @@
+
 /* Main navigation styling */ 
 .header__inner-wrapper {
 
@@ -63,7 +64,7 @@
       > li {
 
          &:hover >a {
-          background-color: $colour-mint-green;
+          background-color:$colour-teal;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
@@ -132,7 +133,7 @@
     &.menu--level-1 {
       li.menu-item.menu-item--duplicate {
         > a {
-          color: $colour-mint-green;
+          color: $colour-teal;
           font-family: $font-medium;
           position: relative;
           font-size: 21px;
@@ -141,7 +142,7 @@
 
           &:after {
             width: 14px;
-            border-bottom: 4px solid $colour-mint-green;
+            border-bottom: 4px solid $colour-teal;
             left: 12px;
             top: auto;
             bottom: 0;
@@ -166,7 +167,7 @@
 
             // Add border to the span (to allow control over the width), rather than the :after psuedo
             span.menu-item__text {
-              border-bottom: 4px solid $colour-mint-green;
+              border-bottom: 4px solid $colour-teal;
             }
 
             &:after {
