@@ -1,6 +1,9 @@
 h1, h2, h3, h4, h5 { 
   text-transform: uppercase;
   font-family: $anton;
+  strong {
+    font-family: inherit;
+  }
 }
 
 /* Override base theme variations, to make current content 'work' on some level */
