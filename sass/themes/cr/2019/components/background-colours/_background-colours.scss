@@ -2,62 +2,114 @@
 //
 // To be used by paragraphs and body copy
 
-.bg--red {
-  background-color: $colour-red;
-  .font--yellow {
-    color: $colour-yellow;
-  }
-}
-.bg--royal-blue {
-  background-color: $colour-royal-blue;
-  .font--dark-purple {
-    color: $colour-dark-purple;
-  }
-}
-.bg--purple {
-  background-color: $colour-purple;
-  .font--pink {
-    color: $colour-pink;
-  }
-}
-.bg--dark-purple {
-  background-color: $colour-dark-purple;
-}
-.bg--teal {
-  background-color: $colour-teal;
-}
-.bg--black {
-  background-color: $colour-black;
-}
-.bg--white {
-  background-color: $colour-white;
-}
-.bg--grey {
-  background-color: $colour-grey;
-}
-.bg--dark-grey {
-  background-color: $colour-dark-grey;
-}
-.bg--light-grey {
-  background-color: $colour-light-grey;
-}
+// CR Colours
+
+/* $colour-red: #E52630;
+$colour-deep-violet: #2C0230;
+$colour-white: #FFFFFF;
+
+$colour-grey: #918791;
+$colour-coral: #F9686D;
+$colour-orange: #FF9144;
+$colour-yellow: #FFE400;
+$colour-green: #4ECD57;
+$colour-blue: #6489FC;
+$colour-magenta: #FC59CE;
+$colour-purple: #C180F9;
+$colour-teal: #22CFD8;
+
+$colour-light-grey: #F4F2F4;
+$colour-light-coral: #FFCECE;
+$colour-light-orange: #FEE3CC;
+$colour-light-yellow: #FEFD5A;
+$colour-light-green: #62EF74;
+$colour-light-blue: #8BACFE;
+$colour-light-magenta: #FEB4DC;
+$colour-light-purple: #DFC6F6;
+$colour-light-teal: #86E4E9;
+
+$colour-dark-grey: #4B324E;
+$colour-dark-coral: #961D35;
+$colour-dark-orange: #984316;
+$colour-dark-yellow: #665700;
+$colour-dark-green: #1B651D;
+$colour-dark-blue: #274084;
+$colour-dark-magenta: #821C5D;
+$colour-dark-purple: #48276E;
+$colour-dark-teal: #13767C; */
+
+
+
+
+/* New stuff */
+
+// Dark backgrounds
+.bg--white { background-color: $colour-white; }
+.bg--deep-violet { background-color: $colour-deep-violet; }
+.bg--red { background-color: $colour-red; }
+
+.bg--grey     { background-color: $colour-grey; }
+.bg--coral    { background-color: $colour-coral; }
+.bg--orange   { background-color: $colour-orange; }
+.bg--yellow   { background-color: $colour-yellow; }
+.bg--green    { background-color: $colour-green; }
+.bg--blue     { background-color: $colour-blue; }
+.bg--magenta  { background-color: $colour-magenta; }
+.bg--purple    { background-color: $colour-purple; }
+.bg--teal     { background-color: $colour-teal; }
+
+.bg--dark-grey      { background-color: $colour-dark-grey; }
+.bg--dark-coral     { background-color: $colour-dark-coral; }
+.bg--dark-orange    { background-color: $colour-dark-orange; }
+.bg--dark-yellow    { background-color: $colour-dark-yellow; }
+.bg--dark-green     { background-color: $colour-dark-green; }
+.bg--dark-blue      { background-color: $colour-dark-blue; }
+.bg--dark-magenta   { background-color: $colour-dark-magenta; }
+.bg--dark-purple    { background-color: $colour-dark-purple; }
+.bg--dark-teal      { background-color: $colour-dark-teal; }
+
+// Light backgrounds
+.bg--light-grey     { background-color: $colour-light-grey; }
+.bg--light-coral    { background-color: $colour-light-coral; }
+.bg--light-orange   { background-color: $colour-light-orange; }
+.bg--light-yellow   { background-color: $colour-light-yellow; }
+.bg--light-green    { background-color: $colour-light-green; }
+.bg--light-blue     { background-color: $colour-light-blue; }
+.bg--light-magenta  { background-color: $colour-light-magenta; }
+.bg--light-purple   { background-color: $colour-light-purple; }
+.bg--light-teal     { background-color: $colour-light-teal; }
 
 /**
  * Needed to break-out these bg styles out a bit as the mutiple
  * nested selectors were breaking the styles and/or getting them overridden? Weird. **/
-@mixin light-backgrounds {
+@mixin dark-backgrounds {
   h2,
   h3,
   h4,
   h5,
   p,
   .link {
-    color: $colour-white,;
+    color: $colour-white;
   }
-  .bg--white,
-  .bg--light-grey,
-  .bg--grey,
-  .bg--teal {
+.bg--light-grey,    
+.bg--light-coral,   
+.bg--light-orange,  
+.bg--light-yellow,  
+.bg--light-green,   
+.bg--light-blue,    
+.bg--light-magenta, 
+.bg--light-purple,  
+.bg--light-teal,
+.bg--grey,
+.bg--coral, 
+.bg--orange,
+.bg--yellow,
+.bg--green,
+.bg--blue, 
+.bg--magent,
+.bg--purple,
+.bg--teal,
+.bg--white {
     h2,
     h3,
     h4,
@@ -68,7 +120,7 @@
     }
   }
 }
-@mixin dark-backgrounds {
+@mixin light-backgrounds {
   h2,
   h3,
   h4,
@@ -77,11 +129,17 @@
   .link {
     color: $colour-black;
   }
-  .bg--black,
-  .bg--dark-purple,
-  .bg--royal-blue,
-  .bg--red,
-  .bg--purple {
+.bg--dark-grey  
+.bg--dark-coral 
+.bg--dark-orange
+.bg--dark-yellow
+.bg--dark-green 
+.bg--dark-blue  
+.bg--dark-magent
+.bg--dark-purple
+.bg--dark-teal,
+.bg--red,
+.bg--deep-violet {
     h2,
     h3,
     h4,
@@ -92,7 +150,8 @@
     }
   }
 }
-.bg--black { @include light-backgrounds };
+
+/* .bg--black { @include light-backgrounds };
 .bg--dark-purple { @include light-backgrounds };
 .bg--royal-blue { @include light-backgrounds };
 .bg--red { @include light-backgrounds };
@@ -101,4 +160,45 @@
 .bg--white { @include dark-backgrounds };
 .bg--grey { @include dark-backgrounds };
 .bg--light-grey { @include dark-backgrounds };
-.bg--teal { @include dark-backgrounds };
+.bg--teal { @include dark-backgrounds }; */
+
+
+.bg--white        { @include light-backgrounds; }
+.bg--deep-violet  { @include dark-backgrounds; }
+.bg--red          { @include dark-backgrounds; }
+
+// Dark backgrounds
+.bg--dark-grey      { @include dark-backgrounds; }
+.bg--dark-coral     { @include dark-backgrounds; }
+.bg--dark-orange    { @include dark-backgrounds; }
+.bg--dark-yellow    { @include dark-backgrounds; }
+.bg--dark-green     { @include dark-backgrounds; }
+.bg--dark-blue      { @include dark-backgrounds; }
+.bg--dark-magenta   { @include dark-backgrounds; }
+.bg--dark-purple    { @include dark-backgrounds; }
+.bg--dark-teal      { @include dark-backgrounds; }
+
+
+
+// Light backgrounds
+.bg--light-grey     { @include light-backgrounds; }
+.bg--light-coral    { @include light-backgrounds; }
+.bg--light-orange   { @include light-backgrounds; }
+.bg--light-yellow   { @include light-backgrounds; }
+.bg--light-green    { @include light-backgrounds; }
+.bg--light-blue     { @include light-backgrounds; }
+.bg--light-magenta  { @include light-backgrounds; }
+.bg--light-purple   { @include light-backgrounds; }
+.bg--light-teal     { @include light-backgrounds; }
+
+// Standard backgrounds
+.bg--grey    { @include light-backgrounds; }
+.bg--coral   { @include light-backgrounds; }
+.bg--orange  { @include light-backgrounds; }
+.bg--yellow  { @include light-backgrounds; }
+.bg--green   { @include light-backgrounds; }
+.bg--blue    { @include light-backgrounds; }
+.bg--magenta { @include light-backgrounds; }
+.bg--purple  { @include light-backgrounds; }
+.bg--teal    { @include light-backgrounds; }
+
