@@ -25,35 +25,20 @@ h1.text--title {
 
 h1, h2, h3, h4, h5, p, span {
   &.font {
-    &--red {
-      color: $colour-red;
-    }
-    &--mint-green {
-      color: $colour-teal;
-    }
-    &--royal-blue {
-      color: $colour-royal-blue;
-    }
-    &--purple {
-      color: $colour-purple;
-    }
-    &--dark-purple {
+    &--red,
+    &--royal-blue,
+    &--dark-purple,
+    &--purple,
+    &--black,
+    &--dark-grey,
+    &--grey  {
       color: $colour-dark-purple;
     }
-    &--black {
-      color: $colour-black;
-    }
-    &--white {
-      color: $colour-white;
-    }
+
+    &--mint-green,
+    &--white,
     &--light-grey {
-      color: $colour-light-grey;
-    }
-    &--dark-grey {
-      color: $colour-dark-grey;
-    }
-    &--grey {
-      color: $colour-grey;
+      color: $colour-white;
     }
   }
 }
@@ -61,9 +46,7 @@ h1, h2, h3, h4, h5, p, span {
 
 /* 2019 Classes .. to be used via Sass @extends, not as standalone WYSIWYG classes */
 .text--subtitle,
-.text--subtitle-small,
-.text--label,
-.text--label-small {
+.text--label {
   font-family: $montserrat;
   font-weight: 800;
   strong {
@@ -72,7 +55,6 @@ h1, h2, h3, h4, h5, p, span {
 }
 
 .text--body,
-.text--body-small,
 .text--footnote {
   font-family: $montserrat;
   font-weight: 500;
@@ -84,21 +66,14 @@ h1, h2, h3, h4, h5, p, span {
 .text--subtitle {
   @include font-size($subtitle-font-size);
 }
-.text--subtitle-small {
-  @include font-size($subtitle-small-font-size);
-}
 .text--label {
   @include font-size($label-font-size);
 }
-.text--label-small {
-  @include font-size($label-small-font-size);
-}
+
 .text--body {
   @include font-size($body-font-size);
 }
-.text--body-small {
-  @include font-size($body-small-font-size);
-}
+
 .text--footnote {
   @include font-size($footnote-font-size);
 }

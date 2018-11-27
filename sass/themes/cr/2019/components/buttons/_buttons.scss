@@ -46,8 +46,9 @@
 /* button(font_colour, bg_colour) */
 
 .btn--dark-purple, 
-.btn--black {
-  @include cr_button_types($colour-white, $colour-dark-purple, $colour-teal);
+.btn--black,
+.btn-deep-violet {
+  @include cr_button_types($colour-white, $colour-deep-violet, $colour-teal);
 }
 .btn--purple {
   @include cr_button_types($colour-white, $colour-purple, $colour-teal);
@@ -55,11 +56,11 @@
 
 .btn--red {
   @include cr_button_types($colour-white, $colour-red, $colour-teal);
-  text-shadow: 0 1px 1px $colour-dark-purple;
+  text-shadow: 0 1px 1px $colour-deep-violet;
 }
 
 .btn--white {
-  @include cr_button_types($colour-dark-purple, $colour-white, $colour-teal);
+  @include cr_button_types($colour-deep-violet, $colour-white, $colour-teal);
 }
 
 /* Backward compatibility; old class names, new colour vars */
@@ -67,7 +68,7 @@
   @include cr_button_types($colour-white, $colour-blue, $colour-teal);
 }
 .btn--mint-green {
-  @include cr_button_types($colour-dark-purple, $colour-teal, $colour-red);
+  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-red);
 }
 
 /* Brand new Secondary buttons */
@@ -149,7 +150,7 @@
   @include cr_button_types($colour-white, $colour-dark-magenta, $colour-teal);
 }
 .btn--dark-purple {
-  @include cr_button_types($colour-white, $colour-dark-purple, $colour-teal);
+  @include cr_button_types($colour-white, $colour-deep-violet, $colour-teal);
 }
 .btn--dark-teal {
   @include cr_button_types($colour-white, $colour-dark-teal, $colour-teal);

@@ -5,12 +5,6 @@ $anton: "Anton", sans-serif;
 
 // breakpoint: (font-size, line-height)
 
-// Our 'Body' font
-$p-font-size: (
-  null: (20px, 32px),
-  $screen-md: (20px, 32px),
-  $screen-lg: (20px, 32px)
-);
 // 'Title' H1 variation
 $h1-title-font-size: (
   null: (100px, 104px),
@@ -38,39 +32,28 @@ $h1-large-font-size: $h1-title-font-size;
 
 /* New stuff */
 $subtitle-font-size: (
-  null: (36px, 48px),
+  null: (27px, 40px),
   $screen-md: (36px, 48px),
   $screen-lg: (36px, 48px)
 );
 
-$subtitle-small-font-size: (
-  null: (27px, 40px),
-  $screen-md: (27px, 40px),
-  $screen-lg: (27px, 40px)
-);
-
 $label-font-size: (
-  null: (15px, 24px),
+  null: (11px, 16px),
   $screen-md: (15px, 24px),
   $screen-lg: (15px, 24px)
 );
 
-$label-small-font-size: (
-  null: (11px, 16px),
-  $screen-md: (11px, 16px),
-  $screen-lg: (11px, 16px)
-);
-
 $body-font-size: (
-  null: (20px, 32px),
+  null: (15px, 24px),
   $screen-md: (20px, 32px),
   $screen-lg: (20px, 32px)
 );
 
-$body-small-font-size: (
+/* As per Body for backwards compatibility */
+$p-font-size: (
   null: (15px, 24px),
-  $screen-md: (15px, 24px),
-  $screen-lg: (15px, 24px)
+  $screen-md: (20px, 32px),
+  $screen-lg: (20px, 32px)
 );
 
 $footnote-font-size: (
@@ -78,3 +61,21 @@ $footnote-font-size: (
   $screen-md: (11px, 16px),
   $screen-lg: (11px, 16px)
 );
+
+/* $subtitle-small-font-size: (
+  null: (27px, 40px),
+  $screen-md: (27px, 40px),
+  $screen-lg: (27px, 40px)
+); */
+
+/* $label-small-font-size: (
+  null: (11px, 16px),
+  $screen-md: (11px, 16px),
+  $screen-lg: (11px, 16px)
+); */
+
+/* $body-small-font-size: (
+  null: (15px, 24px),
+  $screen-md: (15px, 24px),
+  $screen-lg: (15px, 24px)
+); */
