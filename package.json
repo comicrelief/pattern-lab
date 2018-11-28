@@ -25,7 +25,9 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "susy": "^2.2.12"
+    "event-stream": "3.3.4",
+    "susy": "^2.2.12",
+    "underscore.string": "3.3.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
