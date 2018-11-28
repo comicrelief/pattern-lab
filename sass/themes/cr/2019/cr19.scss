@@ -35,6 +35,9 @@
 // Import all components
 // @import "../../../base/_components";
 
+// Increase max width
+$max-width: 1440px;
+
 // Tweak column-gutter ratio
 $susy: (  
   columns: $columns,
