@@ -35,6 +35,17 @@
 // Import all components
 // @import "../../../base/_components";
 
+// Tweak column-gutter ratio
+$susy: (  
+  columns: $columns,
+  container: $max-width,
+  gutters: 40px/60px,
+  global-box-sizing: border-box,
+  gutter-position: split,
+  output: float,
+  last-flow: to
+);
+
 // Ou choose components one by one
 @import "../../../base/components/animations/animations";
 @import "../../../base/components/background-colours/background-colours";
