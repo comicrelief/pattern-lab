@@ -1,6 +1,5 @@
 .link {
   
-  // TODO:  &.link--white{ @include link($colour-white, $colour-deep-violet); }
   &.link--red { @include link($colour-red, $colour-deep-violet); }
   &.link--deep-violet { @include link($colour-deep-violet, $colour-red); }
 
@@ -34,14 +33,22 @@
   &.link--dark-purple { @include link($colour-dark-purple, $colour-deep-violet); }
   &.link--dark-teal { @include link($colour-dark-teal, $colour-deep-violet); }
 
- /*
-  &.link-- { @include link($colour-, $colour-deep-violet); }
-*/
+  &.link--white {
+    @include link($colour-white, $colour-light-teal);
+    color: $colour-white;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $colour-white;
+    }
+  }
 
   &.link--black{
     @include link($colour-black, $colour-royal-blue);
     border-color: $colour-red;
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         color: $colour-black;
     }
   }
