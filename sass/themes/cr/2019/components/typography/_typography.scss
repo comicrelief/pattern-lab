@@ -54,8 +54,7 @@ h1, h2, h3, h4, h5, p, span {
   }
 }
 
-.text--body,
-.text--footnote {
+.text--footnote, {
   font-family: $montserrat;
   font-weight: 500;
   strong {
@@ -68,10 +67,6 @@ h1, h2, h3, h4, h5, p, span {
 }
 .text--label {
   @include font-size($label-font-size);
-}
-
-.text--body {
-  @include font-size($body-font-size);
 }
 
 .text--footnote {
