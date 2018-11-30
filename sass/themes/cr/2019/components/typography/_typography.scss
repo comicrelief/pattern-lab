@@ -6,6 +6,13 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+p, span {
+  font-family: $montserrat;
+  strong {
+    font-family: inherit;
+  }
+}
+
 /* Override base theme variations, to make current content 'work' on some level */
 h1 {
   &.font--font-black {
