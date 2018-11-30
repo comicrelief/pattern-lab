@@ -1,7 +1,7 @@
 .link {
   
   // TODO:  &.link--white{ @include link($colour-white, $colour-deep-violet); }
-  &.link--red{ @include link($colour-red, $colour-deep-violet); }
+  &.link--red { @include link($colour-red, $colour-deep-violet); }
   &.link--deep-violet { @include link($colour-deep-violet, $colour-red); }
 
   &.link--grey { @include link($colour-grey, $colour-deep-violet); }
