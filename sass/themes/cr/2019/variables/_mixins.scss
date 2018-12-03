@@ -1,13 +1,12 @@
-/* Not using old button mixin with list array. Let's rethink about it. I find it a abit over engineered */
-
-// CR buttons variations, default hover state
-@mixin cr_button_types($colour, $bg-colour, $hover-colour: red) {
+// CR buttons variations, w/ default hover state colours
+@mixin cr_button_types($colour, $bg-colour, $hover-colour: $colour-red, $hover-text-colour: $colour-white) {
   color: $colour;
   background-color: $bg-colour;
   &:hover,
   &:focus,
   &:active {
     background-color: $hover-colour;
+    color: $hover-text-colour;
   }
 }
 

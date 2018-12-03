@@ -42,13 +42,11 @@
   }
 }
 
-/* button(font_colour, bg_colour, hover bg-colour) */
-
+/* button(font_colour, bg_colour, hover bg-colour, hover font_colour) */
 .btn--black,
 .btn--deep-violet {
   @include cr_button_types($colour-white, $colour-deep-violet, $colour-teal);
 }
-
 
 .btn--red {
   @include cr_button_types($colour-white, $colour-red, $colour-teal);
@@ -59,98 +57,99 @@
   @include cr_button_types($colour-deep-violet, $colour-white, $colour-teal);
 }
 
+/* Brand new Secondary buttons */
+.btn--grey {
+  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-dark-grey);
+}
+.btn--coral {
+  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-dark-coral);
+}
+.btn--orange {
+  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-dark-orange);
+}
+.btn--yellow {
+  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-dark-yellow);
+}
+.btn--green {
+  @include cr_button_types($colour-deep-violet, $colour-green, $colour-dark-green);
+}
+.btn--blue {
+  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-dark-blue);
+}
+.btn--purple {
+  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-dark-purple);
+}
+.btn--magenta {
+  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-dark-magenta);
+}
+.btn--teal {
+  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-dark-teal);
+}
+
+
+/* Brand new Secondary Light buttons */
+.btn--light-grey {
+  @include cr_button_types($colour-deep-violet, $colour-light-grey, $colour-dark-grey);
+}
+.btn--light-coral {
+  @include cr_button_types($colour-deep-violet, $colour-light-coral, $colour-dark-coral);
+}
+.btn--light-orange {
+  @include cr_button_types($colour-deep-violet, $colour-light-orange, $colour-dark-orange);
+}
+.btn--light-yellow {
+  @include cr_button_types($colour-deep-violet, $colour-light-yellow, $colour-dark-yellow);
+}
+.btn--light-green {
+  @include cr_button_types($colour-deep-violet, $colour-light-green, $colour-dark-green);
+}
+.btn--light-blue {
+  @include cr_button_types($colour-deep-violet, $colour-light-blue, $colour-dark-blue);
+}
+.btn--light-magenta {
+  @include cr_button_types($colour-deep-violet, $colour-light-magenta, $colour-dark-magenta);
+}
+.btn--light-purple {
+  @include cr_button_types($colour-deep-violet, $colour-light-purple, $colour-dark-purple);
+}
+.btn--light-teal {
+  @include cr_button_types($colour-deep-violet, $colour-light-teal, $colour-dark-teal);
+}
+
+/* Brand new Secondary Dark buttons */
+.btn--dark-grey {
+  @include cr_button_types($colour-white, $colour-dark-grey, $colour-grey, $colour-deep-violet);
+}
+.btn--dark-coral {
+  @include cr_button_types($colour-white, $colour-dark-coral, $colour-coral, $colour-deep-violet);
+}
+.btn--dark-orange {
+  @include cr_button_types($colour-white, $colour-dark-orange, $colour-orange, $colour-deep-violet);
+}
+.btn--dark-yellow {
+  @include cr_button_types($colour-white, $colour-dark-yellow, $colour-yellow, $colour-deep-violet);
+}
+.btn--dark-green {
+  @include cr_button_types($colour-white, $colour-dark-green, $colour-green, $colour-deep-violet);
+}
+.btn--dark-blue {
+  @include cr_button_types($colour-white, $colour-dark-blue, $colour-blue, $colour-deep-violet);
+}
+.btn--dark-magenta {
+  @include cr_button_types($colour-white, $colour-dark-magenta, $colour-magenta, $colour-deep-violet);
+}
+.btn--dark-purple {
+  @include cr_button_types($colour-white, $colour-dark-purple, $colour-purple, $colour-deep-violet);
+}
+.btn--dark-teal {
+  @include cr_button_types($colour-white, $colour-dark-teal, $colour-teal, $colour-deep-violet);
+}
+
+
 /* Backward compatibility; old class names, new colour vars */
 .btn--royal-blue {
   @include cr_button_types($colour-white, $colour-blue, $colour-teal);
 }
 .btn--mint-green {
   @include cr_button_types($colour-deep-violet, $colour-teal, $colour-red);
-}
-
-/* Brand new Secondary buttons */
-.btn--grey {
-  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-teal);
-}
-.btn--coral {
-  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-teal);
-}
-.btn--orange {
-  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-teal);
-}
-.btn--yellow {
-  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-teal);
-}
-.btn--green {
-  @include cr_button_types($colour-deep-violet, $colour-green, $colour-teal);
-}
-.btn--blue {
-  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-teal);
-}
-.btn--purple {
-  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-teal);
-}
-.btn--magenta {
-  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-teal);
-}
-.btn--teal {
-  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-teal);
-}
-
-
-/* Brand new Secondary Light buttons */
-.btn--light-grey {
-  @include cr_button_types($colour-deep-violet, $colour-light-grey, $colour-teal);
-}
-.btn--light-coral {
-  @include cr_button_types($colour-deep-violet, $colour-light-coral, $colour-teal);
-}
-.btn--light-orange {
-  @include cr_button_types($colour-deep-violet, $colour-light-orange, $colour-teal);
-}
-.btn--light-yellow {
-  @include cr_button_types($colour-deep-violet, $colour-light-yellow, $colour-teal);
-}
-.btn--light-green {
-  @include cr_button_types($colour-deep-violet, $colour-light-green, $colour-teal);
-}
-.btn--light-blue {
-  @include cr_button_types($colour-deep-violet, $colour-light-blue, $colour-teal);
-}
-.btn--light-magenta {
-  @include cr_button_types($colour-deep-violet, $colour-light-magenta, $colour-teal);
-}
-.btn--light-purple {
-  @include cr_button_types($colour-deep-violet, $colour-light-purple, $colour-teal);
-}
-.btn--light-teal {
-  @include cr_button_types($colour-deep-violet, $colour-light-teal, $colour-teal);
-}
-
-/* Brand new Secondary Dark buttons */
-.btn--dark-grey {
-  @include cr_button_types($colour-white, $colour-dark-grey, $colour-teal);
-}
-.btn--dark-coral {
-  @include cr_button_types($colour-white, $colour-dark-coral, $colour-teal);
-}
-.btn--dark-orange {
-  @include cr_button_types($colour-white, $colour-dark-orange, $colour-teal);
-}
-.btn--dark-yellow {
-  @include cr_button_types($colour-white, $colour-dark-yellow, $colour-teal);
-}
-.btn--dark-green {
-  @include cr_button_types($colour-white, $colour-dark-green, $colour-teal);
-}
-.btn--dark-blue {
-  @include cr_button_types($colour-white, $colour-dark-blue, $colour-teal);
-}
-.btn--dark-magenta {
-  @include cr_button_types($colour-white, $colour-dark-magenta, $colour-teal);
-}
-.btn--dark-purple {
-  @include cr_button_types($colour-white, $colour-dark-purple, $colour-teal);
-}
-.btn--dark-teal {
-  @include cr_button_types($colour-white, $colour-dark-teal, $colour-teal);
 }

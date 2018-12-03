@@ -1,0 +1,4 @@
+.article-teaser .article-teaser__content-wrapper h2 {
+  font-family: $anton;
+  @include font-size($h2-font-size);
+}
