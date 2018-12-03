@@ -43,6 +43,12 @@ $label-font-size: (
   $screen-lg: (15px, 24px)
 );
 
+$label-small-font-size: (
+  null: (11px, 16px),
+  $screen-md: (11px, 16px),
+  $screen-lg: (11px, 16px)
+);
+
 $body-font-size: (
   null: (15px, 24px),
   $screen-md: (20px, 32px),
@@ -68,14 +74,4 @@ $subtitle-small-font-size: (
   $screen-lg: (27px, 40px)
 );
 
-/* $label-small-font-size: (
-  null: (11px, 16px),
-  $screen-md: (11px, 16px),
-  $screen-lg: (11px, 16px)
-); */
 
-/* $body-small-font-size: (
-  null: (15px, 24px),
-  $screen-md: (15px, 24px),
-  $screen-lg: (15px, 24px)
-); */

@@ -54,7 +54,8 @@ h1, h2, h3, h4, h5, p, span {
 /* 2019 Classes .. to be used via Sass @extends, not as standalone WYSIWYG classes */
 .text--subtitle,
 .text--subtitle-small,
-.text--label {
+.text--label,
+.text--label-small {
   font-family: $montserrat;
   font-weight: 800;
   strong {
@@ -81,6 +82,9 @@ h1, h2, h3, h4, h5, p, span {
 }
 .text--label {
   @include font-size($label-font-size);
+}
+.text--label-small {
+  @include font-size($label-small-font-size);
 }
 .text--footnote {
   @include font-size($footnote-font-size);
