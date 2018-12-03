@@ -45,16 +45,15 @@
 /* button(font_colour, bg_colour, hover bg-colour, hover font_colour) */
 .btn--black,
 .btn--deep-violet {
-  @include cr_button_types($colour-white, $colour-deep-violet, $colour-teal);
+  @include cr_button_types($colour-white, $colour-deep-violet, $colour-grey, $colour-deep-violet);
 }
 
 .btn--red {
-  @include cr_button_types($colour-white, $colour-red, $colour-teal);
-  text-shadow: 0 1px 1px $colour-deep-violet;
+  @include cr_button_types($colour-white, $colour-red, $colour-deep-violet);
 }
 
 .btn--white {
-  @include cr_button_types($colour-deep-violet, $colour-white, $colour-teal);
+  @include cr_button_types($colour-deep-violet, $colour-white, $colour-grey, $colour-deep-violet);
 }
 
 /* Brand new Secondary buttons */
