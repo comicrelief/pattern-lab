@@ -149,7 +149,7 @@
   @include cr_button_types($colour-white, $colour-dark-magenta, $colour-teal);
 }
 .btn--dark-purple {
-  @include cr_button_types($colour-white, $colour-deep-violet, $colour-teal);
+  @include cr_button_types($colour-white, $colour-dark-purple, $colour-teal);
 }
 .btn--dark-teal {
   @include cr_button_types($colour-white, $colour-dark-teal, $colour-teal);

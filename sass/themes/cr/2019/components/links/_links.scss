@@ -1,65 +1,56 @@
-.link {
-  
-  &.link--red { @include link($colour-red, $colour-deep-violet); }
-  &.link--deep-violet { @include link($colour-deep-violet, $colour-red); }
+.link,
+.inline {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding-bottom: 1px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 0 2px;
 
-  &.link--grey { @include link($colour-grey, $colour-deep-violet); }
-  &.link--coral { @include link($colour-coral, $colour-deep-violet); }
-  &.link--orange { @include link($colour-orange, $colour-deep-violet); }
-  &.link--yellow { @include link($colour-yellow, $colour-deep-violet); }
-  &.link--green { @include link($colour-green, $colour-deep-violet); }
-  &.link--blue { @include link($colour-blue, $colour-deep-violet); }
-  &.link--magenta { @include link($colour-magenta, $colour-deep-violet); }
-  &.link--purple { @include link($colour-purple, $colour-deep-violet); }
-  &.link--teal { @include link($colour-teal, $colour-deep-violet); }
-
-  &.link--light-grey { @include link($colour-light-grey, $colour-deep-violet); }
-  &.link--light-coral { @include link($colour-light-coral, $colour-deep-violet); }
-  &.link--light-orange { @include link($colour-light-orange, $colour-deep-violet); }
-  &.link--light-yellow { @include link($colour-light-yellow, $colour-deep-violet); }
-  &.link--light-green { @include link($colour-light-green, $colour-deep-violet); }
-  &.link--light-blue { @include link($colour-light-blue, $colour-deep-violet); }
-  &.link--light-magenta { @include link($colour-light-magenta, $colour-deep-violet); }
-  &.link--light-purple { @include link($colour-light-purple, $colour-deep-violet); }
-  &.link--light-teal { @include link($colour-light-teal, $colour-deep-violet); }
-
-  &.link--dark-grey { @include link($colour-dark-grey, $colour-deep-violet); }
-  &.link--dark-coral { @include link($colour-dark-coral, $colour-deep-violet); }
-  &.link--dark-orange { @include link($colour-dark-orange, $colour-deep-violet); }
-  &.link--dark-yellow { @include link($colour-dark-yellow, $colour-deep-violet); }
-  &.link--dark-green { @include link($colour-dark-green, $colour-deep-violet); }
-  &.link--dark-blue { @include link($colour-dark-blue, $colour-deep-violet); }
-  &.link--dark-magenta { @include link($colour-dark-magenta, $colour-deep-violet); }
-  &.link--dark-purple { @include link($colour-dark-purple, $colour-deep-violet); }
-  &.link--dark-teal { @include link($colour-dark-teal, $colour-deep-violet); }
-
-  &.link--white {
-    @include link($colour-white, $colour-light-teal);
-    color: $colour-white;
-    &:hover,
-    &:active,
-    &:focus {
-      color: $colour-white;
-    }
+  &:before {
+    content: " ";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    background-color: $colour-deep-violet;
+    height: 2px;
   }
 
-  &.link--black{
-    @include link($colour-black, $colour-royal-blue);
-    border-color: $colour-red;
+  // Backwards compatibility with base theme
+  &.link--purple { @include link($colour-purple, $colour-deep-violet); }
+  &.link--dark-purple { @include link($colour-dark-purple, $colour-deep-violet); }
+
+  &:hover,
+  &:focus,
+  &:active {
+    font-weight: 700;
+    padding: 0;
+  }
+
+  &.link--strong {
+    font-weight: 700;
+    &:before {
+      bottom: 1px;
+    }
     &:hover,
-    &:active,
-    &:focus {
-        color: $colour-black;
+    &:focus,
+    &:active {
+      font-weight: 800;
+      padding: 0 1px;
     }
   }
 }
+
 // Default link for Article and Page types
 .cr-article__body .link,
 .basic-page--content .link {
-  @include link($colour-black, $colour-red);
+/*   @include link($colour-black, $colour-red);
   line-height: 14px;
   border-bottom: 4px solid rgba($colour-black, 0.5);
   &:hover {
     border-bottom: 4px solid rgba($colour-red, 0.5);
-  }
+  } */
 }
