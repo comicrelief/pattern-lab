@@ -227,8 +227,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
             a {
               @extend .link;
               @extend .link--dark-purple;
-              font-family: "Sailec-Medium", sans-serif;
-              // border-bottom: 2px solid $colour-black;
+              border-bottom: none;
               // Hide to prevent tabbing until the menu is open
               display: none;
               @include breakpoint($screen-lg) {
