@@ -13,7 +13,8 @@
 
   // Backwards compatibility with base theme
   &.link--purple { @include link($colour-purple, $colour-deep-violet); }
-  &.link--dark-purple { @include link($colour-dark-purple, $colour-deep-violet); }
+  &.link--dark-purple { @include link($colour-deep-violet, $colour-deep-violet); }
+  &.link--deep-violet { @include link($colour-deep-violet, $colour-deep-violet); }
 
   &:hover,
   &:focus,
