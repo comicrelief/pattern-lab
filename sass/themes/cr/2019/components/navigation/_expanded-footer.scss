@@ -227,7 +227,6 @@ div.footer--expanded.footer-nav-outer-wrapper {
             a {
               @extend .link;
               @extend .link--dark-purple;
-              border-bottom: none;
               // Hide to prevent tabbing until the menu is open
               display: none;
               @include breakpoint($screen-lg) {
@@ -235,7 +234,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               }
               &:hover,
               &:focus {
-                border-bottom: none;
+                border-bottom: 2px solid $colour-red;
               }
               &:after {
                 content: none;

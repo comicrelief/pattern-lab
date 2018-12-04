@@ -3,22 +3,13 @@
   font-size: inherit;
   line-height: inherit;
   color: inherit;
-  padding-bottom: 1px;
   text-decoration: none;
   position: relative;
-  display: inline-block;
-  padding: 0 2px;
+  display: inline;
+  padding: 0 2px 1px;
   width: auto;
-
-  &:before {
-    content: " ";
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    background-color: $colour-deep-violet;
-    height: 2px;
-  }
+  border-bottom: 2px solid;
+  border-bottom-color: inherit;
 
   // Backwards compatibility with base theme
   &.link--purple { @include link($colour-purple, $colour-deep-violet); }
@@ -28,19 +19,16 @@
   &:focus,
   &:active {
     font-weight: 700;
-    padding: 0;
+    padding: 0 0 1px;
   }
 
   &.link--bold {
     font-weight: 700;
-    &:before {
-      bottom: 1px;
-    }
     &:hover,
     &:focus,
     &:active {
       font-weight: 800;
-      padding: 0 1px;
+      padding: 0 1px 1px;
     }
   }
 }
