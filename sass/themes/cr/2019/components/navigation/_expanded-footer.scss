@@ -226,7 +226,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
             }
             a {
               @extend .link;
-              @extend .link--dark-purple;
+              @extend .link--deep-violet;
               // Hide to prevent tabbing until the menu is open
               display: none;
               @include breakpoint($screen-lg) {
