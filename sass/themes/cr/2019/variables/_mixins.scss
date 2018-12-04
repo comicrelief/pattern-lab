@@ -18,7 +18,7 @@
   word-break: break-word;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  border-bottom: 4px solid $border;
+  border-bottom: 2px solid $colour-deep-violet;
   font-family: $montserrat;
   font-size: 18px;
   line-height: 28px;
@@ -26,19 +26,19 @@
   &:hover,
   &:active,
   &:focus {
-    border-bottom: 4px solid $hover;
-    color: $hover;
+    border-bottom: 2px solid $colour-deep-violet;
+    color: $colour-deep-violet;
   }
   &.inline {
     font-size: inherit;
     line-height: 14px;
-    border-bottom: 4px solid rgba($border, 0.5);
+    border-bottom: 2px solid $colour-deep-violet;
     &:hover {
-      border-bottom: 4px solid rgba($hover, 0.5);
+      border-bottom: 2px solid $colour-deep-violet;
     }
   }
   &.link--small {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
