@@ -235,7 +235,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               }
               &:hover,
               &:focus {
-                //border-bottom: 2px solid $colour-red;
+                border-bottom: none;
               }
               &:after {
                 content: none;
