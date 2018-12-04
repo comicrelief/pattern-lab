@@ -15,15 +15,20 @@ p, span {
 
 /* Override base theme variations, to make current content 'work' on some level */
 h1 {
-  &.font--font-black {
+  &.font--font-black,
+  &.font--xlarge,
+  &.font--black-shadow  {
     @include font-size($h1-font-size);
   }
-  &.font--xlarge {
-    @include font-size($h1-font-size);
+}
+
+p {
+  &.font--xlarge,
+  &.font--large,
+  &.font--small,
+  &.font--xsmall {
+    @include font-size($p-font-size);
   }
-  &.font--black-shadow {
-    @include font-size($h1-font-size);
-  } 
 }
 
 h1.text--title {
@@ -73,6 +78,9 @@ h1, h2, h3, h4, h5, p, span {
 
 .text--body {
   @include font-size($body-font-size);
+}
+.text--body-small {
+  @include font-size($body-small-font-size);
 }
 .text--subtitle {
   @include font-size($subtitle-font-size);

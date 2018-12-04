@@ -55,11 +55,10 @@ $body-font-size: (
   $screen-lg: (20px, 32px)
 );
 
-/* As per Body for backwards compatibility */
-$p-font-size: (
+$body-small-font-size: (
   null: (15px, 24px),
-  $screen-md: (20px, 32px),
-  $screen-lg: (20px, 32px)
+  $screen-md: (15px, 24px),
+  $screen-lg: (15px, 24px)
 );
 
 $footnote-font-size: (
@@ -74,4 +73,6 @@ $subtitle-small-font-size: (
   $screen-lg: (27px, 40px)
 );
 
+/* As per Body for backwards compatibility */
+$p-font-size: $body-font-size;
 
