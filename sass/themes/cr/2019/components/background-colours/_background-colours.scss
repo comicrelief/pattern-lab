@@ -47,6 +47,7 @@
  * Needed to break-out these bg styles out a bit as the mutiple
  * nested selectors were breaking the styles and/or getting them overridden? Weird. **/
 @mixin dark-backgrounds {
+  h1,
   h2,
   h3,
   h4,
@@ -74,6 +75,7 @@
 .bg--purple,
 .bg--teal,
 .bg--white {
+    h1,
     h2,
     h3,
     h4,
@@ -85,6 +87,7 @@
   }
 }
 @mixin light-backgrounds {
+  h1,
   h2,
   h3,
   h4,
@@ -104,6 +107,7 @@
 .bg--dark-teal,
 .bg--red,
 .bg--deep-violet {
+    h1,
     h2,
     h3,
     h4,
