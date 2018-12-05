@@ -1,3 +1,20 @@
+@import "components/background-colours/background-colours";
+@import "components/buttons/buttons";
+@import "components/highlight/highlight";
+@import "components/links/links";
+@import "components/loading/loading";
+@import "components/content-block/content-block";
+@import "components/media-block/media-block";
+@import "components/typography/fonts";
+@import "components/typography/typography";
+@import "components/single-msg/single-msg";
+@import "components/navigation/main-nav";
+@import "components/cookie-consent/cookie-consent";
+@import "components/meta-icons/meta-icons";
+@import "components/navigation/expanded-footer";
+@import "components/email-signup/email-signup-head";
+
+
 body {
   font-family: $font-stack;
 }
@@ -14,7 +31,7 @@ header[role=banner] {
   margin: 0 0 20px;
   li {
     margin: 5px 4px 0;
-    @media (min-width: 740px) {
+    @include breakpoint($screen-md) {
       margin: 5px 8px 0;
     }
     a {
@@ -28,19 +45,3 @@ header[role=banner] {
     }
   }
 }
-
-@import "components/background-colours/background-colours";
-@import "components/buttons/buttons";
-@import "components/highlight/highlight";
-@import "components/links/links";
-@import "components/loading/loading";
-@import "components/content-block/content-block";
-@import "components/media-block/media-block";
-@import "components/typography/fonts";
-@import "components/typography/typography";
-@import "components/single-msg/single-msg";
-@import "components/navigation/main-nav";
-@import "components/cookie-consent/cookie-consent";
-@import "components/meta-icons/meta-icons";
-@import "components/navigation/expanded-footer";
-@import "components/email-signup/email-signup-head";
