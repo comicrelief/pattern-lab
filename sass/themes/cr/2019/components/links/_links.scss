@@ -33,14 +33,3 @@
     }
   }
 }
-
-// Default link for Article and Page types
-.cr-article__body .link,
-.basic-page--content .link {
-/*   @include link($colour-black, $colour-red);
-  line-height: 14px;
-  border-bottom: 4px solid rgba($colour-black, 0.5);
-  &:hover {
-    border-bottom: 4px solid rgba($colour-red, 0.5);
-  } */
-}
