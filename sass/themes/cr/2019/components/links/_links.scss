@@ -11,6 +11,13 @@
   border-bottom: 2px solid;
   border-bottom-color: inherit;
 
+  // Override this so we're only using the .link--bold variant with its own hover state
+  strong {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
   // Backwards compatibility with base theme
   &.link--purple { @include link($colour-purple, $colour-deep-violet); }
   &.link--dark-purple { @include link($colour-deep-violet, $colour-deep-violet); }
