@@ -13,23 +13,26 @@
   }
 }
 
+/* Ensure we're overriding the general 
+'white/black, dark/light' font-bg rules
+for this edgecase */
 .highlight--purple {
-  color: $colour-dark-purple;
+  color: $colour-dark-purple !important;
   border: 4px solid $colour-dark-purple;
 }
 .highlight--royal-blue {
-  color: $colour-dark-blue;
+  color: $colour-dark-blue !important;
   border: 4px solid $colour-dark-blue;
 }
 .highlight--red {
-  color: $colour-red;
+  color: $colour-red !important;
   border: 4px solid $colour-red;
 }
 .highlight--mint-green {
-  color: $colour-teal;
+  color: $colour-teal !important;
   border: 4px solid $colour-teal;
 }
 .highlight--white {
-  color: $colour-white;
+  color: $colour-white !important;
   border: 4px solid $colour-white;
 }
