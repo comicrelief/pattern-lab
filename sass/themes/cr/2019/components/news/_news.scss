@@ -1,0 +1,6 @@
+.news-landing__filter .form-item label {
+  @include breakpoint($screen-lg) {
+    font-size: 17px;
+    text-align: center;
+  }
+}
