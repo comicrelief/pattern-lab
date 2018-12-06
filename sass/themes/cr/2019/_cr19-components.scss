@@ -13,10 +13,13 @@
 @import "components/meta-icons/meta-icons";
 @import "components/navigation/expanded-footer";
 @import "components/email-signup/email-signup-head";
-
+@import "components/news-teaser/news-article-teaser";
+@import "components/list/list";
+@import "components/just-in-time-block/just-in-time-block";
 
 body {
-  font-family: $font-stack;
+  font-family: $montserrat;
+  font-weight: 500;
 }
 header[role=banner] {
   height: auto;
@@ -26,7 +29,6 @@ header[role=banner] {
 }
 
 // Social links
-
 .footer__social-links {
   margin: 0 0 20px;
   li {

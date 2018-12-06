@@ -40,6 +40,15 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+      cr19: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/cr/2019',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/cr/2019',
+          ext: '.css'
+        }]
+      },
       frost: {
         files: [{
           expand: true,
@@ -154,6 +163,15 @@ module.exports = function (grunt) {
           dest: 'dist/images'
         }]
       },
+      cr19: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/cr/2019/components',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images'
+        }]
+      },
       sr18: {
         files: [{
           expand: true,
@@ -243,6 +261,12 @@ module.exports = function (grunt) {
           src: ['sass/themes/cr/2017/components/{,**/}*.js'],
           dest: 'dist/js/cr-components.min.js'
         }]
+      },
+      cr19_components_js: {
+        files: [{
+          src: ['sass/themes/cr/2019/components/{,**/}*.js'],
+          dest: 'dist/js/cr19-components.min.js'
+        }]
       }
     },
 
@@ -305,6 +329,16 @@ module.exports = function (grunt) {
         },
         src: ['sass/themes/cr/2017', 'sass/base'],
         dest: 'dist/cr'
+      },
+      cr19: {
+        options: {
+          verbose: true,
+          builder: 'kss/builder',
+          title: 'Comic Relief 2019 PatternLab',
+          css: ['../css/themes/cr/2019/cr19.css', '../css/kss/cr19.css'],
+        },
+        src: ['sass/themes/cr/2019', 'sass/base'],
+        dest: 'dist/cr19'
       },
       rnd17: {
         options: {
@@ -421,6 +455,9 @@ module.exports = function (grunt) {
       cr17: {
         src: ['dist/css/themes/cr/**/*.css']
       },
+      cr19: {
+        src: ['dist/css/themes/cr19/**/*.css']
+      },
       donate: {
         src: ['dist/css/themes/donate/**/*.css']
       },
@@ -481,6 +518,14 @@ module.exports = function (grunt) {
     'uglify:cr_components_js',
     'kss:cr17',
     'postcss:cr17',
+  ]);
+
+  grunt.registerTask('build:cr19', [
+    'sass:cr19',
+    'modernizr',
+    'uglify:cr19_components_js',
+    'kss:cr19',
+    'postcss:cr19',
   ]);
 
   grunt.registerTask('build:donate', [

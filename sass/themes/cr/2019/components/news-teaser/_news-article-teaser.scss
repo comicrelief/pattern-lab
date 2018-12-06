@@ -1,0 +1,13 @@
+.article-teaser .article-teaser__content-wrapper {
+  h2 {
+    font-family: $anton;
+    // Fake an H3 sizing, but keep it an H2 for semantic reasons
+    @extend h3;
+  }
+}
+
+.article-teaser .article-teaser__content-wrapper {
+  .article-teaser__date {
+    @extend .text--label-small;
+  }
+}

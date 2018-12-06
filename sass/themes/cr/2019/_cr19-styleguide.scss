@@ -1,0 +1,522 @@
+//==========================================================================
+// Elements
+// ==========================================================================
+
+// Elements
+//
+// Style guide: 10
+
+// Typography
+//
+// Markup: typography.twig
+//
+// Style guide: 10.1
+
+// Links
+//
+// Links are used for call-to-actions that are lower in the hierachy and aren’t as key as ones used in buttons. They can also be used for call-to-actions with a longer character count.
+// 
+// .link--small - Small - The font size is 16px and line height is 26px. Border / underline is 4px.
+//
+// Markup: links.twig
+//
+// Style guide: 10.25
+
+// Buttons
+//
+// Markup: buttons.twig
+//
+// Style guide: 10.3
+
+// Background Colours
+//
+// To be used by row components
+//
+// Markup: background-colours.twig
+
+// Colours
+//
+// Markup: colour.twig
+//
+// Style guide: 10.5
+
+// Background Colours
+//
+// To be used by row components
+//
+// Markup: background-colours.twig
+//
+// Style guide: 10.6
+
+// External Link
+//
+// Markup:
+// <a href="#" class="external-link">External Link</a>
+//
+// Style guide: 10.7
+
+// Lists
+//
+// These are the list items
+//
+// Markup:
+// <div class="cr-body">
+//  <ul>
+//    <li>Item 1</li>
+// 	  <li>Item 2</li>
+// 	  <li>Item 3</li>
+// 	  <li>Item 4</li>
+//  </ul> 
+// </div> 
+//
+// Style guide: 10.8
+
+// Table
+//
+// Standard Table
+//
+// Markup: table.twig
+//
+// Style guide: 10.9
+
+// Forms
+//
+// New Standard Forms
+//
+// Markup: form.twig
+//
+// Style guide: 10.10
+
+// Highlight
+//
+// .highlight--red - Red highlight
+// .highlight--purple - Purple highlight
+// .highlight--royal-blue - Royal-blue highlight
+// .highlight--mint-green - Mint-green highlight
+// .highlight--white - Mint-green highlight
+// 
+// Markup: highlight.twig
+//
+// Style guide: 10.19
+
+// ==========================================================================
+// Components
+// ==========================================================================
+
+// Components
+//
+// Style guide: 20
+
+// Background Single Message
+//
+// This is Paragraph Background Single Message type with an image as background
+//
+// Markup: background-single-msg.twig
+//
+// Style guide: 20.80
+
+// Card banner
+//
+// Uses card block.
+//
+// Markup: card-banner.twig
+//
+// Style guide: 20.197
+
+// Card Block
+//
+// Standard Card Block
+//
+// When no card background colour is selected the card content will have no left and right padding.
+// When a background colour is selected the card content will have padding all around (see cards grid below).
+//
+// Markup: card.twig
+//
+// Style guide: 20.60
+
+// Cards
+//
+// Markup: cards.twig
+//
+// .cards--four-grid.cards--feature-layout - Feature Layout
+// .cards--four-grid - Grid of four cards left aligned (default)
+// .cards--four-grid-centre - Grid of four cards centre align
+// .cards--three-grid - Grid of three cards left aligned
+// .cards--three-grid-centre - Grid of three cards centre align
+//
+// Style guide: 20.61
+
+// Content Reference Block 
+//
+// Comes in 4 sizes.
+//
+// Markup: content-block.twig
+//
+// .block-content--view-mode-cw-s -  Small
+// .block-content--view-mode-cw-m  -  Medium
+// .block-content--view-mode-cw-mp -  Medium Plus
+// .block-content--view-mode-cw-l  -  Large 
+//
+// Style guide: 20.40
+
+// Story
+//
+// This is the Story row component (aka fundraising journey)
+//
+// Markup: _story.twig
+//
+// Style guide: 20.90
+
+// Teaser Block
+//
+// Comes in 4 sizes and in a background-image and no-image versions (the latter not displayed here). 
+// Content is editable.
+// 
+// Markup: teaser-block.twig
+//
+// .block-content--view-mode-cw-s.teaser-block  -  Small
+// .block-content--view-mode-cw-m.teaser-block  -  Medium
+// .block-content--view-mode-cw-mp.teaser-block -  Medium Plus
+// .block-content--view-mode-cw-l.teaser-block  -  Large 
+// .block-content--view-mode-cw-s.teaser-block.teaser-block--bg-image  -  Small Background image
+// .block-content--view-mode-cw-m.teaser-block.teaser-block--bg-image  -  Medium Background image
+// .block-content--view-mode-cw-mp.teaser-block.teaser-block--bg-image -  Medium Plus Background image
+// .block-content--view-mode-cw-l.teaser-block.teaser-block--bg-image  -  Large Background image
+//
+// Style guide: 20.20
+
+// Single Message 
+//
+// Markup: single-msg.twig
+//
+// .single-msg--copy-left - Copy left
+// .single-msg--copy-only - Copy only
+//
+// Style guide: 20.70
+
+// Partners row
+//
+// This is the Partners Row
+//
+// Markup: partners-row.twig
+//
+// Style guide: 20.102
+
+// Partners Grid
+//
+// This is the Partners Grid 
+//
+// Markup: partners-grid.twig
+//
+// Style guide: 20.101
+
+// Postcode lookup
+//
+// This is postcode lookup
+//
+// Markup: postcode-lookup.twig
+//
+// Style guide: 20.1005
+
+// Progress bar
+//
+// This is Progress bar
+//
+// Markup: progress-bar.twig
+//
+// Style guide: 20.1000
+
+// Progress indicator
+//
+// This is Progress indicator
+//
+// Markup: progress-indicator.twig
+//
+// Style guide: 20.1001
+
+// Quote Block
+//
+// Comes in 4 sizes.
+//
+// Markup: content-wall-quote.twig
+//
+// .block-content--view-mode-cw-s.cw-quote  -  Small
+// .block-content--view-mode-cw-m.cw-quote  -  Medium
+// .block-content--view-mode-cw-mp.cw-quote -  Medium Plus
+// .block-content--view-mode-cw-l.cw-quote  -  Large 
+//
+// Style guide: 20.30
+
+// Search block
+//
+// Markup: search.twig
+//
+// Style guide: 20.195
+
+// News teaser
+//
+// Markup: news-teaser.twig
+//
+// Style guide: 20.23
+
+// Pagination
+//
+// Markup: pagination.twig
+//
+// Style guide: 20.150
+
+// Feature Articles block
+//
+// Feature Articles by category block
+//
+// Markup: feature-articles-block.twig
+//
+// Style guide: 20.48
+
+// Fundraising target
+//
+// Markup: fundraising-target.twig
+//
+// Style guide: 20.1002
+
+// Header
+//
+// Markup: base_header.twig
+//
+// Style guide: 20.180
+
+// Just-in-time block
+//
+// Markup: just-in-time-block.twig
+//
+// Style guide: 20.1004
+
+// Media Reference Block 
+//
+// Comes in 4 sizes.
+//
+// Markup: media-block.twig
+//
+// .block-content--view-mode-cw-s -  Small
+// .block-content--view-mode-cw-m  -  Medium
+// .block-content--view-mode-cw-mp -  Medium Plus
+// .block-content--view-mode-cw-l  -  Large 
+//
+// Style guide: 20.50
+
+// Cookie consent
+//
+// Markup: cookie-consent.twig
+//
+// Style guide: 20.115
+
+// Promo header
+//
+// Markup: promo-header.twig
+//
+// Style guide: 20.95
+
+// Footer
+//
+// Markup: footer.twig
+//
+// Style guide: 20.190
+
+// ==========================================================================
+// Pages
+// ==========================================================================
+
+// Pages
+//
+// Style guide: 300
+
+// Content Wall
+//
+// Can include Teaser, Quote, Content Reference and Media Reference blocks.
+// Title can be hidden.
+//
+// Markup: content-wall.twig
+//
+// Style guide: 300.1
+
+// News article
+//
+// News article page
+//
+// Markup: news-article.twig
+//
+// Style guide: 300.5
+
+// Press release article page
+//
+// Markup: press-release-article.twig
+//
+// Style guide: 300.6
+
+// News overview page
+//
+// Overview for news landing page with filter
+//
+// Markup: news.twig
+//
+// Style guide: 300.20
+
+// Press releases overview page
+//
+// Markup: news_press-releases.twig
+//
+// Style guide: 300.25
+
+// Partner Page
+//
+// Individual Partner page
+//
+// Markup: partners.twig
+//
+// Style guide: 300.26
+
+// Search results page
+//
+// Markup: search-results.twig
+//
+// Style guide: 300.30
+
+// ==========================================================================
+// Email Sign Up
+// ==========================================================================
+
+// Email sign up 
+//
+// Style guide: 120
+
+// Email sign up header
+//
+// Markup: email-signup-header.twig
+//
+// Style guide: 120.1
+
+// Email sign up standard
+//
+// Has a second message for school resources
+//
+// Markup: email-signup-standard.twig
+//
+// Style guide: 120.2
+
+// Email sign up fundraise
+//
+// Markup: email-signup-fundraise.twig
+//
+// Style guide: 120.3
+
+// Email sign up workplace
+//
+// Markup: email-signup-workplace.twig
+//
+// Style guide: 120.4
+
+// Email sign up register interest
+//
+// Markup: email-signup-interest.twig
+//
+// Style guide: 120.5
+
+// ==========================================================================
+// Miscellaneous
+// ==========================================================================
+
+// Miscellaneous
+//
+// Style guide 160
+
+// Animations
+//
+// Markup: animations.twig
+//
+// Style guide: 160.1
+
+// Demo
+//
+// Markup: demo.twig
+//
+// Style guide: 160.2
+
+// ==========================================================================
+// Grid & Breakpoints
+// ==========================================================================
+
+// Grid & Breakpoints
+//
+// Markup: grid.twig
+//
+// Style guide: 1.0
+
+// ==========================================================================
+// Navigation
+// ==========================================================================
+
+// Navigation
+//
+// Different types of navigation
+// 
+// Style guide: 185
+
+// Main Nav
+//
+// This is the Main Nav
+//
+// The main nav relies on the smartmenus plugin which is added as a dependency to the pattern-lab. 
+// This plugin will need to be included to any environment in which the main nav component is used.
+//
+// Markup: main-nav.twig
+//
+// Style guide: 185.1
+
+// Feature Nav
+//
+// Markup: feature-nav.twig
+//
+// Style guide: 185.2
+
+// Footer Nav
+//
+// Markup: footer-nav.twig
+//
+// Style guide: 185.3
+
+// Expanded Footer
+//
+// Expanded footer (aka TURBOFOOTER™) for the CR.com site in 2018
+// 
+// Markup: expanded-footer.twig
+//
+// Style guide: 185.5
+// Keep all padding within each footer variant, rather than the wrapper
+
+// ==========================================================================
+// Icons
+// ==========================================================================
+
+// Icons
+//
+// Social sharing icons currently only contain twitter and facebook.
+//
+// Style guide: 140
+
+// Social sharing icons
+//
+// Markup: social-sharing.twig
+//
+// Style guide: 140.1 
+
+// Social media follow icons
+// 
+// Markup: social-following.twig
+//
+// Style guide: 140.2
+
+// Meta icons
+// 
+// Markup: meta-icons.twig
+//
+// Style guide: 140.3

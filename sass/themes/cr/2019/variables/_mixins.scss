@@ -1,0 +1,44 @@
+// CR buttons variations, w/ default hover state colours
+@mixin cr_button_types($colour, $bg-colour, $hover-colour: $colour-red, $hover-text-colour: $colour-white) {
+  color: $colour;
+  background-color: $bg-colour;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $hover-colour;
+    color: $hover-text-colour;
+  }
+}
+
+// CR links variation
+@mixin link($border, $hover) {
+  // Set this to 'black' by default; will be overriding to white when used in certain contexts
+  color: $colour-deep-violet;
+  text-decoration: none;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border-bottom: 2px solid $colour-deep-violet;
+  font-family: $montserrat;
+  font-size: 18px;
+  line-height: 28px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 2px solid $colour-deep-violet;
+    color: $colour-deep-violet;
+  }
+  &.inline {
+    font-size: inherit;
+    line-height: 14px;
+    border-bottom: 2px solid $colour-deep-violet;
+    &:hover {
+      border-bottom: 2px solid $colour-deep-violet;
+    }
+  }
+  &.link--small {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

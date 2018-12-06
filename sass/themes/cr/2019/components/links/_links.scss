@@ -1,0 +1,42 @@
+.link,
+.inline {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  display: inline;
+  padding: 0 2px 1px;
+  width: auto;
+  border-bottom: 2px solid;
+  border-bottom-color: inherit;
+
+  // Override this so we're only using the .link--bold variant with its own hover state
+  strong {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  // Backwards compatibility with base theme
+  &.link--purple { @include link($colour-purple, $colour-deep-violet); }
+  &.link--dark-purple { @include link($colour-deep-violet, $colour-deep-violet); }
+  &.link--deep-violet { @include link($colour-deep-violet, $colour-deep-violet); }
+
+  &:hover,
+  &:focus,
+  &:active {
+    font-weight: 700;
+    padding: 0 0 1px;
+  }
+
+  &.link--bold {
+    font-weight: 700;
+    &:hover,
+    &:focus,
+    &:active {
+      font-weight: 800;
+      padding: 0 1px 1px;
+    }
+  }
+}
