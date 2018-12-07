@@ -1,13 +1,20 @@
-h1, h2, h3, h4, h5 { 
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-transform: uppercase;
   font-family: $anton;
+
   strong {
     font-family: inherit;
   }
 }
 
-p, span {
+p,
+span {
   font-family: $montserrat;
+
   strong {
     font-family: inherit;
   }
@@ -15,14 +22,16 @@ p, span {
 
 /* Override base theme variations, to make current content 'work' on some level */
 h1 {
+
   &.font--font-black,
   &.font--xlarge,
-  &.font--black-shadow  {
+  &.font--black-shadow {
     @include font-size($h1-font-size);
   }
 }
 
 p {
+
   &.font--xlarge,
   &.font--large,
   &.font--small,
@@ -35,15 +44,22 @@ h1.text--title {
   @include font-size($h1-title-font-size);
 }
 
-h1, h2, h3, h4, h5, p, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
   &.font {
+
     &--red,
     &--royal-blue,
     &--dark-purple,
     &--purple,
     &--black,
     &--dark-grey,
-    &--grey  {
+    &--grey {
       color: $colour-dark-purple;
     }
 
@@ -63,45 +79,57 @@ h1, h2, h3, h4, h5, p, span {
 .text--label-small {
   font-family: $montserrat;
   font-weight: 800;
+
   strong {
     font-weight: inherit;
   }
 }
 
-.text--footnote, {
+.text--body {
+  @include font-size($body-font-size);
+  text-transform: none;
+}
+
+.text--body-small {
+  @include font-size($body-small-font-size);
+  text-transform: none;
+}
+
+.text--subtitle {
+  @include font-size($subtitle-font-size);
+  text-transform: none;
+}
+
+.text--subtitle-small {
+  @include font-size($subtitle-small-font-size);
+  text-transform: none;
+}
+
+.text--label {
+  @include font-size($label-font-size);
+  text-transform: none;
+}
+
+.text--label-small {
+  @include font-size($label-small-font-size);
+  text-transform: none;
+}
+
+.text--footnote {
+  @include font-size($footnote-font-size);
+  text-transform: none;
   font-family: $montserrat;
   font-weight: 500;
+
   strong {
     font-weight: 700;
   }
 }
 
-.text--body {
-  @include font-size($body-font-size);
-}
-.text--body-small {
-  @include font-size($body-small-font-size);
-}
-.text--subtitle {
-  @include font-size($subtitle-font-size);
-}
-.text--subtitle-small {
-  @include font-size($subtitle-small-font-size);
-}
-.text--label {
-  @include font-size($label-font-size);
-}
-.text--label-small {
-  @include font-size($label-small-font-size);
-}
-.text--footnote {
-  @include font-size($footnote-font-size);
-}
-
 /* Backwards mapping so our existing content in the CMS doesn't look too wonky */
 i.font--family-black,
-.font--family-black, 
-i.font--family-bold, 
+.font--family-black,
+i.font--family-bold,
 .font--family-bold {
   font-family: $montserrat;
   font-weight: 800;
