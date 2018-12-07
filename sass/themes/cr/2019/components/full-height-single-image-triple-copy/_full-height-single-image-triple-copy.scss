@@ -1,0 +1,54 @@
+.paragraph--full-height-single-image-triple-copy {
+    width: 100%;
+
+    .fhsitc__image-text-wrapper,
+    .fhsitc__text-1,
+    .fhsitc__text-2,
+    .fhsitc__text-3,
+    .fhsitc__image,
+    .fhsitc__text-wrapper {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    @include breakpoint($screen-md) {
+        height: 100vh;
+        
+        // Inner containers
+        .fhsitc__text-wrapper,
+        .fhsitc__image-text-wrapper {
+            height: 100vh;
+            width: 50%;
+            float: left;
+        }
+
+        .fhsitc__text-wrapper {
+            padding: 50px;
+        }
+
+        .fhsitc__image {
+            height: 50vh;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .fhsitc__text-1,
+        .fhsitc__text-2 {
+            height: 25vh;
+            width: 100%;
+        }
+
+        .fhsitc__text-3 {
+            position: absolute;
+            width: calc(100% - 100px);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @include breakpoint($screen-lg) {}
+}
