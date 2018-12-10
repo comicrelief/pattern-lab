@@ -453,10 +453,10 @@ module.exports = function (grunt) {
         src: ['dist/css/themes/base/*.css']
       },
       cr17: {
-        src: ['dist/css/themes/cr/**/*.css']
+        src: ['dist/css/themes/cr/2017/**/*.css']
       },
       cr19: {
-        src: ['dist/css/themes/cr19/**/*.css']
+        src: ['dist/css/themes/cr/2019/**/*.css']
       },
       donate: {
         src: ['dist/css/themes/donate/**/*.css']
