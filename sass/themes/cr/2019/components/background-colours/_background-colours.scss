@@ -71,8 +71,7 @@
   .bg--blue, 
   .bg--magent,
   .bg--purple,
-  .bg--teal,
-  .bg--red {
+  .bg--teal {
     h1, h2, h3, h4, h5, p, .link {
       color: $colour-black;
     }
@@ -94,7 +93,8 @@
   .bg--dark-magent,
   .bg--dark-purple,
   .bg--dark-teal,
-  .bg--deep-violet {
+  .bg--deep-violet,
+  .bg--red {
     h1, h2, h3, h4, h5, p, .link {
       color: $colour-white;
     }
@@ -112,7 +112,6 @@
 .bg--magenta { @include light-backgrounds; }
 .bg--purple  { @include light-backgrounds; }
 .bg--teal    { @include light-backgrounds; }
-.bg--red     { @include light-backgrounds; }
 
 // Light backgrounds (dark text)
 .bg--light-grey     { @include light-backgrounds; }
@@ -137,3 +136,5 @@
 .bg--dark-magenta   { @include dark-backgrounds; }
 .bg--dark-purple    { @include dark-backgrounds; }
 .bg--dark-teal      { @include dark-backgrounds; }
+.bg--red            { @include dark-backgrounds; }
+
