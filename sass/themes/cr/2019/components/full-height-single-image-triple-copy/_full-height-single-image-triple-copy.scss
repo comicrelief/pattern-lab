@@ -11,6 +11,11 @@
         height: auto;
         width: 100%;
     }
+
+    .fhsitc__text-wrapper {
+        padding: 18% 10%;
+    }
+
     .fhsitc__text-1,
     .fhsitc__text-2 {
         padding: 18% 10%;
@@ -39,7 +44,7 @@
         }
 
         .fhsitc__text-wrapper {
-            padding: 50px;
+            padding: 5%;
         }
 
         .fhsitc__image {
@@ -72,5 +77,10 @@
         }
     }
 
-    @include breakpoint($screen-lg) {}
+    @include breakpoint($screen-lg) {
+
+        .fhsitc__text-wrapper {
+            padding: 50px;
+        }
+    }
 }
