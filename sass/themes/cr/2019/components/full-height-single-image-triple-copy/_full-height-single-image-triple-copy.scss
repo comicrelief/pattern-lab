@@ -11,7 +11,22 @@
         height: auto;
         width: 100%;
     }
+    .fhsitc__text-1,
+    .fhsitc__text-2 {
+        padding: 18% 10%;
+      img {
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+      } 
+    }
 
+    .fhsitc__image img {
+        display: block;
+        width: 100%;
+    }
+
+    
     @include breakpoint($screen-md) {
         height: 100vh;
         
@@ -40,6 +55,13 @@
         .fhsitc__text-2 {
             height: 25vh;
             width: 100%;
+            padding: 2vh;
+
+            img {
+              height: 100%;
+              width: auto;
+              max-width: none;
+            }
         }
 
         .fhsitc__text-3 {
