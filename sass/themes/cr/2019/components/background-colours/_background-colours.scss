@@ -6,7 +6,7 @@
 
 /* New stuff */
 
-// Primary backgrounds, will have white text ('dark' group)
+// Primary backgrounds, will have dark text ('light' group)
 .bg--grey   { background-color: $colour-grey; }
 .bg--coral  { background-color: $colour-coral; }
 .bg--orange { background-color: $colour-orange; }
@@ -16,20 +16,7 @@
 .bg--magenta { background-color: $colour-magenta; }
 .bg--purple { background-color: $colour-purple; }
 .bg--teal   { background-color: $colour-teal; }
-
-// Dark backgrounds, will have white text ('dark' group)
-.bg--deep-violet  { background-color: $colour-deep-violet; }
-.bg--red          { background-color: $colour-red; }
-.bg--dark-grey    { background-color: $colour-dark-grey; }
-.bg--dark-coral   { background-color: $colour-dark-coral; }
-.bg--dark-orange  { background-color: $colour-dark-orange; }
-.bg--dark-yellow  { background-color: $colour-dark-yellow; }
-.bg--dark-green   { background-color: $colour-dark-green; }
-.bg--dark-blue    { background-color: $colour-dark-blue; }
-.bg--dark-magenta { background-color: $colour-dark-magenta; }
-.bg--dark-purple  { background-color: $colour-dark-purple; }
-.bg--dark-teal    { background-color: $colour-dark-teal; }
-
+.bg--red    { background-color: $colour-red; }
 
 // Light backgrounds, will have deep-violet text ('light' group)
 .bg--white { background-color: $colour-white; }
@@ -42,6 +29,18 @@
 .bg--light-magenta { background-color: $colour-light-magenta; }
 .bg--light-purple  { background-color: $colour-light-purple; }
 .bg--light-teal    { background-color: $colour-light-teal; }
+
+// Dark backgrounds, will have white text ('dark' group)
+.bg--deep-violet  { background-color: $colour-deep-violet; }
+.bg--dark-grey    { background-color: $colour-dark-grey; }
+.bg--dark-coral   { background-color: $colour-dark-coral; }
+.bg--dark-orange  { background-color: $colour-dark-orange; }
+.bg--dark-yellow  { background-color: $colour-dark-yellow; }
+.bg--dark-green   { background-color: $colour-dark-green; }
+.bg--dark-blue    { background-color: $colour-dark-blue; }
+.bg--dark-magenta { background-color: $colour-dark-magenta; }
+.bg--dark-purple  { background-color: $colour-dark-purple; }
+.bg--dark-teal    { background-color: $colour-dark-teal; }
 
 /**
  * Needed to break-out these bg styles out a bit as the mutiple
@@ -63,7 +62,16 @@
   .bg--light-magenta, 
   .bg--light-purple,  
   .bg--light-teal,
-  .bg--white {
+  .bg--white,
+  .bg--grey,
+  .bg--coral, 
+  .bg--orange,
+  .bg--yellow,
+  .bg--green,
+  .bg--blue, 
+  .bg--magent,
+  .bg--purple,
+  .bg--teal {
     h1, h2, h3, h4, h5, p, .link {
       color: $colour-black;
     }
@@ -85,17 +93,8 @@
   .bg--dark-magent,
   .bg--dark-purple,
   .bg--dark-teal,
-  .bg--red,
   .bg--deep-violet,
-  .bg--grey,
-  .bg--coral, 
-  .bg--orange,
-  .bg--yellow,
-  .bg--green,
-  .bg--blue, 
-  .bg--magent,
-  .bg--purple,
-  .bg--teal, {
+  .bg--red {
     h1, h2, h3, h4, h5, p, .link {
       color: $colour-white;
     }
@@ -103,34 +102,16 @@
 }
 
 
-/* TODO FIX UP THERE ^^^
- */
-// Standard backgrounds (white text)
-.bg--grey    { @include dark-backgrounds; }
-.bg--coral   { @include dark-backgrounds; }
-.bg--orange  { @include dark-backgrounds; }
-.bg--yellow  { @include dark-backgrounds; }
-.bg--green   { @include dark-backgrounds; }
-.bg--blue    { @include dark-backgrounds; }
-.bg--magenta { @include dark-backgrounds; }
-.bg--purple  { @include dark-backgrounds; }
-.bg--teal    { @include dark-backgrounds; }
-
-
-// Dark backgrounds (white text)
-.bg--deep-violet  { @include dark-backgrounds; }
-.bg--red          { @include dark-backgrounds; }
-
-.bg--dark-grey      { @include dark-backgrounds; }
-.bg--dark-coral     { @include dark-backgrounds; }
-.bg--dark-orange    { @include dark-backgrounds; }
-.bg--dark-yellow    { @include dark-backgrounds; }
-.bg--dark-green     { @include dark-backgrounds; }
-.bg--dark-blue      { @include dark-backgrounds; }
-.bg--dark-magenta   { @include dark-backgrounds; }
-.bg--dark-purple    { @include dark-backgrounds; }
-.bg--dark-teal      { @include dark-backgrounds; }
-
+// Standard backgrounds (dark text)
+.bg--grey    { @include light-backgrounds; }
+.bg--coral   { @include light-backgrounds; }
+.bg--orange  { @include light-backgrounds; }
+.bg--yellow  { @include light-backgrounds; }
+.bg--green   { @include light-backgrounds; }
+.bg--blue    { @include light-backgrounds; }
+.bg--magenta { @include light-backgrounds; }
+.bg--purple  { @include light-backgrounds; }
+.bg--teal    { @include light-backgrounds; }
 
 // Light backgrounds (dark text)
 .bg--light-grey     { @include light-backgrounds; }
@@ -143,3 +124,17 @@
 .bg--light-purple   { @include light-backgrounds; }
 .bg--light-teal     { @include light-backgrounds; }
 .bg--white          { @include light-backgrounds; }
+
+// Dark backgrounds (white text)
+.bg--deep-violet    { @include dark-backgrounds; }
+.bg--dark-grey      { @include dark-backgrounds; }
+.bg--dark-coral     { @include dark-backgrounds; }
+.bg--dark-orange    { @include dark-backgrounds; }
+.bg--dark-yellow    { @include dark-backgrounds; }
+.bg--dark-green     { @include dark-backgrounds; }
+.bg--dark-blue      { @include dark-backgrounds; }
+.bg--dark-magenta   { @include dark-backgrounds; }
+.bg--dark-purple    { @include dark-backgrounds; }
+.bg--dark-teal      { @include dark-backgrounds; }
+.bg--red            { @include dark-backgrounds; }
+
