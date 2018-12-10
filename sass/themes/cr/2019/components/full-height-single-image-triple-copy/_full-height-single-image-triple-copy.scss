@@ -1,19 +1,21 @@
 .paragraph--full-height-single-image-triple-copy {
     width: 100%;
 
-    .fhsitc__image-text-wrapper,
-    .fhsitc__text-1,
-    .fhsitc__text-2,
-    .fhsitc__text-3,
-    .fhsitc__image,
-    .fhsitc__text-wrapper {
-        position: relative;
-        height: auto;
-        width: 100%;
-    }
+    .fhsitc {
+        &__image-text-wrapper,
+        &__text-1,
+        &__text-2,
+        &__text-3,
+        &__image,
+        &__text-wrapper {
+            position: relative;
+            height: auto;
+            width: 100%;
+        } 
 
-    .fhsitc__text-wrapper {
-        padding: 18% 10%;
+        &__text-wrapper {
+            padding: 18% 10%;
+        }
     }
 
     .fhsitc__text-1,
@@ -60,7 +62,7 @@
         .fhsitc__text-2 {
             height: 25vh;
             width: 100%;
-            padding: 2vh;
+            padding: 2vh 10%;
 
             img {
               height: 100%;
@@ -71,17 +73,15 @@
 
         .fhsitc__text-3 {
             position: absolute;
-            width: calc(100% - 100px);
+            width: 90%;
             top: 50%;
             transform: translateY(-50%);
         }
     }
 
-    // large screen
-    @include breakpoint($screen-lg) {
-
-        .fhsitc__text-wrapper {
-            padding: 50px;
-        }
+    &--image-right {
+        display: flex;
+        flex-direction: column-reverse;
     }
+
 }
