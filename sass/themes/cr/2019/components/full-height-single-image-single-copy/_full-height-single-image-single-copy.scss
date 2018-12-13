@@ -1,0 +1,55 @@
+.paragraph--full-height-single-img-single-copy {
+  width: 100%;
+  
+  @include breakpoint($screen-md) {
+    min-height: 100vh;
+  }
+
+  .fhsisc {
+    &__image-wrapper {
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    &__text-wrapper {
+      padding: 18vw 10vw;
+
+
+      .fhsisc__text {
+        height: auto;
+      }
+    }
+  }
+
+  &.paragraph--full-height-single-img-single-copy--image-right {
+    .fhsisc__image-wrapper {
+      float: right;
+    }
+  }
+  
+  @include breakpoint($screen-md) {
+    .fhsisc {
+      &__image-wrapper,
+      &__text-wrapper {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+      }
+      &__image-wrapper {
+        overflow: hidden;
+        img {
+          width: auto;
+          min-height: 100vh;
+        }
+      }
+      &__text-wrapper {
+        padding: 13vh 5vw;
+        min-height: 100vh;
+      }
+    }
+  }
+
+}
+
+
