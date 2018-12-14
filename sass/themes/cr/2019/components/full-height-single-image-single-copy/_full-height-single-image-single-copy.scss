@@ -1,9 +1,7 @@
-.paragraph--full-height-single-img-single-copy {
+.paragraph--full-height-single-img-single-copy,
+ {
+  display: flex;
   width: 100%;
-  
-  @include breakpoint($screen-md) {
-    min-height: 100vh;
-  }
 
   .fhsisc {
     &__image-wrapper {
@@ -15,9 +13,9 @@
     &__text-wrapper {
       padding: 18vw 10vw;
 
-
       .fhsisc__text {
         height: auto;
+        word-wrap: keep-all;
       }
     }
   }
@@ -31,18 +29,28 @@
         width: 49%;
       }
       &__image-wrapper {
+        position: relative;
         overflow: hidden;
+        height: inherit;
+        // position image absolutely so height of section will be based on the text
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       &__text-wrapper {
         padding: 13vh 5vw;
-        min-height: 100vh;
+        // text should be at least the viewheight, but if the text doesn't fit increase height automatically
+        .fhsisc__text {
+          min-height: 100vh;
+        }
       }
     }
-  }
-}
-.paragraph--full-height-single-img-single-copy--image-right {
-  .fhsisc__image-wrapper {
-    float: right;
+    .paragraph--full-height-single-img-single-copy--image-right {
+      flex-direction: row-reverse;
+    }
   }
 }
 
