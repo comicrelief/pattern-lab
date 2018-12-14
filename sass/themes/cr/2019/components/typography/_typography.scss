@@ -4,6 +4,7 @@ h3,
 h4,
 h5 {
   text-transform: uppercase;
+  word-break: break-word;
   font-family: $anton;
 
   strong {
@@ -11,8 +12,8 @@ h5 {
   }
 }
 
-p,
-span {
+p, span {
+  word-break: break-word;
   font-family: $montserrat;
 
   strong {
