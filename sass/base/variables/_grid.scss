@@ -20,12 +20,16 @@ $screen-md-only: $screen-md $screen-md-max;
 /* Large breakpoint */
 $screen-lg: 1024px;
 $screen-lg-min: $screen-lg;
+$screen-lg-max: 1439px;
 
 /* Tweaked breakpoints to allow 'mobile' style nav on iPad landscape */
-
 $desktop-nav-breakpoint: 1150px;
 $desktop-max-nav-breakpoint: max-width 1150px;
 $desktop-nav-breakpoint-min: $desktop-nav-breakpoint;
+
+/* Extra Large breakpoint  */
+$screen-xlg: 1440px;
+$screen-xlg-min: $screen-xlg;
 
 /* Grid values */
 $max-width: 1200px;
