@@ -1,11 +1,11 @@
 .paragraph--full-height-single-img-single-copy,
  {
-  display: flex;
   width: 100%;
 
   .fhsisc {
     &__image-wrapper {
       img {
+        display: relative;
         display: block;
         width: 100%;
       }
@@ -21,6 +21,7 @@
   }
   
   @include breakpoint($screen-md) {
+    display: flex;
     .fhsisc {
       &__image-wrapper,
       &__text-wrapper {
@@ -40,15 +41,16 @@
           object-fit: cover;
         }
       }
+      // text should be at least the viewheight, but if the text doesn't fit increase height automatically
       &__text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 13vh 5vw;
-        // text should be at least the viewheight, but if the text doesn't fit increase height automatically
-        .fhsisc__text {
-          min-height: 100vh;
-        }
+        min-height: 100vh;
       }
     }
-    .paragraph--full-height-single-img-single-copy--image-right {
+    &.paragraph--full-height-single-img-single-copy--image-right {
       flex-direction: row-reverse;
     }
   }
