@@ -1,0 +1,38 @@
+.paragraph--fixed-ratio-image {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+    
+    .fixed-ratio-image {
+
+        &__image-wrapper,
+        &__text-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        &__text-wrapper {
+            padding: 5vw;
+        }
+    }
+    
+    @include breakpoint($screen-md){
+        flex-flow: row;
+        .fixed-ratio-image {
+            &__image-wrapper,
+            &__text-wrapper {
+                width: 50%;
+            }
+        }    
+    }
+
+    &--image-right {
+        @include breakpoint($screen-md){
+            flex-flow: row-reverse;
+        }
+    }
+}
