@@ -5,6 +5,7 @@
 
     img {
         width: 100%;
+        display: block;
     }
     
     .fixed-ratio-image {
@@ -21,6 +22,12 @@
     
     @include breakpoint($screen-md){
         flex-flow: row;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+
         .fixed-ratio-image {
             &__image-wrapper,
             &__text-wrapper {
@@ -28,6 +35,7 @@
             }
         }    
     }
+
     &--image-right {
         @include breakpoint($screen-md){
             flex-flow: row-reverse;
