@@ -28,7 +28,6 @@
             }
         }    
     }
-
     &--image-right {
         @include breakpoint($screen-md){
             flex-flow: row-reverse;
