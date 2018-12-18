@@ -1,5 +1,4 @@
-.paragraph--full-height-single-image-single-copy,
- {
+.paragraph--full-height-single-image-single-copy {
   width: 100%;
 
   .fhsisc {
@@ -14,7 +13,6 @@
 
       .fhsisc__text {
         height: auto;
-        word-wrap: keep-all;
       }
     }
   }
@@ -49,8 +47,10 @@
         min-height: 100vh;
       }
     }
-    &.paragraph--full-height-single-image-single-copy--image-right {
+    &.paragraph--full-height-single-img-single-copy--image-right {
+      flex-basis: auto; //IE10
       flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse; //IE10
     }
   }
 }
