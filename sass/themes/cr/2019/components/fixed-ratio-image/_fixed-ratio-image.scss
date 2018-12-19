@@ -20,7 +20,7 @@
         }
     }
     
-    @include breakpoint($screen-md){
+    @include breakpoint($screen-md) {
         flex-flow: row;
 
         img {
@@ -43,7 +43,7 @@
     }
 
     &--image-right {
-        @include breakpoint($screen-md){
+        @include breakpoint($screen-md) {
             flex-flow: row-reverse;
         }
     }
