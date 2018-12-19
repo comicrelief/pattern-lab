@@ -33,6 +33,13 @@
             &__text-wrapper {
                 width: 50%;
             }
+
+            &__text-wrapper {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+            }
         }    
     }
 
