@@ -34,7 +34,7 @@
       margin: 0 auto;
       display: block;
     }
- 
+    
     .cr-body, p {
       width: 100%;
       height: 100%;
@@ -49,91 +49,91 @@
 
     // Medium screen
     @include breakpoint($screen-md) {
-        height: 100vh;
-        
+      height: 100vh;
+      
         // Inner containers
         .fhsitc__text-wrapper,
         .fhsitc__image-text-wrapper {
-            height: 100vh;
-            width: 50%;
-            float: left;
+          height: 100vh;
+          width: 50%;
+          float: left;
         }
 
         .fhsitc__text-wrapper {
-            padding: 5vw;
+          padding: 5vw;
         }
 
         .fhsitc__image {
-            height: 50vh;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+          height: 50vh;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
 
         .fhsitc__text-1,
         .fhsitc__text-2 {
-            height: 25vh;
-            width: 100%;
-            padding: 2vh 10vw;
+          height: 25vh;
+          width: 100%;
+          padding: 2vh 10vw;
 
-            img {
-              height: 100%;
-              width: auto;
-              max-width: none;
-            }
+          img {
+            height: 100%;
+            width: auto;
+            max-width: none;
+          }
         }
 
         .fhsitc__text-3 {
-            position: absolute;
-            width: 80%;
-            top: 50%;
-            transform: translateY(-50%);
+          position: absolute;
+          width: 80%;
+          top: 50%;
+          transform: translateY(-50%);
         }
 
-      header & {
-        .fhsitc__text-wrapper {
-          padding: 5vw;
+        header & {
+          .fhsitc__text-wrapper {
+            padding: 5vw;
+          }
         }
       }
-    }
 
-    &--image-right {
+      &--image-right {
         display: flex;
         flex-direction: column;
 
         .fhsitc__text-wrapper {
-            order: 2;
+          order: 2;
         }
 
         .fhsitc__image-text-wrapper {
-            order: 1;
-            display: flex;
-            flex-direction: column;
+          order: 1;
+          display: flex;
+          flex-direction: column;
         }
 
         .fhsitc {
-            &__image-text-wrapper,
-            &__text-1,
-            &__text-2,
-            &__text-3,
-            &__image,
-            &__text-wrapper {
-                flex-shrink: 0;
-            }
+          &__image-text-wrapper,
+          &__text-1,
+          &__text-2,
+          &__text-3,
+          &__image,
+          &__text-wrapper {
+            flex-shrink: 0;
+          }
         }
 
         @include breakpoint($screen-md) {
-            flex-direction: row;
+          flex-direction: row;
 
-            .fhsitc__text-wrapper {
-                order: 1;
-            }
-    
-            .fhsitc__image-text-wrapper {
-                order: 2;
-            }
+          .fhsitc__text-wrapper {
+            order: 1;
+          }
+          
+          .fhsitc__image-text-wrapper {
+            order: 2;
+          }
         }
+      }
     }
-}
