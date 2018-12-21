@@ -3,7 +3,6 @@
     height: auto;
 
     .fhdisc {
-
         &__image-wrapper,
         &__text-wrapper {
             position: relative;
@@ -12,13 +11,20 @@
         }
 
         &__text-wrapper {
-            padding: 18vw 6vw;
+            padding: 15vw 5vw;
         }
 
         &__image img {
             display: block;
             width: 100%;
             height: auto;
+        }
+
+        /* If this component is acting as our header */
+        header & {
+            &__text-wrapper {
+                padding: 10vw 5vw;
+            }
         }
     }
 
@@ -37,7 +43,7 @@
             }
 
             &__text-wrapper {
-                padding: 50px;
+                padding: 5vw;
             }
 
             &__image {
@@ -56,6 +62,12 @@
                 width: calc(100% - 100px);
                 top: 50%;
                 transform: translateY(-50%);
+            }
+
+            header & {
+                &__text-wrapper {
+                    padding: 5vw;
+                }
             }
         }
     }
