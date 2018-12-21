@@ -1,0 +1,50 @@
+.paragraph--fixed-ratio-image {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+    
+    .fixed-ratio-image {
+
+        &__image-wrapper,
+        &__text-wrapper {
+            width: 100%;
+        }
+
+        &__text-wrapper {
+            padding: 5vw;
+        }
+    }
+    
+    @include breakpoint($screen-md) {
+        flex-flow: row;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+
+        .fixed-ratio-image {
+            &__image-wrapper,
+            &__text-wrapper {
+                width: 50%;
+            }
+
+            &__text-wrapper {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+            }
+        }    
+    }
+
+    &--image-right {
+        @include breakpoint($screen-md) {
+            flex-flow: row-reverse;
+        }
+    }
+}
