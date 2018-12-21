@@ -100,4 +100,17 @@
             }
         }
     }
+
+    &--no-image {
+        picture,
+        img {
+            display: none;
+        }
+
+        @include breakpoint($screen-md) {
+            .fhsi__text-wrapper {
+                width: 70%;
+            }
+        }
+    }
 }
