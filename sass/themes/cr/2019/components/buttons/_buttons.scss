@@ -50,6 +50,12 @@
   }
 }
 
+p + p {
+  .btn {
+    margin-top: 10px;
+  }
+} 
+
 /* button(font_colour, bg_colour, hover bg-colour, hover font_colour) */
 .btn--black,
 .btn--deep-violet {
