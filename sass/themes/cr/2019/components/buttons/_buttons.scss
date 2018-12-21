@@ -4,9 +4,9 @@
 
 .btn {
   display: inline-block;
-  width: auto;
+  width: 100%;
   margin: 0 auto;
-  padding: 23px 40px 19px;
+  padding: 16px 30px;
   cursor: pointer;
   transition: 0.3s all;
   text-align: center;
@@ -15,13 +15,21 @@
   border: none;
   font-family: $montserrat;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 15px;
   @include border-radius(30px);
   span {
     font-size: inherit;
     font-weight: inherit;
   }
+
+  @include breakpoint($screen-md) {
+    width: auto;
+    padding: 21px 30px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
   &.btn--full-width {
     display: block;
     width: 100%;
