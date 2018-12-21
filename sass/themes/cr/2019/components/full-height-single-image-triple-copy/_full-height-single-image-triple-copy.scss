@@ -15,13 +15,19 @@
     } 
 
     &__text-wrapper {
-      padding: 18vw 6vw;
+      padding: 18vw 5vw;
+    }
+
+    header & {
+      &__text-wrapper {
+        padding: 10vw 5vw;
+      }
     }
   }
 
   .fhsitc__text-1,
   .fhsitc__text-2 {
-    padding: 18vw 6vw;
+    padding: 18vw 5vw;
     
     img {
       width: 50%;
@@ -85,6 +91,12 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
+      header & {
+        .fhsitc__text-wrapper {
+          padding: 5vw;
+        }
+      }
     }
 
     &--image-right {
