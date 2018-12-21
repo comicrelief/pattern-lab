@@ -1,0 +1,103 @@
+.paragraph--full-height-single-image {
+
+    img {
+        width: 100%;
+        display: block;
+        height: 100%;
+    }
+
+    .fhsi__text-wrapper {
+        padding: 5vw;
+    }
+
+    @include breakpoint ($screen-md) {
+        height: 100vh;
+        position: relative;
+
+        img {
+            object-fit: cover;
+        }
+
+        .fhsi {
+
+            &__text-wrapper {
+                position: absolute;
+                width: 50vw;
+                height: auto;
+            }
+
+            // Align middle
+            &__middle-left,
+            &__text-wrapper,
+            &__middle-right {
+                top: 50%;
+            }
+
+            &__text-wrapper {
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &__middle-left {
+                left: 0;
+                transform: translateY(-50%);
+            }
+
+            &__middle-right {
+                right: 0;
+                transform: translateY(-50%);
+            }
+
+            // Align top
+            &__top-left,
+            &__top-centre,
+            &__top-right {
+                top: 0;
+                transform: translate(0);
+            }
+
+            &__top-left {
+                left: 0;
+            }
+
+            &__top-centre {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &__top-right {
+                right: 0;
+            }
+
+            // Align bottom
+            &__bottom-left,
+            &__bottom-centre,
+            &__bottom-right {
+                top: auto;
+                transform: translate(0);
+                // To make position bottom more important over position top
+                bottom: 0;
+            }
+
+            &__bottom-left {
+                left: 0;
+            }
+
+            &__bottom-centre {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &__bottom-right {
+                right: 0;
+            }
+
+            // To make position right more important over position left
+            &__top-right,
+            &__middle-right,
+            &__bottom-right {
+                left: auto;
+            }
+        }
+    }
+}
