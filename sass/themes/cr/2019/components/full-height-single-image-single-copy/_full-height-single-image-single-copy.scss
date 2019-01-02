@@ -9,10 +9,17 @@
       }
     }
     &__text-wrapper {
-      padding: 5vw;
+      padding: 15vw 5vw;
 
       .fhsisc__text {
         height: auto;
+      }
+    }
+
+    /* If this component is acting as our header */
+    header & {
+      &__text-wrapper {
+        padding: 10vw 5vw;
       }
     }
   }
@@ -42,12 +49,20 @@
       }
       // text should be at least the viewheight, but if the text doesn't fit increase height automatically
       &__text-wrapper {
+        padding: 5vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
         min-height: 100vh;
       }
+
+      header & {
+        &__text-wrapper {
+          padding: 5vw;
+        }
+      }
     }
+
     &.paragraph--full-height-single-image-single-copy--image-right {
       flex-basis: auto; // IE10
       flex-direction: row-reverse;

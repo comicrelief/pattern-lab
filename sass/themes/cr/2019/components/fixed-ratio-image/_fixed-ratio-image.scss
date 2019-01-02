@@ -1,50 +1,63 @@
 .paragraph--fixed-ratio-image {
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+
+  img {
     width: 100%;
+    display: block;
+  }
+  
+  .fixed-ratio-image {
+
+    &__image-wrapper,
+    &__text-wrapper {
+      width: 100%;
+    }
+
+    &__text-wrapper {
+      padding: 15vw 5vw;
+    }
+  }
+
+  header & {
+    .fixed-ratio-image__text-wrapper {
+      padding: 10vw 5vw;
+    }
+  }
+  
+  @include breakpoint($screen-md) {
+    flex-flow: row;
 
     img {
-        width: 100%;
-        display: block;
+      object-fit: cover;
+      height: 100%;
     }
-    
+
     .fixed-ratio-image {
+      &__image-wrapper,
+      &__text-wrapper {
+        width: 50%;
+      }
 
-        &__image-wrapper,
-        &__text-wrapper {
-            width: 100%;
-        }
-
-        &__text-wrapper {
-            padding: 5vw;
-        }
+      &__text-wrapper {
+        padding: 5vw;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
     }
-    
+
+    header & {
+      .fixed-ratio-image__text-wrapper {
+        padding: 5vw;
+      }
+    }
+  }
+
+  &--image-right {
     @include breakpoint($screen-md) {
-        flex-flow: row;
-
-        img {
-            object-fit: cover;
-            height: 100%;
-        }
-
-        .fixed-ratio-image {
-            &__image-wrapper,
-            &__text-wrapper {
-                width: 50%;
-            }
-
-            &__text-wrapper {
-                display: flex;
-                flex-flow: column;
-                justify-content: center;
-            }
-        }    
+      flex-flow: row-reverse;
     }
-
-    &--image-right {
-        @include breakpoint($screen-md) {
-            flex-flow: row-reverse;
-        }
-    }
+  }
 }
