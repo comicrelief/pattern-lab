@@ -1,0 +1,52 @@
+// SR components
+@import "../../sr/2018/components/background-colours/background-colours";
+@import "../../sr/2018/components/buttons/buttons";
+@import "../../sr/2018/components/links/links";
+@import "../../sr/2018/components/loading/loading";
+@import "../../sr/2018/components/typography/fonts";
+@import "../../sr/2018/components/typography/typography";
+@import "../../sr/2018/components/navigation/main-nav";
+@import "../../sr/2018/components/just-in-time-block/_just-in-time-block";
+
+// Shop overrides
+
+body {
+  font-family: $body-font;
+}
+header[role=banner] {
+  height: auto;
+  .site-logo {
+    margin-top: 20px;
+  }   
+}
+// select box overrides
+select {
+  padding: 14px 50px 14px 10px;
+  font-family: $body-font;
+  color: $colour-dark-blue-lighter;
+}
+
+// Social links
+.footer__social-links {
+  margin: 0 0 20px;
+  li {
+    margin: 5px 4px 0;
+    @media (min-width: 740px) {
+      margin: 5px 8px 0;
+    }
+    a {
+      -webkit-transition: 0.5s opacity;
+      transition: 0.5s opacity;
+      border-radius: 50%;
+      background: black;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+span, strong {
+  color: inherit;
+}
+$item-grey: #ddd;
+$colour-red: #e81962;

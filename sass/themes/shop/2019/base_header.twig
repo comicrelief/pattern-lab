@@ -1,0 +1,16 @@
+<header role="banner">
+  <div class="header__top-wrapper">
+  </div>
+  <div class="header__inner-wrapper">
+
+    {# Manually adding this for Shop developers as our branding block isn't currently a PL element #}
+    <div id="block-comicrelief-branding" class="block block-system block-system-branding-block">
+      <a href="/" title="Home" rel="home" class="site-logo" tabindex="2">
+      </a>
+    </div>
+
+  	{% include directory ~ '../../../base/components/navigation/main-nav.twig' %}
+  	{% include directory ~ '../../../base/components/meta-icons/meta-icons.twig' %}
+    
+  </div>
+</header>
