@@ -103,6 +103,15 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+      shop19: {
+        files: [{
+          expand: true,
+          cwd: 'sass/themes/shop/2019',
+          src: ['{,**/}*.scss'],
+          dest: 'dist/css/themes/shop/2019',
+          ext: '.css'
+        }]
+      },
       kssbase: {
         files: [{
           expand: true,
@@ -414,6 +423,16 @@ module.exports = function (grunt) {
         src: ['sass/themes/shop/2018', 'sass/base'],
         dest: 'dist/shop'
       },
+      shop19: {
+        options: {
+          verbose: true,
+          builder: 'kss/builder',
+          title: 'Shop 2019 PatternLab',
+          css: ['../css/themes/shop/2019/shop19.css', '../css/kss/shop19.css'],
+        },
+        src: ['sass/themes/shop/2019', 'sass/base'],
+        dest: 'dist/shop19'
+      },
     },
 
     connect: {
@@ -475,6 +494,9 @@ module.exports = function (grunt) {
       },
       shop18: {
         src: ['dist/css/kss/shop.css', 'dist/css/themes/shop/**/*.css']
+      },
+      shop19: {
+        src: ['dist/css/kss/shop19.css', 'dist/css/themes/shop19/**/*.css']
       },
       kssbase: {
         src: ['kss/builder/kss-assets/**/*.css']
@@ -574,6 +596,13 @@ module.exports = function (grunt) {
     'modernizr',
     'kss:shop18',
     'postcss:shop18',
+  ]);
+
+  grunt.registerTask('build:shop19', [
+    'sass:shop19',
+    'modernizr',
+    'kss:shop19',
+    'postcss:shop19',
   ]);
 
   grunt.registerTask('clean:test', [

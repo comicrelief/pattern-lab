@@ -1,12 +1,12 @@
 // SR components
-@import "../../sr/2018/components/background-colours/background-colours";
-@import "../../sr/2018/components/buttons/buttons";
-@import "../../sr/2018/components/links/links";
-@import "../../sr/2018/components/loading/loading";
-@import "../../sr/2018/components/typography/fonts";
-@import "../../sr/2018/components/typography/typography";
-@import "../../sr/2018/components/navigation/main-nav";
-@import "../../sr/2018/components/just-in-time-block/_just-in-time-block";
+@import "../../cr/2019/components/background-colours/background-colours";
+@import "../../cr/2019/components/buttons/buttons";
+@import "../../cr/2019/components/links/links";
+@import "../../cr/2019/components/loading/loading";
+@import "../../cr/2019/components/typography/fonts";
+@import "../../cr/2019/components/typography/typography";
+@import "../../cr/2019/components/navigation/main-nav";
+@import "../../cr/2019/components/just-in-time-block/_just-in-time-block";
 
 // Shop overrides
 
@@ -23,7 +23,7 @@ header[role=banner] {
 select {
   padding: 14px 50px 14px 10px;
   font-family: $body-font;
-  color: $colour-dark-blue-lighter;
+  color: $colour-blue;
 }
 
 // Social links
