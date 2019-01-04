@@ -1,0 +1,61 @@
+// ==========================================================================
+// Core variables
+// ==========================================================================
+
+@import "../../../base/variables/_grid.scss";
+@import "../../../base/variables/_colours.scss";
+@import "../../../base/variables/_typography.scss";
+@import "../../../base/variables/_lists.scss";
+@import "../../../base/variables/_theme.scss";
+
+// ==========================================================================
+// Sub Theme variables
+// ==========================================================================
+
+// SR variables
+@import "../../cr/2019/variables/_colours.scss";
+@import "../../cr/2019/variables/_typography.scss";
+@import "../../cr/2019/variables/_mixins.scss";
+@import "variables/_main-nav.scss";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+@import "../../../base/_core";
+
+// ==========================================================================
+// Core components
+// ==========================================================================
+
+//Or choose components one by one
+@import "../../../base/components/animations/animations";
+@import "../../../base/components/card-block/card";
+@import "../../../base/components/cards/cards";
+@import "../../../base/components/external-link/external-link";
+@import "../../../base/components/footer/footer";
+@import "../../../base/components/form/form";
+@import "../../../base/components/grid/grid";
+@import "../../../base/components/header/base-header";
+@import "../../../base/components/media/media";
+@import "../../../base/components/meta-icons/meta-icons";
+@import "../../../base/components/navigation/footer-nav";
+@import "../../../base/components/navigation/hamburger-menu-button";
+@import "../../../base/components/navigation/main-nav";
+@import "../../../base/components/promo-header/promo-header";
+@import "../../../base/components/progress-indicator/progress-indicator";
+@import "../../../base/components/social/social";
+@import "../../../base/components/table/table";
+@import "../../../base/components/tooltips/tooltips";
+@import "../../../base/components/typography/typography";
+@import "../../../base/components/partners-row/partners-row";
+@import "../../../base/components/partners-grid/partners-grid";
+@import "../../../base/components/partners/partners";
+@import "../../../base/components/just-in-time-block/_just-in-time";
+
+// ==========================================================================
+// Sub theme components overrides
+// ==========================================================================
+
+@import "_shop19-components";
+@import "_shop19-styleguide";

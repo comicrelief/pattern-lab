@@ -1,0 +1,51 @@
+// CR19 components
+@import "../../cr/2019/components/background-colours/background-colours";
+@import "../../cr/2019/components/buttons/buttons";
+@import "../../cr/2019/components/links/links";
+@import "../../cr/2019/components/loading/loading";
+@import "../../cr/2019/components/typography/fonts";
+@import "../../cr/2019/components/typography/typography";
+@import "../../cr/2019/components/navigation/main-nav";
+@import "../../cr/2019/components/just-in-time-block/_just-in-time-block";
+
+// Shop overrides
+body {
+  font-family: $body-font;
+}
+header[role=banner] {
+  height: auto;
+  .site-logo {
+    margin-top: 20px;
+  }   
+}
+// select box overrides
+select {
+  padding: 14px 50px 14px 10px;
+  font-family: $body-font;
+  color: $colour-blue;
+}
+
+// Social links
+.footer__social-links {
+  margin: 0 0 20px;
+  li {
+    margin: 5px 4px 0;
+    @media (min-width: 740px) {
+      margin: 5px 8px 0;
+    }
+    a {
+      -webkit-transition: 0.5s opacity;
+      transition: 0.5s opacity;
+      border-radius: 50%;
+      background: black;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+span, strong {
+  color: inherit;
+}
+
+$item-grey: $colour-light-grey;

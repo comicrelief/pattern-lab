@@ -18,3 +18,4 @@ Each site/product has a subtheme (linked below) which inherits a lot of these co
 <p><a href="payin/index.html" class="link link--red">Payin styleguide</a></p>
 <p><a href="donate/index.html" class="link link--red">Donate styleguide</a></p>
 <p><a href="shop/index.html" class="link link--red">Shop styleguide</a></p>
+<p><a href="shop19/index.html" class="link link--red">Shop 2019 styleguide</a></p>
