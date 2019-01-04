@@ -1,4 +1,4 @@
-// SR components
+// CR19 components
 @import "../../cr/2019/components/background-colours/background-colours";
 @import "../../cr/2019/components/buttons/buttons";
 @import "../../cr/2019/components/links/links";
@@ -9,7 +9,6 @@
 @import "../../cr/2019/components/just-in-time-block/_just-in-time-block";
 
 // Shop overrides
-
 body {
   font-family: $body-font;
 }
@@ -48,5 +47,5 @@ select {
 span, strong {
   color: inherit;
 }
-$item-grey: #ddd;
-$colour-red: #e81962;
+
+$item-grey: $colour-light-grey;
