@@ -22,7 +22,8 @@
 
             &__text-wrapper {
                 position: absolute;
-                width: 50vw;
+                width: 56.3%;
+                box-sizing: content-box;
                 height: auto;
             }
 
@@ -36,6 +37,7 @@
             &__text-wrapper {
                 left: 50%;
                 transform: translate(-50%, -50%);
+
             }
 
             &__middle-left {
@@ -101,15 +103,31 @@
         }
     }
 
+    @include breakpoint($screen-lg) {
+        .fhsi__text-wrapper {
+            width: 41.7%;
+            max-width: 600.75px;
+        }
+    }
+
     &--no-image {
         picture,
         img {
             display: none;
         }
-
+        
         @include breakpoint($screen-md) {
             .fhsi__text-wrapper {
-                width: 70%;
+                width: 69.3%;
+                box-sizing: content-box;
+            }
+        }
+
+        @include breakpoint($screen-lg) {
+            .fhsi__text-wrapper {
+                width: 55.3%;
+                max-width: 820px;
+
             }
         }
     }
