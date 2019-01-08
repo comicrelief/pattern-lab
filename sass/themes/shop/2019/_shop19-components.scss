@@ -20,9 +20,9 @@ header[role=banner] {
 }
 // select box overrides
 select {
-  padding: 14px 50px 14px 10px;
+  padding: 9px 50px 9px 10px;
   font-family: $body-font;
-  color: $colour-blue;
+  color: $colour-deep-violet;
 }
 
 // Social links
@@ -46,6 +46,11 @@ select {
 }
 span, strong {
   color: inherit;
+}
+
+// Make sure we're using the updated var
+label, legend, .form__field-label {
+  font-family: $body-font;
 }
 
 $item-grey: $colour-light-grey;
