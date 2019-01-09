@@ -137,3 +137,7 @@ i.font--family-light {
   font-weight: 500;
   text-transform: unset;
 }
+
+label {
+  @extend .text--label;
+}

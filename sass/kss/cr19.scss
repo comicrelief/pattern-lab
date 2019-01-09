@@ -1,0 +1,18 @@
+// ==========================================================================
+// KSS styles
+// ==========================================================================
+
+
+// Position this normally email signup head pop up block normally for styleguide
+.kss-modifier__example .block--cr-email-signup.block--cr-email-signup--head {
+  position: relative;
+}
+
+
+.kss-modifier__example .block--cr-email-signup--head.cr-header-email-signup-form {
+  .block--cr-email-signup__inner-wrapper {
+    position: relative;
+    top: 0;
+  }
+}
+
