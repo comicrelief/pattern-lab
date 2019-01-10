@@ -54,14 +54,14 @@ $label-small-font-size: (
 );
 
 $body-font-size: (
-  null: (11px, 16px),
-  $screen-md: (11px, 16px),
+  null: (15px, 24px),
+  $screen-md: (15px, 24px),
   $screen-lg: (20px, 32px)
 );
 
 $body-small-font-size: (
-  null: (11px, 16px),
-  $screen-md: (11px, 16px),
+  null: (15px, 24px),
+  $screen-md: (15px, 24px),
   $screen-lg: (15px, 24px)
 );
 
@@ -72,8 +72,8 @@ $footnote-font-size: (
 );
 
 $subtitle-small-font-size: (
-  null: (20px, 32px),
-  $screen-md: (20px, 32px),
+  null: (27px, 40px),
+  $screen-md: (27px, 40px),
   $screen-lg: (27px, 40px)
 );
 
