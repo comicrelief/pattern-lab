@@ -46,7 +46,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
   // Social Links
   .footer__social-links {
     margin: 0 0 40px;
-    li { width: span(3 inside no-gutters);}  
+    li { width: span(3 inside no-gutters);}
     ul li {
       margin: 5px -3px 0;
       a {
@@ -114,8 +114,8 @@ div.footer--expanded.footer-nav-outer-wrapper {
     >li.menu-item {
       @include span(12);
       margin-bottom: 30px;
-      text-align: center;
       @include breakpoint($screen-md) {
+        text-align: center;
         @include span(6);
         margin-bottom: 25px;
         &.menu-item--1,
@@ -123,9 +123,9 @@ div.footer--expanded.footer-nav-outer-wrapper {
         &.menu-item--5 {
           @include span(5);
           @include push(0.5);
-          text-align: right;
+          text-align: left; 
           ul.menu--level-1.menu.menu--level-0 li {
-            text-align: right;
+            text-align: left;
           }
         }
         &.menu-item--2,
@@ -211,10 +211,10 @@ div.footer--expanded.footer-nav-outer-wrapper {
           }
           // Each link item
           li {
-            padding: 10px;
+            padding: 10px 0;
             width: 100%;
             margin: 0;
-            text-align: center;
+            text-align: left;
             @include breakpoint($screen-md) {
               margin-top: 10px;
               padding: 10px 4px;
