@@ -46,21 +46,19 @@ div.footer--expanded.footer-nav-outer-wrapper {
   // Social Links
   .footer__social-links {
     margin: 0 0 40px;
+    li { width: span(3 inside no-gutters);}  
     ul li {
-      margin: 5px 8px 0;
+      margin: 5px -3px 0;
       a {
-        width: 52px;
-        height: 52px;
+        width: 75px;
+        height: 75px;
         background: none;
       }
     }
     @include breakpoint($screen-md) {
+      li { width: auto;}
       ul li {
         margin: 5px 10px 0;
-        a {
-          width: 75px;
-          height: 75px;
-        }
       }
     }
     @include breakpoint($screen-lg) {
