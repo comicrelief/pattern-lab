@@ -33,15 +33,21 @@ div.footer--expanded.footer-nav-outer-wrapper {
     padding-top: 0;
     list-style: none;
   }
-  span.lg-breakpoint {
-    display: none;
-    visibility: hidden;
+
+  span.md-breakpoint {
+    display: block;
+    // visibility: hidden;
   }
+
   @include breakpoint($screen-lg) {
-    padding: 65px 18px 60px;
-    span.lg-breakpoint {
+    span.md-breakpoint {
       display: block;
     }
+  }
+  
+  @include breakpoint($screen-lg) {
+    padding: 65px 18px 60px;
+
   }
   // Social Links
   .footer__social-links {
@@ -139,7 +145,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
           }
         }
       }
-      @include breakpoint($screen-lg) {
+      @include breakpoint($screen-md) {
         &.menu-item--1,
         &.menu-item--2,
         &.menu-item--3,
@@ -160,7 +166,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
           li a {
             display: inline
           }
-          @include breakpoint($screen-lg) {
+          @include breakpoint($screen-md) {
             max-height: none;
             height: auto;
           }
@@ -173,11 +179,12 @@ div.footer--expanded.footer-nav-outer-wrapper {
       // Category 'title' link
       >a {
         color: $colour-black;
+        @extend .text--subtitle-small;
         font-size: 31px;
         text-decoration: none;
         position: relative;
         @include breakpoint($screen-md) {
-          font-size: 41px;
+          font-size: 25px;
         }
         &:after {
           content: '\2303';
@@ -194,7 +201,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
           transition-duration: 0.1s;
           transition-property: transform;
           transition-timing-function: ease;
-          @include breakpoint($screen-lg) {
+          @include breakpoint($screen-md) {
             content: none;
           }
         }
@@ -205,7 +212,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
           max-height: 0;
           overflow-y: hidden;
           transition: max-height 0.6s ease;
-          @include breakpoint($screen-lg) {
+          @include breakpoint($screen-md) {
             max-height: none;
             height: auto;
           }
@@ -227,7 +234,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               @extend .link--deep-violet;
               // Hide to prevent tabbing until the menu is open
               display: none;
-              @include breakpoint($screen-lg) {
+              @include breakpoint($screen-md) {
                 display: inline;
               }
               &:hover,
