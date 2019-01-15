@@ -239,29 +239,6 @@ div.footer--expanded.footer-nav-outer-wrapper {
               &:after {
                 content: none;
               }
-              // Added to the menu item via CMS
-              &.js-esu-popup {
-                position: relative;
-                margin-left: 45px;
-
-                span {
-                  position: relative;
-                }
-
-                svg.icon {
-                  position: absolute;
-                  bottom: -6px;
-                  left: -45px;
-                  width: 35px;
-                  height: 35px;
-                }
-                &:hover,
-                &:focus {
-                  svg.icon {
-                    fill: $colour-red;
-                  }
-                }
-              }
             }
           }
           div.menu--expanded-footer__left,
