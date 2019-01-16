@@ -27,8 +27,8 @@ div.footer--minimal.footer-nav-outer-wrapper {
 
 div.footer--expanded.footer-nav-outer-wrapper {
   line-height: initial;
-  background: #f2f2f2;
-  padding: 45px 18px 40px;
+  background: $colour-black; 
+  padding: 45px 20px 40px;
   .menu-item.menu-item--expanded {
     padding-top: 0;
     list-style: none;
@@ -41,9 +41,9 @@ div.footer--expanded.footer-nav-outer-wrapper {
   }
   
   @include breakpoint($screen-lg) {
-    padding: 65px 18px 60px;
-
+    padding: 65px 120px 60px;
   }
+
   // Social Links
   .footer__social-links {
     margin: 0 0 40px;
@@ -75,7 +75,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
       margin-top: 10px;
     }
     p {
-      color: $colour-black;
+      color: $colour-white;
       @extend .font--xsmall;
       @include breakpoint($screen-lg) {
         font-size: 16px;
@@ -173,7 +173,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
       }
       // Category 'title' link
       >a {
-        color: $colour-black;
+        color: $colour-white;
         @extend .text--subtitle-small;
         font-size: 31px;
         text-decoration: none;
@@ -219,6 +219,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
             text-align: left;
             @include breakpoint($screen-md) {
               margin-top: 10px;
+              padding: 0; // to avoid pushing  of other li when hover li item which takes more than two lines
             }
             @include breakpoint($screen-lg) {
               padding: 10px 4px;
@@ -226,7 +227,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
             }
             a {
               @extend .link;
-              @extend .link--deep-violet;
+              color: $colour-white;
               font-size: 17px;
               border-bottom: 0;
               line-height: inherit; 
@@ -237,7 +238,8 @@ div.footer--expanded.footer-nav-outer-wrapper {
               }
               &:hover,
               &:focus {
-                border-bottom: 0;
+                color: $colour-white; 
+                border-bottom: 2px solid $colour-white; 
               }
               &:after {
                 content: none;
@@ -258,7 +260,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               float: right;
               width: 50%;
               li {
-                padding: 10px 4px 10px 10px;
+                padding: 0px 4px 10px 10px;
               }
             }
           }
