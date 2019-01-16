@@ -41,6 +41,9 @@
 
       var thisID = jQuery(this).attr('id');
 
+      console.log('thisID', thisID);
+      console.log('players', players);
+
       jQuery(this).remove();
 
       players[thisID].player.playVideo();
