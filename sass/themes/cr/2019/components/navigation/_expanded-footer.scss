@@ -34,13 +34,8 @@ div.footer--expanded.footer-nav-outer-wrapper {
     list-style: none;
   }
 
-  span.md-breakpoint {
-    display: block;
-    // visibility: hidden;
-  }
-
-  @include breakpoint($screen-lg) {
-    span.md-breakpoint {
+  @include breakpoint($screen-lg) { 
+    span.lg-breakpoint {
       display: block;
     }
   }
@@ -224,14 +219,17 @@ div.footer--expanded.footer-nav-outer-wrapper {
             text-align: left;
             @include breakpoint($screen-md) {
               margin-top: 10px;
-              padding: 10px 4px;
             }
             @include breakpoint($screen-lg) {
+              padding: 10px 4px;
               text-align: left;
             }
             a {
               @extend .link;
               @extend .link--deep-violet;
+              font-size: 17px;
+              border-bottom: 0;
+              line-height: inherit; 
               // Hide to prevent tabbing until the menu is open
               display: none;
               @include breakpoint($screen-md) {
@@ -239,7 +237,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               }
               &:hover,
               &:focus {
-                border-bottom: 2px solid $colour-red;
+                border-bottom: 0;
               }
               &:after {
                 content: none;
