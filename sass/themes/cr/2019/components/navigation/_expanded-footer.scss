@@ -34,8 +34,13 @@ div.footer--expanded.footer-nav-outer-wrapper {
     list-style: none;
   }
 
-  @include breakpoint($screen-lg) { 
-    span.lg-breakpoint {
+  span.md-breakpoint {
+    display: none;
+    visibility: hidden;
+  }
+  
+  @include breakpoint($screen-md) {  
+    span.md-breakpoint {
       display: block;
     }
   }
