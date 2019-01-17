@@ -1,50 +1,62 @@
   // Load YT player api
-  var tag = document.createElement('script');
-  tag.src = "//www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
-  var players = {}
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  function onYouTubePlayerAPIReady() {
+// To store each YT player object per video
+var players = {}
+// Update all our our 'play' buttons to show loading state
 
-    // Loop through each iframe video on the page
-    $( "iframe.copy-video__video").each(function (index) {
+$('button.copy-video__button').addClass('js-loading');
 
-      // Create IDs dynamically
-      var frameID = "js-copy-video__video-" + index;
-      var buttonID = "js-copy-video__button-" + index;
+function onYouTubePlayerAPIReady() {
 
-      // Set IDs
-      $(this).siblings('button.copy-video__button').attr('id', buttonID);
-      $(this).attr('id', frameID);
+  // Loop through each iframe video on the page
+  $( "iframe.copy-video__video").each(function (index) {
 
-      // Associate video player with button via index
-      players[buttonID] = { player: null, }
+    // Create IDs dynamically
+    var iframeID = "js-copy-video-" + index;
+    var buttonID = "js-copy-video-" + index + "__button";
 
-      // Set-up a player object for each video
-      players[buttonID].player =  new YT.Player(frameID, {
-        events: { 'onReady': onPlayerReady }
-      });
+    // Set IDs
+    $(this).attr('id', iframeID);
+    $(this).next('button.copy-video__button').attr('id', buttonID);
+
+    // Associate video player with button via index
+    players[buttonID] = { player: null, }
+
+    // Set-up a player object for each video
+    players[buttonID].player =  new YT.Player(iframeID, {
+      events: { 'onReady': onPlayerReady }
     });
+  });
+}
 
-    console.log("Players:", players );
-  }
+function onPlayerReady(event) {
 
-  function onPlayerReady(event) {
+  // The iframe that's ready to be used
+  var readyIframeID = event.target.a.id;
 
-    console.log('onPlayerReady')
+  // Construct button ID, pass to clickhandler
+  var readyButtonID = readyIframeID + "__button";
 
-    $('.copy-video__button').on('click', function() {
+  // Update state classes
+  $('#'+readyButtonID)
+    .removeClass('js-loading')
+        .addClass('js-ready')
 
-      var thisID = $(this).attr('id');
+  // Attach handler for this specific button      
+  clickHandler(readyButtonID);
+}
 
-      console.log('thisID', thisID);
-      console.log('players', players);
+function clickHandler(thisButtonID) {
 
-      $(this).remove();
+  $('#'+thisButtonID).on('click', function() {
+    // Remove from DOM
+    $(this).remove();
 
-      players[thisID].player.playVideo();
-
-    });
-  }
+    // Trigger YT player
+    players[thisButtonID].player.playVideo();
+  });
+}

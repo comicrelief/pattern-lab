@@ -27,7 +27,7 @@ $ratio-16-9: 56.25%;
       padding-top: 0;
 
       iframe,
-      .copy-video__button{
+      .copy-video__button {
         position: absolute;
         top: 0;
         left: 0;
@@ -36,30 +36,13 @@ $ratio-16-9: 56.25%;
         z-index: 1;
       }
 
-      // img wrapper
-      input.copy-video__button {
-        padding-top: 0;
-        width: 1px;
-        height: 1px;
-        margin: 0;
-        padding: 0;
-        top: 0;
-        left: 0;
-        opacity: 1;
-         z-index: 2;
-         &:before {
-          width: 100%;
-          height: 100%;
-          content: " ";
-          background-color:red;
-          position: absolute;
-          top: 0;
-          left: 0;
-         }
-        &:checked {
-          &:before {
-            content: none;
-          }
+      .copy-video__button {
+        z-index: 2;
+        &.js-loading {
+          background: red;
+        }
+        &.js-ready {
+          background: green;
         }
       }
     }
