@@ -227,7 +227,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               padding: 0; // to avoid pushing  of other li when hover li item which takes more than two lines
             }
             @include breakpoint($screen-lg) {
-              padding: 10px 4px;
+              padding: 10px 4px 10px 0;
               text-align: left;
             }
             a {
@@ -265,8 +265,13 @@ div.footer--expanded.footer-nav-outer-wrapper {
               float: right;
               width: 50%;
               li {
-                padding: 0px 4px 10px 10px;
+                padding: 0px 0px 0px 14px;
               }
+            }
+          }
+          @include breakpoint($screen-lg) {
+            div.menu--expanded-footer__right  {
+              li { padding: 10px 0 10px 14px; } 
             }
           }
         }
