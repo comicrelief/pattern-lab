@@ -1,13 +1,12 @@
-  // Load YT player api
-var tag = document.createElement('script');
+// Load YT player api
+var tag = document.createElement('script')
 tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+$('head').append(tag);
 
 // To store each YT player object per video
 var players = {}
-// Update all our our 'play' buttons to show loading state
 
+// Update all our our 'play' buttons to show loading state
 $('button.copy-video__button').addClass('js-loading');
 
 function onYouTubePlayerAPIReady() {
