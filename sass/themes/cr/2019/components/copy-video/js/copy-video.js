@@ -54,7 +54,8 @@ function clickHandler(thisButtonID) {
 
   $('#'+thisButtonID).on('click', function() {
     // Remove from DOM
-    $(this).remove();
+
+    $(this).next('img').remove().end().remove();
 
     // Trigger YT player
     players[thisButtonID].player.playVideo();

@@ -27,7 +27,8 @@ $ratio-16-9: 56.25%;
       padding-top: 0;
 
       iframe,
-      .copy-video__button {
+      .copy-video__button,
+      .copy-video__thumbnail {
         position: absolute;
         top: 0;
         left: 0;
@@ -36,25 +37,22 @@ $ratio-16-9: 56.25%;
         z-index: 1;
       }
 
-      .copy-video__button {
+      .copy-video__thumbnail {
         z-index: 2;
-        &:before {
-          position: absolute;
-          top: 50%; left: 50%;
-          width: 100px; height: 100%;
-        }
+      }
+
+      .copy-video__button {
+        z-index: 3;
+        border-radius: 0;
 
         &.js-loading {
-          background: red;
-          &:before {
-            content: "NOT YET";
-          }
+          background: rgba(0, 0, 0, 0.5) url($image-path + "loader.gif") center no-repeat;
+          background-size: 50px;
         }
+        
         &.js-ready {
-          background: green;
-            &:before {
-            content: "GO NOW YES";
-          }
+          background: rgba(0, 0, 0, 0) url($image-path + "play-icon.svg") center no-repeat;
+          background-size: 100px;
         }
       }
     }
