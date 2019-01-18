@@ -239,7 +239,7 @@ div.footer--expanded.footer-nav-outer-wrapper {
               font-size: 15px;
               border-bottom: 0;
               line-height: inherit; 
-              padding: 0 2px 24px 0;
+              padding: 0;
               // Hide to prevent tabbing until the menu is open
               display: none;
               @include breakpoint($screen-md) {
