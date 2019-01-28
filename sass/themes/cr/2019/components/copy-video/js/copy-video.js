@@ -44,7 +44,7 @@ function onPlayerReady(event) {
   var readyButtonID = readyIframeID + "__button";
 
   // Update state classes
-  $('#'+readyButtonID).removeClass('js-loading').addClass('js-ready')
+  jQuery('#'+readyButtonID).removeClass('js-loading').addClass('js-ready')
 
   // Attach handler for this specific button      
   clickHandler(readyButtonID);
