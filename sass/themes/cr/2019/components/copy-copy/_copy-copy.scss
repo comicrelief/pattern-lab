@@ -1,10 +1,8 @@
 .paragraph--copy-copy {
   width: 100%;
-
   .copy-copy {
     &__text-wrapper {
       padding: 15vw 5vw;
-
       .copy-copy__text {
         height: auto;
       }
@@ -43,6 +41,7 @@
       }
     }
 
+    // Full Height
     &.paragraph--copy-copy--full-height {
       min-height: 100vh;
     }
