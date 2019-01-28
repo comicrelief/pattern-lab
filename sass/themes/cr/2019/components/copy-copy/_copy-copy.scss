@@ -1,17 +1,11 @@
 .paragraph--copy-copy {
   width: 100%;
 
-  .fhsisc {
-    &__image-wrapper {
-      img {
-        display: block;
-        width: 100%;
-      }
-    }
+  .copy-copy {
     &__text-wrapper {
       padding: 15vw 5vw;
 
-      .fhsisc__text {
+      .copy-copy__text {
         height: auto;
       }
     }
@@ -23,37 +17,23 @@
       }
     }
   }
-  
+
   @include breakpoint($screen-md) {
+    min-height: 50vh;
     display: flex;
-    .fhsisc {
-      &__image-wrapper,
+    .copy-copy {
       &__text-wrapper {
         display: inline-block;
         vertical-align: top;
         width: 50%;
       }
-      &__image-wrapper {
-        position: relative;
-        overflow: hidden;
-        height: inherit;
-        // position image absolutely so height of section will be based on the text
-        img {
-          @include no-objectfit; // IE11
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
 
-        }
-      }
-      // text should be at least the viewheight, but if the text doesn't fit increase height automatically
+      // text should be at least the view height, but if the text doesn't fit increase height automatically
       &__text-wrapper {
         padding: 5vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 100vh;
       }
 
       header & {
@@ -63,10 +43,8 @@
       }
     }
 
-    &.paragraph--full-height-single-image-single-copy--image-right {
-      flex-basis: auto; // IE10
-      flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse; // IE10
+    &.paragraph--copy-copy--full-height {
+      min-height: 100vh;
     }
   }
 }
