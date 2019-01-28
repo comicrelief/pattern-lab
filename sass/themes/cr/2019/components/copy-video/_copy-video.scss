@@ -27,8 +27,8 @@ $ratio-16-9: 56.25%;
       padding-top: 0;
 
       iframe,
-      .copy-video__button,
-      .copy-video__thumbnail {
+      img,
+      .copy-video__button {
         position: absolute;
         top: 0;
         left: 0;
@@ -38,7 +38,7 @@ $ratio-16-9: 56.25%;
         border: 0;
       }
 
-      .copy-video__thumbnail {
+      img {
         z-index: 2;
       }
 
