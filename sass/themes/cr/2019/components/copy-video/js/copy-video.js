@@ -1,30 +1,30 @@
 // To store each YT player object per video
 var players = {}
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
   // Only load the YT API if we've got a Copy-Video element on the page
-  if($(".paragraph--copy-video").length){
+  if(jQuery(".paragraph--copy-video").length){
     var tag = document.createElement('script')
     tag.src = "//www.youtube.com/player_api";
-    $('head').append(tag);
+    jQuery('head').append(tag);
 
     // Update all our our 'play' buttons to show loading state
-    $('button.copy-video__button').addClass('js-loading');
+    jQuery('button.copy-video__button').addClass('js-loading');
   }
 });
 
 // Only called on successful YT API load
 function onYouTubePlayerAPIReady() {
   // Loop through each iframe video on the page
-  $( "iframe.copy-video__video").each(function (index) {
+  jQuery( "iframe.copy-video__video").each(function (index) {
 
     // Create IDs dynamically
     var iframeID = "js-copy-video-" + index;
     var buttonID = "js-copy-video-" + index + "__button";
 
     // Set IDs
-    $(this).attr('id', iframeID);
-    $(this).next('button.copy-video__button').attr('id', buttonID);
+    jQuery(this).attr('id', iframeID);
+    jQuery(this).next('button.copy-video__button').attr('id', buttonID);
 
     // Associate video player with button via index
     players[buttonID] = { player: null, }
@@ -52,10 +52,10 @@ function onPlayerReady(event) {
 
 function clickHandler(thisButtonID) {
 
-  $('#'+thisButtonID).on('click', function() {
+  jQuery('#'+thisButtonID).on('click', function() {
     // Remove from DOM
 
-    $(this).next('img').remove().end().remove();
+    jQuery(this).next('img').remove().end().remove();
 
     // Trigger YT player
     players[thisButtonID].player.playVideo();
