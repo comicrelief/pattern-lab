@@ -17,7 +17,6 @@
   }
 
   @include breakpoint($screen-md) {
-    min-height: 50vh;
     display: flex;
     .copy-copy {
       &__text-wrapper {
@@ -42,8 +41,10 @@
     }
 
     // Full Height
-    &.paragraph--copy-copy--full-height {
-      min-height: 100vh;
+    &.paragraph--copy-copy--align-top {
+      .copy-copy__text-wrapper {
+        justify-content: flex-start;
+      }
     }
   }
 }
