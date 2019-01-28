@@ -52,8 +52,12 @@ $ratio-16-9: 56.25%;
         }
         
         &.js-ready {
-          background: rgba(0, 0, 0, 0) url($image-path + "play-icon.svg") center no-repeat;
+          background: rgba(0, 0, 0, 0) url($image-path + "copyvideo--play-icon.svg") center no-repeat;
           background-size: 100px;
+          &:hover {
+            background: rgba(0, 0, 0, 0) url($image-path + "copyvideo--play-icon__hover.svg") center no-repeat;
+            background-size: 100px;
+          }
         }
       }
     }
