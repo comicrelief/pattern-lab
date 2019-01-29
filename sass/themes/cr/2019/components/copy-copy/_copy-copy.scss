@@ -40,10 +40,17 @@
       }
     }
 
-    // Full Height
+    // Align top
     &.paragraph--copy-copy--align-top {
       .copy-copy__text-wrapper {
         justify-content: flex-start;
+      }
+    }
+
+    // Align bottom
+    &.paragraph--copy-copy--align-bottom {
+      .copy-copy__text-wrapper {
+        justify-content: flex-end;
       }
     }
   }
