@@ -45,22 +45,20 @@ $ratio-16-9: 56.25%;
       .copy-video__button {
         z-index: 3;
         border-radius: 0;
-        background-size: 25% 25%;
-        background-position: center center;
 
         &.js-loading {
           background: rgba(0, 0, 0, 0.5) url($image-path + "loader.gif") center no-repeat;
-          background-size: 25% 25%;
+          background-size: 25%;
           background-position: center center;
         }
         
         &.js-ready {
           background: rgba(0, 0, 0, 0) url($image-path + "copyvideo--play-icon.svg") center no-repeat;
-          background-size: 25% 25%;
+          background-size: 25%;
           background-position: center center;
           &:hover {
             background: rgba(0, 0, 0, 0) url($image-path + "copyvideo--play-icon__hover.svg") center no-repeat;
-            background-size: 25% 25%;
+            background-size: 25%;
             background-position: center center;
           }
         }
