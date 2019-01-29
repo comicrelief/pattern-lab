@@ -18,7 +18,7 @@
       e.preventDefault();
 
       // Only run this code if we're not on LG
-      if ( $('span.lg-breakpoint').is(":not(:visible)")) {
+      if ( $('span.md-breakpoint').is(":not(:visible)")) {
                 
         $(this).parent('li.menu-item--expanded').toggleClass('item-open');
 
