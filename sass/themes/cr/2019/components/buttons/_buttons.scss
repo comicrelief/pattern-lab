@@ -72,31 +72,31 @@ p + p {
 
 /* Brand new Secondary buttons */
 .btn--grey {
-  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-light-grey);
+  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-light-grey, $hover-text-colour:$colour-deep-violet);
 }
 .btn--coral {
-  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-light-coral);
+  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-light-coral, $hover-text-colour:$colour-deep-violet);
 }
 .btn--orange {
-  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-light-orange);
+  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-light-orange, $hover-text-colour:$colour-deep-violet);
 }
 .btn--yellow {
-  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-light-yellow);
+  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-light-yellow, $hover-text-colour:$colour-deep-violet);
 }
 .btn--green {
-  @include cr_button_types($colour-deep-violet, $colour-green, $colour-light-green);
+  @include cr_button_types($colour-deep-violet, $colour-green, $colour-light-green, $hover-text-colour:$colour-deep-violet);
 }
 .btn--blue {
-  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-light-blue);
+  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-light-blue, $hover-text-colour:$colour-deep-violet);
 }
 .btn--purple {
-  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-light-purple);
+  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-light-purple, $hover-text-colour:$colour-deep-violet);
 }
 .btn--magenta {
-  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-light-magenta);
+  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-light-magenta, $hover-text-colour:$colour-deep-violet);
 }
 .btn--teal {
-  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-light-teal);
+  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-light-teal, $hover-text-colour:$colour-deep-violet);
 }
 
 
