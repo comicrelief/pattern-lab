@@ -72,31 +72,31 @@ p + p {
 
 /* Brand new Secondary buttons */
 .btn--grey {
-  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-dark-grey);
+  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-light-grey);
 }
 .btn--coral {
-  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-dark-coral);
+  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-light-coral);
 }
 .btn--orange {
-  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-dark-orange);
+  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-light-orange);
 }
 .btn--yellow {
-  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-dark-yellow);
+  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-light-yellow);
 }
 .btn--green {
-  @include cr_button_types($colour-deep-violet, $colour-green, $colour-dark-green);
+  @include cr_button_types($colour-deep-violet, $colour-green, $colour-light-green);
 }
 .btn--blue {
-  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-dark-blue);
+  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-light-blue);
 }
 .btn--purple {
-  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-dark-purple);
+  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-light-purple);
 }
 .btn--magenta {
-  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-dark-magenta);
+  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-light-magenta);
 }
 .btn--teal {
-  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-dark-teal);
+  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-light-teal);
 }
 
 
