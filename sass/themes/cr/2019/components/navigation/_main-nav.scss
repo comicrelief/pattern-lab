@@ -1,5 +1,4 @@
-
-/* Main navigation styling */ 
+/* Main navigation styling */
 .header__inner-wrapper {
 
   // Position logo to left, menu in center, meta icon block to the right
@@ -31,7 +30,7 @@
   // UL menu
   .main-nav__items {
     top: 67px;
-    
+
     @include breakpoint($screen-md) {
       top: 76px;
     }
@@ -40,7 +39,7 @@
       top: 0;
     }
 
-    li, 
+    li,
     li.item-open {
       a {
         font-size: 16px;
@@ -60,11 +59,11 @@
         text-align: center;
       }
 
-      > li.item-open,
-      > li {
+      >li.item-open,
+      >li {
 
-         &:hover >a {
-          background-color:$colour-light-teal;
+        &:hover>a {
+          background-color: $colour-light-teal;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
@@ -72,17 +71,17 @@
           margin: 0 10px;
         }
 
-        > a {
+        >a {
           font-family: $font-medium;
           text-transform: uppercase;
           padding: 17px 20px;
           height: 46px;
           color: $colour-black;
-          
+
           &.is-active span.menu-item__text {
             border-bottom: 2px solid $colour-black;
           }
-        
+
           @include breakpoint($desktop-nav-breakpoint) {
             font-size: 15px;
             line-height: 15px;
@@ -101,7 +100,7 @@
             padding: 32px 0;
             margin-left: 0;
 
-            > a.donate {
+            >a.donate {
               // Emulate some button styles here
               display: inline-block;
               width: auto;
@@ -121,18 +120,19 @@
               }
             }
 
-            &:hover > a.donate {
+            &:hover>a.donate {
               background-color: $colour-purple;
             }
           }
         }
       }
-    } 
+    }
+
 
     // First level of sub items (dropdwn)
     &.menu--level-1 {
       li.menu-item.menu-item--duplicate {
-        > a {
+        >a {
           color: $colour-light-teal;
           font-family: $font-medium;
           position: relative;
@@ -187,7 +187,7 @@
           }
         }
       }
-      
+
       li.item-open a,
       li a {
         color: $colour-white;
@@ -206,12 +206,12 @@
     &.menu--level-1,
     &.menu--level-2 {
       top: 0;
-      
+
       @include breakpoint($desktop-nav-breakpoint) {
         top: 103px;
         text-align: left;
       }
-      
+
       li a,
       li.item-open a {
         font-family: $montserrat;
@@ -259,15 +259,15 @@
     li {
 
       // Reset base styles, so we're targetting the anchor and not the li
-      > ul li:hover {
+      >ul li:hover {
         background-color: $colour-dark-purple;
       }
 
-      > ul li a:hover {
+      >ul li a:hover {
         background-color: lighten($colour-dark-purple, 5%);
       }
 
-      &:hover >a span.menu-item__text {
+      &:hover>a span.menu-item__text {
         border-bottom: none;
       }
     }
@@ -278,7 +278,7 @@
         height: 100%;
       }
     }
-    
+
     // Second levels of sub items
     &.menu--level-2 {
       li.menu-item {
@@ -293,7 +293,7 @@
             background-color: lighten($colour-dark-purple, 15%) !important;
           }
         }
-      } 
+      }
 
       @include breakpoint($desktop-nav-breakpoint) {
         display: block;
@@ -303,7 +303,38 @@
         max-height: 100%;
       }
     }
-  } 
+  }
+
+  .meta-icons {
+    @include breakpoint($desktop-nav-breakpoint) {
+      padding: 32px 0;
+      margin-left: 0;
+
+      >a.donate {
+        // Emulate some button styles here
+        display: inline-block;
+        width: auto;
+        margin: 0 auto;
+        cursor: pointer;
+        transition: 0.3s all;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        border: none;
+        background-color: $colour-red;
+        border-radius: 30px;
+        padding: 13px 20px 10px;
+
+        span {
+          color: $colour-white;
+        }
+      }
+
+      &:hover>a.donate {
+        background-color: $colour-purple;
+      }
+    }
+  }
 }
 
 // TODO: move this to component files
@@ -315,7 +346,7 @@ header[role=banner] {
     height: 78px;
   }
 
-   @include breakpoint($desktop-nav-breakpoint) {
+  @include breakpoint($desktop-nav-breakpoint) {
     height: 109px;
   }
 
@@ -358,7 +389,7 @@ header[role=banner] {
       margin: 14px 0 0 14px !important;
       background: url($image-path + "cr18-logo.png") no-repeat 0 0;
       background-size: 100%;
-      
+
       // Keep image hidden, remove this from template?
       img {
         display: none;

@@ -1,52 +1,87 @@
 <div class="main-nav__wrapper">
-  <div class="main-nav__icons main-nav__burger">
-    <a role="button" class="c-hamburger c-hamburger--htx main-nav-toggle" href="#" aria-expanded="false" aria-haspopup="true" aria-label="Open and close Navigation Menu, 11 items listed">
-      <div class="c-hamburger__text">
-        <span class="visually-hidden">Open and close nav menu</span>
-      </div>
-      <span></span>
-    </a>
-  </div>
-  <nav role="navigation" aria-labelledby="block-comicrelief-main-menu-menu" id="block-comicrelief-main-menu" class="block block-menu navigation menu--main">
-    <h2 class="visually-hidden" id="block-comicrelief-main-menu-menu">Main navigation</h2>
-    <ul class="menu sm main-nav__items menu--level-0" id="main-menu">
-      <li class="menu-item menu-item--expanded">
-        <a href="/what-we-do" aria-expanded="false" aria-haspopup="true" data-drupal-link-system-path="node/986"><span class="menu-item__text">What we do</span></a>
-        <ul class="menu main-nav__items menu--level-1">
-          <li class="menu-item menu-item--duplicate">
-            <a href="/what-we-do"><span class="menu-item__text">What we do</span></a>
-          </li>
-          <li class="menu-item">
-            <a href="/What-we-do/our-legacy" data-drupal-link-system-path="node/126"><span class="menu-item__text">Our legacy</span></a>
-          </li>
+    <div class="main-nav__icons main-nav__burger">
+        <a aria-expanded="false" aria-haspopup="true" aria-label="Open and close Navigation Menu, 11 items listed" class="c-hamburger c-hamburger--htx main-nav-toggle" href="#" role="button">
+            <div class="c-hamburger__text">
+                <span class="visually-hidden">Open and close nav menu</span>
+            </div>
+            <span></span>
+        </a>
+    </div>
+    <nav aria-labelledby="block-comicrelief-main-menu-menu" class="block block-menu navigation menu--main" id="block-comicrelief-main-menu" role="navigation">
+        <h2 class="visually-hidden" id="block-comicrelief-main-menu-menu">Main navigation</h2>
+        <ul class="menu sm main-nav__items menu--level-0" id="main-menu">
+            <li class="menu-item menu-item--expanded">
+                <a aria-expanded="false" aria-haspopup="true" data-drupal-link-system-path="node/986" href="/what-we-do">
+                    <span class="menu-item__text">What we do</span>
+                </a>
+                <ul class="menu main-nav__items menu--level-1">
+                    <li class="menu-item menu-item--duplicate">
+                        <a href="/what-we-do">
+                            <span class="menu-item__text">What we do</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/What-we-do/our-legacy" data-drupal-link-system-path="node/126">
+                            <span class="menu-item__text">Our legacy</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item--expanded">
+                <a aria-expanded="false" aria-haspopup="true" data-drupal-link-system-path="node/736" href="/funding">
+                    <span class="menu-item__text">Funding</span>
+                </a>
+                <ul class="menu main-nav__items menu--level-1">
+                    <li class="menu-item menu-item--duplicate">
+                        <a href="/funding">
+                            <span class="menu-item__text">Funding</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/funding/applying-for-grants">
+                            <span class="menu-item__text">Applying for funding</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/funding/current-opportunities" data-drupal-link-system-path="node/49">
+                            <span class="menu-item__text">Current opportunites</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/funding/managing-your-grant">
+                            <span class="menu-item__text">Managing your funding</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="/schools" data-drupal-link-system-path="node/1034">
+                    <span class="menu-item__text">Schools</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/fundraising/red-nose-day">
+                    <span class="menu-item__text">Red Nose Day</span>
+                </a>
+            </li>
         </ul>
-      </li>
-      <li class="menu-item menu-item--expanded">
-        <a href="/funding" aria-expanded="false" aria-haspopup="true" data-drupal-link-system-path="node/736"><span class="menu-item__text">Funding</span></a>
-        <ul class="menu main-nav__items menu--level-1">
-          <li class="menu-item menu-item--duplicate">
-            <a href="/funding"><span class="menu-item__text">Funding</span></a>
-          </li>
-          <li class="menu-item">
-            <a href="/funding/applying-for-grants"><span class="menu-item__text">Applying for funding</span></a>
-          </li>
-          <li class="menu-item">
-            <a href="/funding/current-opportunities" data-drupal-link-system-path="node/49"><span class="menu-item__text">Current opportunites</span></a>
-          </li>
-          <li class="menu-item">
-            <a href="/funding/managing-your-grant"><span class="menu-item__text">Managing your funding</span></a>
-          </li>
-        </ul>
-      </li>
-      <li class="menu-item">
-        <a href="/schools" data-drupal-link-system-path="node/1034"><span class="menu-item__text">Schools</span></a>
-      </li>
-      <li class="menu-item">
-        <a href="/fundraising/red-nose-day"><span class="menu-item__text">Red Nose Day</span></a>
-      </li>
-      <li class="menu-item">
-        <a href="https://www.comicrelief.com/donate" class="donate" target="_blank"><span class="menu-item__text">Donate</span></a>
-      </li>
-    </ul>
-  </nav>
+        <div class="meta-icons">
+            <a class="donate" href="https://www.comicrelief.com/donate" target="_blank">
+                <span class="menu-item__text">
+                    <span class="menu-item__text">Donate</span>
+                </span>
+            </a>
+            <a class="meta-icons__magnify has-tooltip" href="#" role="button" title="Search">
+                <svg class="icon" focusable="false" tabindex="-1">
+                    <use xlink:href="#icon-magnify"></use>
+                </svg>
+            </a>
+            <a class="meta-icons__esu-toggle has-tooltip" href="#" role="button" title="Sign up for emails">
+                <svg class="icon" focusable="false" tabindex="-1">
+                    <use xlink:href="#envelope"></use>
+                </svg>
+                <span>Sign up for emails</span>
+            </a>
+        </div>
+    </nav>
 </div>
