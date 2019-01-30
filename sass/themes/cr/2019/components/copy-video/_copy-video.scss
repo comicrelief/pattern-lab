@@ -47,6 +47,12 @@ $ratio-16-9: 56.25%;
         border-radius: 0;
         background-position: center center;
 
+        // Preload bg images
+        background: url($image-path + "loader.gif") no-repeat -9999px -9999px;
+        background: url($image-path + "loader.gif") no-repeat -9999px -9999px,
+                url($image-path + "copyvideo--play-icon.svg") no-repeat -9999px -9999px,
+                url($image-path + "copyvideo--play-icon__hover.svg") no-repeat -9999px -9999px;
+
         &.js-loading {
           background: rgba(0, 0, 0, 0.5) url($image-path + "loader.gif") center no-repeat;
           background-position: center center;
