@@ -11,7 +11,12 @@
     content: none;
   }
 
-  .main-nav__wrapper {
+  .main-nav__wrapper,
+  .meta-icons {
+    a.has-tooltip {
+      padding-left: 15px;
+    }
+
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 35px;
       background-color: transparent;
@@ -21,6 +26,12 @@
 
 .main-nav__wrapper {
   height: auto;
+
+  nav.menu--main,
+  .meta-icons {
+    display: flex;
+    align-items: center;
+  }
 
   li.menu-item {
     padding-top: 0;
@@ -307,13 +318,9 @@
 
   .meta-icons {
     @include breakpoint($desktop-nav-breakpoint) {
-      padding: 32px 0;
-      margin-left: 0;
-
       >a.donate {
         // Emulate some button styles here
         display: inline-block;
-        width: auto;
         margin: 0 auto;
         cursor: pointer;
         transition: 0.3s all;
@@ -321,9 +328,8 @@
         vertical-align: middle;
         text-decoration: none;
         border: none;
-        background-color: $colour-red;
         border-radius: 30px;
-        padding: 13px 20px 10px;
+        padding: 10px 20px 10px;
 
         span {
           color: $colour-white;
