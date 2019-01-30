@@ -46,6 +46,7 @@ $ratio-16-9: 56.25%;
         z-index: 3;
         border-radius: 0;
         background-position: center center;
+        transition: 0;
 
         // Preload bg images
         background: url($image-path + "loader.gif") no-repeat -9999px -9999px;
