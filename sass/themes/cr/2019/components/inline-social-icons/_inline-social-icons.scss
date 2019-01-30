@@ -1,0 +1,22 @@
+span.inline-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+
+  &--tw-light {
+    background: rgba(0, 0, 0, 0.0) url($image-path + "twitter-icon--light.svg") center no-repeat;
+  }
+
+  &--ig-light {
+    background: rgba(0, 0, 0, 0.0) url($image-path + "ig-icon--light.svg") center no-repeat;
+  }
+
+  &--tw-dark {
+    background: rgba(0, 0, 0, 0.0) url($image-path + "twitter-icon--dark.svg") center no-repeat;
+  }
+
+  &--ig-dark {
+    background: rgba(0, 0, 0, 0.0) url($image-path + "ig-icon--dark.svg") center no-repeat;
+  }
+}
