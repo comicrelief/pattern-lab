@@ -11,12 +11,7 @@
     content: none;
   }
 
-  .main-nav__wrapper,
-  .meta-icons {
-    a.has-tooltip {
-      padding-left: 15px;
-    }
-
+  .main-nav__wrapper {
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 35px;
       background-color: transparent;
@@ -31,6 +26,12 @@
   .meta-icons {
     display: flex;
     align-items: center;
+
+    a.has-tooltip {
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+
   }
 
   li.menu-item {
@@ -101,38 +102,6 @@
 
             &.is-active span.menu-item__text {
               border-bottom: 2px solid $colour-black;
-            }
-          }
-        }
-
-        // Donate button: can we target this better?
-        &:last-child {
-          @include breakpoint($desktop-nav-breakpoint) {
-            padding: 32px 0;
-            margin-left: 0;
-
-            >a.donate {
-              // Emulate some button styles here
-              display: inline-block;
-              width: auto;
-              margin: 0 auto;
-              cursor: pointer;
-              transition: 0.3s all;
-              text-align: center;
-              vertical-align: middle;
-              text-decoration: none;
-              border: none;
-              background-color: $colour-red;
-              border-radius: 30px;
-              padding: 13px 20px 10px;
-
-              span {
-                color: $colour-white;
-              }
-            }
-
-            &:hover>a.donate {
-              background-color: $colour-purple;
             }
           }
         }
@@ -318,6 +287,8 @@
 
   .meta-icons {
     @include breakpoint($desktop-nav-breakpoint) {
+
+      // Donate button
       >a.donate {
         // Emulate some button styles here
         display: inline-block;
@@ -330,14 +301,11 @@
         border: none;
         border-radius: 30px;
         padding: 10px 20px 10px;
+        margin-left: 10px;
 
         span {
           color: $colour-white;
         }
-      }
-
-      &:hover>a.donate {
-        background-color: $colour-purple;
       }
     }
   }
