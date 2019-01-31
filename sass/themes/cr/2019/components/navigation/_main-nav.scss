@@ -4,6 +4,7 @@
   // Position logo to left, menu in center, meta icon block to the right
   height: 100%;
   background-color: $colour-white;
+  display: flex;
   justify-content: space-between;
 
   // Remove clearfix so flexbox works properly
@@ -21,19 +22,6 @@
 
 .main-nav__wrapper {
   height: auto;
-
-  nav.menu--main,
-  // .meta-icons {
-  //   font-weight: 700;
-  //   display: flex;
-  //   align-items: center;
-
-  //   a.has-tooltip {
-  //     padding-left: 10px;
-  //     margin-left: 10px;
-  //   }
-
-  // }
 
   li.menu-item {
     padding-top: 0;
@@ -285,31 +273,14 @@
       }
     }
   }
+}
 
-  // .meta-icons {
-  //   @include breakpoint($desktop-nav-breakpoint) {
-
-  //     // Donate button
-  //     >a.donate {
-  //       // Emulate some button styles here
-  //       display: inline-block;
-  //       margin: 0 auto;
-  //       cursor: pointer;
-  //       transition: 0.3s all;
-  //       text-align: center;
-  //       vertical-align: middle;
-  //       text-decoration: none;
-  //       border: none;
-  //       border-radius: 30px;
-  //       padding: 10px 20px 10px;
-  //       margin-left: 10px;
-
-  //       span {
-  //         color: $colour-white;
-  //       }
-  //     }
-  //   }
-  // }
+header[role=banner] .header__inner-wrapper .block-cr-meta-icons {
+  height: auto;
+  .meta-icons__magnify,
+  .meta-icons__esu-toggle {
+    height: auto;
+  }
 }
 
 // TODO: move this to component files
@@ -323,6 +294,11 @@ header[role=banner] {
 
   @include breakpoint($desktop-nav-breakpoint) {
     height: 109px;
+  }
+
+  .main-nav__icons.main-nav__burger {
+    position: absolute;
+    right: 0;
   }
 
   .block-cr-meta-icons,
@@ -343,6 +319,10 @@ header[role=banner] {
   }
 
   .block-cr-meta-icons {
+    margin-right: 60px;
+    .meta-icons {
+      display: flex;
+    }
     @include breakpoint($desktop-nav-breakpoint) {
       margin-right: 5px;
     }
