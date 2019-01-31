@@ -8,7 +8,7 @@
   margin: 0 auto;
   padding: 16px 30px;
   cursor: pointer;
-  transition: 0.3s all;
+  transition: 0;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
@@ -63,7 +63,7 @@ p + p {
 }
 
 .btn--red {
-  @include cr_button_types($colour-white, $colour-red, $colour-deep-violet);
+  @include cr_button_types($colour-white, $colour-red, $colour-light-coral, $hover-text-colour:$colour-deep-violet);
 }
 
 .btn--white {
@@ -72,31 +72,31 @@ p + p {
 
 /* Brand new Secondary buttons */
 .btn--grey {
-  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-dark-grey);
+  @include cr_button_types($colour-deep-violet, $colour-grey, $colour-light-grey, $hover-text-colour:$colour-deep-violet);
 }
 .btn--coral {
-  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-dark-coral);
+  @include cr_button_types($colour-deep-violet, $colour-coral, $colour-light-coral, $hover-text-colour:$colour-deep-violet);
 }
 .btn--orange {
-  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-dark-orange);
+  @include cr_button_types($colour-deep-violet, $colour-orange, $colour-light-orange, $hover-text-colour:$colour-deep-violet);
 }
 .btn--yellow {
-  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-dark-yellow);
+  @include cr_button_types($colour-deep-violet, $colour-yellow, $colour-light-yellow, $hover-text-colour:$colour-deep-violet);
 }
 .btn--green {
-  @include cr_button_types($colour-deep-violet, $colour-green, $colour-dark-green);
+  @include cr_button_types($colour-deep-violet, $colour-green, $colour-light-green, $hover-text-colour:$colour-deep-violet);
 }
 .btn--blue {
-  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-dark-blue);
+  @include cr_button_types($colour-deep-violet, $colour-blue, $colour-light-blue, $hover-text-colour:$colour-deep-violet);
 }
 .btn--purple {
-  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-dark-purple);
+  @include cr_button_types($colour-deep-violet, $colour-purple, $colour-light-purple, $hover-text-colour:$colour-deep-violet);
 }
 .btn--magenta {
-  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-dark-magenta);
+  @include cr_button_types($colour-deep-violet, $colour-magenta, $colour-light-magenta, $hover-text-colour:$colour-deep-violet);
 }
 .btn--teal {
-  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-dark-teal);
+  @include cr_button_types($colour-deep-violet, $colour-teal, $colour-light-teal, $hover-text-colour:$colour-deep-violet);
 }
 
 
