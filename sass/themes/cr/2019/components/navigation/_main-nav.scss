@@ -1,20 +1,26 @@
 /* Main navigation styling */
-.header__inner-wrapper {
-  // Position logo to left, menu in center, meta icon block to the right
-  height: 100%;
-  background-color: $colour-white;
-  display: flex;
-  justify-content: space-between;
+header[role="banner"] {
+  .header__inner-wrapper {
+    // Position logo to left, menu in center, meta icon block to the right
+    height: 100%;
+    background-color: $colour-white;
+    display: flex;
+    justify-content: space-between;
 
-  // Remove clearfix so flexbox works properly
-  &:after {
-    content: none;
-  }
+    .site-logo {
+      margin-top: 8px;
+    }
 
-  .main-nav__wrapper {
-    @include breakpoint($desktop-nav-breakpoint) {
-      margin-right: 35px;
-      background-color: transparent;
+    // Remove clearfix so flexbox works properly
+    &:after {
+      content: none;
+    }
+
+    .main-nav__wrapper {
+      @include breakpoint($desktop-nav-breakpoint) {
+        margin-right: 35px;
+        background-color: transparent;
+      }
     }
   }
 }
@@ -83,6 +89,7 @@
 
           @include breakpoint($desktop-nav-breakpoint) {
             font-size: 15px;
+            font-weight: 700;
             line-height: 15px;
             padding: 7px 5px;
             height: auto;
@@ -271,8 +278,6 @@
 }
 
 header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
-  height: auto;
-
   .btn--dark-green {
     padding: 11px 17px;
     margin-right: 5px;
@@ -293,10 +298,6 @@ header[role="banner"] {
     height: auto;
   }
 
-  // @include breakpoint($desktop-nav-breakpoint) {
-  //   height: 109px;
-  // }
-
   .main-nav__icons.main-nav__burger {
     position: absolute;
     right: 0;
@@ -308,14 +309,14 @@ header[role="banner"] {
   .meta-icons__esu-toggle,
   .main-nav__icons.main-nav__burger,
   .c-hamburger {
-    height: 67px;
+    height: 60px;
 
     @include breakpoint($screen-md) {
       height: 76px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
-      height: 105px;
+      height: 90px;
     }
   }
 
@@ -344,6 +345,10 @@ header[role="banner"] {
     @include breakpoint($screen-md) {
       width: 58px;
       height: 58px;
+
+      .site-logo {
+        margin-top: 20px;
+      }
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
