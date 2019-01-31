@@ -1,0 +1,57 @@
+.paragraph--copy-copy {
+  width: 100%;
+  .copy-copy {
+    &__text-wrapper {
+      padding: 15vw 5vw;
+      .copy-copy__text {
+        height: auto;
+      }
+    }
+
+    /* If this component is acting as our header */
+    header & {
+      &__text-wrapper {
+        padding: 10vw 5vw;
+      }
+    }
+  }
+
+  @include breakpoint($screen-md) {
+    display: flex;
+    .copy-copy {
+      &__text-wrapper {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+
+      // text should be at least the view height, but if the text doesn't fit increase height automatically
+      &__text-wrapper {
+        padding: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      header & {
+        &__text-wrapper {
+          padding: 5vw;
+        }
+      }
+    }
+
+    // Align top
+    &.paragraph--copy-copy--align-top {
+      .copy-copy__text-wrapper {
+        justify-content: flex-start;
+      }
+    }
+
+    // Align bottom
+    &.paragraph--copy-copy--align-bottom {
+      .copy-copy__text-wrapper {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
