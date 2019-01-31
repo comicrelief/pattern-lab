@@ -18,7 +18,7 @@ header[role="banner"] {
 
     .main-nav__wrapper {
       @include breakpoint($desktop-nav-breakpoint) {
-        margin-right: 35px;
+        margin-right: 15px;
         background-color: transparent;
       }
     }
@@ -78,7 +78,6 @@ header[role="banner"] {
 
         > a {
           font-family: $font-medium;
-          text-transform: uppercase;
           padding: 17px 20px;
           height: 46px;
           color: $colour-black;
@@ -287,6 +286,10 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
   .meta-icons__esu-toggle {
     height: auto;
   }
+
+  .meta-icons__magnify {
+    margin-left: 10px;
+  }
 }
 
 // TODO: move this to component files
@@ -316,17 +319,20 @@ header[role="banner"] {
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
-      height: 90px;
+      height: 100px;
     }
   }
 
   .block-cr-meta-icons {
-    margin-right: 60px;
     .meta-icons {
       display: flex;
+      margin-right: 60px;
     }
+
     @include breakpoint($desktop-nav-breakpoint) {
-      margin-right: 5px;
+      .meta-icons {
+        margin-right: 0px;
+      }
     }
   }
 
