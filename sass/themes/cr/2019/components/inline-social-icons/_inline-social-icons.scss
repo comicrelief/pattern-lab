@@ -1,22 +1,43 @@
-span.inline-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+p.inline-icon {
+
+  @extend .text--label-small;
+  position: relative;
+  padding-left: 28px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left:0;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    background-color: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 
   &--tw-light {
-    background: rgba(0, 0, 0, 0.0) url($image-path + "twitter-icon--light.svg") center no-repeat;
+    &:before {
+      background-image: url($image-path + "twitter-icon--light.svg");
+    }
   }
 
   &--ig-light {
-    background: rgba(0, 0, 0, 0.0) url($image-path + "ig-icon--light.svg") center no-repeat;
+    &:before {
+      background-image: url($image-path + "ig-icon--light.svg");
+    }
   }
 
   &--tw-dark {
-    background: rgba(0, 0, 0, 0.0) url($image-path + "twitter-icon--dark.svg") center no-repeat;
+    &:before {
+      background-image: url($image-path + "twitter-icon--dark.svg");
+    }
   }
 
   &--ig-dark {
-    background: rgba(0, 0, 0, 0.0) url($image-path + "ig-icon--dark.svg") center no-repeat;
+    &:before {
+      background-image: url($image-path + "ig-icon--dark.svg");
+    }
   }
 }
