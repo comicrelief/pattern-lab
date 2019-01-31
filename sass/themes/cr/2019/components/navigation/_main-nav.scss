@@ -8,8 +8,14 @@ header[role="banner"] {
     justify-content: space-between;
 
     .site-logo {
-      margin-top: 9px;
-      margin-left: 9px;
+      margin-top: 7px;
+      margin-left: 20px;
+    }
+
+    @include breakpoint($screen-md) {
+      .site-logo {
+        margin-top: 15px;
+      }
     }
 
     // Remove clearfix so flexbox works properly
@@ -300,16 +306,26 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
 
 // TODO: move this to component files
 header[role="banner"] {
-  border-bottom: 2px solid #dad5db;
-  height: 69px;
+  border-bottom: 0;
+  height: 75px;
+  padding: 0;
+
+  .c-hamburger span {
+    top: 35px;
+  }
 
   @include breakpoint($screen-md) {
-    height: auto;
+    height: 90px;
+
+    .c-hamburger span {
+      top: 40px;
+    }
   }
 
   .main-nav__icons.main-nav__burger {
     position: absolute;
     right: 0;
+    margin-right: 20px;
   }
 
   .block-cr-meta-icons,
@@ -318,21 +334,21 @@ header[role="banner"] {
   .meta-icons__esu-toggle,
   .main-nav__icons.main-nav__burger,
   .c-hamburger {
-    height: 60px;
+    height: 75px;
 
     @include breakpoint($screen-md) {
-      height: 76px;
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      height: 100px;
+      height: 90px;
     }
   }
+
+ 
 
   .block-cr-meta-icons {
     .meta-icons {
       display: flex;
-      margin-right: 60px;
+      margin-right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
@@ -344,8 +360,8 @@ header[role="banner"] {
 
   .site-logo {
     min-width: 0px;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: url($image-path+"cr18-logo.png") no-repeat 0 0;
     background-size: 100%;
 
@@ -354,19 +370,9 @@ header[role="banner"] {
       display: none;
     }
 
-    @include breakpoint($screen-md) {
-      width: 58px;
-      height: 58px;
-
-      .site-logo {
-        margin-top: 20px;
-      }
-    }
-
     @include breakpoint($desktop-nav-breakpoint) {
       width: 80px;
       height: 80px;
-      margin: 14px 0 0 14px !important;
       background: url($image-path+"cr18-logo.png") no-repeat 0 0;
       background-size: 100%;
     }
