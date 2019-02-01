@@ -49,10 +49,10 @@ header[role="banner"] {
 
   // UL menu
   .main-nav__items {
-    top: 67px;
+    top: 75px;
 
     @include breakpoint($screen-md) {
-      top: 76px;
+      top: 90px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
