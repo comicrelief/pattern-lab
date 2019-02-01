@@ -9,12 +9,19 @@ header[role="banner"] {
 
     .site-logo {
       margin-top: 7px;
-      margin-left: 20px;
+      margin-left: 9px;
     }
 
     @include breakpoint($screen-md) {
       .site-logo {
         margin-top: 15px;
+        margin-left: 15px;
+      }
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      .site-logo {
+        margin-top: 5px;
       }
     }
 
@@ -79,7 +86,7 @@ header[role="banner"] {
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          padding: 39px 0px;
+          padding: 30px 0px;
           margin: 0 10px;
         }
 
@@ -294,10 +301,7 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
     height: auto;
   }
 
-  .meta-icons__magnify,
-  .meta-icons__esu-toggle {
-    margin-left: 10px;
-  }
+
 
   .meta-icons__esu-toggle {
     margin-right: 5px;
@@ -325,7 +329,7 @@ header[role="banner"] {
   .main-nav__icons.main-nav__burger {
     position: absolute;
     right: 0;
-    margin-right: 20px;
+    margin-right: 0;
   }
 
   .block-cr-meta-icons,
@@ -346,7 +350,7 @@ header[role="banner"] {
   .block-cr-meta-icons {
     .meta-icons {
       display: flex;
-      margin-right: 80px;
+      margin-right: 50px;
       top: 50%;
       transform: translateY(-50%);
     }
