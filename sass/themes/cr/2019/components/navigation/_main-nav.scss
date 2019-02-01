@@ -177,13 +177,13 @@
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          height: 74px;
+          height: auto;
           width: 100%;
           padding: 0;
 
           a {
             padding: 26px 21px;
-            height: 74px;
+            height: auto;
           }
         }
       }
