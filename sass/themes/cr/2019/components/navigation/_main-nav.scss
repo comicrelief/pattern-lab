@@ -15,13 +15,13 @@ header[role="banner"] {
     @include breakpoint($screen-md) {
       .site-logo {
         margin-top: 15px;
-        margin-left: 15px;
       }
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
       .site-logo {
         margin-top: 5px;
+        margin-left: 14px;
       }
     }
 
@@ -301,10 +301,14 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
     height: auto;
   }
 
-
-
   .meta-icons__esu-toggle {
     margin-right: 5px;
+  }
+
+  @include breakpoint($screen-md) {
+    .meta-icons__magnify {
+      margin-left: 15px;
+    }
   }
 }
 
@@ -329,23 +333,50 @@ header[role="banner"] {
   .main-nav__icons.main-nav__burger {
     position: absolute;
     right: 0;
-    margin-right: 0;
   }
 
+  // Override hamburger color
+  .c-hamburger span,
+  .c-hamburger span::before, 
+  .c-hamburger span::after {
+    background-color: $colour-deep-violet;
+  }
+
+  .c-hamburger span:hover,
+  .c-hamburger span::before:hover, 
+  .c-hamburger span::after:hover {
+    fill: $colour-grey;
+  }
+
+  .c-hamburger.is-active span {
+    background: none;
+  }
+
+  // Override meta icons color
   .block-cr-meta-icons,
   .meta-icons__login,
   .meta-icons__magnify,
   .meta-icons__esu-toggle,
   .main-nav__icons.main-nav__burger,
-  .c-hamburger {
+  .c-hamburger__text {
     height: 75px;
 
+    svg.icon {
+      fill: $colour-deep-violet;
+    }
+
+    svg.icon:hover {
+      fill: $colour-grey;
+    }
+
     @include breakpoint($screen-md) {
+      .main-nav__icons.main-nav__burger {
+        right: 0;
+      }
+
       height: 90px;
     }
   }
-
- 
 
   .block-cr-meta-icons {
     .meta-icons {
