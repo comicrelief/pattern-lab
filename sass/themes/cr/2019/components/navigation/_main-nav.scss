@@ -79,9 +79,9 @@ header[role="banner"] {
         text-align: center;
       }
 
-      > li.item-open,
-      > li {
-        &:hover > a {
+      >li.item-open,
+      >li {
+        &:hover>a {
           background-color: $colour-light-teal;
         }
 
@@ -90,7 +90,7 @@ header[role="banner"] {
           margin: 0 10px;
         }
 
-        > a {
+        >a {
           font-family: $font-medium;
           padding: 17px 20px;
           height: 46px;
@@ -118,7 +118,7 @@ header[role="banner"] {
     // First level of sub items (dropdwn)
     &.menu--level-1 {
       li.menu-item.menu-item--duplicate {
-        > a {
+        >a {
           color: $colour-light-teal;
           font-family: $font-medium;
           position: relative;
@@ -150,6 +150,7 @@ header[role="banner"] {
           }
 
           &.is-active {
+
             // Add border to the span (to allow control over the width), rather than the :after psuedo
             span.menu-item__text {
               border-bottom: 4px solid $colour-light-teal;
@@ -242,16 +243,17 @@ header[role="banner"] {
 
     li.item-open,
     li {
+
       // Reset base styles, so we're targetting the anchor and not the li
-      > ul li:hover {
+      >ul li:hover {
         background-color: $colour-dark-purple;
       }
 
-      > ul li a:hover {
+      >ul li a:hover {
         background-color: lighten($colour-dark-purple, 5%);
       }
 
-      &:hover > a span.menu-item__text {
+      &:hover>a span.menu-item__text {
         border-bottom: none;
       }
     }
@@ -318,8 +320,41 @@ header[role="banner"] {
   height: 75px;
   padding: 0;
 
-  .c-hamburger span {
-    top: 35px;
+  // Override hamburger style
+  .c-hamburger {
+    &:hover {
+      span,
+      span::before,
+      span::after {
+        background-color: $colour-grey;
+      }
+    }
+
+    span {
+      top: 35px;
+      background-color: $colour-deep-violet;
+
+      &::before,
+      &::after {
+        background-color: $colour-deep-violet;
+      }
+    }
+
+    &.is-active {
+      background-color: #f9f9f9;
+
+      span {
+        background: none;
+
+        &:before {
+          background-color: $colour-black;
+        }
+
+        &:after {
+          background-color: $colour-black;
+        }
+      }
+    }
   }
 
   @include breakpoint($screen-md) {
@@ -333,23 +368,6 @@ header[role="banner"] {
   .main-nav__icons.main-nav__burger {
     position: absolute;
     right: 0;
-  }
-
-  // Override hamburger color
-  .c-hamburger span,
-  .c-hamburger span::before, 
-  .c-hamburger span::after {
-    background-color: $colour-deep-violet;
-  }
-
-  .c-hamburger span:hover,
-  .c-hamburger span::before:hover, 
-  .c-hamburger span::after:hover {
-    fill: $colour-grey;
-  }
-
-  .c-hamburger.is-active span {
-    background: none;
   }
 
   // Override meta icons color
