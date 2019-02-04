@@ -49,47 +49,71 @@
 
     // Medium screen
     @include breakpoint($screen-md) {
-      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
       
         // Inner containers
         .fhsitc__text-wrapper,
         .fhsitc__image-text-wrapper {
-          height: 100vh;
+          min-height: 100vh;
           width: 50%;
           float: left;
         }
 
+        .fhsitc__image-text-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
+
         .fhsitc__text-wrapper {
           padding: 5vw;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
         }
 
         .fhsitc__image {
-          height: 50vh;
+          min-height: 50vh;
+          position: relative;
+
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
           }
         }
 
         .fhsitc__text-1,
         .fhsitc__text-2 {
-          height: 25vh;
+          min-height: 25vh;
           width: 100%;
           padding: 2vh 10vw;
+          flex-grow: 1;
+          position: relative;
 
           img {
-            height: 100%;
+            height: 50px;
             width: auto;
             max-width: none;
+
+            // FOR NOW
+            min-height: 21vh;
+            width: auto;
+            position: absolute;
+            top: 2vh;
+            left: 50%;
+            transform: translateX(-50%);
           }
         }
 
         .fhsitc__text-3 {
-          position: absolute;
-          width: 80%;
-          top: 50%;
-          transform: translateY(-50%);
+          width: calc(100% - 5vw);
         }
 
         header & {

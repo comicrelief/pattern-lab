@@ -2,11 +2,6 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-  
-  @include breakpoint($screen-md) {
-    display: flex;
-    flex-direction: row;
-  }
 
   .fhdisc {
     &__image-wrapper,
@@ -36,6 +31,8 @@
 
     // Medium screen
     @include breakpoint($screen-md) {
+      display: flex;
+      flex-direction: row;
       min-height: 100vh;
 
       .fhdisc {
