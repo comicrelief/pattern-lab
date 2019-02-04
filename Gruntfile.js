@@ -238,6 +238,15 @@ module.exports = function (grunt) {
           dest: 'dist/images'
         }]
       },
+      cr19: {
+        files: [{
+          expand: true,
+          flatten: true,
+          cwd: 'sass/themes/cr/2019/components',
+          src: ['{,**/}*.svg'],
+          dest: 'dist/images'
+        }]
+      },
       payin: {
         files: [{
           expand: true,
@@ -546,6 +555,7 @@ module.exports = function (grunt) {
     'sass:cr19',
     'modernizr',
     'uglify:cr19_components_js',
+    'svgmin:cr19',
     'kss:cr19',
     'postcss:cr19',
   ]);
