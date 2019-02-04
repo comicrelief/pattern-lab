@@ -28,22 +28,26 @@
     }
   }
 
-
     // Medium screen
     @include breakpoint($screen-md) {
-      height: 100vh;
+      min-height: 100vh;
 
       .fhdisc {
 
         &__text-wrapper,
         &__image-wrapper {
-          height: 100vh;
+          min-height: 100vh;
           width: 50%;
           float: left;
         }
 
         &__text-wrapper {
           padding: 5vw;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
         }
 
         &__image {
@@ -58,10 +62,10 @@
 
         &__text-3 {
 
-          position: absolute;
+          //position: absolute;
           width: calc(100% - 10vw);
-          top: 50%;
-          transform: translateY(-50%);
+          //top: 50%;
+          //transform: translateY(-50%);
         }
 
         header & {
