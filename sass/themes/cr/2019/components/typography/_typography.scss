@@ -104,9 +104,11 @@ h1, h2, h3, h4, h5, p, span {
 }
 .text--label {
   @include font-size($label-font-size);
+  text-transform: uppercase;
 }
 .text--label-small {
   @include font-size($label-small-font-size);
+  text-transform: uppercase;
 }
 .text--footnote {
   @include font-size($footnote-font-size);
