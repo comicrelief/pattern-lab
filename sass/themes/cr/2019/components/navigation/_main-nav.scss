@@ -8,6 +8,7 @@ header[role="banner"] {
     justify-content: space-between;
 
     .site-logo {
+      transform: rotate(-14deg);
       margin-top: 7px;
       margin-left: 9px;
     }
@@ -94,6 +95,7 @@ header[role="banner"] {
           font-family: $font-medium;
           padding: 17px 20px;
           height: 46px;
+          font-weight: 800;
           color: $colour-black;
 
           &.is-active span.menu-item__text {
@@ -102,7 +104,7 @@ header[role="banner"] {
 
           @include breakpoint($desktop-nav-breakpoint) {
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 15px;
             padding: 7px 5px;
             height: auto;
@@ -122,7 +124,7 @@ header[role="banner"] {
           color: $colour-light-teal;
           font-family: $font-medium;
           position: relative;
-          font-size: 21px;
+          font-size: 20px;
           line-height: 21px;
           height: 49px;
 
@@ -144,7 +146,7 @@ header[role="banner"] {
               width: 10px;
               height: 10px;
               border: 11px solid transparent;
-              border-bottom-color: $colour-dark-purple;
+              border-bottom-color: $colour-deep-violet;
               top: -22px;
             }
           }
@@ -201,7 +203,7 @@ header[role="banner"] {
       li a,
       li.item-open a {
         font-family: $montserrat;
-        font-weight: 500;
+        font-weight: 800;
         font-size: 16px;
         line-height: 16px;
         color: $colour-white;
@@ -236,6 +238,9 @@ header[role="banner"] {
           a {
             padding: 14px 21px;
             height: auto;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 32px;
           }
         }
       }
@@ -296,6 +301,7 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
   .btn--dark-green {
     padding: 11px 17px;
     margin-right: 5px;
+    font-size: 15px;
   }
 
   .meta-icons__magnify,
@@ -424,8 +430,6 @@ header[role="banner"] {
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
-      width: 80px;
-      height: 80px;
       background: url($image-path+"cr18-logo.png") no-repeat 0 0;
       background-size: 100%;
     }
