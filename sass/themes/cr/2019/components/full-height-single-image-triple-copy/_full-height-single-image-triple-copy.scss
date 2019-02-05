@@ -98,16 +98,11 @@
           position: relative;
 
           img {
-            height: 50px;
-            width: auto;
-            max-width: none;
-
-            // FOR NOW
-            min-height: 21vh;
-            width: auto;
             position: absolute;
-            top: 2vh;
+            top: 8%;
             left: 50%;
+            height: 84%;
+            width: auto;
             transform: translateX(-50%);
           }
         }
