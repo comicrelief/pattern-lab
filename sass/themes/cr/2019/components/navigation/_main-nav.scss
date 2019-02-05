@@ -4,13 +4,12 @@ header[role="banner"] {
     // Position logo to left, menu in center, meta icon block to the right
     height: 100%;
     background-color: $colour-white;
-    display: flex;
     justify-content: space-between;
 
     .site-logo {
       transform: rotate(-14deg);
       margin-top: 7px;
-      margin-left: 9px;
+      margin-left: 18px;
     }
 
     @include breakpoint($screen-md) {
@@ -21,7 +20,6 @@ header[role="banner"] {
 
     @include breakpoint($desktop-nav-breakpoint) {
       .site-logo {
-        margin-top: 5px;
         margin-left: 14px;
       }
     }
@@ -42,6 +40,7 @@ header[role="banner"] {
 
 .main-nav__wrapper {
   height: auto;
+  z-index: 1;
 
   li.menu-item {
     padding-top: 0;
@@ -379,7 +378,6 @@ header[role="banner"] {
   }
 
   .main-nav__icons.main-nav__burger {
-    position: absolute;
     right: 0;
   }
 
@@ -412,7 +410,6 @@ header[role="banner"] {
   .block-cr-meta-icons {
     .meta-icons {
       display: flex;
-      margin-right: 50px;
       top: 50%;
       transform: translateY(-50%);
     }
