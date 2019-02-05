@@ -216,8 +216,8 @@ header[role="banner"] {
 
         @include breakpoint($desktop-nav-breakpoint) {
           // The complex inherited styles need a little bullying to override here
-          font-size: 20px !important;
-          line-height: 32px !important;
+          font-size: 15px !important;
+          line-height: 24px !important;
         }
 
         &:hover {
