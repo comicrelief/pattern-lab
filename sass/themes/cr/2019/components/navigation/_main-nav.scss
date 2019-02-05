@@ -120,7 +120,7 @@ header[role="banner"] {
     // First level of sub items (dropdwn)
     &.menu--level-1 {
       li.menu-item.menu-item--duplicate {
-        >a {
+        a {
           color: $colour-light-teal;
           font-family: $font-medium;
           position: relative;
@@ -162,6 +162,11 @@ header[role="banner"] {
               border-bottom: none;
             }
           }
+        }
+
+        // Make only title/link extra-bold 
+        a:first-child {
+          font-weight: 800;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
@@ -212,7 +217,7 @@ header[role="banner"] {
         @include breakpoint($desktop-nav-breakpoint) {
           // The complex inherited styles need a little bullying to override here
           font-size: 20px !important;
-          line-height: 20px !important;
+          line-height: 32px !important;
         }
 
         &:hover {
@@ -302,6 +307,7 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
     padding: 11px 17px;
     margin-right: 5px;
     font-size: 15px;
+    font-weight: 800;
   }
 
   .meta-icons__magnify,
@@ -329,6 +335,7 @@ header[role="banner"] {
   // Override hamburger style
   .c-hamburger {
     &:hover {
+
       span,
       span::before,
       span::after {
