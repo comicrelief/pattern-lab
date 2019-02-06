@@ -3,17 +3,23 @@
   var allVideos = [];
   var videoCounter = 0;
   var numberOfVideos = 0;
+  var thisID = "";
 
   $( document ).ready(function() {
 
     $('.paragraph--background-video-copy').each(function(index) {
-
+      
       $this = $(this);
+
+      // Dynamically create an ID
+      thisID = 'background-video-copy--' + index;
+
+      $this.attr('id', thisID);
 
       // Store a ref to this video and its offset bottom position
       allVideos[index] = {
-        item: $this,
-        top: $this.offset().top
+        top: $this.offset().top,
+        id: thisID
       };
     });
 
@@ -37,7 +43,7 @@
 
       // If we've scrolled a video into view, trigger play
       if ( winBottom >= allVideos[videoCounter].top ) {
-        console.log("I will trigger video ", videoCounter);
+        console.log("I will trigger video ", allVideos[videoCounter].id );
         videoCounter++;
 
         // Unbind the scroll handler if we've reached our total video number
