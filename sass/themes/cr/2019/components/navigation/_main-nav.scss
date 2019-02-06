@@ -8,8 +8,7 @@ header[role="banner"] {
 
     .site-logo {
       transform: rotate(-14deg);
-      margin-top: 7px;
-      margin-left: 18px;
+      margin-top: 12px;
     }
 
     @include breakpoint($screen-md) {
@@ -302,9 +301,9 @@ header[role="banner"] {
 }
 
 header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
-  .btn--dark-green {
+  .btn.donate {
     padding: 11px 17px;
-    margin-right: 5px;
+    margin-right: 10px;
     font-size: 15px;
     font-weight: 800;
   }
@@ -312,10 +311,7 @@ header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
   .meta-icons__magnify,
   .meta-icons__esu-toggle {
     height: auto;
-  }
-
-  .meta-icons__esu-toggle {
-    margin-right: 5px;
+    margin-right: 10px;
   }
 
   @include breakpoint($screen-md) {
@@ -333,6 +329,7 @@ header[role="banner"] {
 
   // Override hamburger style
   .c-hamburger {
+    width: 40px;
     &:hover {
 
       span,
@@ -343,7 +340,9 @@ header[role="banner"] {
     }
 
     span {
+      width: 25px;
       top: 35px;
+      right: 5px;
       background-color: $colour-deep-violet;
 
       &::before,
@@ -424,8 +423,10 @@ header[role="banner"] {
 
   .site-logo {
     min-width: 0px;
-    width: 60px;
-    height: 60px;
+    margin-top: 12px;
+    margin-left: 12px;
+    width: 50px;
+    height: 50px;
     background: url($image-path+"cr18-logo.png") no-repeat 0 0;
     background-size: 100%;
 
@@ -437,6 +438,8 @@ header[role="banner"] {
     @include breakpoint($desktop-nav-breakpoint) {
       background: url($image-path+"cr18-logo.png") no-repeat 0 0;
       background-size: 100%;
+      width: 60px;
+      height: 60px;
     }
   }
 }
