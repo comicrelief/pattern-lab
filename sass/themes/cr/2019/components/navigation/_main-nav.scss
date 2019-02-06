@@ -3,8 +3,8 @@ header[role="banner"] {
   border-bottom: 0;
   height: 75px;
   padding: 0;
-  z-index: 20; // To make dropdown link visible
-  
+  z-index: 91; // To make dropdown link visible
+
   @include breakpoint($screen-md) {
     height: 90px;
   }
