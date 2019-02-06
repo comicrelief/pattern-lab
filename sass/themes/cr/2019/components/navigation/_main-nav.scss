@@ -412,11 +412,12 @@ header[role="banner"] {
       display: flex;
       top: 50%;
       transform: translateY(-50%);
+      left: 10px;
     }
 
     @include breakpoint($desktop-nav-breakpoint) {
       .meta-icons {
-        margin-right: 0px;
+        left: 0px;
       }
     }
   }
