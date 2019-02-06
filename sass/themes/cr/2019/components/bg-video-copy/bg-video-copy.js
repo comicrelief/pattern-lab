@@ -1,34 +1,52 @@
 (function ($) {
 
+  var allVideos = [];
+  var videoCounter = 0;
+  var numberOfVideos = 0;
+
   $( document ).ready(function() {
 
-    var allVideos = {};
-    var videoCounter = 0;
+    $('.paragraph--background-video-copy').each(function(index) {
 
-    $('.paragraph--background-video-copy').each(function( index ) {
-      allVideos[index] = $(this);
-      var pos = $(this).offset();
-      console.log( pos.top);
+      $this = $(this);
+
+      // Store a ref to this video and its offset bottom position
+      allVideos[index] = {
+        item: $this,
+        top: $this.offset().top
+      };
     });
-
-    handleScroll();
-
-    console.log(allVideos);
-
+    
+    // Only attach the handler if we've got vidz
+    if (allVideos.length){
+      handleScroll();
+    }
   });
 
-  function handleScroll(){
-      
-    console.log("handle that scroll");
+  function handleScroll() {
+    // Won't recalculate this *every* scroll; resizes be damned
+    var winHeight = window.innerHeight;
+    var winBottom = winHeight;
 
-    $(window).on('scroll', function(){
-      console.log('scrolling2');
+    // Cache this
+    numberOfVideos = allVideos.length;
+
+    $(window).on("scroll", function() {
+
+      // Figure out the current bottom position of the window
+      winBottom = window.scrollY + winHeight;
+
+      // If we've scrolled a video into view, trigger play
+      if ( winBottom >= allVideos[videoCounter].top ) {
+        console.log("I will trigger video ", videoCounter);
+        videoCounter++;
+
+        // Unbind the scroll handler if we've reached our total video number
+        if (videoCounter >= numberOfVideos) {
+          $( window ).off("scroll");
+        }
+      }
     });
-  };
-
-
-
-
-
+  }
 
 })(jQuery);
