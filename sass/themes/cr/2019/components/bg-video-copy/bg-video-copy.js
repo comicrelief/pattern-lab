@@ -16,9 +16,11 @@
         top: $this.offset().top
       };
     });
+
+    numberOfVideos = allVideos.length;
     
     // Only attach the handler if we've got vidz
-    if (allVideos.length){
+    if (numberOfVideos){
       handleScroll();
     }
   });
@@ -27,9 +29,6 @@
     // Won't recalculate this *every* scroll; resizes be damned
     var winHeight = window.innerHeight;
     var winBottom = winHeight;
-
-    // Cache this
-    numberOfVideos = allVideos.length;
 
     $(window).on("scroll", function() {
 
