@@ -1,386 +1,394 @@
 /* Main navigation styling */
 header[role="banner"] {
+  border-bottom: 0;
+  height: 75px;
+  padding: 0;
+
+  @include breakpoint($screen-md) {
+    height: 90px;
+  }
+
   .header__inner-wrapper {
-    // Position logo to left, menu in center, meta icon block to the right
-    height: 100%;
-    background-color: $colour-white;
-    justify-content: space-between;
-
-    .site-logo {
-      transform: rotate(-14deg);
-      margin-top: 12px;
-    }
-
-    @include breakpoint($screen-md) {
-      .site-logo {
-        margin-top: 15px;
-      }
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      .site-logo {
-        margin-left: 14px;
-      }
-    }
 
     // Remove clearfix so flexbox works properly
     &:after {
       content: none;
     }
 
+    // Position logo to left, menu in center, meta icon block to the right
+    height: 100%;
+    background-color: $colour-white;
+    justify-content: space-between;
+
+    // Logo styling
+    .site-logo {
+      min-width: 0px;
+      margin-top: 13px;
+      margin-left: 15px;
+      width: 50px;
+      height: 50px;
+      background: url($image-path+"cr18-logo.png") no-repeat 0 0;
+      transform: rotate(-14deg);
+      background-size: 100%;
+
+      // Keep image hidden, remove this from template?
+      img {
+        display: none;
+      }
+
+      @include breakpoint($screen-md) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+
     .main-nav__wrapper {
+
+      // Override hamburger style
+      .c-hamburger {
+        width: 40px;
+        margin-right: 10px;
+
+        span {
+          width: 25px;
+          top: 35px;
+          right: 5px;
+          background-color: $colour-deep-violet;
+
+          &::before,
+          &::after {
+            background-color: $colour-deep-violet;
+          }
+        }
+
+        &:hover {
+
+          span,
+          span::before,
+          span::after {
+            background-color: $colour-grey;
+          }
+        }
+
+        &.is-active {
+          background-color: #f9f9f9;
+
+          span {
+            background: none;
+
+            &:before {
+              background-color: $colour-black;
+            }
+
+            &:after {
+              background-color: $colour-black;
+            }
+          }
+        }
+
+        @include breakpoint($screen-md) {
+          span {
+            top: 40px;
+          }
+        }
+      }
+
       @include breakpoint($desktop-nav-breakpoint) {
         margin-right: 15px;
         background-color: transparent;
       }
-    }
-  }
-}
 
-.main-nav__wrapper {
-  height: auto;
-  z-index: 1;
+      height: auto;
+      z-index: 1;
 
-  li.menu-item {
-    padding-top: 0;
-    position: relative;
-  }
-
-  // UL menu
-  .main-nav__items {
-    top: 75px;
-
-    @include breakpoint($screen-md) {
-      top: 90px;
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      top: 0;
-    }
-
-    li,
-    li.item-open {
-      a {
-        font-size: 16px;
-        line-height: 16px;
-        color: $colour-dark-grey;
-
-        @include breakpoint($desktop-nav-breakpoint) {
-          padding: 8px 7px 4px;
-        }
-      }
-    }
-
-    // Parent items of the menu
-    &.menu--level-0 {
-      @include breakpoint($desktop-nav-breakpoint) {
-        width: auto;
-        text-align: center;
+      li.menu-item {
+        padding-top: 0;
+        position: relative;
       }
 
-      >li.item-open,
-      >li {
-        &:hover>a {
-          background-color: $colour-light-teal;
+      // UL menu
+      .main-nav__items {
+        top: 75px;
+
+        @include breakpoint($screen-md) {
+          top: 90px;
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          padding: 30px 0px;
-          margin: 0 10px;
+          top: 0;
         }
 
-        >a {
-          font-family: $font-medium;
-          padding: 17px 20px;
-          height: 46px;
-          font-weight: 800;
-          color: $colour-black;
+        li,
+        li.item-open {
+          a {
+            font-size: 16px;
+            line-height: 16px;
+            color: $colour-dark-grey;
 
-          &.is-active span.menu-item__text {
-            border-bottom: 2px solid $colour-black;
+            @include breakpoint($desktop-nav-breakpoint) {
+              padding: 8px 7px 4px;
+            }
+          }
+        }
+
+        // Parent items of the menu
+        &.menu--level-0 {
+          @include breakpoint($desktop-nav-breakpoint) {
+            width: auto;
+            text-align: center;
+          }
+
+          >li.item-open,
+          >li {
+            &:hover>a {
+              background-color: $colour-light-teal;
+            }
+
+            @include breakpoint($desktop-nav-breakpoint) {
+              padding: 30px 0px;
+              margin: 0 10px;
+            }
+
+            >a {
+              font-family: $font-medium;
+              padding: 17px 20px;
+              height: 46px;
+              font-weight: 800;
+              color: $colour-black;
+
+              &.is-active span.menu-item__text {
+                border-bottom: 2px solid $colour-black;
+              }
+
+              @include breakpoint($desktop-nav-breakpoint) {
+                font-size: 15px;
+                font-weight: 800;
+                line-height: 15px;
+                padding: 7px 5px;
+                height: auto;
+
+                &.is-active span.menu-item__text {
+                  border-bottom: 2px solid $colour-black;
+                }
+              }
+            }
+          }
+        }
+
+        // First level of sub items (dropdwn)
+        &.menu--level-1 {
+          li.menu-item.menu-item--duplicate {
+            a {
+              color: $colour-light-teal;
+              font-family: $font-medium;
+              position: relative;
+              font-size: 20px;
+              line-height: 21px;
+              height: 49px;
+
+              &:after {
+                width: 14px;
+                border-bottom: 4px solid $colour-light-teal;
+                left: 12px;
+                top: auto;
+                bottom: 0;
+
+                @include breakpoint($desktop-nav-breakpoint) {
+                  bottom: 10px;
+                }
+              }
+
+              &:before {
+                @include breakpoint($desktop-nav-breakpoint) {
+                  left: 34px;
+                  width: 10px;
+                  height: 10px;
+                  border: 11px solid transparent;
+                  border-bottom-color: $colour-deep-violet;
+                  top: -22px;
+                }
+              }
+
+              &.is-active {
+
+                // Add border to the span (to allow control over the width), rather than the :after psuedo
+                span.menu-item__text {
+                  border-bottom: 4px solid $colour-light-teal;
+                }
+
+                &:after {
+                  border-bottom: none;
+                }
+              }
+            }
+
+            // Make only title/link extra-bold 
+            a:first-child {
+              font-weight: 800;
+            }
+
+            @include breakpoint($desktop-nav-breakpoint) {
+              height: auto;
+              width: 100%;
+              padding: 0;
+
+              a {
+                padding: 26px 21px;
+                height: auto;
+              }
+            }
+          }
+
+          li.item-open a,
+          li a {
+            color: $colour-white;
+
+            &.is-active span.menu-item__text {
+              border-bottom: 2px solid $colour-white;
+            }
           }
 
           @include breakpoint($desktop-nav-breakpoint) {
-            font-size: 15px;
+            padding-bottom: 20px !important;
+          }
+        }
+
+        // First and second levels of sub items
+        &.menu--level-1,
+        &.menu--level-2 {
+          top: 0;
+
+          @include breakpoint($desktop-nav-breakpoint) {
+            top: 103px;
+            text-align: left;
+          }
+
+          li a,
+          li.item-open a {
+            font-family: $montserrat;
             font-weight: 800;
-            line-height: 15px;
-            padding: 7px 5px;
-            height: auto;
+            font-size: 16px;
+            line-height: 16px;
+            color: $colour-white;
+            height: 44px;
+
+            @include breakpoint($desktop-nav-breakpoint) {
+              // The complex inherited styles need a little bullying to override here
+              font-size: 15px !important;
+              line-height: 24px !important;
+            }
+
+            &:hover {
+              background-color: #3e1c43;
+
+              &.is-active span.menu-item__text {
+                border-bottom: 2px solid $colour-white;
+              }
+            }
 
             &.is-active span.menu-item__text {
-              border-bottom: 2px solid $colour-black;
+              border-bottom: 2px solid $colour-white;
             }
           }
-        }
-      }
-    }
 
-    // First level of sub items (dropdwn)
-    &.menu--level-1 {
-      li.menu-item.menu-item--duplicate {
-        a {
-          color: $colour-light-teal;
-          font-family: $font-medium;
-          position: relative;
-          font-size: 20px;
-          line-height: 21px;
-          height: 49px;
-
-          &:after {
-            width: 14px;
-            border-bottom: 4px solid $colour-light-teal;
-            left: 12px;
-            top: auto;
-            bottom: 0;
-
+          li.menu-item,
+          li.item-open.menu-item {
             @include breakpoint($desktop-nav-breakpoint) {
-              bottom: 10px;
-            }
-          }
+              padding: 0;
+              height: 100%;
+              width: 100%;
 
-          &:before {
-            @include breakpoint($desktop-nav-breakpoint) {
-              left: 34px;
-              width: 10px;
-              height: 10px;
-              border: 11px solid transparent;
-              border-bottom-color: $colour-deep-violet;
-              top: -22px;
-            }
-          }
-
-          &.is-active {
-
-            // Add border to the span (to allow control over the width), rather than the :after psuedo
-            span.menu-item__text {
-              border-bottom: 4px solid $colour-light-teal;
-            }
-
-            &:after {
-              border-bottom: none;
+              a {
+                padding: 14px 21px;
+                height: auto;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 32px;
+              }
             }
           }
         }
 
-        // Make only title/link extra-bold 
-        a:first-child {
-          font-weight: 800;
-        }
+        li.item-open,
+        li {
 
-        @include breakpoint($desktop-nav-breakpoint) {
-          height: auto;
-          width: 100%;
-          padding: 0;
-
-          a {
-            padding: 26px 21px;
-            height: auto;
+          // Reset base styles, so we're targetting the anchor and not the li
+          >ul li:hover {
+            background-color: $colour-dark-purple;
           }
-        }
-      }
 
-      li.item-open a,
-      li a {
-        color: $colour-white;
+          >ul li a:hover {
+            background-color: lighten($colour-dark-purple, 5%);
+          }
 
-        &.is-active span.menu-item__text {
-          border-bottom: 2px solid $colour-white;
-        }
-      }
-
-      @include breakpoint($desktop-nav-breakpoint) {
-        padding-bottom: 20px !important;
-      }
-    }
-
-    // First and second levels of sub items
-    &.menu--level-1,
-    &.menu--level-2 {
-      top: 0;
-
-      @include breakpoint($desktop-nav-breakpoint) {
-        top: 103px;
-        text-align: left;
-      }
-
-      li a,
-      li.item-open a {
-        font-family: $montserrat;
-        font-weight: 800;
-        font-size: 16px;
-        line-height: 16px;
-        color: $colour-white;
-        height: 44px;
-
-        @include breakpoint($desktop-nav-breakpoint) {
-          // The complex inherited styles need a little bullying to override here
-          font-size: 15px !important;
-          line-height: 24px !important;
-        }
-
-        &:hover {
-          background-color: #3e1c43;
-
-          &.is-active span.menu-item__text {
-            border-bottom: 2px solid $colour-white;
+          &:hover>a span.menu-item__text {
+            border-bottom: none;
           }
         }
 
-        &.is-active span.menu-item__text {
-          border-bottom: 2px solid $colour-white;
+        // Secondary nav items that have tertiary menu items
+        &.menu--level-1 li.menu-item.menu-item--expanded {
+          @include breakpoint($desktop-nav-breakpoint) {
+            height: 100%;
+          }
         }
-      }
 
-      li.menu-item,
-      li.item-open.menu-item {
-        @include breakpoint($desktop-nav-breakpoint) {
-          padding: 0;
-          height: 100%;
-          width: 100%;
+        // Second levels of sub items
+        &.menu--level-2 {
+          li.menu-item {
+            padding: 0;
 
-          a {
-            padding: 14px 21px;
-            height: auto;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 32px;
+            a {
+              // Indent tertiary items
+              padding-left: 40px;
+              background-color: lighten($colour-dark-purple, 10%);
+
+              &:hover {
+                background-color: lighten($colour-dark-purple, 15%) !important;
+              }
+            }
+          }
+
+          @include breakpoint($desktop-nav-breakpoint) {
+            display: block;
+            position: relative;
+            top: 0;
+            height: 100%;
+            max-height: 100%;
           }
         }
       }
     }
-
-    li.item-open,
-    li {
-
-      // Reset base styles, so we're targetting the anchor and not the li
-      >ul li:hover {
-        background-color: $colour-dark-purple;
-      }
-
-      >ul li a:hover {
-        background-color: lighten($colour-dark-purple, 5%);
-      }
-
-      &:hover>a span.menu-item__text {
-        border-bottom: none;
-      }
-    }
-
-    // Secondary nav items that have tertiary menu items
-    &.menu--level-1 li.menu-item.menu-item--expanded {
-      @include breakpoint($desktop-nav-breakpoint) {
-        height: 100%;
-      }
-    }
-
-    // Second levels of sub items
-    &.menu--level-2 {
-      li.menu-item {
-        padding: 0;
-
-        a {
-          // Indent tertiary items
-          padding-left: 40px;
-          background-color: lighten($colour-dark-purple, 10%);
-
-          &:hover {
-            background-color: lighten($colour-dark-purple, 15%) !important;
-          }
-        }
-      }
-
-      @include breakpoint($desktop-nav-breakpoint) {
-        display: block;
-        position: relative;
-        top: 0;
-        height: 100%;
-        max-height: 100%;
-      }
-    }
-  }
-}
-
-header[role="banner"] .header__inner-wrapper .block-cr-meta-icons {
-  .btn.donate {
-    padding: 11px 17px;
-    margin-right: 10px;
-    font-size: 15px;
-    font-weight: 800;
   }
 
-  .meta-icons__magnify,
-  .meta-icons__esu-toggle {
-    height: auto;
-    margin-right: 10px;
-  }
+  .block-cr-meta-icons {
+    height: 75px;
 
-  @include breakpoint($screen-md) {
-    .meta-icons__magnify {
-      margin-left: 15px;
+    .btn.donate {
+      padding: 11px 17px;
+      margin-right: 10px;
+      font-size: 15px;
+      font-weight: 800;
     }
-  }
-}
 
-// TODO: move this to component files
-header[role="banner"] {
-  border-bottom: 0;
-  height: 75px;
-  padding: 0;
+    .meta-icons__magnify,
+    .meta-icons__esu-toggle {
+      height: auto;
+      margin-right: 10px;
+    }
 
-  // Override hamburger style
-  .c-hamburger {
-    width: 40px;
-    &:hover {
+    @include breakpoint($screen-md) {
+      height: 90px;
 
-      span,
-      span::before,
-      span::after {
-        background-color: $colour-grey;
+      .meta-icons__magnify {
+        margin-left: 15px;
       }
     }
 
-    span {
-      width: 25px;
-      top: 35px;
-      right: 5px;
-      background-color: $colour-deep-violet;
-
-      &::before,
-      &::after {
-        background-color: $colour-deep-violet;
-      }
-    }
-
-    &.is-active {
-      background-color: #f9f9f9;
-
-      span {
-        background: none;
-
-        &:before {
-          background-color: $colour-black;
-        }
-
-        &:after {
-          background-color: $colour-black;
-        }
-      }
-    }
   }
 
-  @include breakpoint($screen-md) {
-    height: 90px;
-
-    .c-hamburger span {
-      top: 40px;
-    }
-  }
-
-  .main-nav__icons.main-nav__burger {
-    right: 0;
-  }
-
-  // Override meta icons color
+  // Override meta icons color & hamburger menu
   .block-cr-meta-icons,
   .meta-icons__login,
   .meta-icons__magnify,
@@ -398,10 +406,6 @@ header[role="banner"] {
     }
 
     @include breakpoint($screen-md) {
-      .main-nav__icons.main-nav__burger {
-        right: 0;
-      }
-
       height: 90px;
     }
   }
@@ -418,28 +422,6 @@ header[role="banner"] {
       .meta-icons {
         left: 0px;
       }
-    }
-  }
-
-  .site-logo {
-    min-width: 0px;
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 50px;
-    height: 50px;
-    background: url($image-path+"cr18-logo.png") no-repeat 0 0;
-    background-size: 100%;
-
-    // Keep image hidden, remove this from template?
-    img {
-      display: none;
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      background: url($image-path+"cr18-logo.png") no-repeat 0 0;
-      background-size: 100%;
-      width: 60px;
-      height: 60px;
     }
   }
 }
