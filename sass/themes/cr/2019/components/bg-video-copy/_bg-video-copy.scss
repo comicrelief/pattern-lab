@@ -63,10 +63,122 @@
       }
     }
 
-    &.paragraph--background-video-copy--video-right {
+    &--video-right {
       flex-basis: auto; // IE10
       flex-direction: row-reverse;
       -ms-flex-direction: row-reverse; // IE10
     }
+  }
+
+  // Fullscreen version, simulating the Full Height Single Image component
+  &--fullscreen {
+
+    @include breakpoint ($screen-md) {
+      position: relative;
+      height: 100vh;
+
+      .bgvc {
+
+        &__video-wrapper {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          video {
+            object-fit: cover;
+          }
+        }
+
+        &__text-wrapper {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          //box-sizing: content-box;
+        }
+
+        &__text {
+          padding: 5vw;
+          position: absolute;
+          width: 56.3%;
+          height: auto;
+          box-sizing: content-box;
+        }
+      }
+    }
+
+    &.top-left,
+    &.middle-left,
+    &.bottom-left {
+      .bgvc__text {
+        transform: translateX(0);
+        left: 0;
+       }
+    }
+
+    &.top-right,
+    &.middle-right,
+    &.bottom-right {
+      .bgvc__text {
+        transform: translateX(0);
+        right: 0;
+      }
+    }
+
+
+    &.top-left,
+    &.top-centre,
+    &.top-right {
+      .bgvc__text {
+        transform: translateY(0);
+        top: 0;
+       }
+    }
+
+    &.middle-left,
+    &.middle-right {
+      .bgvc__text {
+        transform: translateY(-50%);
+        top: 50%;
+       }
+    }
+
+    &.bottom-left,
+    &.bottom-right {
+      .bgvc__text {
+        transform: translateY(0);
+        top: auto;
+        bottom: 0;
+      }
+    }
+
+    &.middle-centre {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.bottom-centre {
+      top: auto;
+      bottom: 0;
+      left: 50%;
+      transform: translate(0, -50%);
+    }
+
+    &.top-centre {
+      top: 0;
+      left: 50%;
+      transform: translate(0, -50%);
+    }
+
+
+
+    @include breakpoint($screen-lg) {
+      .bgvc__text {
+        width: 41.7%;
+        max-width: 600.75px;
+      }
+    }
+
+
   }
 }
