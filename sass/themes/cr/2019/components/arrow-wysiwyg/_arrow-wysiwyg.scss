@@ -1,2 +1,32 @@
+.arrow-wysiwyg {
+    background: url($image-path + "down.svg") no-repeat center;
+    text-indent: -9999px;
+    display: block;
+    height: 200px;
+    width: 200px;
+    background-size: 100px 200px;
 
-// background: url($image-path + "loader.gif") no-repeat -9999px -9999px;
+    @include breakpoint($screen-md) {
+        &--down-right {
+            background: url($image-path + "down-right.svg") no-repeat center;
+            background-size: 100px 200px;
+        }
+
+        &--down-left {
+            background: url($image-path + "down-left.svg") no-repeat center;
+            background-size: 100px 200px;
+        }
+
+        &--left-down {
+            background: url($image-path + "left-down.svg") no-repeat center;
+            background-size: 100px 200px;
+        }
+
+        &--right-down {
+            background: url($image-path + "right-down.svg") no-repeat center;
+            background-size: 100px 200px;
+        }
+    }
+   
+}
+
