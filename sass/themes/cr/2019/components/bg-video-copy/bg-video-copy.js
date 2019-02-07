@@ -43,7 +43,6 @@
       // If we've scrolled a video into view, trigger play
       if (winBottom >= allVideos[videoCounter].top) {
 
-        console.log("trigger");
         document.getElementById(allVideos[videoCounter].id).play();
 
         videoCounter++;
