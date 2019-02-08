@@ -20,8 +20,6 @@
       };
     });
 
-    allVideos.length;
-
     // Only attach the handler if we've got vidz
     if (allVideos.length) {
       handleScroll();
