@@ -102,6 +102,11 @@
           width: 56.3%;
           height: auto;
           box-sizing: content-box;
+
+          @include breakpoint($screen-lg) {
+            width: 41.7%;
+            max-width: 600.75px;
+          }
         }
       }
     }
@@ -126,7 +131,6 @@
 
 
     &.top-left,
-    &.top-centre,
     &.top-right {
       .bgvc__text {
         transform: translateY(0);
@@ -151,34 +155,23 @@
       }
     }
 
-    &.middle-centre {
+    &.middle-centre .bgvc__text {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
 
-    &.bottom-centre {
+    &.bottom-centre .bgvc__text  {
       top: auto;
       bottom: 0;
       left: 50%;
-      transform: translate(0, -50%);
+      transform: translate(-50%, 0%);
     }
 
-    &.top-centre {
+    &.top-centre .bgvc__text  {
       top: 0;
       left: 50%;
-      transform: translate(0, -50%);
+      transform: translate(-50%, 0);
     }
-
-
-
-    @include breakpoint($screen-lg) {
-      .bgvc__text {
-        width: 41.7%;
-        max-width: 600.75px;
-      }
-    }
-
-
   }
 }
