@@ -18,7 +18,6 @@
 
       // Dynamically create an ID and add it to the video for triggering purposes
       thisID = 'background-video-copy__video-' + index;
-
       $thisVideo.attr('id', thisID);
 
       // Store a ref to this video and its offset bottom position
@@ -56,7 +55,6 @@
       if (winBottom >= allVideos[videoCounter].top) {
 
         document.getElementById(allVideos[videoCounter].id).play();
-
         videoCounter++;
 
         // Unbind the scroll handler if we've reached our total video number
