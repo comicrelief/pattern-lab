@@ -1,31 +1,57 @@
-(function ($) {
+(function($) {
 
-  var $context = $('.navigation.menu--expanded-footer');
+  var allVideos = [],
+      thisID = "";
 
-  $context.addClass("crExpandedFooter-processed");
+  $(document).ready(function() {
 
-  setUpFooter();
-  
-  function setUpFooter() {
-    $('.menu-item a', $context).wrapInner('<span class="menu-item__text"></span>');
-    handleClick();
-  }
+    $('.paragraph--background-video-copy').each(function(index) {
 
-  function handleClick() {
+      $this = $(this);
 
-    $('li.menu-item--expanded > a', $context).on('click', function (e) {
+      // Dynamically create an ID and add it to the video for triggering purposes
+      thisID = 'background-video-copy__video-' + index;
+      $this.find('video').attr('id', thisID);
 
-      e.preventDefault();
+      // Store a ref to this video and its offset bottom position
+      allVideos[index] = {
+        top: $this.offset().top,
+        id: thisID
+      };
+    });
 
-      // Only run this code if we're not on LG
-      if ( $('span.md-breakpoint').is(":not(:visible)")) {
-                
-        $(this).parent('li.menu-item--expanded').toggleClass('item-open');
+    allVideos.length;
 
-        $(this).attr('aria-expanded', function (i, attr) {
-          return attr == 'true' ? 'false' : 'true'
-        });
+    // Only attach the handler if we've got vidz
+    if (allVideos.length) {
+      handleScroll();
+    }
+  });
+
+  function handleScroll() {
+    // Won't recalculate this *every* scroll; resizes be damned
+    var winHeight = window.innerHeight,
+      winBottom = winHeight,
+      thisVideo = null,
+      videoCounter = 0;
+
+    $(window).on("scroll", function() {
+
+      // Figure out the current bottom position of the window
+      winBottom = window.scrollY + winHeight;
+
+      // If we've scrolled a video into view, trigger play
+      if (winBottom >= allVideos[videoCounter].top) {
+
+        document.getElementById(allVideos[videoCounter].id).play();
+
+        videoCounter++;
+
+        // Unbind the scroll handler if we've reached our total video number
+        if (videoCounter >= allVideos.length) {
+          $(window).off("scroll");
+        }
       }
-    });  
+    });
   }
 })(jQuery);
