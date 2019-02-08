@@ -1,18 +1,35 @@
 .paragraph--background-video-copy {
   width: 100%;
+
   .bgvc {
     &__video-wrapper {
-      video {
+
+      video,
+      img {
         display: block;
         width: 100%;
       }
+
+      video {
+        display: none;
+        &.js-loaded {
+          display: block;
+
+          // Hide the thumbail once the video is ready to go
+          & + img {
+            display: none;
+          }
+        }
+      }
     }
+
     &__text-wrapper {
       padding: 15vw 5vw;
       .bgvc__text {
         height: auto;
       }
     }
+
     /* If this component is acting as our header */
     header & {
       &__text-wrapper {
@@ -20,8 +37,10 @@
       }
     }
   }
+
   @include breakpoint($screen-md) {
     display: flex;
+
     .bgvc {
       &__video-wrapper,
       &__text-wrapper {
@@ -29,12 +48,14 @@
         vertical-align: top;
         width: 50%;
       }
+
       &__video-wrapper {
         position: relative;
         overflow: hidden;
         height: inherit;
         // position image absolutely so height of section will be based on the text
-        video {
+        video,
+        img {
           @include no-objectfit; // IE11
           position: absolute;
           width: 100%;
@@ -42,6 +63,7 @@
           object-fit: cover;
         }
       }
+
       // text should be at least the viewheight, but if the text doesn't fit increase height automatically
       &__text-wrapper {
         padding: 5vw;
@@ -50,12 +72,14 @@
         justify-content: center;
         min-height: 100vh;
       }
+
       header & {
         &__text-wrapper {
           padding: 5vw;
         }
       }
     }
+
     &--video-right {
       flex-basis: auto; // IE10
       flex-direction: row-reverse;
@@ -69,12 +93,14 @@
       display: block;
       position: relative;
       height: 100vh;
+
       .bgvc {
         &__video-wrapper {
           position: absolute;
           width: 100%;
           height: 100%;
-          video {
+          video,
+          img {
             object-fit: cover;
           }
         }
@@ -88,7 +114,7 @@
           box-sizing: content-box;
         }
       }
-      
+
       &.top-left,
       &.middle-left,
       &.bottom-left {
@@ -97,6 +123,7 @@
           left: 0;
         }
       }
+
       &.top-right,
       &.middle-right,
       &.bottom-right {
@@ -105,6 +132,7 @@
           right: 0;
         }
       }
+
       &.top-left,
       &.top-right {
         .bgvc__text-wrapper {
@@ -112,6 +140,7 @@
           top: 0;
         }
       }
+
       &.middle-left,
       &.middle-right {
         .bgvc__text-wrapper {
@@ -119,6 +148,7 @@
           top: 50%;
         }
       }
+
       &.bottom-left,
       &.bottom-right {
         .bgvc__text-wrapper {
@@ -127,23 +157,27 @@
           bottom: 0;
         }
       }
+
       &.middle-centre .bgvc__text-wrapper {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
+
       &.bottom-centre .bgvc__text-wrapper {
         top: auto;
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 0%);
       }
+
       &.top-centre .bgvc__text-wrapper {
         top: 0;
         left: 50%;
         transform: translate(-50%, 0);
       }
     }
+
     @include breakpoint($screen-lg) {
       .bgvc__text-wrapper {
         width: 41.7%;
