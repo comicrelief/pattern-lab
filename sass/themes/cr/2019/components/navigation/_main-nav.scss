@@ -127,7 +127,6 @@ header[role="banner"] {
             font-size: 16px;
             line-height: 16px;
             color: $colour-dark-grey;
-
             @include breakpoint($desktop-nav-breakpoint) {
               padding: 8px 7px 4px;
             }
@@ -144,12 +143,15 @@ header[role="banner"] {
           >li.item-open,
           >li {
             &:hover>a {
-              background-color: transparent;
+              background-color: $colour-light-teal;
             }
 
             @include breakpoint($desktop-nav-breakpoint) {
               padding: 30px 0px;
               margin: 0 10px;
+              &:hover>a {
+                background-color: transparent;
+              }
             }
 
             >a {
@@ -159,10 +161,6 @@ header[role="banner"] {
               font-weight: 800;
               color: $colour-black;
 
-              &.is-active span.menu-item__text {
-                border-bottom: 2px solid $colour-black;
-              }
-
               @include breakpoint($desktop-nav-breakpoint) {
                 font-size: 15px;
                 font-weight: 800;
@@ -170,9 +168,6 @@ header[role="banner"] {
                 padding: 7px 5px;
                 height: auto;
 
-                &.is-active span.menu-item__text {
-                  border-bottom: 2px solid $colour-black;
-                }
               }
             }
           }
@@ -180,8 +175,15 @@ header[role="banner"] {
 
         // First level of sub items (dropdwn)
         &.menu--level-1 {
+          li:hover>a span.menu-item__text {
+            border-bottom: none; // remove border on hover links level-1
+          }
+
           li.menu-item.menu-item--duplicate {
             a {
+              :hover {
+                background-color: transparent;
+              }
               color: $colour-light-teal;
               font-family: $font-medium;
               position: relative;
@@ -263,7 +265,7 @@ header[role="banner"] {
           top: 0;
 
           @include breakpoint($desktop-nav-breakpoint) {
-            top: 103px;
+            top: 90px;
             text-align: left;
           }
 
@@ -284,6 +286,7 @@ header[role="banner"] {
 
             &:hover {
               background-color: #3e1c43;
+              border: none;
 
               &.is-active span.menu-item__text {
                 border-bottom: 2px solid $colour-white;
@@ -318,7 +321,7 @@ header[role="banner"] {
 
           // Reset base styles, so we're targetting the anchor and not the li
           >ul li:hover {
-            background-color: $colour-dark-purple;
+            background-color: lighten($colour-dark-purple, 5%);
           }
 
           >ul li a:hover {
@@ -326,8 +329,10 @@ header[role="banner"] {
           }
 
           &:hover>a span.menu-item__text {
-            border-bottom: 2px solid $colour-deep-violet;
-            padding-bottom: 2px;
+            @include breakpoint($desktop-nav-breakpoint) {
+              border-bottom: 2px solid $colour-deep-violet;
+              padding-bottom: 2px;
+            }
           }
         }
 
@@ -433,6 +438,10 @@ header[role="banner"] {
   }
 }
 
+// Remove red border-bottom on focus 
+.main-nav__wrapper .main-nav__items li.focused>a span.menu-item__text, .main-nav__wrapper .main-nav__items li>a:focus span.menu-item__text, .main-nav__wrapper .main-nav__items li.item-open.focused>a span.menu-item__text, .main-nav__wrapper .main-nav__items li.item-open>a:focus span.menu-item__text {
+  border: none;
+}
 
 
 // Tooltips provided by jQuery UI Tooltip js plugin
