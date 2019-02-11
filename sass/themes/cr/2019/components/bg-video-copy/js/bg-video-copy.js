@@ -8,7 +8,10 @@
     var isIOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
 
     // If we get an iOS match (iOS not supporting video in this way), just stick with the image
-    if (isIOS !== null) { return; }
+    if (isIOS !== null) { 
+      console.log("iOS, so no videos");
+      return;
+    }
 
     // Otherwise, do cool video stuff
     $('.paragraph--background-video-copy').each(function(index) {
