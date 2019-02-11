@@ -320,12 +320,14 @@ header[role="banner"] {
         li {
 
           // Reset base styles, so we're targetting the anchor and not the li
-          >ul li:hover {
-            background-color: lighten($colour-dark-purple, 5%);
+          >ul li:hover,
+          ul.menu--level-1 li a:focus  {
+            background-color: #3e1c43;
           }
 
-          >ul li a:hover {
-            background-color: lighten($colour-dark-purple, 5%);
+          >ul.menu--level-1 li a:focus,
+          ul li a:hover  {
+            background-color: #3e1c43;
           }
 
           &:hover>a span.menu-item__text {
