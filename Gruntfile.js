@@ -542,6 +542,7 @@ module.exports = function (grunt) {
     'uglify',
     'kss',
     'postcss:all',
+    'copy:cr19',
   ]);
 
   grunt.registerTask('build:base', [
