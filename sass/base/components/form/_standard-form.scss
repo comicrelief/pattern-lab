@@ -206,7 +206,12 @@ label {
   &.form__radio--inline {
     width: span(12);
     margin-bottom: 0;
+    &.form__checkbox--inline-2-horizontal {
+      display: inline-block;
+      width: span(6) ;
+    }
   }
+  
 
   input[type="checkbox"]{
     z-index: 1;
@@ -258,6 +263,7 @@ label {
     font-weight: normal;
   }
 }
+
 
 /* Checkbox with paragraph and label included */
 .form__field-wrapper--checkbox {
