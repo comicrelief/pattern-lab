@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "event-stream": "3.3.4",
+    "grunt-contrib-copy": "^1.0.0",
     "susy": "^2.2.12",
     "underscore.string": "3.3.5"
   },
