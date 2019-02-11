@@ -1,32 +1,353 @@
+@mixin arrows ($image-name) {
+    background: url($image-path + $image-name) no-repeat center;
+    background-size: 100px 200px;
+}
+
 .arrow-wysiwyg {
-    background: url($image-path + "down.svg") no-repeat center;
+    @include arrows("down.svg");
     text-indent: -9999px;
     display: block;
     height: 200px;
     width: 200px;
-    background-size: 100px 200px;
 
     @include breakpoint($screen-md) {
-        &--down-right {
-            background: url($image-path + "down-right.svg") no-repeat center;
-            background-size: 100px 200px;
-        }
-
-        &--down-left {
-            background: url($image-path + "down-left.svg") no-repeat center;
-            background-size: 100px 200px;
-        }
-
-        &--left-down {
-            background: url($image-path + "left-down.svg") no-repeat center;
-            background-size: 100px 200px;
-        }
-
-        &--right-down {
-            background: url($image-path + "right-down.svg") no-repeat center;
-            background-size: 100px 200px;
-        }
+        &--down-right { @include arrows("down-right.svg"); }
+        &--down-left { @include arrows("down-left.svg"); }
+        &--left-down { @include arrows("left-down.svg"); }
+        &--right-down { @include arrows("right-down.svg"); }
+        &--right-down { @include arrows("right-down-short.svg"); }
     }
-   
-}
 
+    // Standard backgrounds (dark arrow)
+    .bg--grey & {
+        @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--coral & {
+        @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--orange & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--yellow & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--green & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--blue & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--magenta & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--purple & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--teal & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      // Light backgrounds (dark arrow)
+      .bg--light-grey & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-coral & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-orange & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-yellow & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-green & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-blue & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-magenta & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-purple & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--light-teal & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--white & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      // Dark backgrounds (white arrow)
+      .bg--deep-violet & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-grey & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-coral & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-orange & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-yellow & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-green & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-blue & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-magenta & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-purple & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--dark-teal & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+      
+      .bg--red & {
+       @include arrows("down.svg");
+        @include breakpoint($screen-md) {
+            &--down-right {@include arrows("red-arrow.svg"); }
+            &--down-left {@include arrows("down-left-blue.svg"); }
+            &--left-down {@include arrows("down-left-blue.svg");}
+            &--right-down {  @include arrows("down-left-blue.svg");}
+            &--right-down { @include arrows("right-down-short.svg"); }
+        }
+      }
+}
