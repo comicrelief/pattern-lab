@@ -211,7 +211,6 @@ label {
       width: span(6) ;
     }
   }
-  
 
   input[type="checkbox"]{
     z-index: 1;
@@ -264,6 +263,9 @@ label {
   }
 }
 
+.form__field--sub-field-wrapper label {
+  left: 0;
+}
 
 /* Checkbox with paragraph and label included */
 .form__field-wrapper--checkbox {
