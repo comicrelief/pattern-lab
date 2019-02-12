@@ -245,6 +245,10 @@ label {
     border-width: 3px;
   }
 
+  .form__field--sub-field-wrapper label {
+    left: 0;
+  }
+
   .form__field-label,
   label.form__checkbox {
     overflow: visible;
@@ -261,10 +265,6 @@ label {
   label.form__checkbox {
     font-weight: normal;
   }
-}
-
-.form__field--sub-field-wrapper label {
-  left: 0;
 }
 
 /* Checkbox with paragraph and label included */
