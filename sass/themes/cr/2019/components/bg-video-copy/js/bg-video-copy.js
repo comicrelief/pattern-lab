@@ -1,7 +1,8 @@
 (function($) {
 
   var allVideos = [],
-      thisID = "";
+      thisID = "",
+      thisSrc = "";
 
   $(document).ready(function() {
 
@@ -9,7 +10,7 @@
 
     // If we get an iOS match (iOS not supporting video in this way), just stick with the image
     if (isIOS !== null) { 
-      console.log("iOS, so no videos");
+      console.log("iOS: no video");
       return;
     }
 
@@ -21,6 +22,7 @@
 
       // Dynamically create an ID and add it to the video for triggering purposes
       thisID = 'background-video-copy__video-' + index;
+
       $thisVideo.attr('id', thisID);
 
       // Store a ref to this video and its offset bottom position
@@ -29,10 +31,7 @@
         id: thisID
       };
 
-      // Then grab our 'only request the file when we need it' 'src' data-attr, and use it for real
-      $thisSource = $thisVideo.find('source');
-      $thisSource.attr('src', $thisSource.data('src'));
-      $thisVideo.addClass('js-loaded').load();
+      $thisVideo.addClass('js-loaded');
     });
 
     // Only attach the handler if we've got vids in the current page
