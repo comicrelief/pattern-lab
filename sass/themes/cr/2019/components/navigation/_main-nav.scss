@@ -440,11 +440,15 @@ header[role="banner"] {
   }
 }
 
+// Ensure wrapper height matches the content, so we can display nav fully underneath
+.cc_banner-wrapper {
+  height: auto;
+}
+
 // Remove red border-bottom on focus 
 .main-nav__wrapper .main-nav__items li.focused>a span.menu-item__text, .main-nav__wrapper .main-nav__items li>a:focus span.menu-item__text, .main-nav__wrapper .main-nav__items li.item-open.focused>a span.menu-item__text, .main-nav__wrapper .main-nav__items li.item-open>a:focus span.menu-item__text {
   border: none;
 }
-
 
 // Tooltips provided by jQuery UI Tooltip js plugin
 .ui-tooltip.ui-tooltip--nav {
