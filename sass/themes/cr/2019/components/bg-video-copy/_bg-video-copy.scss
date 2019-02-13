@@ -9,6 +9,9 @@
       video {
         display: block;
         width: 100%;
+        object-fit: cover;
+        // Give this a height to ensure our poster image is sized if the video won't load on iOS
+        height: 200px;
       }
     }
 
