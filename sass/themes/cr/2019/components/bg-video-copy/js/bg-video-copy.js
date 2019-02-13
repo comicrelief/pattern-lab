@@ -30,8 +30,6 @@
         top: $this.offset().top,
         id: thisID
       };
-
-      $thisVideo.addClass('js-loaded');
     });
 
     // Only attach the handler if we've got vids in the current page
@@ -48,21 +46,26 @@
       thisVideo = null,
       videoCounter = 0;
 
+    // Initial check to trigger any videos that are already on-screen
+    if (winBottom >= allVideos[videoCounter].top) {
+      document.getElementById(allVideos[videoCounter].id).play();
+      videoCounter++;
+    }
+
     $(window).on("scroll", function() {
 
       // Figure out the current bottom position of the window
       winBottom = window.scrollY + winHeight;
 
-      // If we've scrolled a video into view, trigger play
-      if (winBottom >= allVideos[videoCounter].top) {
+      // Unbind the scroll handler if we've reached our total video number
+      if (videoCounter >= allVideos.length) {
+        $(window).off("scroll");
+      }
 
+      // If we've scrolled a video into view, trigger play
+      else if (winBottom >= allVideos[videoCounter].top && videoCounter < allVideos.length ) {
         document.getElementById(allVideos[videoCounter].id).play();
         videoCounter++;
-
-        // Unbind the scroll handler if we've reached our total video number
-        if (videoCounter >= allVideos.length) {
-          $(window).off("scroll");
-        }
       }
     });
   }

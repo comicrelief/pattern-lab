@@ -4,24 +4,11 @@
   .bgvc {
     &__video-wrapper {
 
-      video,
-      img,
-      picture {
-        display: block;
-        width: 100%;
-      }
+      position: relative;
 
       video {
-        display: none;
-        &.js-loaded {
-          display: block;
-
-          // Hide the thumbail once the video is ready to go
-          & + img,
-          & + picture {
-            display: none;
-          }
-        }
+        display: block;
+        width: 100%;
       }
     }
 
@@ -56,9 +43,7 @@
         overflow: hidden;
         height: inherit;
         // position image absolutely so height of section will be based on the text
-        video,
-        img,
-        picture {
+        video {
           @include no-objectfit; // IE11
           position: absolute;
           width: 100%;
@@ -102,9 +87,7 @@
           position: absolute;
           width: 100%;
           height: 100%;
-          video,
-          img,
-          picture {
+          video {
             object-fit: cover;
           }
         }
