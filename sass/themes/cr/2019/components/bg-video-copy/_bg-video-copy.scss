@@ -58,14 +58,16 @@
           position: absolute;
           width: 100%;
           height: 100%;
-
-          // fix
-          height: 100%;
-          width: auto;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
           object-fit: cover;
+              
+          @supports (-ms-ime-align: auto) {
+            background: blue;
+            height: 100%;
+            width: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+          }
         }
       }
 
