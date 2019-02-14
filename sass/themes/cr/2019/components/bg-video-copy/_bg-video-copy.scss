@@ -61,8 +61,8 @@
           object-fit: cover;
               
           @supports (-ms-ime-align: auto) {
-            height: 100%;
-            width: auto;
+            height: auto;
+            width: 100%;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
