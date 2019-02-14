@@ -7,10 +7,11 @@
   $(document).ready(function() {
 
     var isIOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    var isSMBreakpoint = $('span.md-breakpoint').is(":not(:visible)");
 
-    // If we get an iOS match (iOS not supporting video in this way), just stick with the image
-    if (isIOS !== null) { 
-      console.log("iOS: no video");
+    // Stop any video functionality if we're using iOS and/or on the SM breakpoint
+    if (isIOS !== null || isSMBreakpoint) { 
+      console.log("No videos");
       return;
     }
 
