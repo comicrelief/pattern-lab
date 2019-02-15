@@ -78,9 +78,15 @@
       }
     }
 
+    &--video-right {
+      flex-basis: auto; // IE10
+      flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse; // IE10
+    }
+
     &--video-left,
     &--video-right {
-      video {
+      .bgvc__video-wrapper video {
         @supports (-ms-ime-align: auto) {
           height: 100%;
           width: auto;
@@ -89,12 +95,6 @@
           transform: translate(-50%,-50%);
         }
       }
-    }
-
-    &--video-right {
-      flex-basis: auto; // IE10
-      flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse; // IE10
     }
   }
 
@@ -112,7 +112,7 @@
           height: 100%;
           video {
             object-fit: cover;
-
+            
             @supports (-ms-ime-align: auto) {
               height: auto;
               width: 100%;
