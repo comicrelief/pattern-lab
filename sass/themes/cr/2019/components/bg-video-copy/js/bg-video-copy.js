@@ -11,7 +11,6 @@
 
     // Stop any video functionality if we're using iOS and/or on the SM breakpoint
     if (isIOS !== null || isSMBreakpoint) { 
-      console.log("No videos");
       return;
     }
 
