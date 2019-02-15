@@ -123,6 +123,19 @@ module.exports = function (grunt) {
       }
     },
 
+    copy: {
+      cr19: {
+        files: [
+          {
+            flatten: true,
+            expand: true,
+            src: "sass/themes/cr/2019/components/bg-video-copy/videos/*.*",
+            dest: "dist/cr19/videos"
+          },
+        ], 
+      },
+    },
+    
     modernizr: {
       dist: {
         "crawl": false,
@@ -529,6 +542,7 @@ module.exports = function (grunt) {
     'uglify',
     'kss',
     'postcss:all',
+    'copy:cr19',
   ]);
 
   grunt.registerTask('build:base', [
@@ -558,6 +572,7 @@ module.exports = function (grunt) {
     'svgmin:cr19',
     'kss:cr19',
     'postcss:cr19',
+    'copy:cr19',
   ]);
 
   grunt.registerTask('build:donate', [
