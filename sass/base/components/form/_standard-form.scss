@@ -206,6 +206,10 @@ label {
   &.form__radio--inline {
     width: span(12);
     margin-bottom: 0;
+    &.form__checkbox--inline-2-horizontal {
+      display: inline-block;
+      width: span(6) ;
+    }
   }
 
   input[type="checkbox"]{
@@ -239,6 +243,10 @@ label {
   input[type="checkbox"]:focus+span {
     border-color: $colour-scorpion-grey;
     border-width: 3px;
+  }
+
+  .form__field--sub-field-wrapper label {
+    left: 0;
   }
 
   .form__field-label,

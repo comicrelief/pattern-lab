@@ -1,6 +1,7 @@
 .paragraph--full-height-double-image-single-copy {
   width: 100%;
   height: auto;
+  overflow: hidden;
 
   .fhdisc {
     &__image-wrapper,
@@ -28,40 +29,52 @@
     }
   }
 
-
     // Medium screen
     @include breakpoint($screen-md) {
-      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
 
       .fhdisc {
 
         &__text-wrapper,
         &__image-wrapper {
-          height: 100vh;
+          min-height: 100vh;
           width: 50%;
           float: left;
         }
 
         &__text-wrapper {
           padding: 5vw;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
         }
 
         &__image {
-          height: 50vh;
+          min-height: 50vh;
+          flex-grow: 1;
+          position: relative;
 
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
           }
         }
 
-        &__text-3 {
+        &__image-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
 
-          position: absolute;
-          width: calc(100% - 10vw);
-          top: 50%;
-          transform: translateY(-50%);
+        &__text-3 {
+          width: calc(100% - 5vw);
         }
 
         header & {
