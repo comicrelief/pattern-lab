@@ -58,8 +58,6 @@
       // Figure out the current bottom position of the window
       winBottom = window.pageYOffset + winHeight;
 
-      console.log('scroll', winBottom, winHeight);
-
       // Unbind the scroll handler if we've reached our total video number
       if (videoCounter >= allVideos.length) {
         $(window).off("scroll");
