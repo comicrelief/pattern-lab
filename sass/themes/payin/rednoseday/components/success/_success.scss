@@ -27,7 +27,7 @@
   .form__field--help-info{
     margin-bottom: 40px;
     color:$colour-black;
-    font-family: $font-regular--sr18;
+    font-family: $font-regular;
     font-size: 18px;
   }
 
@@ -49,20 +49,20 @@
 
   .cards {
     clear: both;
-    background-color: $colour-white-smoke;
+    background-color: $colour-light-grey;
 
     a {
-      color: $colour-black-pearl;
+      color: $colour-black;
       text-align: center;
     }
 
     h3 {
-      color: $colour-black-pearl;
+      color: $colour-black;
       text-align: center;
     }
 
     p {
-        color: $colour-black-pearl;
+        color: $colour-black;
         text-align: center;
         padding:0 15px;
     }
