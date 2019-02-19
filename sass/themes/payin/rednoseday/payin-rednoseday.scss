@@ -1,0 +1,26 @@
+// ==========================================================================
+// CR19
+// ==========================================================================
+@import "../../cr/2019/components/cr19";
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "../default/variables/_payin-mixins";
+@import "../default/variables/_payin-colours";
+
+// Payin UI components
+// ==========================================================================
+@import "../default/components/_payin-form";
+@import "../default/components/checkbox/checkbox";
+// ==========================================================================
+
+// ==========================================================================
+// Payin Sportrelief components
+// ==========================================================================
+@import "components/header/_header.scss";
+@import "components/promo-header/_promo-header.scss";
+@import "components/cards/_cards.scss";
+@import "components/form/_form";
+@import "components/success/_success.scss";
+@import "components/failure/_failure.scss";
