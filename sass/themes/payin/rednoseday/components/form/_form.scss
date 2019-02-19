@@ -1,11 +1,11 @@
 .form__row--title {
   width: 100%;
-  background-color: $colour-white-smoke;
+  background-color: $colour-light-grey;
 
   h3 {
     font-size:28px;
     font-family: $font-regular;
-    color: $colour-dark-blue-lighter;
+    color: $colour-black;
   }
 }
 
@@ -47,23 +47,23 @@
 .form__subtitle {
   @extend h2;
   text-align: center;
-  color: $colour-dark-blue-lighter;
+  color: $colour-black;
 }
 
 label,
 input {
-  color: $colour-dark-purple;
+  color: $colour-black;
 }
 
 input[type="email"],
 input[type="number"],
 input[type="text"],
 textarea {
-  border: 1px solid $colour-dark-purple;
+  border: 1px solid $colour-black;
   background-color: $colour-light-grey;
 }
 select {
-  border: 1px solid $colour-royal-blue;
+  border: 1px solid $colour-black;
   background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
 }
 
@@ -97,11 +97,11 @@ select {
   p,
   strong {
     font-size: 18px;
-    color: $colour-dark-purple;
+    color: $colour-black;
   }
 
   input[type="checkbox"]:focus+span {
-    border-color: $colour-dark-purple;
+    border-color: $colour-black;
   }
 }
 .form__row--keep-touch {
