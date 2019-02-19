@@ -84,7 +84,7 @@ select {
     }
   }
   #postcode_button {
-    @extend .btn--black-ghost;
+    @extend .btn;
     border-radius: 0;
   }
 }
@@ -117,7 +117,7 @@ select {
 }
 
 button.payment-button {
-  @extend .btn--black-ghost;
+  @extend .btn;
 }
 #comicrelief_payinbundle_payment_card.clicked {
   color: $colour-white;
@@ -133,7 +133,7 @@ button.payment-button {
   text-align: center;
 }
 button[type=submit] {
-  @extend .btn--ruby;
+  @extend .btn;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
