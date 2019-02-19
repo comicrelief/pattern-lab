@@ -1,0 +1,41 @@
+.promo-header {
+  &--failure {
+    min-height: 308px;
+  }
+
+  .promo-header__content {
+    .promo-header__content-inner {
+      @include breakpoint($screen-md) {
+        width: 70%;
+      }
+    }
+  }
+}
+
+.inner-content {
+  margin: 40px auto;
+  width: span(10);
+
+  @include breakpoint($screen-md) {
+    width: span(7);
+    margin-top: 80px;
+  }
+
+  @include breakpoint($screen-lg) {
+    width: span(5);
+  }
+
+  p {
+    color: $colour-black-pearl;
+  }
+
+  .contact-information {
+    margin-top: 35px;
+    @include font-size($p-xsmall-font-size);
+
+    a {
+      text-decoration: underline;
+      color: $colour-black-pearl;
+    }
+  }
+}
