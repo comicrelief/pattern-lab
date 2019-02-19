@@ -31,7 +31,7 @@
 
   .contact-information {
     margin-top: 35px;
-    @include font-size($p-xsmall-font-size);
+    @include font-size($p-small-font-size);
 
     a {
       text-decoration: underline;
