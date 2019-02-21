@@ -1,0 +1,13 @@
+.paragraph--membership-donate-widget {
+    width: 100%;
+
+    .mdw__wrapper-copy {
+        margin: 0 15px;
+        padding: 13px 20px;
+        width: calc(100% - 30px);
+        position: absolute;
+        top: 32px;
+        background: $colour-white;
+    }
+
+}
