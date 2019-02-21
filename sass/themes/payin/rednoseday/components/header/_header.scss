@@ -27,7 +27,6 @@ header[role=banner] {
   float: left;
 
   .site-logo {
-    min-width: 0;
-    margin: 18px 15px 15px;
+    background: url($image-path+"cr-logo.svg") no-repeat 0 0;
   }
 }
