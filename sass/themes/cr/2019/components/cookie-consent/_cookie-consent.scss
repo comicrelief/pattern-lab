@@ -1,6 +1,6 @@
 .cookie-consent.cc_container {
   display: block;
-  padding: 12px;
+  padding: 20px;
 
   .cc_more_info {
     font-size: inherit;
@@ -32,7 +32,13 @@
       height: auto;
       text-indent: 0;
       margin-top: 0;
-      padding: 8px 30px;
+      margin-bottom: 10px;
+      padding: 8px 20px;
+      
+      @include breakpoint($screen-md) {
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
     }
   }
 }
