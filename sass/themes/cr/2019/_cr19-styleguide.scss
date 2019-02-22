@@ -15,7 +15,7 @@
 // Links
 //
 // Links are used for call-to-actions that are lower in the hierachy and aren’t as key as ones used in buttons. They can also be used for call-to-actions with a longer character count.
-// 
+//
 // .link--small - Small - The font size is 16px and line height is 26px. Border / underline is 4px.
 //
 // Markup: links.twig
@@ -66,8 +66,8 @@
 // 	  <li>Item 2</li>
 // 	  <li>Item 3</li>
 // 	  <li>Item 4</li>
-//  </ul> 
-// </div> 
+//  </ul>
+// </div>
 //
 // Style guide: 10.8
 
@@ -94,7 +94,7 @@
 // .highlight--royal-blue - Royal-blue highlight
 // .highlight--mint-green - Mint-green highlight
 // .highlight--white - Mint-green highlight
-// 
+//
 // Markup: highlight.twig
 //
 // Style guide: 10.19
@@ -146,7 +146,7 @@
 //
 // Style guide: 20.61
 
-// Content Reference Block 
+// Content Reference Block
 //
 // Comes in 4 sizes.
 //
@@ -155,7 +155,7 @@
 // .block-content--view-mode-cw-s -  Small
 // .block-content--view-mode-cw-m  -  Medium
 // .block-content--view-mode-cw-mp -  Medium Plus
-// .block-content--view-mode-cw-l  -  Large 
+// .block-content--view-mode-cw-l  -  Large
 //
 // Style guide: 20.40
 
@@ -169,15 +169,15 @@
 
 // Teaser Block
 //
-// Comes in 4 sizes and in a background-image and no-image versions (the latter not displayed here). 
+// Comes in 4 sizes and in a background-image and no-image versions (the latter not displayed here).
 // Content is editable.
-// 
+//
 // Markup: teaser-block.twig
 //
 // .block-content--view-mode-cw-s.teaser-block  -  Small
 // .block-content--view-mode-cw-m.teaser-block  -  Medium
 // .block-content--view-mode-cw-mp.teaser-block -  Medium Plus
-// .block-content--view-mode-cw-l.teaser-block  -  Large 
+// .block-content--view-mode-cw-l.teaser-block  -  Large
 // .block-content--view-mode-cw-s.teaser-block.teaser-block--bg-image  -  Small Background image
 // .block-content--view-mode-cw-m.teaser-block.teaser-block--bg-image  -  Medium Background image
 // .block-content--view-mode-cw-mp.teaser-block.teaser-block--bg-image -  Medium Plus Background image
@@ -185,7 +185,7 @@
 //
 // Style guide: 20.20
 
-// Single Message 
+// Single Message
 //
 // Markup: single-msg.twig
 //
@@ -204,7 +204,7 @@
 
 // Partners Grid
 //
-// This is the Partners Grid 
+// This is the Partners Grid
 //
 // Markup: partners-grid.twig
 //
@@ -243,7 +243,7 @@
 // .block-content--view-mode-cw-s.cw-quote  -  Small
 // .block-content--view-mode-cw-m.cw-quote  -  Medium
 // .block-content--view-mode-cw-mp.cw-quote -  Medium Plus
-// .block-content--view-mode-cw-l.cw-quote  -  Large 
+// .block-content--view-mode-cw-l.cw-quote  -  Large
 //
 // Style guide: 20.30
 
@@ -291,7 +291,7 @@
 //
 // Style guide: 20.1004
 
-// Media Reference Block 
+// Media Reference Block
 //
 // Comes in 4 sizes.
 //
@@ -300,7 +300,7 @@
 // .block-content--view-mode-cw-s -  Small
 // .block-content--view-mode-cw-m  -  Medium
 // .block-content--view-mode-cw-mp -  Medium Plus
-// .block-content--view-mode-cw-l  -  Large 
+// .block-content--view-mode-cw-l  -  Large
 //
 // Style guide: 20.50
 
@@ -334,7 +334,7 @@
 //
 // Markup: full-height-double-image-single-copy.twig
 //
-// .paragraph--full-height-double-image-single-copy--image-right - image right                  
+// .paragraph--full-height-double-image-single-copy--image-right - image right
 //
 // Style guide: 20.1007
 
@@ -367,26 +367,26 @@
 // Markup: full-height-single-image.twig
 //
 // .paragraph--full-height-single-image--no-image - no image
-// .fhsi__middle-left  -  middle left 
+// .fhsi__middle-left  -  middle left
 // .paragraph--full-height-single-image--no-image.fhsi__middle-left - no image middle left
 // .fhsi__middle-right  -  middle right
 // .paragraph--full-height-single-image--no-image.fhsi__middle-right - no image middle right
 // .fhsi__top-left  - top left
-// .paragraph--full-height-single-image--no-image.fhsi__top-left - no image top left 
+// .paragraph--full-height-single-image--no-image.fhsi__top-left - no image top left
 // .fhsi__top-centre  -  top centre
 // .paragraph--full-height-single-image--no-image.fhsi__top-centre - no image top centre
 // .fhsi__top-right  -  top right
-// .paragraph--full-height-single-image--no-image.fhsi__top-right - no image top right 
-// .fhsi__bottom-left  -  bottom left 
-// .paragraph--full-height-single-image--no-image.fhsi__bottom-left - no image bottom left 
+// .paragraph--full-height-single-image--no-image.fhsi__top-right - no image top right
+// .fhsi__bottom-left  -  bottom left
+// .paragraph--full-height-single-image--no-image.fhsi__bottom-left - no image bottom left
 // .fhsi__bottom-centre  -  bottom centre
-// .paragraph--full-height-single-image--no-image.fhsi__bottom-centre - no image bottom centre 
-// .fhsi__bottom-right  -  bottom right 
-// .paragraph--full-height-single-image--no-image.fhsi__bottom-right - no image bottom right 
-// 
+// .paragraph--full-height-single-image--no-image.fhsi__bottom-centre - no image bottom centre
+// .fhsi__bottom-right  -  bottom right
+// .paragraph--full-height-single-image--no-image.fhsi__bottom-right - no image bottom right
+//
 // Style guide: 20.1011
 
-// Copy - Copy 
+// Copy - Copy
 //
 // Markup: copy-copy.twig
 //
@@ -415,6 +415,9 @@
 // Membership Donate Widget
 //
 // Markup: membership-donate-widget.twig
+//
+// .paragraph--membership-donate-widget--copy-right - Copy right
+// .paragraph--membership-donate-widget--copy-left - Copy left
 //
 // Style guide: 20.1015
 
@@ -481,7 +484,7 @@
 // Email Sign Up
 // ==========================================================================
 
-// Email sign up 
+// Email sign up
 //
 // Style guide: 120
 
@@ -554,7 +557,7 @@
 // Navigation
 //
 // Different types of navigation
-// 
+//
 // Style guide: 185
 
 // Main Nav
@@ -602,22 +605,22 @@
 //
 // Markup: social-sharing.twig
 //
-// Style guide: 140.1 
+// Style guide: 140.1
 
 // Social media follow icons
-// 
+//
 // Markup: social-following.twig
 //
 // Style guide: 140.2
 
 // Meta icons
-// 
+//
 // Markup: meta-icons.twig
 //
 // Style guide: 140.3
 
 // Inline social icons
-// 
+//
 // Markup: inline-social-icons.twig
 //
 // Style guide: 140.4

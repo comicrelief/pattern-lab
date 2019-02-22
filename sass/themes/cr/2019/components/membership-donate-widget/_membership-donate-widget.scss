@@ -36,6 +36,7 @@
                 p {
                     padding: 20px 11px;
                     margin: 0;
+                    font-weight: bold;
                 }
 
                 .money-boxes {
@@ -46,7 +47,7 @@
                     .money-box {
                         width: calc((100% - (20 / 220) * 100%) / 3);
                         height: 62px;
-                        border: 1px solid rgb(0, 0, 0);
+                        border: 1px solid $colour-grey;
                         position: relative;
 
                         span {
@@ -54,6 +55,8 @@
                             top: 50%;
                             transform: translate(-50%, -50%);
                             left: 50%;
+                            font-size: 20px;
+                            font-weight: 800;
                         }
 
                         &--2,
@@ -71,6 +74,27 @@
                     line-height: 2.18;
                     font-weight: 500;
                     text-align: left;
+                }
+
+                .form__fieldset {
+                    display: flex;
+                    margin-bottom: 40px;
+
+                    input,
+                    select {
+                        height: 44px;
+                        border: 2px solid $colour-grey;
+                    }
+
+                    select {
+                        background: $colour-grey;
+                    }
+                }
+                .donation-copy {
+                    p {
+                        font-weight: 500;
+                        font-size: 11px;
+                    }
                 }
             }
         }
