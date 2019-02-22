@@ -1,13 +1,35 @@
 .paragraph--membership-donate-widget {
     width: 100%;
+    height: 755px;
 
-    .mdw__wrapper-copy {
-        margin: 0 15px;
-        padding: 13px 20px;
-        width: calc(100% - 30px);
+    img {
         position: absolute;
-        top: 32px;
-        background: $colour-white;
+        bottom: 0;
+    }
+
+    .mdw {
+        &__wrapper-copy {
+            padding: 0 17px;
+            text-align: center;
+
+
+            &--title {
+                padding-top: 32px;
+
+                h1 {
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    padding: 0 30px;
+                }
+            }
+
+            &--form {
+                background: $colour-white;
+                margin-top: 30px;
+            }
+        }
     }
 
 }
