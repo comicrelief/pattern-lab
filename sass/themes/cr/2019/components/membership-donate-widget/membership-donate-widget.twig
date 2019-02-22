@@ -15,7 +15,7 @@
                             <p>
                                 Choose your monthly donation
                             </p>
-                            <form>
+                            <form class="mdw__form-money">
                                 <div class="money-boxes">
                                     <div class="money-box money-box--1">
                                         <span class="text-align-center">5</span>
@@ -27,15 +27,24 @@
                                         <span class="text-align-center">30</span>
                                     </div>
                                 </diV>
-                                <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-email form-item-email">
-                                    <label for="edit-email">Other amount</label>
-                                    <input class="–metrika-nokeys form-text" data-drupal-selector="edit-email" id="edit-email" maxlength="500" name="email" placeholder="example@youremail.com" size="60" type="text" value="">
-                                        <select value="£">
-                                            <option value="£">£ GBP</option>
-                                            <option value="$">$ USD</option>
-                                            <option value="$">$ AUD</option>
-                                            <option value="€">€ EUR</option>
-                                        </select>
+                                <label for="edit-email">Other amount</label>
+                                <div class="form__fieldset  ">
+                                    <span class="currency-input-label" id="js-currency-label">£</span>
+                                    <div class="form__field--wrapper form__money form__field--amount">
+                                        <label class="form__field form__field--amount form__money required" for="field-input--amount" id="field-label--amount">Enter amount</label>
+                                        <input aria-describedby="field-label--amount field-error--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="amount" pattern="[^[1-9]+$]" placeholder="0" required="" type="number" value=""></div>
+                                        <div class="form__field--wrapper form__choice form__field--currency">
+                                            <label class="form__field form__field--currency form__choice required" for="comicrelief_payinbundle_payment_currency">
+                                                Currency</label>
+                                            <select class="form__field form__field--currency" id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]">
+                                                <optgroup label="currency">
+                                                    <option data-currency="£" value="GBP">£ GBP</option>
+                                                    <option data-currency="$" value="USD">$ USD</option>
+                                                    <option data-currency="$" value="AUD">$ AUD</option>
+                                                    <option data-currency="€" value="EUR">€ EUR</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
                                     </div>
                                     <button class="btn btn--coral">Next step</button>
                                     <div class="donation-copy">
