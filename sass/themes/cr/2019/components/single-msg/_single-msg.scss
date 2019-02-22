@@ -6,7 +6,7 @@
   .single-msg__outer-wrapper {
     @include container;
     position: relative;
-    padding: 30px calc(4 * #{gutter()});
+    padding: 15vw 5vw;
 
     @include breakpoint($screen-md) {
       display: -webkit-flex;
@@ -211,7 +211,7 @@
     .single-msg__copy_wrapper {
       background-color: transparent;
       .single-msg__copy {
-        padding: 0 30px;
+        padding: 0;
 
         /* Remove margins from the last/only element in the body copy,
           as to not mess up our vertical centering */
@@ -227,6 +227,10 @@
         left: auto;
         height: auto; //Does this need to match the height of the img version?
         margin-top: 0;
+        
+        .single-msg__copy {
+          padding: 0 30px;
+        }
       }
 
       @include breakpoint($screen-lg) {
