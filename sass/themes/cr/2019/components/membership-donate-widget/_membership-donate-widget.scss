@@ -9,7 +9,7 @@
 
     .mdw {
         &__wrapper-copy {
-            padding: 0 17px;
+            padding: 0 15px;
             text-align: center;
 
 
@@ -26,8 +26,40 @@
             }
 
             &--form {
+                width: 100%;
                 background: $colour-white;
+                padding: 0 20px;
                 margin-top: 30px;
+
+                p {
+                    padding: 20px 11px;
+                    margin: 0;
+                }
+
+                .money-boxes {
+
+                    display: flex;
+                    justify-content: space-between;
+
+                    .money-box {
+                        width: calc((100% - (20 / 220) * 100%) / 3);
+                        height: 62px;
+                        border: 1px solid rgb(0, 0, 0);
+                        position: relative;
+
+                        span {
+                            position: absolute;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            left: 50%;
+                        }
+
+                        &--2,
+                        &--3 {
+                            margin-left: calc((14 / 250) * 100%);
+                        }
+                    }
+                }
             }
         }
     }
