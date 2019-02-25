@@ -69,19 +69,22 @@
                     }
                 }
 
-                label {
-                    padding: 0;
-                    margin-top: 20px;
-                    margin: 20px 0 6px;
-                    letter-spacing: -0.2px;
-                    line-height: 2.18;
-                    font-weight: 500;
-                    text-align: left;
-                }
-
                 .form__fieldset {
                     display: flex;
-                    margin-bottom: 40px;
+                    margin: 35px 0 40px;
+                    position: relative;
+
+
+                    label {
+                        padding: 0;
+                        margin: 20px 0 6px;
+                        letter-spacing: -0.2px;
+                        line-height: 2.18;
+                        font-weight: 500;
+                        text-align: left;
+                        position: absolute;
+                        bottom: 42px;
+                    }
 
                     input,
                     select {
@@ -117,10 +120,35 @@
                     }
                 }
             }
+
+            @include breakpoint($screen-md) {
+                padding: 0 calc((163 / 768) * 100%);
+
+                &--title {
+                    padding-top: 45px;
+
+                    p {
+                        padding: 0 calc((40 / 740) * 100%);
+                    }
+                }
+
+                &--form {
+                    padding: 0 calc((40 / 768) * 100%);
+                    .form__fieldset {
+                        label {
+                            position: relative;
+                            bottom: 0;
+                            flex: 2;
+                        }
+
+                        .form__field--wrapper {
+                            flex: 3;
+                        }
+                    }
+                }
+            }
         }
-    }
-
-    @include breakpoint($screen-md) {
 
     }
+
 }
