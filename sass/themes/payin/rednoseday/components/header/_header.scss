@@ -1,32 +1,31 @@
 header[role=banner] {
   height: 90px;
-}
 
-.header__inner-home {
-  float: right;
-  margin: 28px 15px 0 0;
-  font-family: $font-bold;
+  .header__inner-home {
+    float: right;
+    margin: 28px 15px 0 0;
+    font-family: $font-bold;
 
-  a {
-    border-bottom:2px solid transparent;
+    a {
+      border-bottom:2px solid transparent;
 
-    &:hover {
-      border-color:inherit;
-    }
-    span {
-      color: $colour-black;
+      &:hover {
+        border-color:inherit;
+      }
+      span {
+        color: $colour-black;
+      }
     }
   }
-}
 
-.header__inner-wrapper {
-  padding: 0 15px 0;
-}
+  .header__inner-wrapper {
+    padding: 0 15px 0;
+    .block-branding {
+      float: left;
 
-.block-branding {
-  float: left;
-
-  .site-logo {
-    background: url($image-path + "cr-logo.svg") no-repeat 0 0;
+      .site-logo {
+        background: url($image-path + "cr-logo.svg") no-repeat 0 0;
+      }
+    }
   }
 }
