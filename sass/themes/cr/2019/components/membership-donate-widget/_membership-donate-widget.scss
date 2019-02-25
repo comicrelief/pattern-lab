@@ -39,6 +39,7 @@
                     font-weight: bold;
                 }
 
+                // Select amount box
                 .money-boxes {
 
                     display: flex;
@@ -85,14 +86,31 @@
 
                     input,
                     select {
-                        height: 44px;
                         border: 2px solid $colour-grey;
+                    }
+
+                    .form__field--wrapper {
+                        position: relative;
+                        margin: 0;
+
+                        .currency-input-label {
+                            position: absolute;
+                            padding: 13px 12px;
+                            font-size: 20px;
+                            columns: $colour-grey;
+                        }
+
+                        input {
+                            padding-left: 30px;
+                            font-size: 20px;
+                        }
                     }
 
                     select {
                         background: $colour-grey;
                     }
                 }
+
                 .donation-copy {
                     p {
                         font-weight: 500;
