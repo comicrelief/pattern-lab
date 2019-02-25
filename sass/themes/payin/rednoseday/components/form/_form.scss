@@ -1,29 +1,34 @@
 .form__row--title {
-  display: flex;
-  flex-direction: row;
   padding: 0;
   width: 100%;
-  height: 270px;
   background-color: $colour-light-green;
-  div {
-    display: inline-block;
-    width: 50%;
-  }
-
-  div:first-child {
-    display: flex;
-    align-items: center;
-  }
-   img {
-     width: 100%;
-     height: 100%;
-   }
 
   h2 {
     @extend p;
     @extend .text--subtitle-small;
+    margin: 0;
     padding: 40px;
     text-transform: none;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include breakpoint($screen-md) {
+    display: flex;
+    flex-direction: row;
+    height: 270px;
+    div {
+      display: inline-block;
+      width: 50%;
+    }
+
+    div:first-child {
+      display: flex;
+      align-items: center;
+    }
   }
 }
 
