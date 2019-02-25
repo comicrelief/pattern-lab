@@ -3,12 +3,14 @@
   width: 100%;
   background-color: $colour-light-green;
 
-  h2 {
+ h2 {
     @extend p;
     @extend .text--subtitle-small;
     margin: 0;
-    padding: 40px;
+    padding: 40px 60px;
+    width: 100%;
     text-transform: none;
+    text-align: left;
   }
   img {
     display: block;
