@@ -85,13 +85,14 @@
 
                     label {
                         padding: 0;
-                        margin: 20px 0 6px;
+                        top: 17px;
                         letter-spacing: -0.2px;
                         line-height: 2.18;
                         font-weight: 500;
                         text-align: left;
                         position: absolute;
                         bottom: 42px;
+                        text-transform: initial;
                     }
 
                     input,
@@ -142,6 +143,7 @@
 
                 &--form {
                     padding: 0 40px;
+
                     .form__fieldset {
                         label {
                             position: relative;
@@ -150,14 +152,33 @@
                         }
 
                         .form__field--wrapper {
-                            flex: 2;
+                            flex: 3;
                         }
                     }
                 }
             }
 
             @include breakpoint($screen-lg) {
-                margin-bottom: 0;
+                margin: 30px 100px 30px;
+                float: right;
+                width: 420px;
+
+                &--title {
+                    padding: 0;
+                }
+
+                &--form {
+                    select {
+                        padding: 0 30px;
+                    }
+
+                    .form__fieldset {
+                        .form__field--wrapper {
+                            flex: 2;
+                        }
+                    }
+
+                }
             }
         }
 
