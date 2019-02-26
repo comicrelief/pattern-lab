@@ -9,7 +9,7 @@
   }
 }
 
-header.paragraph--full-height-single-image.grant-page {
+.grant-page.paragraph--full-height-single-image {
   img {
     @include breakpoint($screen-md) {
       opacity: 0.5;
