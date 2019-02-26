@@ -1,0 +1,18 @@
+.grants-page.cards {
+  @include breakpoint($screen-md) {
+    padding-bottom: 0;
+    padding-top: 30px;
+
+    .card .card__content-wrapper {
+      padding: 15px;
+    }
+  }
+}
+
+header.paragraph--full-height-single-image.grants-page {
+  img {
+    @include breakpoint($screen-md) {
+      opacity: 0.5;
+    }
+  }
+}
