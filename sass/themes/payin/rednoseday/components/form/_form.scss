@@ -3,7 +3,7 @@
   width: 100%;
   background-color: $colour-light-green;
 
- h2 {
+  h2 {
     @extend p;
     @extend .text--subtitle-small;
     margin: 0;
@@ -59,19 +59,10 @@
     display: none;
    }
 }
-.form__row--your-detail,
-.form__row--payment {
-  padding: 30px 0 0;
-}
-
-.form__row--address-detail,
-.form__row--billing-detail {
-  padding: 0;
-}
 
 .form__subtitle {
   @extend h2;
-  text-align: center;
+  text-align: left;
   color: $colour-black;
 }
 
@@ -84,10 +75,12 @@ input[type="email"],
 input[type="number"],
 input[type="text"],
 textarea {
+  max-width: none;
   border: 1px solid $colour-black;
   background-color: $colour-light-grey;
 }
 select {
+  max-width: none;
   border: 1px solid $colour-black;
   background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
 }
@@ -185,27 +178,11 @@ button[type=submit] {
 }
 
 @include breakpoint($screen-md) {
-  .form__row--your-detail,
-  .form__row--payment {
-    padding: 80px 0 0;
-  }
-
-  // center buttons
-  .search-box {
-    .search-box-button.loading:after {
-      left: 25%;
-      width: 50%;
-    }
-    #postcode_button {
-      margin: 30px auto 20px;
-      width: 50%;
-    }
-  }
   .form__checkbox-text-only label.form__checkbox {
     margin-left: auto;
     margin-right: auto;
     width: auto;
-    text-align: center;
+    text-align: left;
   }
   .form__checkbox--same-address {
     label.form__checkbox {
@@ -239,3 +216,4 @@ button[type=submit] {
     margin-bottom: 80px;
   }
 }
+
