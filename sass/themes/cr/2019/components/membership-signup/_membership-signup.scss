@@ -13,6 +13,7 @@
         }
     }
 
+    // Copy : title and form
     .membership-signup {
         &__wrapper-copy {
             text-align: center;
@@ -47,7 +48,7 @@
                 }
 
                 // Select amount box
-                .money-boxes {
+                .money-buy {
 
                     display: flex;
                     justify-content: space-between;
@@ -130,6 +131,7 @@
                 }
             }
 
+            // Medium screen
             @include breakpoint($screen-md) {
                 width: calc(100% - (348 / 768) * 100%);
 
@@ -158,6 +160,7 @@
                 }
             }
 
+            // Large screen
             @include breakpoint($screen-lg) {
                 margin: 30px 100px 30px;
                 float: right;
@@ -182,5 +185,12 @@
             }
         }
 
+    }
+
+    // Copy signup - form align left
+    &--copy-left {
+        @include breakpoint($screen-lg) {
+            float: left;
+        }
     }
 }
