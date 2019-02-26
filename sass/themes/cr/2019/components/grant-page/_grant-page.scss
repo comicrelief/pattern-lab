@@ -1,4 +1,4 @@
-.grants-page.cards {
+.grant-page.cards {
   @include breakpoint($screen-md) {
     padding-bottom: 0;
     padding-top: 30px;
@@ -9,7 +9,7 @@
   }
 }
 
-header.paragraph--full-height-single-image.grants-page {
+header.paragraph--full-height-single-image.grant-page {
   img {
     @include breakpoint($screen-md) {
       opacity: 0.5;
