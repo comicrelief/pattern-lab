@@ -86,7 +86,8 @@ select {
 }
 
 // after element to put loading gif in on top of postcode find address button
-.search-box {
+.search-box-button {
+  margin-top: 3%;
   .search-box-button.loading {
     &:after {
       position: absolute;
@@ -102,7 +103,33 @@ select {
     }
   }
   #postcode_button {
-    @extend .btn;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 30px;
+    cursor: pointer;
+    transition: 0;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border: none;
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+    color: $colour-white;
+    background-color: $colour-deep-violet;
+    @include border-radius(30px);
+    span {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $colour-grey;
+      color: $colour-deep-violet;
+    }
   }
 }
 
