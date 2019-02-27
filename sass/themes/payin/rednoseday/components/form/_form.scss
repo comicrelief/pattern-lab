@@ -103,15 +103,13 @@ select {
   }
   #postcode_button {
     @extend .btn;
-    border-radius: 0;
   }
 }
 
 .form__row--your-detail,
 .form__row--keep-touch,
 .form__row--billing-detail,
-.form__row--user-generate-content,
-.form__row--just-in-time-block {
+.form__row--user-generate-content {
   p,
   strong {
     font-size: 18px;
