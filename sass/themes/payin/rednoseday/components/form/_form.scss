@@ -60,9 +60,11 @@
    }
 }
 
-.form__subtitle {
-  @extend h2;
+.form__section-title {
+  @extend p;
+  @extend .text--subtitle-small;
   text-align: left;
+  text-transform: none;
   color: $colour-black;
 }
 
@@ -139,7 +141,6 @@ select {
 .form__row--user-generate-content {
   p,
   strong {
-    font-size: 18px;
     color: $colour-black;
   }
 
