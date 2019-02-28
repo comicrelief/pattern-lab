@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100vh;
 
-    .pictures {
+    .img-shadow {
         width: auto;
         height: auto;
         position: absolute;
@@ -10,6 +10,7 @@
         right: 0;
         left: 0;
         bottom: 0;
+
         &:before {
             content: "";
             position: absolute;
@@ -20,26 +21,25 @@
 
         @include breakpoint($screen-lg) {
             top: 0;
+
             &:before {
                 box-shadow: inset 0px 200px 200px -150px $colour-light-orange;
             }
         }
     }
 
+    // Image style
     img {
         width: 100%;
         height: auto;
 
-
-    }
-
-    @include breakpoint($screen-lg) {
-        img {
+        @include breakpoint($screen-lg) {
             height: 100%;
         }
+
     }
 
-    // Copy : title and form
+    // Copy : title, form, money buys option , input & select field
     .membership-signup {
         &__wrapper-copy {
             text-align: center;
@@ -101,6 +101,7 @@
                     }
                 }
 
+                // Form
                 .form__fieldset {
                     display: flex;
                     margin: 35px 0 40px;
@@ -130,7 +131,9 @@
                         }
 
                         input,
-                        select { border: none; }
+                        select {
+                            border: none;
+                        }
 
                         input {
                             padding-left: 30px;
@@ -191,6 +194,7 @@
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);
+
                 &--title {
                     padding: 0;
                 }
