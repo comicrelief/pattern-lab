@@ -132,6 +132,9 @@ select {
       background-color: $colour-grey;
       color: $colour-deep-violet;
     }
+    .search-box.has-error & {
+      margin-top: 0;
+    }
   }
 }
 
