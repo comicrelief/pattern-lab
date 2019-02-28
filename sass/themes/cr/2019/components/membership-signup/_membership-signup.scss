@@ -78,7 +78,7 @@
                     .select-amount-btn {
                         width: calc((100% - (20 / 220) * 100%) / 3);
                         height: 62px;
-                        border: 3px solid #dddddd;
+                        border: 3px solid $colour-donate-grey;
                         position: relative;
                         padding: 0;
                         margin: 0;
@@ -114,11 +114,12 @@
                         font-weight: 500;
                         text-align: left;
                         position: absolute;
-                        bottom: 36px;
+                        bottom: 40px;
                         text-transform: initial;
                     }
 
                     .form__field--wrapper {
+                        border: 2px solid $colour-donate-grey;
                         position: relative;
                         margin: 0;
 
@@ -128,13 +129,16 @@
                             font-size: 20px;
                         }
 
+                        input,
+                        select { border: none; }
+
                         input {
                             padding-left: 30px;
                             font-size: 20px;
                         }
 
                         select {
-                            background-color: #dddddd;
+                            background-color: $colour-donate-grey;
                         }
                     }
                 }
