@@ -15,11 +15,14 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            box-shadow: 0 0px 12px 10px $colour-light-grey inset;
+            box-shadow: inset 0px 200px 200px -80px $colour-light-orange;
         }
 
         @include breakpoint($screen-lg) {
-            position: relative;
+            top: 0;
+            &:before {
+                box-shadow: inset 0px 200px 200px -150px $colour-light-orange;
+            }
         }
     }
 
@@ -29,8 +32,6 @@
 
 
     }
-
-
 
     @include breakpoint($screen-lg) {
         img {
@@ -43,7 +44,7 @@
         &__wrapper-copy {
             text-align: center;
             margin: 0 auto;
-            margin-bottom: 60%;
+            margin-bottom: 50%;
             position: relative;
             width: calc(100% - (30 / 320) * 100%);
 
@@ -77,11 +78,12 @@
                     .select-amount-btn {
                         width: calc((100% - (20 / 220) * 100%) / 3);
                         height: 62px;
-                        border: 1px solid $colour-grey;
+                        border: 3px solid #dddddd;
                         position: relative;
                         padding: 0;
                         margin: 0;
                         border-radius: 0;
+                        background-color: $colour-white;
 
                         span {
                             position: absolute;
@@ -116,11 +118,6 @@
                         text-transform: initial;
                     }
 
-                    input,
-                    select {
-                        border: 2px solid $colour-grey;
-                    }
-
                     .form__field--wrapper {
                         position: relative;
                         margin: 0;
@@ -129,17 +126,16 @@
                             position: absolute;
                             padding: 13px 12px;
                             font-size: 20px;
-                            columns: $colour-grey;
                         }
 
                         input {
                             padding-left: 30px;
                             font-size: 20px;
                         }
-                    }
 
-                    select {
-                        background: $colour-grey;
+                        select {
+                            background-color: #dddddd;
+                        }
                     }
                 }
 
@@ -197,7 +193,8 @@
 
                 &--form {
                     select {
-                        padding: 0 30px;
+                        padding: 5px;
+                        font-size: 16px;
                     }
 
                     .form__fieldset {

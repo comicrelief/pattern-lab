@@ -166,3 +166,8 @@ p + p {
 .btn--mint-green {
   @include cr_button_types($colour-deep-violet, $colour-teal, $colour-red);
 }
+
+/* Membership donate button, new colour var */
+.btn--membership-blue {
+  @include cr_button_types($colour-donate-blue, $colour-blue, $colour-teal);
+}
