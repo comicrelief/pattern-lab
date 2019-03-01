@@ -1,4 +1,8 @@
 .form__row--just-in-time-block {
+  padding-top: 15px;
+  @include breakpoint($screen-md) {
+    padding-top: 30px;
+  }
   .toggle-link {
     font-family: $body-font;
   }
