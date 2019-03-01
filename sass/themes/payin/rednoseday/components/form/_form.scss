@@ -163,9 +163,6 @@ select {
   }
 }
 
-button.payment-button {
-  @extend .btn;
-}
 #comicrelief_payinbundle_payment_card.clicked {
   color: $colour-white;
   background-color: $colour-black;
@@ -221,6 +218,25 @@ button[type=submit] {
   button.payment-button,
   button[type=submit] {
     width: auto;
+  }
+}
+button.payment-button-paypal {
+  @extend .btn;
+  width: 100%;
+  border: 2px solid;
+  border-radius: 60px;
+}
+button.payment-button-card {
+  @extend .btn;
+  @extend .btn--deep-violet;
+  width: 100%;
+  color: $colour-white;
+  background-color: $colour-deep-violet;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $colour-grey;
+    color: $colour-deep-violet;
   }
 }
 .form__field--address-detail {

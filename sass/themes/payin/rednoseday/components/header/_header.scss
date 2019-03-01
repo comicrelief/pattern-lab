@@ -25,8 +25,9 @@ header[role=banner] {
 
       .site-logo {
         margin-left: 0;
-        background: url($image-path + "cr-logo.svg") no-repeat 0 0;
+        background: url($image-path + "rnd19-logo.svg") no-repeat 0 0;
         background-size: cover;
+        transform: rotate(0);
       }
     }
   }
