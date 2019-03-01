@@ -1,6 +1,7 @@
 .form__row--title {
   padding: 0;
   width: 100%;
+  max-width: none;
   background-color: $colour-light-green;
 
   h2 {
@@ -34,21 +35,15 @@
   }
 }
 
-.form-row {
+.form__row {
   background-color: transparent;
+  @include breakpoint($screen-md) {
+    padding-top: 0;
+  }
 }
 
 .form__step {
   max-width: none;
-}
-
-.form__row {
-  @include container;
-
-  &.form__row--title {
-    width: 100%;
-    max-width: none;
-  }
 }
 
 // hide address fields until shown
