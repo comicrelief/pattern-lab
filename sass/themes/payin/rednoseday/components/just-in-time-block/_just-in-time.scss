@@ -1,0 +1,17 @@
+.form__row--just-in-time-block {
+  .toggle-link {
+    font-family: $body-font;
+  }
+  .just-in-time--content {
+    p {
+      @extend .text--body-small;
+      font-weight: 500;
+    }
+    strong {
+      @extend p;
+      color: $colour-black;
+      font-weight: 800;
+      text-decoration: none;
+    }
+  }
+}

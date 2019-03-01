@@ -21,6 +21,7 @@
 // ==========================================================================
 @import "components/header/_header.scss";
 @import "components/form/_form";
+@import "components/just-in-time-block/just-in-time";
 @import "components/success/_success.scss";
 @import "components/failure/_failure.scss";
 @import "components/footer/_footer.scss";
@@ -31,6 +32,3 @@
   }
 }
 
-.form__row--just-in-time-block .toggle-link {
-  font-family: $body-font;
-}
