@@ -148,7 +148,7 @@ select {
 }
 .form__row--keep-touch {
   .form__subcopy--privacy-policy {
-    font-size: 16px;
+    @extend .text--body-small;
   }
 
   .form__subcopy--certificate,
