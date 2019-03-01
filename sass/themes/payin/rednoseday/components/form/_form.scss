@@ -150,12 +150,6 @@ select {
   .form__subcopy--privacy-policy {
     @extend .text--body-small;
   }
-
-  .form__subcopy--certificate,
-  .form__subcopy--contact {
-    @extend p;
-    font-weight: bold;
-  }
 }
 
 #comicrelief_payinbundle_payment_card.clicked {
@@ -195,6 +189,15 @@ button[type=submit] {
   .form__subcopy {
     font-weight: bold;
   }
+}
+
+.form__checkbox.form__checkbox-text-only label.form__checkbox {
+  display: inline-block;
+  padding: 0 2px 1px;
+  width: auto;
+  text-decoration: none;
+  border-bottom: 2px solid;
+  border-bottom-color: inherit;
 }
 
 @include breakpoint($screen-md) {
