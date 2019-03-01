@@ -32,6 +32,7 @@
     img {
         width: 100%;
         height: auto;
+        object-fit: cover;
 
         @include breakpoint($screen-lg) {
             height: 100%;
@@ -120,6 +121,7 @@
                     }
 
                     .form__field--wrapper {
+                        background-color: $colour-donate-grey;
                         border: 2px solid $colour-donate-grey;
                         position: relative;
                         margin: 0;
@@ -140,8 +142,9 @@
                             font-size: 20px;
                         }
 
-                        select {
-                            background-color: $colour-donate-grey;
+                        input:focus {
+                            outline: 1px solid $colour-donate-blue;
+                            border-radius: 5px;
                         }
                     }
                 }

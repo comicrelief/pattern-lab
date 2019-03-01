@@ -1,3 +1,19 @@
+{% set title = "Sign up now"  %}
+
+{% set sub_title = "100% of your donation goes to help those in need"  %}
+
+{% set monthly_donation_copy = "Choose your monthly donation"  %}
+
+{% set single_donation_copy = "Choose your monthly donation"  %}
+
+{% set cart_id = "RND19_CHICAGOTOWN" %}
+
+{% set money_buy_1 = "5"  %}
+{% set money_buy_2 = "10"  %}
+{% set money_buy_3 = "30"  %}
+
+{% set money_buy_message = "£100 a month will help support people living unimaginably tough lives" %}
+
 <section class="paragraph--membership-signup {{modifier_class}} bg--light-orange">
   <div class="img-shadow">
       <picture>
@@ -9,27 +25,26 @@
   </div>
   <div class="membership-signup__wrapper-copy text-align-center">
     <div class="membership-signup__wrapper-copy--title ">
-      <h1>Sign up now
-      </h1>
-      <p>100% of your donation goes to help those in need
-      </p>
+      <h1>{{ title }}</h1>
+      <p> {{ sub_title }}</p>
     </div>
     <div class="membership-signup__wrapper-copy--form">
       <p>
-        Choose your monthly donation
+        {{ monthly_donation_copy }}
       </p>
       <form class="membership-signup__form-money">
+        {# <p class="cart-id">{{ cart_id }} </p> #}
         <div class="money-buy">
           <button class="select-amount-btn money-box--1">
-            <span class="text-align-center"> £5
+            <span class="text-align-center"> {{ money_buy_1 }}
             </span>
           </button>
           <button class="select-amount-btn money-box--2">
-            <span class="text-align-center">£10
+            <span class="text-align-center">{{ money_buy_2 }}
             </span>
           </button>
           <button class="select-amount-btn money-box--3">
-            <span class="text-align-center">£30
+            <span class="text-align-center">{{ money_buy_3 }}
             </span>
           </button>
           </diV>
@@ -58,7 +73,8 @@
         <button class="btn btn--membership-blue">Next step
         </button>
         <div class="donation-copy">
-          <p>£100 a month will help support people living unimaginably tough lives
+          <p>
+            {{ money_buy_message }}
           </p>
         </div>
       </form>
