@@ -24,9 +24,11 @@ header[role=banner] {
       float: left;
 
       .site-logo {
+        margin-top: 10px;
         margin-left: 0;
+        width: 70px;
+        height: 70px;
         background: url($image-path + "rnd19-logo.svg") no-repeat 0 0;
-        background-size: cover;
         transform: rotate(0);
       }
     }
