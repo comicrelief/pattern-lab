@@ -1,0 +1,28 @@
+.promo-header {
+  background-color: $colour-black;
+
+  .promo-header__content {
+    top: 0;
+    transform: translate(0);
+
+    .promo-header__content-inner {
+      @include breakpoint($screen-md) {
+        margin-top:100px;
+      }
+    }
+  }
+
+  &.promo-header--small {
+    min-height: 325px;
+  }
+
+  h1 {
+    color: $colour-white;
+    margin-bottom: 36px;
+  }
+
+  p {
+    @include font-size($p-large-font-size);
+    color: $colour-white;
+  }
+}

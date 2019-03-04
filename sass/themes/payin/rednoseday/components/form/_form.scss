@@ -1,0 +1,262 @@
+.form__row--title {
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  background-color: $colour-light-green;
+
+  h2 {
+    @extend p;
+    @extend .text--subtitle-small;
+    margin: 0;
+    padding: 40px 60px;
+    width: 100%;
+    text-transform: none;
+    text-align: left;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include breakpoint($screen-md) {
+    display: flex;
+    flex-direction: row;
+    height: 270px;
+    div {
+      display: inline-block;
+      width: 50%;
+    }
+
+    div:first-child {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.form__row {
+  background-color: transparent;
+  @include breakpoint($screen-md) {
+    padding-top: 0;
+  }
+}
+.form__row-transaction-id {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.form__step {
+  max-width: none;
+}
+
+// hide address fields until shown
+.form__field--address,
+.form__row--billing-detail {
+  display: block;
+   &.hide {
+    display: none;
+   }
+}
+
+.form__section-title {
+  @extend p;
+  @extend .text--subtitle-small;
+  text-align: left;
+  text-transform: none;
+  color: $colour-black;
+}
+
+label,
+input {
+  color: $colour-black;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="text"],
+textarea {
+  max-width: none;
+  border: 1px solid $colour-black;
+  background-color: $colour-light-grey;
+}
+select {
+  max-width: none;
+  border: 1px solid $colour-black;
+  background: transparent url($image-path + "drop-down.svg") calc(100% - 20px) 20px/20px 10px no-repeat;
+}
+
+// after element to put loading gif in on top of postcode find address button
+.search-box-button {
+  margin-top: 3%;
+  .search-box-button.loading {
+    &:after {
+      position: absolute;
+      content:'';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 3px); // cover button as it's not hovered anymore
+      border: 1px solid $colour-black;
+      box-shadow:inset 0 0 0 3px $colour-black;
+      background: $colour-white url($image-path + "loader.gif") center no-repeat;
+      transform: translateY(-3px); // place at same position as hovered button
+    }
+  }
+  #postcode_button {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 30px;
+    cursor: pointer;
+    transition: 0;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border: none;
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+    color: $colour-white;
+    background-color: $colour-deep-violet;
+    @include border-radius(30px);
+    span {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $colour-grey;
+      color: $colour-deep-violet;
+    }
+    .search-box.has-error & {
+      margin-top: 0;
+    }
+  }
+}
+
+.form__row--your-detail,
+.form__row--keep-touch,
+.form__row--billing-detail,
+.form__row--user-generate-content {
+  p,
+  strong {
+    color: $colour-black;
+  }
+
+  input[type="checkbox"]:focus+span {
+    border-color: $colour-black;
+  }
+}
+.form__row--keep-touch {
+  .form__subcopy--privacy-policy {
+    @extend .text--body-small;
+  }
+}
+
+#comicrelief_payinbundle_payment_card.clicked {
+  color: $colour-white;
+  background-color: $colour-black;
+
+  &:focus,
+  &:hover {
+    transform: translateY(0);
+  }
+}
+
+.form__field--wrapper.form__submit {
+  text-align: center;
+}
+button[type=submit] {
+  @extend .btn;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+//specificity needed for form error
+.help-block,
+.help-block.form-error {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.form__row--payment {
+  .form__subcopy {
+    text-align: left;
+  }
+}
+
+.form__checkbox.form__checkbox-text-only label.form__checkbox {
+  display: inline-block;
+  padding: 0 2px 1px;
+  width: auto;
+  text-decoration: none;
+  border-bottom: 2px solid;
+  border-bottom-color: inherit;
+}
+
+@include breakpoint($screen-md) {
+  .form__checkbox-text-only label.form__checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: left;
+  }
+  .form__checkbox--same-address {
+    label.form__checkbox {
+      margin: 0 0 3%;
+      text-align: left;
+    }
+  }
+  button.payment-button,
+  button[type=submit] {
+    width: auto;
+  }
+}
+button.payment-button-paypal {
+  @extend .btn;
+  width: 100%;
+  border: 2px solid;
+  border-radius: 60px;
+}
+button.payment-button-card {
+  @extend .btn;
+  @extend .btn--deep-violet;
+  width: 100%;
+  color: $colour-white;
+  background-color: $colour-deep-violet;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $colour-grey;
+    color: $colour-deep-violet;
+  }
+}
+.form__field--address-detail {
+  label.form__checkbox{
+    padding: 0;
+  }
+}
+
+.form__row {
+  &.form__nav {
+    padding: 40px 0 80px;
+
+    .form__field--wrapper {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__radio {
+  label {
+    min-width: 80px;
+  }
+  input[type="radio"] {
+    top: 45px;
+  }
+}
