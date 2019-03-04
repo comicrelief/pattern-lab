@@ -36,15 +36,15 @@
         {# <p class="cart-id">{{ cart_id }} </p> #}
         <div class="money-buy">
           <button class="select-amount-btn money-box--1 active">
-            <span class="text-align-center"> <span class="currency"> £ </span>{{ money_buy_1 }}
+            <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_1 }}
             </span>
           </button>
           <button class="select-amount-btn money-box--2">
-            <span class="text-align-center"> <span class="currency"> £ </span>{{ money_buy_2 }}
+            <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_2 }}
             </span>
           </button>
           <button class="select-amount-btn money-box--3">
-            <span class="text-align-center"> <span class="currency"> £ </span>{{ money_buy_3 }}
+            <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_3 }}
             </span>
           </button>
           </diV>
@@ -52,7 +52,7 @@
         <label for="other-amont">Other amount
         </label>
           <div class="form__field--wrapper form__money form__field--amount">
-          <span id="js-currency-label" class="currency-input-label">£</span>
+          <span id="js-currency-label" class="currency-input-label membership__currency-label">£</span>
             <input aria-describedby="field-label--amount field-error--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+$]" placeholder="0" required="" type="number" value="">
           </div>
           <div class="form__field--wrapper form__choice form__field--currency ">

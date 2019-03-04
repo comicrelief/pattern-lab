@@ -9,6 +9,8 @@ function newFunction() {
                         if (x) {
                                 $(this).append("<style> " + ".img-shadow" + ":before {color:" + x + "}" + "</style>");
                         }
+
+                        // handle money buy selection
                         $(this)
                                 .find(".select-amount-btn")
                                 .click(function (e) {
@@ -16,7 +18,8 @@ function newFunction() {
                                                 .parent()
                                                 .find(".select-amount-btn")
                                                 .removeClass("active");
-                                        // Add selected amount to input field
+
+                                        // Add selected money buy  amount to input field
                                         $(this).addClass("active");
                                         var amount = $(this).text();
                                         $(this)
@@ -26,7 +29,8 @@ function newFunction() {
                                                 .val(parseInt(amount.replace(/\D/g, ""), 10));
                                         e.preventDefault();
                                 });
-                        // Change currency
+
+                        // Handle change of currency
                         $(this)
                                 .find("select")
                                 .change(function () {
@@ -36,7 +40,8 @@ function newFunction() {
                                         $(this)
                                                 .parent()
                                                 .parent()
-                                                .find("#js-currency-label")
+                                                .parent()
+                                                .find(".membership__currency-label")
                                                 .text(currency);
                                 });
 
