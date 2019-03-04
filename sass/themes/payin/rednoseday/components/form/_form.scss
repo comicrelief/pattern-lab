@@ -188,11 +188,6 @@ button[type=submit] {
     text-align: left;
   }
 }
-.form__row--billing-detail {
-  .form__subcopy {
-    font-weight: bold;
-  }
-}
 
 .form__checkbox.form__checkbox-text-only label.form__checkbox {
   display: inline-block;
@@ -253,5 +248,14 @@ button.payment-button-card {
     .form__field--wrapper {
       margin-bottom: 0;
     }
+  }
+}
+
+.form__radio {
+  label {
+    min-width: 80px;
+  }
+  input[type="radio"] {
+    top: 45px;
   }
 }
