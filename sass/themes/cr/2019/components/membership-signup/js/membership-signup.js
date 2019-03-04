@@ -1,74 +1,82 @@
 // Add active class to amount selected
+membershipSignup();
+function membershipSignup() {
+	$(document).ready(function() {
+		var paragraphs = ".paragraph--membership-signup";
+		$(paragraphs).each(function(i) {
+			var x = $(this).css("backgroundColor");
+			if (x) {
+			        $(this).append("<style> " + ".img-shadow" + ":before {color:" + x + "}" + "</style>");
+			}
 
-newFunction();
-function newFunction() {
-        $(document).ready(function () {
-                var paragraphs = ".paragraph--membership-signup";
-                $(paragraphs).each(function (i) {
-                        var x = $(this).css("backgroundColor");
-                        if (x) {
-                                $(this).append("<style> " + ".img-shadow" + ":before {color:" + x + "}" + "</style>");
-                        }
+			// handle money buy selection
+			$(this)
+				.find(".select-amount-btn")
+				.click(function(e) {
+					$(this)
+						.parent()
+						.find(".select-amount-btn")
+						.removeClass("active");
 
-                        // handle money buy selection
-                        $(this)
-                                .find(".select-amount-btn")
-                                .click(function (e) {
-                                        $(this)
-                                                .parent()
-                                                .find(".select-amount-btn")
-                                                .removeClass("active");
+					// Add selected money buy  amount to input field
+					$(this).addClass("active");
+					var amount = $(this).text();
+					$(this)
+						.parent()
+						.parent()
+						.find(" input[name='membership_amount']")
+						.val(parseInt(amount.replace(/\D/g, ""), 10));
+					e.preventDefault();
+				});
 
-                                        // Add selected money buy  amount to input field
-                                        $(this).addClass("active");
-                                        var amount = $(this).text();
-                                        $(this)
-                                                .parent()
-                                                .parent()
-                                                .find(" input[name='membership_amount']")
-                                                .val(parseInt(amount.replace(/\D/g, ""), 10));
-                                        e.preventDefault();
-                                });
+			// Handle change of currency
+			$(this)
+				.find("select")
+				.change(function() {
+					var currency = $(this)
+						.find("option:selected")
+						.data("currency");
+					$(this)
+						.parent()
+						.parent()
+						.parent()
+						.find(".membership__currency-label")
+						.text(currency);
+				});
 
-                        // Handle change of currency
-                        $(this)
-                                .find("select")
-                                .change(function () {
-                                        var currency = $(this)
-                                                .find("option:selected")
-                                                .data("currency");
-                                        $(this)
-                                                .parent()
-                                                .parent()
-                                                .parent()
-                                                .find(".membership__currency-label")
-                                                .text(currency);
-                                });
-
-                        // Submit data
-                        function nextStepHandler(e, currency, amount) {
+			// Submit data
+			function nextStepHandler(e, currency, amount) {
                                 e.preventDefault();
-                                var moneyDonated = currency + amount;
-                                console.log(moneyDonated);
-                        }
-                        // Click event
-                        $(this)
-                                .find("input[name='membership_amount']")
-                                .keypress(function (e) {
-                                        if (e.which == 13) {
-                                                e.preventDefault();
-                                                // Get amount
-                                                var amount = parseFloat($(this).val(), 10);
-                                                // Get currency
-                                                var currency = $(this)
-                                                        .siblings(".currency-input-label")
-                                                        .text();
-                                                if (amount && (amount > 1 && amount <= 5000)) {
-                                                        nextStepHandler(e, currency, amount);
-                                                }
-                                        }
-                                });
-                });
-        });
+                                if (amount && (amount > 1 && amount <= 5000)) {
+                                        var moneyDonated = currency + amount;
+                                        console.log(moneyDonated);
+                                }
+			}
+			// keyboard event
+			$(this)
+				.find("input[name='membership_amount']")
+				.keypress(function(e) {
+					if (e.which == 13) {
+						e.preventDefault();
+						// Get amount
+						var amount = parseFloat($(this).val(), 10);
+						// Get currency
+						var currency = $(this).siblings(".currency-input-label").text();
+                                                nextStepHandler(e, currency, amount);
+					}
+				});
+			// button event
+			$(this)
+				.find(".btn--membership-blue")
+				.click(function(e) {
+                                        e.preventDefault();
+                                        // Get amount
+                                        var amount = $(this).siblings().find("input[name='membership_amount']").val();
+                                        // Get currency
+					var currency = $(this).siblings().find(".membership__currency-label").text();
+				        nextStepHandler(e, currency, amount);
+				});
+		});
+	});
 }
 
