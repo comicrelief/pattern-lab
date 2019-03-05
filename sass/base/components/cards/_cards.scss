@@ -28,6 +28,15 @@
       }
     }
   }
+  &.cards--two-grid {
+    .cards__wrapper {
+      .card {
+        @include breakpoint($screen-md-max) {
+          @include span(6);
+        }
+      }
+    }
+  }
 }
 .cards__wrapper {
   text-align: center;
