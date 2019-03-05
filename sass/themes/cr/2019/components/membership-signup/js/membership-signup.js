@@ -45,36 +45,44 @@ function membershipSignup() {
 				});
 
 			// Submit data
-			function nextStepHandler(e, currency, amount) {
+			function nextStepHandler(e, currency, amount, givingType) {
                                 e.preventDefault();
                                 if (amount && (amount > 1 && amount <= 5000)) {
                                         var moneyDonated = currency + amount;
-                                        console.log(moneyDonated);
+                                        console.log(moneyDonated, givingType);
                                 }
 			}
 			// keyboard event
 			$(this)
 				.find("input[name='membership_amount']")
 				.keypress(function(e) {
+
 					if (e.which == 13) {
 						e.preventDefault();
 						// Get amount
 						var amount = parseFloat($(this).val(), 10);
 						// Get currency
 						var currency = $(this).siblings(".currency-input-label").text();
-                                                nextStepHandler(e, currency, amount);
+						// Giving type
+						var givingType = $(this).closest('form').data('giving-type');
+						// Send data
+                        nextStepHandler(e, currency, amount, givingType);
 					}
 				});
+
 			// button event
 			$(this)
 				.find(".btn--membership-blue")
 				.click(function(e) {
-                                        e.preventDefault();
-                                        // Get amount
-                                        var amount = $(this).siblings().find("input[name='membership_amount']").val();
-                                        // Get currency
-					var currency = $(this).siblings().find(".membership__currency-label").text();
-				        nextStepHandler(e, currency, amount);
+                    e.preventDefault();
+                    // Get amount
+                    var amount = $(this).siblings().find("input[name='membership_amount']").val();
+                    // Get currency
+					var currency = $(this).siblings().find("#js-currency-label").text();
+					// Giving type
+					var givingType = $(this).closest('form').data('giving-type');
+					// Send data
+				    nextStepHandler(e, currency, amount, givingType);
 				});
 		});
 	});
