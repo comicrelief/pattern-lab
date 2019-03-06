@@ -2602,7 +2602,7 @@ grunt-legacy-util@~1.0.0:
     underscore.string "~3.2.3"
     which "~1.2.1"
 
-grunt-modernizr@^1.0.2:
+grunt-modernizr@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/grunt-modernizr/-/grunt-modernizr-1.0.3.tgz#f197b7830adb096961f112c7625241100c369323"
   dependencies:
