@@ -134,6 +134,8 @@
                     }
 
                     .form__field--wrapper {
+                        display: flex;
+                        align-items: center;
                         background-color: $colour-donate-grey;
                         border: 2px solid $colour-donate-grey;
                         position: relative;
@@ -141,23 +143,20 @@
 
                         .currency-input-label {
                             position: absolute;
-                            padding: 13px 12px;
+                            padding: 13px 12px 16px;
                             font-size: 20px;
                         }
 
                         input,
                         select {
                             border: none;
+
                         }
 
                         input {
                             padding-left: 30px;
                             font-size: 20px;
-                        }
-
-                        input:focus {
-                            outline: 1px solid $colour-donate-blue;
-                            border-radius: 5px;
+                            @include placeholder (#757575, 18px, $body-font);
                         }
                     }
                 }
