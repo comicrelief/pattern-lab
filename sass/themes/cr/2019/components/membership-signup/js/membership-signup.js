@@ -3,6 +3,7 @@
 	$(document).ready(function() {
 
 		var url = "https://comicrelief.com/donate"
+		var pattern = /^[0-9]*$/;
 
 		$('.paragraph--membership-signup').each(function(i) {
 
@@ -18,6 +19,7 @@
 				$('.img-shadow', $thisParagraph).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
 			}
 		});
+
 
 		/* Handle money buy selection */
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
@@ -47,29 +49,33 @@
 
 		/* Handle enter-key keyboard event */
 		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function(e) {
-
 			var $thisInput = $(this);
-
 			if (e.which == 13) {
 				e.preventDefault();
           // Get amount
-          var amount = parseFloat($thisInput.val(), 10);
+					var amount = parseFloat($thisInput.val(), 10);
           // Get currency
           var currency = $thisInput.siblings(".currency-input-label").text();
           // Giving type
           var givingType = $thisInput.closest('form').data('giving-type');
-          // Send data
-          nextStepHandler(e, currency, amount, givingType);
+					// Send data
+					if (validateAmount(amount)) {
+						$thisInput.closest('form').find(".form-error").removeClass('visible');
+						nextStepHandler(e, currency, amount, givingType);
+					} else {
+						$thisInput.closest('form').find(".form-error").addClass('visible');
+					}
         }
       });
 
-      // button event
+
+      // Handle pressing next button event
       $(".paragraph--membership-signup .membership--submit").click(function(e) {
       	e.preventDefault();
 
       	var $thisButton = $(this);
 
-      	var siblings = $thisButton.siblings();
+      	// var siblings = $thisButton.siblings();
 
       	var $thisForm = $thisButton.closest('form');
 
@@ -78,17 +84,30 @@
         // Get currency
         var currency = $thisForm.find("#js-currency-label").text();
         // Giving type
-        var givingType = $thisForm.data('giving-type');
-        // Send data
-        nextStepHandler(e, currency, amount, givingType);
+				var givingType = $thisForm.data('giving-type');
+				// Send data
+				if (validateAmount(amount)) {
+					$thisForm.find(".form-error").removeClass('visible');
+					nextStepHandler(e, currency, amount, givingType);
+				} else {
+					$thisForm.find(".form-error").addClass('visible');
+				}
+
       });
 
-      /* Submit data */
+			/* Checking and validate amount */
+			function validateAmount(amount) {
+				if ( pattern.test(amount) && (amount >= 1 && amount <= 5000)) {
+					 return true
+      	} else {
+					return false
+				}
+			}
+
+			/* Submit data */
       function nextStepHandler(e, currency, amount, givingType) {
-      	e.preventDefault();
-      	if (amount && (amount > 1 && amount <= 5000)) {
-      		window.location.href = url + "?amount=" + amount + "&currency=" + currency + "&givingType=" + givingType
-      	}
+				e.preventDefault();
+      	window.location.href = url + "?amount=" + amount + "&currency=" + currency + "&givingType=" + givingType
       }
     });
 })(jQuery);

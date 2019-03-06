@@ -30,7 +30,7 @@
       <p>
         {{ form_title }}
       </p>
-      <form class="membership-signup__form-money" data-giving-type={{ giving_type }} >
+      <form class="membership-signup__wrapper-copy--form-money" data-giving-type={{ giving_type }} >
         <div class="money-buy">
           <button class="select-amount-btn money-box--1 active">
             <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_1 }}
@@ -50,7 +50,7 @@
         </label>
           <div class="form__field--wrapper form__money form__field--amount">
           <span id="js-currency-label" class="currency-input-label membership__currency-label">£</span>
-            <input aria-describedby="field-label--amount field-error--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+$]" placeholder="0" required="" type="number" value="">
+            <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+$]" placeholder="0" required="" type="number" value="">
           </div>
           <div class="form__field--wrapper form__choice form__field--currency ">
             <select class="form__field form__field--currency" id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]">
@@ -67,6 +67,7 @@
             </select>
           </div>
         </div>
+        <span class="form-error" aria-message-error="field-error--amount"> Please enter a number between 1 and 5000 </span>
         <button class="btn btn--membership-blue membership--submit" type="submit">Next step
         </button>
         <div class="donation-copy">
