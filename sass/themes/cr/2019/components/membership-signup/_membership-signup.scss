@@ -1,16 +1,15 @@
 .paragraph--membership-signup {
     width: 100%;
     min-height: 100vh;
+    position: relative;
 
     .img-shadow {
         width: auto;
         height: auto;
         position: absolute;
         bottom: 0;
-        right: 0;
         left: 0;
-        bottom: 0;
-
+        right: 0;
         &:before {
             content: "";
             position: absolute;
@@ -20,8 +19,6 @@
         }
 
         @include breakpoint($screen-lg) {
-            top: 0;
-
             &:before {
                 box-shadow: inset 0px 200px 200px -150px;
             }
@@ -33,6 +30,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        display: block;
 
         @include breakpoint($screen-lg) {
             height: 100%;
@@ -46,7 +44,7 @@
             text-align: center;
             margin: 0 auto;
             margin-bottom: 50%;
-            position: relative;
+            position: absolute;
             width: calc(100% - (30 / 320) * 100%);
 
             &--title {
@@ -222,7 +220,6 @@
                 margin: 0 100px;
                 float: right;
                 width: 420px;
-                position: absolute;
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);

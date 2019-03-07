@@ -13,6 +13,7 @@
 {% set money_buy_message = "£100 a month will help support people living unimaginably tough lives" %}
 
 <section class="paragraph--membership-signup {{modifier_class}} bg--light-orange">
+
   <div class="img-shadow">
       <picture>
       <source media="all and (min-width: 1024px)" srcset="../images/membership-LG.jpg" type="image/jpeg"/>
@@ -21,11 +22,14 @@
       <img alt="Membership" src="../images/membership-MD.jpg" typeof="foaf:Image"/>
     </picture>
   </div>
+
   <div class="membership-signup__wrapper-copy text-align-center">
+
     <div class="membership-signup__wrapper-copy--title ">
       <h1>{{ title }}</h1>
       <p> {{ sub_title }}</p>
     </div>
+
     <div class="membership-signup__wrapper-copy--form">
       <p>
         {{ form_title }}
@@ -46,8 +50,7 @@
           </button>
           </diV>
         <div class="form__fieldset  ">
-        <label for="other-amont">Other amount
-        </label>
+        <label for="other-amont">Other amount</label>
           <div class="form__field--wrapper form__money form__field--amount">
           <span id="js-currency-label" class="currency-input-label membership__currency-label">£</span>
             <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0" required="" type="number" value="">
@@ -77,5 +80,6 @@
         </div>
       </form>
     </div>
+
   </div>
 </section>
