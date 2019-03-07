@@ -3,7 +3,7 @@
 	$(document).ready(function() {
 
 		var url = "https://comicrelief.com/donate"
-		var pattern = /^[0-9]*$/;
+		var pattern = /^[1-9]+([,.][0-9]+)?$/;
 
 		$('.paragraph--membership-signup').each(function(i) {
 
@@ -20,7 +20,6 @@
 			}
 		});
 
-
 		/* Handle money buy selection */
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 
@@ -33,8 +32,8 @@
 			var amount = $thisBtn.text();
 
 			$thisBtn
-			.parents(".membership-signup__form-money")
-			.find("input[name='membership_amount']").val(parseInt(amount.replace(/\D/g, ""), 10));
+			.parents(".membership-signup__wrapper-copy--form-money")
+			.find("input[name='membership_amount']").val(parseFloat(amount.replace(/\D/g, "")));
 
 		});
 
@@ -43,9 +42,19 @@
 		$('.paragraph--membership-signup select').change(function() {
 			var $thisSelect = $(this);
 			var currency = $thisSelect.find("option:selected").data("currency");
-			$thisSelect.closest(".membership-signup__form-money").find(".membership__currency-label").text(currency);
+			$thisSelect.closest(".membership-signup__wrapper-copy--form-money").find(".membership__currency-label").text(currency);
 		});
 
+		/* Watch for action/change on input */
+		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange",function(){
+			var $thisInput = $(this);
+			var amount = parseFloat($thisInput.val());
+			if (validateAmount(amount) || isNaN(amount)) {
+				$thisInput.closest('form').find(".form-error").removeClass('visible');
+			} else {
+				$thisInput.closest('form').find(".form-error").addClass('visible');
+			}
+		});
 
 		/* Handle enter-key keyboard event */
 		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function(e) {
@@ -53,11 +62,11 @@
 			if (e.which == 13) {
 				e.preventDefault();
           // Get amount
-					var amount = parseFloat($thisInput.val(), 10);
+					var amount = parseFloat($thisInput.val());
           // Get currency
           var currency = $thisInput.siblings(".currency-input-label").text();
           // Giving type
-          var givingType = $thisInput.closest('form').data('giving-type');
+					var givingType = $thisInput.closest('form').data('giving-type');
 					// Send data
 					if (validateAmount(amount)) {
 						$thisInput.closest('form').find(".form-error").removeClass('visible');
@@ -97,7 +106,7 @@
 
 			/* Checking and validate amount */
 			function validateAmount(amount) {
-				if ( pattern.test(amount) && (amount >= 1 && amount <= 5000)) {
+				if (pattern.test(amount) && amount <= 5000) {
 					 return true
       	} else {
 					return false
