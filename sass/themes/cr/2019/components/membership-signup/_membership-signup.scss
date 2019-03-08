@@ -1,8 +1,8 @@
 .paragraph--membership-signup {
     width: 100%;
     min-height: 100vh;
-    position: relative;
 
+    // Add box-shadow image like
     .img-shadow {
         width: auto;
         height: auto;
@@ -17,25 +17,23 @@
             height: 100%;
             box-shadow: inset 0px 200px 200px -80px;
         }
-
         @include breakpoint($screen-lg) {
+            top: 0;
             &:before {
                 box-shadow: inset 0px 200px 200px -150px;
             }
         }
     }
 
-    // Image style
+    // Background-image style
     img {
         width: 100%;
         height: auto;
         object-fit: cover;
         display: block;
-
         @include breakpoint($screen-lg) {
             height: 100%;
         }
-
     }
 
     // Copy : title, form, money buys option , input & select field
@@ -44,19 +42,17 @@
             text-align: center;
             margin: 0 auto;
             margin-bottom: 50%;
-            position: absolute;
+            position: relative;
             width: calc(100% - (30 / 320) * 100%);
 
             &--title {
                 padding-top: 32px;
-
                 h1 {
                     margin-bottom: 10px;
                 }
             }
 
             &--form {
-
                 width: 100%;
                 background: $colour-white;
                 padding: 0 20px;
@@ -68,12 +64,11 @@
                     font-weight: bold;
                 }
 
-                // Form (money buy button, input, nest step button ) begin here
+                // Form (money buy button, input, nest step button )
                 &-money {
 
-                    // Select amount box
+                    // Select amount box-button
                     .money-buy {
-
                         display: flex;
                         justify-content: space-between;
 
@@ -122,7 +117,6 @@
                         margin-top: 35px;
                         position: relative;
 
-
                         label {
                             padding: 0;
                             letter-spacing: -0.2px;
@@ -151,7 +145,6 @@
                             input,
                             select {
                                 border: none;
-
                             }
 
                             input {
@@ -188,7 +181,7 @@
             // Medium screen
             @include breakpoint($screen-md) {
                 width: calc(100% - (348 / 768) * 100%);
-                margin-bottom: 50%;
+                margin-bottom: 60%;
 
                 &--title {
                     padding-top: 45px;
@@ -217,13 +210,9 @@
 
             // Large screen
             @include breakpoint($screen-lg) {
-                margin: 0 100px;
-                float: right;
+                margin: 50px 100px;
                 width: 420px;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-
+                float: right;
                 &--title {
                     padding: 0;
                 }
@@ -255,7 +244,7 @@
     &--copy-left {
         @include breakpoint($screen-lg) {
             .membership-signup__wrapper-copy {
-                left: 0;
+                float: left;
             }
         }
     }
