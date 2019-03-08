@@ -97,7 +97,7 @@ header[role="banner"] {
       }
 
       @include breakpoint($desktop-nav-breakpoint) {
-        margin-right: 8px;
+        margin-right: 0;
         background-color: transparent;
       }
 
