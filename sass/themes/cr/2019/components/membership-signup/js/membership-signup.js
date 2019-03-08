@@ -9,9 +9,12 @@
 			var $thisParagraph = $(this);
 			var thisID = 'paragraph--membership-signup-' + i;
 			$thisParagraph.attr('id', thisID);
-			var colour = $thisParagraph.css("backgroundColor");
+			var $newParagraphWithId = $('#'+ thisID)
+			var amount = $newParagraphWithId.find(".select-amount-btn.active").text();
+			$newParagraphWithId.find("input[name='membership_amount']").val(parseFloat(amount.replace(/\D/g, "")));
+			var colour = $newParagraphWithId.css("backgroundColor");
 			if (colour) {
-				$('.img-shadow', $thisParagraph).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
+				$('.img-shadow', $newParagraphWithId).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
 			}
 		});
 
@@ -61,7 +64,6 @@
 					var givingType = $thisInput.closest('form').data('giving-type');
 					/* Cart ID */
 					var cartId = $thisInput.closest('form').data('cart-id');
-					console.log(cartId)
 					/* Send data */
 					if (validateAmount(amount)) {
 						$thisInput.closest('form').find(".form-error").removeClass('visible');

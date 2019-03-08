@@ -96,14 +96,13 @@
                             }
                         }
 
-                        .active,
-                        .btn:hover {
+                        .active {
                             color: $colour-white;
                             border: none;
                         }
 
                         .btn:hover {
-                            background: $colour-donate-light-blue
+                            border: 2px solid $colour-donate-light-blue
                         }
 
                         .active {
