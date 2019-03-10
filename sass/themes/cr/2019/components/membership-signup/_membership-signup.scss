@@ -1,7 +1,6 @@
 .paragraph--membership-signup {
     width: 100%;
     min-height: 100vh;
-
     // Add box-shadow image like
     .img-shadow {
         width: auto;
@@ -172,6 +171,14 @@
                             font-weight: 500;
                             font-size: 11px;
                             line-height: 17px;
+                            display: none;
+                            .money-buy--desc-currency {
+                                position: relative;
+                                left: 2px;
+                            }
+                        }
+                        .dis {
+                            display: inline-block;
                         }
                     }
                 }

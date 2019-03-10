@@ -10,9 +10,11 @@
 {% set money_buy_2 = "10"  %}
 {% set money_buy_3 = "30"  %}
 
-{% set cart_id = "RNKI_KILLIMANJARO_SOCIAL_LV" %}
+{% set money_buy_desc_1 = "could provide 5 hot meals for a homeless person in the UK."  %}
+{% set money_buy_desc_2 = "could fund an awareness session on harmful practices like FGM and child marriage for girls in Sierra Leone."  %}
+{% set money_buy_desc_3 = "could pay for 7 mosquito nets to protect children in Uganda from malaria while they sleep."  %}
 
-{% set money_buy_message = "£100 a month will help support people living unimaginably tough lives" %}
+{% set cart_id = "RNKI_KILLIMANJARO_SOCIAL_LV" %}
 
 <section class="paragraph--membership-signup {{modifier_class}} bg--light-orange">
 
@@ -76,8 +78,14 @@
         <button class="btn btn--membership-blue membership--submit" type="submit">Next step
         </button>
         <div class="donation-copy">
-          <p>
-            {{ money_buy_message }}
+          <p class="money-buy--description">
+            <span class="money-buy--desc-currency"> </span> <span class="money-buy--desc-amount"> {{ money_buy_1 }} </span>  {{ money_buy_desc_1 }}
+          </p>
+           <p class="money-buy--description">
+             <span class="money-buy--desc-currency"> </span> <span class="money-buy--desc-amount"> {{ money_buy_2 }} </span>{{  money_buy_desc_2 }}
+          </p>
+          <p class="money-buy--description">
+            <span class="money-buy--desc-currency"> </span> <span class="money-buy--desc-amount"> {{ money_buy_3 }} </span> {{  money_buy_desc_3 }}
           </p>
         </div>
       </form>

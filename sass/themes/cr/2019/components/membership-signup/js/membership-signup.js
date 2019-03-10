@@ -1,21 +1,34 @@
 (function($) {
-
 	$(document).ready(function() {
-
-		var url = "https://comicrelief.com/donate"
+		var url = "https://comicrelief.com/donate";
 		var pattern = /^[0-9]+([,.][0-9]+)?$/;
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
 			var thisID = 'paragraph--membership-signup-' + i;
 			$thisParagraph.attr('id', thisID);
-			var $newParagraphWithId = $('#'+ thisID)
-			var amount = $newParagraphWithId.find(".select-amount-btn.active").text();
-			$newParagraphWithId.find("input[name='membership_amount']").val(parseFloat(amount.replace(/\D/g, "")));
+			var $newParagraphWithId = $('#'+ thisID);
+
+			/* Box shadow colour */
+			$newParagraphWithId.find("input[name='membership_amount']").val(amount);
+			$newParagraphWithId.find("input[name='membership_amount']");
 			var colour = $newParagraphWithId.css("backgroundColor");
 			if (colour) {
 				$('.img-shadow', $newParagraphWithId).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
 			}
+			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
+			var currency = $newParagraphWithId.find("option:selected").data("currency");
+
+			/* Add money buy description && currency */
+			var descAmount = $newParagraphWithId.find(".money-buy--desc-amount");
+			descAmount.each(function() {
+				var $thisElement = $(this).parent();
+				$thisElement.removeClass('dis');
+				$thisElement.find(".money-buy--desc-currency").text(currency);
+				if(amount === parseFloat($(this).text())) {
+					$thisElement.addClass('dis');
+				}
+			})
 		});
 
 
@@ -25,21 +38,30 @@
 			var $thisBtn = $(this);
 			$thisBtn.siblings('.select-amount-btn').removeClass("active");
 			$thisBtn.addClass("active");
-			var amount = $thisBtn.text();
-			$thisBtn.parents(".membership-signup__wrapper-copy--form-money")
-			.find("input[name='membership_amount']").val(parseFloat(amount.replace(/\D/g, "")));
-
+			var amount = parseFloat($thisBtn.text().replace(/\D/g, ""));
+			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
+			var descAmount = $thisBtnParent.find(".money-buy--desc-amount");
+			var currency = $thisBtnParent.find("option:selected").data("currency");
+			$thisBtnParent.find("input[name='membership_amount']").val(amount);
+			descAmount.each(function() {
+				$(this).parent().removeClass('dis');
+				$(this).parent().find(".money-buy--desc-currency").text(currency);
+				if(amount === parseFloat($(this).text())) {
+					$(this).parent().addClass('dis');
+				}
+			})
 		});
-
 
 		/* Handle change of currency */
 		$('.paragraph--membership-signup select').change(function() {
 			var $thisSelect = $(this);
 			var currency = $thisSelect.find("option:selected").data("currency");
-			$thisSelect.closest(".membership-signup__wrapper-copy--form-money").find(".membership__currency-label").text(currency);
+			var $thisParent = $thisSelect.closest(".membership-signup__wrapper-copy--form-money");
+			$thisParent.find(".membership__currency-label").text(currency);
+			$thisParent.find(".money-buy--desc-currency").text(currency);
 		});
 
-		/* Watch for action/change on input */
+		/* Watch for action / change on input */
 		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange",function(){
 			var $thisInput = $(this);
 			var amount = parseFloat($thisInput.val());
@@ -49,7 +71,6 @@
 				$thisInput.closest('form').find(".form-error").addClass('visible');
 			}
 		});
-
 
 		/* Handle enter-key keyboard event */
 		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function(e) {
@@ -73,7 +94,6 @@
 					}
         }
       });
-
 
       // Handle pressing next button event
       $(".paragraph--membership-signup .membership--submit").click(function(e) {
