@@ -8,17 +8,14 @@
 			var thisID = 'paragraph--membership-signup-' + i;
 			$thisParagraph.attr('id', thisID);
 			var $newParagraphWithId = $('#'+ thisID);
-
 			/* Box shadow colour */
-			$newParagraphWithId.find("input[name='membership_amount']").val(amount);
-			$newParagraphWithId.find("input[name='membership_amount']");
 			var colour = $newParagraphWithId.css("backgroundColor");
 			if (colour) {
 				$('.img-shadow', $newParagraphWithId).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
 			}
 			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 			var currency = $newParagraphWithId.find("option:selected").data("currency");
-
+			$newParagraphWithId.find("input[name='membership_amount']").val(amount);
 			/* Add money buy description && currency */
 			var descAmount = $newParagraphWithId.find(".money-buy--desc-amount");
 			descAmount.each(function() {
