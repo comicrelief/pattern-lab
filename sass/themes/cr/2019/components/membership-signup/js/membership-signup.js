@@ -38,11 +38,9 @@
 			var amount = parseFloat($thisBtn.text().replace(/\D/g, ""));
 			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
 			var descAmount = $thisBtnParent.find(".money-buy--desc-amount");
-			var currency = $thisBtnParent.find("option:selected").data("currency");
 			$thisBtnParent.find("input[name='membership_amount']").val(amount);
 			descAmount.each(function() {
 				$(this).parent().removeClass('dis');
-				$(this).parent().find(".money-buy--desc-currency").text(currency);
 				if(amount === parseFloat($(this).text())) {
 					$(this).parent().addClass('dis');
 				}
@@ -54,8 +52,7 @@
 			var $thisSelect = $(this);
 			var currency = $thisSelect.find("option:selected").data("currency");
 			var $thisParent = $thisSelect.closest(".membership-signup__wrapper-copy--form-money");
-			$thisParent.find(".membership__currency-label").text(currency);
-			$thisParent.find(".money-buy--desc-currency").text(currency);
+			$thisParent.find("#js-currency-label").text(currency);
 		});
 
 		/* Watch for action / change on input */

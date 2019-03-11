@@ -168,7 +168,7 @@ p + p {
 }
 
 /* Membership donate button, new colour var */
-.btn--membership-blue {
-  @include cr_button_types($colour-white, $colour-donate-blue, $colour-donate-light-blue, $colour-white);
+.btn--membership-red {
+  @include cr_button_types($colour-white, $colour-donate-red, $colour-donate-dark-red, $colour-white);
 }
 
