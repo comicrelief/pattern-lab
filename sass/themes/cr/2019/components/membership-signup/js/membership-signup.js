@@ -65,6 +65,7 @@
 		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange",function(){
 			var $thisInput = $(this);
 			var amount = parseFloat($thisInput.val());
+			$(this).parents('form').find('.select-amount-btn').removeClass("active");
 			if (validateAmount(amount) || isNaN(amount)) {
 				$thisInput.closest('form').find(".form-error").removeClass('visible');
 			} else {
