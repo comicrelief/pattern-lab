@@ -5,7 +5,7 @@
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
-			loadPage($thisParagraph, i);
+			setFormDefaults($thisParagraph, i);
 		});
 
 
@@ -13,14 +13,16 @@
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
 			var $thisBtn = $(this);
+			$thisBtn.closest('form').find(".form-error").removeClass('visible');
 			$thisBtn.siblings('.select-amount-btn').removeClass("active");
 			$thisBtn.addClass("active");
 			var amount = parseFloat($thisBtn.text().replace(/\D/g, ""));
 			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
-			var descriptionCopies = $thisBtnParent.find(".money-buy--desc-amount");
+			var descriptionCopies = $thisBtnParent.find(".donation-copy").children();
+			var position = $thisBtn.data("position");
 			$thisBtnParent.find("input[name='membership_amount']").val(amount);
 			currentAmount($thisBtn, amount);
-			moneyBuyDescriptionHandler(descriptionCopies, amount);
+			moneyBuyDescriptionHandler(descriptionCopies, position);
 		});
 
 		/** Handle change of currency  and set currency of input label */
@@ -39,7 +41,7 @@
 			$thisForm.find('.select-amount-btn').removeClass("active");
 			currentAmount($thisForm, amount);
 
-			if (validateAmount(amount) || !isNaN(amount)) {
+			if (validateAmount(amount) && !isNaN(amount)) {
 				$thisForm.find(".form-error").removeClass('visible');
 			} else {
 				$thisForm.find(".form-error").addClass('visible');
@@ -69,8 +71,7 @@
 
 		/**  FUNCTIONS  */
 
-
-		function loadPage($thisParagraph, i) {
+		function setFormDefaults($thisParagraph, i) {
 			var thisID = 'paragraph--membership-signup-' + i;
 			$thisParagraph.attr('id', thisID);
 			var $newParagraphWithId = $('#'+ thisID);
@@ -83,19 +84,19 @@
 
 			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 			$newParagraphWithId.attr("data-current-amount", amount);
-			var currency = $newParagraphWithId.find("option:selected").data("currency");
+			var position = $newParagraphWithId.find(".select-amount-btn.active").data("position");
 			/* Add money buy description && currency */
-			var descriptionCopies = $newParagraphWithId.find(".money-buy--desc-amount");
-			moneyBuyDescriptionHandler(descriptionCopies, amount);
+			var descriptionCopies = $newParagraphWithId.find(".donation-copy").children();
+			moneyBuyDescriptionHandler(descriptionCopies, position);
 		}
 
 		/** Money buy description handler */
-		function moneyBuyDescriptionHandler(descriptions, amount) {
-			/* Add money buy description && currency */
-			descriptions.each(function () {
-				$(this).parent().removeClass('dis');
-				if (amount === parseFloat($(this).text())) {
-					$(this).parent().addClass('dis');
+		function moneyBuyDescriptionHandler(descriptions, position) {
+			console.log(position)
+			descriptions.each(function (i) {
+				$(this).removeClass('show-copy');
+				if (position === i + 1) {
+					$(this).addClass('show-copy');
 				}
 			})
 		}
