@@ -1,4 +1,8 @@
 .paragraph--membership-signup {
+    *:focus {
+        outline: none;
+    }
+
     width: 100%;
     min-height: 100vh;
     // Add box-shadow image like
@@ -56,6 +60,7 @@
                 background: $colour-white;
                 padding: 0 20px;
                 margin-top: 30px;
+                box-shadow: rgba(0,0,0,0.2) 0px 10px 60px;
 
                 p {
                     padding: 20px 0px;
@@ -100,9 +105,11 @@
                             border: none;
                         }
 
-                        .btn:hover {
+                        .btn:hover,
+                        .btn:focus {
                             background-color: $colour-donate-dark-red;
                             border-color: $colour-donate-dark-red;
+                            color: $colour-white;
                         }
 
                         .active {
@@ -125,6 +132,7 @@
                             position: absolute;
                             bottom: 40px;
                             text-transform: initial;
+                            max-width: 32.5%;
                         }
 
                         .form__field--wrapper {
@@ -134,6 +142,7 @@
                             border: 2px solid $colour-donate-grey;
                             position: relative;
                             margin: 0;
+                            max-width: 32.5%;
 
                             .currency-input-label {
                                 position: absolute;
@@ -150,6 +159,20 @@
                                 padding-left: 30px;
                                 font-size: 20px;
                                 @include placeholder (#757575, 18px, $body-font);
+                            }
+                        }
+
+                        .active-input {
+                            background-color: $colour-donate-red;
+                            border: 2px solid $colour-donate-red;
+                            position: relative;
+
+                            select
+                            &:nth-child(1){
+                                border-right: none;
+                            }
+                            &:nth-child(3){
+                                border-left: none;
                             }
                         }
                     }
