@@ -21,6 +21,7 @@
 
   @include breakpoint($screen-md) {
     display: flex;
+    display: -ms-flexbox;
     flex-direction: row;
     height: 270px;
     div {
@@ -30,6 +31,7 @@
 
     div:first-child {
       display: flex;
+      display: -ms-flexbox;
       align-items: center;
     }
   }
