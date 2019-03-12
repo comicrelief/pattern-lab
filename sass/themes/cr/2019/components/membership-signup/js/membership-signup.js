@@ -13,51 +13,56 @@
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
 			var $thisBtn = $(this);
-			$thisBtn.closest('form').find(".form-error").removeClass('visible');
-			$thisBtn.siblings('.select-amount-btn').removeClass("active");
-			$thisBtn.addClass("active");
+			var $thisForm= $thisBtn.closest('form');
+			$thisForm.find(".form-error").removeClass('visible');
+			$thisForm.find(".form__field--wrapper").removeClass('active-input');
+			$thisForm.find(".form-error").removeClass('show-error');
+			$thisForm.find('.select-amount-btn').removeClass("active");
+			$thisForm.find("input[name='membership_amount']").val("");
+			$(this).addClass("active");
 			var amount = parseFloat($thisBtn.text().replace(/\D/g, ""));
 			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
 			var descriptionCopies = $thisBtnParent.find(".donation-copy").children();
 			var position = $thisBtn.data("position");
-			$thisBtnParent.find("input[name='membership_amount']").val(amount);
 			currentAmount($thisBtn, amount);
 			moneyBuyDescriptionHandler(descriptionCopies, position);
 		});
 
-		/** Handle change of currency  and set currency of input label */
-		$('.paragraph--membership-signup select').change(function() {
-			var $thisSelect = $(this);
-			var currency = $thisSelect.find("option:selected").data("currency");
-			var $thisParent = $thisSelect.closest(".membership-signup__wrapper-copy--form-money");
-			$thisParent.find("#js-currency-label").text(currency);
-		});
+		// /** Handle change of currency  and set currency of input label */
+		// $('.paragraph--membership-signup select').change(function() {
+		// 	var $thisSelect = $(this);
+		// 	var currency = $thisSelect.find("option:selected").data("currency");
+		// 	var $thisParent = $thisSelect.closest(".membership-signup__wrapper-copy--form-money");
+		// 	$thisParent.find("#js-currency-label").text(currency);
+		// });
 
 		/* Watch for action or change on input */
 		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange",function(){
 			var $thisInput = $(this);
 			var amount = parseFloat($thisInput.val());
 			var $thisForm = $thisInput.parents('form');
+			$thisForm.find(".form__field--wrapper").addClass("active-input")
 			$thisForm.find('.select-amount-btn').removeClass("active");
-			currentAmount($thisForm, amount);
 
 			if (validateAmount(amount) && !isNaN(amount)) {
-				$thisForm.find(".form-error").removeClass('visible');
+				$thisForm.find(".form-error").removeClass('show-error');
+				currentAmount($thisForm, amount);
 			} else {
-				$thisForm.find(".form-error").addClass('visible');
+				$thisForm.find(".form-error").addClass('show-error');
+				currentAmount($thisForm, 0);
 			}
 		});
 
 		/* Handle enter-key keyboard event */
-		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function(e) {
+		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function (e) {
 			var $thisInput = $(this);
 			if (e.which == 13) {
 				e.preventDefault();
-					var $thisForm = $thisInput.closest('form');
-					var amount = getAmount($thisForm)
-					handleDatabeforeSubmission($thisForm, amount, e);
-        }
-      });
+				var $thisForm = $thisInput.closest('form');
+				var amount = getAmount($thisForm)
+				handleDatabeforeSubmission($thisForm, amount, e);
+			}
+		});
 
       // Handle pressing next button event
       $(".paragraph--membership-signup .membership--submit").click(function(e) {
@@ -92,7 +97,6 @@
 
 		/** Money buy description handler */
 		function moneyBuyDescriptionHandler(descriptions, position) {
-			console.log(position)
 			descriptions.each(function (i) {
 				$(this).removeClass('show-copy');
 				if (position === i + 1) {
@@ -103,11 +107,7 @@
 
 		/** Set value of data current amount */
 		function currentAmount(selector, amount) {
-			if (isNaN(amount)) {
-				selector.parents(".paragraph--membership-signup").attr("data-current-amount", 0);
-			} else {
-				selector.parents(".paragraph--membership-signup").attr("data-current-amount", amount);
-			}
+			selector.parents(".paragraph--membership-signup").attr("data-current-amount", amount);
 		}
 
 		/** Get amount from value of data current amount  */
