@@ -136,6 +136,9 @@ select {
     }
   }
 }
+.search-box div.form__field--error {
+  color: #EA0043;
+}
 
 .form__row--your-detail,
 .form__row--keep-touch,
@@ -145,9 +148,12 @@ select {
   strong {
     color: $colour-black;
   }
-
-  input[type="checkbox"]:focus+span {
-    border-color: $colour-black;
+  input[type="checkbox"]+span {
+    border-color: #918791;
+  }
+  input[type="checkbox"]:focus+span,
+  input[type="checkbox"]:checked+span {
+    border-color: #2C0230;
   }
 }
 .form__row--keep-touch {
