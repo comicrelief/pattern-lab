@@ -157,3 +157,17 @@ label {
 .no-wrap {
   white-space: nowrap;
 }
+
+br.break--md-lg {
+  display: none;
+  @include breakpoint($screen-md) {
+    display: inline;
+  }
+}
+
+br.break--lg {
+  display: none;
+  @include breakpoint($screen-lg) {
+    display: inline;
+  }
+}
