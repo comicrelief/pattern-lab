@@ -14,7 +14,6 @@
 			e.preventDefault();
 			var $thisBtn = $(this);
 			var $thisForm= $thisBtn.closest('form');
-			$thisForm.find(".form-error").removeClass('visible');
 			$thisForm.find(".form__field--wrapper").removeClass('active-input');
 			$thisForm.find(".form-error").removeClass('show-error');
 			$thisForm.find('.select-amount-btn').removeClass("active");
@@ -43,6 +42,8 @@
 			var $thisForm = $thisInput.parents('form');
 			$thisForm.find(".form__field--wrapper").addClass("active-input")
 			$thisForm.find('.select-amount-btn').removeClass("active");
+			$thisForm.find('.money-buy--description').removeClass('show-copy');
+			$thisForm.find('.random-description').addClass('show-copy');
 
 			if (validateAmount(amount) && !isNaN(amount)) {
 				$thisForm.find(".form-error").removeClass('show-error');
