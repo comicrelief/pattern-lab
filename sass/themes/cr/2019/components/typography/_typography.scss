@@ -143,3 +143,13 @@ i.font--family-light {
 label {
   @extend .text--label;
 }
+
+/* Used to strongarm custom colours for Membership page,
+ * overriding general bg-color/font-color rules */
+.font--yellow {
+  color: $colour-yellow !important;
+}
+
+.font--blue {
+  color: $colour-blue !important;
+}
