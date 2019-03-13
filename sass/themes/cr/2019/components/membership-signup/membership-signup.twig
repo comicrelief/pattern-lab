@@ -4,7 +4,8 @@
 
 {% set form_title = "Choose your monthly donation"  %}
 
-{% set giving_type = "MONTHLY" %}
+{% set giving_type = "MONT" %}
+{% set currencyDisabled = (giving_type == "MONTHLY")? "disabled ='disabled'" : ""  %}
 
 {% set money_buy_1 = "5"  %}
 {% set money_buy_2 = "10"  %}
@@ -60,7 +61,7 @@
             <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0" required="" type="number" value="">
           </div>
           <div class="form__field--wrapper form__choice form__field--currency ">
-            <select class="form__field form__field--currency" id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" disabled="disabled">
+            <select class="form__field form__field--currency" id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" {{ currencyDisabled  }}>
               <optgroup label="currency">
                 <option data-currency="£" value="GBP">£ GBP
                 </option>

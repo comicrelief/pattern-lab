@@ -4,12 +4,7 @@
     display: table;
    }
 
-
 .paragraph--membership-signup {
-    *:focus {
-        outline: none;
-    }
-
     display: inline-block;
     position: relative;
     width: 100%;
@@ -173,11 +168,15 @@
                             }
 
                             select {
-                                background: $colour-donate-grey;
                                 padding: 0 26% 0 20px;
                             }
 
                             input {
+                                max-width: 100%;
+                                &:focus {
+                                    outline: none;
+                                }
+
                                 padding-left: 30px;
                                 font-size: 20px;
                                 @include placeholder (#757575, 18px, $body-font);
@@ -186,12 +185,12 @@
 
 
                         .active-input {
-                            background-color: $colour-donate-red;
+                            background: $colour-donate-red;
                             border: 2px solid $colour-donate-red;
                             position: relative;
 
                             select {
-                                background: #e02d2c;
+                                background: transparent url("/images/drop-down-white.svg") calc(100% - 20px) 18px/20px 20px no-repeat;
                                 color: white;
                             }
 
@@ -200,6 +199,30 @@
                             }
                             &:nth-child(3){
                                 border-left: none;
+                            }
+                        }
+
+                        &.hide-select-tag {
+                            width: 80%;
+                            float: right;
+
+                            label {
+                                padding-top: 18px;
+                                font-size: 11px;
+                                width: 35%;
+                                margin: 0;
+                            }
+
+                            .form__field--wrapper {
+                                &.form {
+                                    &__money {
+                                        width: 65%;
+                                    }
+
+                                    &__choice {
+                                        display: none;
+                                    }
+                                }
                             }
                         }
                     }
@@ -226,7 +249,7 @@
                                 left: 2px;
                             }
                         }
-                        .show-copy {
+                        .show-money-buy-copy {
                             display: inline-block;
                         }
                     }
@@ -252,7 +275,7 @@
                     .form__fieldset {
                         label {
                             width: 34.7%;
-                            padding-top: 20px;
+                            padding-top: 10px;
                             font-size: 15px;
                         }
 
@@ -264,6 +287,24 @@
                             }
                         }
 
+                        }
+
+                        &.hide-select-tag {
+                            width: 85%;
+                            label {
+                                padding-top: 12px;
+                                font-size: 15px;
+                                width: 40%;
+                                margin: 0;
+                            }
+
+                            .form__field--wrapper {
+                                &.form {
+                                    &__money {
+                                        width: 60%;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -286,12 +327,17 @@
 
                     .form__fieldset {
                         .form__field--wrapper {
-                            flex: 2;
-
                             label {
                                 top: 10px;
                             }
 
+                            select {
+                                padding-left: 10px;
+                            }
+                        }
+
+                        &.hide-select-tag {
+                            width: 100%;
                         }
                     }
 
