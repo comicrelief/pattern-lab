@@ -144,7 +144,7 @@ label {
   @extend .text--label;
 }
 
-/* Used to strongarm custom colours for Membership page,
+/* Used to strongarm styles for Membership page,
  * overriding general bg-color/font-color rules */
 .font--yellow {
   color: $colour-yellow !important;
@@ -152,4 +152,8 @@ label {
 
 .font--blue {
   color: $colour-blue !important;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
