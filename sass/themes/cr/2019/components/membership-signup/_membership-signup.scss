@@ -1,8 +1,17 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+   }
+
+
 .paragraph--membership-signup {
     *:focus {
         outline: none;
     }
 
+    display: inline-block;
+    position: relative;
     width: 100%;
     min-height: 100vh;
     // Add box-shadow image like
@@ -120,9 +129,9 @@
 
                     // Form
                     .form__fieldset {
-                        display: flex;
+                        display: block;
                         margin-top: 35px;
-                        position: relative;
+                        width: 100%;
 
                         label {
                             padding: 0;
@@ -130,20 +139,27 @@
                             line-height: 2.18;
                             font-weight: 500;
                             text-align: left;
-                            position: absolute;
-                            bottom: 40px;
+                            font-size: 11px;
+                            display: block;
+                            float: left;
                             text-transform: initial;
-                            max-width: 32.5%;
+                            width: 100%;
+                            margin: 0;
                         }
 
                         .form__field--wrapper {
-                            display: flex;
-                            align-items: center;
+                            display: block;
+                            float: left;
                             background-color: $colour-donate-grey;
                             border: 2px solid $colour-donate-grey;
-                            position: relative;
                             margin: 0;
-                            max-width: 32.5%;
+
+                            &.form {
+                                &__money,
+                                &__choice {
+                                    width: 50%;
+                                }
+                            }
 
                             .currency-input-label {
                                 position: absolute;
@@ -156,12 +172,18 @@
                                 border: none;
                             }
 
+                            select {
+                                background: $colour-donate-grey;
+                                padding: 0 26% 0 20px;
+                            }
+
                             input {
                                 padding-left: 30px;
                                 font-size: 20px;
                                 @include placeholder (#757575, 18px, $body-font);
                             }
                         }
+
 
                         .active-input {
                             background-color: $colour-donate-red;
@@ -229,13 +251,19 @@
 
                     .form__fieldset {
                         label {
-                            position: relative;
-                            top: 17px;
-                            flex: 2;
+                            width: 34.7%;
+                            padding-top: 20px;
+                            font-size: 15px;
                         }
 
                         .form__field--wrapper {
-                            flex: 3;
+                          &.form {
+                            &__money,
+                            &__choice  {
+                                width: 32.5%;
+                            }
+                        }
+
                         }
                     }
                 }
@@ -252,9 +280,8 @@
 
                 &--form {
                     select {
-                        padding: 5px;
+                        padding: 5px 20px;
                         font-size: 16px;
-                        background: $colour-donate-grey;
                     }
 
                     .form__fieldset {
