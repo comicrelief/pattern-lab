@@ -131,15 +131,15 @@
                         label {
                             padding: 0;
                             letter-spacing: -0.2px;
-                            line-height: 2.18;
                             font-weight: 500;
                             text-align: left;
                             font-size: 11px;
                             display: block;
                             float: left;
-                            text-transform: initial;
+                            text-transform: none;
                             width: 100%;
                             margin: 0;
+                            line-height: 2.18;
                         }
 
                         .form__field--wrapper {
@@ -203,20 +203,20 @@
                         }
 
                         &.hide-select-tag {
-                            width: 80%;
                             float: right;
 
                             label {
                                 padding-top: 18px;
                                 font-size: 11px;
-                                width: 35%;
+                                width: 34%;
                                 margin: 0;
+                                text-align: center;
                             }
 
                             .form__field--wrapper {
                                 &.form {
                                     &__money {
-                                        width: 65%;
+                                        width: 66%;
                                     }
 
                                     &__choice {
