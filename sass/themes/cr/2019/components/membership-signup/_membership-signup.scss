@@ -48,7 +48,7 @@
         &__wrapper-copy {
             text-align: center;
             margin: 0 auto;
-            margin-bottom: 50%;
+            margin-bottom: 75%;
             position: relative;
             width: calc(100% - (30 / 320) * 100%);
 
@@ -106,19 +106,18 @@
                         }
 
                         .active {
+                            background-color: $colour-donate-red;
                             color: $colour-white;
                             border: none;
                         }
 
-                        .btn:hover,
-                        .btn:focus {
-                            background-color: $colour-donate-dark-red;
-                            border-color: $colour-donate-dark-red;
-                            color: $colour-white;
+                        .btn:hover {
+                            border-color: $colour-donate-red;
+                            color: $colour-black;
                         }
 
-                        .active {
-                            background-color: $colour-donate-red;
+                        .btn:focus {
+                            color: $colour-white;
                         }
                     }
 
@@ -133,7 +132,7 @@
                             letter-spacing: -0.2px;
                             font-weight: 500;
                             text-align: left;
-                            font-size: 11px;
+                            font-size: 15px;
                             display: block;
                             float: left;
                             text-transform: none;
@@ -145,6 +144,7 @@
                         .form__field--wrapper {
                             display: block;
                             float: left;
+                            position: relative;
                             background-color: $colour-donate-grey;
                             border: 2px solid $colour-donate-grey;
                             margin: 0;
@@ -158,8 +158,10 @@
 
                             .currency-input-label {
                                 position: absolute;
-                                padding: 13px 12px;
+                                padding: 0px 15px;
                                 font-size: 20px;
+                                top: 50%;
+                                transform: translateY(-50%);
                             }
 
                             input,
@@ -207,8 +209,7 @@
 
                             label {
                                 padding-top: 18px;
-                                font-size: 11px;
-                                width: 34%;
+                                width: 50%;
                                 margin: 0;
                                 text-align: center;
                             }
@@ -216,7 +217,7 @@
                             .form__field--wrapper {
                                 &.form {
                                     &__money {
-                                        width: 66%;
+                                        width: 50%;
                                     }
 
                                     &__choice {
@@ -234,6 +235,12 @@
 
                     .form-error.show-error {
                         visibility: visible;
+                        font-size: 15px;
+                        font-weight: 500;
+
+                        &:before {
+                            margin-right: 3px;
+                        }
                     }
 
                     .btn.membership--submit {
@@ -259,7 +266,7 @@
             // Medium screen
             @include breakpoint($screen-md) {
                 width: calc(100% - (348 / 768) * 100%);
-                margin-bottom: 60%;
+                margin-bottom: 70%;
 
                 &--title {
                     padding-top: 45px;
@@ -276,7 +283,6 @@
                         label {
                             width: 34.7%;
                             padding-top: 10px;
-                            font-size: 15px;
                         }
 
                         .form__field--wrapper {
@@ -290,20 +296,9 @@
                         }
 
                         &.hide-select-tag {
-                            width: 85%;
                             label {
                                 padding-top: 12px;
-                                font-size: 15px;
-                                width: 40%;
                                 margin: 0;
-                            }
-
-                            .form__field--wrapper {
-                                &.form {
-                                    &__money {
-                                        width: 60%;
-                                    }
-                                }
                             }
                         }
                     }
