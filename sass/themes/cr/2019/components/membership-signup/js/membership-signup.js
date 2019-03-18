@@ -28,7 +28,6 @@
 			moneyBuyDescriptionHandler(descriptionCopies, position);
 		});
 
-
 		/* Watch for action or change on input */
 		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click",function(event){
 			var $thisInput = $(this);
@@ -50,6 +49,19 @@
 				}
 			}
 
+		});
+
+		/* Handle change of currency */
+		$('.paragraph--membership-signup select').change(function() {
+			var $thisSelect = $(this);
+			var $thisForm = $thisSelect.parents('form')
+			var currency = $thisSelect.find("option:selected").data("currency");
+			var givingType = $thisForm.data("giving-type");
+
+			if(givingType.toLowerCase() !== "MONTHLY".toLowerCase()) {
+				var currency = $thisForm.find("option:selected").data("currency");
+				$thisSelect.closest(".membership-signup__wrapper-copy--form-money").find("#js-currency-label").text(currency);
+			}
 		});
 
 		/* Handle enter-key keyboard event */
