@@ -64,17 +64,16 @@
 		});
 
       // Handle pressing next button event
-      $(".paragraph--membership-signup .membership--submit").click(function(e) {
-      	e.preventDefault();
-      	var $thisButton = $(this);
-      	var $thisForm = $thisButton.closest('form');
-				var amount = getAmount($thisForm);
-				handleDatabeforeSubmission($thisForm, amount, e);
-			});
+		$(".paragraph--membership-signup .membership--submit").click(function (e) {
+			e.preventDefault();
+			var $thisButton = $(this);
+			var $thisForm = $thisButton.closest('form');
+			var amount = getAmount($thisForm);
+			handleDatabeforeSubmission($thisForm, amount, e);
+		});
 
 
 		/**  FUNCTIONS  */
-
 		function setFormDefaults($thisParagraph, i) {
 			var thisID = 'paragraph--membership-signup-' + i;
 			$thisParagraph.attr('id', thisID);

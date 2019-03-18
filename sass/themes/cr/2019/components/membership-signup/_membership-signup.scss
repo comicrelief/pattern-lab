@@ -2,13 +2,14 @@
     content: "";
     clear: both;
     display: table;
-   }
+}
 
 .paragraph--membership-signup {
     display: inline-block;
     position: relative;
     width: 100%;
     min-height: 100vh;
+
     // Add box-shadow image like
     .img-shadow {
         width: auto;
@@ -17,17 +18,25 @@
         bottom: 0;
         left: 0;
         right: 0;
+
         &:before {
             content: "";
             position: absolute;
             width: 100%;
             height: 100%;
-            box-shadow: inset 0px 200px 200px -80px;
+            box-shadow: inset 0px 100px 200px -80px;
         }
+
+        @include breakpoint($screen-md) {
+            &:before {
+                box-shadow: inset 0px 125px 200px -80px;
+            }
+        }
+
         @include breakpoint($screen-lg) {
             top: 0;
             &:before {
-                box-shadow: inset 0px 200px 200px -150px;
+                content: none;
             }
         }
     }
@@ -38,6 +47,7 @@
         height: auto;
         object-fit: cover;
         display: block;
+
         @include breakpoint($screen-lg) {
             height: 100%;
         }
@@ -54,6 +64,7 @@
 
             &--title {
                 padding-top: 32px;
+
                 h3 {
                     margin-bottom: 10px;
                     text-transform: none;
@@ -65,7 +76,8 @@
                 background: $colour-white;
                 padding: 0 20px;
                 margin-top: 30px;
-                box-shadow: rgba(0,0,0,0.2) 0px 10px 60px;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
+                height: 400px;
 
                 p {
                     padding: 20px 0px;
@@ -118,6 +130,7 @@
 
                         .btn:focus {
                             color: $colour-white;
+                            outline: none;
                         }
                     }
 
@@ -150,6 +163,7 @@
                             margin: 0;
 
                             &.form {
+
                                 &__money,
                                 &__choice {
                                     width: 50%;
@@ -175,6 +189,7 @@
 
                             input {
                                 max-width: 100%;
+
                                 &:focus {
                                     outline: none;
                                 }
@@ -196,10 +211,11 @@
                                 color: white;
                             }
 
-                            &:nth-child(1){
+                            &:nth-child(1) {
                                 border-right: none;
                             }
-                            &:nth-child(3){
+
+                            &:nth-child(3) {
                                 border-left: none;
                             }
                         }
@@ -251,11 +267,13 @@
                         p {
                             font-weight: 500;
                             display: none;
+
                             .money-buy--desc-currency {
                                 position: relative;
                                 left: 2px;
                             }
                         }
+
                         .show-money-buy-copy {
                             display: inline-block;
                         }
@@ -286,12 +304,13 @@
                         }
 
                         .form__field--wrapper {
-                          &.form {
-                            &__money,
-                            &__choice  {
-                                width: 32.5%;
+                            &.form {
+
+                                &__money,
+                                &__choice {
+                                    width: 32.5%;
+                                }
                             }
-                        }
 
                         }
 
@@ -310,11 +329,14 @@
                 margin: 50px 100px;
                 width: 420px;
                 float: right;
+
                 &--title {
                     padding: 0;
                 }
 
                 &--form {
+                    height: 460px;
+
                     select {
                         padding: 5px 20px;
                         font-size: 16px;
@@ -340,6 +362,17 @@
             }
         }
 
+    }
+
+    // Copy signup centre
+    &--copy-centre {
+        @include breakpoint($screen-lg) {
+            .membership-signup__wrapper-copy {
+                float: left;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
 
     // Copy signup - form align left
