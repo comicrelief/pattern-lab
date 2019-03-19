@@ -17,6 +17,8 @@
 
 {% set cart_id = "RNKI_KILLIMANJARO_SOCIAL_LV" %}
 
+{% set randomID =  random(100, 10000) %}
+
 <section class="paragraph--membership-signup {{modifier_class}} bg--light-orange" data-current-amount="0">
 
   <div class="img-shadow objectfit">
@@ -61,7 +63,7 @@
             <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0" required="" type="number" value="">
           </div>
           <div class="form__field--wrapper form__choice form__field--currency ">
-            <select class="form__field form__field--currency" id="comicrelief_payinbundle_payment_currency" name="comicrelief_payinbundle_payment[currency]" {{ currencyDisabled  }}>
+            <select class="form__field form__field--currency" id="membership-currency-{{ randomID }}" name="comicrelief_payinbundle_payment[currency]" {{ currencyDisabled  }}>
               <optgroup label="currency">
                 <option data-currency="£" value="GBP">£ GBP
                 </option>

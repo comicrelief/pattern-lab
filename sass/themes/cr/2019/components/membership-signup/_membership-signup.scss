@@ -5,7 +5,7 @@
 }
 
 // Overide style of currency dropdown generated on Drupal
-#comicrelief_payinbundle_payment_currency-menu {
+[id^="membership-currency-"][id$="-menu"] {
 	width: 111.5px !important;
 	right: 3px;
 	position: relative;
@@ -92,7 +92,7 @@
 				padding: 0 20px;
 				margin-top: 30px;
 				box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
-				height: 460px;
+				height: 500px;
 
 				p {
 					padding: 20px 0px;
@@ -334,6 +334,7 @@
 
 				&--form {
 					padding: 0 40px;
+					height: 460px;
 
 					.form__fieldset {
 						label {

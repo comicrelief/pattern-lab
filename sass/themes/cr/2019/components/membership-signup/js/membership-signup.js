@@ -8,7 +8,6 @@
 			setFormDefaults($thisParagraph, i);
 		});
 
-
 		/* Handle money buy selection */
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
@@ -52,7 +51,7 @@
 		});
 
 		/* Handle change of currency */
-		$('.paragraph--membership-signup select').change(function() {
+		$('.paragraph--membership-signup select').on( "selectmenuchange input propertychange click", function() {
 			var $thisSelect = $(this);
 			var $thisForm = $thisSelect.parents('form')
 			var currency = $thisSelect.find("option:selected").data("currency");
@@ -63,6 +62,7 @@
 				$thisSelect.closest(".membership-signup__wrapper-copy--form-money").find("#js-currency-label").text(currency);
 			}
 		});
+
 
 		/* Handle enter-key keyboard event */
 		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function (e) {
