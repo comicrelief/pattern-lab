@@ -20,7 +20,8 @@
 }
 
 .paragraph--membership-signup {
-	display: inline-block;
+	display: flex;
+	justify-content: flex-end;
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
@@ -404,8 +405,9 @@
 		@include breakpoint($screen-lg) {
 			.membership-signup__wrapper-copy {
 				float: left;
-				left: 50%;
-				transform: translateX(-50%);
+				right: 50%;
+				transform: translateX(50%);
+				margin: 50px 0;
 			}
 		}
 	}
@@ -413,6 +415,7 @@
 	// Copy signup - form align left
 	&--copy-left {
 		@include breakpoint($screen-lg) {
+			justify-content: flex-start;
 			.membership-signup__wrapper-copy {
 				float: left;
 			}

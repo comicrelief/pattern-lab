@@ -142,7 +142,7 @@
 			/* Send data */
 			if (validateAmount(amount)) {
 				$thisForm.find(".form-error").removeClass('visible');
-				nextStepHandler(event, currency, amount, givingType);
+				nextStepHandler(event, currency, amount, givingType, cartId);
 			} else {
 				$thisForm.find(".form-error").addClass('visible');
 			}
@@ -158,7 +158,7 @@
 		}
 
 		/* Submit data */
-		function nextStepHandler(e, currency, amount, givingType) {
+		function nextStepHandler(e, currency, amount, givingType, cartId) {
 			e.preventDefault();
 			window.location.href = url + "?amount=" + amount + "&currency=" + currency + "&givingType=" + givingType
 		}
