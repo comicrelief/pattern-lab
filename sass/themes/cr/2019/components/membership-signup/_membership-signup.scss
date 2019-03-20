@@ -6,8 +6,8 @@
 
 // Overide style of currency dropdown generated on Drupal
 [id^="membership-currency-"][id$="-menu"] {
-	width: 111.5px !important;
-	right: 3px;
+	width: 113px !important;
+	right: 2px;
 	position: relative;
 	.ui-menu-item {
 		padding: 4px 0;
@@ -221,9 +221,14 @@
 									outline: none;
 								}
 
-								padding-left: 30px;
 								font-size: 20px;
 								@include placeholder(#757575, 18px, $body-font);
+								padding: 0px 30px;
+								line-height: 26px;
+								&:-ms-input-placeholder {
+									font-size: 20px;
+									line-height: 20px;
+								}
 							}
 						}
 
