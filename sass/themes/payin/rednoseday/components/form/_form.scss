@@ -203,6 +203,7 @@ button[type=submit] {
   }
 }
 
+
 .form__checkbox.form__checkbox-text-only label.form__checkbox {
   display: inline-block;
   padding: 0 2px 1px;
@@ -252,6 +253,12 @@ button.payment-button-card {
 .form__field--address-detail {
   label.form__checkbox{
     padding: 0;
+  }
+}
+
+.form__row--payment {
+  .form__field--address-detail label.form__checkbox {
+    padding-top: 7px;
   }
 }
 
