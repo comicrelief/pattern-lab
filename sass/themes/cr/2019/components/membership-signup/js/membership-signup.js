@@ -31,8 +31,11 @@
 		/* Watch for action or change on input */
 		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click",function(event){
 			var $thisInput = $(this);
-			var amount = parseFloat($thisInput.val());
 			var $thisForm = $thisInput.parents('form');
+			var amount = parseFloat($thisInput.val());
+
+			/** Reset current amount to zero  */
+			currentAmount($thisForm, amount);
 			$thisForm.find(".form__field--wrapper").addClass("active-input")
 			$thisForm.find('.select-amount-btn').removeClass("active");
 			$thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
@@ -63,7 +66,6 @@
 				$thisSelect.closest(".membership-signup__wrapper-copy--form-money").find("#js-currency-label").text(currency);
 			}
 		});
-
 
 		/* Handle enter-key keyboard event */
 		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function (e) {
@@ -124,6 +126,9 @@
 
 		/** Set value of data current amount */
 		function currentAmount(selector, amount) {
+			if(isNaN(amount)){
+				amount = 0
+			}
 			selector.parents(".paragraph--membership-signup").attr("data-current-amount", amount);
 		}
 
@@ -143,10 +148,10 @@
 			var clientId = $thisForm.data('client-id');
 			/* Send data */
 			if (validateAmount(amount)) {
-				$thisForm.find(".form-error").removeClass('visible');
+				$thisForm.find(".form-error").removeClass('show-error');
 				nextStepHandler(event, currency, amount, givingType, cartId, clientId);
 			} else {
-				$thisForm.find(".form-error").addClass('visible');
+				$thisForm.find(".form-error").addClass('show-error');
 			}
 		}
 
