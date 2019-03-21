@@ -94,7 +94,7 @@
 				padding: 0 20px;
 				margin-top: 30px;
 				box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
-				height: 500px;
+				height: 520px;
 
 				p {
 					padding: 20px 0px;
@@ -379,6 +379,10 @@
 
 				&--title {
 					padding: 0;
+				}
+
+				&--form {
+					height: auto;
 				}
 
 				&--form {
