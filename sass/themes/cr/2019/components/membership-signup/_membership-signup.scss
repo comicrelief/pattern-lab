@@ -66,6 +66,7 @@
 
 		@include breakpoint($screen-lg) {
 			height: 100%;
+			object-position: left;
 		}
 	}
 
@@ -329,7 +330,7 @@
 			// Medium screen
 			@include breakpoint($screen-md) {
 				width: calc(100% - (348 / 768) * 100%);
-				margin-bottom: 70%;
+				margin-bottom: 50%;
 
 				&--title {
 					padding-top: 45px;
@@ -425,6 +426,9 @@
 			.membership-signup__wrapper-copy {
 				float: left;
 			}
+		}
+		img {
+			object-position: right;
 		}
 	}
 }
