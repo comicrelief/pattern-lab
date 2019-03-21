@@ -2,6 +2,7 @@
 	$(document).ready(function() {
 		var url = "https://donation.comicrelief.com/";
 		var pattern = /^[0-9]+([,.][0-9]+)?$/;
+		var dataLayer ;
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
@@ -139,10 +140,11 @@
 			var givingType = $thisForm.data('giving-type');
 			/* Cart ID */
 			var cartId = $thisForm.data('cart-id');
+			var clientId = $thisForm.data('client-id');
 			/* Send data */
 			if (validateAmount(amount)) {
 				$thisForm.find(".form-error").removeClass('visible');
-				nextStepHandler(event, currency, amount, givingType, cartId);
+				nextStepHandler(event, currency, amount, givingType, cartId, clientId);
 			} else {
 				$thisForm.find(".form-error").addClass('visible');
 			}
@@ -158,10 +160,9 @@
 		}
 
 		/* Submit data */
-		function nextStepHandler(e, currency, amount, givingType, cartId) {
+		function nextStepHandler(e, currency, amount, givingType, cartId, clientId) {
 			e.preventDefault();
-			console.log(currency);
-			window.location.href = url + "?clientOverride=the_fix&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&clientId=" + cartId;
+			window.location.href = url + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId;
 		}
 	});
 })(jQuery);
