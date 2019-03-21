@@ -1,6 +1,6 @@
 (function($) {
 	$(document).ready(function() {
-		var url = "https://comicrelief.com/donate";
+		var url = "https://donation.comicrelief.com/";
 		var pattern = /^[0-9]+([,.][0-9]+)?$/;
 
 		$('.paragraph--membership-signup').each(function(i) {
@@ -160,7 +160,8 @@
 		/* Submit data */
 		function nextStepHandler(e, currency, amount, givingType, cartId) {
 			e.preventDefault();
-			window.location.href = url + "?amount=" + amount + "&currency=" + currency + "&givingType=" + givingType
+			console.log(currency);
+			window.location.href = url + "?clientOverride=the_fix&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&clientId=" + cartId;
 		}
 	});
 })(jQuery);
