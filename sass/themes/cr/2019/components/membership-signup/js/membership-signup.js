@@ -2,31 +2,37 @@
 	$(document).ready(function() {
 		var url = "https://donation.comicrelief.com/";
 		var pattern = /^[0-9]+([,.][0-9]+)?$/;
-		var dataLayer ;
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
 			setFormDefaults($thisParagraph, i);
 		});
 
+
 		/* Handle money buy selection */
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
 			var $thisBtn = $(this);
 			var $thisForm= $thisBtn.closest('form');
+
 			$thisForm.find('select').css("background", "transparent");
 			$thisForm.find(".form__field--wrapper").removeClass('active-input');
 			$thisForm.find(".form-error").removeClass('show-error');
 			$thisForm.find('.select-amount-btn').removeClass("active");
 			$thisForm.find("input[name='membership_amount']").val("");
 			$(this).addClass("active");
-			var amount = parseFloat($thisBtn.text().replace(/\D/g, ""));
+
 			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
 			var descriptionCopies = $thisBtnParent.find(".donation-copy").children();
 			var position = $thisBtn.data("position");
-			currentAmount($thisBtn, amount);
+
 			moneyBuyDescriptionHandler(descriptionCopies, position);
+
+			var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
+			setCurrentDataAmount($thisForm, moneyBuySelected);
+
 		});
+
 
 		/* Watch for action or change on input */
 		$(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click",function(event){
@@ -34,25 +40,26 @@
 			var $thisForm = $thisInput.parents('form');
 			var amount = parseFloat($thisInput.val());
 
-			/** Reset current amount to zero  */
-			currentAmount($thisForm, amount);
 			$thisForm.find(".form__field--wrapper").addClass("active-input")
 			$thisForm.find('.select-amount-btn').removeClass("active");
 			$thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
 			$thisForm.find('.random-description').addClass('show-money-buy-copy');
 
+			/** Reset current amount to zero  */
+			setCurrentDataAmount($thisInput, 0);
+
 			// Check if user enters input
 			if (event.type === "input") {
 				if (validateAmount(amount) && !isNaN(amount)) {
 					$thisForm.find(".form-error").removeClass('show-error');
-					currentAmount($thisForm, amount);
+					setCurrentDataAmount($thisInput, amount);
 				} else {
 					$thisForm.find(".form-error").addClass('show-error');
-					currentAmount($thisForm, 0);
+					setCurrentDataAmount($thisInput, 0);
 				}
 			}
-
 		});
+
 
 		/* Handle change of currency */
 		$('.paragraph--membership-signup select').on( "selectmenuchange input propertychange click", function() {
@@ -67,24 +74,45 @@
 			}
 		});
 
+
 		/* Handle enter-key keyboard event */
 		$(".paragraph--membership-signup input[name='membership_amount']").keypress(function (e) {
 			var $thisInput = $(this);
 			if (e.which == 13) {
 				e.preventDefault();
 				var $thisForm = $thisInput.closest('form');
-				var amount = getAmount($thisForm)
-				handleDatabeforeSubmission($thisForm, amount, e);
+				var inputValue = parseFloat($thisInput.val())
+				if(!isNaN(inputValue)) {
+					setCurrentDataAmount($thisInput, inputValue);
+					handleDatabeforeSubmission($thisForm, inputValue, e);
+				} else {
+					setCurrentDataAmount($thisInput, 0);
+					handleDatabeforeSubmission($thisForm, 0, e);
+				}
 			}
 		});
+
 
       // Handle pressing next button event
 		$(".paragraph--membership-signup .membership--submit").click(function (e) {
 			e.preventDefault();
 			var $thisButton = $(this);
 			var $thisForm = $thisButton.closest('form');
-			var amount = getAmount($thisForm);
-			handleDatabeforeSubmission($thisForm, amount, e);
+			var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
+			var inputValue = parseFloat($thisForm.find("input[name='membership_amount']").val())
+
+			if(!isNaN(moneyBuySelected)){
+				setCurrentDataAmount($thisForm, moneyBuySelected);
+				handleDatabeforeSubmission($thisForm, moneyBuySelected, e);
+			} else if(!isNaN(inputValue)){
+				setCurrentDataAmount($thisButton, inputValue);
+				handleDatabeforeSubmission($thisForm, inputValue, e);
+			} else {
+				setCurrentDataAmount($thisButton, 0);
+				handleDatabeforeSubmission($thisForm, 0, e);
+			}
+
+			$thisForm.parents('.paragraph--membership-signup').attr('data-current-amount', moneyBuySelected)
 		});
 
 
@@ -107,8 +135,10 @@
 			}
 
 			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
+
 			$newParagraphWithId.attr("data-current-amount", amount);
 			var position = $newParagraphWithId.find(".select-amount-btn.active").data("position");
+
 			/* Add money buy description && currency */
 			var descriptionCopies = $newParagraphWithId.find(".donation-copy").children();
 			moneyBuyDescriptionHandler(descriptionCopies, position);
@@ -125,16 +155,8 @@
 		}
 
 		/** Set value of data current amount */
-		function currentAmount(selector, amount) {
-			if(isNaN(amount)){
-				amount = 0
-			}
+		function setCurrentDataAmount(selector, amount) {
 			selector.parents(".paragraph--membership-signup").attr("data-current-amount", amount);
-		}
-
-		/** Get amount from value of data current amount  */
-		function getAmount(selector) {
-			return selector.parents(".paragraph--membership-signup").data("current-amount");
 		}
 
 		/* Handle data before submission */
