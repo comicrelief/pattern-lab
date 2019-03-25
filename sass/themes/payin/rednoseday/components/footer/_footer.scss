@@ -1,0 +1,22 @@
+footer[role=contentinfo] {
+  padding: 50px 25px 185px;
+  background-color: $colour-deep-violet;
+  overflow: hidden;
+
+  @media (min-width: 740px) {
+    padding: 50px 25px 140px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .footer__social-links {
+    margin: 0;
+
+    li {
+      margin: 0 1.25%;
+    }
+  }
+}

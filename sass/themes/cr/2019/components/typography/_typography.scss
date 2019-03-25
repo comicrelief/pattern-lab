@@ -143,3 +143,31 @@ i.font--family-light {
 label {
   @extend .text--label;
 }
+
+/* Used to strongarm styles for Membership page,
+ * overriding general bg-color/font-color rules */
+.font--yellow {
+  color: $colour-yellow !important;
+}
+
+.font--blue {
+  color: $colour-blue !important;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+br.break--md-lg {
+  display: none;
+  @include breakpoint($screen-md) {
+    display: inline;
+  }
+}
+
+br.break--lg {
+  display: none;
+  @include breakpoint($screen-lg) {
+    display: inline;
+  }
+}
