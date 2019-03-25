@@ -20,7 +20,7 @@
 
 {% set randomID =  random(100, 10000) %}
 
-<section class="paragraph--membership-signup {{modifier_class}} bg--light-orange" data-current-amount="0">
+<section class="paragraph--membership-signup {{modifier_class}} bg--light-orange" data-current-amount="0"  >
 
   <div class="img-shadow objectfit">
       <picture>
@@ -78,7 +78,7 @@
             </select>
           </div>
         </div>
-        <span class="form-error" aria-message-error="field-error--amount"> Please enter a number between 1 and 5000 </span>
+        <span class="form-error" aria-message-error="field-error--amount"> Please enter a number between 1 and 5000 with only 2 numbers after the decimal. </span>
         <button class="btn btn--membership-red membership--submit" type="submit">Next step
         </button>
         <div class="donation-copy">

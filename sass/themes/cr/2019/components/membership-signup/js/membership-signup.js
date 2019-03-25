@@ -1,7 +1,6 @@
 (function($) {
 	$(document).ready(function() {
-		var url = "https://donation.comicrelief.com/";
-		var pattern = /^[0-9]+([,.][0-9]+)?$/;
+		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
@@ -189,7 +188,16 @@
 		/* Submit data */
 		function nextStepHandler(e, currency, amount, givingType, cartId, clientId) {
 			e.preventDefault();
-			window.location.href = url + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId;
+			var url = "https://donation-staging.spa.comicrelief.com/";
+			var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
+			var donationLink = getUrl ? getUrl : url;
+
+			/** Affiliate value */
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var affiliateValue = url.searchParams.get("affiliate")? url.searchParams.get("affiliate") : 'generic';
+
+			window.location.href = donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue;
 		}
 	});
 })(jQuery);
