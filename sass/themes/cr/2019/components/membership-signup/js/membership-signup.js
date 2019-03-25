@@ -215,7 +215,8 @@
 			var url = new URL(url_string);
 			var affiliateValue = url.searchParams.get("affiliate")? url.searchParams.get("affiliate") : 'generic';
 
-			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue);
+			var siteUrl = window.location.href;
+			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + siteUrl) ;
 		}
 	});
 })(jQuery);
