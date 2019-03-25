@@ -26,6 +26,12 @@
 	width: 100%;
 	min-height: 100vh;
 
+	@include breakpoint($screen-lg) {
+		min-height: 0;
+		height: 100vh;
+		max-height: 900px;
+	}
+
 	// Add box-shadow image like
 	.img-shadow {
 		width: auto;
@@ -66,7 +72,7 @@
 
 		@include breakpoint($screen-lg) {
 			height: 100%;
-			object-position: left;
+			object-position: 15%;
 		}
 	}
 
@@ -420,6 +426,10 @@
 				transform: translateX(50%);
 				margin: 50px 0;
 			}
+			
+			img {
+				object-position: center;
+			}
 		}
 	}
 
@@ -432,7 +442,7 @@
 			}
 		}
 		img {
-			object-position: right;
+			object-position: 65%;
 		}
 	}
 }
