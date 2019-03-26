@@ -1,0 +1,33 @@
+// ==========================================================================
+// CR19
+// ==========================================================================
+@import "../../cr/2019/cr19";
+@import "../../../base/components/just-in-time-block/just-in-time";
+
+// ==========================================================================
+// Payin variables
+// ==========================================================================
+@import "../default/variables/_payin-mixins";
+@import "../default/variables/_payin-colours";
+
+// Payin UI components
+// ==========================================================================
+@import "../default/components/_payin-form";
+@import "../default/components/checkbox/checkbox";
+// ==========================================================================
+
+// ==========================================================================
+// Payin Rednoseday components
+// ==========================================================================
+@import "components/header/_header.scss";
+@import "components/form/_form";
+@import "components/just-in-time-block/just-in-time";
+@import "components/failure/_failure.scss";
+@import "components/footer/_footer.scss";
+
+.cards {
+  a {
+    text-decoration: none;
+  }
+}
+

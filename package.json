@@ -45,7 +45,7 @@
     "grunt-contrib-uglify": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-kss": "5.0.1",
-    "grunt-modernizr": "^1.0.2",
+    "grunt-modernizr": "1.0.3",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",
     "grunt-sass-globbing": "^1.5.1",
