@@ -1086,7 +1086,7 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-customizr@^1.2.1, "customizr@https://github.com/Modernizr/customizr/tarball/develop":
+customizr@1.2.1, "customizr@https://github.com/Modernizr/customizr/tarball/develop":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/customizr/-/customizr-1.2.1.tgz#f6f246c708120558da8ab7038604f0f5bf9ee01b"
   dependencies:

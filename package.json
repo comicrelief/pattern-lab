@@ -58,7 +58,7 @@
     "snyk": "^1.36.2"
   },
   "resolutions": {
-    "customizr": "^1.2.1"
+    "customizr": "1.2.1"
   },
   "repository": {
     "type": "git",
