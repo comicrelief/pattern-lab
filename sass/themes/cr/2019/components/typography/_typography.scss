@@ -154,6 +154,14 @@ label {
   color: $colour-blue !important;
 }
 
+.font--red {
+  color: $colour-red !important;
+}
+
+.font--blue {
+  color: $colour-blue !important;
+}
+
 // Per breakpoint tweaks for Membership
 .no-wrap--md-lg {
   @include breakpoint($screen-md) {
