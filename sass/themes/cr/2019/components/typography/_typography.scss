@@ -146,21 +146,18 @@ label {
 
 /* Used to strongarm styles for Membership page,
  * overriding general bg-color/font-color rules */
-.font--yellow {
-  color: $colour-yellow !important;
-}
-
-.font--blue {
-  color: $colour-blue !important;
-}
-
-.font--red {
-  color: $colour-red !important;
-}
-
-.font--blue {
-  color: $colour-blue !important;
-}
+.font--white { color: $colour-white !important; }
+.font--red { color: $colour-red !important; }
+.font--deep-violet { color: $colour-deep-violet !important; }
+.font--grey { color: $colour-grey !important; }
+.font--coral { color: $colour-coral !important; }
+.font--orange { color: $colour-orange !important; }
+.font--yellow { color: $colour-yellow !important; }
+.font--green { color: $colour-green !important; }
+.font--blue { color: $colour-blue !important; }
+.font--magenta { color: $colour-magenta !important; }
+.font--purple { color: $colour-purple !important; }
+.font--teal { color: $colour-teal !important; }
 
 // Per breakpoint tweaks for Membership
 .no-wrap--md-lg {
