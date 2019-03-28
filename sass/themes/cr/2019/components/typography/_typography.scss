@@ -154,8 +154,16 @@ label {
   color: $colour-blue !important;
 }
 
-.no-wrap {
-  white-space: nowrap;
+.no-wrap--md-lg {
+  @include breakpoint($screen-md) {
+    white-space: nowrap;
+  }
+}
+
+.no-wrap--lg {
+  @include breakpoint($screen-lg) {
+    white-space: nowrap;
+  }
 }
 
 br.break--md-lg {
