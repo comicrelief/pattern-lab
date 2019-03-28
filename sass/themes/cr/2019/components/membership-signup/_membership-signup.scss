@@ -27,7 +27,7 @@
 	min-height: 100vh;
 
 	@include breakpoint($screen-lg) {
-		min-height: 0;
+		min-height: 750px;
 		height: 100vh;
 		max-height: 900px;
 	}
