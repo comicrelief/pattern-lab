@@ -26,31 +26,38 @@
 @import "components/copy-copy/copy-copy";
 @import "components/content-wall/content-wall";
 @import "components/bg-video-copy/bg-video-copy";
+@import "components/membership-signup/membership-signup";
+
 @import "components/grant-page/grant-page";
 
 body {
   font-family: $montserrat;
   font-weight: 500;
 }
+
 header[role=banner] {
   .site-logo {
     margin-top: 20px;
-  }   
+  }
 }
 
 // Social links
 .footer__social-links {
   margin: 0 0 20px;
+
   li {
     margin: 5px 4px 0;
+
     @include breakpoint($screen-md) {
       margin: 5px 8px 0;
     }
+
     a {
       -webkit-transition: 0.5s opacity;
       transition: 0.5s opacity;
       border-radius: 50%;
       background: black;
+
       &:hover {
         opacity: 0.6;
       }
