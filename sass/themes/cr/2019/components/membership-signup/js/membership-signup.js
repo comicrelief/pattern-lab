@@ -1,6 +1,12 @@
 (function($) {
+
+	var dataLayer;
+
 	$(document).ready(function() {
+
+		dataLayer = window.dataLayer = window.dataLayer || [];
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
+		var allParagraphs = [];
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
@@ -12,7 +18,7 @@
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
 			var $thisBtn = $(this);
-			var $thisForm= $thisBtn.closest('form');
+			var $thisForm = $thisBtn.closest('form');
 
 			$thisForm.find('select').css("background", "transparent");
 			$thisForm.find(".form__field--wrapper").removeClass('active-input');
@@ -30,6 +36,8 @@
 			var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
 			setCurrentDataAmount($thisForm, moneyBuySelected);
 
+			addToBasket($thisForm, $thisBtn);
+			
 		});
 
 
@@ -121,6 +129,11 @@
 			$thisParagraph.attr('id', thisID);
 			var $newParagraphWithId = $('#'+ thisID);
 
+			var $thisForm = $newParagraphWithId.find('form');
+			var cartID = $thisForm.data('cart-id');
+			var clientID = $thisForm.data('client-id');
+			var theseButtons = [];
+
 			/* Set Box shadow colour */
 			var colour = $newParagraphWithId.css("backgroundColor");
 			if (colour) {
@@ -141,6 +154,27 @@
 			/* Add money buy description && currency */
 			var descriptionCopies = $newParagraphWithId.find(".donation-copy").children();
 			moneyBuyDescriptionHandler(descriptionCopies, position);
+
+			// Cache all our button info for this paragraph in array, to pass to the main paragraph array
+			$newParagraphWithId.find(".select-amount-btn").each( function(i) {
+				theseButtons[i] = {
+					position: $(this).data("position"),
+					amount: $(this).data("amount")
+				}
+			});
+
+			// Cache all of these for ease-of-use later & prevent endless DOM traversal
+			allParagraphs[thisID] = {
+				giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
+				current_amount: amount,
+				active_btn_pos: position,
+				cart_id: cartID,
+				client_id: clientID,
+				buttons: theseButtons
+			}; 
+
+			/* Pass the cached row to set up the dataLayer */
+      initDataLayer($newParagraphWithId, thisID);
 		}
 
 		/** Money buy description handler */
@@ -160,13 +194,11 @@
 
 		/* Handle data before submission */
 		function handleDatabeforeSubmission($thisForm, amount, event) {
-			/* Get currency */
 			var currency = $thisForm.find("option:selected").val();
-			/* Giving type */
 			var givingType = $thisForm.data('giving-type');
-			/* Cart ID */
 			var cartId = $thisForm.data('cart-id');
 			var clientId = $thisForm.data('client-id');
+
 			/* Send data */
 			if (validateAmount(amount)) {
 				$thisForm.find(".form-error").removeClass('show-error');
@@ -182,24 +214,6 @@
 				return true
 			} else {
 				return false
-			}
-		}
-
-		/** Rdirect function for browser support */
-		function redirect(url) {
-			var ua = navigator.userAgent.toLowerCase(),
-				isIE = ua.indexOf('msie') !== -1,
-				version = parseInt(ua.substr(4, 2), 10);
-			// Internet Explorer 8 and lower
-			if (isIE && version < 9) {
-				var link = document.createElement('a');
-				link.href = url;
-				document.body.appendChild(link);
-				link.click();
-			}
-			// All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
-			else {
-				window.location.href = url;
 			}
 		}
 
@@ -220,7 +234,76 @@
 				url_string = url_string.substring(0, url_string.indexOf('?'));
 			}
 
-			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string) ;
+			window.location.href = donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string;
 		}
+
+		 /* Set-up data layer stuff on pageload */
+    function initDataLayer($element, thisID) {
+
+    	// Grab this Paragraph from our cached array
+    	var thisParagraph = allParagraphs[thisID];
+
+      // Construct object to push to datalayer, stating with Other Amount field
+      var ecommerceObj = {
+        'ecommerce': {
+          'currencyCode': 'GBP',
+          'impressions': [{
+            id:'manual-entry',      
+            name:'manual-entry',      
+            price:'0.00',       
+            category: thisParagraph['cart_id'],
+            position: 0,
+            list: thisParagraph['client_id'] + '_' + thisID,
+          }],
+        }
+      };
+
+      // Construct obj to represent each moneybuy button
+      for (i = 0; i < thisParagraph['buttons'].length; i++) {
+      	var thisObj = {
+          id:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
+          name:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
+          price: thisParagraph['buttons'][i]['amount'] + '.00',      
+          brand:'cr-membership',  
+          category: thisParagraph['cart_id'],   
+          position: thisParagraph['buttons'][i]['position'],
+          list: thisParagraph['client_id'] + '_' + thisID,
+          dimenstion10: thisParagraph['giving_type']
+        };
+
+        // Add the object to the impressions array
+        ecommerceObj['ecommerce']['impressions'].push(thisObj);
+      };
+
+      // Push to the data layer
+      console.log("finished ecommerceObj for " + thisID + ": ", ecommerceObj);
+      // TODO: ADD THIS BACK! dataLayer.push(ecommerceObj);
+    }
+
+    function addToBasket($thisForm, $thisButton) {
+      var thisCartID = $thisForm.data('cart-id');
+      var thisClientID = $thisForm.data('client-id');
+      var regularOrSingle = givingtype == 'MONTHLY' ? 'regular-payment': 'single-payment';
+
+      // Construct object to push to datalayer
+      var ecommerceObj = {
+        'ecommerce': {
+          'currencyCode': 'GBP',
+          'add': {
+            'products': [{
+          		id:'moneybuy-' + thisAmount,
+          		name:'moneybuy-' + thisAmount,
+          		price: thisAmount + '.00',      
+          		brand:'cr-membership',  
+          		category: thisCartID, 
+              quantity:1,
+          		dimenstion10: regularOrSingle
+            }],
+          },
+        },
+        'event': 'addToBasket'
+      };
+    }
+
 	});
 })(jQuery);
