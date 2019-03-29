@@ -210,13 +210,15 @@
 			var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
 			var donationLink = getUrl ? getUrl : url;
 
-			/** Affiliate value */
+			/* Affiliate value */
 			var url_string = window.location.href;
 			var url = new URL(url_string);
 			var affiliateValue = url.searchParams.get("affiliate")? url.searchParams.get("affiliate") : 'generic';
 
-			// Strip out all params now we've saved our required 'affiliate' value
-			url_string = url_string.substring(0, url_string.indexOf('?'));
+			/* Strip out all params now we've saved our required 'affiliate' value */
+			if (url_string.indexOf('?') > -1 ) {
+				url_string = url_string.substring(0, url_string.indexOf('?'));
+			}
 
 			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string) ;
 		}
