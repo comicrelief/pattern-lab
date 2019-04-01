@@ -1,43 +1,46 @@
 (function($) {
 
-	var dataLayer;
-
 	$(document).ready(function() {
 
-		dataLayer = window.dataLayer = window.dataLayer || [];
+		var dataLayer = window.dataLayer = window.dataLayer || [];
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
-		var allParagraphs = [];
+    var allRows = [];
 
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
 			setFormDefaults($thisParagraph, i);
 		});
 
-
 		/* Handle money buy selection */
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
-			var $thisBtn = $(this);
-			var $thisForm = $thisBtn.closest('form');
 
-			$thisForm.find('select').css("background", "transparent");
-			$thisForm.find(".form__field--wrapper").removeClass('active-input');
-			$thisForm.find(".form-error").removeClass('show-error');
-			$thisForm.find('.select-amount-btn').removeClass("active");
-			$thisForm.find("input[name='membership_amount']").val("");
-			$(this).addClass("active");
+      if ( $(this).hasClass('active')) {
+        return;
+      } else {
+  			var $thisBtn = $(this);
+  			var $thisForm = $thisBtn.closest('form');
+        var thisID = $thisBtn.closest('.paragraph--membership-signup').attr('id');
 
-			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
-			var descriptionCopies = $thisBtnParent.find(".donation-copy").children();
-			var position = $thisBtn.data("position");
+  			$thisForm.find('select').css("background", "transparent");
+  			$thisForm.find(".form__field--wrapper").removeClass('active-input');
+  			$thisForm.find(".form-error").removeClass('show-error');
+  			$thisForm.find('.select-amount-btn').removeClass("active");
+  			$thisForm.find("input[name='membership_amount']").val("");
+  			$(this).addClass("active");
 
-			moneyBuyDescriptionHandler(descriptionCopies, position);
+  			var $thisBtnParent = $thisBtn.parents(".membership-signup__wrapper-copy--form-money");
+  			var descriptionCopies = $thisBtnParent.find(".donation-copy").children();
+  			var position = $thisBtn.data("position");
 
-			var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
-			setCurrentDataAmount($thisForm, moneyBuySelected);
+  			moneyBuyDescriptionHandler(descriptionCopies, position);
 
-			addToBasket($thisForm, $thisBtn);
-			
+  			var moneyBuySelected = $thisBtn.data("amount");
+
+  			setCurrentDataAmount($thisForm, moneyBuySelected);
+
+        dataLayer_updateBasket(thisID, position, 'add');
+      }
 		});
 
 
@@ -105,7 +108,7 @@
 			e.preventDefault();
 			var $thisButton = $(this);
 			var $thisForm = $thisButton.closest('form');
-			var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
+			var moneyBuySelected = $thisForm.find('.select-amount-btn.active').data("amount");
 			var inputValue = parseFloat($thisForm.find("input[name='membership_amount']").val())
 
 			if(!isNaN(moneyBuySelected)){
@@ -123,11 +126,17 @@
 		});
 
 
-		/**  FUNCTIONS  */
+		/* FUNCTIONS */
 		function setFormDefaults($thisParagraph, i) {
 			var thisID = 'paragraph--membership-signup-' + i;
 			$thisParagraph.attr('id', thisID);
 			var $newParagraphWithId = $('#'+ thisID);
+
+      /** Check giving type before taking decision to hide select tag or not */
+      var givingType = $newParagraphWithId.find("form").data("giving-type");
+      if(givingType == "MONTHLY") {
+        $newParagraphWithId.find('.form__fieldset').addClass("hide-select-tag");
+      }
 
 			var $thisForm = $newParagraphWithId.find('form');
 			var cartID = $thisForm.data('cart-id');
@@ -140,13 +149,7 @@
 				$('.img-shadow', $newParagraphWithId).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
 			}
 
-			/** Check giving type before taking decision to hide select tag or not */
-			var givingType = $newParagraphWithId.find("form").data("giving-type");
-			if(givingType.toLowerCase() === "MONTHLY".toLowerCase()) {
-				$newParagraphWithId.find('.form__fieldset').addClass("hide-select-tag");
-			}
-
-			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
+			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").data("amount"));
 
 			$newParagraphWithId.attr("data-current-amount", amount);
 			var position = $newParagraphWithId.find(".select-amount-btn.active").data("position");
@@ -157,14 +160,16 @@
 
 			// Cache all our button info for this paragraph in array, to pass to the main paragraph array
 			$newParagraphWithId.find(".select-amount-btn").each( function(i) {
-				theseButtons[i] = {
-					position: $(this).data("position"),
+        // Use as both index and position val
+        var pos = $(this).data("position");
+				theseButtons[pos] = {
+					position: pos,
 					amount: $(this).data("amount")
 				}
 			});
 
 			// Cache all of these for ease-of-use later & prevent endless DOM traversal
-			allParagraphs[thisID] = {
+			allRows[thisID] = {
 				giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
 				current_amount: amount,
 				active_btn_pos: position,
@@ -239,11 +244,9 @@
 
 		 /* Set-up data layer stuff on pageload */
     function initDataLayer($element, thisID) {
-
     	// Grab this Paragraph from our cached array
-    	var thisParagraph = allParagraphs[thisID];
-
-      // Construct object to push to datalayer, stating with Other Amount field
+    	var thisParagraph = allRows[thisID];
+      // Construct object to push to datalayer, staring with Other Amount field
       var ecommerceObj = {
         'ecommerce': {
           'currencyCode': 'GBP',
@@ -258,8 +261,9 @@
         }
       };
 
-      // Construct obj to represent each moneybuy button
-      for (i = 0; i < thisParagraph['buttons'].length; i++) {
+      /*  Construct obj to represent each moneybuy button
+          use 1-index, not zero as it maps to our btn 'position' values */
+      for (i = 1; i < thisParagraph['buttons'].length; i++) {
       	var thisObj = {
           id:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
           name:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
@@ -271,52 +275,46 @@
           dimenstion10: thisParagraph['giving_type']
         };
 
-        // Add the object to the impressions array
+        // Add this 'button' object to the impressions array
         ecommerceObj['ecommerce']['impressions'].push(thisObj);
       };
 
       // Push to the data layer
-      console.log("finished ecommerceObj for " + thisID + ": ", ecommerceObj);
-      // TODO: ADD THIS BACK! dataLayer.push(ecommerceObj);
+      console.log("EcommerceObj for " + thisID + ": ", ecommerceObj);
+      //dataLayer.push(ecommerceObj);
+
+      // If we have a default 'active' button, add it to the basket
+      var $activeBtn = $element.find('.select-amount-btn.active');
+
+      if ($activeBtn.length > 0) {
+        dataLayer_updateBasket(thisID, $activeBtn.data('position'), 'add');
+      }
     }
 
-    function addToBasket($thisForm, $thisButton){
-      var thisID = $thisForm.closest('.paragraph--membership-signup').attr('id');
-
-
-/*      allParagraphs[thisID] = {
-        giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
-        current_amount: amount,
-        active_btn_pos: position,
-        cart_id: cartID,
-        client_id: clientID,
-        buttons: theseButtons
-      }; */
-
-      // MONDAY START HERE
-      var thisCartID = allParagraphs[thisID]['card_id'];
-      var thisClientID =  allParagraphs[thisID]['client_id'];
-      var regularOrSingle = allParagraphs[thisID]['giving_type'];
-
-      // Construct object to push to datalayer
-      var ecommerceObj = {
+    /* Add or remove moneybuy 'products' from the hypothetical basket */
+    function dataLayer_updateBasket(thisID, thisBtnPos, type) {
+      var thisAmount = allRows[thisID]['buttons'][thisBtnPos]['amount'];
+      var ecommerceObj2 = {
         'ecommerce': {
-          'currencyCode': 'GBP',
-          'add': {
-            'products': [{
-          		id:'moneybuy-' + thisAmount,
-          		name:'moneybuy-' + thisAmount,
-          		price: thisAmount + '.00',      
-          		brand:'cr-membership',  
-          		category: thisCartID, 
-              quantity:1,
-          		dimenstion10: regularOrSingle
-            }],
-          },
+          'currencyCode': 'GBP', 
         },
-        'event': 'addToBasket'
+        'event': type ===  'add' ? 'addToBasket' : 'removeFromBasket'
       };
-    }
 
+      ecommerceObj2['ecommerce'][type] = {
+        'products': [{
+          id:'moneybuy-' + thisAmount,
+          name:'moneybuy-' + thisAmount,
+          price: thisAmount + '.00',      
+          brand:'cr-membership',  
+          category: allRows[thisID]['cart_id'], 
+          quantity: 1,
+          dimenstion10: allRows[thisID]['giving_type']
+        }],
+      };
+
+       console.log('dataLayer_updateBasket - type: ' + type, ecommerceObj2);
+       // dataLayer.push(ecommerceObj);
+    }
 	});
 })(jQuery);
