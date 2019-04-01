@@ -2,6 +2,9 @@
 	$(document).ready(function() {
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
 
+		/* Get  website-page url  */
+		var url_string = window.location.href;
+
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
 			setFormDefaults($thisParagraph, i);
@@ -117,7 +120,7 @@
 
 		/**  FUNCTIONS  */
 		function setFormDefaults($thisParagraph, i) {
-			var thisID = 'paragraph--membership-signup-' + i;
+			var thisID = 'mship-' + i;
 			$thisParagraph.attr('id', thisID);
 			var $newParagraphWithId = $('#'+ thisID);
 
@@ -166,11 +169,14 @@
 			var givingType = $thisForm.data('giving-type');
 			/* Cart ID */
 			var cartId = $thisForm.data('cart-id');
+			/* Client ID */
 			var clientId = $thisForm.data('client-id');
+			/* Row ID */
+			var rowID = $thisForm.parents('.paragraph--membership-signup').attr('id');
 			/* Send data */
 			if (validateAmount(amount)) {
 				$thisForm.find(".form-error").removeClass('show-error');
-				nextStepHandler(event, currency, amount, givingType, cartId, clientId);
+				nextStepHandler(event, currency, amount, givingType, cartId, clientId, rowID);
 			} else {
 				$thisForm.find(".form-error").addClass('show-error');
 			}
@@ -204,14 +210,13 @@
 		}
 
 		/* Submit data */
-		function nextStepHandler(e, currency, amount, givingType, cartId, clientId) {
+		function nextStepHandler(e, currency, amount, givingType, cartId, clientId, rowID) {
 			e.preventDefault();
 			var url = "https://donation-staging.spa.comicrelief.com/";
 			var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
 			var donationLink = getUrl ? getUrl : url;
 
 			/* Affiliate value */
-			var url_string = window.location.href;
 			var url = new URL(url_string);
 			var affiliateValue = url.searchParams.get("affiliate")? url.searchParams.get("affiliate") : 'generic';
 
@@ -220,7 +225,8 @@
 				url_string = url_string.substring(0, url_string.indexOf('?'));
 			}
 
-			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string) ;
+			/* Redirect user to donation */
+			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
 		}
 	});
 })(jQuery);
