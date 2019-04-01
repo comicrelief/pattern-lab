@@ -280,10 +280,23 @@
       // TODO: ADD THIS BACK! dataLayer.push(ecommerceObj);
     }
 
-    function addToBasket($thisForm, $thisButton) {
-      var thisCartID = $thisForm.data('cart-id');
-      var thisClientID = $thisForm.data('client-id');
-      var regularOrSingle = givingtype == 'MONTHLY' ? 'regular-payment': 'single-payment';
+    function addToBasket($thisForm, $thisButton){
+      var thisID = $thisForm.closest('.paragraph--membership-signup').attr('id');
+
+
+/*      allParagraphs[thisID] = {
+        giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
+        current_amount: amount,
+        active_btn_pos: position,
+        cart_id: cartID,
+        client_id: clientID,
+        buttons: theseButtons
+      }; */
+
+      // MONDAY START HERE
+      var thisCartID = allParagraphs[thisID]['card_id'];
+      var thisClientID =  allParagraphs[thisID]['client_id'];
+      var regularOrSingle = allParagraphs[thisID]['giving_type'];
 
       // Construct object to push to datalayer
       var ecommerceObj = {
