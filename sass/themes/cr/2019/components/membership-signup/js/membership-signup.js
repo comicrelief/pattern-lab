@@ -1,7 +1,7 @@
 (function($) {
 	$(document).ready(function() {
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
-
+		var moneyBuys;
 		/* Get  website-page url  */
 		var url_string = window.location.href;
 
@@ -136,6 +136,9 @@
 				$newParagraphWithId.find('.form__fieldset').addClass("hide-select-tag");
 			}
 
+			var url = new URL(url_string);
+			var rowIDValue = url.searchParams.get("rowID");
+			var amountValue = url.searchParams.get("amount");
 			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 
 			$newParagraphWithId.attr("data-current-amount", amount);
@@ -143,7 +146,31 @@
 
 			/* Add money buy description && currency */
 			var descriptionCopies = $newParagraphWithId.find(".donation-copy").children();
-			moneyBuyDescriptionHandler(descriptionCopies, position);
+
+			/* Handle case where users are taken back to cr.com from donation */
+			if( url_string.indexOf('&amount=') > -1 && amountValue.length > 0 ) {
+				if(rowIDValue.length > 0) {
+					$("#mship-" + rowIDValue).find('.select-amount-btn').removeClass('active');
+					$("#mship-" + rowIDValue).find('.select-amount-btn').each(function (i) {
+						var defaultMoneyBuy = $(this).text().replace(/\D/g, "");
+
+						if (defaultMoneyBuy === amountValue) {
+							$(this).addClass('active');
+							moneyBuyDescriptionHandler(descriptionCopies, i + 1 );
+						} else if (defaultMoneyBuy !== amountValue){
+							var form = $(this).parents('form');
+							form.find("input[name='membership_amount']").val(amountValue);
+							$("#mship-" + rowIDValue).find('.select-amount-btn').removeClass('active');
+							form.find('.form__field--wrapper').addClass("active-input");
+						}
+					})
+
+				}
+			} else {
+				console.log('Nope');
+				moneyBuyDescriptionHandler(descriptionCopies, position);
+			}
+
 		}
 
 		/** Money buy description handler */
