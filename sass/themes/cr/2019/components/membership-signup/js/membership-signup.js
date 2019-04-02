@@ -1,7 +1,6 @@
 (function($) {
 	$(document).ready(function() {
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
-		var moneyBuys;
 		/* Get  website-page url  */
 		var url_string = window.location.href;
 
