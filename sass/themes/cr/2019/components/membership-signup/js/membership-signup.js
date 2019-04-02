@@ -10,7 +10,6 @@
 			setFormDefaults($thisParagraph, i);
 		});
 
-
 		/* Handle money buy selection */
 		$('.paragraph--membership-signup .select-amount-btn').click(function(e) {
 			e.preventDefault();
@@ -149,25 +148,32 @@
 
 			/* Handle case where users are taken back to cr.com from donation */
 			if( url_string.indexOf('&amount=') > -1 && amountValue.length > 0 ) {
-				if(rowIDValue.length > 0) {
-					$("#mship-" + rowIDValue).find('.select-amount-btn').removeClass('active');
-					$("#mship-" + rowIDValue).find('.select-amount-btn').each(function (i) {
-						var defaultMoneyBuy = $(this).text().replace(/\D/g, "");
+				/* Create an an array that will contain money buy value  */
+				var moneyBuyArr = []
 
-						if (defaultMoneyBuy === amountValue) {
+				if(rowIDValue.length > 0) {
+					/*  Push money buy value to array  */
+					moneyBuyValueArr(moneyBuyArr, $("#" + rowIDValue));
+
+					$("#" + rowIDValue).find('.select-amount-btn').each(function (i) {
+						var currentMoneyBuyValue = $(this).text().replace(/\D/g, "");
+						var $thisForm = $(this).parents('form');
+
+						if (currentMoneyBuyValue === amountValue) {
+							$("#" + rowIDValue).find('.select-amount-btn').removeClass('active');
 							$(this).addClass('active');
-							moneyBuyDescriptionHandler(descriptionCopies, i + 1 );
-						} else if (defaultMoneyBuy !== amountValue){
-							var form = $(this).parents('form');
-							form.find("input[name='membership_amount']").val(amountValue);
-							$("#mship-" + rowIDValue).find('.select-amount-btn').removeClass('active');
-							form.find('.form__field--wrapper').addClass("active-input");
+							 moneyBuyDescriptionHandler(descriptionCopies, i + 1 );
+						} else if (moneyBuyArr.indexOf(amountValue) === -1 ) {
+							$thisForm.find("input[name='membership_amount']").val(amountValue);
+							$("#" + rowIDValue).find('.select-amount-btn').removeClass('active');
+							$thisForm.find('.form__field--wrapper').addClass("active-input");
+							$thisForm.find('.random-description').addClass('show-money-buy-copy');
 						}
 					})
 
 				}
+			/* Default case where url doesn't contain rowID and amount params */
 			} else {
-				console.log('Nope');
 				moneyBuyDescriptionHandler(descriptionCopies, position);
 			}
 
@@ -234,6 +240,14 @@
 			else {
 				window.location.href = url;
 			}
+		}
+
+		/* Create array of money buy value */
+		function moneyBuyValueArr(array, element) {
+			element.find(".select-amount-btn").each(function() {
+				array.push($(this).text().replace(/\D/g, ""));
+			})
+			return array;
 		}
 
 		/* Submit data */
