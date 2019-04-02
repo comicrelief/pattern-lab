@@ -49,6 +49,17 @@
 			/** Reset current amount to zero  */
 			setCurrentDataAmount($thisInput, 0);
 
+
+			var moneyBuyArr = [];
+			moneyBuyValueArr(moneyBuyArr, $thisInput.parents('form'));
+			/* Compare money buy amount and amount provided by user */
+			if(moneyBuyArr.indexOf(amount.toString()) > -1) {
+				var index = parseFloat(moneyBuyArr.indexOf(amount.toString())) + 1;
+				$thisForm.find('.select-amount-btn.money-box--' + index ).addClass("active");
+				var descriptionCopies = $thisForm.find(".donation-copy").children();
+				moneyBuyDescriptionHandler(descriptionCopies, index);
+			}
+
 			// Check if user enters input
 			if (event.type === "input") {
 				if (validateAmount(amount) && !isNaN(amount)) {
@@ -56,6 +67,8 @@
 					setCurrentDataAmount($thisInput, amount);
 				} else {
 					$thisForm.find(".form-error").addClass('show-error');
+					$thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
+					$thisForm.find('.random-description').removeClass('show-money-buy-copy');
 					setCurrentDataAmount($thisInput, 0);
 				}
 			}
@@ -176,7 +189,6 @@
 			} else {
 				moneyBuyDescriptionHandler(descriptionCopies, position);
 			}
-
 		}
 
 		/** Money buy description handler */
