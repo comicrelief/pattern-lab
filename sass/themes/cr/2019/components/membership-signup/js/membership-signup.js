@@ -4,7 +4,7 @@
 
     var dataLayer = window.dataLayer = window.dataLayer || [];
     var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
-    var allRows = [];
+    var allParagraphs = [];
     var lastBtnPos = '';
 
     $('.paragraph--membership-signup').each(function(i) {
@@ -16,7 +16,7 @@
     $('.paragraph--membership-signup .select-amount-btn').click(function(e) {
       e.preventDefault();
 
-      if ( $(this).hasClass('active')) {
+      if ($(this).hasClass('active')) {
         return;
       } else {
         var $thisBtn = $(this);
@@ -47,9 +47,19 @@
 
     /* Watch for action or change on input */
     $(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click",function(event){
+
       var $thisInput = $(this);
       var $thisForm = $thisInput.parents('form');
       var amount = parseFloat($thisInput.val());
+
+      // Remove any last-selected moneybuy from basket
+      if (lastBtnPos !== '') {
+        var thisID = $thisInput.parents('.paragraph--membership-signup').attr('id');
+        dataLayer_updateBasket(thisID, lastBtnPos, 'remove');
+      }
+
+      // Reset this to indicate input field choice
+      lastBtnPos = '';
 
       $thisForm.find(".form__field--wrapper").addClass("active-input")
       $thisForm.find('.select-amount-btn').removeClass("active");
@@ -111,6 +121,9 @@
       var $thisForm = $thisButton.closest('form');
       var moneyBuySelected = $thisForm.find('.select-amount-btn.active').data("amount");
       var inputValue = parseFloat($thisForm.find("input[name='membership_amount']").val())
+      var $thisFormParent = $thisForm.parents('.paragraph--membership-signup');
+      var thisID = $thisFormParent.attr('id');
+      alert('submit thisID: ' + thisID);
 
       if(!isNaN(moneyBuySelected)){
         setCurrentDataAmount($thisForm, moneyBuySelected);
@@ -118,6 +131,8 @@
       } else if(!isNaN(inputValue)){
         setCurrentDataAmount($thisButton, inputValue);
         handleDatabeforeSubmission($thisForm, inputValue, e);
+        // Add successfully inputted 'Other amount' to basket
+        dataLayer_updateBasket(thisID, 0, 'add');
       } else {
         setCurrentDataAmount($thisButton, 0);
         handleDatabeforeSubmission($thisForm, 0, e);
@@ -170,7 +185,7 @@
       });
 
       // Cache all of these for ease-of-use later & prevent endless DOM traversal
-      allRows[thisID] = {
+      allParagraphs[thisID] = {
         giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
         current_amount: amount,
         active_btn_pos: position,
@@ -179,10 +194,8 @@
         buttons: theseButtons
       };
 
-      console.log('allRows[thisID]', allRows[thisID]);
-
       /* Pass the cached row to set up the dataLayer */
-      initDataLayer($newParagraphWithId, thisID);
+      dataLayer_init($newParagraphWithId, thisID);
     }
 
     /** Money buy description handler */
@@ -246,9 +259,9 @@
     }
 
      /* Set-up data layer stuff on pageload */
-    function initDataLayer($element, thisID) {
+    function dataLayer_init($element, thisID) {
       // Grab this Paragraph from our cached array
-      var thisParagraph = allRows[thisID];
+      var thisParagraph = allParagraphs[thisID];
       // Construct object to push to datalayer, staring with Other Amount field
       var ecommerceObj = {
         'ecommerce': {
@@ -283,8 +296,7 @@
       };
 
       // Push to the data layer
-      console.log("EcommerceObj for " + thisID + ": ", ecommerceObj);
-      //dataLayer.push(ecommerceObj);
+      dataLayer.push(ecommerceObj);
 
       // If we have a default 'active' button, add it to the basket
       var $activeBtn = $element.find('.select-amount-btn.active');
@@ -294,38 +306,49 @@
       }
     }
 
+
     /* Add or remove moneybuy 'products' from the hypothetical basket */
     function dataLayer_updateBasket(thisID, thisBtnPos, type) {
+      var thisParagraph = allParagraphs[thisID];
+      var thisAmount = '';
+      var isBtn = true;
 
-      // If we've selected a new button, remove the old one from the basket
-      if ( thisBtnPos !== lastBtnPos && lastBtnPos !== '' ) {
+      // Construct generic ecommerce object for all use cases
+      var ecommerceObj = {
+        'ecommerce': {'currencyCode': 'GBP',},
+        'event': type ===  'add' ? 'addToBasket' : 'removeFromBasket'
+      };
+
+      // If we've selected a new button and not the input field, remove the old one from the basket
+      if (thisBtnPos !== 0 && thisBtnPos !== lastBtnPos && lastBtnPos !== '' ) {
         dataLayer_updateBasket(thisID, lastBtnPos, 'remove');
       }
 
       lastBtnPos = thisBtnPos;
 
-      var thisAmount = allRows[thisID]['buttons'][thisBtnPos]['amount'];
-      var ecommerceObj2 = {
-        'ecommerce': {
-          'currencyCode': 'GBP', 
-        },
-        'event': type ===  'add' ? 'addToBasket' : 'removeFromBasket'
-      };
+      // Change our 'amount' source depending on the input type
+      if (thisBtnPos === 0) {
+        isBtn = false;
+        thisAmount = $('#' + thisID).data('current-amount');
+      } else {
+        thisAmount = allParagraphs[thisID]['buttons'][thisBtnPos]['amount'];
+      }
 
-      ecommerceObj2['ecommerce'][type] = {
+      // Switch the values based on the input type
+      ecommerceObj['ecommerce'][type] = {
+        'actionField': {'list': thisParagraph['client_id'] + '_' + thisID },
         'products': [{
-          id:'moneybuy-' + thisAmount,
-          name:'moneybuy-' + thisAmount,
+          id: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
+          name: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
           price: thisAmount + '.00',      
           brand:'cr-membership',  
-          category: allRows[thisID]['cart_id'], 
+          category: allParagraphs[thisID]['cart_id'], 
           quantity: 1,
-          dimenstion10: allRows[thisID]['giving_type']
+          dimenstion10: allParagraphs[thisID]['giving_type']
         }],
       };
 
-       console.log('dataLayer_updateBasket - type: ' + type, ecommerceObj2);
-       // dataLayer.push(ecommerceObj);
+      dataLayer.push(ecommerceObj);
     }
   });
 })(jQuery);
