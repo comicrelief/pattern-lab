@@ -269,7 +269,6 @@
 			if (url_string.indexOf('?') > -1 ) {
 				url_string = url_string.substring(0, url_string.indexOf('?'));
 			}
-
 			/* Redirect user to donation */
 			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
 		}
