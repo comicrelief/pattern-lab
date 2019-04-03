@@ -1,7 +1,5 @@
 (function($) {
-
   $(document).ready(function() {
-
     var dataLayer = window.dataLayer = window.dataLayer || [];
     var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
     var allParagraphs = [];
@@ -20,7 +18,7 @@
         return;
       } else {
         var $thisBtn = $(this);
-        var $thisForm = $thisBtn.closest('form');
+        var $thisForm= $thisBtn.closest('form');
         var thisID = $thisBtn.closest('.paragraph--membership-signup').attr('id');
 
         $thisForm.find('select').css("background", "transparent");
@@ -36,23 +34,20 @@
 
         moneyBuyDescriptionHandler(descriptionCopies, position);
 
-        var moneyBuySelected = $thisBtn.data("amount");
-
+        var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
         setCurrentDataAmount($thisForm, moneyBuySelected);
 
         dataLayer_updateBasket(thisID, position, 'add');
       }
     });
 
-
     /* Watch for action or change on input */
     $(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click",function(event){
-
       var $thisInput = $(this);
       var $thisForm = $thisInput.parents('form');
       var amount = parseFloat($thisInput.val());
 
-      // Remove any last-selected moneybuy from basket
+      // Remove any previously-selected moneybuy from basket
       if (lastBtnPos !== '') {
         var thisID = $thisInput.parents('.paragraph--membership-signup').attr('id');
         dataLayer_updateBasket(thisID, lastBtnPos, 'remove');
@@ -119,11 +114,10 @@
       e.preventDefault();
       var $thisButton = $(this);
       var $thisForm = $thisButton.closest('form');
-      var moneyBuySelected = $thisForm.find('.select-amount-btn.active').data("amount");
-      var inputValue = parseFloat($thisForm.find("input[name='membership_amount']").val())
+      var moneyBuySelected = parseFloat($thisForm.find('.select-amount-btn.active').text().replace(/\D/g, ""));
+      var inputValue = parseFloat($thisForm.find("input[name='membership_amount']").val());
       var $thisFormParent = $thisForm.parents('.paragraph--membership-signup');
       var thisID = $thisFormParent.attr('id');
-      alert('submit thisID: ' + thisID);
 
       if(!isNaN(moneyBuySelected)){
         setCurrentDataAmount($thisForm, moneyBuySelected);
@@ -142,7 +136,7 @@
     });
 
 
-    /* FUNCTIONS */
+    /**  FUNCTIONS  */
     function setFormDefaults($thisParagraph, i) {
       var thisID = 'paragraph--membership-signup-' + i;
       $thisParagraph.attr('id', thisID);
@@ -150,7 +144,7 @@
 
       /** Check giving type before taking decision to hide select tag or not */
       var givingType = $newParagraphWithId.find("form").data("giving-type");
-      if(givingType == "MONTHLY") {
+      if(givingType.toLowerCase() === "MONTHLY".toLowerCase()) {
         $newParagraphWithId.find('.form__fieldset').addClass("hide-select-tag");
       }
 
@@ -165,7 +159,7 @@
         $('.img-shadow', $newParagraphWithId).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
       }
 
-      var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").data("amount"));
+      var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 
       $newParagraphWithId.attr("data-current-amount", amount);
       var position = $newParagraphWithId.find(".select-amount-btn.active").data("position");
@@ -238,6 +232,24 @@
       }
     }
 
+    /** Rdirect function for browser support */
+    function redirect(url) {
+      var ua = navigator.userAgent.toLowerCase(),
+        isIE = ua.indexOf('msie') !== -1,
+        version = parseInt(ua.substr(4, 2), 10);
+      // Internet Explorer 8 and lower
+      if (isIE && version < 9) {
+        var link = document.createElement('a');
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+      }
+      // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
+      else {
+        window.location.href = url;
+      }
+    }
+
     /* Submit data */
     function nextStepHandler(e, currency, amount, givingType, cartId, clientId) {
       e.preventDefault();
@@ -255,10 +267,10 @@
         url_string = url_string.substring(0, url_string.indexOf('?'));
       }
 
-      window.location.href = donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string;
+      redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string) ;
     }
 
-     /* Set-up data layer stuff on pageload */
+         /* Set-up data layer stuff on pageload */
     function dataLayer_init($element, thisID) {
       // Grab this Paragraph from our cached array
       var thisParagraph = allParagraphs[thisID];
