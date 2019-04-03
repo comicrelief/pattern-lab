@@ -1,6 +1,7 @@
 (function($) {
 	$(document).ready(function() {
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
+		/* Set an object where each key will be the id value of each row and their value an array of money buy amount */
 		var moneyBuyRows = {};
 
 		/* Get  website-page url  */
