@@ -188,6 +188,8 @@
         buttons: theseButtons
       };
 
+      console.log('allParagraphs', allParagraphs);
+
       /* Pass the cached row to set up the dataLayer */
       dataLayer_init($newParagraphWithId, thisID);
     }
@@ -359,6 +361,8 @@
           dimenstion10: allParagraphs[thisID]['giving_type']
         }],
       };
+
+      console.log('ecommerceObj', ecommerceObj);
 
       dataLayer.push(ecommerceObj);
     }
