@@ -275,7 +275,7 @@
 					url_string = url_string.substring(0, url_string.indexOf('?'));
 				}
 				/* Redirect user to donation */
-				redirect("https://deploy-preview-583--comicrelief-donation.netlify.com/" + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
+				redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
 			}
 		});
 	})(jQuery);
