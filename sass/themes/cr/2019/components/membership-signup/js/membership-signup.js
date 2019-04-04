@@ -165,8 +165,7 @@
 			});
 
 			/* Handle case where users are taken back to cr.com from donation */
-			if( url_string.indexOf('&amount=') > -1 && amountValue.length > 0 ) {
-				if(rowIDValue.length > 0) {
+			if( url_string.indexOf('&amount=') > -1 && amountValue.length > 0 && rowIDValue.length && url_string.indexOf('&rowID=') > -1  ) {
 					$("#" + rowIDValue).find('.select-amount-btn').each(function (i) {
 						var currentMoneyBuyValue = getMoneyBuyValue($(this));
 						var $thisForm = $(this).parents('form');
@@ -181,10 +180,8 @@
 							$thisForm.find('.form__field--wrapper').addClass("active-input");
 							$thisForm.find('.other-description').addClass('show-money-buy-copy');
 						}
+						document.getElementById(rowIDValue).scrollIntoView({ behavior: 'smooth'});
 					})
-
-				}
-			/* Default case where url doesn't contain rowID and amount params */
 			} else {
 				moneyBuyDescriptionHandler(descriptionCopies, position);
 			}
