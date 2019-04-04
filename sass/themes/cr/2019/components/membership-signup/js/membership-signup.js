@@ -1,11 +1,22 @@
 (function($) {
 	$(document).ready(function() {
+		(function () {
+			if ( typeof NodeList.prototype.forEach === "function" ) return false;
+			NodeList.prototype.forEach = Array.prototype.forEach;
+		})();
 		var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
 		/* Set an object where each key will be the id value of each row and their value an array of money buy amount */
 		var moneyBuyRows = {};
 
 		/* Get  website-page url  */
 		var url_string = window.location.href;
+		var getQueryString = function ( field, url ) {
+			var href = url ? url : window.location.href;
+			var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+			var string = reg.exec(href);
+			return string ? string[1] : null;
+		};
+		
 		$('.paragraph--membership-signup').each(function(i) {
 			var $thisParagraph = $(this);
 			setFormDefaults($thisParagraph, i);
@@ -145,9 +156,8 @@
 				$newParagraphWithId.find('.form__fieldset').addClass("hide-select-tag");
 			}
 
-			var url = new URL(url_string);
-			var rowIDValue = url.searchParams.get("rowID");
-			var amountValue = url.searchParams.get("amount");
+			var rowIDValue = getQueryString("rowID", url_string);
+			var amountValue =  getQueryString("amount", url_string);
 			var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 
 			$newParagraphWithId.attr("data-current-amount", amount);
@@ -237,36 +247,36 @@
 			var ua = navigator.userAgent.toLowerCase(),
 				isIE = ua.indexOf('msie') !== -1,
 				version = parseInt(ua.substr(4, 2), 10);
-			// Internet Explorer 8 and lower
-			if (isIE && version < 9) {
-				var link = document.createElement('a');
-				link.href = url;
-				document.body.appendChild(link);
-				link.click();
+				// Internet Explorer 8 and lower
+				if (isIE && version < 9) {
+					var link = document.createElement('a');
+					link.href = url;
+					document.body.appendChild(link);
+					link.click();
+				}
+				// All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
+				else {
+					window.location.href = url;
+				}
 			}
-			// All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
-			else {
-				window.location.href = url;
+	
+			/* Submit data */
+			function nextStepHandler(e, currency, amount, givingType, cartId, clientId, rowID) {
+				e.preventDefault();
+				var url = "https://donation-staging.spa.comicrelief.com/";
+				var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
+				var donationLink = getUrl ? getUrl : url;
+	
+				/* Affiliate value */
+				var affiliateValue = getQueryString("affiliate", url_string)? getQueryString("affiliate", url_string) : 'generic';
+				
+				/* Strip out all params now we've saved our required 'affiliate' value */
+				if (url_string.indexOf('?') > -1 ) {
+					url_string = url_string.substring(0, url_string.indexOf('?'));
+				}
+				/* Redirect user to donation */
+				redirect("https://deploy-preview-583--comicrelief-donation.netlify.com/" + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
 			}
-		}
-
-		/* Submit data */
-		function nextStepHandler(e, currency, amount, givingType, cartId, clientId, rowID) {
-			e.preventDefault();
-			var url = "https://donation-staging.spa.comicrelief.com/";
-			var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
-			var donationLink = getUrl ? getUrl : url;
-
-			/* Affiliate value */
-			var url = new URL(url_string);
-			var affiliateValue = url.searchParams.get("affiliate")? url.searchParams.get("affiliate") : 'generic';
-
-			/* Strip out all params now we've saved our required 'affiliate' value */
-			if (url_string.indexOf('?') > -1 ) {
-				url_string = url_string.substring(0, url_string.indexOf('?'));
-			}
-			/* Redirect user to donation */
-			redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
-		}
-	});
-})(jQuery);
+		});
+	})(jQuery);
+	

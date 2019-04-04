@@ -61,7 +61,7 @@
         <label for="other-amount">Other amount</label>
           <div class="form__field--wrapper form__money form__field--amount">
           <span id="js-currency-label" class="currency-input-label membership__currency-label">£</span>
-            <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0" required="" type="number" value="">
+            <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0"  type="number" value="">
           </div>
           <div class="form__field--wrapper form__choice form__field--currency ">
             <select class="form__field form__field--currency" id="membership-currency-{{ randomID }}" name="comicrelief_payinbundle_payment[currency]" {{ currencyDisabled  }}>
@@ -71,6 +71,7 @@
                 <option data-currency="$" value="USD">$ USD
                 </option>
                 <option data-currency="$" value="AUD">$ AUD
+                
                 </option>
                 <option data-currency="€" value="EUR">€ EUR
                 </option>
