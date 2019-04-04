@@ -184,7 +184,6 @@
         $('.img-shadow', $newParagraphWithId).append("<style> " + "#" + thisID + " .img-shadow" + ":before {color:" + colour + "}" + "</style>");
       }
 
-
       var rowIDValue = getQueryString("rowID", url_string);
       var amountValue =  getQueryString("amount", url_string);
       var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
@@ -199,7 +198,14 @@
       moneyBuyRows[thisID] =[];
       $newParagraphWithId.find('.select-amount-btn').each(function(i){
         var currentMoneyBuyValue = getMoneyBuyValue($(this));
-        moneyBuyRows[thisID].push(currentMoneyBuyValue)
+        moneyBuyRows[thisID].push(currentMoneyBuyValue);
+
+        // Cache all our button info for this paragraph in array, to pass to the main paragraph array
+        var pos = $(this).data("position");
+        theseButtons[pos] = {
+          position: pos,
+          amount: $(this).data("amount")
+        }
       });
 
       /* Handle case where users are taken back to cr.com from donation */
@@ -224,16 +230,6 @@
         moneyBuyDescriptionHandler(descriptionCopies, position);
       }
 
-      // Cache all our button info for this paragraph in array, to pass to the main paragraph array
-      $newParagraphWithId.find(".select-amount-btn").each( function(i) {
-        // Use as both index and position val
-        var pos = $(this).data("position");
-        theseButtons[pos] = {
-          position: pos,
-          amount: $(this).data("amount")
-        }
-      });
-
       // Cache all of these for ease-of-use later & prevent endless DOM traversal
       allParagraphs[thisID] = {
         giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
@@ -243,8 +239,6 @@
         client_id: clientID,
         buttons: theseButtons
       };
-
-      console.log('allParagraphs', allParagraphs);
 
       /* Pass the cached row to set up the dataLayer */
       dataLayer_init($newParagraphWithId, thisID);
@@ -421,8 +415,6 @@
           dimenstion10: allParagraphs[thisID]['giving_type']
         }],
       };
-
-      console.log('ecommerceObj', ecommerceObj);
 
       dataLayer.push(ecommerceObj);
     }
