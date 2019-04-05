@@ -263,7 +263,7 @@
 			/* Submit data */
 			function nextStepHandler(e, currency, amount, givingType, cartId, clientId, rowID) {
 				e.preventDefault();
-				var url = "https://donation-staging.spa.comicrelief.com/";
+				var url = "https://donation.comicrelief.com/";
 				var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
 				var donationLink = getUrl ? getUrl : url;
 	
