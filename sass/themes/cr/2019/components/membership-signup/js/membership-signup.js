@@ -1,15 +1,14 @@
 (function($) {
   $(document).ready(function() {
-
  		(function () {
      	if ( typeof NodeList.prototype.forEach === "function" ) return false;
      	NodeList.prototype.forEach = Array.prototype.forEach;
     })();
 
-    var dataLayer = window.dataLayer = window.dataLayer || [];
     var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
     /* Set an object where each key will be the id value of each row and their value an array of money buy amount */
     var moneyBuyRows = {};
+    var dataLayer = window.dataLayer = window.dataLayer || [];
     var allParagraphs = [];
     var lastBtnPos = '';
 
@@ -311,7 +310,7 @@
     /* Submit data */
     function nextStepHandler(e, currency, amount, givingType, cartId, clientId, rowID) {
       e.preventDefault();
-      var url = "https://donation-staging.spa.comicrelief.com/";
+      var url = "https://donation.comicrelief.com/";
       var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
       var donationLink = getUrl ? getUrl : url;
   

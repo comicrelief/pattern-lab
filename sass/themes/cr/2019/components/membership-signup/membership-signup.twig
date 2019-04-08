@@ -11,9 +11,9 @@
 {% set money_buy_2 = "10"  %}
 {% set money_buy_3 = "30"  %}
 
-{% set money_buy_desc_1 = "could provide 5 hot meals for a homeless person in the UK."  %}
-{% set money_buy_desc_2 = "could fund an awareness session on harmful practices like FGM and child marriage for girls in Sierra Leone."  %}
-{% set money_buy_desc_3 = "could pay for 7 mosquito nets to protect children in Uganda from malaria while they sleep."  %}
+{% set money_buy_desc_1 = "£5 could provide 5 hot meals for a homeless person in the UK."  %}
+{% set money_buy_desc_2 = "£10 could fund an awareness session on harmful practices like FGM and child marriage for girls in Sierra Leone."  %}
+{% set money_buy_desc_3 = "£30 could pay for 7 mosquito nets to protect children in Uganda from malaria while they sleep."  %}
 
 {% set cart_id = "RND19_CHICAGOTOWN" %}
 {% set client_id = "the_fix" %}
@@ -44,15 +44,15 @@
       </p>
       <form class="membership-signup__wrapper-copy--form-money" data-giving-type={{ giving_type }} data-cart-id={{ cart_id }} data-client-id={{ client_id }} >
         <div class="money-buy">
-          <button class="select-amount-btn money-box--1 " data-position="1">
+          <button class="select-amount-btn money-box--1 " data-position="1" data-amount={{ money_buy_1 }}>
             <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_1 }}
             </span>
           </button>
-          <button class="select-amount-btn money-box--2 active " data-position="2">
+          <button class="select-amount-btn money-box--2 active " data-position="2" data-amount={{ money_buy_2 }}>
             <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_2 }}
             </span>
           </button>
-          <button class="select-amount-btn money-box--3" data-position="3">
+          <button class="select-amount-btn money-box--3" data-position="3" data-amount={{ money_buy_3 }}>
             <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_3 }}
             </span>
           </button>
@@ -61,7 +61,7 @@
         <label for="other-amount">Other amount</label>
           <div class="form__field--wrapper form__money form__field--amount">
           <span id="js-currency-label" class="currency-input-label membership__currency-label">£</span>
-            <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0" required="" type="number" value="">
+            <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0"  type="number" value="">
           </div>
           <div class="form__field--wrapper form__choice form__field--currency ">
             <select class="form__field form__field--currency" id="membership-currency-{{ randomID }}" name="comicrelief_payinbundle_payment[currency]" {{ currencyDisabled  }}>
@@ -71,6 +71,7 @@
                 <option data-currency="$" value="USD">$ USD
                 </option>
                 <option data-currency="$" value="AUD">$ AUD
+                
                 </option>
                 <option data-currency="€" value="EUR">€ EUR
                 </option>
@@ -91,7 +92,7 @@
           <p class="text--body-small money-buy--description">
              {{  money_buy_desc_3 }}
           </p>
-            <p class="text--body-small random-description">
+            <p class="text--body-small other-description">
              OTHER AMOUNT can lorem ipsum dolor sit amet, consectetur adipiscing.
           </p>
         </div>
