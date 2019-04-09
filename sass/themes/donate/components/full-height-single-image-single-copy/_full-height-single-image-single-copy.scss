@@ -1,9 +1,24 @@
 .paragraph--full-height-single-image-single-copy {
+  padding: 0 80px;
   @include breakpoint($screen-md) {
     .fhsisc {
       &__image-wrapper {
         img {
           max-height: 100vh;
+        }
+      }
+      &__fhsisc__text-wrapper {
+        padding: 0;
+        form {
+          margin: 0;
+          width: 100%;
+          border: none;
+          background-color: transparent;
+          @include breakpoint($screen-lg) {
+            form {
+              width: 100%;
+            }
+          }
         }
       }
     }
