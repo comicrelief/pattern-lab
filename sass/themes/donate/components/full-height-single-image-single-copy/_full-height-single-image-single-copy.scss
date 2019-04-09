@@ -7,21 +7,23 @@
           max-height: 100vh;
         }
       }
-      &__fhsisc__text-wrapper {
+      &__text-wrapper {
         padding: 0;
         form {
-          margin: 0;
+          margin: 60px auto 60px;
           width: 100%;
           border: none;
           background-color: transparent;
+
+          .form__row {
+            width: 100%;
+          }
+
           @include breakpoint($screen-lg) {
-            form {
-              width: 100%;
-            }
+            width: 100%;
           }
         }
       }
     }
   }
 }
-
