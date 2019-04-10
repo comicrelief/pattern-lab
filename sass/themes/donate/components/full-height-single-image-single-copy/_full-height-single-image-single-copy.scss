@@ -2,8 +2,13 @@
   padding: 0;
 
   .fhsisc {
-    &__image-wrapper { padding: 0; }
-    &__text-wrapper { padding: 0 5vw; }
+    &__image-wrapper {
+      padding: 0;
+    }
+
+    &__text-wrapper {
+      padding: 0 5vw;
+    }
   }
 
   @include breakpoint($screen-md) {
@@ -13,8 +18,10 @@
           max-height: 100vh;
         }
       }
+
       &__text-wrapper {
         padding: 0 60px;
+
         form {
           margin: 60px auto 60px;
           width: 100%;
@@ -23,29 +30,30 @@
 
           .form__row {
             width: 100%;
+            padding: 0;
 
-           .form__fieldset {
+            .form__fieldset {
               width: 100%;
 
-              fieldset {
-                #giving_type_selector.form__field--wrapper {
-                  &:nth-child(1) {
-                    width: 35%;
-                  }
-                  &:nth-child(2) {
-                    width: 38%;
-                  }
+              fieldset#giving_type_selector {
+                .form__giving-type {
+                  display: flex;
+                  width: 70%;
+                  max-height: 80px;
                 }
-                button.select-amount-btn {
+              }
+
+              button.select-amount-btn {
                 padding: 0 0 20px 0;
+
                 .select-amount {
                   width: 125px;
+
                   &--context {
                     margin-left: 125px;
                   }
                 }
               }
-            }
             }
           }
 
