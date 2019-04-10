@@ -60,6 +60,19 @@
                   }
                 }
               }
+
+              input#field-input--amount {
+                border-right: none;
+                margin-right: 0;
+              }
+
+              select.form__field--currency {
+                border-left: none;
+              }
+
+              .form__field--wrapper {
+                width: 250px;
+              }
             }
           }
 
