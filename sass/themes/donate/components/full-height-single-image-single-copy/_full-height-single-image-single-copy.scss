@@ -8,6 +8,21 @@
 
     &__text-wrapper {
       padding: 0 5vw;
+
+      .form__step .form__fieldset {
+        input#field-input--amount {
+          border-right: none;
+          margin-right: -6px;
+        }
+
+        select.form__field--currency {
+          border-left: none;
+        }
+
+        .form__field--wrapper {
+          width: 250px;
+        }
+      }
     }
   }
 
@@ -59,19 +74,6 @@
                     margin-left: 125px;
                   }
                 }
-              }
-
-              input#field-input--amount {
-                border-right: none;
-                margin-right: 0;
-              }
-
-              select.form__field--currency {
-                border-left: none;
-              }
-
-              .form__field--wrapper {
-                width: 250px;
               }
             }
           }
