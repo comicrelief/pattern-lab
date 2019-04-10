@@ -44,10 +44,16 @@
               }
 
               button.select-amount-btn {
-                padding: 0 0 20px 0;
-
                 .select-amount {
                   width: 125px;
+
+                  .amount-text {
+                    font-size: 30px;
+                    &-value {
+                      font-size: 35px;
+                      top: calc(50% - 0.5em + 3px);
+                    }
+                  }
 
                   &--context {
                     margin-left: 125px;
