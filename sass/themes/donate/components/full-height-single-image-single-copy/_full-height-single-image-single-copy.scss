@@ -55,6 +55,11 @@
                   display: flex;
                   width: 70%;
                   max-height: 80px;
+                  .form__field--wrapper {
+                    label {
+                      text-transform: capitalize;
+                    }
+                  }
                 }
               }
 
