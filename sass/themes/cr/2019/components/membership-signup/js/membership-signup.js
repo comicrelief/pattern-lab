@@ -277,7 +277,7 @@
 
     /* Get money buy value  */
     function getMoneyBuyValue(element) {
-     	return element.attr("data-amount");
+     	return parseFloat(element.attr("data-amount").toFixed(2));
     }
 
     /* Check and validate amount */
@@ -336,7 +336,7 @@
           'impressions': [{
             id:'manual-entry',      
             name:'manual-entry',      
-            price:'0.00',       
+            price:0.00,       
             category: thisParagraph['cart_id'],
             position: 0,
             list: thisParagraph['client_id'] + '_' + thisID,
@@ -407,7 +407,7 @@
         'products': [{
           id: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
           name: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
-          price: thisAmount + '.00',      
+          price: thisAmount,      
           brand:'cr-membership',  
           category: allParagraphs[thisID]['cart_id'], 
           quantity: 1,
