@@ -1,46 +1,48 @@
 // Form Layout
 .form__step {
-    position: relative;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
 // Layout
 .form__row {
-    margin: 0 auto;
-    padding: 15px 0;
+  margin: 0 auto;
+  padding: 15px 0;
+  width: span(10);
+  background-color: transparent;
+
+  &:after {
+    @include clearfix;
+  }
+
+  @include breakpoint($screen-md) {
+    padding: 30px 0;
+  }
+
+  @include breakpoint($screen-lg) {
+    width: span(6);
+  }
+}
+
+.form__fieldset,
+.card-list {
+  float: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  @include breakpoint($screen-md) {
     width: span(10);
-    background-color: transparent;
-  
-    &:after {
-      @include clearfix;
-    }
-  
-    @include breakpoint($screen-md) {
-      padding: 30px 0;
-    }
-    @include breakpoint($screen-lg) {
-      width: span(6);
-    }
   }
-  .form__fieldset,
-  .card-list {
-    float: none;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-  
-    @include breakpoint($screen-md) {
-      width: span(10);
-    }
-  }
-  
-  .form__field--wrapper, {
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 3%;
-    width: 100%;
-  }
+}
+
+.form__field--wrapper {
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 3%;
+  width: 100%;
+}
 
 // cr-donate specific form styling overrides
 form,
@@ -49,18 +51,22 @@ input {
   font-family: $body-font;
   color: $colour-dark-purple;
 }
+
 form {
   margin-bottom: 30px;
+
   @include breakpoint($screen-md) {
     margin: -75px auto 60px;
     width: span(10);
     border: 2px solid $colour-grey;
     background-color: $colour-white;
   }
+
   @include breakpoint($screen-lg) {
     width: span(7);
   }
 }
+
 input[type="email"],
 input[type="number"],
 input[type="text"],
@@ -80,16 +86,20 @@ textarea {
 
 // hide and show when js is enabled
 .js-enabled {
+
   .form__row--section,
   #giftaid-text-percentage {
     display: none;
+
     &.show {
       display: block;
     }
   }
 }
+
 // when js is not enabled the (functioning) form fields should be visible
 .no-js {
+
   .form__next,
   .form__back,
   #giftaid-text-calculated,
@@ -100,6 +110,7 @@ textarea {
   #address-detail {
     display: none;
   }
+
   .giftaid-text--percentage {
     display: block;
   }
@@ -110,6 +121,7 @@ textarea {
 .form__row--billing-detail {
   padding-bottom: 0;
 }
+
 .form__row--payment-buttons,
 .form__row--billing-detail,
 .form__row--keep-touch {
@@ -145,12 +157,16 @@ h3 {
   margin: 15px 0 30px;
   font-family: $font-bold;
 }
-h1, h2 {
+
+h1,
+h2 {
   @include font-size($h3-font-size);
 }
+
 .form__row--giftaid p {
   text-align: left;
 }
+
 .form__subcopy--bfpo {
   font-size: 16px;
 }
@@ -169,9 +185,10 @@ button.payment-button {
 }
 
 button[type="submit"],
-#comicrelief_payinbundle_payment_card, {
+#comicrelief_payinbundle_payment_card {
   @extend .btn--red;
 }
+
 // Apple Pay button only shows when supported
 #comicrelief_payinbundle_payment_apple_pay {
   display: none;
@@ -179,6 +196,7 @@ button[type="submit"],
   // making sure this doesn't stick out if apple styling does come through
   height: 54px;
   @extend .btn--black;
+
   // apple pay styling
   &:after {
     margin-top: -1px;
@@ -187,6 +205,7 @@ button[type="submit"],
     -apple-pay-button-style: black;
   }
 }
+
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
   border-radius: 5px;
@@ -196,7 +215,7 @@ button[type="submit"],
 
 .form__row--giftaid {
 
-.giftaid-title {
+  .giftaid-title {
     margin: 15px auto 20px;
     width: 210px;
     height: 105px;
@@ -208,6 +227,3 @@ button[type="submit"],
     }
   }
 }
-
-
-
