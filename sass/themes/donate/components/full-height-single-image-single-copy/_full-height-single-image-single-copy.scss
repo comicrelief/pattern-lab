@@ -21,7 +21,7 @@
         }
 
         .form__field--wrapper {
-          width: 250px;
+          width: 260px;
         }
 
         fieldset#giving_type_selector {
@@ -73,24 +73,6 @@
                   display: flex;
                   width: 70%;
                   max-height: 80px;
-                }
-              }
-
-              button.select-amount-btn {
-                .select-amount {
-                  width: 125px;
-
-                  .amount-text {
-                    font-size: 30px;
-                    &-value {
-                      font-size: 35px;
-                      top: calc(50% - 0.5em + 3px);
-                    }
-                  }
-
-                  &--context {
-                    margin-left: 125px;
-                  }
                 }
               }
             }
