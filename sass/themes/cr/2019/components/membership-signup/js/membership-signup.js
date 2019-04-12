@@ -1,18 +1,19 @@
 (function($) {
   $(document).ready(function() {
- 		(function () {
-     	if ( typeof NodeList.prototype.forEach === "function" ) return false;
-     	NodeList.prototype.forEach = Array.prototype.forEach;
+
+    (function () {
+      if ( typeof NodeList.prototype.forEach === "function" ) return false;
+      NodeList.prototype.forEach = Array.prototype.forEach;
     })();
 
     var pattern = /^\s*(?=.*[1-9])\d*(?:\.\d{1,2})?\s*$/;
     /* Set an object where each key will be the id value of each row and their value an array of money buy amount */
     var moneyBuyRows = {};
     var dataLayer = window.dataLayer = window.dataLayer || [];
-    var allParagraphs = [];
+    var allRows = [];
     var lastBtnPos = '';
 
-    /* Get  website-page url  */
+    /* Get website-page url  */
     var url_string = window.location.href;
     var getQueryString = function ( field, url ) {
       var href = url ? url : window.location.href;
@@ -21,9 +22,16 @@
       return string ? string[1] : null;
     };
 
+    var totalRows = $('.paragraph--membership-signup').length;
+
     $('.paragraph--membership-signup').each(function(i) {
       var $thisParagraph = $(this);
       setFormDefaults($thisParagraph, i);
+
+      // If we've finished setting up all our rows, check for previous cookies
+      if (i === totalRows - 1) {
+        checkCookie();
+      }
     });
 
     /* Handle money buy selection */
@@ -50,10 +58,10 @@
 
         moneyBuyDescriptionHandler(descriptionCopies, position);
 
-      	var moneyBuySelectedValue = getMoneyBuyValue($thisForm.find('.select-amount-btn.active'));
-      	setCurrentDataAmount($thisForm, moneyBuySelectedValue);
+        var moneyBuySelectedValue = getMoneyBuyValue($thisForm.find('.select-amount-btn.active'));
+        setCurrentDataAmount($thisForm, moneyBuySelectedValue);
 
-        dataLayer_updateBasket(thisID, position, 'add');
+        lastBtnPos = position; 
       }
     });
 
@@ -63,11 +71,6 @@
       var $thisForm = $thisInput.parents('form');
       var amount = $thisInput.val();
       var id = $thisForm.parents(".paragraph--membership-signup").attr('id');
-
-      // Remove any previously-selected moneybuy from basket
-      if (lastBtnPos !== '') {
-        dataLayer_updateBasket(id, lastBtnPos, 'remove');
-      }
 
       // Reset this to indicate input field choice
       lastBtnPos = '';
@@ -134,8 +137,7 @@
       }
     });
 
-
-      // Handle pressing next button event
+    // Handle pressing next button event
     $(".paragraph--membership-signup .membership--submit").click(function (e) {
       e.preventDefault();
       var $thisButton = $(this);
@@ -147,18 +149,17 @@
 
       if(!isNaN(moneyBuySelected)){
         setCurrentDataAmount($thisForm, moneyBuySelected);
+        dataLayer_updateBasket(thisID, lastBtnPos, 'add');
         handleDatabeforeSubmission($thisForm, moneyBuySelected, e);
       } else if(!isNaN(inputValue)){
         setCurrentDataAmount($thisButton, inputValue);
-        handleDatabeforeSubmission($thisForm, inputValue, e);
-        // Add successfully inputted 'Other amount' to basket
         dataLayer_updateBasket(thisID, 0, 'add');
+        handleDatabeforeSubmission($thisForm, inputValue, e);
       } else {
         setCurrentDataAmount($thisButton, 0);
         handleDatabeforeSubmission($thisForm, 0, e);
       }
     });
-
 
     /**  FUNCTIONS  */
     function setFormDefaults($thisParagraph, i) {
@@ -230,10 +231,8 @@
       }
 
       // Cache all of these for ease-of-use later & prevent endless DOM traversal
-      allParagraphs[thisID] = {
-        giving_type: givingType == 'MONTHLY' ? 'regular-payment': 'single-payment',
-        current_amount: amount,
-        active_btn_pos: position,
+      allRows[thisID] = {
+        giving_type: givingType == 'MONTHLY' ? 'membership-payment': 'single-payment',
         cart_id: cartID,
         client_id: clientID,
         buttons: theseButtons
@@ -277,7 +276,7 @@
 
     /* Get money buy value  */
     function getMoneyBuyValue(element) {
-     	return parseFloat(element.attr("data-amount").toFixed(2));
+      return element.attr("data-amount");
     }
 
     /* Check and validate amount */
@@ -291,21 +290,21 @@
 
     /* Redirect function for browser support */
     function redirect(url) {
-    	var ua = navigator.userAgent.toLowerCase(),
-      	isIE = ua.indexOf('msie') !== -1,
+      var ua = navigator.userAgent.toLowerCase(),
+        isIE = ua.indexOf('msie') !== -1,
         version = parseInt(ua.substr(4, 2), 10);
         // Internet Explorer 8 and lower
         if (isIE && version < 9) {
-        	var link = document.createElement('a');
-        	link.href = url;
-        	document.body.appendChild(link);
-        	link.click();
+          var link = document.createElement('a');
+          link.href = url;
+          document.body.appendChild(link);
+          link.click();
         }
         // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
         else {
-      		window.location.href = url;
-    	}
-  	}
+          window.location.href = url;
+      }
+    }
 
     /* Submit data */
     function nextStepHandler(e, currency, amount, givingType, cartId, clientId, rowID) {
@@ -328,7 +327,7 @@
        /* Set-up data layer stuff on pageload */
     function dataLayer_init($element, thisID) {
       // Grab this Paragraph from our cached array
-      var thisParagraph = allParagraphs[thisID];
+      var thisParagraph = allRows[thisID];
       // Construct object to push to datalayer, staring with Other Amount field
       var ecommerceObj = {
         'ecommerce': {
@@ -351,7 +350,7 @@
           id:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
           name:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
           price: thisParagraph['buttons'][i]['amount'] + '.00',      
-          brand:'cr-membership',  
+          brand: allRows[thisID]['giving_type'],
           category: thisParagraph['cart_id'],   
           position: thisParagraph['buttons'][i]['position'],
           list: thisParagraph['client_id'] + '_' + thisID,
@@ -365,31 +364,26 @@
       // Push to the data layer
       dataLayer.push(ecommerceObj);
 
-      // If we have a default 'active' button, add it to the basket
+      // If we have a default 'active' button, store the position value
       var $activeBtn = $element.find('.select-amount-btn.active');
 
       if ($activeBtn.length > 0) {
-        dataLayer_updateBasket(thisID, $activeBtn.data('position'), 'add');
+        lastBtnPos = $activeBtn.data('position');
       }
     }
 
-
     /* Add or remove moneybuy 'products' from the hypothetical basket */
     function dataLayer_updateBasket(thisID, thisBtnPos, type) {
-      var thisParagraph = allParagraphs[thisID];
+      var thisParagraph = allRows[thisID];
       var thisAmount = '';
       var isBtn = true;
 
       // Construct generic ecommerce object for all use cases
+      // TODO: handle currency changes
       var ecommerceObj = {
         'ecommerce': {'currencyCode': 'GBP',},
         'event': type ===  'add' ? 'addToBasket' : 'removeFromBasket'
       };
-
-      // If we've selected a new button and not the input field, remove the old one from the basket
-      if (thisBtnPos !== 0 && thisBtnPos !== lastBtnPos && lastBtnPos !== '' ) {
-        dataLayer_updateBasket(thisID, lastBtnPos, 'remove');
-      }
 
       lastBtnPos = thisBtnPos;
 
@@ -398,8 +392,11 @@
         isBtn = false;
         thisAmount = $('#' + thisID).data('current-amount');
       } else {
-        thisAmount = allParagraphs[thisID]['buttons'][thisBtnPos]['amount'];
+        thisAmount = allRows[thisID]['buttons'][thisBtnPos]['amount'];
       }
+
+      // Parse this to a 2-decimal place float
+      thisAmount = parseFloat(thisAmount).toFixed(2);
 
       // Switch the values based on the input type
       ecommerceObj['ecommerce'][type] = {
@@ -408,14 +405,67 @@
           id: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
           name: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
           price: thisAmount,      
-          brand:'cr-membership',  
-          category: allParagraphs[thisID]['cart_id'], 
+          brand: allRows[thisID]['giving_type'],  
+          category: allRows[thisID]['cart_id'], 
           quantity: 1,
-          dimenstion10: allParagraphs[thisID]['giving_type']
+          dimenstion10: allRows[thisID]['giving_type']
         }],
       };
 
+      console.log('updateBasket: pushing: ', ecommerceObj);
       dataLayer.push(ecommerceObj);
+
+      // If this is our 'add' event triggered via submission, add the new cookie
+      if ( type === 'add' ){
+        updateCookie(thisID, thisBtnPos, 'add');
+      }
+    }
+
+    function updateCookie(rowID, btnPos, addOrRemove) {
+
+      // TODO: handle subdomain stuff?
+      var domain = window.location.hostname;
+
+      var cookieName = 'mship-previous-amount';
+
+      if (addOrRemove === 'add') {
+        console.log('updateCookie: add, ID:', rowID, 'btnPos:', btnPos);
+        var expireDate = new Date();
+        
+        expireDate.setDate(expireDate.getTime() + 30 * 60 * 1000); // 30min expiry
+         
+        var cookie = [
+          cookieName + '=' + rowID + '?' + btnPos,
+          'expires=' + expireDate.toUTCString(),
+          'path=/',
+          'domain=' + domain
+        ];
+
+        document.cookie = cookie.join(';');
+
+      } else {
+        // If it's not an 'add' it's a 'remove', so set the expiry to the past to delete it
+        document.cookie = cookieName + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+    }
+    
+    /* See if the user has previouls submitted an amount here, BUT the 
+    * cookie hasn't been deleted by Donate after a successful transaction */
+    function checkCookie() {
+
+      var checkCookieValues = (document.cookie.match(/^(?:.*;)?\s*mship-previous-amount\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
+
+      if (checkCookieValues) {
+        console.log('remove cookie');
+        // Remove the cookie, as the next submission will set a new one
+        updateCookie(null, null, 'remove');
+        // Split out our return string to the two values we need
+        checkCookieValues = checkCookieValues.split('?');
+        // Use these ID and btnPos values to fire off a 'removeFromBasket' event
+        dataLayer_updateBasket(checkCookieValues[0], checkCookieValues[1], 'remove');
+      } else {
+        console.log('no cookie to remove');
+      }
     }
   });
 })(jQuery);
