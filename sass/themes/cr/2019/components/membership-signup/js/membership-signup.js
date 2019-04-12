@@ -268,7 +268,7 @@
       /* Send data */
       if (validateAmount(amount)) {
         $thisForm.find(".form-error").removeClass('show-error');
-        nextStepHandler(event, currency, amount, givingType, cartId, clientId);
+        nextStepHandler(event, currency, amount, givingType, cartId, clientId, rowID);
       } else {
         $thisForm.find(".form-error").addClass('show-error');
       }
