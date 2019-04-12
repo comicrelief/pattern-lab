@@ -19,12 +19,10 @@
   @include breakpoint($screen-md) {
     padding: 30px 0;
   }
-
   @include breakpoint($screen-lg) {
     width: span(6);
   }
 }
-
 .form__fieldset,
 .card-list {
   float: none;
@@ -48,182 +46,168 @@
 form,
 form a,
 input {
-  font-family: $body-font;
-  color: $colour-dark-purple;
+font-family: $body-font;
+color: $colour-dark-purple;
 }
-
 form {
-  margin-bottom: 30px;
-
-  @include breakpoint($screen-md) {
-    margin: -75px auto 60px;
-    width: span(10);
-    border: 2px solid $colour-grey;
-    background-color: $colour-white;
-  }
-
-  @include breakpoint($screen-lg) {
-    width: span(7);
-  }
+margin-bottom: 30px;
+@include breakpoint($screen-md) {
+  margin: -75px auto 60px;
+  width: span(10);
+  border: 2px solid $colour-grey;
+  background-color: $colour-white;
 }
-
+@include breakpoint($screen-lg) {
+  width: span(7);
+}
+}
 input[type="email"],
 input[type="number"],
 input[type="text"],
 select,
 textarea {
-  border: 1px solid $colour-dark-purple;
-  @include placeholder (#757575, 18px, $body-font);
+border: 1px solid $colour-dark-purple;
+@include placeholder (#757575, 18px, $body-font);
 }
 
 .form__row {
-  width: span(11);
+width: span(11);
 
-  @include breakpoint($screen-md) {
-    width: span(10);
-  }
+@include breakpoint($screen-md) {
+  width: span(10);
+}
 }
 
 // hide and show when js is enabled
 .js-enabled {
-
-  .form__row--section,
-  #giftaid-text-percentage {
-    display: none;
-
-    &.show {
-      display: block;
-    }
-  }
-}
-
-// when js is not enabled the (functioning) form fields should be visible
-.no-js {
-
-  .form__next,
-  .form__back,
-  #giftaid-text-calculated,
-  #comicrelief_payinbundle_payment_paypal,
-  .search-box-button,
-  .form__subcopy--bfpo,
-  .form__address-detail-toggle,
-  #address-detail {
-    display: none;
-  }
-
-  .giftaid-text--percentage {
+.form__row--section,
+#giftaid-text-percentage {
+  display: none;
+  &.show {
     display: block;
   }
+}
+}
+// when js is not enabled the (functioning) form fields should be visible
+.no-js {
+.form__next,
+.form__back,
+#giftaid-text-calculated,
+#comicrelief_payinbundle_payment_paypal,
+.search-box-button,
+.form__subcopy--bfpo,
+.form__address-detail-toggle,
+#address-detail {
+  display: none;
+}
+.giftaid-text--percentage {
+  display: block;
+}
 }
 
 // Remove large space between billing address row and keep in touch row
 .form__row--your-detail,
 .form__row--billing-detail {
-  padding-bottom: 0;
+padding-bottom: 0;
 }
-
 .form__row--payment-buttons,
 .form__row--billing-detail,
 .form__row--keep-touch {
-  padding-top: 0;
+padding-top: 0;
 }
 
 // Back button
 .form__back {
-  display: block;
-  position: relative;
-  margin-bottom: 30px;
-  padding-left: 1em;
-  font-weight: bold;
-  text-align: left;
-  cursor: pointer;
+display: block;
+position: relative;
+margin-bottom: 30px;
+padding-left: 1em;
+font-weight: bold;
+text-align: left;
+cursor: pointer;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 25%;
-    left: 0;
-    width: 0.5em;
-    height: 0.5em;
-    border-left: 2px solid $colour-dark-purple;
-    border-top: 2px solid $colour-dark-purple;
-    transform: rotate(-45deg);
-  }
+&:before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 0.5em;
+  height: 0.5em;
+  border-left: 2px solid $colour-dark-purple;
+  border-top: 2px solid $colour-dark-purple;
+  transform: rotate(-45deg);
+}
 }
 
 // text styling
 h2,
 h3 {
-  margin: 15px 0 30px;
-  font-family: $font-bold;
+margin: 15px 0 30px;
+font-family: $font-bold;
 }
-
-h1,
-h2 {
-  @include font-size($h3-font-size);
+h1, h2 {
+@include font-size($h3-font-size);
 }
-
 .form__row--giftaid p {
-  text-align: left;
+text-align: left;
 }
-
 .form__subcopy--bfpo {
-  font-size: 16px;
+font-size: 16px;
 }
 
 // buttons
 button,
 button.payment-button {
-  @extend .btn;
-  @extend .btn--fixed-width;
+@extend .btn;
+@extend .btn--fixed-width;
 }
 
 button.payment-button {
-  border-radius: 5px;
-  height: 55px;
-  padding: 18px 30px;
+border-radius: 5px;
+height: 55px;
+padding: 18px 30px;
 }
 
 button[type="submit"],
 #comicrelief_payinbundle_payment_card {
-  @extend .btn--red;
+@extend .btn--royal-blue;
 }
-
 // Apple Pay button only shows when supported
 #comicrelief_payinbundle_payment_apple_pay {
-  display: none;
-  // fallback if apple pay styling doesn't come through
-  // making sure this doesn't stick out if apple styling does come through
-  height: 54px;
-  @extend .btn--black;
-
-  // apple pay styling
-  &:after {
-    margin-top: -1px;
-    height: 55px;
-    -webkit-appearance: -apple-pay-button;
-    -apple-pay-button-style: black;
-  }
+display: none;
+// fallback if apple pay styling doesn't come through
+// making sure this doesn't stick out if apple styling does come through
+height: 54px;
+@extend .btn--black;
+// apple pay styling
+&:after {
+  margin-top: -1px;
+  height: 55px;
+  -webkit-appearance: -apple-pay-button;
+  -apple-pay-button-style: black;
 }
-
+}
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
-  border-radius: 5px;
-  background-color: $colour-grey;
-  background-image: url($image-path + "paypal.svg");
+border-radius: 5px;
+background-color: $colour-grey;
+background-image: url($image-path + "paypal.svg");
 }
 
 .form__row--giftaid {
 
-  .giftaid-title {
-    margin: 15px auto 20px;
-    width: 210px;
-    height: 105px;
-    background: url($image-path + "gift_aid_logo.png") no-repeat center;
-    background-size: contain;
+.giftaid-title {
+  margin: 15px auto 20px;
+  width: 210px;
+  height: 105px;
+  background: url($image-path + "gift_aid_logo.png") no-repeat center;
+  background-size: contain;
 
-    @include breakpoint($screen-md) {
-      width: 298px;
-    }
+  @include breakpoint($screen-md) {
+    width: 298px;
   }
 }
+}
+
+
+

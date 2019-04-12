@@ -7,6 +7,7 @@
     }
 
     &__text-wrapper {
+      background-color: $colour-green;
       padding: 0 5vw;
 
       .form__step .form__fieldset {
@@ -15,20 +16,29 @@
           font-size: 16px;
         }
 
-        input#field-input--amount {
-          border-right: none;
-          margin-right: -9px;
-          font-size: 18px;
-        }
-
-        select.form__field--currency {
-          border-left: none;
-          font-size: 18px;
-          line-height: 24px;
+        .form__field.form__field--error-outline {
+          border-color: $colour-red;
         }
 
         .form__field--wrapper {
           width: 250px;
+        }
+
+        fieldset#giving_type_selector {
+          .form{
+            &__giving-type  {
+              .form__field--wrapper {
+                label {
+                  text-transform: capitalize;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+        }
+
+        button[type="submit"]#comicrelief_payinbundle_payment_amount_submit.form__next:hover {
+          background-color: $colour-dark-blue;
         }
       }
     }
@@ -63,12 +73,6 @@
                   display: flex;
                   width: 70%;
                   max-height: 80px;
-                  .form__field--wrapper {
-                    label {
-                      text-transform: capitalize;
-                      font-weight: 300;
-                    }
-                  }
                 }
               }
 

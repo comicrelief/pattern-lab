@@ -3,12 +3,10 @@
   p {
     @extend p;
   }
-
-  p,
-  .number-input-label {
+  p, .number-input-label {
     color: $colour-dark-purple;
   }
-
+  
   .form__fieldset {
     @include clearfix;
     position: relative;
@@ -18,12 +16,12 @@
       margin-top: 60px;
     }
   }
-
+  
   .form__field-error-container--amount {
-    position: absolute;
+    position: absolute; 
     top: 50px;
   }
-
+  
   .form__togglebtn-amount {
     .select-amount-btn {
       position: relative;
@@ -31,7 +29,8 @@
       padding: 10px 0;
       min-height: 84px;
       border-radius: 0;
-      background-color: $colour-light-yellow;
+      background-color: $colour-light-green;
+      border: 2px solid $colour-light-green;
       color: $colour-dark-purple;
       font-family: $body-font;
       line-height: 22px;
@@ -64,19 +63,19 @@
         max-width: 65%;
         line-height: 1.3;
       }
-
+  
       &.selected {
-        border: 2px solid $colour-royal-blue;
-
-        .select-amount {
+        background-color: $colour-deep-violet;
+        border: none;
+        .select-amount,
+        .select-amount--context {
           color: $colour-white;
-          background-color: $colour-royal-blue;
         }
-
+  
       }
     }
   }
-
+  
   .currency-input-label {
     position: absolute;
     left: 0px;
@@ -86,7 +85,7 @@
     font-size: 18px;
     font-family: $body-font;
     margin-left: 15px;
-    margin-top: 1px;
+    margin-top:1px;
     z-index: 9;
   }
 
@@ -98,6 +97,10 @@
       float: left;
       width: span(6);
       margin-right: calc(2 * #{gutter()});
+      border-color: $colour-white;
+      border-right: none;
+      margin-right: -9px;
+      font-size: 18px;
     }
 
     &.form__field--wrapper {
@@ -105,8 +108,8 @@
     }
 
     .error-container {
-      position: relative;
-      top: 25px;
+        position: relative;
+        top: 25px;
 
       .help-block.form-error {
         position: absolute;
@@ -114,20 +117,27 @@
       }
     }
   }
-
+  
   .form__field--currency {
 
     .form__field--currency {
       float: left;
       width: span(6);
       margin-left: calc(2 * #{gutter()});
+      background-color: $colour-white;
+      border-color: $colour-white;
+      border-left: none;
+      font-size: 18px;
+      line-height: 24px;
+      padding: 12px 50px 12px 10px;
+      background-position: calc(100% - 22px) 15px;
     }
   }
 
-  .form__field--currency,
-  .form__field--amount {
+  .form__field--currency, .form__field--amount {
     label {
       @extend .visually-hidden;
     }
   }
 }
+

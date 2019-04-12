@@ -1,65 +1,62 @@
 #giving_type_selector {
   margin: 2em 0;
+ .form__field--wrapper {
+   position: relative;
+   margin-bottom: 0;
+   display: inline-block;
+   width: 50%;
+   cursor: pointer;
+   background-color: $colour-light-green;
 
-  .form__field--wrapper {
-    position: relative;
-    margin-bottom: 0;
-    display: inline-block;
-    width: 50%;
-    cursor: pointer;
-    background-color: $colour-light-yellow;
+   &:after {
+     @include clearfix();
+   }
 
-    &:after {
-      @include clearfix();
-    }
+   input {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     opacity: 0;
+     cursor: pointer;
+   }
+   label {
+     margin: 0;
+     padding: 14px 0;
+     width: 100%;
+     height: 100%;
+     border: solid 2px $colour-light-green;
+     color: $colour-royal-blue;
+     line-height: 18px;
+     font-family: $font-bold;
+     font-weight: initial;
+     text-align: center;
+     cursor: pointer;
 
-    input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    label {
-      margin: 0;
-      padding: 14px 0;
-      width: 100%;
-      height: 100%;
-      color: $colour-royal-blue;
-      line-height: 18px;
-      font-family: $font-bold;
-      font-weight: initial;
-      text-align: center;
-      cursor: pointer;
-
-      @include breakpoint($screen-sm) {
-        span:before {
-          content: "\A";
-          white-space: pre;
-        }
-      }
-
-      @include breakpoint($screen-md) {
-        span:before {
-          display: none;
-        }
-      }
-    }
-
-    input:focus+label {
-      // IE, FF etc.
-      outline: 1px dotted black;
-      // Chrome etc.
-      outline: -webkit-focus-ring-color auto 5px;
-      outline-offset: 0px;
-    }
-
-    input:checked+label {
-      color: $colour-white;
-      background-color: $colour-dark-purple;
-    }
-  }
+     @include breakpoint($screen-sm) {
+       span:before {
+         content: "\A";
+         white-space: pre;
+       }
+     }
+     @include breakpoint($screen-md) {
+       span:before {
+         display: none;
+       }
+     }
+   }
+   input:focus + label {
+     // IE, FF etc.
+     outline: 1px dotted black;
+     // Chrome etc.
+     outline: -webkit-focus-ring-color auto 5px;
+     outline-offset: 0px;
+   }
+   input:checked + label {
+     color: $colour-white;
+     background-color: $colour-dark-purple;
+     border: 2px solid $colour-dark-purple;
+   }
+ }
 }
