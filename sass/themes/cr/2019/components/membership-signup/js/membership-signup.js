@@ -27,11 +27,6 @@
     $('.paragraph--membership-signup').each(function(i) {
       var $thisParagraph = $(this);
       setFormDefaults($thisParagraph, i);
-
-      // If we've finished setting up all our rows, check for previous cookies
-      if (i === totalRows - 1) {
-        checkCookie();
-      }
     });
 
     /* Handle money buy selection */
@@ -240,6 +235,11 @@
 
       /* Pass the cached row to set up the dataLayer */
       dataLayer_init($newParagraphWithId, thisID);
+
+      // If we've finished setting up all our rows, check for previous cookies
+      if (i === totalRows - 1) {
+        checkCookie();
+      }
     }
 
     /** Money buy description handler */
