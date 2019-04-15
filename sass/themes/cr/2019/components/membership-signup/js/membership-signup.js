@@ -448,7 +448,7 @@
           cookieName + '=' + rowID + '?' + btnPos,
           'expires=' + expireDate.toUTCString(),
           'path=/',
-          'domain=' + domain
+          'domain=.' + domain
         ];
 
         document.cookie = cookie.join(';');
