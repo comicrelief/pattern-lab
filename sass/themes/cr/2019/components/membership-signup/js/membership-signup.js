@@ -352,10 +352,13 @@
       /*  Construct obj to represent each moneybuy button
           use 1-index, not zero as it maps to our btn 'position' values */
       for (i = 1; i < thisParagraph['buttons'].length; i++) {
+
+        var thisAmount = parseFloat(parseFloat(thisParagraph['buttons'][i]['amount']).toFixed(2));
+
         var thisObj = {
           id:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
           name:'moneybuy-' + thisParagraph['buttons'][i]['amount'],
-          price: thisParagraph['buttons'][i]['amount'] + '.00',      
+          price: thisAmount,
           brand: allRows[thisID]['giving_type'],
           category: thisParagraph['cart_id'],   
           position: thisParagraph['buttons'][i]['position'],
