@@ -395,8 +395,9 @@
         thisAmount = allRows[thisID]['buttons'][thisBtnPos]['amount'];
       }
 
-      // Parse this to a 2-decimal place float
+      // Parse this to a 2-decimal place float, need to re-parse after toFixed
       thisAmount = parseFloat(thisAmount).toFixed(2);
+      thisAmount = parseFloat(thisAmount);
 
       // Switch the values based on the input type
       ecommerceObj['ecommerce'][type] = {
