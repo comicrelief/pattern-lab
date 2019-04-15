@@ -412,7 +412,6 @@
         }],
       };
 
-      console.log('updateBasket: pushing: ', ecommerceObj);
       dataLayer.push(ecommerceObj);
 
       // If this is our 'add' event triggered via submission, add the new cookie
@@ -429,7 +428,6 @@
       var cookieName = 'mship-previous-amount';
 
       if (addOrRemove === 'add') {
-        console.log('updateCookie: add, ID:', rowID, 'btnPos:', btnPos);
         var expireDate = new Date();
         
         expireDate.setDate(expireDate.getTime() + 30 * 60 * 1000); // 30min expiry
@@ -456,15 +454,12 @@
       var checkCookieValues = (document.cookie.match(/^(?:.*;)?\s*mship-previous-amount\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
 
       if (checkCookieValues) {
-        console.log('remove cookie');
         // Remove the cookie, as the next submission will set a new one
         updateCookie(null, null, 'remove');
         // Split out our return string to the two values we need
         checkCookieValues = checkCookieValues.split('?');
         // Use these ID and btnPos values to fire off a 'removeFromBasket' event
         dataLayer_updateBasket(checkCookieValues[0], checkCookieValues[1], 'remove');
-      } else {
-        console.log('no cookie to remove');
       }
     }
   });
