@@ -79,8 +79,39 @@
             width: 100%;
             padding: 0;
 
+            &.form__row--address-lookup {
+              input,
+              select{
+                border-color: $colour-white;
+                border-bottom: 2px solid $colour-deep-violet;
+                background: $colour-white;
+              }
+            }
+
             .form__fieldset {
               width: 100%;
+
+              h1.form__subtitle.text--subtitle--small {
+                text-transform: inherit;
+              }
+
+              label.form__field-label {
+                font-size: 15px;
+                line-height: 24px;
+                text-transform: none;
+                font-weight: 500;
+              }
+
+              #field-wrapper {
+                &--firstName input,
+                &--lastName input,
+                &--email input,
+                &--confirmEmail input {
+                  border-color: $colour-white;
+                  border-bottom: 2px solid $colour-deep-violet;
+                  background: $colour-white;
+                }
+              }
 
               fieldset#giving_type_selector {
                 .form__giving-type {
