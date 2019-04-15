@@ -12,6 +12,7 @@
     var dataLayer = window.dataLayer = window.dataLayer || [];
     var allRows = [];
     var lastBtnPos = '';
+    var submitNameID = '';
 
     /* Get website-page url  */
     var url_string = window.location.href;
@@ -121,9 +122,12 @@
       if (e.which == 13) {
         e.preventDefault();
         var $thisForm = $thisInput.closest('form');
+        var thisID = $thisForm.parents('.paragraph--membership-signup').attr('id');
+
         var inputValue = parseFloat($thisInput.val())
         if(!isNaN(inputValue)) {
           setCurrentDataAmount($thisInput, inputValue);
+          dataLayer_updateBasket(thisID, 0, 'add');
           handleDatabeforeSubmission($thisForm, inputValue, e);
         } else {
           setCurrentDataAmount($thisInput, 0);
@@ -290,6 +294,7 @@
 
     /* Redirect function for browser support */
     function redirect(url) {
+
       var ua = navigator.userAgent.toLowerCase(),
         isIE = ua.indexOf('msie') !== -1,
         version = parseInt(ua.substr(4, 2), 10);
@@ -321,7 +326,7 @@
         url_string = url_string.substring(0, url_string.indexOf('?'));
       }
       /* Redirect user to donation */
-      redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID);
+      redirect(donationLink + "?clientOverride=" + clientId + "&amount=" + amount + "&currency=" + currency + "&givingType=" + givingType + "&cartId=" + cartId + "&affiliate=" + affiliateValue + "&siteurl=" + url_string + '&rowID=' + rowID + '&moneybuy=' + submitNameID);
     }
 
        /* Set-up data layer stuff on pageload */
@@ -398,6 +403,8 @@
       // Parse this to a 2-decimal place float, need to re-parse after toFixed
       thisAmount = parseFloat(thisAmount).toFixed(2);
       thisAmount = parseFloat(thisAmount);
+
+      submitNameID = isBtn ? 'moneybuy-' + thisAmount : 'manual-entry';
 
       // Switch the values based on the input type
       ecommerceObj['ecommerce'][type] = {
