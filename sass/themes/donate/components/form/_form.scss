@@ -163,7 +163,6 @@ button.payment-button {
 }
 
 button.payment-button {
-border-radius: 5px;
 height: 55px;
 padding: 18px 30px;
 }
@@ -189,7 +188,7 @@ height: 54px;
 }
 // PayPal fallback styling
 #comicrelief_payinbundle_payment_paypal:after {
-border-radius: 5px;
+border-radius: 30px;
 background-color: $colour-grey;
 background-image: url($image-path + "paypal.svg");
 }

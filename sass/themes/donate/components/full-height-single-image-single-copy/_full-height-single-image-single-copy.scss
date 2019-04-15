@@ -40,8 +40,22 @@
         button[type="submit"]#comicrelief_payinbundle_payment_amount_submit.form__next:hover {
           background-color: $colour-dark-blue;
         }
+
+        /* Giftaid form */
+        .form__field-wrapper--checkbox.form__field-wrapper--background {
+          background: $colour-light-green;
+        }
+
+        #field-wrapper--giftaid .form__field-additional-text div {
+          font-size: 15px;
+          line-height: 24px;
+        }
       }
     }
+  }
+
+  .form__field-wrapper--checkbox.form__field-wrapper--background {
+    background: $colour-light-green;
   }
 
   @include breakpoint($screen-md) {
