@@ -400,18 +400,18 @@
         thisAmount = allRows[thisID]['buttons'][thisBtnPos]['amount'];
       }
 
+      submitNameID = isBtn ? 'moneybuy-' + thisAmount : 'manual-entry';
+
       // Parse this to a 2-decimal place float, need to re-parse after toFixed
       thisAmount = parseFloat(thisAmount).toFixed(2);
       thisAmount = parseFloat(thisAmount);
-
-      submitNameID = isBtn ? 'moneybuy-' + thisAmount : 'manual-entry';
 
       // Switch the values based on the input type
       ecommerceObj['ecommerce'][type] = {
         'actionField': {'list': thisParagraph['client_id'] + '_' + thisID },
         'products': [{
-          id: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
-          name: isBtn ? 'moneybuy-' + thisAmount : 'manual-entry',
+          id: submitNameID,
+          name: submitNameID,
           price: thisAmount,      
           brand: allRows[thisID]['giving_type'],  
           category: allRows[thisID]['cart_id'], 
