@@ -344,6 +344,7 @@
             category: thisParagraph['cart_id'],
             position: 0,
             list: thisParagraph['client_id'] + '_' + thisID,
+            dimenstion10: thisParagraph['giving_type'],
           }],
         }
       };
