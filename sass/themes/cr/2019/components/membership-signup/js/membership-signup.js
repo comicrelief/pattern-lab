@@ -242,7 +242,7 @@
 
       // If we've finished setting up all our rows, check for previous cookies
       if (i === totalRows - 1) {
-        checkCookie();
+        // checkCookie();
       }
     }
 
@@ -428,7 +428,7 @@
 
       // If this is our 'add' event triggered via submission, add the new cookie
       if ( type === 'add' ){
-        updateCookie(thisID, thisBtnPos, 'add');
+        // updateCookie(thisID, thisBtnPos, 'add');
       }
     }
 
