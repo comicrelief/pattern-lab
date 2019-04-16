@@ -242,7 +242,7 @@
 
       // If we've finished setting up all our rows, check for previous cookies
       if (i === totalRows - 1) {
-        // checkCookie();
+        checkCookie();
       }
     }
 
@@ -428,7 +428,7 @@
 
       // If this is our 'add' event triggered via submission, add the new cookie
       if ( type === 'add' ){
-        // updateCookie(thisID, thisBtnPos, 'add');
+        updateCookie(thisID, thisBtnPos, 'add');
       }
     }
 
@@ -436,27 +436,25 @@
 
       // TODO: handle subdomain stuff?
       var domain = window.location.hostname;
-
       var cookieName = 'mship-previous-amount';
+      var expireDate;
 
       if (addOrRemove === 'add') {
-        var expireDate = new Date();
-        
-        expireDate.setDate(expireDate.getTime() + 30 * 60 * 1000); // 30min expiry
-         
-        var cookie = [
-          cookieName + '=' + rowID + '?' + btnPos,
-          'expires=' + expireDate.toUTCString(),
-          'path=/',
-          'domain=.' + domain
-        ];
-
-        document.cookie = cookie.join(';');
-
+        expireDate = new Date();
+        expireDate.setTime(expireDate.getTime() + (0.5*60*60*1000)); // add 30m to now
+        expireDate = expireDate.toUTCString();
       } else {
-        // If it's not an 'add' it's a 'remove', so set the expiry to the past to delete it
-        document.cookie = cookieName + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+        expireDate = 'Thu, 01 Jan 1970 00:00:00 GMT';
       }
+
+      var cookie = [
+        cookieName + '=' + rowID + '?' + btnPos,
+        'expires=' + expireDate,
+        'path=/',
+        'domain=.' + domain
+      ];
+
+      document.cookie = cookie.join(';');
     }
     
     /* See if the user has previouls submitted an amount here, BUT the 
@@ -466,12 +464,16 @@
       var checkCookieValues = (document.cookie.match(/^(?:.*;)?\s*mship-previous-amount\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
 
       if (checkCookieValues) {
-        // Remove the cookie, as the next submission will set a new one
-        updateCookie(null, null, 'remove');
         // Split out our return string to the two values we need
         checkCookieValues = checkCookieValues.split('?');
-        // Use these ID and btnPos values to fire off a 'removeFromBasket' event
-        dataLayer_updateBasket(checkCookieValues[0], checkCookieValues[1], 'remove');
+        var thisID = checkCookieValues[0];
+        var thisBtnPos = checkCookieValues[1];
+
+        // Remove the cookie, as the next submission will set a new one
+        updateCookie(thisID, thisBtnPos, 'remove');
+
+        // Fire off a 'removeFromBasket' event
+        dataLayer_updateBasket(thisID, thisBtnPos, 'remove');
       }
     }
   });
