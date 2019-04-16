@@ -395,9 +395,10 @@
       };
 
       lastBtnPos = thisBtnPos;
-
+      console.log('thisBtnPos:', thisBtnPos, typeof thisBtnPos);
+      
       // Change our 'amount' source depending on the input type
-      if (thisBtnPos === 0) {
+      if (thisBtnPos == 0) {
         isBtn = false;
         thisAmount = $('#' + thisID).data('current-amount');
       } else {
