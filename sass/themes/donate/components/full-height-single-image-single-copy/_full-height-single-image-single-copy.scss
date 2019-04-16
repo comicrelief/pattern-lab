@@ -1,133 +1,154 @@
 .paragraph--full-height-single-image-single-copy {
-  padding: 0;
+	padding: 0;
 
-  .fhsisc {
-    &__image-wrapper {
-      padding: 0;
-    }
+	.fhsisc {
+		&__image-wrapper {
+			padding: 0;
+		}
 
-    &__text-wrapper {
-      background-color: $colour-green;
+		&__text-wrapper {
+			background-color: $colour-green;
       padding: 0 5vw;
 
-      .form__step .form__fieldset {
-        .text--body-small {
-          font-weight: 400;
-          font-size: 16px;
-        }
+      input,
+      select {
+        border-color: $colour-white;
+        border-bottom: 2px solid $colour-deep-violet;
+        background-color: $colour-white;
+      }
 
-        .form__field.form__field--error-outline {
-          border-color: $colour-red;
-        }
+			.form__step .form__fieldset {
+				.text--body-small {
+					font-weight: 400;
+					font-size: 16px;
+				}
 
-        .form__field--wrapper {
-          width: 260px;
-        }
+				.form__field.form__field--error-outline {
+					border-color: $colour-red;
+				}
 
-        fieldset#giving_type_selector {
-          .form{
-            &__giving-type  {
-              .form__field--wrapper {
-                label {
-                  text-transform: capitalize;
-                  font-weight: 300;
+				.form__field--wrapper {
+					width: 260px;
+				}
+
+				fieldset#giving_type_selector {
+					.form {
+						&__giving-type {
+							.form__field--wrapper {
+                input:checked + label {
+                  color: $colour-white;
                 }
-              }
-            }
-          }
-        }
 
-        button[type="submit"]#comicrelief_payinbundle_payment_amount_submit.form__next:hover {
-          background-color: $colour-dark-blue;
-        }
+								label {
+									text-transform: inherit;
+                  font-weight: 300;
+                  font-size: 16px;
+                  color: $colour-deep-violet;
+								}
+							}
+						}
+					}
+				}
 
-        /* Giftaid form */
-        .form__field-wrapper--checkbox.form__field-wrapper--background {
-          background: $colour-light-green;
-        }
+        button[type="submit"]:hover,
+        #comicrelief_payinbundle_payment_card:hover {
+					background-color: $colour-dark-blue;
+				}
 
-        #field-wrapper--giftaid .form__field-additional-text div {
-          font-size: 15px;
-          line-height: 24px;
-        }
-      }
-    }
-  }
+				/* Giftaid form */
+				.form__field-wrapper--checkbox.form__field-wrapper--background {
+					background: $colour-light-green;
+				}
 
-  .form__field-wrapper--checkbox.form__field-wrapper--background {
-    background: $colour-light-green;
-  }
+				#field-wrapper--giftaid .form__field-additional-text div {
+					font-size: 15px;
+					line-height: 24px;
+				}
+			}
+		}
+	}
 
-  @include breakpoint($screen-md) {
-    .fhsisc {
-      &__image-wrapper {
-        img {
-          max-height: 100vh;
-        }
-      }
+	.form__field-wrapper--checkbox.form__field-wrapper--background {
+		background: $colour-light-green;
+	}
 
-      &__text-wrapper {
-        padding: 0 60px;
+	@include breakpoint($screen-md) {
+		.fhsisc {
+			&__image-wrapper {
+				img {
+					max-height: 100vh;
+				}
+			}
 
-        form {
-          margin: 60px auto 60px;
-          width: 100%;
-          border: none;
-          background-color: transparent;
+			&__text-wrapper {
+				padding: 0 60px;
 
-          .form__row {
-            width: 100%;
+				form {
+					margin: 60px auto 60px;
+					width: 100%;
+					border: none;
+					background-color: transparent;
+
+					.form__row {
+						width: 100%;
             padding: 0;
 
-            &.form__row--address-lookup {
-              input,
-              select{
-                border-color: $colour-white;
-                border-bottom: 2px solid $colour-deep-violet;
-                background: $colour-white;
-              }
+            #field-input--amount,
+            #comicrelief_payinbundle_payment_currency {
+              border-bottom: none;
             }
+						.form__fieldset {
+							width: 100%;
 
-            .form__fieldset {
-              width: 100%;
-
-              h1.form__subtitle.text--subtitle--small {
-                text-transform: inherit;
-              }
-
-              label.form__field-label {
-                font-size: 15px;
-                line-height: 24px;
-                text-transform: none;
-                font-weight: 500;
-              }
-
-              #field-wrapper {
-                &--firstName input,
-                &--lastName input,
-                &--email input,
-                &--confirmEmail input {
-                  border-color: $colour-white;
-                  border-bottom: 2px solid $colour-deep-violet;
-                  background: $colour-white;
+							.form__field--postcode {
+                display: flex;
+                .form__btn {
+                  width: 65%;
+                  #postcode_button {
+                    width: 100%;
+                    font-size: 15px;
+                    letter-spacing: 0;
+                  }
                 }
-              }
+							}
 
-              fieldset#giving_type_selector {
-                .form__giving-type {
-                  display: flex;
-                  width: 70%;
-                  max-height: 80px;
-                }
-              }
-            }
-          }
+							h1.form__subtitle.text--subtitle--small {
+								text-transform: inherit;
+							}
 
-          @include breakpoint($screen-lg) {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
+							label.form__field-label {
+								font-size: 15px;
+								line-height: 24px;
+								text-transform: none;
+								font-weight: 500;
+							}
+
+							#field-wrapper {
+								&--firstName input,
+								&--lastName input,
+								&--email input,
+								&--confirmEmail input {
+									border-color: $colour-white;
+									border-bottom: 2px solid $colour-deep-violet;
+									background: $colour-white;
+								}
+							}
+
+							fieldset#giving_type_selector {
+								.form__giving-type {
+									display: flex;
+									width: 70%;
+									max-height: 80px;
+								}
+							}
+						}
+					}
+
+					@include breakpoint($screen-lg) {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
 }
