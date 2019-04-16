@@ -441,7 +441,7 @@
 
       if (addOrRemove === 'add') {
         expireDate = new Date();
-        expireDate.setTime(expireDate.getTime() + (1.5*60*60*1000)); // add 30m to now
+        expireDate.setTime(expireDate.getTime() + (0.5*60*60*1000)); // add 30m to now
         expireDate = expireDate.toUTCString();
       } else {
         expireDate = 'Thu, 01 Jan 1970 00:00:00 GMT';
