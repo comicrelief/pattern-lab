@@ -74,7 +74,7 @@
       $thisForm.find(".form__field--wrapper").addClass("active-input")
       $thisForm.find('.select-amount-btn').removeClass("active");
       $thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
-      $thisForm.find('.random-description').addClass('show-money-buy-copy');
+      $thisForm.find('.other-description').addClass('show-money-buy-copy');
 
       /** Reset current amount to zero  */
       setCurrentDataAmount($thisInput, 0);
@@ -397,7 +397,7 @@
       lastBtnPos = thisBtnPos;
 
       // Change our 'amount' source depending on the input type
-      if (thisBtnPos === 0) {
+      if (thisBtnPos == 0) {
         isBtn = false;
         thisAmount = $('#' + thisID).data('current-amount');
       } else {
