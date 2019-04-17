@@ -17,6 +17,11 @@
         background-color: $colour-white;
       }
 
+			#postcode_button {
+				background: $colour-dark-coral;
+				letter-spacing: normal;
+			}
+
 			.form__step .form__fieldset {
 				.text--body-small {
 					font-weight: 400;
@@ -101,9 +106,17 @@
 							width: 100%;
 
 							.form__field--postcode {
-                display: flex;
+								display: flex;
+
+								input {
+									flex-grow: 5;
+    							width: 70%;
+								}
+
                 .form__btn {
-                  width: 65%;
+									flex-grow: 1;
+    							width: auto;
+
                   #postcode_button {
                     width: 100%;
                     font-size: 15px;
