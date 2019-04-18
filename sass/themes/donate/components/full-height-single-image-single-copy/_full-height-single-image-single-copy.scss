@@ -8,6 +8,7 @@
 		}
 
 		&__text-wrapper {
+
 			background-color: $colour-green;
       padding: 0 5vw;
 
@@ -21,6 +22,11 @@
 			#postcode_button {
 				background: $colour-dark-coral;
 				letter-spacing: normal;
+			}
+
+			// Marketing pref
+			.has-validation-callback.marketing-pref-form .form__checkbox.form__checkbox--inline.form__checkbox--inline-2-horizontal {
+				width: 100%;
 			}
 
 			.form__step .form__fieldset {
