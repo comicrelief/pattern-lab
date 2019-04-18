@@ -78,6 +78,10 @@
 				}
 			}
 		}
+
+		.fhsisc__thank-you-text {
+			padding: 0;
+		}
 	}
 
 	.form__field-wrapper--checkbox.form__field-wrapper--background {
@@ -167,6 +171,11 @@
 					@include breakpoint($screen-lg) {
 						width: 100%;
 					}
+				}
+
+				// Success page
+				.cards-header {
+					width: 90%;
 				}
 			}
 		}
