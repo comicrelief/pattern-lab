@@ -33,11 +33,6 @@
     /* Handle money buy selection */
     $('.paragraph--membership-signup .select-amount-btn').click(function(e) {
       e.preventDefault();
-<<<<<<< HEAD
- console.log($this)
-=======
-
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
       if ($(this).hasClass('active')) {
         return;
       } else {
@@ -61,11 +56,7 @@
         var moneyBuySelectedValue = getMoneyBuyValue($thisForm.find('.select-amount-btn.active'));
         setCurrentDataAmount($thisForm, moneyBuySelectedValue);
 
-<<<<<<< HEAD
         lastBtnPos = position;
-=======
-        lastBtnPos = position; 
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
       }
     });
 
@@ -82,11 +73,7 @@
       $thisForm.find(".form__field--wrapper").addClass("active-input")
       $thisForm.find('.select-amount-btn').removeClass("active");
       $thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
-<<<<<<< HEAD
-      $thisForm.find('.random-description').addClass('show-money-buy-copy');
-=======
       $thisForm.find('.other-description').addClass('show-money-buy-copy');
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
 
       /** Reset current amount to zero  */
       setCurrentDataAmount($thisInput, 0);
@@ -284,10 +271,6 @@
       /* Send data */
       if (validateAmount(amount)) {
         $thisForm.find(".form-error").removeClass('show-error');
-<<<<<<< HEAD
-        console.log(amount)
-=======
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
         nextStepHandler(event, currency, amount, givingType, cartId, clientId, rowID);
       } else {
         $thisForm.find(".form-error").addClass('show-error');
@@ -333,10 +316,10 @@
       var url = "https://donation.comicrelief.com/";
       var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
       var donationLink = getUrl ? getUrl : url;
-  
+
       /* Affiliate value */
       var affiliateValue = getQueryString("affiliate", url_string)? getQueryString("affiliate", url_string) : 'generic';
-      
+
       /* Strip out all params now we've saved our required 'affiliate' value */
       if (url_string.indexOf('?') > -1 ) {
         url_string = url_string.substring(0, url_string.indexOf('?'));
@@ -413,11 +396,7 @@
       lastBtnPos = thisBtnPos;
 
       // Change our 'amount' source depending on the input type
-<<<<<<< HEAD
-      if (thisBtnPos === 0) {
-=======
       if (thisBtnPos == 0) {
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
         isBtn = false;
         thisAmount = $('#' + thisID).data('current-amount');
       } else {
@@ -437,11 +416,7 @@
           id: submitNameID,
           name: submitNameID,
           price: thisAmount,      
-<<<<<<< HEAD
-          brand: allRows[thisID]['giving_type'],
-=======
           brand: allRows[thisID]['giving_type'],  
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
           category: allRows[thisID]['cart_id'], 
           quantity: 1,
           dimenstion10: allRows[thisID]['giving_type']
@@ -460,29 +435,6 @@
 
       // TODO: handle subdomain stuff?
       var domain = window.location.hostname;
-<<<<<<< HEAD
-
-      var cookieName = 'mship-previous-amount';
-
-      if (addOrRemove === 'add') {
-        var expireDate = new Date();
-        
-        expireDate.setDate(expireDate.getTime() + 30 * 60 * 1000); // 30min expiry
-         
-        var cookie = [
-          cookieName + '=' + rowID + '?' + btnPos,
-          'expires=' + expireDate.toUTCString(),
-          'path=/',
-          'domain=' + domain
-        ];
-
-        document.cookie = cookie.join(';');
-
-      } else {
-        // If it's not an 'add' it's a 'remove', so set the expiry to the past to delete it
-        document.cookie = cookieName + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-      }
-=======
       var cookieName = 'mship-previous-amount';
       var expireDate;
 
@@ -502,7 +454,6 @@
       ];
 
       document.cookie = cookie.join(';');
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
     }
     
     /* See if the user has previouls submitted an amount here, BUT the 
@@ -512,14 +463,6 @@
       var checkCookieValues = (document.cookie.match(/^(?:.*;)?\s*mship-previous-amount\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
 
       if (checkCookieValues) {
-<<<<<<< HEAD
-        // Remove the cookie, as the next submission will set a new one
-        updateCookie(null, null, 'remove');
-        // Split out our return string to the two values we need
-        checkCookieValues = checkCookieValues.split('?');
-        // Use these ID and btnPos values to fire off a 'removeFromBasket' event
-        dataLayer_updateBasket(checkCookieValues[0], checkCookieValues[1], 'remove');
-=======
         // Split out our return string to the two values we need
         checkCookieValues = checkCookieValues.split('?');
         var thisID = checkCookieValues[0];
@@ -530,7 +473,6 @@
 
         // Fire off a 'removeFromBasket' event
         dataLayer_updateBasket(thisID, thisBtnPos, 'remove');
->>>>>>> c564432cc63a752d4dc2c1403f19aa29428dbece
       }
     }
   });
