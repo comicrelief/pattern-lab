@@ -8,24 +8,40 @@
 		}
 
 		&__text-wrapper {
+			button[type='submit']:active,
+			button[type='submit']:hover,
+			#comicrelief_payinbundle_payment_card:active,
+			#comicrelief_payinbundle_payment_card:hover,
+			.btn--royal-blue:active,
+			.btn--royal-blue:hover {
+				background-color: $colour-dark-blue;
+			}
+
+			div p {
+				color: $colour-deep-violet;
+				margin-bottom: 20px;
+			}
 
 			background-color: $colour-green;
-      padding: 0 5vw;
+			padding: 0 5vw;
 
-      input,
-      select {
-        border-color: $colour-white;
-        border-bottom: 2px solid $colour-deep-violet;
-        background-color: $colour-white;
-      }
+			input,
+			select {
+				height: 65px;
+				border-color: $colour-white;
+				border-bottom: 2px solid $colour-deep-violet;
+				background-color: $colour-white;
+			}
 
 			#postcode_button {
+				height: 65px;
 				background: $colour-dark-coral;
 				letter-spacing: normal;
 			}
 
 			// Marketing pref
-			.has-validation-callback.marketing-pref-form .form__checkbox.form__checkbox--inline.form__checkbox--inline-2-horizontal {
+			.has-validation-callback.marketing-pref-form
+				.form__checkbox.form__checkbox--inline.form__checkbox--inline-2-horizontal {
 				width: 100%;
 			}
 
@@ -47,24 +63,19 @@
 					.form {
 						&__giving-type {
 							.form__field--wrapper {
-                input:checked + label {
-                  color: $colour-white;
-                }
+								input:checked + label {
+									color: $colour-white;
+								}
 
 								label {
 									text-transform: inherit;
-                  font-weight: 300;
-                  font-size: 16px;
-                  color: $colour-deep-violet;
+									font-weight: 300;
+									font-size: 16px;
+									color: $colour-deep-violet;
 								}
 							}
 						}
 					}
-				}
-
-        button[type="submit"]:hover,
-        #comicrelief_payinbundle_payment_card:hover {
-					background-color: $colour-dark-blue;
 				}
 
 				/* Giftaid form */
@@ -76,6 +87,12 @@
 					font-size: 15px;
 					line-height: 24px;
 				}
+			}
+
+			// Donation from
+			#field-input--amount,
+			#comicrelief_payinbundle_payment_currency {
+				height: 50px;
 			}
 		}
 
@@ -107,12 +124,8 @@
 
 					.form__row {
 						width: 100%;
-            padding: 0;
+						padding: 0;
 
-            #field-input--amount,
-            #comicrelief_payinbundle_payment_currency {
-              border-bottom: none;
-            }
 						.form__fieldset {
 							width: 100%;
 
@@ -121,19 +134,19 @@
 
 								input {
 									flex-grow: 5;
-    							width: 70%;
+									width: 70%;
 								}
 
-                .form__btn {
+								.form__btn {
 									flex-grow: 1;
-    							width: auto;
+									width: auto;
 
-                  #postcode_button {
-                    width: 100%;
-                    font-size: 15px;
-                    letter-spacing: 0;
-                  }
-                }
+									#postcode_button {
+										width: 100%;
+										font-size: 15px;
+										letter-spacing: 0;
+									}
+								}
 							}
 
 							h1.form__subtitle.text--subtitle--small {
