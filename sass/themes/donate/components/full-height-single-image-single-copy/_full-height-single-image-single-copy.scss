@@ -9,7 +9,12 @@
 
 		&__text-wrapper {
 			background-color: $colour-green;
-			padding: 0 5vw;
+			padding: 20px 5vw 0;
+			margin: 0;
+
+			&.inner-content.failure {
+				padding: 30px 5vw;
+			}
 
 			div p {
 				color: $colour-deep-violet;

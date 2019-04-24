@@ -1,7 +1,6 @@
 .inner-content {
-	width: span(10);
 	margin: 10px auto;
-	font-family: $font-regular;
+	font-family: $anton;
 	text-align: center;
 
 	@include breakpoint($screen-md) {
