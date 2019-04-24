@@ -161,7 +161,7 @@ p + p {
 
 /* Backward compatibility; old class names, new colour vars */
 .btn--royal-blue {
-  @include cr_button_types($colour-deep-violet, $colour-light-coral, $colour-dark-coral);
+  @include cr_button_types($colour-deep-violet, $colour-royal-blue, $colour-dark-blue);
 }
 .btn--mint-green {
   @include cr_button_types($colour-deep-violet, $colour-teal, $colour-red);
