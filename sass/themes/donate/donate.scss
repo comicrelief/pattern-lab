@@ -11,16 +11,11 @@
 // ==========================================================================
 // CR variables * comment files you want to override
 // ==========================================================================
-@import "../cr/2017/variables/_colours";
-@import "../cr/2017/variables/_typography";
-@import "../cr/2017/variables/_mixins";
 
+
+@import "../cr/2019/variables/_colours";
 @import '../cr/2019/variables/_typography';
-@import '../cr/2019/variables/_colours';
 @import '../cr/2019/variables/_mixins';
-@import '../cr/2019/components/typography/_fonts';
-@import '../cr/2019/components/typography/_typography';
-@import '../cr/2019/components/buttons/_buttons';
 
 // ==========================================================================
 // Base UI components
@@ -42,13 +37,14 @@
 // ==========================================================================
 // CR UI components
 // ==========================================================================
-@import "../cr/2017/components/typography/_fonts";
-@import "../cr/2017/components/typography/_typography";
-@import "../cr/2017/components/buttons/_buttons";
-@import "../cr/2017/components/links/links";
+
+
 @import "../cr/2019/components/full-height-single-image-single-copy/full-height-single-image-single-copy";
 @import "../../base/components/postcode-lookup/postcode-lookup";
-
+@import "../cr/2019/components/typography/_fonts";
+@import "../cr/2019/components/typography/_typography";
+@import "../cr/2019/components/buttons/_buttons";
+@import "../cr/2019/components/links/links";
 // ==========================================================================
 // Donate variables
 // ==========================================================================

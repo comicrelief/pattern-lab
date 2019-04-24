@@ -8,22 +8,17 @@
 		}
 
 		&__text-wrapper {
-			button[type='submit']:active,
-			button[type='submit']:hover,
-			#comicrelief_payinbundle_payment_card:active,
-			#comicrelief_payinbundle_payment_card:hover,
-			.btn--royal-blue:active,
-			.btn--royal-blue:hover {
-				background-color: $colour-dark-blue;
-			}
+			background-color: $colour-green;
+			padding: 0 5vw;
 
 			div p {
 				color: $colour-deep-violet;
 				margin-bottom: 20px;
 			}
 
-			background-color: $colour-green;
-			padding: 0 5vw;
+			#field-input--giftaid {
+				height: 30px;
+			}
 
 			input,
 			select {
@@ -33,7 +28,10 @@
 				background-color: $colour-white;
 			}
 
+			// Address
 			#postcode_button {
+				border-radius: inherit;
+				padding: 0 10px;
 				height: 65px;
 				background: $colour-dark-coral;
 				letter-spacing: normal;
