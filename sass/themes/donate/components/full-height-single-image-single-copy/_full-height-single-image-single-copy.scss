@@ -3,7 +3,7 @@
 
 	.fhsisc {
 		&__image-wrapper {
-			background: $colour-light-grey;
+			background: $colour-deep-violet;
 			padding: 0;
 		}
 
@@ -120,7 +120,7 @@
 				padding: 0 60px;
 
 				form {
-					margin: 60px auto 60px;
+					margin: 60px auto 30px;
 					width: 100%;
 					border: none;
 					background-color: transparent;
@@ -187,11 +187,6 @@
 					@include breakpoint($screen-lg) {
 						width: 100%;
 					}
-				}
-
-				// Success page
-				.cards-header {
-					width: 90%;
 				}
 			}
 		}
