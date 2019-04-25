@@ -170,8 +170,9 @@ button.payment-button {
 }
 
 button[type="submit"],
-#comicrelief_payinbundle_payment_card {
-	@extend .btn--royal-blue;
+#comicrelief_payinbundle_payment_card,
+#comicrelief_payinbundle_payment_directdebit {
+	@extend .btn--deep-violet;
 }
 // Apple Pay button only shows when supported
 #comicrelief_payinbundle_payment_apple_pay {
