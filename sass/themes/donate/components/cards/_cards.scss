@@ -1,4 +1,5 @@
 .cards {
+  padding: 40px 0 30px;
   .cards__wrapper {
     @include container;
 
@@ -35,7 +36,7 @@
   }
 
   .cards-header {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
 
     @include breakpoint($screen-md) {
       width: 100%;

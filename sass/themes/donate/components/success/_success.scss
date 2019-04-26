@@ -1,16 +1,13 @@
 .inner-content {
-	margin: 10px auto;
 	font-family: $anton;
 	text-align: center;
 
 	@include breakpoint($screen-md) {
-		width: span(7);
-		margin: 40px auto;
 	}
 
 	p,
 	ul {
-		color: $colour-dark-purple;
+		color: $colour-deep-violet;
 		text-align: left;
 
 		@include breakpoint($screen-md) {
@@ -27,8 +24,6 @@
 	}
 
 	&.inner-content--success {
-		width: 100%;
-		margin: 0 auto;
 		position: relative;
 
 		.success-transactionsid {
@@ -47,7 +42,7 @@
 			span {
 				display: inline-block;
 				vertical-align: middle;
-				color: $colour-dark-purple;
+				color: $colour-deep-violet;
 			}
 
 			ul {
@@ -86,8 +81,6 @@
 }
 
 .inner-content {
-	margin-top: 50px;
-
 	h1 {
 		@include font-size($h1-font-size);
 	}

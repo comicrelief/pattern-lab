@@ -24,6 +24,12 @@
 	width: 100%;
 }
 
+.form__fieldset {
+	h1 {
+		text-transform: inherit;
+	}
+}
+
 .form__field--wrapper {
 	margin-right: 0;
 	margin-left: 0;
