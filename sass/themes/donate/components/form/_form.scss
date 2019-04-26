@@ -9,30 +9,19 @@
 .form__row {
 	margin: 0 auto;
 	padding: 15px 0;
-	width: span(10);
 	background-color: transparent;
 
 	&:after {
 		@include clearfix;
 	}
-
-	@include breakpoint($screen-md) {
-		padding: 30px 0;
-	}
-	@include breakpoint($screen-lg) {
-		width: span(6);
-	}
 }
+
 .form__fieldset,
 .card-list {
 	float: none;
 	margin: 0 auto;
 	padding: 0;
 	width: 100%;
-
-	@include breakpoint($screen-md) {
-		width: span(10);
-	}
 }
 
 .form__field--wrapper {
@@ -49,18 +38,7 @@ input {
 	font-family: $body-font;
 	color: $colour-dark-purple;
 }
-form {
-	margin-bottom: 30px;
-	@include breakpoint($screen-md) {
-		margin: -75px auto 60px;
-		width: span(10);
-		border: 2px solid $colour-grey;
-		background-color: $colour-white;
-	}
-	@include breakpoint($screen-lg) {
-		width: span(7);
-	}
-}
+
 input[type="email"],
 input[type="number"],
 input[type="text"],
@@ -70,13 +48,6 @@ textarea {
 	@include placeholder(#757575, 18px, $body-font);
 }
 
-.form__row {
-	width: span(11);
-
-	@include breakpoint($screen-md) {
-		width: span(10);
-	}
-}
 
 // hide and show when js is enabled
 .js-enabled {

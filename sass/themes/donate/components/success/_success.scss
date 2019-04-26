@@ -29,15 +29,13 @@
 	&.inner-content--success {
 		width: 100%;
 		margin: 0 auto;
-		padding: 0;
 		position: relative;
-		padding-top: 0px;
 
 		.success-transactionsid {
 			text-align: center;
 
 			@include breakpoint($screen-md) {
-				margin: 80px 0;
+				margin: 40px 0;
 			}
 		}
 

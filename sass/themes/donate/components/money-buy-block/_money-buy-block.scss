@@ -3,20 +3,20 @@
   p {
     @extend p;
   }
+
   p, .number-input-label {
-    color: $colour-dark-purple;
+    color: $colour-deep-violet;
   }
   
   .form__fieldset {
     @include clearfix;
     position: relative;
-    margin-bottom: 3%;
 
     &.form__amount-submit {
-      margin-top: 60px;
+      margin-top: 25px;
     }
   }
-  
+
   .form__field-error-container--amount {
     position: absolute; 
     top: 50px;

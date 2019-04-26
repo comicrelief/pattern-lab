@@ -22,14 +22,15 @@
      cursor: pointer;
    }
    label {
+    font-size: 17px;
+    text-transform: inherit;
      margin: 0;
      padding: 14px 0;
      width: 100%;
      height: 100%;
      border: solid 2px $colour-light-green;
-     color: $colour-royal-blue;
+     color: $colour-deep-violet;
      line-height: 18px;
-     font-family: $font-bold;
      font-weight: initial;
      text-align: center;
      cursor: pointer;

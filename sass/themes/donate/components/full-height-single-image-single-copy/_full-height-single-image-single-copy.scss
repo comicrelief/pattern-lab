@@ -9,16 +9,11 @@
 
 		&__text-wrapper {
 			background-color: $colour-green;
-			padding: 20px 5vw 0;
-			margin: 0;
+			padding: 20px 5vw;
+			justify-content: inherit;
 
 			&.inner-content.failure {
 				padding: 30px 5vw;
-			}
-
-			div p {
-				color: $colour-deep-violet;
-				margin-bottom: 20px;
 			}
 
 			#field-input--giftaid {
@@ -74,28 +69,10 @@
 					width: 260px;
 				}
 
-				fieldset#giving_type_selector {
-					.form {
-						&__giving-type {
-							.form__field--wrapper {
-								input:checked + label {
-									color: $colour-white;
-								}
-
-								label {
-									text-transform: inherit;
-									font-weight: 300;
-									font-size: 16px;
-									color: $colour-deep-violet;
-								}
-							}
-						}
-					}
-				}
-
 				/* Giftaid form */
 				.form__field-wrapper--checkbox.form__field-wrapper--background {
 					background: $colour-light-green;
+					padding: 18px;
 				}
 
 				#field-wrapper--giftaid .form__field-additional-text div {
@@ -120,6 +97,7 @@
 		background: $colour-light-green;
 	}
 
+	// Breakpoint
 	@include breakpoint($screen-md) {
 		.fhsisc {
 			&__image-wrapper {
@@ -129,21 +107,10 @@
 			}
 
 			&__text-wrapper {
-				padding: 0 60px;
-
+				padding: 30px 5vw;
 				form {
-					margin: 60px auto 30px;
-					width: 100%;
-					border: none;
-					background-color: transparent;
-
 					.form__row {
-						width: 100%;
-						padding: 0;
-
 						.form__fieldset {
-							width: 100%;
-
 							.form__field--postcode {
 								display: flex;
 
@@ -168,23 +135,6 @@
 								text-transform: inherit;
 							}
 
-							label.form__field-label {
-								line-height: 24px;
-								text-transform: none;
-								font-weight: 500;
-							}
-
-							#field-wrapper {
-								&--firstName input,
-								&--lastName input,
-								&--email input,
-								&--confirmEmail input {
-									border-color: $colour-white;
-									border-bottom: 2px solid $colour-deep-violet;
-									background: $colour-white;
-								}
-							}
-
 							fieldset#giving_type_selector {
 								.form__giving-type {
 									display: flex;
@@ -193,10 +143,6 @@
 								}
 							}
 						}
-					}
-
-					@include breakpoint($screen-lg) {
-						width: 100%;
 					}
 				}
 			}
