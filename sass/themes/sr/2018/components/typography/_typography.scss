@@ -1,5 +1,7 @@
 h1 {
   font-family: $font-black--sr18;
+  font-weight: 900;
+
   text-transform: uppercase;
   &.font--large{
      @include font-size($h1-large-font-size);
@@ -11,6 +13,7 @@ h3,
 h4,
 h5 {
   font-family: $font-bold--sr18;
+  font-weight: 700;
   color: $colour-dark-blue;
 }
 
@@ -47,25 +50,32 @@ h5 {
 
 i.font--family-black {
   font-family: $font-black--sr18;
+  font-weight: 900;
 }
 .font--family-black {
   font-family: $font-black--sr18;
+  font-weight: 900;
 }
 i.font--family-bold {
   font-family: $font-bold--sr18;
+  font-weight: 700;
 }
 .font--family-bold {
   font-family: $font-bold--sr18;
+  font-weight: 700;
 }
 i.font--family-regular {
   font-family: $font-regular--sr18;
+  font-weight: 500;
 }
 .font--family-regular {
   font-family: $font-regular--sr18;
+  font-weight: 500;
+
 }
 strong {
   font-family: $font-bold--sr18;
-  font-weight: normal;
+  font-weight: 900;
   color: $colour-dark-blue-lighter;
 }
 
