@@ -1,14 +1,13 @@
-.paragraph--full-height-single-image-single-copy {
+main .paragraph--full-height-single-image-single-copy {
 	padding: 0;
 
 	.fhsisc {
 		&__image-wrapper {
 			background: $colour-deep-violet;
-			padding: 0;
-
 			img {
 				min-height: auto;
 				height: auto;
+				max-height: none;
 			}
 		}
 
@@ -106,12 +105,6 @@
 	// Breakpoint
 	@include breakpoint($screen-md) {
 		.fhsisc {
-			&__image-wrapper {
-				img {
-					max-height: 100vh;
-				}
-			}
-
 			&__text-wrapper {
 				padding: 30px 5vw;
 				form {
