@@ -5,6 +5,11 @@
 		&__image-wrapper {
 			background: $colour-deep-violet;
 			padding: 0;
+
+			img {
+				min-height: auto;
+				height: auto;
+			}
 		}
 
 		&__text-wrapper {
