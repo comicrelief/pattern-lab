@@ -25,5 +25,22 @@
   @include gradient-background($colour-ruby, $colour-purple);
 }
 .bg--gradient-purple-ruby {
-  @include gradient-background($colour-purple, $colour-ruby); 
+  @include gradient-background($colour-purple, $colour-ruby);
+}
+
+// SR19 background
+.bg--SR19-light-blue {
+  background-color: $colour-SR19-light-blue;
+}
+
+.bg--SR19-dark-blue {
+  background-color: $colour-SR19-dark-blue;
+}
+
+.bg--SR19-coral {
+  background-color: $colour-SR19-coral;
+}
+
+.bg--SR19-red {
+  background-color: $colour-SR19-red;
 }
