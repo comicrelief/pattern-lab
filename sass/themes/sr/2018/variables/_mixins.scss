@@ -41,6 +41,9 @@
 
 //SR19 button style
 @mixin sr19_button_types($colour, $bg-colour, $hover-colour, $hover-bg-colour) {
+  transition: none;
+  letter-spacing: normal;
+  font-weight: 900;
   color: $colour;
   background-color: $bg-colour;
 
@@ -51,6 +54,7 @@
   }
 
   &-ghost {
+    font-weight: 900;
     padding: 20px 29px;
     border: 1px solid $bg-colour;
     color: $bg-colour;
