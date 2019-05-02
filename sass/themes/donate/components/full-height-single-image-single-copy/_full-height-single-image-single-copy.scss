@@ -91,6 +91,15 @@ main .paragraph--full-height-single-image-single-copy {
 			#comicrelief_payinbundle_payment_currency {
 				height: 50px;
 			}
+
+			#comicrelief_payinbundle_payment_currency {
+				background-color: $colour-smoke-grey;
+				border-color: $colour-smoke-grey;
+			}
+
+			#comicrelief_payinbundle_payment_currency:focus {
+				outline: none;
+			}
 		}
 
 		.fhsisc__thank-you-text {
