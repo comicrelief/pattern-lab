@@ -93,6 +93,7 @@ main .paragraph--full-height-single-image-single-copy {
 				background-color: $colour-smoke-grey;
 				border-color: $colour-smoke-grey;
 				@include breakpoint($screen-lg) {
+					width: 120px;
 					margin-left: 0;
 				}
 			}
