@@ -140,20 +140,17 @@
 							}
 						}
 
-						.active {
-							background-color: $colour-donate-red;
-							color: $colour-white;
-							border: none;
-						}
-
 						.btn:hover {
 							border-color: $colour-donate-red;
 							color: $colour-black;
 						}
-
-						.btn:focus {
+						.active {
+							background-color: $colour-donate-red;
 							color: $colour-white;
-							outline: none;
+							border: none;
+							&:hover {
+								color: $colour-white;
+							}
 						}
 					}
 
@@ -226,7 +223,7 @@
 								max-width: 100%;
 
 								&:focus {
-									outline: none;
+									//outline: none;
 								}
 
 								font-size: 20px;
@@ -245,6 +242,10 @@
 								background: $colour-donate-red;
 								border: 2px solid $colour-donate-red;
 								position: relative;
+
+								input:focus {
+									outline: none;
+								}
 
 								select,
 								&.form__choice
@@ -298,13 +299,13 @@
 
 					.form-error {
 						display: inline-block;
-						visibility: hidden;
+						font-size: 15px;
+						font-weight: 500;
+						display: none;
 					}
 
 					.form-error.show-error {
-						visibility: visible;
-						font-size: 15px;
-						font-weight: 500;
+						display: inline-block;
 
 						&:before {
 							margin-right: 3px;
@@ -348,7 +349,7 @@
 
 				&--form {
 					padding: 0 40px;
-					height: 460px;
+					height: auto;
 
 					.form__fieldset {
 						label {
@@ -358,8 +359,6 @@
 
 						.form__field--wrapper {
 							&.form {
-								height: 460px;
-
 								&__money,
 								&__choice {
 									width: 32.5%;
@@ -388,7 +387,7 @@
 				}
 
 				&--form {
-					height: 475px;
+					//height: 475px;
 				}
 
 				&--form {
