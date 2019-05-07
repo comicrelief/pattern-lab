@@ -26,6 +26,7 @@ main .paragraph--full-height-single-image-single-copy {
 
 			input,
 			select {
+				background: $colour-white;
 				height: 65px;
 				border-color: $colour-white;
 				border-bottom: 2px solid $colour-deep-violet;
@@ -70,10 +71,6 @@ main .paragraph--full-height-single-image-single-copy {
 					border-color: $colour-red;
 				}
 
-				.form__field--wrapper {
-					width: 260px;
-				}
-
 				/* Giftaid form */
 				.form__field-wrapper--checkbox.form__field-wrapper--background {
 					background: $colour-light-green;
@@ -95,6 +92,9 @@ main .paragraph--full-height-single-image-single-copy {
 			#comicrelief_payinbundle_payment_currency {
 				background-color: $colour-smoke-grey;
 				border-color: $colour-smoke-grey;
+				@include breakpoint($screen-lg) {
+					margin-left: 0;
+				}
 			}
 
 			#comicrelief_payinbundle_payment_currency:focus {
@@ -146,8 +146,10 @@ main .paragraph--full-height-single-image-single-copy {
 							fieldset#giving_type_selector {
 								.form__giving-type {
 									display: flex;
-									width: 70%;
 									max-height: 80px;
+									@include breakpoint($screen-lg) {
+										width: 70%;
+									}
 								}
 							}
 						}

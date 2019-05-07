@@ -176,12 +176,13 @@ button[type="submit"],
 .form__row--giftaid {
 	.giftaid-title {
 		width: 185px;
-		margin: 15px auto 15px 0;
+		margin: 15px auto;
 		height: 105px;
 		background: url($image-path+"gift_aid_logo.png") no-repeat center;
 		background-size: contain;
 
-		@include breakpoint($screen-md) {
+		@include breakpoint($screen-lg) {
+			margin: 15px auto 15px 0;
 		}
 	}
 }
