@@ -221,11 +221,6 @@
 
 							input {
 								max-width: 100%;
-
-								&:focus {
-									//outline: none;
-								}
-
 								font-size: 20px;
 								@include placeholder(#757575, 18px, $body-font);
 								padding: 0px 30px;
