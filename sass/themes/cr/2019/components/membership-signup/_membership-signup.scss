@@ -100,7 +100,7 @@
 				padding: 0 20px;
 				margin-top: 30px;
 				box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
-				height: 520px;
+				height: auto;
 
 				p {
 					padding: 20px 0px;
@@ -306,6 +306,7 @@
 
 					.form-error.show-error {
 						display: inline-block;
+    				margin-bottom: -20px;
 
 						&:before {
 							margin-right: 3px;
@@ -313,7 +314,7 @@
 					}
 
 					.btn.membership--submit {
-						margin-top: 20px;
+						margin-top: 35px;
 					}
 
 					.donation-copy {
@@ -349,7 +350,7 @@
 
 				&--form {
 					padding: 0 40px;
-					height: 460px;
+					height: 440px;
 
 					.form__fieldset {
 						label {
@@ -387,7 +388,7 @@
 				}
 
 				&--form {
-					height: 475px;
+					height: 450px;
 				}
 
 				&--form {
