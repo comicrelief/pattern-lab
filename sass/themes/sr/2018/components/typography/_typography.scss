@@ -1,7 +1,6 @@
 h1 {
   font-family: $font-black--sr18;
   font-weight: 900;
-
   text-transform: uppercase;
   &.font--large{
      @include font-size($h1-large-font-size);
@@ -17,10 +16,14 @@ h5 {
   color: $colour-dark-blue;
 }
 
+h2,
+h3 {
+  font-weight: 900;
+}
+
 h2 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-weight: 900;
 }
 h3.alternate {
   @extend h2;
