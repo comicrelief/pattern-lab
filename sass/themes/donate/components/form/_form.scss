@@ -11,11 +11,11 @@
     padding: 15px 0;
     width: span(10);
     background-color: transparent;
-  
+
     &:after {
       @include clearfix;
     }
-  
+
     @include breakpoint($screen-md) {
       padding: 30px 0;
     }
@@ -29,13 +29,13 @@
     margin: 0 auto;
     padding: 0;
     width: 100%;
-  
+
     @include breakpoint($screen-md) {
       width: span(10);
     }
   }
-  
-  .form__field--wrapper, {
+
+  .form__field--wrapper {
     margin-right: 0;
     margin-left: 0;
     margin-bottom: 3%;
@@ -169,7 +169,7 @@ button.payment-button {
 }
 
 button[type="submit"],
-#comicrelief_payinbundle_payment_card, {
+#comicrelief_payinbundle_payment_card {
   @extend .btn--red;
 }
 // Apple Pay button only shows when supported

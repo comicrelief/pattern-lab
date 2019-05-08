@@ -37,3 +37,34 @@
   border-bottom: 1px solid $colour;
   color: $colour;
 }
+
+
+//SR19 button style
+@mixin sr19_button_types($colour, $bg-colour, $hover-colour, $hover-bg-colour) {
+  transition: none;
+  letter-spacing: normal;
+  font-weight: 900;
+  color: $colour;
+  background-color: $bg-colour;
+
+  &:hover,
+  &:focus {
+    color: $hover-colour;
+    background-color: $hover-bg-colour;
+  }
+
+  &-ghost {
+    font-weight: 900;
+    padding: 20px 29px;
+    border: 1px solid $bg-colour;
+    color: $bg-colour;
+    background-color: transparent;
+    background-clip: initial;
+    box-shadow:inset 0px 0px 0px 1px $bg-colour;
+
+    &:hover,
+    &:focus  {
+      box-shadow:inset 0px 0px 0px 3px $bg-colour;
+    }
+  }
+}
