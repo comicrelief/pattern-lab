@@ -23,8 +23,8 @@ h3 {
 
 h2 {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
+
 h3.alternate {
   @extend h2;
 }
@@ -35,7 +35,6 @@ h1.alternate {
   text-transform: none;
   font-size: 30px;
   line-height: 32px;
-  letter-spacing: inherit;
   
   @include breakpoint($screen-md) {
     font-size: 52px;
