@@ -32,6 +32,7 @@ main .paragraph--full-height-single-image-single-copy {
 				border-color: $colour-white;
 				border-bottom: 2px solid $colour-deep-violet;
 				background-color: $colour-white;
+				color: $colour-deep-violet;
 			}
 
 			// Checkbox label
@@ -89,6 +90,13 @@ main .paragraph--full-height-single-image-single-copy {
 				height: 50px;
 			}
 
+			#field-input--amount {
+				@include breakpoint($screen-lg) {
+					outline-offset: -3px;
+				}
+			}
+			
+			#input
 			#comicrelief_payinbundle_payment_currency {
 				background-color: $colour-smoke-grey;
 				border-color: $colour-smoke-grey;
@@ -98,7 +106,7 @@ main .paragraph--full-height-single-image-single-copy {
 					margin-left: 0;
 				}
 			}
-			
+
 			.has-validation-callback.marketing-pref-form {
 				.form__row.form__row--marketing-consent {
 					margin-bottom: 0;

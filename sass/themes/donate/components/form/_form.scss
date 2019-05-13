@@ -27,6 +27,7 @@
 .form__fieldset {
 	h1 {
 		text-transform: inherit;
+		color: $colour-deep-violet;
 	}
 }
 
@@ -42,7 +43,7 @@ form,
 form a,
 input {
 	font-family: $body-font;
-	color: $colour-dark-purple;
+	color: $colour-deep-violet;
 }
 
 input[type="email"],
@@ -50,7 +51,7 @@ input[type="number"],
 input[type="text"],
 select,
 textarea {
-	border: 1px solid $colour-dark-purple;
+	border: 1px solid $colour-deep-violet;
 	@include placeholder(#757575, 18px, $body-font);
 }
 
