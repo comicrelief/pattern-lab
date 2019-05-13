@@ -113,6 +113,10 @@ main .paragraph--full-height-single-image-single-copy {
 
 					button {
 						margin-bottom: 1%;
+						width: 100%;
+						@include breakpoint($screen-lg) {
+							width: auto;
+						}
 					}
 				}
 
