@@ -155,6 +155,13 @@
       padding: 12px 50px 12px 10px;
       background-position: calc(100% - 22px) 15px;
     }
+
+    #comicrelief_payinbundle_payment_currency {
+      @include breakpoint($screen-lg) {
+        width: 130px;
+        margin: 0;
+      }
+    }
   }
 
   .form__field--currency,
