@@ -14,8 +14,13 @@ main .paragraph--full-height-single-image-single-copy {
 
 		&__text-wrapper {
 			background-color: $colour-green;
-			padding: 20px 5vw;
+			padding: 20px 8vw;
 			justify-content: inherit;
+
+			.gift-aid-form {
+				max-width: 750px;
+				margin: 0 auto;
+			}
 
 			&.inner-content.failure {
 				padding: 30px 5vw;
@@ -33,6 +38,7 @@ main .paragraph--full-height-single-image-single-copy {
 				border-bottom: 2px solid $colour-deep-violet;
 				background-color: $colour-white;
 				color: $colour-deep-violet;
+				font-size: 16px;
 			}
 
 			// Checkbox label
@@ -52,13 +58,15 @@ main .paragraph--full-height-single-image-single-copy {
 			}
 
 			// Checkbox
-			.form__field-wrapper--checkbox input[type="checkbox"]:checked+span {
-				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkyIDE5MiIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMTkydi0xOTJoMTkydjE5MnoiIGZpbGw9Im5vbmUiLz48ZyBmaWxsPSIjMzQ5OGRiIj48ZyBpZD0ic3VyZmFjZTEiPjxwYXRoIGQ9Ik0xNjYuNjQ0MjMsMzQuOTMyNjlsLTEzLjI0MDM4LC05Yy0zLjY2MzQ2LC0yLjQ4MDc3IC04LjY4MjcsLTEuNTI4ODQgLTExLjEzNDYyLDIuMTA1NzdsLTY0LjkwMzg0LDk1LjcxMTU0bC0yOS44MjY5MywtMjkuODI2OTNjLTMuMTE1MzgsLTMuMTE1MzggLTguMTkyMzEsLTMuMTE1MzggLTExLjMwNzY5LDBsLTExLjMzNjU0LDExLjMzNjU0Yy0zLjExNTM4LDMuMTE1MzggLTMuMTE1MzgsOC4xOTIzMSAwLDExLjMzNjU0bDQ1Ljg2NTM4LDQ1Ljg2NTM4YzIuNTY3MzEsMi41NjczMSA2LjYwNTc3LDQuNTI4ODQgMTAuMjQwMzksNC41Mjg4NGMzLjYzNDYyLDAgNy4yOTgwOCwtMi4yNzg4NCA5LjY2MzQ2LC01LjcxMTUzbDc4LjExNTM4LC0xMTUuMjQwMzljMi40ODA3NywtMy42MzQ2MSAxLjUyODg0LC04LjYyNSAtMi4xMzQ2MiwtMTEuMTA1Nzd6Ii8+PC9nPjwvZz48L2c+PC9zdmc+Cg==) no-repeat center;
+			.form__field-wrapper--checkbox input[type='checkbox']:checked + span {
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkyIDE5MiIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMTkydi0xOTJoMTkydjE5MnoiIGZpbGw9Im5vbmUiLz48ZyBmaWxsPSIjMzQ5OGRiIj48ZyBpZD0ic3VyZmFjZTEiPjxwYXRoIGQ9Ik0xNjYuNjQ0MjMsMzQuOTMyNjlsLTEzLjI0MDM4LC05Yy0zLjY2MzQ2LC0yLjQ4MDc3IC04LjY4MjcsLTEuNTI4ODQgLTExLjEzNDYyLDIuMTA1NzdsLTY0LjkwMzg0LDk1LjcxMTU0bC0yOS44MjY5MywtMjkuODI2OTNjLTMuMTE1MzgsLTMuMTE1MzggLTguMTkyMzEsLTMuMTE1MzggLTExLjMwNzY5LDBsLTExLjMzNjU0LDExLjMzNjU0Yy0zLjExNTM4LDMuMTE1MzggLTMuMTE1MzgsOC4xOTIzMSAwLDExLjMzNjU0bDQ1Ljg2NTM4LDQ1Ljg2NTM4YzIuNTY3MzEsMi41NjczMSA2LjYwNTc3LDQuNTI4ODQgMTAuMjQwMzksNC41Mjg4NGMzLjYzNDYyLDAgNy4yOTgwOCwtMi4yNzg4NCA5LjY2MzQ2LC01LjcxMTUzbDc4LjExNTM4LC0xMTUuMjQwMzljMi40ODA3NywtMy42MzQ2MSAxLjUyODg0LC04LjYyNSAtMi4xMzQ2MiwtMTEuMTA1Nzd6Ii8+PC9nPjwvZz48L2c+PC9zdmc+Cg==)
+					no-repeat center;
 				background-color: $colour-white;
 			}
 
 			// Marketing pref
-			.has-validation-callback.marketing-pref-form .form__checkbox.form__checkbox--inline.form__checkbox--inline-2-horizontal {
+			.has-validation-callback.marketing-pref-form
+				.form__checkbox.form__checkbox--inline.form__checkbox--inline-2-horizontal {
 				width: 100%;
 			}
 
@@ -95,9 +103,8 @@ main .paragraph--full-height-single-image-single-copy {
 					outline-offset: -3px;
 				}
 			}
-			
-			#input
-			#comicrelief_payinbundle_payment_currency {
+
+			#input #comicrelief_payinbundle_payment_currency {
 				background-color: $colour-smoke-grey;
 				border-color: $colour-smoke-grey;
 
@@ -138,7 +145,6 @@ main .paragraph--full-height-single-image-single-copy {
 					}
 				}
 			}
-
 		}
 
 		.fhsisc__thank-you-text {
@@ -153,11 +159,6 @@ main .paragraph--full-height-single-image-single-copy {
 	// Breakpoint
 	@include breakpoint($screen-md) {
 		.fhsisc {
-			&__image-wrapper {
-				padding: 0;
-    	margin: 0;
-			}
-
 			&__text-wrapper {
 				padding: 30px 5vw;
 
@@ -194,7 +195,7 @@ main .paragraph--full-height-single-image-single-copy {
 									max-height: 80px;
 
 									@include breakpoint($screen-lg) {
-										width: 70%;
+										width: 75%;
 									}
 								}
 							}

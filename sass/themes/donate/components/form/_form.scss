@@ -2,7 +2,6 @@
 .form__step {
 	position: relative;
 	margin: 0 auto;
-	max-width: 1200px;
 }
 
 // Layout
@@ -13,6 +12,20 @@
 
 	&:after {
 		@include clearfix;
+	}
+
+	&.form__row--your--address {
+		.form__field--postcode {
+			display: flex;
+
+			.form__field--text {
+				width: 100%;
+			}
+
+			.form__btn {
+				width: auto;
+			}
+		}
 	}
 }
 
@@ -32,8 +45,6 @@
 }
 
 .form__field--wrapper {
-	margin-right: 0;
-	margin-left: 0;
 	margin-bottom: 3%;
 	width: 100%;
 }
