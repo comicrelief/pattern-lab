@@ -33,7 +33,6 @@
     /* Handle money buy selection */
     $('.paragraph--membership-signup .select-amount-btn').click(function(e) {
       e.preventDefault();
-
       if ($(this).hasClass('active')) {
         return;
       } else {
@@ -57,7 +56,7 @@
         var moneyBuySelectedValue = getMoneyBuyValue($thisForm.find('.select-amount-btn.active'));
         setCurrentDataAmount($thisForm, moneyBuySelectedValue);
 
-        lastBtnPos = position; 
+        lastBtnPos = position;
       }
     });
 
@@ -317,10 +316,10 @@
       var url = "https://donation.comicrelief.com/";
       var getUrl =  $('#paragraph--membership-signup-0').data("donation-url");
       var donationLink = getUrl ? getUrl : url;
-  
+
       /* Affiliate value */
       var affiliateValue = getQueryString("affiliate", url_string)? getQueryString("affiliate", url_string) : 'generic';
-      
+
       /* Strip out all params now we've saved our required 'affiliate' value */
       if (url_string.indexOf('?') > -1 ) {
         url_string = url_string.substring(0, url_string.indexOf('?'));
