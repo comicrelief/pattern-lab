@@ -100,7 +100,7 @@
 				padding: 0 20px;
 				margin-top: 30px;
 				box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
-				height: auto;
+				height: 420px;
 
 				p {
 					padding: 20px 0px;
@@ -297,14 +297,15 @@
 						font-size: 15px;
 						font-weight: 500;
 						display: none;
-					}
 
-					.form-error.show-error {
-						display: inline-block;
-    				margin-bottom: -20px;
+						&.show-error {
+							display: inline-block;
+							margin: 20px 0 5px;
+    					top: 10px;
 
-						&:before {
-							margin-right: 3px;
+							&:before {
+								margin-right: 3px;
+							}
 						}
 					}
 
@@ -345,7 +346,7 @@
 
 				&--form {
 					padding: 0 40px;
-					height: 440px;
+					height: 410px;
 
 					.form__fieldset {
 						label {
@@ -383,7 +384,7 @@
 				}
 
 				&--form {
-					height: 450px;
+					height: 420px;
 				}
 
 				&--form {

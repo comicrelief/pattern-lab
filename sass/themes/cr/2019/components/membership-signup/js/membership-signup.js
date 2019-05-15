@@ -71,10 +71,18 @@
       // Reset this to indicate input field choice
       lastBtnPos = '';
 
-      $thisForm.find(".form__field--wrapper").addClass("active-input")
-      $thisForm.find('.select-amount-btn').removeClass("active");
-      $thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
-      $thisForm.find('.other-description').addClass('show-money-buy-copy');
+      if ($thisForm.find('.select-amount-btn').hasClass('active')) {
+        $thisForm.find('.select-amount-btn').removeClass("active");
+        $thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
+      }
+
+      if (parseFloat(amount) > 5000 || parseFloat(amount) < 1) {
+        $thisForm.find('.other-description').removeClass('show-money-buy-copy');
+      } else {
+        $thisForm.find('.form-error').removeClass("show-error");
+        $thisForm.find(".form__field--wrapper").addClass("active-input")
+        $thisForm.find('.other-description').addClass('show-money-buy-copy');
+      }
 
       /** Reset current amount to zero  */
       setCurrentDataAmount($thisInput, 0);
