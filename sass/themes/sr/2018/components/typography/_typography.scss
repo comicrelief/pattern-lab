@@ -1,5 +1,6 @@
 h1 {
   font-family: $font-black--sr18;
+  font-weight: 900;
   text-transform: uppercase;
   &.font--large{
      @include font-size($h1-large-font-size);
@@ -11,13 +12,19 @@ h3,
 h4,
 h5 {
   font-family: $font-bold--sr18;
+  font-weight: 700;
   color: $colour-dark-blue;
+}
+
+h2,
+h3 {
+  font-weight: 900;
 }
 
 h2 {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
+
 h3.alternate {
   @extend h2;
 }
@@ -28,7 +35,6 @@ h1.alternate {
   text-transform: none;
   font-size: 30px;
   line-height: 32px;
-  letter-spacing: inherit;
   
   @include breakpoint($screen-md) {
     font-size: 52px;
@@ -47,25 +53,32 @@ h5 {
 
 i.font--family-black {
   font-family: $font-black--sr18;
+  font-weight: 900;
 }
 .font--family-black {
   font-family: $font-black--sr18;
+  font-weight: 900;
 }
 i.font--family-bold {
   font-family: $font-bold--sr18;
+  font-weight: 700;
 }
 .font--family-bold {
   font-family: $font-bold--sr18;
+  font-weight: 700;
 }
 i.font--family-regular {
   font-family: $font-regular--sr18;
+  font-weight: 500;
 }
 .font--family-regular {
   font-family: $font-regular--sr18;
+  font-weight: 500;
+
 }
 strong {
   font-family: $font-bold--sr18;
-  font-weight: normal;
+  font-weight: 900;
   color: $colour-dark-blue-lighter;
 }
 
@@ -115,6 +128,24 @@ li {
     }
     &--white {
       color: $colour-white;
+    }
+    &--SR19-white {
+      color: $colour-SR19-white;
+    }
+    &--SR19-black {
+      color: $colour-SR19-black;
+    }
+    &--SR19-light-blue {
+      color: $colour-SR19-light-blue;
+    }
+    &--SR19-dark-blue {
+      color: $colour-SR19-dark-blue;
+    }
+    &--SR19-coral {
+      color: $colour-SR19-coral;
+    }
+    &--SR19-red {
+      color: $colour-SR19-red;
     }
   }
 }

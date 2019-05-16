@@ -3,6 +3,7 @@
   ul,
   ol {
     font-family: $font-regular--sr18;
+    font-weight: 500;
     @include font-size($p-font-size);
     li {
       font-size: inherit;

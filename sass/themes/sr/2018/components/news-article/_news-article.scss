@@ -8,6 +8,7 @@
     .cr-article__title {
       @include font-size($h1-small-font-size);
       font-family: $font-black--sr18;
+      font-weight: 900;
       color: $colour-black;
       margin-bottom: 40px;
       margin-left:20px;
@@ -103,6 +104,7 @@
       padding:25px 20px 20px;
       margin-top: -40px;
       font-family: $font-regular--sr18;
+      font-weight: 500;
       background-color: $colour-white;
       color: $colour-black;
       border-bottom: 1px solid $colour-grey;

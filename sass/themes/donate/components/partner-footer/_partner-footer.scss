@@ -10,10 +10,13 @@
 
 .donate__partners {
   @include container;
-  margin-left: calc(2 * #{gutter()});
-  margin-right: calc(2 * #{gutter()});
+  margin: 0 calc(2 * #{gutter()});
   padding: 30px 0;
   font-family: $body-font;
+  @include breakpoint($screen-md) {
+    display: flex;
+    justify-content: center;
+  }
 
   .donate__partners-fr {
     @include span(9);

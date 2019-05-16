@@ -103,3 +103,16 @@ rather than including it in a common mixin */
     padding: 28px 36px;
   }
 }
+
+// SR19 buttons type (font_colour, bg_colour)
+.btn--SR19-light-blue {
+  @include sr19_button_types($colour-SR19-black, $colour-SR19-light-blue, $colour-SR19-white, $colour-SR19-dark-blue);
+}
+
+.btn--SR19-black{
+  @include sr19_button_types($colour-SR19-white, $colour-SR19-black, $colour-SR19-black, $colour-SR19-white);
+}
+
+.btn--SR19-white{
+  @include sr19_button_types($colour-SR19-black, $colour-SR19-white, $colour-SR19-white, $colour-SR19-black);
+}
