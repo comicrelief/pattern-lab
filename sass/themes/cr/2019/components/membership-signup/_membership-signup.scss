@@ -83,7 +83,7 @@
 			margin: 0 auto;
 			margin-bottom: 75%;
 			position: relative;
-			width: calc(100% - (30 / 320) * 100%);
+			max-width: 300px;
 
 			&--title {
 				padding-top: 32px;
@@ -333,7 +333,7 @@
 
 			// Medium screen
 			@include breakpoint($screen-md) {
-				width: calc(100% - (348 / 768) * 100%);
+				max-width: 420px;
 				margin-bottom: 50%;
 
 				&--title {
@@ -376,7 +376,6 @@
 			// Large screen
 			@include breakpoint($screen-lg) {
 				margin: 50px 100px;
-				width: 420px;
 				float: right;
 
 				&--title {
