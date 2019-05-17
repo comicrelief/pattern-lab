@@ -12,6 +12,7 @@
   @include gradient-background(#420D6D , #061238);
   color: $colour-white;
   font-family: $font-bold--sr18;
+  font-weight: 700;
 
   .live-total-block__outerwrapper {
     @include container();

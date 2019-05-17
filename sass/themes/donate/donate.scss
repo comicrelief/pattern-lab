@@ -11,10 +11,11 @@
 // ==========================================================================
 // CR variables * comment files you want to override
 // ==========================================================================
-@import "../cr/2017/variables/_colours";
-@import "../cr/2017/variables/_typography";
-@import "../cr/2017/variables/_mixins";
 
+
+@import "../cr/2019/variables/_colours";
+@import '../cr/2019/variables/_typography';
+@import '../cr/2019/variables/_mixins';
 
 // ==========================================================================
 // Base UI components
@@ -36,12 +37,14 @@
 // ==========================================================================
 // CR UI components
 // ==========================================================================
-@import "../cr/2017/components/typography/_fonts";
-@import "../cr/2017/components/typography/_typography";
-@import "../cr/2017/components/buttons/_buttons";
-@import "../cr/2017/components/links/links";
-@import "../../base/components/postcode-lookup/postcode-lookup";
 
+
+@import "../cr/2019/components/full-height-single-image-single-copy/full-height-single-image-single-copy";
+@import "../../base/components/postcode-lookup/postcode-lookup";
+@import "../cr/2019/components/typography/_fonts";
+@import "../cr/2019/components/typography/_typography";
+@import "../cr/2019/components/buttons/_buttons";
+@import "../cr/2019/components/links/links";
 // ==========================================================================
 // Donate variables
 // ==========================================================================
@@ -60,5 +63,6 @@
 @import "components/success/_success";
 @import "components/money-buy-block/_money-buy-block";
 @import "components/giving-type-selector/_giving-type-selector";
+@import "components/full-height-single-image-single-copy/_full-height-single-image-single-copy";
 
-@import "_donate-styleguide.scss"
+@import "_donate-styleguide.scss";

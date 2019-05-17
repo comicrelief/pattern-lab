@@ -1,6 +1,5 @@
 .cards {
-  padding: 30px;
-
+  padding: 40px 0 30px;
   .cards__wrapper {
     @include container;
 
@@ -37,11 +36,10 @@
   }
 
   .cards-header {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
 
     @include breakpoint($screen-md) {
-      margin:0 auto;
-      width: 60%;
+      width: 100%;
     }
   }
 
@@ -68,7 +66,6 @@
 }
 
 .form__row--upsell {
-    background: $colour-mercury-grey;
     text-align: center;
     padding-bottom: 30px;
 }

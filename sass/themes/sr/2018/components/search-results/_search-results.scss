@@ -50,6 +50,7 @@
       height: 50px;
       padding: 0;
       font-family: $font-bold--sr18;
+      font-weight: 700;
       @include font-size($p-large-font-size);
       color: $colour-white;
       background-color: transparent;
