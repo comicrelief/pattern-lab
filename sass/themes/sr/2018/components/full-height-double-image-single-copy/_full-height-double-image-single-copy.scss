@@ -1,0 +1,107 @@
+.paragraph--full-height-double-image-single-copy {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  .fhdisc {
+    &__image-wrapper,
+    &__text-wrapper {
+      position: relative;
+      height: auto;
+      width: 100%;
+    }
+
+    &__text-wrapper {
+      padding: 15vw 5vw;
+    }
+
+    &__image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* If this component is acting as our header */
+    header & {
+      &__text-wrapper {
+        padding: 10vw 5vw;
+      }
+    }
+  }
+
+    // Medium screen
+    @include breakpoint($screen-md) {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+
+      .fhdisc {
+
+        &__text-wrapper,
+        &__image-wrapper {
+          min-height: 100vh;
+          width: 50%;
+          float: left;
+        }
+
+        &__text-wrapper {
+          padding: 5vw;
+          display: flex;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+        }
+
+        &__image {
+          min-height: 50vh;
+          flex-grow: 1;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        &__image-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__text-3 {
+          width: calc(100% - 5vw);
+        }
+
+        header & {
+          &__text-wrapper {
+            padding: 5vw;
+          }
+        }
+      }
+    }
+
+    /* Image align left */
+    &--image-right {
+      display: flex;
+      flex-direction: column;
+
+      .fhdisc {
+
+        &__image-wrapper,
+        &__image,
+        &__text-wrapper {
+          flex-shrink: 0;
+        }
+      }
+
+        // Medium screen
+        @include breakpoint($screen-md) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
