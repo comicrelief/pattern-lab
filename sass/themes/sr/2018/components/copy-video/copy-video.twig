@@ -1,0 +1,47 @@
+{% set thumbnail_img = "https://upload.wikimedia.org/wikipedia/commons/5/57/Cumulus_Clouds_over_Yellow_Prairie2.jpg" %}
+{% set video_id = "epDTcPgIKgU" %}
+{% set port_video_id = "rwlAhFaLzXg" %}
+
+<section class="paragraph--copy-video {{modifier_class}}">
+  <div class="copy-video__video-wrapper">
+    <iframe class="copy-video__video" src="https://www.youtube.com/embed/{{video_id}}?enablejsapi=1&rel=0&fs=0" modestbranding="1" showtitle="0"
+      showinfo="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <button class="copy-video__button"></button>
+    <img src="{{thumbnail_img}}" class="copy-video__thumbnail" />
+  </div>
+  <div class="bg--teal copy-video__text-wrapper">
+    <h1>Copy-Video Component: 16:9</h1>
+  </div>
+</section>
+
+<p>&nbsp;</p>
+
+<section class="paragraph--copy-video paragraph--copy-video--portrait-50 {{modifier_class}}">
+  <div class="copy-video__video-wrapper">
+    <iframe class="copy-video__video" src="https://www.youtube.com/embed/{{port_video_id}}?enablejsapi=1&rel=0&fs=0" modestbranding="1" showtitle="0"
+      showinfo="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <button class="copy-video__button"></button>
+    <img src="{{thumbnail_img}}" class="copy-video__thumbnail" />
+  </div>
+  <div class="bg--coral copy-video__text-wrapper">
+    <h1>Copy-Video Component: portrait 50vh</h1>
+  </div>
+</section>
+
+<p>&nbsp;</p>
+
+<section class="paragraph--copy-video paragraph--copy-video--portrait-100 {{modifier_class}}">
+  <div class="copy-video__video-wrapper">
+    <iframe class="copy-video__video" src="https://www.youtube.com/embed/{{port_video_id}}?enablejsapi=1&rel=0&fs=0" frameborder="0" showtitle="0"
+      showinfo="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    <button class="copy-video__button"></button>
+    <img src="{{thumbnail_img}}" class="copy-video__thumbnail" />
+  </div>
+  <div class="bg--yellow copy-video__text-wrapper">
+    <h1>Copy-Video Component: portrait 100vh</h1>
+  </div>
+</section>
+
+<p>&nbsp;</p>
