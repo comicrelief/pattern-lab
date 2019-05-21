@@ -95,9 +95,14 @@
             setCurrentDataAmount($thisInput, amount);
           }
         } else if (isNaN(floatedAmound)){
+          if($thisForm.find(".form__field--wrapper").hasClass("active-input")) {
+            $thisForm.find(".form-error").addClass("show-error");
+            $thisForm.find(".other-description").removeClass("show-money-buy-copy");
+          } else {
             $thisForm.find(".form-error").removeClass("show-error");
             $thisForm.find(".form__field--wrapper").addClass("active-input");
             $thisForm.find(".other-description").addClass("show-money-buy-copy");
+          }
         } else {
           $thisForm.find(".other-description").removeClass("show-money-buy-copy");
           $thisForm.find(".form-error").addClass("show-error");
