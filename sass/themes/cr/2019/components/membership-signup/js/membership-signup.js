@@ -60,7 +60,7 @@
     });
 
     /* Watch for action or change on input */
-    $(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click", function(event) {
+    $(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click keypress", function(event) {
       var $thisInput = $(this);
       var $thisForm = $thisInput.parents("form");
       var amount = $thisInput.val();
@@ -79,7 +79,7 @@
       }
 
       // Check if user enters input
-      if (event.type === "input" || event.type === "click") {
+      if (event.type === "input" || event.type === "click" || event.type === "keypress") {
         if (validateAmount(floatedAmound)) {
           $thisForm.find(".form-error").removeClass("show-error");
           $thisForm.find(".form__field--wrapper").addClass("active-input");
@@ -139,7 +139,6 @@
           handleDatabeforeSubmission($thisForm, inputValue, e);
         } else {
           setCurrentDataAmount($thisInput, 0);
-          handleDatabeforeSubmission($thisForm, 0, e);
         }
       }
     });
