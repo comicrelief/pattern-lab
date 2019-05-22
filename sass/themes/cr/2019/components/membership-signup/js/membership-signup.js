@@ -191,7 +191,7 @@
       }
 
       var rowIDValue = getQueryString("rowID", url_string);
-      var scrollToHere = '#' + rowIDValue + ' .membership-signup__wrapper-copy--title';
+      var scrollHere = '#' + rowIDValue + ' .membership-signup__wrapper-copy--title';
       var amountValue =  getQueryString("amount", url_string);
       var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 
@@ -231,7 +231,7 @@
               $thisForm.find('.form__field--wrapper').addClass("active-input");
               $thisForm.find('.other-description').addClass('show-money-buy-copy');
             }
-            document.querySelector(scrollToHere).scrollIntoView({ behavior: 'smooth'});
+            document.querySelector(scrollHere).scrollIntoView({ behavior: 'smooth'});
           })
       } else {
         moneyBuyDescriptionHandler(descriptionCopies, position);
