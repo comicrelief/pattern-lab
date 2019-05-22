@@ -1,7 +1,7 @@
 .partners {
 	@include container;
 	color: $colour-deep-violet;
-  padding: 20px;
+  padding: 25px 20px;
 
 	@include breakpoint($screen-md) {
     text-align: center;
@@ -30,7 +30,7 @@
 
 	.donate__partners-copy {
 		color: $colour-deep-violet;
-		margin-top: 15px;
+		margin-top: 25px;
 
 		@include breakpoint($screen-md) {
 			clear: none;
