@@ -43,6 +43,7 @@
               span {
                 position: absolute;
                 clip: rect(1px, 1px, 1px, 1px);
+                display: none;
               }
               
               &:hover {
@@ -91,7 +92,7 @@
     .partners-grid ul li .node__content {
       
       &:hover .partner__link a {
-        display: none;
+        // display: none;
       }
       
       &.active .partner__link a {
