@@ -1,53 +1,41 @@
 .partners {
-  background: $colour-smoke-grey;
-  border-top: 1px solid $colour-mercury-grey;
-  color: $colour-dark-purple;
+	@include container;
+	margin: 0 auto;
+	color: $colour-deep-violet;
+	padding: 20px;
+	text-align: center;
+
+	.donate__partners {
+		font-family: $body-font;
+		display: flex;
+		justify-content: center;
+
+		.donate__partners-fr {
+			@include span(9);
+			width: 200px;
+		}
+
+		.donate__partners-digicert {
+			@include span(3);
+			width: 100px;
+		}
+
+		img {
+			max-width: 100%;
+			display: block;
+		}
+	}
+
+	.donate__partners-copy {
+		color: $colour-deep-violet;
+		margin-top: 15px;
+
+		@include breakpoint($screen-md) {
+			clear: none;
+		}
+	}
 }
 
 .hyperlink {
-  color: $colour-dark-purple;
-}
-
-.donate__partners {
-  @include container;
-  margin: 0 calc(2 * #{gutter()});
-  padding: 30px 0;
-  font-family: $body-font;
-  @include breakpoint($screen-md) {
-    display: flex;
-    justify-content: center;
-  }
-
-  .donate__partners-fr {
-    @include span(9);
-
-    @include breakpoint($screen-md) {
-      @include span(2);
-    }
-  }
-
-  .donate__partners-digicert {
-    @include span(3);
-
-    @include breakpoint($screen-md) {
-      @include span(1);
-    }
-  }
-
-  .donate__partners-copy {
-    @include span(12);
-    color: $colour-dark-purple;
-    margin-top: 15px;
-
-    @include breakpoint($screen-md) {
-      @include span(8);
-      clear: none;
-      margin-top: 0;
-    }
-  }
-
-  img {
-    max-width: 100%;
-    display: block;
-  }
+	color: $colour-deep-violet;
 }
