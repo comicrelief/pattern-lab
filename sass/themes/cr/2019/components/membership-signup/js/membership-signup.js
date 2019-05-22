@@ -191,7 +191,7 @@
       }
 
       var rowIDValue = getQueryString("rowID", url_string);
-      var scrollHere = '#' + rowIDValue + ' .membership-signup__wrapper-copy--title';
+      var scrollHere = '#' + rowIDValue + ' form';
       var amountValue =  getQueryString("amount", url_string);
       var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 
