@@ -1,9 +1,11 @@
 .partners {
 	@include container;
-	margin: 0 auto;
 	color: $colour-deep-violet;
-	padding: 20px;
-	text-align: center;
+  padding: 20px;
+
+	@include breakpoint($screen-md) {
+    text-align: center;
+  }
 
 	.donate__partners {
 		font-family: $body-font;
@@ -12,12 +14,12 @@
 
 		.donate__partners-fr {
 			@include span(9);
-			width: 200px;
+			width: 185px;
 		}
 
 		.donate__partners-digicert {
 			@include span(3);
-			width: 100px;
+			width: 85px;
 		}
 
 		img {
