@@ -1,6 +1,5 @@
 (function($) {
   $(document).ready(function() {
-
     (function () {
       if ( typeof NodeList.prototype.forEach === "function" ) return false;
       NodeList.prototype.forEach = Array.prototype.forEach;
@@ -61,45 +60,55 @@
     });
 
     /* Watch for action or change on input */
-    $(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click",function(event){
+    $(".paragraph--membership-signup input[name='membership_amount']").on("input propertychange click keypress", function(event) {
       var $thisInput = $(this);
-      var $thisForm = $thisInput.parents('form');
+      var $thisForm = $thisInput.parents("form");
       var amount = $thisInput.val();
-      var id = $thisForm.parents(".paragraph--membership-signup").attr('id');
+      var id = $thisForm.parents(".paragraph--membership-signup").attr("id");
+      var floatedAmound = parseFloat(amount);
 
       // Reset this to indicate input field choice
-      lastBtnPos = '';
+      lastBtnPos = "";
 
-      $thisForm.find(".form__field--wrapper").addClass("active-input")
-      $thisForm.find('.select-amount-btn').removeClass("active");
-      $thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
-      $thisForm.find('.other-description').addClass('show-money-buy-copy');
+      if ($thisForm.find(".select-amount-btn").hasClass("active")) {
+        $thisForm.find(".select-amount-btn").removeClass("active");
+        $thisForm.find(".money-buy--description").removeClass("show-money-buy-copy");
 
-      /** Reset current amount to zero  */
-      setCurrentDataAmount($thisInput, 0);
-
-      /* Compare money buy value of the row  and amount provided by user if they match highlight both input and money buy box and display appropriate copy */
-      if(moneyBuyRows[id].indexOf(amount.toString()) > -1) {
-        var index = moneyBuyRows[id].indexOf(amount) + 1;
-        $thisForm.find('.select-amount-btn.money-box--' + index ).addClass("active");
-        var descriptionCopies = $thisForm.find(".donation-copy").children();
-        moneyBuyDescriptionHandler(descriptionCopies, index);
+        /** Reset current amount to zero  */
+        setCurrentDataAmount($thisInput, 0);
       }
 
       // Check if user enters input
-      if (event.type === "input") {
-        if (validateAmount(amount) && !isNaN(amount)) {
-          $thisForm.find(".form-error").removeClass('show-error');
-          setCurrentDataAmount($thisInput, amount);
+      if (event.type === "input" || event.type === "click" || event.type === "keypress") {
+        if (validateAmount(floatedAmound)) {
+          $thisForm.find(".form-error").removeClass("show-error");
+          $thisForm.find(".form__field--wrapper").addClass("active-input");
+          // Compare money buy value of the row  and amount provided by user if they match highlight both input and money buy box and display appropriate copy 
+          if (moneyBuyRows[id].indexOf(amount.toString()) > -1) {
+            var index = moneyBuyRows[id].indexOf(amount) + 1;
+            $thisForm.find(".select-amount-btn.money-box--" + index).addClass("active");
+            var descriptionCopies = $thisForm.find(".donation-copy").children();
+            moneyBuyDescriptionHandler(descriptionCopies, index);
+            $thisForm.find(".form__field--wrapper").addClass("active-input");
+          } else {
+            $thisForm.find(".other-description").addClass("show-money-buy-copy");
+            setCurrentDataAmount($thisInput, amount);
+          }
+        } else if (isNaN(floatedAmound)){
+          if($thisForm.find(".form__field--wrapper").hasClass("active-input")) {
+            $thisForm.find(".form-error").addClass("show-error");
+            $thisForm.find(".other-description").removeClass("show-money-buy-copy");
+          } else {
+            $thisForm.find(".form-error").removeClass("show-error");
+            $thisForm.find(".form__field--wrapper").addClass("active-input");
+            $thisForm.find(".other-description").addClass("show-money-buy-copy");
+          }
         } else {
-          $thisForm.find(".form-error").addClass('show-error');
-          $thisForm.find('.money-buy--description').removeClass('show-money-buy-copy');
-          $thisForm.find('.other-description').removeClass('show-money-buy-copy');
-          setCurrentDataAmount($thisInput, 0);
+          $thisForm.find(".other-description").removeClass("show-money-buy-copy");
+          $thisForm.find(".form-error").addClass("show-error");
         }
       }
     });
-
 
     /* Handle change of currency */
     $('.paragraph--membership-signup select').on( "selectmenuchange input propertychange click", function() {
@@ -122,15 +131,14 @@
         e.preventDefault();
         var $thisForm = $thisInput.closest('form');
         var thisID = $thisForm.parents('.paragraph--membership-signup').attr('id');
+        var inputValue = parseFloat($thisInput.val());
 
-        var inputValue = parseFloat($thisInput.val())
         if(!isNaN(inputValue)) {
           setCurrentDataAmount($thisInput, inputValue);
           dataLayer_updateBasket(thisID, 0, 'add');
           handleDatabeforeSubmission($thisForm, inputValue, e);
         } else {
           setCurrentDataAmount($thisInput, 0);
-          handleDatabeforeSubmission($thisForm, 0, e);
         }
       }
     });
@@ -183,6 +191,7 @@
       }
 
       var rowIDValue = getQueryString("rowID", url_string);
+      var scrollHere = '#' + rowIDValue + ' form';
       var amountValue =  getQueryString("amount", url_string);
       var amount = parseFloat($newParagraphWithId.find(".select-amount-btn.active").text().replace(/\D/g, ""));
 
@@ -222,7 +231,7 @@
               $thisForm.find('.form__field--wrapper').addClass("active-input");
               $thisForm.find('.other-description').addClass('show-money-buy-copy');
             }
-            document.getElementById(rowIDValue).scrollIntoView({ behavior: 'smooth'});
+            document.querySelector(scrollHere).scrollIntoView({ behavior: 'smooth'});
           })
       } else {
         moneyBuyDescriptionHandler(descriptionCopies, position);
@@ -273,7 +282,9 @@
         $thisForm.find(".form-error").removeClass('show-error');
         nextStepHandler(event, currency, amount, givingType, cartId, clientId, rowID);
       } else {
-        $thisForm.find(".form-error").addClass('show-error');
+        $thisForm.find(".form-error").addClass("show-error");
+        $thisForm.find(".form__field--wrapper").addClass("active-input");
+        $thisForm.find(".other-description").removeClass("show-money-buy-copy");
       }
     }
 
@@ -455,7 +466,7 @@
 
       document.cookie = cookie.join(';');
     }
-    
+
     /* See if the user has previouls submitted an amount here, BUT the 
     * cookie hasn't been deleted by Donate after a successful transaction */
     function checkCookie() {
