@@ -83,7 +83,7 @@
 			margin: 0 auto;
 			margin-bottom: 75%;
 			position: relative;
-			width: calc(100% - (30 / 320) * 100%);
+			max-width: 300px;
 
 			&--title {
 				padding-top: 32px;
@@ -100,10 +100,10 @@
 				padding: 0 20px;
 				margin-top: 30px;
 				box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
-				height: auto;
+				height: 425px;
 
 				p {
-					padding: 20px 0px;
+					padding: 16px 0px;
 					margin: 0;
 					font-weight: bold;
 					color: $colour-deep-violet;
@@ -297,14 +297,15 @@
 						font-size: 15px;
 						font-weight: 500;
 						display: none;
-					}
 
-					.form-error.show-error {
-						display: inline-block;
-    				margin-bottom: -20px;
+						&.show-error {
+							display: inline-block;
+							margin: 20px 0 15px;
+							top: 18px;
 
-						&:before {
-							margin-right: 3px;
+							&:before {
+								margin-right: 3px;
+							}
 						}
 					}
 
@@ -325,6 +326,10 @@
 
 						.show-money-buy-copy {
 							display: inline-block;
+							padding: 30px 0 0;
+							@include breakpoint($screen-md) {
+								padding: 20px 0 0;
+							}
 						}
 					}
 				}
@@ -332,7 +337,7 @@
 
 			// Medium screen
 			@include breakpoint($screen-md) {
-				width: calc(100% - (348 / 768) * 100%);
+				max-width: 420px;
 				margin-bottom: 50%;
 
 				&--title {
@@ -345,7 +350,7 @@
 
 				&--form {
 					padding: 0 40px;
-					height: 440px;
+					height: 415px;
 
 					.form__fieldset {
 						label {
@@ -375,7 +380,6 @@
 			// Large screen
 			@include breakpoint($screen-lg) {
 				margin: 50px 100px;
-				width: 420px;
 				float: right;
 
 				&--title {
@@ -383,7 +387,7 @@
 				}
 
 				&--form {
-					height: 450px;
+					height: 425px;
 				}
 
 				&--form {
