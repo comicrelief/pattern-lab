@@ -43,6 +43,7 @@
               span {
                 position: absolute;
                 clip: rect(1px, 1px, 1px, 1px);
+                display: none;
               }
               
               &:hover {
@@ -85,13 +86,12 @@
   /* 
    * Removing the 'hover' state for touch devices,
    * to be handled by JS to deal with proper events to only change on tap, not scroll
+   * Needing to check both classes to get around Chrome bug (returning both as true)
    */
-  .touchevents .partners-grid ul li .node__content {
-    &:hover .partner__link a {
-      display: none;
+  .touchevents:not(.no-touchevents) {
+    .partners-grid ul li .node__content {
+      &.active .partner__link a {
+        display: block;
+      }
     }
-    &.active .partner__link a {
-      display: block;
-    }
-  }
-  
+}
