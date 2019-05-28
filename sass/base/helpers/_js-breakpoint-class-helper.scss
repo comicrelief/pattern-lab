@@ -1,0 +1,10 @@
+/* breakpoint class hidden and shown by CSS so the JS can determine the current breakpoint easily. 
+ * Used by for example the background video component
+*/
+span.md-breakpoint {
+  display: none;
+  visibility: hidden;
+  @include breakpoint($screen-md) {  
+    display: block;
+  }
+}
