@@ -1,5 +1,11 @@
 (function($) {
   $(document).ready(function() {
+
+    // remove donate button if memebership row is visible
+    if($('.paragraph--membership-signup').is(':visible')) {
+      $('.donate').hide();
+    }
+
     (function () {
       if ( typeof NodeList.prototype.forEach === "function" ) return false;
       NodeList.prototype.forEach = Array.prototype.forEach;
