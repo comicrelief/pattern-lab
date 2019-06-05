@@ -96,8 +96,8 @@
         height: auto;
         text-indent: 0;
         margin-top: 0;
-        margin-bottom: 10px;
-        padding: 8px 20px;
+        margin-bottom: 10px !important;
+        padding: 8px 20px !important;
         width: 100%;
         color: $colour-black;
 
@@ -107,8 +107,8 @@
         
         @include breakpoint($screen-md) {
           width: auto;
-          margin-right: 8px;
-          margin-bottom: 0;
+          margin-right: 8px !important;
+          margin-bottom: 0 !important;
         }
       }
     }
