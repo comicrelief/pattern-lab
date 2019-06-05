@@ -59,5 +59,58 @@
       }
     }
   }
-}
 
+  /*  Required a modifier class so we're not affecting the simpler 
+  *   CC banner (w/different markup) currently used in Donate etc. */
+  &.cc_banner--drupal {
+    display: block;
+    padding: 20px;
+
+    .cc_more_info {
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    .cc_message {
+      margin: 0 0 10px;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      font-size: 14px;
+      line-height: 20px;
+
+      @include breakpoint($screen-md){
+        font-size: 14px;
+        line-height: 20px;
+        width: 75%;
+        margin: 0 auto 15px;
+      }
+
+      .btn:first-child:not(:only-child) {
+        @extend .btn;
+        @extend .btn--white;
+        background-image: none;
+        height: auto;
+        text-indent: 0;
+        margin-top: 0;
+        margin-bottom: 10px !important;
+        padding: 8px 20px !important;
+        width: 100%;
+        color: $colour-black;
+
+        &:hover {
+          color: $colour-white;
+        }
+        
+        @include breakpoint($screen-md) {
+          width: auto;
+          margin-right: 8px !important;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}
