@@ -148,6 +148,11 @@
 							background-color: $colour-red;
 							color: $colour-white;
 							border: none;
+
+							span {
+								color: inherit;
+							}
+
 							&:hover {
 								color: $colour-white;
 							}
@@ -172,6 +177,8 @@
 							width: 100%;
 							margin: 0;
 							line-height: 2.18;
+							font-family: $font-regular--sr18;
+  						font-weight: 500;
 						}
 
 						.form__field--wrapper {
@@ -208,6 +215,8 @@
 								font-size: 20px;
 								top: 50%;
 								transform: translateY(-50%);
+								font-family: $font-regular--sr18;
+  							font-weight: 500;
 							}
 
 							input,
@@ -225,6 +234,9 @@
 								@include placeholder(#757575, 18px, $body-font);
 								padding: 0px 30px;
 								line-height: 26px;
+								font-family: $font-regular--sr18;
+  							font-weight: 500;
+
 								&:-ms-input-placeholder {
 									font-size: 20px;
 									line-height: 20px;
@@ -297,6 +309,8 @@
 						font-size: 15px;
 						font-weight: 500;
 						display: none;
+						font-family: $font-regular--sr18;
+  					font-weight: 500;
 
 						&.show-error {
 							display: inline-block;
@@ -387,7 +401,7 @@
 				}
 
 				&--form {
-					height: 425px;
+					height: 470px;
 				}
 
 				&--form {
