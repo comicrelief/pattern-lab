@@ -14,7 +14,7 @@
 	}
 	width: 112.5px !important;
 	.ui-state-active {
-		background: $colour-red;
+		background: $colour-ruby;
 		border: none;
 	}
 }
@@ -100,7 +100,7 @@
 				padding: 0 20px;
 				margin-top: 30px;
 				box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 60px;
-				height: 425px;
+				height: 460px;
 
 				p {
 					padding: 16px 0px;
@@ -141,11 +141,11 @@
 						}
 
 						.btn:hover {
-							border-color: $colour-red;
+							border-color: $colour-ruby;
 							color: $colour-black;
 						}
 						.active {
-							background-color: $colour-red;
+							background-color: $colour-ruby;
 							color: $colour-white;
 							border: none;
 
@@ -246,8 +246,8 @@
 
 						.form__field--wrapper {
 							&.active-input {
-								background: $colour-red;
-								border: 2px solid $colour-red;
+								background: $colour-ruby;
+								border: 2px solid $colour-ruby;
 								position: relative;
 
 								input:focus {
@@ -401,7 +401,7 @@
 				}
 
 				&--form {
-					height: 470px;
+					height: 430px;
 				}
 
 				&--form {
