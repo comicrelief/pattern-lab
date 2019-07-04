@@ -14,7 +14,8 @@
 	}
 	width: 112.5px !important;
 	.ui-state-active {
-		background: $colour-ruby;
+		background: $colour-SR19-light-blue;
+		color: $colour-black;
 		border: none;
 	}
 }
@@ -126,6 +127,10 @@
 							border-radius: 0;
 							background-color: $colour-white;
 
+							&:hover {
+								border-color: $colour-SR19-light-blue;
+							}
+
 							span {
 								display: flex;
 								justify-content: center;
@@ -141,20 +146,16 @@
 						}
 
 						.btn:hover {
-							border-color: $colour-ruby;
+							border-color: $colour-SR19-light-blue;
 							color: $colour-black;
 						}
 						.active {
-							background-color: $colour-ruby;
-							color: $colour-white;
+							background-color: $colour-SR19-light-blue;
+							color: $colour-black;
 							border: none;
 
 							span {
 								color: inherit;
-							}
-
-							&:hover {
-								color: $colour-white;
 							}
 						}
 					}
@@ -206,6 +207,9 @@
 											padding: 14px 16px;
 										}
 									}
+									select {
+										margin-bottom: 0;
+									}
 								}
 							}
 
@@ -246,8 +250,8 @@
 
 						.form__field--wrapper {
 							&.active-input {
-								background: $colour-ruby;
-								border: 2px solid $colour-ruby;
+								background: $colour-SR19-light-blue;
+								border: 2px solid $colour-SR19-light-blue;
 								position: relative;
 
 								input:focus {
@@ -408,6 +412,7 @@
 					select {
 						padding: 5px 20px;
 						font-size: 16px;
+						margin-bottom: 0;
 					}
 
 					.form__fieldset {
