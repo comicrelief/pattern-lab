@@ -668,23 +668,6 @@ body.path-search.cc-banner--visible header[role=banner] {
       }
     }
   }
-
-  // Reposition the nav when the admin menu is in place
-  body.toolbar-vertical &,
-  body.toolbar-horizontal & {
-    top: 74px;
-
-    &.scrolling {
-      top: 0;
-      @include breakpoint($screen-md) {
-        top: auto;
-      }
-    }
-
-    @include breakpoint($desktop-nav-breakpoint) {
-      top: 115px;
-    }
-  }
 }
 
 header[role=banner] .site-logo {
