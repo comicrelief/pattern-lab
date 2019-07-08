@@ -315,6 +315,19 @@
 						display: none;
 						font-family: $font-regular--sr18;
   					font-weight: 500;
+    				color: $colour-ruby;
+
+    				&:before {
+					    position: relative;
+					    content: '';
+					    display: inline-block;
+					    top: -1px;
+					    vertical-align: middle;
+					    margin-right: 8px;
+					    background: url(/images/error-alert-icon-ruby.png) left 0/100% no-repeat;
+					    width: 18px;
+					    height: 19px;
+    				}
 
 						&.show-error {
 							display: inline-block;
