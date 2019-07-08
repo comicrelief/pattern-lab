@@ -395,7 +395,7 @@ header[role=banner] {
     height: $sm-nav-height;
 
     .icon {
-      fill: $colour-white;
+      fill: $colour-black;
       margin: 12px 10px;
     }
 
@@ -417,7 +417,7 @@ header[role=banner] {
   .c-hamburger {
     span {
       top: 23px;
-      background-color: white;
+      background-color: $colour-black;
       &:after,
       &:before {
         background-color: inherit;
@@ -684,5 +684,14 @@ body.path-search.cc-banner--visible header[role=banner] {
     @include breakpoint($desktop-nav-breakpoint) {
       top: 115px;
     }
+  }
+}
+
+header[role=banner] .site-logo {
+
+  margin-top: 5px;
+
+  @include breakpoint($desktop-nav-breakpoint) {
+    margin-top: 7px;
   }
 }
