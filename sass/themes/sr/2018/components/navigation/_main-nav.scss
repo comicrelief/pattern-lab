@@ -161,8 +161,8 @@
             // Transparent nav state
             color: white;
 
-            header[role=banner].sticky-nav__header.scrolling &,
-            body.cc-banner--visible header[role=banner].sticky-nav__header & {
+            header[role=banner] &,
+            body.cc-banner--visible header[role=banner] & {
               color: $colour-dark-blue;
               background-image: none;
             }
@@ -495,7 +495,6 @@ header[role=banner] {
     }
   }
 
-  &.sticky-nav__header {
     position: fixed;
     top: 0;
     left: 0;
@@ -506,6 +505,12 @@ header[role=banner] {
     -webkit-transition: background-color 350ms linear;
     transition: background-color 350ms linear;
     height: $sm-nav-height;
+
+    // Quick-and-dirty unsticky
+    position: relative;
+    background: white;
+    top: auto;
+    left: auto;
 
     @include breakpoint($screen-md) {
       height: $md-nav-height;
@@ -606,7 +611,7 @@ header[role=banner] {
         height: 61px;
       }
     }
-  }
+
 }
 /* Very specific selector for search icon color on search result page
    when not scrolling and cookie banner is visible
@@ -622,7 +627,7 @@ body.path-search.cc-banner--visible header[role=banner] {
   height: auto;
 }
 
- header[role=banner].sticky-nav__header {
+ header[role=banner] {
   // Cookie banner-related tweaks to make sure our icons are visible over the temporarily white header 
   body.cc-banner--visible & {
     .meta-icons > a {
