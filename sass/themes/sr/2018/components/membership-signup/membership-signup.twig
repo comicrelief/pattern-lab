@@ -1,0 +1,103 @@
+{% set title = "Help someone like Jordan see a better tomorrow"  %}
+
+{% set sub_title = "Jordan owes his life to the help of group therapy. Become an insider and help save lives."  %}
+
+{% set form_title = "Choose your monthly donation"  %}
+
+{% set giving_type = "MONTHLY" %}
+{% set currencyDisabled = (giving_type == "MONTHLY")? "disabled ='disabled'" : ""  %}
+
+{% set money_buy_1 = "5"  %}
+{% set money_buy_2 = "10"  %}
+{% set money_buy_3 = "30"  %}
+
+{% set money_buy_desc_1 = "£5 could provide 5 hot meals for a homeless person in the UK."  %}
+{% set money_buy_desc_2 = "£10 could fund an awareness session on harmful practices like FGM and child marriage for girls in Sierra Leone."  %}
+{% set money_buy_desc_3 = "£30 could pay for 7 mosquito nets to protect children in Uganda from malaria while they sleep."  %}
+
+{% set cart_id = "RND19_CHICAGOTOWN" %}
+{% set client_id = "the_fix" %}
+
+{% set randomID =  random(100, 10000) %}
+
+<section class="paragraph--membership-signup {{modifier_class}} bg--light-orange" data-current-amount="0"  >
+
+  <div class="img-shadow objectfit">
+      <picture>
+      <source media="all and (min-width: 1024px)" srcset="../images/membership2-LG.jpg" type="image/jpeg"/>
+      <source media="all and (min-width: 740px)" srcset="../images/membership2-MD.jpg" type="image/jpeg"/>
+      <source media="all and (min-width: 0px)" srcset="../images/membership2-SM.jpg" type="image/jpeg"/>
+      <img alt="Membership" src="../images/membership2-MD.jpg" typeof="foaf:Image"/>
+    </picture>
+  </div>
+
+  <div class="membership-signup__wrapper-copy text-align-center">
+
+    <div class="membership-signup__wrapper-copy--title ">
+      <h3>{{ title }}</h3>
+      <p class="text--body-small"> {{ sub_title }}</p>
+    </div>
+
+    <div class="membership-signup__wrapper-copy--form">
+      <p>
+        {{ form_title }}
+      </p>
+      <form class="membership-signup__wrapper-copy--form-money" data-giving-type={{ giving_type }} data-cart-id={{ cart_id }} data-client-id={{ client_id }} >
+        <div class="money-buy">
+          <button class="select-amount-btn money-box--1 " data-position="1" data-amount={{ money_buy_1 }}>
+            <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_1 }}
+            </span>
+          </button>
+          <button class="select-amount-btn money-box--2 active " data-position="2" data-amount={{ money_buy_2 }}>
+            <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_2 }}
+            </span>
+          </button>
+          <button class="select-amount-btn money-box--3" data-position="3" data-amount={{ money_buy_3 }}>
+            <span class="text-align-center"> <span class="currency membership__currency-label"> £ </span>{{ money_buy_3 }}
+            </span>
+          </button>
+          </diV>
+        <div class="form__fieldset  clearfix">
+        <label for="other-amount">Other amount</label>
+          <div class="form__field--wrapper form__money form__field--amount">
+          <span id="js-currency-label" class="currency-input-label membership__currency-label">£</span>
+            <input aria-describedby="field-label--amount" class="form__field form__field--amount " id="field-input--amount" max="5000" min="1" name="membership_amount" pattern="[^[1-9]+([,.][0-9]+)?$]" placeholder="0"  type="number" value="">
+          </div>
+          <div class="form__field--wrapper form__choice form__field--currency ">
+            <select class="form__field form__field--currency" id="membership-currency-{{ randomID }}" name="comicrelief_payinbundle_payment[currency]" {{ currencyDisabled  }}>
+              <optgroup label="currency">
+                <option data-currency="£" value="GBP">£ GBP
+                </option>
+                <option data-currency="$" value="USD">$ USD
+                </option>
+                <option data-currency="$" value="AUD">$ AUD
+                
+                </option>
+                <option data-currency="€" value="EUR">€ EUR
+                </option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <span class="form-error" aria-message-error="field-error--amount"> Please enter a number between 1 and 5000 with only 2 numbers after the decimal. </span>
+        <button class="btn btn--SR19-light-blue membership--submit" type="submit">Next step
+        </button>
+        <div class="donation-copy">
+          <p class="font--xsmall money-buy--description">
+             {{ money_buy_desc_1 }}
+          </p>
+           <p class="font--xsmall money-buy--description">
+              {{  money_buy_desc_2 }}
+          </p>
+          <p class="font--xsmall money-buy--description">
+             {{  money_buy_desc_3 }}
+          </p>
+            <p class="font--xsmall other-description">
+             OTHER AMOUNT can lorem ipsum dolor sit amet, consectetur adipiscing.
+          </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>

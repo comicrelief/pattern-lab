@@ -161,8 +161,8 @@
             // Transparent nav state
             color: white;
 
-            header[role=banner].sticky-nav__header.scrolling &,
-            body.cc-banner--visible header[role=banner].sticky-nav__header & {
+            header[role=banner] &,
+            body.cc-banner--visible header[role=banner] & {
               color: $colour-dark-blue;
               background-image: none;
             }
@@ -395,7 +395,7 @@ header[role=banner] {
     height: $sm-nav-height;
 
     .icon {
-      fill: $colour-white;
+      fill: $colour-black;
       margin: 12px 10px;
     }
 
@@ -417,7 +417,7 @@ header[role=banner] {
   .c-hamburger {
     span {
       top: 23px;
-      background-color: white;
+      background-color: $colour-black;
       &:after,
       &:before {
         background-color: inherit;
@@ -495,7 +495,6 @@ header[role=banner] {
     }
   }
 
-  &.sticky-nav__header {
     position: fixed;
     top: 0;
     left: 0;
@@ -506,6 +505,12 @@ header[role=banner] {
     -webkit-transition: background-color 350ms linear;
     transition: background-color 350ms linear;
     height: $sm-nav-height;
+
+    // Quick-and-dirty unsticky
+    position: relative;
+    background: white;
+    top: auto;
+    left: auto;
 
     @include breakpoint($screen-md) {
       height: $md-nav-height;
@@ -606,7 +611,7 @@ header[role=banner] {
         height: 61px;
       }
     }
-  }
+
 }
 /* Very specific selector for search icon color on search result page
    when not scrolling and cookie banner is visible
@@ -622,7 +627,7 @@ body.path-search.cc-banner--visible header[role=banner] {
   height: auto;
 }
 
- header[role=banner].sticky-nav__header {
+ header[role=banner] {
   // Cookie banner-related tweaks to make sure our icons are visible over the temporarily white header 
   body.cc-banner--visible & {
     .meta-icons > a {
@@ -663,21 +668,13 @@ body.path-search.cc-banner--visible header[role=banner] {
       }
     }
   }
+}
 
-  // Reposition the nav when the admin menu is in place
-  body.toolbar-vertical &,
-  body.toolbar-horizontal & {
-    top: 74px;
+header[role=banner] .site-logo {
 
-    &.scrolling {
-      top: 0;
-      @include breakpoint($screen-md) {
-        top: auto;
-      }
-    }
+  margin-top: 5px;
 
-    @include breakpoint($desktop-nav-breakpoint) {
-      top: 115px;
-    }
+  @include breakpoint($desktop-nav-breakpoint) {
+    margin-top: 7px;
   }
 }

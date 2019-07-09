@@ -298,7 +298,13 @@ module.exports = function (grunt) {
           src: ['sass/themes/cr/2019/components/{,**/}*.js'],
           dest: 'dist/js/cr19-components.min.js'
         }]
-      }
+      },
+      sr18_components_js: {
+        files: [{
+          src: ['sass/themes/sr/2018/components/{,**/}*.js'],
+          dest: 'dist/js/sr18-components.min.js'
+        }]
+      },
     },
 
     sass_globbing: {
@@ -610,6 +616,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build:sr18', [
     'sass:sr18',
     'modernizr',
+    'uglify:sr18_components_js',
     'imagemin:sr18',
     'svgmin:sr18',
     'kss:sr18',
