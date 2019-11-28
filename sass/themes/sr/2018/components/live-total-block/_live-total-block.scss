@@ -11,7 +11,7 @@
 .live-total-block {
   @include gradient-background(#420D6D , #061238);
   color: $colour-white;
-  font-family: $font-sr20-semibold;
+  font-family: $font-bold--sr18;
   font-weight: 700;
 
   .live-total-block__outerwrapper {

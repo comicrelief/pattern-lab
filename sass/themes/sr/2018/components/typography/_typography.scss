@@ -1,5 +1,5 @@
 h1 {
-  font-family: $font-sr20-x-condensed-bold;
+  font-family: $font-black--sr18;
   text-transform: uppercase;
   &.font--large{
      @include font-size($h1-large-font-size);
@@ -10,7 +10,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: $font-sr20-semibold;
+  font-family: $font-bold--sr18;
   color: $colour-dark-blue;
 }
 
@@ -47,26 +47,26 @@ h5 {
 }
 
 i.font--family-black {
-  font-family: $font-sr20-x-condensed-bold;
+  font-family: $font-black--sr18;
 }
 .font--family-black {
-  font-family: $font-sr20-x-condensed-bold;
+  font-family: $font-black--sr18;
 }
 i.font--family-bold {
-  font-family: $font-sr20-semibold;
+  font-family: $font-bold--sr18;
 }
 .font--family-bold {
-  font-family: $font-sr20-semibold;
+  font-family: $font-bold--sr18;
 }
 i.font--family-regular {
-  font-family: $font-sr20-regular;
+  font-family: $font-regular--sr18;
 }
 .font--family-regular {
-  font-family: $font-sr20-regular;
+  font-family: $font-regular--sr18;
 
 }
 strong {
-  font-family: $font-sr20-semibold;
+  font-family: $font-bold--sr18;
   color: $colour-dark-blue-lighter;
 }
 

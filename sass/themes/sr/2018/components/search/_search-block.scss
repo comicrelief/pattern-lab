@@ -46,7 +46,7 @@
     p {
       margin: 0 auto 20px;
       width: 60%;
-      font-family: $font-sr20-semibold;
+      font-family: $font-bold--sr18;
       font-weight: 700;
       color: $colour-white;
       word-wrap: break-word;
@@ -72,7 +72,7 @@
   input[type=text] {
     padding: 0;
     height: 50px;
-    font-family: $font-sr20-semibold;
+    font-family: $font-bold--sr18;
     @include font-size($h3-font-size);
     color: $colour-dark-blue;
   }
