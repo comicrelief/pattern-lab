@@ -1,6 +1,5 @@
 h1 {
   font-family: $font-black--sr18;
-  font-weight: 900;
   text-transform: uppercase;
   &.font--large{
      @include font-size($h1-large-font-size);
@@ -12,17 +11,12 @@ h3,
 h4,
 h5 {
   font-family: $font-bold--sr18;
-  font-weight: 700;
   color: $colour-dark-blue;
-}
-
-h2,
-h3 {
-  font-weight: 900;
 }
 
 h2 {
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 h3.alternate {
@@ -35,7 +29,8 @@ h1.alternate {
   text-transform: none;
   font-size: 30px;
   line-height: 32px;
-  
+  letter-spacing: inherit;
+
   @include breakpoint($screen-md) {
     font-size: 52px;
     line-height: 55px;
@@ -53,32 +48,25 @@ h5 {
 
 i.font--family-black {
   font-family: $font-black--sr18;
-  font-weight: 900;
 }
 .font--family-black {
   font-family: $font-black--sr18;
-  font-weight: 900;
 }
 i.font--family-bold {
   font-family: $font-bold--sr18;
-  font-weight: 700;
 }
 .font--family-bold {
   font-family: $font-bold--sr18;
-  font-weight: 700;
 }
 i.font--family-regular {
   font-family: $font-regular--sr18;
-  font-weight: 500;
 }
 .font--family-regular {
   font-family: $font-regular--sr18;
-  font-weight: 500;
 
 }
 strong {
   font-family: $font-bold--sr18;
-  font-weight: 900;
   color: $colour-dark-blue-lighter;
 }
 
@@ -146,6 +134,34 @@ li {
     }
     &--SR19-red {
       color: $colour-SR19-red;
+    }
+    /* SR20 */
+    &--SR20-deep-violet {
+      color: $colour-SR20-deep-violet;
+    }
+    &--SR20-red {
+      color: $colour-SR20-red;
+    } 
+    &--SR20-dark-blue {
+      color: $colour-SR20-dark-blue;
+    }
+    &--SR20-white {
+      color: $colour-SR20-white;
+    }
+    &--SR20-yellow {
+      color: $colour-SR20-yellow;
+    }
+    &--SR20-green {
+      color: $colour-SR20-green;
+    }
+    &--SR20-cyan-blue {
+      color: $colour-SR20-cyan-blue;
+    }
+    &--SR20-light-grey {
+      color: $colour-SR20-light-grey;
+    }
+    &--SR20-purple {
+      color: $colour-SR20-purple;
     }
   }
 }
