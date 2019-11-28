@@ -7,7 +7,7 @@
 
     .cr-article__title {
       @include font-size($h1-small-font-size);
-      font-family: $font-black--sr18;
+      font-family: $font-sr20-x-condensed-bold;
       font-weight: 900;
       color: $colour-black;
       margin-bottom: 40px;
@@ -27,7 +27,7 @@
 
     .cr-article__date {
       @include span(12 no-gutters);
-      font-family: $font-regular--sr18;
+      font-family: $font-sr20-regular;
       @include font-size($p-xxsmall-font-size);
       margin-bottom: 10px;
       color: $colour-black;
@@ -103,7 +103,7 @@
     .cr-article__caption {
       padding:25px 20px 20px;
       margin-top: -40px;
-      font-family: $font-regular--sr18;
+      font-family: $font-sr20-regular;
       font-weight: 500;
       background-color: $colour-white;
       color: $colour-black;

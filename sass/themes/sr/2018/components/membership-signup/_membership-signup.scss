@@ -178,7 +178,7 @@
 							width: 100%;
 							margin: 0;
 							line-height: 2.18;
-							font-family: $font-regular--sr18;
+							font-family: $font-sr20-regular;
   						font-weight: 500;
 						}
 
@@ -219,7 +219,7 @@
 								font-size: 20px;
 								top: 50%;
 								transform: translateY(-50%);
-								font-family: $font-regular--sr18;
+								font-family: $font-sr20-regular;
   							font-weight: 500;
 							}
 
@@ -238,7 +238,7 @@
 								@include placeholder(#757575, 18px, $body-font);
 								padding: 0px 30px;
 								line-height: 26px;
-								font-family: $font-regular--sr18;
+								font-family: $font-sr20-regular;
   							font-weight: 500;
 
 								&:-ms-input-placeholder {
@@ -313,7 +313,7 @@
 						font-size: 15px;
 						font-weight: 500;
 						display: none;
-						font-family: $font-regular--sr18;
+						font-family: $font-sr20-regular;
   					font-weight: 500;
     				color: $colour-ruby;
 
