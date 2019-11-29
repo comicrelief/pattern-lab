@@ -1,28 +1,37 @@
-
+// Buttons
+//
+// Buttons are normally used for key messages, or key call-to-actions. For less important messages, a link may be more appropriate (see Links). Buttons text uses the Black weight of the Sailec font.
 
 .btn {
   display: inline-block;
-  width: auto;
+  width: 100%;
+  height: 60px;
   margin: 0 auto;
-  padding: 21px 30px;
+  padding: 20px 40px;
   cursor: pointer;
-  transition: 0.3s all;
+  transition: 0;
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-  font-family: $font-bold;
+  border: none;
+  font-family: $font-bold--sr18;
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: none;
-  position: relative;
-  @include border-radius(0);
-    
+  transition: opacity .15s linear;
+
+  @include border-radius(30px);
   span {
     font-size: inherit;
     font-weight: inherit;
   }
+
+  @include breakpoint($screen-md) {
+    width: auto;
+    padding: 21px 30px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
   &.btn--full-width {
     display: block;
     width: 100%;
@@ -31,10 +40,8 @@
       width: auto;
     }
   }
-
   + .btn {
     margin-top: 30px;
-    margin-bottom: 0;
     @include breakpoint($screen-md) {
       margin-top: 0;
       margin-left: 25px;
@@ -44,6 +51,12 @@
     width: 100%;
   }
 }
+
+p + p {
+  .btn {
+    margin-top: 10px;
+  }
+} 
 
 
 //button types (font_colour, bg_colour)
@@ -105,14 +118,35 @@ rather than including it in a common mixin */
 }
 
 // SR19 buttons type (font_colour, bg_colour)
-.btn--SR19-light-blue {
-  @include sr19_button_types($colour-SR19-black, $colour-SR19-light-blue, $colour-SR19-white, $colour-SR19-dark-blue);
+
+.btn--SR20-red {
+  @include sr20_button_types($colour-SR20-white, $colour-SR20-red);
 }
 
-.btn--SR19-black{
-  @include sr19_button_types($colour-SR19-white, $colour-SR19-black, $colour-SR19-black, $colour-SR19-white);
+.btn--SR20-dark-blue {
+  @include sr20_button_types($colour-SR20-white, $colour-SR20-dark-blue);
 }
 
-.btn--SR19-white{
-  @include sr19_button_types($colour-SR19-black, $colour-SR19-white, $colour-SR19-white, $colour-SR19-black);
+.btn--SR20-deep-violet {
+  @include sr20_button_types($colour-SR20-white, $colour-SR20-deep-violet);
+}
+
+.btn--SR20-white {
+  @include sr20_button_types($colour-SR20-deep-violet, $colour-SR20-white);
+}
+
+.btn--SR20-yellow {
+  @include sr20_button_types($colour-SR20-deep-violet, $colour-SR20-yellow);
+}
+
+.btn--SR20-green {
+  @include sr20_button_types($colour-SR20-deep-violet, $colour-SR20-green);
+}
+
+.btn--SR20-cyan-blue {
+  @include sr20_button_types($colour-SR20-deep-violet, $colour-SR20-cyan-blue);
+}
+
+.btn--SR20-purple {
+  @include sr20_button_types($colour-SR20-white, $colour-SR20-purple);
 }
