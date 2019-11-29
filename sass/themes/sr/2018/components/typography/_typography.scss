@@ -1,29 +1,40 @@
 h1 {
-  font-family: $font-black--sr18;
+  color: $colour-SR20-deep-violet;
   text-transform: uppercase;
+  letter-spacing: 0.01em;
+
   &.font--large{
      @include font-size($h1-large-font-size);
   }
 }
 
+h1,
 h2,
-h3,
+h3 {
+  font-family: $font-black--sr18;
+  color: $colour-SR20-deep-violet;
+
+}
+
 h4,
 h5 {
+  color: $colour-SR20-deep-violet;
   font-family: $font-bold--sr18;
-  color: $colour-dark-blue;
 }
 
 h2 {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.01em;
 }
 
+h3,
 h3.alternate {
-  @extend h2;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
-// Bespoke for SR18 OTN
+
+// LEGACY BUT LEAVING IN: Bespoke for SR18 OTN
 h1.alternate {
   @extend h3;
   text-transform: none;
@@ -72,6 +83,8 @@ strong {
 
 p {
   color: $colour-SR20-deep-violet;
+  font-family: $font-regular--sr18;
+
   &.font--xxlarge {
     margin-bottom: 20px;
     @include font-size($p-xxlarge-font-size);
@@ -83,7 +96,7 @@ p {
 span,
 ul,
 ol {
-  color: $colour-dark-blue-lighter;
+  color: $colour-SR20-deep-violet;
 }
 
 // colour classes
