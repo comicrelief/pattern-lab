@@ -35,8 +35,8 @@ h3.alternate {
 
 
 // LEGACY BUT LEAVING IN: Bespoke for SR18 OTN
-h1.alternate {
-  @extend h3;
+/* h1.alternate {
+  @extend h1;
   text-transform: none;
   font-size: 30px;
   line-height: 32px;
@@ -51,7 +51,7 @@ h1.alternate {
     font-size: 66px;
     line-height: 66px;
   } 
-}
+} */
 
 h5 {
   @include font-size($h5-font-size);

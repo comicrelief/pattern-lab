@@ -162,3 +162,7 @@ rather than including it in a common mixin */
 .btn--SR20-purple {
   @include sr20_button_types($colour-SR20-white, $colour-SR20-purple);
 }
+
+ .cookie-consent.cc_container.cc_banner--drupal .cc_message .btn:first-child:not(:only-child) {
+  height: auto;
+}
