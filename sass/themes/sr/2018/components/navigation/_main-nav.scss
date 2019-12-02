@@ -29,6 +29,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 75%;
+
     }
   }
 }
@@ -45,6 +46,7 @@
   // UL menu
   .main-nav__items {
     top: $sm-nav-height;
+    text-align: right;
     
     @include breakpoint($screen-md) {
       top: $md-nav-height;
@@ -676,5 +678,11 @@ header[role=banner] .site-logo {
 
   @include breakpoint($desktop-nav-breakpoint) {
     margin-top: 7px;
+  }
+}
+
+#main-menu {
+  @include breakpoint($desktop-nav-breakpoint) {
+    text-align: right;
   }
 }
