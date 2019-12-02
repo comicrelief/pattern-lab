@@ -70,9 +70,6 @@
 }
 
 @mixin sr20_button_types($colour, $bg-colour) {
-  transition: none;
-  letter-spacing: normal;
-  font-weight: 900;
   color: $colour;
   background-color: $bg-colour;
   opacity: 0.8;
