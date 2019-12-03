@@ -126,7 +126,7 @@
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          padding: 23px 0px;
+          padding: 25px 0px;
           margin: 0 10px;
         }
 
@@ -672,14 +672,32 @@ body.path-search.cc-banner--visible header[role=banner] {
   }
 }
 
-header[role=banner] .site-logo {
+header[role=banner] {
+  padding: 0;
 
-  margin-top: 5px;
+  @include breakpoint($screen-md) {
+    height: 70px;
+  }
 
   @include breakpoint($desktop-nav-breakpoint) {
-    margin-top: 7px;
+    height: 80px
   }
-}
+  
+
+  .site-logo {
+    margin-top: 5px;
+
+
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-top: 8px;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-top: 9px;
+    }
+  }
+} 
 
 #main-menu {
   @include breakpoint($desktop-nav-breakpoint) {
