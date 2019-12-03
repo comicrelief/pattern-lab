@@ -165,4 +165,5 @@ rather than including it in a common mixin */
 
  .cookie-consent.cc_container.cc_banner--drupal .cc_message .btn:first-child:not(:only-child) {
   height: auto;
+  min-height: 0;
 }
