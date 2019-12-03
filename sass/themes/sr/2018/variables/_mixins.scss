@@ -72,10 +72,11 @@
 @mixin sr20_button_types($colour, $bg-colour) {
   color: $colour;
   background-color: $bg-colour;
-  opacity: 0.8;
+  background-color: rgba($bg-colour, 1.0);
 
   &:hover,
-  &:focus {
-    opacity: 1.0;
+  &:focus,
+  &:active {
+    background-color: rgba($bg-colour, 0.8);
   }
 }

@@ -17,7 +17,7 @@
   font-family: $font-bold--sr18;
   font-size: 18px;
   line-height: 18px;
-  transition: opacity .15s linear;
+  transition: background-color .1s linear;
 
   @include border-radius(30px);
   span {
