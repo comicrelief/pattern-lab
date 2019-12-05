@@ -687,8 +687,6 @@ header[role=banner] {
   .site-logo {
     margin-top: 5px;
 
-
-
     @include breakpoint($desktop-nav-breakpoint) {
       margin-top: 8px;
     }
