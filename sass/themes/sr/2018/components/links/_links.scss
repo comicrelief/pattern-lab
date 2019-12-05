@@ -6,13 +6,12 @@
   overflow-wrap: break-word;
   padding-bottom: 0.18em;
   font-family: $font-bold--sr18;
-  font-weight: 700;
   font-size: inherit;
   line-height: inherit;
   transition-property: border;
   transition-duration: 180ms;
   @include font-size($p-font-size);
-  @include link_colour($colour-dark-blue-lighter);
+  @include link_colour($colour-SR20-deep-violet);
   
   h1,
   h2,
@@ -45,6 +44,40 @@
   &.link--white {
     @include link_colour($colour-white);
   }
+
+  // SR20
+  &.link--SR20-red {
+    @include link_colour($colour-SR20-red);
+  }
+
+  &.link--SR20-dark-blue {
+    @include link_colour($colour-SR20-dark-blue);
+  }
+
+  &.link--SR20-deep-violet {
+    @include link_colour($colour-SR20-deep-violet);
+  }
+
+  &.link--SR20-white {
+    @include link_colour($colour-SR20-white);
+  }
+
+  &.link--SR20-yellow {
+    @include link_colour($colour-SR20-yellow);
+  }
+
+  &.link--SR20-green {
+    @include link_colour($colour-SR20-green);
+  }
+
+  &.link--SR20-cyan-blue {
+    @include link_colour($colour-SR20-cyan-blue);
+  }
+
+  &.link--SR20-purple {
+    @include link_colour($colour-SR20-purple);
+  }
+
   &:hover,
   &:active,
   &:focus {

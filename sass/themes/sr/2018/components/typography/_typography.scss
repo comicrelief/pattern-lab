@@ -1,89 +1,71 @@
 h1 {
-  font-family: $font-black--sr18;
-  font-weight: 900;
+  color: $colour-SR20-deep-violet;
   text-transform: uppercase;
+  letter-spacing: 0.01em;
+
   &.font--large{
      @include font-size($h1-large-font-size);
   }
 }
 
-h2,
-h3,
-h4,
-h5 {
-  font-family: $font-bold--sr18;
-  font-weight: 700;
-  color: $colour-dark-blue;
-}
-
+h1,
 h2,
 h3 {
-  font-weight: 900;
+  font-family: $font-black--sr18;
+  color: $colour-SR20-deep-violet;
+
+}
+
+h4,
+h5 {
+  color: $colour-SR20-deep-violet;
+  font-family: $font-bold--sr18;
 }
 
 h2 {
   text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
+h3,
 h3.alternate {
-  @extend h2;
-}
-
-// Bespoke for SR18 OTN
-h1.alternate {
-  @extend h3;
-  text-transform: none;
-  font-size: 30px;
-  line-height: 32px;
-  
-  @include breakpoint($screen-md) {
-    font-size: 52px;
-    line-height: 55px;
-  }
-
-  @include breakpoint($screen-lg) {
-    font-size: 66px;
-    line-height: 66px;
-  } 
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 h5 {
   @include font-size($h5-font-size);
+  margin-bottom: 15px;
 }
 
 i.font--family-black {
   font-family: $font-black--sr18;
-  font-weight: 900;
 }
 .font--family-black {
   font-family: $font-black--sr18;
-  font-weight: 900;
 }
 i.font--family-bold {
   font-family: $font-bold--sr18;
-  font-weight: 700;
 }
 .font--family-bold {
   font-family: $font-bold--sr18;
-  font-weight: 700;
 }
 i.font--family-regular {
   font-family: $font-regular--sr18;
-  font-weight: 500;
 }
 .font--family-regular {
   font-family: $font-regular--sr18;
-  font-weight: 500;
 
 }
 strong {
   font-family: $font-bold--sr18;
-  font-weight: 900;
   color: $colour-dark-blue-lighter;
 }
 
 p {
-  color: $colour-dark-blue-lighter;
+  color: $colour-SR20-deep-violet;
+  font-family: $font-regular--sr18;
+
   &.font--xxlarge {
     margin-bottom: 20px;
     @include font-size($p-xxlarge-font-size);
@@ -95,7 +77,7 @@ p {
 span,
 ul,
 ol {
-  color: $colour-dark-blue-lighter;
+  color: $colour-SR20-deep-violet;
 }
 
 // colour classes
@@ -146,6 +128,34 @@ li {
     }
     &--SR19-red {
       color: $colour-SR19-red;
+    }
+    /* SR20 */
+    &--SR20-deep-violet {
+      color: $colour-SR20-deep-violet;
+    }
+    &--SR20-red {
+      color: $colour-SR20-red;
+    } 
+    &--SR20-dark-blue {
+      color: $colour-SR20-dark-blue;
+    }
+    &--SR20-white {
+      color: $colour-SR20-white;
+    }
+    &--SR20-yellow {
+      color: $colour-SR20-yellow;
+    }
+    &--SR20-green {
+      color: $colour-SR20-green;
+    }
+    &--SR20-cyan-blue {
+      color: $colour-SR20-cyan-blue;
+    }
+    &--SR20-light-grey {
+      color: $colour-SR20-light-grey;
+    }
+    &--SR20-purple {
+      color: $colour-SR20-purple;
     }
   }
 }

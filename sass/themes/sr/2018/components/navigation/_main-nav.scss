@@ -29,6 +29,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 75%;
+
     }
   }
 }
@@ -45,6 +46,7 @@
   // UL menu
   .main-nav__items {
     top: $sm-nav-height;
+    text-align: right;
     
     @include breakpoint($screen-md) {
       top: $md-nav-height;
@@ -124,7 +126,7 @@
         }
 
         @include breakpoint($desktop-nav-breakpoint) {
-          padding: 23px 0px;
+          padding: 25px 0px;
           margin: 0 10px;
         }
 
@@ -403,7 +405,7 @@ header[role=banner] {
       height: $md-nav-height;
 
       .icon {
-        margin: 12px 6px;
+        margin: 17px 6px;
       }
     }
 
@@ -423,7 +425,7 @@ header[role=banner] {
         background-color: inherit;
       }
       @include breakpoint($screen-md) {
-        top: 27px;
+        top: 32px;
       }
     }
 
@@ -482,7 +484,7 @@ header[role=banner] {
   @include breakpoint($desktop-nav-breakpoint) {
     .meta-icons > a {
       .icon {
-        margin: 26px 12px 28px;
+        margin: 30px 12px;
       }
     }
   }
@@ -670,11 +672,33 @@ body.path-search.cc-banner--visible header[role=banner] {
   }
 }
 
-header[role=banner] .site-logo {
+header[role=banner] {
+  padding: 0;
 
-  margin-top: 5px;
+  @include breakpoint($screen-md) {
+    height: 70px;
+  }
 
   @include breakpoint($desktop-nav-breakpoint) {
-    margin-top: 7px;
+    height: 80px
+  }
+  
+
+  .site-logo {
+    margin-top: 5px;
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-top: 8px;
+    }
+
+    @include breakpoint($desktop-nav-breakpoint) {
+      margin-top: 9px;
+    }
+  }
+} 
+
+#main-menu {
+  @include breakpoint($desktop-nav-breakpoint) {
+    text-align: right;
   }
 }

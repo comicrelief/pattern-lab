@@ -52,3 +52,146 @@
 .bg--SR19-white {
   background-color: $colour-SR19-white;
 }
+
+/* SR20 backgrounds */
+.bg--SR20-deep-violet {
+  background-color: $colour-SR20-deep-violet;
+}
+
+.bg--SR20-red {
+  background-color: $colour-SR19-red;
+}
+
+.bg--SR20-dark-blue {
+  background-color: $colour-SR20-dark-blue;
+}
+
+.bg--SR20-white {
+  background-color: $colour-SR20-white;
+}
+
+.bg--SR20-yellow {
+  background-color: $colour-SR20-yellow;
+}
+
+.bg--SR20-green {
+  background-color: $colour-SR20-green;
+}
+
+.bg--SR20-cyan-blue {
+  background-color: $colour-SR20-cyan-blue;
+}
+
+.bg--SR20-light-grey {
+  background-color: $colour-SR20-light-grey;
+}
+
+.bg--SR20-purple {
+  background-color: $colour-SR20-purple;
+}
+
+
+
+
+/**
+ * Needed to break-out these bg styles out a bit as the mutiple
+ * nested selectors were breaking the styles and/or getting them overridden? Weird. **/
+@mixin dark-backgrounds {
+
+  // Set fonts to white
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  .link {
+    color: $colour-SR20-white;
+  }
+
+  // Ensure any light bg-colour'd children can override the above styles where neccessary
+  .bg--SR20-white,
+  .bg--SR20-yellow,
+  .bg--SR20-green,
+  .bg--SR20-cyan-blue,
+  .bg--SR20-light-grey {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    .link {
+      color: $colour-SR20-deep-violet;
+    }
+  }
+}
+
+@mixin light-backgrounds {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  .link {
+    color: $colour-SR20-deep-violet;
+  }
+
+  // Ensure any light bg-colour'd children can override the above styles where neccessary
+  .bg--SR20-deep-violet,
+  .bg--SR20-red,
+  .bg--SR20-dark-blue,
+  .bg--SR20-purple {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    .link {
+      color: $colour-SR20-white;
+    }
+  }
+}
+
+
+/* SR20 DARK backgrounds */
+.bg--SR20-deep-violet {
+  @include dark-backgrounds;
+}
+
+.bg--SR20-red {
+  @include dark-backgrounds;
+}
+
+.bg--SR20-dark-blue {
+  @include dark-backgrounds;
+}
+
+.bg--SR20-purple {
+  @include dark-backgrounds;
+}
+
+
+/* SR20 LIGHT backgrounds */
+.bg--SR20-white {
+  @include light-backgrounds;
+}
+
+.bg--SR20-yellow {
+  @include light-backgrounds;
+}
+
+.bg--SR20-green {
+  @include light-backgrounds;
+}
+
+.bg--SR20-cyan-blue {
+  @include light-backgrounds;
+}
+
+.bg--SR20-light-grey {
+  @include light-backgrounds;
+}
