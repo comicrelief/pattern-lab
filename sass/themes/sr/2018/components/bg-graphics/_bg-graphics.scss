@@ -11,7 +11,6 @@
   }
 }
 
-
 /* Need to ensure this global change doesn't negatively effect existing content */
 .single-msg .single-msg__copy_wrapper {
   position: relative;
@@ -30,47 +29,38 @@
 
   .view-mode-bg-graphic-{
 
-    &bottom-left {
-      
-    }
-
-    &bottom-left {
+    &bottom-left,
+    &bottom-right,
+    &top-left,
+    &top-right {
       @extend .bg-graphics;
       width: 500px;
       height: auto;
+    }
 
+    &bottom-left {
       bottom: 0;
       left: 0;
     }
 
     &bottom-right {
-      @extend .graphic-view-modes;
-      width: 500px;
-      height: auto;
       bottom: 0;
       right: 0;
     }
 
      &top-left {
-      @extend .graphic-view-modes;
-      width: 500px;
-      height: auto;
       top: 0;
       left: 0;
      }
 
     &top-right {
-      @extend .graphic-view-modes;
-      width: 500px;
-      height: auto;
       top: 0;
       right: 0;
     }
 
     &fullheight-fullwidth {
-      @extend .graphic-view-modes;
+      @extend .bg-graphics;
       width: 100%;
-      min-width: 1000px;
       height: auto;
       top: 0;
       left: 0;
