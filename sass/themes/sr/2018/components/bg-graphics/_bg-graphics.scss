@@ -1,0 +1,79 @@
+// Base styles
+.bg-graphics {
+  position: absolute;
+  z-index: 1;
+
+  img, picture {
+    margin: 0;
+    display: block;
+    height: inherit;
+    width: inherit;
+  }
+}
+
+
+/* Need to ensure this global change doesn't negatively effect existing content */
+.single-msg .single-msg__copy_wrapper {
+  position: relative;
+  @include breakpoint($screen-md) {
+    position: absolute;
+    overflow: hidden;
+  }
+}
+
+/* Need to ensure this global change doesn't negatively effect existing content */
+.cr-body {
+  p, span, h1, h2, h3, h4, h5, a, button {
+    position: relative;
+    z-index: 2;
+  }
+
+  .view-mode-bg-graphic-{
+
+    &bottom-left {
+      
+    }
+
+    &bottom-left {
+      @extend .bg-graphics;
+      width: 500px;
+      height: auto;
+
+      bottom: 0;
+      left: 0;
+    }
+
+    &bottom-right {
+      @extend .graphic-view-modes;
+      width: 500px;
+      height: auto;
+      bottom: 0;
+      right: 0;
+    }
+
+     &top-left {
+      @extend .graphic-view-modes;
+      width: 500px;
+      height: auto;
+      top: 0;
+      left: 0;
+     }
+
+    &top-right {
+      @extend .graphic-view-modes;
+      width: 500px;
+      height: auto;
+      top: 0;
+      right: 0;
+    }
+
+    &fullheight-fullwidth {
+      @extend .graphic-view-modes;
+      width: 100%;
+      min-width: 1000px;
+      height: auto;
+      top: 0;
+      left: 0;
+    }
+  }
+}
