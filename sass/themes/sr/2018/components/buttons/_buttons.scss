@@ -18,6 +18,7 @@
   font-size: 18px;
   line-height: 18px;
   transition: background-color .1s linear;
+  box-sizing: border-box;
 
   @include border-radius(30px);
   span {
