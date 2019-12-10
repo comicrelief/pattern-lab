@@ -1,13 +1,18 @@
 // Base styles
 .bg-graphics {
-  position: absolute;
-  z-index: 1;
+  display: none;
 
-  img, picture {
-    margin: 0;
+  @include breakpoint($screen-md) {
     display: block;
-    height: inherit;
-    width: inherit;
+    position: absolute;
+    z-index: 1;
+
+    img, picture {
+      margin: 0;
+      display: block;
+      height: inherit;
+      width: inherit;
+    }
   }
 }
 
