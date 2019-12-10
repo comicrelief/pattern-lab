@@ -12,15 +12,6 @@
 }
 
 /* Need to ensure this global change doesn't negatively effect existing content */
-.single-msg .single-msg__copy_wrapper {
-  position: relative;
-  @include breakpoint($screen-md) {
-    position: absolute;
-    overflow: hidden;
-  }
-}
-
-/* Need to ensure this global change doesn't negatively effect existing content */
 .cr-body {
   p, span, h1, h2, h3, h4, h5, a, button {
     position: relative;
@@ -28,7 +19,6 @@
   }
 
   .view-mode-bg-graphic-{
-
     &bottom-left,
     &bottom-right,
     &top-left,
@@ -67,3 +57,42 @@
     }
   }
 }
+
+
+/* Need to ensure this global change doesn't negatively effect existing content */
+.single-msg {
+  .single-msg__copy_wrapper {
+    position: relative;
+    @include breakpoint($screen-md) {
+      position: absolute;
+      overflow: hidden;
+    }
+  }
+  
+
+  // Tweaks for fullwidth layouts to ensure graphic can extend to edge
+  &.single-msg--copy-only,
+  &.single-msg--copy-only--large {
+    .single-msg__copy_wrapper {
+      overflow: visible;
+
+      .view-mode-bg-graphic-fullheight-fullwidth {
+        @include breakpoint($screen-md) {
+          top: -60px;
+          width: 100vw;
+          transform: translateX(-50%);
+          left: 50%;
+        }
+      }
+    }
+  }
+}
+
+.paragraph--full-height-single-image-single-copy .fhsisc__text-wrapper {
+  position: relative;
+}
+
+.single-msg.single-msg--copy-only {
+
+}
+
