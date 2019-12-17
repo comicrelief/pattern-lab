@@ -93,11 +93,9 @@
   }
 }
 
-.paragraph--full-height-single-image-single-copy .fhsisc__text-wrapper {
+.paragraph--full-height-single-image-single-copy .fhsisc__text-wrapper,
+.paragraph--fixed-ratio-image .fixed-ratio-image__text-wrapper,
+.paragraph--copy-video .copy-video__text-wrapper,
+.paragraph--copy-copy .copy-copy__text-wrapper {
   position: relative;
 }
-
-.single-msg.single-msg--copy-only {
-
-}
-
