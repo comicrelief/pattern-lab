@@ -100,6 +100,7 @@ $image-width: 500px;
 
         .view-mode-bg-graphic-top-left {
           top: -60px;
+          left: auto;
           right: calc(100% + calc((100vw - 100%) / 2) - #{$image-width});
         }
 
@@ -110,6 +111,7 @@ $image-width: 500px;
 
         .view-mode-bg-graphic-bottom-left {
           bottom: -60px;
+          left: auto;
           right: calc(100% + calc((100vw - 100%) / 2) - #{$image-width});
         }
       }
