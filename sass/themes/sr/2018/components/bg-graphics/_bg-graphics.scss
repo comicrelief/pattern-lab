@@ -1,4 +1,7 @@
 // Base styles
+
+$image-width: 500px;
+
 .bg-graphics {
   display: none;
 
@@ -29,7 +32,7 @@
     &top-left,
     &top-right {
       @extend .bg-graphics;
-      width: 500px;
+      width: $image-width;
       height: auto;
     }
 
@@ -81,12 +84,33 @@
     .single-msg__copy_wrapper {
       overflow: visible;
 
-      .view-mode-bg-graphic-fullheight-fullwidth {
-        @include breakpoint($screen-md) {
+
+      @include breakpoint($screen-md) {
+        .view-mode-bg-graphic-fullheight-fullwidth {
           top: -60px;
           width: 100vw;
           transform: translateX(-50%);
           left: 50%;
+        }
+
+        .view-mode-bg-graphic-top-right {
+          top: -60px;
+          left: calc(100% + calc((100vw - 100%) / 2) - $image-width);
+        }
+
+        .view-mode-bg-graphic-top-left {
+          top: -60px;
+          right: calc(100% + calc((100vw - 100%) / 2) - $image-width);
+        }
+
+        .view-mode-bg-graphic-bottom-left {
+          bottom: -60px;
+          right: calc(100% + calc((100vw - 100%) / 2) - $image-width);
+        }
+
+        .view-mode-bg-graphic-bottom-right {
+          bottom: -60px;
+          left: calc(100% + calc((100vw - 100%) / 2) - $image-width);
         }
       }
     }
