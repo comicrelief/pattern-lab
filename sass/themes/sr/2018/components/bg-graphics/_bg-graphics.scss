@@ -19,7 +19,7 @@ $image-width--lg: 500px;
   }
 }
 
-/* Need to ensure this global change doesn't negatively effect existing content */
+/* Need to ensure this global change doesn't negatively affect existing content */
 .cr-body {
   p, span, h1, h2, h3, h4, h5, a, button {
     position: relative;
