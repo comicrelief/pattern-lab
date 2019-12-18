@@ -1,6 +1,6 @@
 // Base styles
-
-$image-width: 500px;
+$image-width--md: 362px;
+$image-width--lg: 500px;
 
 .bg-graphics {
   display: none;
@@ -32,8 +32,12 @@ $image-width: 500px;
     &top-left,
     &top-right {
       @extend .bg-graphics;
-      width: $image-width;
       height: auto;
+      width: $image-width--md;
+    
+      @include breakpoint($screen-lg) {
+        width: $image-width--lg;
+      }
     }
 
     &bottom-left {
@@ -77,13 +81,11 @@ $image-width: 500px;
     }
   }
   
-
-  // Tweaks for fullwidth layouts to ensure graphic can extend to edge
+  /* Tweaks for fullwidth layouts to ensure graphic can extend to edge */
   &.single-msg--copy-only,
   &.single-msg--copy-only-large {
     .single-msg__copy_wrapper {
       overflow: visible;
-
 
       @include breakpoint($screen-md) {
         .view-mode-bg-graphic-fullheight-fullwidth {
@@ -95,24 +97,24 @@ $image-width: 500px;
 
         .view-mode-bg-graphic-top-right {
           top: -60px;
-          left: calc(100% + calc((100vw - 100%) / 2) - #{$image-width});
+          left: calc(100% + calc((100vw - 100%) / 2) - #{$image-width--lg});
         }
 
         .view-mode-bg-graphic-top-left {
           top: -60px;
           left: auto;
-          right: calc(100% + calc((100vw - 100%) / 2) - #{$image-width});
+          right: calc(100% + calc((100vw - 100%) / 2) - #{$image-width--lg});
         }
 
         .view-mode-bg-graphic-bottom-right {
           bottom: -60px;
-          left: calc(100% + calc((100vw - 100%) / 2) - #{$image-width});
+          left: calc(100% + calc((100vw - 100%) / 2) - #{$image-width--lg});
         }
 
         .view-mode-bg-graphic-bottom-left {
           bottom: -60px;
           left: auto;
-          right: calc(100% + calc((100vw - 100%) / 2) - #{$image-width});
+          right: calc(100% + calc((100vw - 100%) / 2) - #{$image-width--lg});
         }
       }
     }
