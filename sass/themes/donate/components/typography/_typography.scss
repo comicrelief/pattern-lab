@@ -1,0 +1,188 @@
+h1, h2, h3, h4, h5 { 
+  text-transform: uppercase;
+  font-family: $montserrat;
+  strong {
+    font-family: inherit;
+  }
+}
+
+p, span {
+  font-family: $montserrat;
+  strong {
+    font-family: inherit;
+  }
+}
+
+p:last-child {
+  margin: 0;
+}
+
+/* Override base theme variations, to make current content 'work' on some level */
+h1 {
+  margin-bottom: 30px;
+
+  &.font--font-black,
+  &.font--xlarge,
+  &.font--black-shadow  {
+    @include font-size($h1-font-size);
+  }
+}
+
+h2,
+h3,
+p.text--subtitle {
+  margin-bottom: 20px;
+}
+
+p {
+  &.font--xlarge,
+  &.font--large,
+  &.font--small,
+  &.font--xsmall {
+    @include font-size($p-font-size);
+  }
+}
+
+h1.text--title {
+  @include font-size($h1-title-font-size);
+  margin-bottom: 30px;
+}
+
+h1, h2, h3, h4, h5, p, span {
+  &.font {
+    &--red,
+    &--royal-blue,
+    &--dark-purple,
+    &--purple,
+    &--black,
+    &--dark-grey,
+    &--grey  {
+      color: $colour-dark-purple;
+    }
+
+    &--mint-green,
+    &--white,
+    &--light-grey {
+      color: $colour-white;
+    }
+  }
+}
+
+
+/* 2019 Classes .. to be used via Sass @extends, not as standalone WYSIWYG classes */
+.text--subtitle,
+.text--subtitle-small,
+.text--label,
+.text--label-small {
+  font-family: $montserrat;
+  font-weight: 800;
+  strong {
+    font-weight: inherit;
+  }
+}
+
+.text--footnote {
+  font-family: $montserrat;
+  font-weight: 500;
+  strong {
+    font-weight: 700;
+  }
+}
+
+.text--body {
+  @include font-size($body-font-size);
+}
+.text--body-small {
+  @include font-size($body-small-font-size);
+}
+.text--subtitle {
+  @include font-size($subtitle-font-size);
+}
+.text--subtitle-small {
+  @include font-size($subtitle-small-font-size);
+  margin-bottom: 15px;
+}
+.text--label {
+  @include font-size($label-font-size);
+  text-transform: uppercase;
+}
+.text--label-small {
+  @include font-size($label-small-font-size);
+  text-transform: uppercase;
+}
+.text--footnote {
+  @include font-size($footnote-font-size);
+}
+
+/* Backwards mapping so our existing content in the CMS doesn't look too wonky */
+i.font--family-black,
+.font--family-black, 
+i.font--family-bold, 
+.font--family-bold {
+  font-family: $montserrat;
+  font-weight: 800;
+  text-transform: unset;
+}
+
+i.font--family-regular,
+.font--family-regular,
+.font--family-medium,
+i.font--family-medium {
+  font-family: $montserrat;
+  font-weight: 700;
+  text-transform: unset;
+}
+
+.font--family-light,
+i.font--family-light {
+  font-family: $montserrat;
+  font-weight: 500;
+  text-transform: unset;
+}
+
+label {
+  @extend .text--label;
+}
+
+/* Used to strongarm styles for Membership page,
+ * overriding general bg-color/font-color rules */
+.font--white { color: $colour-white !important; }
+.font--red { color: $colour-red !important; }
+.font--deep-violet { color: $colour-deep-violet !important; }
+.font--grey { color: $colour-grey !important; }
+.font--coral { color: $colour-coral !important; }
+.font--orange { color: $colour-orange !important; }
+.font--yellow { color: $colour-yellow !important; }
+.font--green { color: $colour-green !important; }
+.font--blue { color: $colour-blue !important; }
+.font--magenta { color: $colour-magenta !important; }
+.font--purple { color: $colour-purple !important; }
+.font--teal { color: $colour-teal !important; }
+
+
+/* Per breakpoint tweaks for Membership */
+.no-wrap--md-lg {
+  @include breakpoint($screen-md) {
+    white-space: nowrap;
+  }
+}
+
+.no-wrap--lg {
+  @include breakpoint($screen-lg) {
+    white-space: nowrap;
+  }
+}
+
+br.break--md-lg {
+  display: none;
+  @include breakpoint($screen-md) {
+    display: inline;
+  }
+}
+
+br.break--lg {
+  display: none;
+  @include breakpoint($screen-lg) {
+    display: inline;
+  }
+}

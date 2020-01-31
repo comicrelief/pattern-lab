@@ -1,9 +1,74 @@
-.form__field--submit {
-  .btn {
-    width : 100%;
-    border-radius: 30px;
-    @include breakpoint($screen-lg) {
-      width: auto;
-    }
+
+
+// Buttons
+a.btn,
+button.btn {
+  width:100%;
+  height: 60px;
+  background-color: $colour--btn-light;
+  color: $colour--black;
+  font-size: $button-cta-fields-fontsize;
+  line-height: $button-cta-fields-lineheight;
+  @include border-radius(1px);
+  @include box-shadow-transition();
+  @include cta-transition();
+
+  &:hover,
+  &:focus {
+    background-color: $colour--btn-hover;
+    color: $colour--white;
   }
+
+  &:active {
+    background-color: $colour--btn-selected;
+    color: $colour--white;
+  }
+  // 'On click' ??
+}
+
+
+// CTAs - classes to be finalised
+a.cta,
+button.cta {
+  height: 60px;
+  width:100%;
+  background-color: $colour--red;
+  color: $colour--white;
+  font-size: $button-cta-fields-fontsize;
+  line-height: $button-cta-fields-lineheight;
+  @include border-radius(10px);
+  @include box-shadow-transition();
+  @include cta-transition();
+
+  &:hover,
+  &:focus {
+    background-color: $colour--cta-hover;
+    color: $colour--white;
+  }
+  // 'On click' ??
+}
+
+a.cta-2,
+button.cta-2 {
+  height: 60px;
+  width:100%;
+  background-color: transparent;
+  border: 4px solid $colour--white;
+  color: $colour--white;
+  transition: all 0.1s ease-in-out;
+  font-size: $button-cta-fields-fontsize;
+  line-height: $button-cta-fields-lineheight;
+  @include border-radius(30px);
+  @include cta2-transition();
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border: 4px solid $colour--black;
+    color: $colour--black;
+  }
+
+  // 'On click' ??
+
 }
