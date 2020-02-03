@@ -3,7 +3,7 @@ main .paragraph--full-height-single-image-single-copy {
 
 	.fhsisc {
 		&__image-wrapper {
-			background: $colour-deep-violet;
+			// background: $colour-deep-violet;
 
 			img {
 				min-height: auto;
@@ -13,7 +13,6 @@ main .paragraph--full-height-single-image-single-copy {
 		}
 
 		&__text-wrapper {
-			background-color: $colour-green;
 			padding: 20px 5vw;
 			justify-content: inherit;
 
@@ -82,7 +81,7 @@ main .paragraph--full-height-single-image-single-copy {
 
 				/* Giftaid form */
 				.form__field-wrapper--checkbox.form__field-wrapper--background {
-					background: $colour-light-green;
+					// background: $colour-light-green;
 					padding: 18px;
 				}
 
@@ -105,7 +104,7 @@ main .paragraph--full-height-single-image-single-copy {
 			}
 
 			#input #comicrelief_payinbundle_payment_currency {
-				background-color: $colour-smoke-grey;
+				// background-color: $colour-smoke-grey;
 				border-color: $colour-smoke-grey;
 
 				@include breakpoint($screen-lg) {
@@ -153,7 +152,7 @@ main .paragraph--full-height-single-image-single-copy {
 	}
 
 	.form__field-wrapper--checkbox.form__field-wrapper--background {
-		background: $colour-light-green;
+		// background: $colour-light-green;
 	}
 
 	// Breakpoint
