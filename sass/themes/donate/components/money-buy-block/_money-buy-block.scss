@@ -39,7 +39,6 @@
       min-height: 84px;
       border-radius: 0;
       background-color: $colour--btn-light;
-      border: 2px solid $colour--btn-light;
       color: $colour--black;
       font-family: $body-font;
       line-height: 22px;
@@ -112,7 +111,6 @@
   }
 
   .form__field--amount {
-
     .form__field--amount {
       @include placeholder (#757575, 18px, $body-font);
       font-size: 18px;
