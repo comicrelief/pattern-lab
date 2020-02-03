@@ -60,7 +60,7 @@
      outline-offset: 0px;
    }
    input:checked + label {
-    color:  $colour--black;
+      color:  $colour--black;
      background-color: $colour--btn-selected;
      border: 2px solid $colour--btn-selected;
       box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.6);

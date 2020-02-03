@@ -10,6 +10,7 @@ button.btn {
   font-size: $button-cta-fields-fontsize;
   line-height: $button-cta-fields-lineheight;
   font-family: $montserrat;
+  padding: 20px 30px;
   @include border-radius(8px);
   @include box-shadow-transition();
   @include cta-transition();

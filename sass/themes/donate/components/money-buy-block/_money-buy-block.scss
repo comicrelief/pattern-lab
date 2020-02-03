@@ -6,7 +6,7 @@
 
   p,
   .number-input-label {
-    color: $colour-deep-violet;
+    color:  $colour--white;
   }
 
   .form__fieldset {
@@ -38,9 +38,9 @@
       padding: 10px 0;
       min-height: 84px;
       border-radius: 0;
-      background-color: $colour-light-green;
-      border: 2px solid $colour-light-green;
-      color: $colour-deep-violet;
+      background-color: $colour--btn-light;
+      border: 2px solid $colour--btn-light;
+      color: $colour--black;
       font-family: $body-font;
       line-height: 22px;
       text-transform: none;
@@ -48,6 +48,21 @@
       text-shadow: none;
       letter-spacing: normal;
       background-clip: inherit;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      transition: box-shadow 0.2s ease-in-out;
+      @include border-radius(8px);
+
+      &.selected {
+        background-color: $colour--btn-selected;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        color: $colour--white;
+        border: none;
+
+        .select-amount,
+        .select-amount--context {
+          color: $colour-white;
+        }
+      }
 
       .select-amount {
         position: absolute;
@@ -79,17 +94,6 @@
         max-width: 65%;
         line-height: 1.3;
         margin-left: 125px;
-      }
-
-      &.selected {
-        background-color: $colour-deep-violet;
-        border: none;
-
-        .select-amount,
-        .select-amount--context {
-          color: $colour-white;
-        }
-
       }
     }
   }
