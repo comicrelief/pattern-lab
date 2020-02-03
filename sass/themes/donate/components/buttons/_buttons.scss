@@ -9,7 +9,7 @@ button.btn {
   color: $colour--black;
   font-size: $button-cta-fields-fontsize;
   line-height: $button-cta-fields-lineheight;
-  @include border-radius(1px);
+  @include border-radius(8px);
   @include box-shadow-transition();
   @include cta-transition();
 
@@ -36,7 +36,7 @@ button.cta {
   color: $colour--white;
   font-size: $button-cta-fields-fontsize;
   line-height: $button-cta-fields-lineheight;
-  @include border-radius(10px);
+  @include border-radius(30px);
   @include box-shadow-transition();
   @include cta-transition();
 
