@@ -6,7 +6,8 @@
    display: inline-block;
    width: 50%;
    cursor: pointer;
-   background-color: $colour-light-green;
+   background-color: $colour--btn-light;
+   @include cta-transition();
 
    &:after {
      @include clearfix();
@@ -55,9 +56,8 @@
      outline-offset: 0px;
    }
    input:checked + label {
-     color: $colour-white;
-     background-color: $colour-deep-violet;
-     border: 2px solid $colour-deep-violet;
-   }
+     color:  $colour--black;
+     background-color: $colour--btn-selected;
+     border: 2px solid $colour--btn-selected;
  }
 }
