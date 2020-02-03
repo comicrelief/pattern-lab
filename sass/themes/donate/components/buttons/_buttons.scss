@@ -9,6 +9,7 @@ button.btn {
   color: $colour--black;
   font-size: $button-cta-fields-fontsize;
   line-height: $button-cta-fields-lineheight;
+  font-family: $montserrat;
   @include border-radius(8px);
   @include box-shadow-transition();
   @include cta-transition();
@@ -36,6 +37,7 @@ button.cta {
   color: $colour--white;
   font-size: $button-cta-fields-fontsize;
   line-height: $button-cta-fields-lineheight;
+  font-family: $montserrat;
   @include border-radius(30px);
   @include box-shadow-transition();
   @include cta-transition();
@@ -58,6 +60,7 @@ button.cta-2 {
   transition: all 0.1s ease-in-out;
   font-size: $button-cta-fields-fontsize;
   line-height: $button-cta-fields-lineheight;
+  font-family: $montserrat;
   @include border-radius(30px);
   @include cta2-transition();
   box-shadow: none;
