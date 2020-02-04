@@ -275,28 +275,34 @@
   }
 }
 
-@mixin placeholder($color, $font-size, $body-font) {
+@mixin placeholder($color, $font-size, $body-font, $font-weight:"normal") {
   @include optional-at-root('::placeholder') {
     color: $color;
     font-size: $font-size;
+    line-height: normal;
     font-family: $body-font;
     opacity:  1;
     overflow: visible;
+    font-weight: $font-weight;
   }
   @include optional-at-root('::-webkit-input-placeholder') {
     color: $color;
     font-size: $font-size;
+    line-height: normal;
     font-family: $body-font;
     opacity:  1;
     overflow: visible;
+    font-weight: $font-weight;
   }
   
   @include optional-at-root(':-ms-input-placeholder') {
     color: $color;
     font-size: $font-size;
+    line-height: normal;
     font-family: $body-font;
     opacity:  1;
     overflow: visible;
+    font-weight: $font-weight;
   }
 
   // safari only hack
