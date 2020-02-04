@@ -23,10 +23,10 @@
   }
 }
 
-@mixin cta-transition() {
+@mixin colour-transition(){
   transition: color 0.1s linear, background-color 0.1s linear;
 }
 
-@mixin cta2-transition() {
+@mixin colour-transition-2(){
   transition: color 0.1s linear, border-color 0.1s linear;
 }

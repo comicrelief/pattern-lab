@@ -32,7 +32,7 @@
   }
 
   .form__togglebtn-amount {
-    .select-amount-btn {
+    button.select-amount-btn {
       position: relative;
       margin: 0 0 20px 0;
       padding: 10px 0;
@@ -50,8 +50,11 @@
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
       transition: box-shadow 0.2s ease-in-out;
       @include border-radius(8px);
+      @include colour-transition();
 
-      &.selected {
+      &.selected,
+      &:hover,
+      &:focus {
         background-color: $colour--btn-selected;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         color: $colour--white;
@@ -61,6 +64,11 @@
         .select-amount--context {
           color: $colour-white;
         }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $colour--btn-selected;
       }
 
       .select-amount {

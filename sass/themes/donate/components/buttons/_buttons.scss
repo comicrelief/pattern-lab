@@ -13,7 +13,7 @@ button.btn {
   padding: 20px 30px;
   @include border-radius(8px);
   @include box-shadow-transition();
-  @include cta-transition();
+  @include colour-transition();
 
   &:hover,
   &:focus {
@@ -41,7 +41,7 @@ button.cta {
   font-family: $montserrat;
   @include border-radius(30px);
   @include box-shadow-transition();
-  @include cta-transition();
+  @include colour-transition();
 
   &:hover,
   &:focus {
@@ -63,7 +63,7 @@ button.cta-2 {
   line-height: $button-cta-fields-lineheight;
   font-family: $montserrat;
   @include border-radius(30px);
-  @include cta2-transition();
+  @include colour-transition-2();
   box-shadow: none;
 
   &:hover,

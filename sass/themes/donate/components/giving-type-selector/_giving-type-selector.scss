@@ -7,7 +7,7 @@
    width: 50%;
    cursor: pointer;
    background-color: $colour--btn-light;
-   @include cta-transition();
+   @include colour-transition();
 
    &:hover {
     background-color: $colour--btn-hover;
