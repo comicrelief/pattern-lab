@@ -2,6 +2,7 @@
 .form__row--moneybuy-block {
   p {
     @extend p;
+    color: $color--white;
   }
 
   p,

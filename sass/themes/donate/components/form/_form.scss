@@ -54,7 +54,7 @@ form,
 form a,
 input {
 	font-family: $body-font;
-	color: $colour-deep-violet;
+	color: $colour--white;
 }
 
 input[type="email"],
@@ -122,8 +122,8 @@ textarea {
 		left: 0;
 		width: 0.5em;
 		height: 0.5em;
-		border-left: 2px solid $colour-dark-purple;
-		border-top: 2px solid $colour-dark-purple;
+		border-left: 2px solid $colour--white;
+		border-top: 2px solid $colour--white;
 		transform: rotate(-45deg);
 	}
 }
