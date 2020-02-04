@@ -190,7 +190,7 @@ button[type="submit"],
 		width: 185px;
 		margin: 15px auto;
 		height: 105px;
-		background: url($image-path+"gift_aid_logo.png") no-repeat center;
+		background: url($image-path+"gift_aid_logo--white.png") no-repeat center;
 		background-size: contain;
 
 		@include breakpoint($screen-lg) {
