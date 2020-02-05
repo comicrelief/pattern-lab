@@ -141,7 +141,10 @@ h2 {
 	@include font-size($h3-font-size);
 }
 .form__row--giftaid p {
-	text-align: left;
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 500;
 }
 .form__subcopy--bfpo {
 	font-size: 16px;
@@ -189,8 +192,8 @@ button[type="submit"],
 
 .form__row--giftaid {
 	.giftaid-title {
-		width: 185px;
-		margin: 15px auto;
+    width: 220px;
+    margin: 15px auto;
 		height: 105px;
 		background: url($image-path+"gift_aid_logo--white.png") no-repeat center;
 		background-size: contain;
