@@ -42,15 +42,16 @@ main .paragraph--full-height-single-image-single-copy {
 			// Checkbox label
 			label.form__field-label {
 				text-transform: inherit;
-				font-weight: inherit;
-				font-size: 15px;
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 24px;
 			}
 
 			// Address
 			#postcode_button {
 				border-radius: inherit;
 				padding: 0 10px;
-				height: 65px;
+				height: 50px;
 				background: $colour-dark-coral;
 				letter-spacing: normal;
 			}
