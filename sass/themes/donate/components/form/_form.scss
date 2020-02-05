@@ -210,3 +210,22 @@ label, legend, .form__field-label {
 	margin-bottom: 10px;
 	font-weight: 700;
 }
+
+#field-label--giftaid {
+	font-weight: 500;
+}
+
+.form__field-additional-text {
+	font-family: $montserrat;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 500;
+	
+	a {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
+		border-bottom: 1px solid $colour--white;
+	}
+}
