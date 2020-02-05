@@ -16,8 +16,14 @@ p, span {
 }
 
 p,
+span,
 .link {
   color: $colour--white;
+  font-family: $montserrat;
+}
+
+.link {
+  border-bottom: 4px solid $colour--white;
 }
 
 p:last-child {
