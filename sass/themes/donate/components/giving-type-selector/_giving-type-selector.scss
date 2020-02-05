@@ -8,6 +8,11 @@
    cursor: pointer;
    background-color: $colour--btn-light;
    @include colour-transition();
+   z-index: 3;
+
+   &.active {
+    z-index:4;
+    }
 
    &:hover {
     background-color: $colour--btn-hover;
