@@ -6,7 +6,7 @@
    display: inline-block;
    width: 50%;
    cursor: pointer;
-   background-color: $colour--btn-selected;
+   background-color: $colour--btn-light;
    @include colour-transition();
    z-index: 4;
 
@@ -19,7 +19,7 @@
     background-color: $colour--btn-hover;
 
     + .label {
-      color: $colour--white;
+      color: $colour--black;
     }
    }
 
@@ -81,8 +81,8 @@
    }
    input:checked {
       & + label {
-      color:  $colour--black;
-      background-color: $colour--btn-light;
+      color:  $colour--white;
+      background-color: $colour--btn-selected;
     }
   }
  }
