@@ -6,18 +6,19 @@
    display: inline-block;
    width: 50%;
    cursor: pointer;
-   background-color: $colour--btn-light;
+   background-color: $colour--btn-selected;
    @include colour-transition();
-   z-index: 3;
+   z-index: 4;
 
+   // To give the 'pressed-down' illusion
    &.active {
-    z-index:4;
+    z-index:3;
     }
 
    &:hover {
     background-color: $colour--btn-hover;
 
-    .label {
+    + .label {
       color: $colour--white;
     }
    }
@@ -80,8 +81,8 @@
    }
    input:checked {
       & + label {
-        color:  $colour--white;
-      background-color: $colour--btn-selected;
+      color:  $colour--black;
+      background-color: $colour--btn-light;
     }
   }
  }
