@@ -113,10 +113,10 @@
 
   .currency-input-label {
     position: absolute;
-    left: 0px;
-    top: 0.75em;
+    left: 50%;
+    top: 14px;
     line-height: 21px;
-    color: $colour-deep-violet;
+    color: $colour--black;
     font-size: 18px;
     font-family: $body-font;
     margin-left: 15px;
@@ -145,7 +145,7 @@
       margin-bottom: 0;
 
       @include breakpoint($screen-lg) {
-        width: 260px;
+        //width: 260px;
       }
     }
 
@@ -179,7 +179,7 @@
 
     #comicrelief_payinbundle_payment_currency {
       @include breakpoint($screen-lg) {
-        width: 130px;
+        //width: 130px;
         margin: 0;
       }
     }
