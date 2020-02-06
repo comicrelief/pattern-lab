@@ -159,7 +159,9 @@
   }
 
   .form__field--currency {
-    .form__field--currency {
+    margin: 0;
+    
+    label.form__field--currency {
       float: left;
       width: span(6);
       margin-left: calc(2 * #{gutter()});

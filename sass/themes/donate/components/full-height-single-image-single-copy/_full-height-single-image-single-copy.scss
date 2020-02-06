@@ -1,6 +1,25 @@
 main .paragraph--full-height-single-image-single-copy {
 	padding: 0;
 
+	fieldset#giving_type_selector {
+		.form__giving-type {
+			.form__field--wrapper {
+				&:first-child {
+					@include border-radius(8px 0 0 8px);
+					label {
+						@include border-radius(8px 0 0 8px);
+					}
+				}
+				&:last-child {
+					@include border-radius(0 8px 8px 0);
+					label {
+						@include border-radius(0 8px 8px 0);
+					}
+				}
+			}
+		}
+	}
+
 	.fhsisc {
 		&__image-wrapper {
 
@@ -199,21 +218,6 @@ main .paragraph--full-height-single-image-single-copy {
 								.form__giving-type {
 									display: flex;
 									max-height: 80px;
-
-									.form__field--wrapper {
-										&:first-child {
-											@include border-radius(8px 0 0 8px);
-											label {
-												@include border-radius(8px 0 0 8px);
-											}
-										}
-										&:last-child {
-											@include border-radius(0 8px 8px 0);
-											label {
-												@include border-radius(0 8px 8px 0);
-											}
-										}
-									}
 								}
 							}
 						}
