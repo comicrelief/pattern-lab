@@ -207,11 +207,17 @@ main .paragraph--full-height-single-image-single-copy {
 									max-height: 80px;
 
 									.form__field--wrapper {
-										&:first-child label {
-											@include border-radius(8px 0px 0px 8px);
+										&:first-child {
+											@include border-radius(8px 0 0 8px);
+											label {
+												@include border-radius(8px 0 0 8px);
+											}
 										}
-										&:last-child label {
-											@include border-radius(0px 8px 8px 0);
+										&:last-child {
+											@include border-radius(0 8px 8px 0);
+											label {
+												@include border-radius(0 8px 8px 0);
+											}
 										}
 									}
 
