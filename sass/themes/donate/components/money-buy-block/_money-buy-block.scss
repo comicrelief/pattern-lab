@@ -121,7 +121,7 @@
 
   .form__field--amount {
     .form__field--amount {
-      @include placeholder (#757575, 18px, $body-font);
+      @include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
       font-size: 18px;
       padding-left: 28px;
       float: left;
