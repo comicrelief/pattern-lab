@@ -129,12 +129,11 @@
     margin: 0;
     float: left;
     .form__field--amount {
+      width: 100%;
       @include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
       font-size: 18px;
       padding-left: 28px;
       float: left;
-      width: span(6);
-      margin-right: calc(2 * #{gutter()});
       border-color: $colour-white;
 
       @include breakpoint($screen-lg) {
@@ -168,8 +167,7 @@
   
     .form__field--currency {
       float: left;
-      width: span(6);
-      margin-left: calc(2 * #{gutter()});
+      width: 100%;
       background-color: $colour-white;
       border-color: $colour-white;
       border-left: none;
