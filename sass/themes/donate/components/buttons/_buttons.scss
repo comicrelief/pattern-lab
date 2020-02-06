@@ -60,6 +60,7 @@ button.cta-2 {
   @include border-radius(30px);
   @include colour-transition-2();
   box-shadow: none;
+  padding: 15px 30px;
 
   &:hover,
   &:focus {

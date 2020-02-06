@@ -62,9 +62,10 @@ input {
 input[type="email"],
 input[type="number"],
 input[type="text"],
+input[type="tel"],
 select,
 textarea {
-	border: 1px solid $colour-deep-violet;
+	border: 1px solid $colour--field-border;
 	@include placeholder($colour--placeholder, 20px, $body-font, 700);
 }
 
