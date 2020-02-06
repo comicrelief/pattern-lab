@@ -125,6 +125,9 @@
   }
 
   .form__field--amount {
+    width: 50%;
+    margin: 0;
+    float: left;
     .form__field--amount {
       @include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
       font-size: 18px;
@@ -159,8 +162,10 @@
   }
 
   .form__field--currency {
+    width: 50%;
     margin: 0;
-    
+    float: left;
+  
     label.form__field--currency {
       float: left;
       width: span(6);
