@@ -39,7 +39,7 @@
 
       + label {
         box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.4);
-        transition: box-shadow 0.2s ease-in-out;
+        transition: box-shadow 0.1s linear;
       }
 
       &:checked + label {

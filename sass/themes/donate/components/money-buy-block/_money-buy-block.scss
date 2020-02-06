@@ -72,6 +72,10 @@
         background-color: $colour--btn-hover;
       }
 
+      span {
+        color: inherit;
+      }
+
       .select-amount {
         position: absolute;
         top: 0;
