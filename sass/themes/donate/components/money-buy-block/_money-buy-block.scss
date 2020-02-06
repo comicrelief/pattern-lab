@@ -124,7 +124,7 @@
     z-index: 9;
   }
 
-  .form__field--amount {
+  div.form__field--amount {
     width: 50%;
     margin: 0;
     float: left;
@@ -161,12 +161,12 @@
     }
   }
 
-  .form__field--currency {
+  div.form__field--currency {
     width: 50%;
     margin: 0;
     float: left;
   
-    label.form__field--currency {
+    .form__field--currency {
       float: left;
       width: span(6);
       margin-left: calc(2 * #{gutter()});
