@@ -1,5 +1,3 @@
-
-
 // Buttons
 a.btn,
 button.btn {
@@ -22,12 +20,10 @@ button.btn {
   }
 
   &:active {
-    background-color: $colour--btn-selected;
+    background-color: $colour--btn-on-click;
     color: $colour--white;
   }
-  // 'On click' ??
 }
-
 
 // CTAs - classes to be finalised
 a.cta,
@@ -48,7 +44,6 @@ button.cta {
     background-color: $colour--cta-hover;
     color: $colour--white;
   }
-  // 'On click' ??
 }
 
 a.cta-2,
@@ -72,6 +67,4 @@ button.cta-2 {
     border: 4px solid $colour--black;
     color: $colour--black;
   }
-  // 'On click' ??
 }
-

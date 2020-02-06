@@ -82,7 +82,6 @@ h1, h2, h3, h4, h5, p, span {
   }
 }
 
-
 /* 2019 Classes .. to be used via Sass @extends, not as standalone WYSIWYG classes */
 .text--subtitle,
 .text--subtitle-small,
@@ -103,7 +102,8 @@ h1, h2, h3, h4, h5, p, span {
   }
 }
 
-.text--body {
+// Temporarily remove these to eventually refactor with new classes
+/* .text--body {
   @include font-size($body-font-size);
 }
 .text--body-small {
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, p, span {
 }
 .text--footnote {
   @include font-size($footnote-font-size);
-}
+} */
 
 /* Backwards mapping so our existing content in the CMS doesn't look too wonky */
 i.font--family-black,
@@ -157,22 +157,6 @@ i.font--family-light {
 label {
   @extend .text--label;
 }
-
-/* Used to strongarm styles for Membership page,
- * overriding general bg-color/font-color rules */
-.font--white { color: $colour-white !important; }
-.font--red { color: $colour-red !important; }
-.font--deep-violet { color: $colour-deep-violet !important; }
-.font--grey { color: $colour-grey !important; }
-.font--coral { color: $colour-coral !important; }
-.font--orange { color: $colour-orange !important; }
-.font--yellow { color: $colour-yellow !important; }
-.font--green { color: $colour-green !important; }
-.font--blue { color: $colour-blue !important; }
-.font--magenta { color: $colour-magenta !important; }
-.font--purple { color: $colour-purple !important; }
-.font--teal { color: $colour-teal !important; }
-
 
 /* Per breakpoint tweaks for Membership */
 .no-wrap--md-lg {
