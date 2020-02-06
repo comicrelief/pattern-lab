@@ -230,3 +230,13 @@ label, legend, .form__field-label {
 		border-bottom: 1px solid $colour--white;
 	}
 }
+
+.form-error {
+	padding: 6px;
+  width: 100%;
+	background-color: $colour--error-msg-bg;
+	@include border-radius(8px);
+	font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+}
