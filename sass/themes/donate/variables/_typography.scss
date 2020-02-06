@@ -20,6 +20,8 @@ $bold-36pt-lineheight: 44px;
 $button-cta-fields-fontsize: 18px;
 $button-cta-fields-lineheight: 22px;
 
+$field-label-fontsize--sm: 14px; 
+
 
 /* Attempt to map to required vars */
 
@@ -62,4 +64,17 @@ $h6-font-size: (
   null: (12px, 15px),
   $screen-md: (12px, 15px),
   $screen-lg: (12px, 15px)
+);
+
+// Labels
+$field-label-font-size: (
+  null: (14px, 17px),
+  $screen-md: (20px, 24px),
+  $screen-lg: (20px, 24px)
+);
+
+$field-font-size: (
+  null: (18px, 22px),
+  $screen-md: (20, 24px),
+  $screen-lg: (20px, 24px)
 );

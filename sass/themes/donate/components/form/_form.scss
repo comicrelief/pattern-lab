@@ -54,7 +54,7 @@ form,
 form a,
 input {
 	font-family: $body-font;
-	color: $colour--white;
+	color: $colour--black;
 	font-size: 20px;
 	font-weight: 700;
 }
@@ -66,7 +66,7 @@ input[type="tel"],
 select,
 textarea {
 	border: 1px solid $colour--field-border;
-	@include placeholder($colour--placeholder, 20px, $body-font, 700);
+	@include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
 }
 
 
