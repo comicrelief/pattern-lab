@@ -6,7 +6,6 @@
    display: inline-block;
    width: 50%;
    cursor: pointer;
-   background-color: $colour--btn-light;
    @include colour-transition();
    z-index: 4;
 
@@ -16,9 +15,8 @@
   }
 
    &:hover {
-    background-color: $colour--btn-hover;
-
     + .label {
+      background-color: $colour--btn-hover;
       color: $colour--black;
     }
    }
@@ -43,6 +41,8 @@
 
       &:checked + label {
         box-shadow: none;
+        color:  $colour--white;
+        background-color: $colour--btn-selected;
       }
    }
 
@@ -78,13 +78,5 @@
      outline: -webkit-focus-ring-color auto 5px;
      outline-offset: 0px;
    }
-   input:checked {
-      & + label {
-      color:  $colour--white;
-      background-color: $colour--btn-selected;
-    }
-  }
  }
 }
-
-
