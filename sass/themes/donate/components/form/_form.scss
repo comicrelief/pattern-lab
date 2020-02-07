@@ -209,7 +209,7 @@ button[type="submit"],
 }
 
 label, legend, .form__field-label {
-	@include font-size($field-font-size);
+	@include font-size($field-label-font-size);
 	margin-bottom: 10px;
 	font-weight: 700;
 }
