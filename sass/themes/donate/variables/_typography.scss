@@ -17,11 +17,8 @@ $large-headings-lineheight: 44px;
 $bold-36pt-fontsize: 36px;
 $bold-36pt-lineheight: 44px;
 
-$button-cta-fields-fontsize: 18px;
-$button-cta-fields-lineheight: 22px;
-
-$field-label-fontsize--sm: 14px; 
-
+$button-cta-fields-fontsize--sm: 18px;
+$button-cta-fields-lineheight--sm: 22px;
 
 /* Attempt to map to required vars */
 
@@ -75,6 +72,12 @@ $field-label-font-size: (
 
 $field-font-size: (
   null: (18px, 22px),
-  $screen-md: (20, 24px),
+  $screen-md: (20px, 24px),
+  $screen-lg: (20px, 24px)
+);
+
+$button-cta-font-size: (
+  null: (18px, 22px),
+  $screen-md: (20px, 24px),
   $screen-lg: (20px, 24px)
 );

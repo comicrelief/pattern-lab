@@ -56,14 +56,14 @@ main .paragraph--full-height-single-image-single-copy {
 				color: $colour-deep-violet;
 				font-size: 16px;
 				padding: 8px 50px 8px 10px;
+				@include font-size($field-font-size);
 			}
 
 			// Checkbox label
 			label.form__field-label {
 				text-transform: inherit;
 				font-weight: 700;
-				font-size: 20px;
-				line-height: 24px;
+				@include font-size($field-font-size);
 				height: auto;
 			}
 
