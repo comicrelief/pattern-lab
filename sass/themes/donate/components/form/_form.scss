@@ -59,6 +59,10 @@ input {
 	font-weight: 700;
 }
 
+form a {
+	color: $colour--white;
+}
+
 input[type="email"],
 input[type="number"],
 input[type="text"],

@@ -54,6 +54,7 @@
       transition: box-shadow 0.2s ease-in-out;
       @include border-radius(8px);
       @include colour-transition();
+      height: auto;
 
       &.selected,
       &:hover,
