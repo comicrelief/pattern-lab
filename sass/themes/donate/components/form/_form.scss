@@ -17,13 +17,14 @@
 	&.form__row--your--address {
 		.form__field--postcode {
 			display: flex;
+			flex-direction: column;
 
 			.form__field--text {
 				width: 100%;
 			}
 
 			.form__btn {
-				width: auto;
+				width: 100%;
 			}
 		}
 	}

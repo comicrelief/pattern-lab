@@ -69,11 +69,9 @@ main .paragraph--full-height-single-image-single-copy {
 
 			// Address
 			#postcode_button {
-				@include border-radius(inherit);
-				padding: 0 10px;
 				height: 50px;
-				background: $colour-dark-coral;
-				letter-spacing: normal;
+				@extend button.cta-2;
+				margin-top: 20px !important;
 			}
 
 			// Checkbox
