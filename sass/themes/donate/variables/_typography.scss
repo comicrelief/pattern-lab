@@ -81,3 +81,9 @@ $button-cta-font-size: (
   $screen-md: (20px, 24px),
   $screen-lg: (20px, 24px)
 );
+
+$form-error-font-size: (
+  null: (14px, 17px),
+  $screen-md: (16px, 20px),
+  $screen-lg: (16px, 20px)
+);
