@@ -1,4 +1,4 @@
-// Buttons
+// Buttons: primary action
 a.btn,
 button.btn {
   width:100%;
@@ -12,15 +12,33 @@ button.btn {
   @include box-shadow-transition();
   @include colour-transition();
 
+  &.secondary {
+    background-color: transparent;
+    border: 4px solid $colour--white;
+    color: $colour--white;
+  }
+
   &:hover,
   &:focus {
     background-color: $colour--btn-hover;
     color: $colour--white;
+
+    &.secondary {
+      background-color: transparent;
+      border: 4px solid $colour--white;
+      color: $colour--white;
+    }
   }
 
   &:active {
     background-color: $colour--btn-on-click;
     color: $colour--white;
+
+    &.secondary {
+      background-color: transparent;
+      border: 4px solid $colour--white;
+      color: $colour--white;
+    }
   }
 }
 

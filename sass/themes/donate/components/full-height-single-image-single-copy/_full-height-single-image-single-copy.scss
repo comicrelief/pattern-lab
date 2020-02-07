@@ -70,7 +70,7 @@ main .paragraph--full-height-single-image-single-copy {
 			// Address
 			#postcode_button {
 				height: 50px;
-				@extend button.cta-2;
+				@extend button.btn.secondary;
 				margin-top: 20px !important;
 			}
 
