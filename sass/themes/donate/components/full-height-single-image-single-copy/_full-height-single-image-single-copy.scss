@@ -194,12 +194,12 @@ main .paragraph--full-height-single-image-single-copy {
 								display: flex;
 
 								input {
-									flex-grow: 5;
-									width: 70%;
+									// flex-grow: 5;
+									//width: 100%;
 								}
 
 								.form__btn {
-									flex-grow: 1;
+									//flex-grow: 1;
 									width: auto;
 
 									#postcode_button {
@@ -207,6 +207,10 @@ main .paragraph--full-height-single-image-single-copy {
 										font-size: 15px;
 										letter-spacing: 0;
 									}
+								}
+
+								+ .form__field--wrapper {
+									text-align: center;
 								}
 							}
 
@@ -220,6 +224,11 @@ main .paragraph--full-height-single-image-single-copy {
 									max-height: 80px;
 								}
 							}
+						}
+
+						// Target 'manual address' link
+						.field-wrapper--postcode + .form__field--wrapper {
+    					margin-bottom: 40px;
 						}
 					}
 				}
