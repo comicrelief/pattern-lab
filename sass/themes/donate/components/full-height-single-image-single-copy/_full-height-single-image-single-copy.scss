@@ -204,7 +204,6 @@ main .paragraph--full-height-single-image-single-copy {
 
 									#postcode_button {
 										width: 100%;
-										font-size: 15px;
 										letter-spacing: 0;
 									}
 								}
@@ -234,6 +233,10 @@ main .paragraph--full-height-single-image-single-copy {
 
 // Target 'manual address' link 
 #field-wrapper--postcode + .form__field--wrapper {
-	margin: 30px auto;
+	margin: 30px auto 10px;
 	text-align: center;
+}
+
+#field-wrapper--addressSelect {
+	text-align: left;
 }
