@@ -157,6 +157,7 @@ i.font--family-light {
 
 label {
   @extend .text--label;
+  @include font-size($field-label-font-size);
 }
 
 /* Per breakpoint tweaks for Membership */
