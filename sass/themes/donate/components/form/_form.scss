@@ -240,4 +240,9 @@ label, legend, .form__field-label {
 	@include border-radius(8px);
 	@include font-size($form-error-font-size);
   font-weight: 500;
+  
+  &:before {
+ 		width: 16px;
+    height: 16px;
+  }
 }
