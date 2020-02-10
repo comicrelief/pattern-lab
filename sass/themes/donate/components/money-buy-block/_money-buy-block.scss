@@ -58,7 +58,8 @@
 
       &.selected,
       &:hover,
-      &:focus {
+      &:focus,
+      &:active {
         background-color: $colour--btn-selected;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         color: $colour--white;
@@ -73,6 +74,10 @@
       &:hover,
       &:focus {
         background-color: $colour--btn-hover;
+      }
+
+      &:active {
+        background-color: $colour--btn-on-click;
       }
 
       span {

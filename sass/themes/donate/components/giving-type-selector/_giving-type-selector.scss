@@ -6,7 +6,6 @@
    display: inline-block;
    width: 50%;
    cursor: pointer;
-   @include colour-transition();
    z-index: 4;
 
    // To give the 'pressed-down' illusion
@@ -33,11 +32,10 @@
      height: 100%;
      opacity: 0;
      cursor: pointer;
-     @include colour-transition();
 
       + label {
+        @include colour-transition();
         background-color: $colour--btn-light;
-        transition: box-shadow 0.1s linear;
         box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.4);
         color: $colour--black;
         
@@ -45,41 +43,36 @@
           color: inherit;
         }
       }
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.selected,
+      &:checked {
+        & + label {
+          color: $colour--white;
+        }
+      }
       
       &:hover,
       &:focus {
-        & + label {
-          background-color: $colour--btn-hover;
+        &:checked,
+        & {
+          & + label { background-color: $colour--btn-hover; }
         };
       }
 
       &:active {
-        & + label {
-          background-color: $colour--btn-on-click;
-          color: $colour--white;
+        &:checked,
+        & {
+          & + label { background-color: $colour--btn-on-click; }
         }
       }
 
       &:checked {
         & + label {
-          color: $colour--white;
           background-color: $colour--btn-selected;
           box-shadow: none;
-        }
-
-        &:hover,
-        &:focus {
-          & + label {
-            background-color: $colour--btn-hover;
-            color: $colour--white;
-          }
-        }
-
-        &:active {
-          & + label {
-            background-color: $colour--btn-on-click;
-            color: $colour--white;
-          }
         }
       }
    }
