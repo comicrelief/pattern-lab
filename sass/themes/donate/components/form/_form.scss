@@ -168,24 +168,19 @@ button.payment-button {
 	padding: 18px 30px;
 }
 
-button[type="submit"],
-#comicrelief_payinbundle_payment_card,
-#comicrelief_payinbundle_payment_directdebit {
-	@extend .btn--deep-violet;
-}
 // Apple Pay button only shows when supported
 #comicrelief_payinbundle_payment_apple_pay {
 	display: none;
 	// fallback if apple pay styling doesn't come through
 	// making sure this doesn't stick out if apple styling does come through
-	height: 54px;
-	@extend .btn--black;
+	height: 55px;
+	@extend button.cta;
 	// apple pay styling
 	&:after {
 		margin-top: -1px;
 		height: 55px;
 		-webkit-appearance: -apple-pay-button;
-		-apple-pay-button-style: black;
+		-apple-pay-button-style: white;
 	}
 }
 // PayPal fallback styling
