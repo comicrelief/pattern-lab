@@ -241,3 +241,18 @@ label, legend, .form__field-label {
     height: 16px;
   }
 }
+
+#field-wrapper--accountHolder {
+	.form__field.form__field--checkbox {
+		height: 40px;
+    width: 40px;
+    top: 3px;
+    span {
+    	top: 3px;
+    	left: 0;
+    }
+	}
+	#field-label--accountHolder {
+    padding-left: 10px;
+	}
+}
