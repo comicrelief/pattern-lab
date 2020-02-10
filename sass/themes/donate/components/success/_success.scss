@@ -7,7 +7,7 @@
 
 	p,
 	ul {
-		color: $colour-deep-violet;
+		color: $colour--white;
 		text-align: left;
 
 		@include breakpoint($screen-md) {
@@ -42,7 +42,7 @@
 			span {
 				display: inline-block;
 				vertical-align: middle;
-				color: $colour-deep-violet;
+				color: $colour--white;
 			}
 
 			ul {

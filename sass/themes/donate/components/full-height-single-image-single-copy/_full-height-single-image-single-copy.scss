@@ -134,13 +134,8 @@ main .paragraph--full-height-single-image-single-copy {
 				}
 			}
 
-			#input #comicrelief_payinbundle_payment_currency {
-				border-color: $colour-smoke-grey;
-
-				@include breakpoint($screen-lg) {
-					width: 130px;
-					margin-left: 0;
-				}
+			#comicrelief_payinbundle_payment_currency {
+				@include border-radius(8px 0 0 8px);
 			}
 
 			.has-validation-callback.marketing-pref-form {
