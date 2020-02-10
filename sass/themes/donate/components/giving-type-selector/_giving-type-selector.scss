@@ -33,6 +33,7 @@
      height: 100%;
      opacity: 0;
      cursor: pointer;
+     @include colour-transition();
 
       + label {
         background-color: $colour--btn-light;
@@ -43,29 +44,42 @@
         span {
           color: inherit;
         }
-
-        &:hover,
-        &:focus {
+      }
+      
+      &:hover,
+      &:focus {
+        & + label {
           background-color: $colour--btn-hover;
-        }
+        };
+      }
 
-        &:active {
+      &:active {
+        & + label {
           background-color: $colour--btn-on-click;
+          color: $colour--white;
         }
       }
 
-      &:checked + label {
-        color:  $colour--white;
-        background-color: $colour--btn-selected;
-        box-shadow: none;
+      &:checked {
+        & + label {
+          color: $colour--white;
+          background-color: $colour--btn-selected;
+          box-shadow: none;
+        }
 
         &:hover,
         &:focus {
-          background-color: $colour--btn-hover;
+          & + label {
+            background-color: $colour--btn-hover;
+            color: $colour--white;
+          }
         }
 
         &:active {
-          background-color: $colour--btn-on-click;
+          & + label {
+            background-color: $colour--btn-on-click;
+            color: $colour--white;
+          }
         }
       }
    }
