@@ -243,16 +243,33 @@ label, legend, .form__field-label {
 }
 
 #field-wrapper--accountHolder {
+	.form__field-wrapper--checkbox {
+		min-height: 45px;
+	}
 	.form__field.form__field--checkbox {
 		height: 40px;
-    width: 40px;
-    top: 3px;
-    span {
-    	top: 3px;
-    	left: 0;
-    }
+    	width: 40px;
+		top: 0;
+		left: 0;
+		
+		& + span {
+			top: 0;
+		}
+		
+		@include breakpoint($screen-md) {
+			top: 3px;
+			left: 0;
+			& + span {
+				top: 3px;
+				left: 0;
+			}
+		}
 	}
 	#field-label--accountHolder {
-    padding-left: 10px;
+		padding-left: 5px;
+		
+		@include breakpoint($screen-md) {
+			padding-left: 10px;
+		}
 	}
 }
