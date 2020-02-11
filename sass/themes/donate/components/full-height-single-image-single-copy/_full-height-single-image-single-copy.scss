@@ -188,11 +188,6 @@ main .paragraph--full-height-single-image-single-copy {
 							.form__field--postcode {
 								display: flex;
 
-								input {
-									// flex-grow: 5;
-									//width: 100%;
-								}
-
 								.form__btn {
 									//flex-grow: 1;
 									width: auto;
@@ -230,8 +225,8 @@ main .paragraph--full-height-single-image-single-copy {
 #field-wrapper--postcode + .form__field--wrapper {
 	margin: 30px auto 10px;
 	text-align: center;
-}
 
-#field-wrapper--addressSelect {
-	text-align: left;
+	&#field-wrapper--addressSelect {
+		text-align: left;
+	}
 }
