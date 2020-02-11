@@ -248,20 +248,19 @@ label, legend, .form__field-label {
 	}
 	.form__field.form__field--checkbox {
 		height: 40px;
-    	width: 40px;
+    width: 40px;
 		top: 0;
 		left: 0;
 		
 		& + span {
 			top: 0;
+			left: 0;
 		}
 		
 		@include breakpoint($screen-md) {
 			top: 3px;
-			left: 0;
 			& + span {
 				top: 3px;
-				left: 0;
 			}
 		}
 	}
