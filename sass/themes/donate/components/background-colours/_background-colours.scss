@@ -1,3 +1,5 @@
 .bg--blue-gradient {
-  background-image: linear-gradient($colour--bg-gradient-top, $colour--bg-gradient-bottom);
+  // Non-gradient browser fallback:
+  background-color: #00407e;
+  background-image: linear-gradient(to top right, $colour--bg-gradient-top-right, $colour--bg-gradient-bottom-left);
 }
