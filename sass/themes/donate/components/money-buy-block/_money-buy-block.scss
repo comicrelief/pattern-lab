@@ -39,8 +39,8 @@
       position: relative;
       margin: 0 0 20px 0;
       padding: 10px 0;
+      height: auto;
       min-height: 84px;
-      border-radius: 0;
       background-color: $colour--btn-light;
       color: $colour--black;
       font-family: $body-font;
@@ -54,7 +54,6 @@
       transition: box-shadow 0.2s ease-in-out;
       @include border-radius(8px);
       @include colour-transition();
-      height: auto;
 
       &.selected,
       &:hover,
@@ -78,6 +77,15 @@
 
       &:active {
         background-color: $colour--btn-on-click;
+      }
+
+      // Override colour for selected buttons to 'remove' focus and hover colour
+      &.selected {
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $colour--btn-selected;
+        }
       }
 
       span {
@@ -129,12 +137,20 @@
     margin-left: 15px;
     margin-top: 1px;
     z-index: 9;
+    @include breakpoint($screen-lg) {
+      left: 30%;
+    }
   }
 
   div.form__field--amount {
     width: 50%;
     margin: 0;
     float: left;
+    
+    @include breakpoint($screen-lg) {
+      width: 70%;
+    }
+    
     .form__field--amount {
       width: 100%;
       @include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
@@ -172,6 +188,10 @@
     width: 50%;
     margin: 0;
     float: left;
+
+    @include breakpoint($screen-lg) {
+      width: 30%;
+    }
   
     .form__field--currency {
       float: left;
@@ -184,7 +204,6 @@
       padding: 12px 50px 12px 10px;
       background-position: calc(100% - 22px) 15px;
       @include border-radius(8px);
-      box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.4);
     }
 
     #comicrelief_payinbundle_payment_currency {

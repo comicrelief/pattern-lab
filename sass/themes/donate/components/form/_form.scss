@@ -199,7 +199,7 @@ button.payment-button {
 		background-size: contain;
 
 		@include breakpoint($screen-lg) {
-			margin: 15px auto 15px 0;
+    	margin: 15px auto 15px;
 		}
 	}
 }
@@ -271,4 +271,12 @@ label, legend, .form__field-label {
 			padding-left: 10px;
 		}
 	}
+}
+
+#address-detail {
+	.form__fieldset.form__field--wrapper {
+		label.form__field-label span {
+			font-weight: 500 !important;
+		} 
+	}    
 }

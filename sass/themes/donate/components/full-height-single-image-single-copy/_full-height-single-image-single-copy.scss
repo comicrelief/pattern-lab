@@ -71,7 +71,7 @@ main .paragraph--full-height-single-image-single-copy {
 			#postcode_button {
 				height: 50px;
 				@extend button.btn.secondary;
-				margin-top: 20px !important;
+				margin-top: 30px !important;
 			}
 
 			// Checkbox
@@ -189,7 +189,6 @@ main .paragraph--full-height-single-image-single-copy {
 								display: flex;
 
 								.form__btn {
-									//flex-grow: 1;
 									width: auto;
 
 									#postcode_button {
