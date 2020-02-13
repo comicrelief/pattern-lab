@@ -160,6 +160,7 @@
       float: left;
       border-color: $colour-white;
       @include border-radius(0 8px 8px 0);
+      position: relative;
 
       @include breakpoint($screen-lg) {
         margin-right: 0px;
