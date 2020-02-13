@@ -31,6 +31,10 @@
 	.donate__partners-copy {
 		color: $colour--black;
 		margin-top: 25px;
+		p, 
+		.hyperlink {
+			color: inherit;
+		}
 	}
 
 	.hyperlink {
