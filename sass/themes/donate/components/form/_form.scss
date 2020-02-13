@@ -55,7 +55,7 @@ form,
 form a,
 input {
 	font-family: $body-font;
-	color: $colour--black;
+	color: $colour--white;
 	@include font-size($field-font-size);
 	font-weight: 700;
 }
