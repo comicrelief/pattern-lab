@@ -40,6 +40,12 @@
         
         span {
           color: inherit;
+          @include breakpoint($screen-md) {
+            display: block;
+          }
+          @include breakpoint($screen-lg) {
+            display: inline;
+          }
         }
       }
 
