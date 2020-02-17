@@ -12,3 +12,21 @@
 	height: 0;
 	visibility: hidden; 
 }
+
+@mixin box-shadow-transition() {
+  box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.1s linear;
+  
+  &:hover,
+  &:focus {
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@mixin colour-transition(){
+  transition: color 0.1s linear, background-color 0.1s linear;
+}
+
+@mixin colour-transition-2(){
+  transition: color 0.1s linear, border-color 0.1s linear;
+}

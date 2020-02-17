@@ -29,11 +29,15 @@
 	}
 
 	.donate__partners-copy {
-		color: $colour-deep-violet;
+		color: $colour--black;
 		margin-top: 25px;
+		p, 
+		.hyperlink {
+			color: inherit;
+		}
 	}
-}
 
-.hyperlink {
-	color: $colour-deep-violet;
+	.hyperlink {
+		color: $colour--black;	
+	}
 }

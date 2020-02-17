@@ -17,13 +17,14 @@
 	&.form__row--your--address {
 		.form__field--postcode {
 			display: flex;
+			flex-direction: column;
 
 			.form__field--text {
 				width: 100%;
 			}
 
 			.form__btn {
-				width: auto;
+				width: 100%;
 			}
 		}
 	}
@@ -40,7 +41,7 @@
 .form__fieldset {
 	h1 {
 		text-transform: inherit;
-		color: $colour-deep-violet;
+		color: $colour--white;
 	}
 }
 
@@ -54,16 +55,23 @@ form,
 form a,
 input {
 	font-family: $body-font;
-	color: $colour-deep-violet;
+	color: $colour--white;
+	@include font-size($field-font-size);
+	font-weight: 500;
+}
+
+form a {
+	color: $colour--white;
 }
 
 input[type="email"],
 input[type="number"],
 input[type="text"],
+input[type="tel"],
 select,
 textarea {
-	border: 1px solid $colour-deep-violet;
-	@include placeholder(#757575, 18px, $body-font);
+	border: 1px solid $colour--field-border;
+	@include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
 }
 
 
@@ -122,8 +130,8 @@ textarea {
 		left: 0;
 		width: 0.5em;
 		height: 0.5em;
-		border-left: 2px solid $colour-dark-purple;
-		border-top: 2px solid $colour-dark-purple;
+		border-left: 2px solid $colour--white;
+		border-top: 2px solid $colour--white;
 		transform: rotate(-45deg);
 	}
 }
@@ -139,7 +147,9 @@ h2 {
 	@include font-size($h3-font-size);
 }
 .form__row--giftaid p {
-	text-align: left;
+	text-align: center;
+	@include font-size($field-font-size);
+	font-weight: 500;
 }
 .form__subcopy--bfpo {
 	font-size: 16px;
@@ -158,24 +168,19 @@ button.payment-button {
 	padding: 18px 30px;
 }
 
-button[type="submit"],
-#comicrelief_payinbundle_payment_card,
-#comicrelief_payinbundle_payment_directdebit {
-	@extend .btn--deep-violet;
-}
 // Apple Pay button only shows when supported
 #comicrelief_payinbundle_payment_apple_pay {
 	display: none;
 	// fallback if apple pay styling doesn't come through
 	// making sure this doesn't stick out if apple styling does come through
-	height: 54px;
-	@extend .btn--black;
+	height: 55px;
+	@extend button.cta;
 	// apple pay styling
 	&:after {
 		margin-top: -1px;
 		height: 55px;
 		-webkit-appearance: -apple-pay-button;
-		-apple-pay-button-style: black;
+		-apple-pay-button-style: white;
 	}
 }
 // PayPal fallback styling
@@ -187,14 +192,91 @@ button[type="submit"],
 
 .form__row--giftaid {
 	.giftaid-title {
-		width: 185px;
-		margin: 15px auto;
+    width: 220px;
+    margin: 15px auto;
 		height: 105px;
-		background: url($image-path+"gift_aid_logo.png") no-repeat center;
+		background: url($image-path+"gift_aid_logo--white.png") no-repeat center;
 		background-size: contain;
 
 		@include breakpoint($screen-lg) {
-			margin: 15px auto 15px 0;
+    	margin: 15px auto 15px;
 		}
 	}
+}
+
+label, legend, .form__field-label {
+	@include font-size($field-label-font-size);
+	margin-bottom: 10px;
+	font-weight: 700;
+}
+
+#field-label--giftaid {
+	font-weight: 500;
+}
+
+.form__field-additional-text {
+	font-family: $montserrat;
+	@include font-size($form-error-font-size);
+	font-weight: 500;
+	
+	a {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
+		border-bottom: 1px solid $colour--white;
+	}
+}
+
+.form-error {
+	padding: 6px;
+  width: 100%;
+	background-color: $colour--error-msg-bg;
+	@include border-radius(8px);
+	@include font-size($form-error-font-size);
+  font-weight: 500;
+  
+  &:before {
+ 		width: 16px;
+    height: 16px;
+  }
+}
+
+#field-wrapper--accountHolder {
+	.form__field-wrapper--checkbox {
+		min-height: 45px;
+	}
+	.form__field.form__field--checkbox {
+		height: 40px;
+    width: 40px;
+		top: 0;
+		left: 0;
+		
+		& + span {
+			top: 0;
+			left: 0;
+		}
+		
+		@include breakpoint($screen-md) {
+			top: 3px;
+			& + span {
+				top: 3px;
+			}
+		}
+	}
+	#field-label--accountHolder {
+		padding-left: 5px;
+		
+		@include breakpoint($screen-md) {
+			padding-left: 10px;
+		}
+	}
+}
+
+#address-detail {
+	.form__fieldset.form__field--wrapper {
+		label.form__field-label span {
+			font-weight: 500 !important;
+		} 
+	}    
 }

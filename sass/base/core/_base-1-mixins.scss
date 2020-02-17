@@ -275,28 +275,47 @@
   }
 }
 
-@mixin placeholder($color, $font-size, $body-font) {
+@mixin placeholder($color, $font-size, $body-font, $line-height:"normal", $font-weight:"normal", $font-size--md: $font-size, $line-height--md:"normal") {
   @include optional-at-root('::placeholder') {
     color: $color;
     font-size: $font-size;
+    line-height: $line-height;
     font-family: $body-font;
     opacity:  1;
     overflow: visible;
+    font-weight: $font-weight;
+    
+    @include breakpoint($screen-md) {
+      font-size: $font-size--md;
+      line-height: $line-height--md;
+    }
   }
   @include optional-at-root('::-webkit-input-placeholder') {
     color: $color;
     font-size: $font-size;
+    line-height: $line-height;
     font-family: $body-font;
     opacity:  1;
     overflow: visible;
+    font-weight: $font-weight;
+    @include breakpoint($screen-md) {
+      font-size: $font-size--md;
+      line-height: $line-height--md;
+    }
   }
   
   @include optional-at-root(':-ms-input-placeholder') {
     color: $color;
     font-size: $font-size;
+    line-height: $line-height;
     font-family: $body-font;
     opacity:  1;
     overflow: visible;
+    font-weight: $font-weight;
+    @include breakpoint($screen-md) {
+      font-size: $font-size--md;
+      line-height: $line-height--md;
+    }
   }
 
   // safari only hack

@@ -2,11 +2,12 @@
 .form__row--moneybuy-block {
   p {
     @extend p;
+    color: $colour--white;
   }
 
   p,
   .number-input-label {
-    color: $colour-deep-violet;
+    color:  $colour--white;
   }
 
   .form__fieldset {
@@ -15,6 +16,7 @@
 
     &.form__amount-submit {
       margin-top: 60px;
+      text-align: center;
 
       #comicrelief_payinbundle_payment_amount_submit {
         width: 100%;
@@ -29,18 +31,19 @@
   .form__field-error-container--amount {
     position: absolute;
     top: 50px;
+    width: 100%;
+    left: 0;
   }
 
   .form__togglebtn-amount {
-    .select-amount-btn {
+    button.select-amount-btn {
       position: relative;
       margin: 0 0 20px 0;
       padding: 10px 0;
+      height: auto;
       min-height: 84px;
-      border-radius: 0;
-      background-color: $colour-light-green;
-      border: 2px solid $colour-light-green;
-      color: $colour-deep-violet;
+      background-color: $colour--btn-light;
+      color: $colour--black;
       font-family: $body-font;
       line-height: 22px;
       text-transform: none;
@@ -48,6 +51,47 @@
       text-shadow: none;
       letter-spacing: normal;
       background-clip: inherit;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+      transition: box-shadow 0.2s ease-in-out;
+      @include border-radius(8px);
+      @include colour-transition();
+
+      &.selected,
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $colour--btn-selected;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+        color: $colour--white;
+        border: none;
+
+        .select-amount,
+        .select-amount--context {
+          color: $colour-white;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $colour--btn-hover;
+      }
+
+      &:active {
+        background-color: $colour--btn-on-click;
+      }
+
+      // Override colour for selected buttons to 'remove' focus and hover colour
+      &.selected {
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: $colour--btn-selected;
+        }
+      }
+
+      span {
+        color: inherit;
+      }
 
       .select-amount {
         position: absolute;
@@ -80,43 +124,43 @@
         line-height: 1.3;
         margin-left: 125px;
       }
-
-      &.selected {
-        background-color: $colour-deep-violet;
-        border: none;
-
-        .select-amount,
-        .select-amount--context {
-          color: $colour-white;
-        }
-
-      }
     }
   }
 
   .currency-input-label {
     position: absolute;
-    left: 0px;
-    top: 0.75em;
+    left: 50%;
+    top: 14px;
     line-height: 21px;
-    color: $colour-deep-violet;
+    color: $colour--black;
     font-size: 18px;
     font-family: $body-font;
     margin-left: 15px;
     margin-top: 1px;
     z-index: 9;
+    @include breakpoint($screen-lg) {
+      left: 30%;
+    }
   }
 
-  .form__field--amount {
-
+  div.form__field--amount {
+    width: 50%;
+    margin: 0;
+    float: left;
+    
+    @include breakpoint($screen-lg) {
+      width: 70%;
+    }
+    
     .form__field--amount {
-      @include placeholder (#757575, 18px, $body-font);
+      width: 100%;
+      @include placeholder($colour--placeholder, 18px, $body-font, 22px, 700, 20px, 24px);
       font-size: 18px;
       padding-left: 28px;
       float: left;
-      width: span(6);
-      margin-right: calc(2 * #{gutter()});
       border-color: $colour-white;
+      @include border-radius(0 8px 8px 0);
+      position: relative;
 
       @include breakpoint($screen-lg) {
         margin-right: 0px;
@@ -127,7 +171,7 @@
       margin-bottom: 0;
 
       @include breakpoint($screen-lg) {
-        width: 260px;
+        //width: 260px;
       }
     }
 
@@ -142,11 +186,18 @@
     }
   }
 
-  .form__field--currency {
+  div.form__field--currency {
+    width: 50%;
+    margin: 0;
+    float: left;
+
+    @include breakpoint($screen-lg) {
+      width: 30%;
+    }
+  
     .form__field--currency {
       float: left;
-      width: span(6);
-      margin-left: calc(2 * #{gutter()});
+      width: 100%;
       background-color: $colour-white;
       border-color: $colour-white;
       border-left: none;
@@ -154,11 +205,11 @@
       line-height: 24px;
       padding: 12px 50px 12px 10px;
       background-position: calc(100% - 22px) 15px;
+      @include border-radius(8px);
     }
 
     #comicrelief_payinbundle_payment_currency {
       @include breakpoint($screen-lg) {
-        width: 130px;
         margin: 0;
       }
     }

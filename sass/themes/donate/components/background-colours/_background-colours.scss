@@ -1,0 +1,9 @@
+.bg--transparent {
+  background-color: transparent;
+}
+
+.bg--blue-gradient {
+  // Non-gradient browser fallback:
+  background-color: #00407e;
+  background-image: linear-gradient(to top right, $colour--bg-gradient-top-right, $colour--bg-gradient-bottom-left);
+}
