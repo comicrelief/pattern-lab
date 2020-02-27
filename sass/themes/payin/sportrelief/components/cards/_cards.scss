@@ -14,6 +14,7 @@
   .card {
     height: 350px;
     margin: 0 5% 20px;
+    border-radius: 4%;
 
     @include breakpoint($screen-md) {
       max-width: span(4 of 12);
@@ -25,15 +26,15 @@
     }
 
     &--school {
-      background: url($image-path + "nursery-school-university.jpg") 0 0/cover no-repeat;
+      background: url($image-path + "nursery-school.jpg") 0 0/cover no-repeat;
     }
 
     &--work {
       background: url($image-path + "workplace-organisation.jpg") 0 0/cover no-repeat;
     }
 
-    &--leisure {
-      background: url($image-path + "gym-leisure-sports.jpg") 0 0/cover no-repeat;
+    &--youth {
+      background: url($image-path + "youth-university.jpg") 0 0/cover no-repeat;
     }
 
     a {
@@ -50,13 +51,15 @@
     .cards__content {
 
       h3 {
-        color: $colour-white;
+        color: $colour-black;
+        background-color: $colour-white;
+        opacity: 0.9;
         position: absolute;
-        bottom: 0;
+        bottom: -15px;
         left: auto;
         right: auto;
         padding:0 30px 20px;
-        text-align: left;
+        text-align: center;
       }
 
     }
