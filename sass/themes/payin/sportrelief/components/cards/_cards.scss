@@ -50,15 +50,21 @@
 
     .cards__content {
 
-      h3 {
-        color: $colour-black;
+      .cards__title {
         background-color: $colour-white;
         opacity: 0.9;
         position: absolute;
         bottom: -15px;
+        width:100%;
+      }
+      h3 {
+        color: $colour-black;
+        font-family: $montserrat;
+        @include font-size($h4-font-size);
+        font-weight: bold;
         left: auto;
         right: auto;
-        padding:0 30px 20px;
+        padding:20px 30px 20px;
         text-align: center;
       }
 
