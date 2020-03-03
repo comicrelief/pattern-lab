@@ -1,7 +1,7 @@
 # Comic Relief Pattern Lab [![NPM version][npm-image]][npm-url] [![Build Status][concourse-image]][concourse-url]
 > A Node-based project to supply Sass components and a styleguide generator.
 
-## The idea
+## The idea 
 To have a centralised hub supply common styling across Comic Relief products. 
 
 ## Quicklinks
