@@ -38,7 +38,7 @@ function onYouTubePlayerAPIReady() {
 
 function onPlayerReady(event) {
   // The iframe that's ready to be used
-  var readyIframeID = event.target.a.id;
+  var readyIframeID = event.target.f.id;
 
   // Construct button ID, pass to clickhandler
   var readyButtonID = readyIframeID + "__button";
