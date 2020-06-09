@@ -64,6 +64,7 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         color: $colour--white;
         border: none;
+        // outline: none; // should we be doing this?
 
         .select-amount,
         .select-amount--context {
