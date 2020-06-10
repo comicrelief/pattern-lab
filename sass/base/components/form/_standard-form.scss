@@ -70,7 +70,7 @@ select {
   @include font-size($p-font-size);
   font-weight: 300;
   font-family: $body-font;
-  background: transparent url($image-path + "drop-down-dark-purple.svg") calc(100% - 20px) 18px/20px 20px no-repeat;
+  background: transparent url($image-path + "CR__Chevron_D.svg") calc(100% - 15px) 11px/26px 26px no-repeat;
   cursor: pointer;
   margin-bottom: 0;
 }
