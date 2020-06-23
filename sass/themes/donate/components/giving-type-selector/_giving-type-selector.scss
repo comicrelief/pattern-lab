@@ -15,7 +15,7 @@
    &:hover {
     + .label {
       background-color: $colour--btn-hover;
-      color: $colour--black;
+      color: $colour--white;
     }
    }
 
@@ -33,7 +33,6 @@
      cursor: pointer;
 
       + label {
-        // @include colour-transition();
         background-color: $colour--btn-light;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 16px;
         color: $colour--black;
@@ -57,9 +56,10 @@
       }
       
       &:hover,
-      &:focus { bv
+      &:focus {
           & + label { 
             background-color: $colour--btn-hover;
+            color: $colour--white;
           }
         };
 
@@ -114,8 +114,7 @@
      // Chrome etc.
      outline: -webkit-focus-ring-color auto 5px;
      outline-offset: 0px;
-  
-     outline: none; // should we be doing this?
+
    }
  }
 }
