@@ -28,9 +28,17 @@
     }
 
     // Shift button down to make room for error
-    &.form__field-error-wrapper {
-      .form__fieldset.form__amount-submit.submit-btn-wrapper {
-        margin-top: 70px;
+    &.form__field-error-wrapper  {
+      & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 50px;
+
+        @include breakpoint($screen-md){
+          margin-top: 65px;
+        }
+
+        @include breakpoint($screen-lg){
+          margin-top: 50px;
+        }
       }
     }
   }
