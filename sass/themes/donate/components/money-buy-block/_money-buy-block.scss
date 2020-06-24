@@ -26,6 +26,13 @@
         }
       }
     }
+
+    // Shift button down to make room for error
+    &.form__field-error-wrapper {
+      .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 70px;
+      }
+    }
   }
 
   .form__field-error-container--amount {
