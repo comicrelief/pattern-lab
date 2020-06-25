@@ -239,3 +239,10 @@
     }
   }
 }
+
+// Payin-specific
+section.payin #field-error--amount {
+  .form-error {
+    margin-top: 80px;
+  }
+}
