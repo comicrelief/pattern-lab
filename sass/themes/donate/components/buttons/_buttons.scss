@@ -7,9 +7,15 @@ button.cta-2  {
   width:100%;
   height: 48px;
   font-family: $montserrat;
+  display: block;
+  margin: 0 auto;
   @include font-size($button-cta-font-size);
-  @include border-radius(8px);
+  @include border-radius(25px);
   @include box-shadow-transition();
+
+  @include breakpoint($screen-md){
+    width: auto;
+  }
 }
 
 
@@ -19,17 +25,17 @@ button.btn {
   background-color: $colour--btn-light;
   color: $colour--black;
   padding: 13px 30px;
-  @include border-radius(8px);
+  @include border-radius(25px);
   @include box-shadow-transition();
   @include colour-transition();
 
   &.secondary {
     background-color: transparent;
-    border: 4px solid $colour--white;
+    border: 2px solid $colour--white;
     color: $colour--white;
     padding: 10px 30px;
     @include font-size($button-cta-font-size);
-    @include border-radius(8px);
+    @include border-radius(25px);
   }
 
   &:hover,
@@ -39,18 +45,22 @@ button.btn {
 
     &.secondary {
       background-color: transparent;
-      border: 4px solid $colour--white;
+      border: 2px solid $colour--white;
       color: $colour--white;
     }
   }
 
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0px 4px $colour--system-blue;
+  }
   &:active {
     background-color: $colour--btn-on-click;
     color: $colour--white;
 
     &.secondary {
       background-color: transparent;
-      border: 4px solid $colour--white;
+      border: 2px solid $colour--white;
       color: $colour--white;
     }
   }
@@ -80,23 +90,32 @@ button.cta {
 a.cta-2,
 button.cta-2 {
   background-color: transparent;
-  border: 4px solid $colour--white;
+  border: 2px solid $colour--white;
   color: $colour--white;
   transition: all 0.1s ease-in-out;
   @include border-radius(30px);
-  @include colour-transition-2();
+  @include colour-transition();
   box-shadow: none;
   padding: 9px 30px;
 
-  &:hover,
-  &:focus {
-    background-color: transparent;
-    border: 4px solid $colour--black;
-    color: $colour--black;
+  &:hover {
+    background-color: #5d5d5d;
   }
-  
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0px 4px $colour--system-blue;
+  }
+
+  &.disabled,
+  &:disabled {
+    border: 2px solid $colour--cta2-disbled;
+    color: $colour--cta2-disbled;
+    opacity: 1;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
   }
 }

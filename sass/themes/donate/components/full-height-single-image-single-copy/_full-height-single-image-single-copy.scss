@@ -72,8 +72,10 @@ main .paragraph--full-height-single-image-single-copy {
 			// Address
 			#postcode_button {
 				height: 50px;
-				@extend button.btn.secondary;
-				margin-top: 30px !important;
+				@extend button.cta-2;
+				margin: 30px auto 0 !important;
+				display: block;
+				font-size: 16px;
 			}
 
 			// Checkbox
@@ -194,7 +196,7 @@ main .paragraph--full-height-single-image-single-copy {
 									width: auto;
 
 									#postcode_button {
-										width: 100%;
+										width: auto;
 										letter-spacing: 0;
 									}
 								}
