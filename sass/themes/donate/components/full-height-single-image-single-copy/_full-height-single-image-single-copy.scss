@@ -73,7 +73,7 @@ main .paragraph--full-height-single-image-single-copy {
 			#postcode_button {
 				height: 50px;
 				@extend button.cta-2;
-				margin: 30px auto 0 !important;
+				margin: 30px 0 0 !important;
 				display: block;
 				font-size: 16px;
 			}
@@ -227,10 +227,8 @@ main .paragraph--full-height-single-image-single-copy {
 // Target 'manual address' link 
 #field-wrapper--postcode + .form__field--wrapper {
 	margin: 0 auto 10px;
-	text-align: center;
 
 	&#field-wrapper--addressSelect {
 		text-align: left;
 	}
 }
-
