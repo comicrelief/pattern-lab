@@ -28,7 +28,7 @@
     }
 
     // Shift button down to make room for error
-    &.form__field-error-wrapper  {
+    &.form__field-error-wrapper {
       & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
         margin-top: 50px;
 
@@ -41,9 +41,28 @@
         }
       }
     }
+
+    // Adjust button to show larger alert message
+    &.payin-alert {
+      & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 70px;
+      }
+    }
+    
+    // Move second error msg under first
+    &.payin-alert.form__field-error-wrapper {
+      .form__field-error-container--amount + .form__field-error-container--payin-alert {
+        margin-top: 40px;
+      }
+      // Move submit button accordingly
+      & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 110px;
+      }
+    }
   }
 
-  .form__field-error-container--amount {
+  .form__field-error-container--amount,
+  .form__field-error-container--payin-alert {
     position: absolute;
     top: 50px;
     width: 100%;
@@ -51,7 +70,6 @@
   }
 
   .form__togglebtn-amount {
-    
     .select-amount-btn {
       position: relative;
       margin: 0 0 20px 0;
