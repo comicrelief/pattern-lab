@@ -30,14 +30,14 @@
     // Shift button down to make room for error
     &.form__field-error-wrapper {
       & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
-        margin-top: 50px;
+        margin-top: 65px;
 
         @include breakpoint($screen-md){
-          margin-top: 65px;
+          margin-top: 70px;
         }
 
         @include breakpoint($screen-lg){
-          margin-top: 50px;
+          margin-top: 70px;
         }
       }
     }
@@ -45,7 +45,10 @@
     // Adjust button to show larger alert message
     &.payin-alert {
       & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
-        margin-top: 70px;
+        margin-top: 85px;
+        @include breakpoint($screen-md){
+          margin-top: 90px;
+        }
       }
     }
     
@@ -56,7 +59,10 @@
       }
       // Move submit button accordingly
       & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
-        margin-top: 110px;
+        margin-top: 125px;
+        @include breakpoint($screen-md){
+          margin-top: 130px;
+        }
       }
     }
   }
@@ -64,7 +70,7 @@
   .form__field-error-container--amount,
   .form__field-error-container--payin-alert {
     position: absolute;
-    top: 50px;
+    top: 60px;
     width: 100%;
     left: 0;
   }
