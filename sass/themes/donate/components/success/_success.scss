@@ -2,9 +2,6 @@
 	font-family: $anton;
 	text-align: center;
 
-	@include breakpoint($screen-md) {
-	}
-
 	p,
 	ul {
 		color: $colour--white;
@@ -25,6 +22,10 @@
 
 	&.inner-content--success {
 		position: relative;
+
+		a.btn {
+			display: inline-block;
+		}
 
 		.success-transactionsid {
 			text-align: center;
