@@ -4,16 +4,18 @@ main .paragraph--full-height-single-image-single-copy {
 	fieldset#giving_type_selector {
 		.form__giving-type {
 			.form__field--wrapper {
-				&:first-child {
-					@include border-radius(8px 0 0 8px);
-					label {
+				@include breakpoint($screen-md) {
+					&:first-child {
 						@include border-radius(8px 0 0 8px);
+						label {
+							@include border-radius(8px 0 0 8px);
+						}
 					}
-				}
-				&:last-child {
-					@include border-radius(0 8px 8px 0);
-					label {
+					&:last-child {
 						@include border-radius(0 8px 8px 0);
+						label {
+							@include border-radius(0 8px 8px 0);
+						}
 					}
 				}
 			}
@@ -70,8 +72,10 @@ main .paragraph--full-height-single-image-single-copy {
 			// Address
 			#postcode_button {
 				height: 50px;
-				@extend button.btn.secondary;
-				margin-top: 30px !important;
+				@extend button.cta-2;
+				margin: 30px 0 0 !important;
+				display: block;
+				font-size: 16px;
 			}
 
 			// Checkbox
@@ -192,7 +196,7 @@ main .paragraph--full-height-single-image-single-copy {
 									width: auto;
 
 									#postcode_button {
-										width: 100%;
+										width: auto;
 										letter-spacing: 0;
 									}
 								}
@@ -222,11 +226,9 @@ main .paragraph--full-height-single-image-single-copy {
 
 // Target 'manual address' link 
 #field-wrapper--postcode + .form__field--wrapper {
-	margin: 30px auto 10px;
-	text-align: center;
+	margin: 0 auto 10px;
 
 	&#field-wrapper--addressSelect {
 		text-align: left;
 	}
 }
-

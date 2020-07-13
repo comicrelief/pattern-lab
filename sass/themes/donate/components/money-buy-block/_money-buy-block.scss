@@ -15,7 +15,7 @@
     position: relative;
 
     &.form__amount-submit {
-      margin-top: 60px;
+      margin-top: 45px;
       text-align: center;
 
       #comicrelief_payinbundle_payment_amount_submit {
@@ -26,17 +26,57 @@
         }
       }
     }
+
+    // Shift button down to make room for error
+    &.form__field-error-wrapper {
+      & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 65px;
+
+        @include breakpoint($screen-md){
+          margin-top: 70px;
+        }
+
+        @include breakpoint($screen-lg){
+          margin-top: 70px;
+        }
+      }
+    }
+
+    // Adjust button to show larger alert message
+    &.payin-alert {
+      & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 85px;
+        @include breakpoint($screen-md){
+          margin-top: 90px;
+        }
+      }
+    }
+    
+    // Move second error msg under first
+    &.payin-alert.form__field-error-wrapper {
+      .form__field-error-container--amount + .form__field-error-container--payin-alert {
+        margin-top: 40px;
+      }
+      // Move submit button accordingly
+      & + .form__fieldset.form__amount-submit.submit-btn-wrapper {
+        margin-top: 125px;
+        @include breakpoint($screen-md){
+          margin-top: 130px;
+        }
+      }
+    }
   }
 
-  .form__field-error-container--amount {
+  .form__field-error-container--amount,
+  .form__field-error-container--payin-alert {
     position: absolute;
-    top: 50px;
+    top: 60px;
     width: 100%;
     left: 0;
   }
 
   .form__togglebtn-amount {
-    button.select-amount-btn {
+    .select-amount-btn {
       position: relative;
       margin: 0 0 20px 0;
       padding: 10px 0;
@@ -64,6 +104,7 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
         color: $colour--white;
         border: none;
+        // outline: none; // should we be doing this?
 
         .select-amount,
         .select-amount--context {
@@ -220,5 +261,12 @@
     label {
       @extend .visually-hidden;
     }
+  }
+}
+
+// Payin-specific
+section.payin #field-error--amount {
+  .form-error {
+    margin-top: 80px;
   }
 }

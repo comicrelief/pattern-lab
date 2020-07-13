@@ -2,9 +2,6 @@
 	font-family: $anton;
 	text-align: center;
 
-	@include breakpoint($screen-md) {
-	}
-
 	p,
 	ul {
 		color: $colour--white;
@@ -25,6 +22,10 @@
 
 	&.inner-content--success {
 		position: relative;
+
+		a.btn {
+			display: inline-block;
+		}
 
 		.success-transactionsid {
 			text-align: center;
@@ -109,4 +110,28 @@
 			text-align: center;
 		}
 	}
+}
+
+// Success page
+h1.success-heading {
+	font-size: 48px;
+	line-height: 59px;
+	margin-top: 60px;
+ }
+
+ .success-subtitle {
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 37px;
+	margin: 50px 0;
+ }
+  
+.success-details {
+	font-size: 20px;
+	line-height: 24px;
+	margin: 50px 0;
+}
+
+.success-share {
+	margin-top: 20px;
 }
