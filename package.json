@@ -58,7 +58,16 @@
     "snyk": "^1.36.2"
   },
   "resolutions": {
-    "customizr": "1.2.1"
+    "customizr": "1.2.1",
+    "fstream":"1.0.12",
+    "handlebars": "4.1.2",
+    "lodash":"4.17.13",
+    "lodash.template": "4.5.0",
+    "lodash.mergewith": "4.6.2",
+    "lodash.merge": "4.6.2",
+    "underscore.string": "3.3.5",
+    "js-yaml": "3.13.1",
+    "jquery":"3.4.0"
   },
   "repository": {
     "type": "git",
