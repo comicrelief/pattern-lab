@@ -81,10 +81,7 @@
     "npm": ">=4"
   },
   "release": {
-    "branch": [
-      "master",
-      "test_semantic_release"
-    ],
+    "branch": "test_semantic_release",
     "debug": false
   },
   "czConfig": {
