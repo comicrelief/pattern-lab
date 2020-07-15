@@ -82,7 +82,8 @@
   "release": {
     "branches": [
       "master",
-      "test_semantic_release"
+      "test_semantic_release",
+      "test_again"
     ],
     "debug": false
   },
