@@ -20,6 +20,7 @@ before_install: if [[ `npm -v` != 4* ]]; then npm i -g npm@4; fi
 
 before_script:
   - npm prune
+# `script` is default `npm test` which just prints a no-op message.
 after_success:
   - npm run semantic-release
 branches:
