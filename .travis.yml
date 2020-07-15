@@ -27,3 +27,4 @@ branches:
   only:
     - master
     - test_semantic_release
+    - fix_feat_message
