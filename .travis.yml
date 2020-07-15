@@ -6,7 +6,7 @@ notifications:
   email: false
 
 node_js:
-  - '8'
+  - '10'
 env:
   - CXX=g++-4.8
 addons:
@@ -22,7 +22,7 @@ before_script:
   - npm prune
 # `script` is default `npm test` which just prints a no-op message.
 after_success:
-  - npm run semantic-release
+  - npx semantic-release
 branches:
   only:
     - master

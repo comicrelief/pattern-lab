@@ -17,7 +17,6 @@
     "build-shop18": "grunt build:shop18",
     "build-netlify": "yarn cache clean; grunt build",
     "dev-server": "grunt connect",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "backstop-test": "backstop test",
     "backstop-reference": "backstop reference",
@@ -29,7 +28,7 @@
   "dependencies": {
     "event-stream": "3.3.4",
     "grunt-contrib-copy": "^1.0.0",
-    "susy": "^2.2.12",
+    "susy": "^3.0.6",
     "underscore.string": "3.3.5"
   },
   "devDependencies": {
@@ -54,7 +53,7 @@
     "grunt-svgmin": "^4.0.0",
     "lightcase": "^2.4.0",
     "npm-link-local": "^1.1.0",
-    "semantic-release": "^6.3.2",
+    "semantic-release": "17.1.1",
     "snyk": "^1.36.2"
   },
   "resolutions": {
@@ -77,11 +76,14 @@
   },
   "homepage": "https://github.com/comicrelief/pattern-lab#readme",
   "engines": {
-    "node": ">=8",
+    "node": ">=10",
     "npm": ">=4"
   },
   "release": {
-    "branch": "test_semantic_release",
+    "branches": [
+      "master",
+      "test_semantic_release"
+    ],
     "debug": false
   },
   "czConfig": {
