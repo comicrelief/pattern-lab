@@ -20,8 +20,20 @@ before_install: if [[ `npm -v` != 4* ]]; then npm i -g npm@4; fi
 
 before_script:
   - npm prune
-script:
-  - npm run semantic-release
+
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      node_js: lts/*
+      # Advanced: optionally overwrite your default `script` step to skip the tests
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npm run semantic-release
+
 branches:
   only:
     - master
