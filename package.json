@@ -82,7 +82,7 @@
   },
   "release": {
     "branch": "test_semantic_release",
-    "debug": true
+    "debug": false
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
