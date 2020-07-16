@@ -1,6 +1,6 @@
 {
   "name": "@comicrelief/pattern-lab",
-  "version": "7.64.2",
+  "version": "0.0.0-see.readme.for.releases",
   "license": "GPL-3.0",
   "description": "The centralised hub for Comic Relief's general and campaign pattern lab",
   "scripts": {
@@ -17,7 +17,6 @@
     "build-shop18": "grunt build:shop18",
     "build-netlify": "yarn cache clean; grunt build",
     "dev-server": "grunt connect",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "backstop-test": "backstop test",
     "backstop-reference": "backstop reference",
@@ -54,7 +53,7 @@
     "grunt-svgmin": "^4.0.0",
     "lightcase": "^2.4.0",
     "npm-link-local": "^1.1.0",
-    "semantic-release": "^6.3.2",
+    "semantic-release": "17.1.1",
     "snyk": "^1.36.2"
   },
   "resolutions": {
@@ -77,11 +76,13 @@
   },
   "homepage": "https://github.com/comicrelief/pattern-lab#readme",
   "engines": {
-    "node": ">=8",
+    "node": ">=10",
     "npm": ">=4"
   },
   "release": {
-    "branch": "master",
+    "branches": [
+      "master"
+    ],
     "debug": false
   },
   "czConfig": {
