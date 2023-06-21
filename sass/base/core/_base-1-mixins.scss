@@ -319,8 +319,8 @@
   }
 
   // safari only hack
-  @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-    @include optional-at-root('::-webkit-input-placeholder') ::-webkit-input-placeholder {
+  @media screen and (min-color-index:0) and (-webkit-min-device-pixel-ratio:0) {
+    @include optional-at-root('::-webkit-input-placeholder') {
       opacity:  0.7;
     }
   }
