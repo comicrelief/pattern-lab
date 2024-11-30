@@ -4815,8 +4815,8 @@ lockfile@^1.0.4:
     signal-exit "^3.0.2"
 
 locutus@^2.0.5:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/locutus/-/locutus-2.0.10.tgz#f903619466a98a4ab76e8b87a5854b55a743b917"
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/locutus/-/locutus-2.0.15.tgz#d75b9100713aaaf30be8b38ed6543910498c0db0"
 
 lodash._basecopy@^3.0.0:
   version "3.0.1"
